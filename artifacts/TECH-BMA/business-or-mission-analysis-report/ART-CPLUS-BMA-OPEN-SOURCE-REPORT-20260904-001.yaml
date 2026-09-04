@@ -1,0 +1,229 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V1
+artifact_label: business or mission analysis report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_partial_open_source
+acceptance_status: analysis_complete_for_public_evidence_decision_not_ready
+artifact_instance_purpose: >-
+  Свести результаты текущего открытого анализа бизнеса/миссии Сети КонсультантПлюс, оценить достаточность
+  доказательств для последующих решений и зафиксировать, какие выводы допустимы, а какие заблокированы отсутствием внутренних данных.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-REPORT-OPEN-SOURCE-ANALYSIS-20260904-001
+  methodic_instance:
+    methodic_id: METH-TECH-BMA-OPEN-SOURCE-EVIDENCE-ANALYSIS
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001
+  required_output_label: operation report
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: partial_open_source_candidate}
+scope: public-evidence BMA of the ConsultantPlus network under the current owner request
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Анализ подтверждает миссию и видимую операционную модель Сети, достаточную для описания текущего контекста,
+  текущей концепции использования и bounded классов альтернатив. Он не дает оснований объявить внутреннюю проблему,
+  выбрать альтернативу, установить KPI/экономическое обоснование или формировать принятые stakeholder/system requirements.
+introduction:
+  evaluated_object: sociotechnical public operating model of the nationwide ConsultantPlus network
+  evaluation_context: owner-requested client-system connection and open-source lifecycle/BMA population
+  analysis_period: '2026-09-04..2026-09-05'
+  intended_decision_support: determine what BMA state can be responsibly persisted from public evidence and what requires internal evidence
+context_and_assumptions:
+  system_boundary: Coordination Center + RICs/partners + ConsultantPlus legal-reference system/content + service support + users
+  evidence_policy: official public consultant.ru pages support facts; analytic propositions are marked inference; no missing internal state is guessed
+  related_products:
+    binding: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2
+    problem_or_opportunity: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2
+    alternatives: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
+    life_cycle_concepts: ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1
+    traceability: ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V1
+body:
+  evaluation_criteria:
+    - id: CRIT-01
+      criterion: source_authority_and_traceability
+      rule: factual business claims require an official source and explicit trace relation
+    - id: CRIT-02
+      criterion: fact_inference_separation
+      rule: analyst-derived proposition must not be presented as official fact or accepted owner decision
+    - id: CRIT-03
+      criterion: problem_evidence_sufficiency
+      rule: an accepted business problem requires evidence of a material undesired state, impact or decision need beyond generic product evolution
+    - id: CRIT-04
+      criterion: alternative_selection_readiness
+      rule: selection requires objectives, criteria/measures, constraints, feasibility/cost/risk evidence and owner authority
+    - id: CRIT-05
+      criterion: requirements_derivation_readiness
+      rule: accepted stakeholder/system requirements require a sufficiently established need/problem/opportunity and stakeholder evidence
+  method_and_evidence:
+    method:
+      - resolve client authority repository and exact generic interface before client persistence
+      - review current official consultant.ru pages for mission, roles, product, delivery, update/service and product-evolution facts
+      - classify each statement as source-supported fact, analyst inference candidate or unresolved internal information
+      - materialize applicable TECH-BMA outputs using exact PPR, generic ГОСТ profile and specific/local additive profiles
+      - preserve source-to-ArtifactVersion traceability and blockers
+    evidence_sources:
+      - 'https://www.consultant.ru/about/company/structure/'
+      - 'https://www.consultant.ru/about/company/structure/ric/'
+      - 'https://www.consultant.ru/about/'
+      - 'https://www.consultant.ru/about/purchase/'
+      - 'https://www.consultant.ru/about/company/history/system/'
+    evidence_trace_ref: ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V1
+  analysis_and_results:
+    - criterion_id: CRIT-01
+      result: pass_with_external_versioning_limitation
+      finding: core current-state claims have official-source URLs and product-level traceability; immutable snapshots/hashes are not persisted
+    - criterion_id: CRIT-02
+      result: pass_for_current_product_set
+      finding: opportunity and alternatives are explicitly marked analyst inference candidates; no source is represented as asserting them
+    - criterion_id: CRIT-03
+      result: fail_not_ready
+      finding: public sources show continuous improvement/current operation but no specific internal adverse condition, quantified impact or owner-defined business problem
+    - criterion_id: CRIT-04
+      result: fail_not_ready
+      finding: four bounded alternative classes can be framed, but internal objectives, comparison data, economics, constraints and decision authority evidence are absent
+    - criterion_id: CRIT-05
+      result: fail_not_ready
+      finding: public pages identify user classes and visible service/product capabilities but not prioritized stakeholder needs sufficient for accepted requirements
+  material_findings:
+    confirmed:
+      - official mission is broad dissemination of legal information among the population of Russia
+      - published network model divides central strategy/product/content/quality-standard responsibilities and regional delivery/service/regional-content responsibilities
+      - system supports multiple delivery/access variants and individualized package/price parameters
+      - system is automatically updated several times per day; online/mobile access is part of current offering
+      - 2026 history demonstrates continuing development including AI-assisted services/functions
+    deficiencies_in_evidence:
+      - no internal business objective/problem statement or impact baseline
+      - no internal service-quality/KPI time series or regional variance data
+      - no customer outcome/satisfaction evidence used in this run
+      - no internal cost, margin, investment, resource or benefit model
+      - no authoritative future operating concept/architecture
+      - no contractual/internal technical-interface model
+    risks:
+      - treating public promotional/current-state text as an internal problem statement would create false requirements
+      - selecting an alternative without internal criteria/economics would be arbitrary
+      - mutable web pages limit exact historical reproducibility unless snapshots are later preserved as controlled source I
+  decision_support:
+    supported_now:
+      - connect the client engineering contour through the established interface binding
+      - use the persisted current-state mission/operating context in subsequent BMA work
+      - retain the four alternative classes as hypotheses only
+      - move next to internal evidence acquisition before stakeholder/system requirements
+    not_supported_now:
+      - claim a specific business problem
+      - choose a preferred alternative
+      - establish target KPI or business case
+      - approve target architecture or process redesign
+      - infer deployment, baseline or operational activation from repository work
+conclusions_and_recommendations:
+  conclusion: >-
+    The open-source BMA is useful and nontrivial, but its correct completion state is partial: it establishes current mission/context
+    and a bounded solution space while failing readiness for problem-driven choice or accepted requirements.
+  next_required_evidence:
+    - owner/business leadership objectives and decision questions
+    - internal RIC/service process map and responsibility/interface evidence
+    - service-quality and customer outcome measures by segment/region
+    - economics and resource constraints
+    - known bottlenecks, incidents, complaints, rework or unmet user needs
+    - change priorities and acceptance criteria
+  next_process_logic: after internal BMA evidence is acquired and the need/opportunity is accepted, TECH-STK should establish stakeholder needs and requirements; do not skip directly to TECH-SYSREQ
+references:
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2
+  - ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2
+  - ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
+  - ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1
+  - ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V1
+  - 'https://www.consultant.ru/about/company/structure/'
+  - 'https://www.consultant.ru/about/company/structure/ric/'
+  - 'https://www.consultant.ru/about/'
+  - 'https://www.consultant.ru/about/purchase/'
+  - 'https://www.consultant.ru/about/company/history/system/'
+bibliography:
+  - 'ГОСТ Р 58609-2019 / ISO/IEC/IEEE 15289:2017 §§7.6, 10.27'
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+glossary:
+  decision_ready: evidence and authority are sufficient for the stated decision; not equivalent to structural completeness
+  public_evidence_BMA: business/mission analysis bounded to public sources and explicit analytic inference
+  bounded_alternative: hypothesis class retained for comparison without selection or acceptance
+change_history:
+  - {version: V1, date: '2026-09-05', change: initial consolidated public-evidence business/mission analysis report}
+owner_product_request:
+  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
+  request_specific_requirements:
+    - connect ConsultantPlus as a separate client system
+    - populate BMA lifecycle information products from open sources as far as evidence permits
+    - do not silently fill missing internal evidence
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [body.method_and_evidence, references]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: [business_problem_evidence, alternative_selection_evidence, stakeholder_need_evidence, internal_economics]
+    state: partial_product_not_decision_ready
+verification:
+  structural_status: composition_declared_pending_exact_client_worker
+  semantic_status: analysis/evidence boundary manually reviewed; independent client TECH-VER pending
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity:
+    resolved_name_or_semantic_identity: evaluation report specialization for business or mission analysis report
+    resolution_basis: TECH-BMA|business or mission analysis report -> report + §10.27 controlled semantic match
+    state: resolved
+  source_mapping:
+    source_id: TECH-BMA|business or mission analysis report
+    process_mapping_status: controlled_semantic_match
+    source_refs: [ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, ARTVER-SE-GOST-58609-SECTION10-OUTPUT-CONTENT-ORACLE-20260902-001-V1, 'ГОСТ Р 58609-2019 §10.27']
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: composition_declared_pending_worker
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_specific_content:
+    - profile_id: '10.27'
+      information_item: evaluation report
+      state: composition_declared_pending_worker
+      requirement_coverage:
+        - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, body.evaluation_criteria]}
+        - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.method_and_evidence]}
+        - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.analysis_and_results]}
+        - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.material_findings]}
+        - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [body.decision_support, conclusions_and_recommendations]}
