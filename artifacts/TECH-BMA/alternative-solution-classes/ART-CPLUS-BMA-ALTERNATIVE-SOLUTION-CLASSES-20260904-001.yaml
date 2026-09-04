@@ -1,0 +1,150 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V1
+artifact_label: alternative solution classes
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_partial_open_source
+acceptance_status: alternatives_not_selected_or_accepted
+artifact_instance_purpose: >-
+  Сформировать только допустимые на текущей доказательной базе классы альтернатив для последующего BMA,
+  не подменяя отсутствие подтвержденной внутренней проблемы выдуманным проектом изменения.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-IDENTIFY-ALTERNATIVE-SOLUTION-CLASSES-20260904-001
+  methodic_instance: {methodic_id: METH-TECH-BMA-OPEN-SOURCE-EVIDENCE-ANALYSIS, methodic_version_id: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime}
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CLIENT-SYSTEM-INTERFACE-BOUNDARY-20260904-001
+  required_output_label: operation report
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V1, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-04', status: partial_open_source_candidate}
+scope: candidate alternative classes for the ConsultantPlus network business/mission analysis
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - {id: SRC-CPLUS-STRUCTURE, url: https://www.consultant.ru/about/company/structure/, authority: official_ConsultantPlus_site, accessed: '2026-09-04'}
+  - {id: SRC-CPLUS-ABOUT, url: https://www.consultant.ru/about/, authority: official_ConsultantPlus_site, accessed: '2026-09-04'}
+  - {id: SRC-CPLUS-PURCHASE, url: https://www.consultant.ru/about/purchase/, authority: official_ConsultantPlus_site, accessed: '2026-09-04'}
+context:
+  problem_evidence_ref: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V1
+  constraint: no accepted internal business problem, target metric or investment decision is established by the reviewed public sources
+  basis: candidate classes are analyst-generated from the source-supported current operating model and are not presented as official ConsultantPlus alternatives
+identifier: CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-V1
+body:
+  current_solution_class:
+    id: ALT-CPLUS-00
+    status: sourced_current_state_not_candidate_change
+    description: >-
+      Distributed service-network model: Coordination Center develops/improves the system, manages network strategy and content/legal processing;
+      RICs supply the system, provide full service support and contribute regional legal/judicial content; users receive local/network/remote variants.
+    source_refs: [SRC-CPLUS-STRUCTURE, SRC-CPLUS-ABOUT]
+  candidate_classes:
+    - id: ALT-CPLUS-01
+      name: maintain_and_incrementally_improve_current_distributed_model
+      evidence_class: analyst_inference_candidate
+      description: preserve the central + RIC operating architecture and focus changes on existing product/service processes without structural redistribution of authority
+      why_admissible: official sources explicitly show continuous product and service-standard improvement within the current network
+      decision_status: not_evaluated_no_internal_problem_or_metrics
+    - id: ALT-CPLUS-02
+      name: increase_digital_self_service_with_regional_service_retained
+      evidence_class: analyst_inference_candidate
+      description: increase online/mobile/self-service access while retaining RIC sales/service and regional-content responsibilities
+      why_admissible: official sources establish remote internet access, mobile access, online functions and continuing RIC service
+      decision_status: not_evaluated_no_demand_cost_or_service_quality_evidence
+    - id: ALT-CPLUS-03
+      name: strengthen_central_regional_quality_and_information_flow_standardization
+      evidence_class: analyst_inference_candidate
+      description: treat consistency of product/content/service flows between Coordination Center and RICs as the principal improvement object
+      why_admissible: official structure assigns network management and service-quality standard improvement centrally while service/content work is distributed
+      decision_status: hypothesis_only_no_nonconformance_or_variance_data
+    - id: ALT-CPLUS-04
+      name: segment_specific_product_and_service_evolution
+      evidence_class: analyst_inference_candidate
+      description: evolve product/service packages by professional user segment while preserving common legal-information platform capabilities
+      why_admissible: official product and purchase pages distinguish specialist groups and individualized product package parameters
+      decision_status: not_evaluated_no_segment_economics_or_outcome_metrics
+  comparison_dimensions_for_future_analysis:
+    - mission contribution to broad distribution of legal information
+    - user accessibility and workflow fit by user class
+    - quality/currentness and legal-information traceability
+    - service consistency across RIC network
+    - cost and economic effect
+    - feasibility and impact on central/RIC responsibilities
+    - risk and transition burden
+  exclusions:
+    - no recommendation to replace the current network architecture
+    - no AI-specific solution class is promoted without a separately evidenced problem/need and requirements process
+    - no internal organizational, contractual or technical architecture is assumed beyond published material
+summary: >-
+  Four analyst-generated classes are retained for future comparison. None is selected. ALT-CPLUS-01 is closest to the published current operating model;
+  ALT-CPLUS-02..04 are bounded hypotheses derived from observed delivery/service/product characteristics and require internal evidence before evaluation.
+glossary:
+  alternative_solution_class: broad class of possible response considered before selecting a specific solution
+  sourced_current_state_not_candidate_change: source-supported existing model included as comparison baseline
+  analyst_inference_candidate: candidate produced by analysis rather than explicitly stated by source
+change_history: [{version: V1, date: '2026-09-04', change: initial source-bounded alternative classes}]
+owner_product_request:
+  exact_visible_text: |-
+    подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА
+    https://github.com/MOZ1961/consultantplus
+  request_specific_requirements:
+    - populate BMA alternatives only to the extent defensible from open sources
+    - do not turn inferred alternatives into accepted client strategy
+    - keep the product client-owned in MOZ1961/consultantplus
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_alternative_solution_classes
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_resolution]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: [accepted_problem_or_opportunity, comparison_data_and_decision_criteria]
+    state: partial_product_not_complete
+verification:
+  structural_status: declared_generic_description_coverage_pending_client_structural_worker
+  semantic_status: source_vs_inference_marking_pending_client_TECH_VER
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/alternative-solution-classes/ART-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity:
+    resolved_name_or_semantic_identity: alternative solution classes
+    resolution_basis: TECH-BMA canonical output with generic-only normative description profile
+    state: resolved
+  source_mapping:
+    source_id: TECH-BMA|alternative solution classes
+    process_mapping_status: generic_only_normative
+    source_refs: [ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, ГОСТ Р 58609-2019 §7.2]
+  universal_type: description
+  universal_content:
+    source_section: '7.2'
+    state: pass_declared_pending_worker
+    requirement_coverage:
+      - {requirement_id: U7.2-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.2-B, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.2-C, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.2-D, state: satisfied, artifact_field_refs: [context]}
+      - {requirement_id: U7.2-E, state: satisfied, artifact_field_refs: [identifier]}
+      - {requirement_id: U7.2-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.2-G, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.2-H, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.2-I, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    relation: generic_only_normative
+    specific_profiles: []
+    explicit_crosswalk: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
