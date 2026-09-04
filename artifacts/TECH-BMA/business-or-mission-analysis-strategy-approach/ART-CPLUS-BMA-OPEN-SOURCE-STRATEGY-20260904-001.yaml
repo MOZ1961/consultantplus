@@ -1,14 +1,16 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-BMA-OPEN-SOURCE-STRATEGY-20260904-001
-artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-STRATEGY-20260904-001-V1
+artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-STRATEGY-20260904-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-STRATEGY-20260904-001-V1
 artifact_label: business or mission analysis strategy/approach
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_executed_for_current_run
 acceptance_status: execution_approach_used_owner_acceptance_separate
 artifact_instance_purpose: >-
-  Зафиксировать примененный подход к открытому анализу бизнеса/миссии Сети КонсультантПлюс: источник фактов,
-  правила отделения фактов от аналитических выводов и условия, при которых анализ должен остановиться до получения внутренних данных.
+  Зафиксировать примененный план открытого анализа бизнеса/миссии Сети КонсультантПлюс: источники фактов,
+  правила отделения фактов от аналитических выводов, ресурсы, риски, контроль качества и условия остановки
+  до получения внутренних данных.
 producer:
   process_type_id: TECH-BMA
   process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
@@ -23,59 +25,104 @@ request_operation_ref:
   process_type_id: TECH-OP
   process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001
   required_output_label: operation report
-interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2
+  binding_instance_id: BIND-CPLUS-SE-001
 issued_at_and_status: {issued_at: '2026-09-05', status: executed_for_current_run}
-scope: public-source BMA only; internal corporate evidence acquisition is outside the current run
+scope: public-source BMA only; acquisition of internal corporate evidence is outside this run
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 approving_authority: owner
-relations:
-  problem_or_opportunity_output: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2
-  alternative_classes_output: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
-  life_cycle_concepts_output: ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1
-  traceability_output: ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V1
-  report_output: ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V1
 references:
   - ARTVER-SE-PROCESS-CATALOG-ORGANIZATION-PROCESSES-20260904-001-V1
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  - ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-objectives_scope_applicability:
-  objectives:
-    - connect the client engineering contour before client product persistence
-    - establish only source-supported BMA state available from official public sources
-    - preserve explicit unknowns instead of filling them by model inference
-  applicability: current owner request and public ConsultantPlus operating/product evidence
-  excluded: internal financials, nonpublic governance/contracts, detailed architecture, acceptance of change, deployment or baseline
-selected_approach_methods_decision_rules:
-  source_priority: current official consultant.ru pages; other sources may supplement only if provenance and authority are explicit
-  statement_classes: [source_supported_fact, analyst_inference_candidate, unresolved_internal_information]
-  decision_rules:
-    - do not promote official self-characterization such as market leadership into independent market fact
-    - do not infer a business problem from ordinary product evolution or existence of a distributed network
-    - do not select an alternative without owner-backed objectives, comparison criteria, internal evidence and decision authority
-    - do not derive accepted stakeholder/system requirements until the need/problem/opportunity is sufficiently established
-    - preserve exact source URL/retrieval date and exact target ArtifactVersion traceability
-roles_resources_enabling_conditions:
-  owner: acceptance and business-decision authority
+  - https://www.consultant.ru/about/company/structure/
+  - https://www.consultant.ru/about/company/structure/ric/
+  - https://www.consultant.ru/about/
+  - https://www.consultant.ru/about/purchase/
+  - https://www.consultant.ru/about/company/history/system/
+introduction:
+  purpose: establish only source-supported public BMA state and preserve explicit unknowns
+  audience: owner and subsequent TECH-BMA/TECH-STK participants
+  coverage: mission, public operating model, product/service/access characteristics, alternative classes and evidence gaps
+planned_activities_and_tasks:
+  - resolve exact client binding and authority boundary before client persistence
+  - review official ConsultantPlus public sources and register source-supported facts
+  - classify propositions as source_supported_fact, analyst_inference_candidate or unresolved_internal_information
+  - produce canonical TECH-BMA outputs for problem/opportunity, alternatives, life-cycle concepts, traceability and analysis report
+  - perform separate TECH-VER source/inference review
+  - stop before accepted problem, alternative selection or stakeholder requirements when internal evidence is absent
+tools_methods_techniques:
+  methods: [official-source review, evidence classification, exact ArtifactVersion traceability, normative-first product composition]
+  enablers: [ChatGPT engineering actor, GitHub repository runtime, public web retrieval, SE structural workers]
+schedule:
+  execution_window: '2026-09-04..2026-09-05'
+  sequencing: binding -> public evidence review -> TECH-BMA products -> semantic TECH-VER -> structural verification
+budget_and_cost_estimate:
+  state: no_separate_client_budget_authorized_or_claimed_for_this_engineering_run
+  limitation: internal ConsultantPlus costs/economics are outside the available evidence
+resources_and_allocation:
+  owner: decision and acceptance authority
   engineering_actor: source review, classification, product construction and gap registration
-  generic_SE_environment: provides interface, canonical process/output contracts, normative composition controls and workers
-  client_repository: MOZ1961/consultantplus is client authority surface
-criteria_measures_tailoring_change_control:
-  quality_criteria: [official-source traceability, fact/inference separation, canonical ProcessType/O ownership, explicit unresolved fields]
-  readiness_criteria: internal evidence required for problem acceptance, alternative selection and requirements derivation
-  tailoring: no market-wide independent benchmarking was requested; public official-source evidence is sufficient only for current-state context
-  change_control: material new internal evidence or generic interface change requires new exact ArtifactVersion and, where applicable, TM-CM rebind
-error_and_problem_resolution:
-  - missing public evidence -> record unresolved_not_publicly_supported rather than guess
-  - conflicting sources -> preserve both with provenance and defer reconciliation to TECH-VER/owner evidence
-  - inferred change idea -> classify as analyst_inference_candidate and prohibit selection
-  - client/generic ownership ambiguity -> client lifecycle product remains in MOZ1961/consultantplus; generic contract remains in MOZ1961/se
+  generic_SE_environment: interface, canonical process/output contracts and verification enablers
+  client_repository: process-owned persistence surface
+responsibilities_and_authorities:
+  owner: acceptance of business conclusions and later change decisions
+  TECH_BMA_actor: analysis and explicit evidence-gap registration
+  TECH_VER_actor: source-to-claim semantic verification
+  TM_CM_client_authority: exact interface binding and client configuration state
+participant_interfaces:
+  generic_to_client: exact interface/control ArtifactVersions and executable verification enablers
+  client_to_generic: exact client ArtifactVersion locators and verification evidence only; no authority transfer
+risk_assessment_and_mitigation:
+  - risk: marketing/current-state text is mistaken for an internal problem statement
+    mitigation: require explicit problem evidence and keep problem status unresolved
+  - risk: analyst hypotheses are mistaken for official strategy
+    mitigation: mark alternative classes as analyst_inference_candidate and prohibit selection
+  - risk: mutable web sources weaken historical reproducibility
+    mitigation: retain URL/retrieval date now; register snapshot/hash persistence as unresolved improvement
+quality_and_effectiveness_measures:
+  criteria: [official-source traceability, fact/inference separation, canonical ProcessType/O ownership, exact binding, explicit unresolved state]
+  effectiveness_rule: analysis is sufficient only for decisions actually supported by the evidence class
+environment_infrastructure_security:
+  environment: ChatGPT engineering runtime plus GitHub client/generic repositories and public consultant.ru sources
+  infrastructure: generic SE interface/workers and client process-owned artifact tree
+  security_privacy: no personal data, secrets or production dumps are required or persisted
+training:
+  required_for_current_run: none beyond available SE execution procedure and BMA methodic
+  future_need: internal participants may require orientation to evidence classes and lifecycle product/decision boundaries before supplying internal evidence
+technical_management_review_reporting:
+  review: separate client TECH-VER for semantic source/inference boundary plus generic external structural worker
+  reporting: client business or mission analysis report plus generic request-level TECH-OP operation report
+related_plans_and_task_descriptions:
+  binding_methodic: METHVER-CLIENT-SYSTEM-CONFIGURATION-REBIND-V1
+  bma_methodic: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1
+  related_outputs:
+    - ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2
+    - ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
+    - ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1
+    - ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V1
+    - ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V1
+change_procedure_and_history:
+  procedure: any material source-policy, scope, method, binding or decision-rule change requires a new ArtifactVersion; generic interface changes require TM-CM rebind as applicable
+  history: V2 completes the active §7.3 plan composition without changing the executed evidence boundary
+completion_process:
+  completion_conditions:
+    - public-source products are persisted under the client binding
+    - source-supported fact versus inference boundary is semantically checked
+    - structural verifier reaches an exact-head result
+  noncompletion_of_subject_decision: lack of internal problem/economic/KPI evidence blocks later business decisions but does not make this executed plan structurally incomplete
 glossary:
-  source_supported_fact: statement directly supportable by identified official source
+  source_supported_fact: statement directly supportable by an identified official source
   analyst_inference_candidate: bounded analytic proposition requiring later evidence/decision
-  readiness_criterion: condition for making a later decision; not a claim that the condition is currently met
+  unresolved_internal_information: required subject information not established by reviewed public sources
+  decision_ready: sufficient evidence and authority for a stated business decision
 change_history:
-  - {version: V1, date: '2026-09-05', change: record the open-source BMA approach executed for the current client connection run}
+  - {version: V1, date: '2026-09-05', change: record open-source BMA approach used in current run}
+  - {version: V2, date: '2026-09-05', change: complete mandatory generic plan composition and separate subject gaps from product completeness}
 owner_product_request:
   exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
   request_specific_requirements:
@@ -84,43 +131,58 @@ owner_product_request:
     - keep client lifecycle products in the client authority repository
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_BMA_strategy_approach
+  applicability: applies_materially_changed_client_TECH_BMA_strategy_approach
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, objectives_scope_applicability, selected_approach_methods_decision_rules]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, planned_activities_and_tasks]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_resolution]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
     - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, relations]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, interface_binding_ref]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate:
-    mandatory_missing: []
-    mandatory_failed: []
-    mandatory_unresolved: []
-    state: pass_declared_product_content_pending_worker
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_worker}
 verification:
-  structural_status: composition_declared_pending_exact_client_worker
-  semantic_status: execution approach matches actual current run; independent TECH-VER pending
+  structural_status: generic_plan_composition_complete_pending_exact_external_client_worker
+  semantic_status: execution approach reflects actual public-source run; independent TECH-VER handles source-to-claim semantics
   owner_acceptance: separate_not_inferred
 artifact_addresses:
   self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-strategy-approach/ART-CPLUS-BMA-OPEN-SOURCE-STRATEGY-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
 information_product_applicability: applies
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity:
-    resolved_name_or_semantic_identity: business or mission analysis strategy/approach
-    resolution_basis: canonical TECH-BMA output through strategy/approach fallback
-    state: resolved
+  information_item_identity: {resolved_name_or_semantic_identity: business or mission analysis strategy/approach, resolution_basis: TECH-BMA strategy/approach fallback F01, state: resolved}
   universal_type: plan
   universal_content:
     source_section: '7.3'
-    state: composition_declared_pending_worker
-    requirement_coverage: []
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [participant_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_review_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history, change_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [completion_process]}
   normative_resolution:
     catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
     crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
@@ -130,12 +192,12 @@ content_compliance:
     specific_profiles: []
     specific_records: []
     local_additive_profile: null
-  normative_specific_content: {state: not_applicable, basis: exact crosswalk selects generic-only normative plan, profile_coverage: []}
-  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile}
-  tailoring: public-source-only strategy tailored to current owner request; no internal evidence acquisition executed
+  normative_specific_content: {state: not_applicable, basis: active crosswalk selects no §9.2/§10 specific profile for TECH-BMA strategy/approach, profile_coverage: []}
+  local_additive_content: {state: not_applicable, basis: active crosswalk selects no local additive profile for TECH-BMA strategy/approach}
+  tailoring: public-source-only plan tailored to current owner request; internal evidence acquisition is a later BMA continuation, not fabricated into this run
   information_item_management:
-    version_control: exact V1 for current run
+    version_control: exact V2 supersedes V1
     review_approval: used in execution; owner acceptance separate
-    quality_evaluation: source/inference separation and product traceability reviewed; worker pending
+    quality_evaluation: exact external-client structural worker plus separate semantic TECH-VER
     retention: client process-owned product in MOZ1961/consultantplus
-    reuse_and_duplication: may inform future BMA runs but must be versioned when scope/source policy changes
+    reuse_and_duplication: may inform future BMA runs but requires a new version when scope/source policy changes
