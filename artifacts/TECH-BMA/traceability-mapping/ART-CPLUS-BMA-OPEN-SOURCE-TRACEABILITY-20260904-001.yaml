@@ -1,0 +1,186 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V1
+artifact_label: traceability mapping
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_partial_open_source
+acceptance_status: evidence_trace_candidate_not_baselined
+artifact_instance_purpose: >-
+  Сохранить явную трассируемость между использованными официальными веб-источниками, утверждениями открытого BMA
+  и точными клиентскими ArtifactVersion, включая ограничения версионности внешних веб-страниц.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-MAINTAIN-SOURCE-TRACEABILITY-20260904-001
+  methodic_instance:
+    methodic_id: METH-TECH-BMA-OPEN-SOURCE-EVIDENCE-ANALYSIS
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001
+  required_output_label: operation report
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: partial_open_source_candidate}
+scope: open-source evidence used by current ConsultantPlus TECH-BMA instance
+subject_or_category: source-to-claim-to-product traceability
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2
+  - ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
+  - ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1
+body:
+  endpoint_identity_scheme:
+    source_endpoint: official URL + authority + retrieval date; external page exact content hash is not persisted in V1
+    target_endpoint: exact ArtifactVersion + semantic field/claim identifier
+    relation_direction: source_supports_or_analysis_derives_target
+  source_endpoints:
+    - {id: SRC-CPLUS-STRUCTURE, url: 'https://www.consultant.ru/about/company/structure/', authority: official_ConsultantPlus_site, retrieved: '2026-09-05', external_exact_version: unavailable_web_page_not_content_addressed}
+    - {id: SRC-CPLUS-RIC, url: 'https://www.consultant.ru/about/company/structure/ric/', authority: official_ConsultantPlus_site, retrieved: '2026-09-05', external_exact_version: unavailable_web_page_not_content_addressed}
+    - {id: SRC-CPLUS-ABOUT, url: 'https://www.consultant.ru/about/', authority: official_ConsultantPlus_site, retrieved: '2026-09-05', external_exact_version: unavailable_web_page_not_content_addressed}
+    - {id: SRC-CPLUS-PURCHASE, url: 'https://www.consultant.ru/about/purchase/', authority: official_ConsultantPlus_site, retrieved: '2026-09-05', external_exact_version: unavailable_web_page_not_content_addressed}
+    - {id: SRC-CPLUS-HISTORY, url: 'https://www.consultant.ru/about/company/history/system/', authority: official_ConsultantPlus_site, retrieved: '2026-09-05', external_exact_version: unavailable_web_page_not_content_addressed}
+  target_endpoints:
+    - {id: TGT-PROBLEM, artifact_version_id: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2, path: artifacts/TECH-BMA/problem-or-opportunity-statement/ART-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001.yaml}
+    - {id: TGT-ALTS, artifact_version_id: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2, path: artifacts/TECH-BMA/alternative-solution-classes/ART-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001.yaml}
+    - {id: TGT-CONCEPT, artifact_version_id: ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1, path: artifacts/TECH-BMA/life-cycle-concepts/ART-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001.yaml}
+  relations:
+    - id: TR-CPLUS-001
+      source: SRC-CPLUS-STRUCTURE
+      target: TGT-PROBLEM
+      target_fields: [context_and_assumptions.official_mission, body.evaluated_need_or_opportunity.sourced_current_situation]
+      relation_type: directly_supports
+      semantics: mission, central/RIC responsibilities, service network and user classes
+      status: active_source_trace
+      rationale: source explicitly states these public operating-model facts
+      impact_relevance: changes to source wording require re-check of mission/roles assertions
+    - id: TR-CPLUS-002
+      source: SRC-CPLUS-ABOUT
+      target: TGT-PROBLEM
+      target_fields: [body.proposed_system_and_intended_use, body.evaluated_need_or_opportunity.sourced_current_situation]
+      relation_type: directly_supports
+      semantics: developer/product content, delivery variants, individualized rights/cost basis
+      status: active_source_trace
+      rationale: source explicitly describes product and delivery forms
+      impact_relevance: changes can affect system boundary and delivery constraints
+    - id: TR-CPLUS-003
+      source: SRC-CPLUS-PURCHASE
+      target: TGT-PROBLEM
+      target_fields: [body.evaluated_need_or_opportunity.sourced_current_situation, body.technical_strategic_economic_market_basis]
+      relation_type: directly_supports
+      semantics: several automatic updates per day, mobile/online access, package/user pricing parameters
+      status: active_source_trace
+      rationale: current purchase page describes these product characteristics
+      impact_relevance: changes affect current-state operational characteristics
+    - id: TR-CPLUS-004
+      source: SRC-CPLUS-HISTORY
+      target: TGT-PROBLEM
+      target_fields: [body.evaluated_need_or_opportunity.sourced_current_situation, body.improvements_deficiencies_constraints_alternatives.confirmed_improvement_activity]
+      relation_type: directly_supports
+      semantics: ongoing product evolution and 2026 AI/digital features
+      status: active_source_trace
+      rationale: official product history records releases/features
+      impact_relevance: supports only evolution/current capability, not preferred future strategy
+    - id: TR-CPLUS-005
+      source: [SRC-CPLUS-STRUCTURE, SRC-CPLUS-ABOUT, SRC-CPLUS-PURCHASE, SRC-CPLUS-HISTORY]
+      target: TGT-ALTS
+      target_fields: [body.current_solution_class, body.candidate_classes]
+      relation_type: bounded_analytical_derivation
+      semantics: sources establish current characteristics; candidate classes are analyst-created hypotheses, not source assertions
+      status: active_inference_trace
+      rationale: each candidate records supporting observation and explicit non-selection status
+      impact_relevance: internal objectives/metrics may invalidate or reprioritize candidates
+    - id: TR-CPLUS-006
+      source: [SRC-CPLUS-STRUCTURE, SRC-CPLUS-RIC, SRC-CPLUS-ABOUT, SRC-CPLUS-PURCHASE, SRC-CPLUS-HISTORY]
+      target: TGT-CONCEPT
+      target_fields: [body.operation_from_user_perspective, body.interfaces_and_impacts, body.cost_criticality_feasibility, body.scenarios_and_context_of_use, body.current_future_comparison]
+      relation_type: directly_supports_current_state_plus_explicit_gap_analysis
+      semantics: current operation/use is source-backed; future state and internal interfaces remain unresolved
+      status: active_source_trace
+      rationale: exact future target is not inferred from current public evidence
+      impact_relevance: source or internal-evidence changes require concept revision
+  limitations:
+    - external web sources are referenced by URL/retrieval date rather than content-addressed immutable snapshots
+    - direct public evidence does not establish internal targets, KPIs, economics, service-quality variance or future architecture
+    - semantic verification is separate from structural field coverage
+record_identifier: ART-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001
+change_history:
+  - {version: V1, date: '2026-09-05', change: establish source-to-product traceability for the open-source BMA set}
+owner_product_request:
+  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
+  request_specific_requirements:
+    - make open-source provenance explicit
+    - distinguish direct evidence from analytical derivation
+    - preserve client ownership and exact target ArtifactVersion identities
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_traceability_mapping
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.relations]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.local_additive_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [body.source_endpoints, body.relations]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: [immutable_external_source_snapshots]
+    state: partial_product_not_complete
+verification:
+  structural_status: composition_declared_pending_exact_client_worker
+  semantic_status: trace relations manually reviewed; independent client TECH-VER pending
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/traceability-mapping/ART-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity:
+    resolved_name_or_semantic_identity: traceability mapping
+    resolution_basis: TECH-BMA canonical output + generic record + local additive traceability profile
+    state: resolved
+  source_mapping:
+    source_id: TECH-BMA|traceability mapping
+    process_mapping_status: generic_only_normative_plus_local_additive
+    source_refs: [ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, ARTVER-SE-INFORMATION-PRODUCT-DERIVED-CONTENT-PROFILES-20260903-001-V3]
+  universal_type: record
+  universal_content:
+    source_section: '9.1'
+    state: composition_declared_pending_worker
+    requirement_coverage:
+      - {requirement_id: U9.1-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U9.1-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U9.1-C, state: satisfied, artifact_field_refs: [subject_or_category]}
+      - {requirement_id: U9.1-D, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U9.1-E, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U9.1-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U9.1-G, state: satisfied, artifact_field_refs: [record_identifier]}
+  normative_resolution:
+    relation: generic_only_normative
+    generic_type: record
+    specific_profiles: []
+    explicit_crosswalk: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  local_additive_content:
+    profile_id: traceability
+    contract_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-DERIVED-CONTENT-PROFILES-20260903-001-V3
+    state: composition_declared_pending_worker
+    requirement_coverage:
+      - {requirement_id: DER-BASE-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label]}
+      - {requirement_id: DER-BASE-002, state: satisfied, artifact_field_refs: [artifact_instance_purpose, scope]}
+      - {requirement_id: DER-BASE-003, state: satisfied, artifact_field_refs: [body.relations]}
+      - {requirement_id: DER-BASE-004, state: satisfied, artifact_field_refs: [body.source_endpoints, body.relations]}
+      - {requirement_id: DER-BASE-005, state: satisfied, artifact_field_refs: [artifact_version_id, verification]}
+      - {requirement_id: DER-BASE-006, state: satisfied, artifact_field_refs: [request_operation_ref, owner_product_request, references]}
+      - {requirement_id: DER-TR-001, state: satisfied, artifact_field_refs: [body.source_endpoints, body.target_endpoints]}
+      - {requirement_id: DER-TR-002, state: satisfied, artifact_field_refs: [body.relations]}
+      - {requirement_id: DER-TR-003, state: partial, artifact_field_refs: [body.source_endpoints, body.target_endpoints], note: external pages are not content-addressed snapshots}
+      - {requirement_id: DER-TR-004, state: satisfied, artifact_field_refs: [body.relations, body.limitations]}
