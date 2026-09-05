@@ -1,0 +1,168 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+artifact_label: supply records/artifacts
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_draft_not_sent
+acceptance_status: external_transmission_requires_owner_approval
+artifact_instance_purpose: >-
+  Сохранить управляемую запись предполагаемой передачи РИЦ точной версии продукта «Предложение» и
+  человекочитаемое сопроводительное письмо. Письмо не является отдельным придуманным §10-продуктом:
+  это представление записи AGR-SUP → supply records/artifacts. Внутренний TM-PLAN → SEMP в состав
+  внешней передачи не включается.
+producer:
+  process_type_id: AGR-SUP
+  process_instance_id: PI-CPLUS-AGR-SUP-RIC-EXPRESS-EPISODE-TRANSMITTAL-20260906-001
+  activity_instance_id: AI-CPLUS-AGR-SUP-PREPARE-RIC-TRANSMITTAL-20260906-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-AGR-SUP-INFORMATION-ITEM-TRANSMITTAL
+    methodic_version_id: METHVER-CPLUS-AGR-SUP-INFORMATION-ITEM-TRANSMITTAL-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-DELIVERY-PACKAGE-20260906-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+date_and_status: {date: '2026-09-06', status: draft_not_sent}
+scope: prospective external transmittal of one exact RIC pilot Proposal; no actual sending in this execution
+subject_or_category: proposal transmittal and cover-letter record
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+body:
+  information_status_and_version_description:
+    transmitted_information_item: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+    title_ru: Предложение по пилотной поставке «Экспресс-разбор сервисного эпизода РИЦ»
+    status: candidate_draft_not_yet_authorized_for_external_issue
+    canonical_product: AGR-SUP → supply response
+    exclusions_from_external_package:
+      - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+      - any internal process controls, work instructions or verification internals not explicitly included in the Proposal
+  distribution_record_and_security_classification:
+    intended_recipient_category: руководитель или уполномоченный сотрудник РИЦ КонсультантПлюс
+    actual_recipient: not_established
+    channel: not_established
+    actual_sent_at: not_sent
+    distribution_status: prepared_pending_owner_approval
+    security_classification: recipient_review_no_confidential_client_data_included
+    rule: do not send externally until owner explicitly authorizes issue and actual recipient/channel are recorded
+  requested_next_action:
+    - ознакомиться с Предложением
+    - при заинтересованности выбрать одного сотрудника РИЦ и один недавний обезличенный сервисный эпизод
+    - согласовать дату 45–60-минутной пилотной сессии
+  human_readable_cover_letter: |-
+    Уважаемые коллеги!
+
+    Направляем на рассмотрение предложение о проведении пилотного «Экспресс-разбора сервисного эпизода РИЦ».
+
+    Цель пилота — на одном реальном обезличенном случае проверить, как можно описать рабочую задачу клиента целиком: что требовалось решить, какую роль сыграл КонсультантПлюс, что дополнительно сделал РИЦ и где осталась неопределенность, задержка или иной разрыв.
+
+    Для пилота со стороны РИЦ достаточно одного сотрудника, участвовавшего в недавнем клиентском случае, одного обезличенного эпизода и 45–60 минут на рабочую сессию. Выгрузки CRM, персональные данные клиентов, конфиденциальная переписка и коммерческие условия для начала не требуются.
+
+    В приложенном Предложении приведены ожидаемый результат, состав работ, требуемое участие РИЦ, сроки, стоимость пилота, ограничения и порядок завершения.
+
+    Если подход представляет интерес, предлагаем выбрать участника и эпизод и согласовать удобное время пилотной сессии.
+
+    С уважением,
+    уполномоченный представитель поставщика
+    [ФИО и контакт указываются при внешней выдаче]
+record_identifier: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+owner_product_request:
+  exact_visible_text: 'измени назначение соответственно и выполняй'
+  request_specific_requirements:
+    - сопроводительное письмо должно входить в внешний комплект для РИЦ
+    - письмо должно быть управляемым представлением существующего канонического продукта, а не новым придуманным информационным продуктом
+    - внешним приложением является Предложение; внутренний План управления проектом не передается
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_AGR_SUP_supply_record
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.human_readable_cover_letter, body.information_status_and_version_description]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, body.distribution_record_and_security_classification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.information_status_and_version_description]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, body.information_status_and_version_description.transmitted_information_item]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
+verification:
+  structural_status: composed_pending_exact_head_external_client_worker
+  semantic_status: candidate_subject_verification_pending_package_TECH_VER
+  owner_acceptance: preparation_authorized_external_transmission_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/AGR-SUP/supply-records-artifacts/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.1.2', process_name: 'Supply process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.1.2', process_name: 'Процесс поставки'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: supply records/artifacts
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '9.1', specific_status: present, specific_items: ['R9-INFORMATION-ITEM']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '9.1', specific_status: present, specific_items: ['R9-INFORMATION-ITEM']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U9.1-A, disposition: satisfied, artifact_field_refs: [date_and_status], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-C, disposition: satisfied, artifact_field_refs: [subject_or_category], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-D, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-E, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-G, disposition: satisfied, artifact_field_refs: [record_identifier], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: R9-INF-01, disposition: satisfied, artifact_field_refs: [body.information_status_and_version_description], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+        - {requirement_id: R9-INF-02, disposition: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: information-item storage/transmittal record, resolution_basis: AGR-SUP supply records/artifacts section-9 record semantically specialized as R9-INFORMATION-ITEM, state: resolved}
+  universal_type: record
+  universal_content:
+    source_section: '9.1'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U9.1-A, state: satisfied, artifact_field_refs: [date_and_status]}
+      - {requirement_id: U9.1-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U9.1-C, state: satisfied, artifact_field_refs: [subject_or_category]}
+      - {requirement_id: U9.1-D, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U9.1-E, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U9.1-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U9.1-G, state: satisfied, artifact_field_refs: [record_identifier]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: F02
+    relation: controlled_semantic_match
+    generic_type: record
+    specific_profiles: []
+    specific_records: [R9-INFORMATION-ITEM]
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: R9-INFORMATION-ITEM
+        kind: section9_record
+        requirement_coverage:
+          - {requirement_id: R9-INF-01, state: satisfied, artifact_field_refs: [body.information_status_and_version_description]}
+          - {requirement_id: R9-INF-02, state: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected for AGR-SUP transmittal record}
+  tailoring: cover-letter text is a human-readable view of the supply transmittal record; internal SEMP is explicitly excluded from distribution
+  information_item_management:
+    version_control: V1 first candidate
+    review_approval: owner approval required before recipient and channel become actual distribution data
+    quality_evaluation: subject TECH-VER plus exact-head structural worker
+    retention: canonical client AGR-SUP supply record
+    reuse_and_duplication: sent email/document, if later produced, must reference this exact record/version or successor
