@@ -1,0 +1,195 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001
+artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1
+artifact_label: business or mission analysis report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate
+acceptance_status: candidate_mapping_pending_TECH_VER_and_owner_acceptance
+artifact_instance_purpose: >-
+  Согласовать все ранее предложенные для участников D01-D10, S01-S08 и E0-E4 с существующими
+  каноническими процессными выходами и нормативными профилями ГОСТ Р 58609; устранить впечатление,
+  что описательные названия карт, паспортов, пакетов, библиотек, услуг или пакетов взаимодействия
+  являются самостоятельными информационными продуктами.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-ALIGN-PROPOSALS-TO-CANONICAL-PRODUCTS-20260905-001
+  methodic_instance: {methodic_id: METH-CPLUS-TECH-BMA-PROPOSAL-PRODUCT-ALIGNMENT, methodic_version_id: METHVER-CPLUS-TECH-BMA-PROPOSAL-PRODUCT-ALIGNMENT-V1, methodic_version: '1', status: provisional_runtime_not_adopted}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-PROPOSAL-PRODUCT-RESOLUTION-20260905-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate}
+scope: current ConsultantPlus participant-offer proposal set D01-D10, S01-S08 and E0-E4
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+references: [ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1, ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1, ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3]
+summary: >-
+  Для текущего набора предложений новых canonical O не требуется. D01-D10 являются представлениями/разделами существующих канонических продуктов; S01-S08 являются видами деятельности/услугами, для которых определены исполняющие процессы и стандартные долговременные выходы; E0-E4 являются областями исполнения/пакетами взаимодействия, а не информационными продуктами. Если будущий предлагаемый результат нельзя будет разместить таким образом без потери самостоятельной семантики, он должен идти отдельным предложением на добавление canonical O.
+introduction:
+  evaluated_object: current participant offer vocabulary D01-D10, S01-S08 and E0-E4
+  purpose: eliminate orphan or pseudo-product labels and make every proposal trace to existing canonical process outputs
+  audience: owner, future participant-facing execution, RIC and Network reviewers
+  criteria: [every durable proposed result has an existing parent canonical O or explicit addition disposition, every service/activity identifies executing processes and durable outputs, every engagement package is execution scope rather than information product, descriptive view names never replace controlled Russian ГОСТ product nomenclature]
+context_and_assumptions:
+  prior_offer_artifact: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  terminology_correction: Field candidate_delivery_products in the prior report is historical wording; for current and future use D01-D10 are candidate participant-facing views/deliverables unless independently resolved to canonical O. Historical artifact is not rewritten retroactively.
+  addition_rule: ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1
+body:
+  proposal_resolution_policy:
+    product_identity_rule: only an existing ProcessType → canonical O may be presented as an existing information product
+    view_rule: descriptive delivery label maps to parent canonical information product
+    service_rule: service/activity maps to ProcessType execution and all expected canonical information products
+    package_rule: engagement package is execution scope over services/processes, never a ГОСТ product by itself
+    addition_rule: if no existing canonical O is semantically sufficient, emit explicit candidate addition and do not force-fit
+  view_mappings:
+    - {id: D01, descriptive_name_ru: Карта решений роли или подразделения, classification: view_of_existing_product, parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}], rationale: analysis content rather than distinct lifecycle product identity}
+    - {id: D02, descriptive_name_ru: Паспорт критичного сценария решения, classification: view_of_existing_product, parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}], rationale: current E0/S01 architecture stores D02 as TECH-BMA view}
+    - {id: D03, descriptive_name_ru: Карта покрытия сценария КонсультантПлюс и сервисом РИЦ, classification: view_of_existing_product, parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}], rationale: analytical finding}
+    - {id: D04, descriptive_name_ru: Карта разрывов задержек и обходных путей, classification: view_of_existing_product, parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}], rationale: analytical finding}
+    - id: D05
+      descriptive_name_ru: Матрица ролей передачи и контроля решений
+      classification: view_of_existing_product
+      parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}]
+      conditional_successor: {process_type_id: TECH-STK, canonical_O: stakeholder needs and requirements, condition: only when evidence is promoted through stakeholder-needs analysis}
+    - id: D06
+      descriptive_name_ru: Рекомендации по комплекту доступу сервису и обучению от сценариев
+      classification: view_of_existing_product
+      parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}]
+      conditional_successor: {process_type_id: TECH-STK, canonical_O: stakeholder needs and requirements, condition: when recommendations become evidence-backed stakeholder needs/requirements}
+    - {id: D07, descriptive_name_ru: Пакет доказательств клиентской ценности, classification: view_of_existing_product, parent_products: [{process_type_id: TM-MEAS, canonical_O: measurement report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.47'}], rationale: evidence synthesis belongs to measurement reporting}
+    - id: D08
+      descriptive_name_ru: Библиотека сценариев для демонстрации обучения и сопровождения
+      classification: view_of_existing_product
+      parent_products: [{process_type_id: TECH-BMA, canonical_O: life cycle concepts, owner_facing_gost_name: Описание, gost_basis: '§§7.2, 10.15'}]
+      conditional_successor: [{process_type_id: TECH-IMP, canonical_O: training materials, condition: when actual training materials are produced}, {process_type_id: OPE-HR, canonical_O: training documentation, condition: when organizational training documentation is produced}]
+    - id: D09
+      descriptive_name_ru: Пакет структурированной обратной связи РИЦ в Сеть
+      classification: view_of_existing_product
+      parent_products: [{process_type_id: TM-MEAS, canonical_O: measurement report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.47'}]
+      conditional_successor: {process_type_id: TM-PAC, canonical_O: change request, condition: only when a specific authorized change is actually requested}
+    - id: D10
+      descriptive_name_ru: Доказательный список приоритетов развития продукта и сервиса
+      classification: view_of_existing_product
+      parent_products: [{process_type_id: TECH-BMA, canonical_O: business or mission analysis report, owner_facing_gost_name: Отчет, gost_basis: '§§7.6, 10.27'}]
+      conditional_successor: {process_type_id: TM-DEC, canonical_O: decision register, condition: when a priority decision is actually made and recorded}
+  service_mappings:
+    - {id: S01, service_ru: Реконструкция реального эпизода решения, executing_processes: [TM-MEAS, TECH-BMA, TECH-VER, TECH-OP], durable_products: ['TM-MEAS → measurement register','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S02, service_ru: Диагностика решений роли или подразделения, executing_processes: [TM-MEAS, TECH-BMA, TECH-VER, TECH-OP], durable_products: ['TM-MEAS → measurement register','TM-MEAS → measurement report','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S03, service_ru: Диагностика покрытия КонсультантПлюс и сервисом РИЦ, executing_processes: [TM-MEAS, TECH-BMA, TECH-VER, TECH-OP], durable_products: ['TM-MEAS → measurement report','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S04, service_ru: Проектирование сценарного обучения и сопровождения, executing_processes: [TECH-BMA, TECH-IMP, OPE-HR, TECH-VER, TECH-OP], durable_products: ['TECH-BMA → life cycle concepts','TECH-IMP → training materials when produced','OPE-HR → training documentation when produced','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S05, service_ru: Проектирование организационного контура повторяемых решений, executing_processes: [TECH-BMA, TECH-STK, TECH-VER, TECH-OP], durable_products: ['TECH-BMA → business or mission analysis report','TECH-STK → stakeholder needs and requirements when warranted by evidence','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S06, service_ru: Измерение и сбор доказательств ценности, executing_processes: [TM-MEAS, TECH-VER, TECH-OP], durable_products: ['TM-MEAS → measurement register','TM-MEAS → measurement report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S07, service_ru: Синтез обратной связи для РИЦ и Сети, executing_processes: [TM-MEAS, TECH-BMA, TECH-VER, TECH-OP], durable_products: ['TM-MEAS → measurement report','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: S08, service_ru: Разбор ограничений доступа и эксплуатации, executing_processes: [TECH-BMA, TECH-STK, TECH-SYSREQ, TECH-VER, TECH-OP], durable_products: ['TECH-BMA → business or mission analysis report','TECH-STK → stakeholder needs and requirements when evidenced','TECH-SYSREQ → system requirements when allocated to the system','TECH-VER → verification report','TECH-OP → operation report']}
+  engagement_package_mappings:
+    - {id: E0, name_ru: Экспресс-сессия, classification: execution_scope_not_information_product, primary_services: [S01], produced_products: ['TM-MEAS → measurement register','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: E1, name_ru: Диагностика роли или функции, classification: execution_scope_not_information_product, primary_services: [S02, S03], produced_products: ['TM-MEAS → measurement register','TM-MEAS → measurement report','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: E2, name_ru: Организационная диагностика критичных решений, classification: execution_scope_not_information_product, primary_services: [S02, S03, S05], produced_products: ['TM-MEAS → measurement report','TECH-BMA → business or mission analysis report','TECH-STK → stakeholder needs and requirements when evidenced','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: E3, name_ru: Сценарная мастерская РИЦ, classification: execution_scope_not_information_product, primary_services: [S01, S04, S07], produced_products: ['TECH-BMA → life cycle concepts','TM-MEAS → measurement report','TECH-IMP → training materials when produced','TECH-VER → verification report','TECH-OP → operation report']}
+    - {id: E4, name_ru: Сетевой синтез сценариев и разрывов, classification: execution_scope_not_information_product, primary_services: [S06, S07], produced_products: ['TM-MEAS → measurement report','TECH-BMA → business or mission analysis report','TECH-VER → verification report','TECH-OP → operation report']}
+  addition_assessment:
+    current_additions_required: []
+    conclusion: no current D/S/E proposal requires a new canonical O because its durable semantics fit existing canonical outputs without pretending descriptive views/services/packages are products
+    trigger_for_future_addition: future proposed durable result has independent lifecycle semantics that cannot be represented as content/view of existing O without semantic loss
+    required_future_addition_fields: [responsible_ProcessType_candidate, candidate_canonical_O, why_existing_O_insufficient, proposed_GOST_generic_profile, applicable_specific_profile_or_absence, lifecycle_impact, owner_authority_state]
+  implications:
+    - D01-D10 must not appear after Информационный продукт as standalone product names
+    - when a D-view is delivered, response names parent controlled ГОСТ product and separate canonical output
+    - S01-S08 and E0-E4 may be proposed as services/execution scopes only together with executing processes and standard produced products
+    - future unresolvable proposals use explicit addition path
+conclusions_and_recommendations:
+  conclusion: current ConsultantPlus proposal set can be fully reconciled with existing 30 ProcessTypes and 249 canonical O; no output-catalog addition is justified now
+  recommendation: treat global proposal-product resolution procedure as mandatory pre-emission control and use this report as current CPLUS mapping evidence
+  unresolved: semantic adequacy requires TECH-VER; commercial adoption and participant usefulness remain separate
+bibliography: []
+glossary: {D_view: descriptive participant-facing rendering of canonical product content, service: activity/execution concept not information product identity, engagement_package: bounded execution scope grouping services/processes, parent_product: existing process-owned canonical O containing durable semantics behind a view, candidate_addition: proposed new canonical O not yet part of authoritative process catalog}
+change_history: [{version: V1, date: '2026-09-05', change: reconcile D01-D10 S01-S08 E0-E4 with existing canonical outputs and define no-addition conclusion}]
+owner_product_request:
+  exact_visible_text: 'все что предлагаешь либо согласуй с продуктами по ГОСТу либо предлагай на добавление, если это невозможно'
+  request_specific_requirements: [reconcile all current ConsultantPlus proposal labels with existing canonical outputs and ГОСТ composition, classify non-product services/packages as execution concepts with producing processes/products, use explicit addition only where existing outputs are semantically insufficient]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.addition_assessment, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.view_mappings, body.service_mappings]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_external_client_worker}
+verification: {structural_status: pending_external_client_information_product_worker, semantic_status: mapping_drafted_dedicated_TECH_VER_pending, owner_acceptance: direct_owner_rule_applies_mapping_acceptance_merge_separate}
+artifact_addresses: {self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001.yaml@change/consultantplus-20260905-proposal-product-alignment}
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: applicable, specific_items: ['10.27']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: applicable, specific_items: ['10.27']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.27-R01, disposition: satisfied, artifact_field_refs: [introduction.evaluated_object,introduction.criteria], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R02, disposition: satisfied, artifact_field_refs: [body.proposal_resolution_policy,references], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R03, disposition: satisfied, artifact_field_refs: [body.view_mappings,body.service_mappings,body.engagement_package_mappings], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R04, disposition: satisfied, artifact_field_refs: [context_and_assumptions.terminology_correction,body.addition_assessment], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R05, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: business or mission analysis report for proposal-product alignment, resolution_basis: TECH-BMA business or mission analysis report exact crosswalk binding to generic report plus §10.27, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: report, specific_profiles: ['10.27'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.27'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction.evaluated_object,introduction.criteria]}
+          - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.proposal_resolution_policy,references]}
+          - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.view_mappings,body.service_mappings,body.engagement_package_mappings]}
+          - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [context_and_assumptions.terminology_correction,body.addition_assessment]}
+          - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+  local_additive_content: {state: not_applicable, basis: no selected local additive profile}
+  information_item_management: {version_control: material mapping change requires new ArtifactVersion, review_approval: dedicated TECH-VER and owner acceptance separate, quality_evaluation: complete D/S/E coverage and semantic sufficiency of parent mappings, retention: canonical CPLUS TECH-BMA alignment evidence, reuse_and_duplication: future responses reference this exact version until superseded}
