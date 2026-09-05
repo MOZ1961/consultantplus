@@ -1,16 +1,18 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001
-artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
+artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
 artifact_label: information register
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_package_definition
-acceptance_status: package_model_defined_external_issue_and_RIC_acceptance_separate
+lifecycle_status: owner_directed_candidate_package_definition_subject_verified
+acceptance_status: package_model_defined_subject_verified_external_issue_and_RIC_acceptance_separate
 artifact_instance_purpose: >-
   Зафиксировать как process-owned информационный продукт состав пакета продуктов, который инженерная
   среда предлагает поставить РИЦ в пилоте E0/S01. Пакет является агрегированным представлением
-  нескольких канонических информационных продуктов; он не создает нового canonical O. Реестр разделяет
-  продукты ценности для РИЦ, оболочку предложения/передачи и внутренние продукты производства.
+  нескольких канонических информационных продуктов и не создает нового canonical O. Реестр разделяет
+  продукты ценности для РИЦ, преддоговорную/передаточную оболочку и внутренние продукты производства,
+  а также связывает точные версии Предложения, внутреннего Плана и предметной верификации пакетной модели.
 producer:
   process_type_id: TM-IM
   process_instance_id: PI-CPLUS-TM-IM-RIC-PRODUCT-PACKAGE-20260906-001
@@ -29,7 +31,7 @@ interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-date_and_status: {date: '2026-09-06', status: candidate_package_definition_not_delivered}
+date_and_status: {date: '2026-09-06', status: candidate_package_definition_subject_verified_not_delivered}
 scope: >-
   Один пилотный пакет продуктов для РИЦ по одному обезличенному сервисному эпизоду; определяет
   состав и видимость продуктов, но не означает фактическое создание результатов по реальному эпизоду,
@@ -37,16 +39,20 @@ scope: >-
 subject_or_category: RIC recipient product package composition
 issuing_organization: owner-authorized engineering environment
 references:
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
   - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
   - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
 body:
   information_status_and_version_description:
     package_id: RIC-PKG-E0-S01-001
     package_title_ru: Пилотный пакет продуктов «Диагностика клиентского случая РИЦ»
-    package_version: V1
-    package_state: defined_not_executed_not_delivered
+    package_version: V2
+    package_state: defined_subject_verified_not_executed_not_delivered
+    proposal_ref: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
+    internal_plan_ref: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
+    package_model_verification_ref: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
     aggregation_rule: >-
       Пакет не является новым информационным элементом или canonical O. Его состав сохраняется в
       TM-IM → information register как управляемая совокупность существующих канонических продуктов.
@@ -84,7 +90,7 @@ body:
         information_product_name_ru: Предложение
         canonical_output: AGR-SUP → supply response
         normative_basis: ГОСТ Р 58609-2019 §7.2 + §10.56
-        exact_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+        exact_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
         role: согласовать состав пакета, работы, участие РИЦ, срок, стоимость, риски и условия до исполнения
       - member_id: RIC-PKG-E0-S01-PRE-02
         information_product_name_ru: Запись
@@ -96,7 +102,7 @@ body:
       - information_product_name_ru: План
         canonical_output: TM-PLAN → SEMP
         normative_basis: ГОСТ Р 58609-2019 §7.3 + §10.55
-        exact_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+        exact_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
         reason_not_delivered: полный внутренний план и WBS нужны среде для производства пакета, а не РИЦ для использования результата
       - information_product_name_ru: Запись
         canonical_output: TM-MEAS → measurement register
@@ -108,6 +114,10 @@ body:
         normative_basis: ГОСТ Р 58609-2019 §7.6
         status: request_level_internal_product
         reason_not_delivered: фиксирует исполнение инженерной среды и контур, а не ценность для РИЦ
+      - information_product_name_ru: Отчет о верификации
+        canonical_output: TECH-VER → verification report
+        exact_artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
+        role: внутренняя проверка самой пакетной модели до реального пилота; не подменяет будущий recipient TECH-VER по реальному результату
     conditional_expansion_products:
       - condition: подтверждена повторяемость нескольких эпизодов и требуется количественный/агрегированный вывод
         information_product_name_ru: Отчет
@@ -115,7 +125,7 @@ body:
         disposition: separate_future_package_version_or_proposal
       - condition: подтверждена необходимость изменить повторяемый порядок работы РИЦ
         information_product_name_ru: Процедура
-        canonical_output: existing_process_owned_procedure_output_to_be_resolved_before_offer
+        canonical_output: unresolved_until_exact_existing_ProcessType_O_resolution
         disposition: resolve_exact_ProcessType_and_O_before_inclusion; no orphan product
       - condition: подтверждена необходимость обучения по повторяемым сценариям
         information_product_name_ru: Описание
@@ -132,10 +142,10 @@ body:
     distribution_status: package_definition_internal_not_delivered
     recipient_visible_by_default: [RIC-PKG-E0-S01-RESULT-01, RIC-PKG-E0-S01-RESULT-02]
     pre_delivery_visible: [RIC-PKG-E0-S01-PRE-01, RIC-PKG-E0-S01-PRE-02]
-    internal_only_by_default: [TM-PLAN → SEMP, TM-MEAS → measurement register, TECH-OP → operation report, full internal verification controls]
+    internal_only_by_default: [TM-PLAN → SEMP, TM-MEAS → measurement register, TECH-OP → operation report, package-model TECH-VER, full internal verification controls]
     security_classification: de_identified_minimum_information_only_for_pilot
     rule: внешний пакет не должен включать внутренние продукты только потому, что они участвовали в производстве
-record_identifier: ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
+record_identifier: ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V2
 owner_product_request:
   exact_visible_text: 'меняй и приступай'
   request_specific_requirements:
@@ -144,9 +154,10 @@ owner_product_request:
     - Предложение должно описывать состав пакета и структуру работ по его производству
     - полный внутренний План и WBS остаются внутри инженерной среды
     - РИЦ получает только продукты, имеющие для него самостоятельную ценность или подтверждающие качество результата
+    - пакетная модель должна иметь отдельную предметную верификацию до реального пилота
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TM_IM_information_register
+  applicability: applies_material_revision_client_TM_IM_information_register
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.information_status_and_version_description.package_state, body.distribution_record_and_security_classification]}
@@ -155,15 +166,15 @@ product_requirement_compliance:
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
     - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.information_status_and_version_description.recipient_value_package]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.information_status_and_version_description.recipient_value_package, body.information_status_and_version_description.package_model_verification_ref]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, body.information_status_and_version_description.aggregation_rule, body.information_status_and_version_description.physical_rendering_rule]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_structural_verification}
 verification:
-  structural_status: candidate_exact_head_worker_pending
-  semantic_status: package_composition_subject_verification_pending
+  structural_status: material_revision_exact_head_worker_pending
+  semantic_status: package_composition_subject_pass_via_ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
   owner_acceptance: purpose_change_and_package_design_authorized_external_issue_separate
 artifact_addresses:
   self: MOZ1961/consultantplus:artifacts/TM-IM/information-register/ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
@@ -217,4 +228,4 @@ content_compliance:
           - {requirement_id: R9-INF-02, state: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected for TM-IM information register}
   tailoring: package aggregation is a controlled information-register use; no lifecycle-process tailoring is introduced
-  information_item_management: {version_control: successor version required for material package-member or visibility change, review_approval: external package issue and RIC acceptance are separate, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: canonical client TM-IM product, reuse_and_duplication: external renderings must trace to exact package register and member ArtifactVersions}
+  information_item_management: {version_control: V2 successor to V1 after exact proposal/plan/verification binding, review_approval: external package issue and RIC acceptance are separate, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: canonical client TM-IM product, reuse_and_duplication: external renderings must trace to exact package register and member ArtifactVersions}
