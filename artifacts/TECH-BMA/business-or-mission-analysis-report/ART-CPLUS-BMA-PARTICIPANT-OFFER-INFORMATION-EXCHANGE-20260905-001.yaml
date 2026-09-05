@@ -1,0 +1,548 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001
+artifact_version_id: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+artifact_label: business or mission analysis report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_for_participant_engagement
+acceptance_status: candidate_offer_not_official_ConsultantPlus_or_RIC_commercial_offer
+artifact_instance_purpose: >-
+  Сформировать кандидатные предложения инженерной среды для участников модели клиентской ценности КонсультантПлюс:
+  какие результаты и услуги среда может вернуть каждому участнику, какую информацию имеет смысл получить от него,
+  какой минимальный обмен достаточен для старта и какие данные не следует запрашивать без отдельной необходимости.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-PARTICIPANT-OFFER-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-DESIGN-PARTICIPANT-OFFER-20260905-001
+  methodic_instance:
+    methodic_id: METH-TECH-BMA-PARTICIPANT-VALUE-EXCHANGE-DESIGN
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-PARTICIPANT-VALUE-EXCHANGE-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-PARTICIPANT-OFFER-20260905-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate_for_participant_engagement}
+scope: candidate participant-facing value exchange for SG-01..SG-07 under the ConsultantPlus C1-C6/P1-P2 decision model
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Предложение строится как взаимный обмен, а не как просьба «поучаствовать в исследовании»: участник предоставляет
+  ограниченный набор обезличенной информации о реальных решениях и получает конкретный результат — карту решений,
+  паспорт сценария, карту покрытия КонсультантПлюс/РИЦ, карту разрывов, рекомендации по организации работы,
+  обучению, сервису или конфигурации. Для РИЦ и Сети результатом становится библиотека доказанных клиентских
+  сценариев и структурированный пакет обратной связи. Все предложения являются кандидатами инженерной среды,
+  а не объявленными коммерческими продуктами или обязательствами КонсультантПлюс/РИЦ.
+introduction:
+  evaluated_object: participant value-exchange design derived from the current ConsultantPlus decision-value model
+  evaluation_context: design of reciprocal offers before any external participant contact
+  criteria_basis:
+    - each participant is offered a tangible useful result in exchange for evidence
+    - the requested information is directly tied to the participant's decision scope and proposed result
+    - sensitive information is optional unless separately justified and authorized
+    - provider-side offers P1/P2 remain distinct from client decisions C1-C6
+    - no candidate offer is represented as an official ConsultantPlus or RIC commercial product
+    - no participant statement is automatically promoted to stakeholder requirement
+  audience: owner, future interviewers, RIC client-facing teams, client participants, Coordination Center/product-service teams
+context_and_assumptions:
+  refined_model_ref: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  stakeholder_ref: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  measurement_plan_ref: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  public_BMA_ref: ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2
+  evidence_boundary: >-
+    Current public evidence and owner-directed analysis support only a candidate engagement design. No real participant
+    response, willingness to share data, commercial demand, price willingness, ROI, official service scope or accepted
+    stakeholder requirement is established by this product.
+  terminology_boundary: >-
+    candidate_delivery_product means a participant-facing result produced by the engineering work; it is not a new
+    canonical lifecycle output and it is not an official ConsultantPlus product name.
+body:
+  design_method_and_evidence:
+    method: >-
+      Map each evidence-classified participant group to its current C1-C6/P1-P2 decision scope, identify a reciprocal
+      participant benefit, define the smallest useful information input, then derive reusable candidate delivery products
+      and services. Check every information request against data-minimization and evidence-boundary rules.
+    evidence:
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+      - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  exchange_principle:
+    proposition: >-
+      Не просить участника просто «дать интервью». Предлагать понятный обмен: участник предоставляет один или несколько
+      реальных обезличенных эпизодов решения и минимальный контекст, инженерная среда возвращает структурированную карту
+      решения и конкретные выводы о том, где КонсультантПлюс, сервис РИЦ, организация работы или доступ помогают, а где остается разрыв.
+    participant_control:
+      - participant may omit sensitive details not needed to reconstruct the decision
+      - participant statements are evidence within stated scope, not automatically accepted organizational facts
+      - audio, direct quotations and raw internal documents require separate explicit consent or authorization
+      - external communication, incentives, pricing commitments and product promises require separate owner authority
+  candidate_delivery_products:
+    - id: D01
+      name_ru: Карта решений роли или подразделения
+      content: recurring decisions, triggers, participants, handoffs, criticality and current information path
+      primary_users: [SG-01, SG-02, SG-03]
+    - id: D02
+      name_ru: Паспорт критичного сценария решения
+      content: one concrete episode from trigger through decision, evidence path, action, product/service contribution and unresolved gap
+      primary_users: [SG-01, SG-02, SG-03, SG-05, SG-06]
+    - id: D03
+      name_ru: Карта покрытия сценария КонсультантПлюс и сервисом РИЦ
+      content: which decision stages are supported by SPS, RIC service, client organization or other sources and where support is absent
+      primary_users: [SG-01, SG-02, SG-03, SG-04, SG-06]
+    - id: D04
+      name_ru: Карта разрывов, задержек и обходных путей
+      content: uncertainty points, duplicated search, manual workarounds, access barriers, escalation and unresolved evidence needs
+      primary_users: [SG-01, SG-02, SG-04, SG-06]
+    - id: D05
+      name_ru: Матрица ролей, передачи и контроля решений
+      content: who detects, analyzes, approves, executes, communicates and monitors recurring regulated decisions
+      primary_users: [SG-02, SG-03]
+    - id: D06
+      name_ru: Рекомендации по комплекту, доступу, сервису и обучению от сценариев
+      content: candidate configuration and service/training priorities traced to critical decisions rather than feature lists
+      primary_users: [SG-03, SG-04, SG-06]
+      boundary: no price, commercial term or official configuration promise is inferred
+    - id: D07
+      name_ru: Пакет доказательств клиентской ценности
+      content: evidence-backed scenario coverage, participant language, observed contribution, recurrence and unresolved attribution limits
+      primary_users: [SG-03, SG-06, SG-07]
+      boundary: no avoided-fine, ROI or risk-reduction claim without a separate evidence design
+    - id: D08
+      name_ru: Библиотека сценариев для демонстрации, обучения и сопровождения
+      content: recurring decision scenarios expressed as client problem, decision, evidence path, SPS/RIC contribution and expected participant action
+      primary_users: [SG-02, SG-05, SG-06]
+    - id: D09
+      name_ru: Пакет структурированной обратной связи РИЦ в Сеть
+      content: scenario, participant, required decision, gap, workaround, recurrence, criticality and evidence class
+      primary_users: [SG-06, SG-07]
+    - id: D10
+      name_ru: Доказательный список приоритетов развития продукта и сервиса
+      content: repeated scenario/gap clusters with evidence coverage, affected participant groups and candidate response options
+      primary_users: [SG-07]
+      boundary: candidate prioritization input, not an accepted roadmap or requirement backlog
+  candidate_services:
+    - id: S01
+      name_ru: Реконструкция реального эпизода решения
+      description: 45-60 minute neutral session producing one or more D02 records and preliminary D03/D04 observations
+    - id: S02
+      name_ru: Диагностика решений роли или подразделения
+      description: 2-4 participant sessions and several episodes producing D01, D02, D03 and D04
+    - id: S03
+      name_ru: Диагностика покрытия КонсультантПлюс и сервисом РИЦ
+      description: compare actual decision path with product/service contribution and identify evidence-backed gaps
+    - id: S04
+      name_ru: Проектирование сценарного обучения и сопровождения
+      description: transform confirmed recurring scenarios into D08 and candidate service/training actions
+    - id: S05
+      name_ru: Проектирование организационного контура повторяемых решений
+      description: produce D05 and candidate controls/handoffs for C3-C4 recurring decisions
+    - id: S06
+      name_ru: Измерение и сбор доказательств ценности
+      description: use the TM-MEAS episode method to build D07 while preserving attribution limits
+    - id: S07
+      name_ru: Синтез обратной связи для РИЦ и Сети
+      description: aggregate evidence into D09/D10 without converting observations automatically into requirements
+    - id: S08
+      name_ru: Разбор ограничений доступа и эксплуатации
+      description: isolate C6 access/security/administration friction from product-content and service gaps
+  engagement_packages:
+    - id: E0
+      name_ru: Экспресс-сессия
+      scope: one participant, one recent meaningful episode, approximately 45-60 minutes
+      participant_receives: [D02, preliminary D03, preliminary D04]
+      suitable_for: [SG-01, SG-02, SG-03, SG-06]
+    - id: E1
+      name_ru: Диагностика роли или функции
+      scope: 2-4 participants or 3-5 decision episodes within one role/function
+      participant_receives: [D01, D02, D03, D04, candidate D08 where recurring]
+      suitable_for: [SG-01, SG-02]
+    - id: E2
+      name_ru: Организационная диагностика критичных решений
+      scope: several roles spanning C1-C5; final size determined after pilot, not a fixed commercial package
+      participant_receives: [D01, D03, D05, candidate D06, D07]
+      suitable_for: [SG-02, SG-03]
+    - id: E3
+      name_ru: Сценарная мастерская РИЦ
+      scope: selected RIC participants plus de-identified service episodes
+      participant_receives: [D02, D08, D09, candidate service improvements]
+      suitable_for: [SG-06]
+    - id: E4
+      name_ru: Сетевой синтез сценариев и разрывов
+      scope: aggregated client/RIC evidence after sufficient episode collection
+      participant_receives: [D07, D09, D10]
+      suitable_for: [SG-07]
+  participant_offer_matrix:
+    - stakeholder_id: SG-01
+      participant: профессиональный пользователь
+      current_decision_scopes: [C1, C2]
+      offer_text_ru: >-
+        Дайте один-два недавних реальных рабочих эпизода без лишних конфиденциальных деталей. Мы вернем паспорт каждого
+        сценария, покажем путь от вопроса к решению, вклад КонсультантПлюс и РИЦ и отдельно отметим, где осталась неопределенность
+        или лишняя работа. При нескольких эпизодах соберем карту типовых решений вашей роли.
+      services: [S01, S02, S03]
+      products: [D02, D03, D04, D01]
+      information_minimum:
+        - role and kind of professional decisions, without personal name when not needed
+        - one recent concrete episode: trigger, required decision/action and deadline
+        - what information/evidence was searched and in what sequence
+        - where ConsultantPlus was used and what it enabled or did not enable
+        - whether RIC service/training/support participated
+        - final action/status and remaining uncertainty
+      information_useful:
+        - recurrence or typicality of similar episodes
+        - perceived consequence of error or delay
+        - handoffs to colleagues or management
+        - how the reasoning/evidence was retained or communicated
+      optional_sensitive_not_required_to_start:
+        - raw client documents, legal correspondence or case materials
+        - direct screen/search logs
+        - personal names and identifiable counterpart data
+    - stakeholder_id: SG-02
+      participant: руководитель функции или владелец повторяемого решения
+      current_decision_scopes: [C2, C3, C4]
+      offer_text_ru: >-
+        Мы разберем несколько повторяющихся решений подразделения и вернем карту: какие события запускают работу, кто должен
+        распознать изменение, кто анализирует и утверждает позицию, как решение передается сотрудникам и как контролируется повторное применение.
+        Отдельно покажем, где СПС и сервис РИЦ поддерживают процесс, а где требуется организационная мера, обучение или иной сервис.
+      services: [S02, S03, S04, S05, S06]
+      products: [D01, D03, D04, D05, D08, D07]
+      information_minimum:
+        - responsibilities of the function and 2-3 recurring regulated decision types
+        - one or more recent episodes requiring team coordination or rule change
+        - roles participating in detection, analysis, approval, execution and control
+        - how the decision or position is communicated and reused
+        - current use of ConsultantPlus and RIC service in those steps
+      information_useful:
+        - internal instructions/checklists/training practices in abstract or de-identified form
+        - escalation paths and common delay/error points
+        - recurring questions from staff
+        - examples where one person's solution had to become a team rule
+      optional_sensitive_not_required_to_start:
+        - named employee performance data
+        - confidential internal policies in full text
+        - privileged legal or tax positions beyond what is necessary to reconstruct the process
+    - stakeholder_id: SG-03
+      participant: руководитель, собственник, экономический заказчик или закупщик
+      current_decision_scopes: [C4, C5]
+      offer_text_ru: >-
+        Мы свяжем покупку, продление, состав комплекта, доступ, обучение и сервис не с перечнем функций, а с критичными решениями,
+        которые организация реально должна принимать. На выходе — карта покрываемых сценариев, пробелов и кандидатные рекомендации,
+        что именно имеет смысл обеспечивать продуктом, сервисом, обучением или организацией работы.
+      services: [S02, S03, S06]
+      products: [D01, D03, D06, D07]
+      information_minimum:
+        - which user groups and decision types matter to the organization
+        - one recent purchase/renewal/configuration decision or comparable sponsor decision
+        - selection and renewal criteria actually used
+        - material pain points or risks the sponsor expects the information-service solution to address
+        - which service/training/access elements are considered part of the value
+      information_useful:
+        - user count bands and material segment differences
+        - known use/adoption signals and renewal objections
+        - procurement constraints and decision participants
+        - acceptable evidence the sponsor would consider sufficient to justify value
+      optional_sensitive_not_required_to_start:
+        - exact budget, discount, contract price or margin
+        - named supplier negotiation details
+        - commercially sensitive contract terms
+    - stakeholder_id: SG-04
+      participant: ИТ, информационная безопасность или администратор доступа
+      current_decision_scopes: [C6]
+      offer_text_ru: >-
+        Мы отделим проблемы содержания и сервиса от ограничений доступа и эксплуатации: где пользователь не может получить нужную
+        информацию из-за конфигурации, режима доступа, администрирования, сети или политики безопасности. Результатом будет карта C6-разрывов
+        и кандидатные требования к обеспечивающему контуру без проектирования архитектуры до подтверждения необходимости.
+      services: [S03, S08]
+      products: [D03, D04, candidate D06]
+      information_minimum:
+        - access modes and broad user groups
+        - material security, network or administration restrictions
+        - recent access/support incidents relevant to decision work
+        - who administers access and how changes are requested/resolved
+      information_useful:
+        - availability/support targets where they actually exist
+        - authentication, remote-access and device constraints at a high level
+        - recurring support categories and resolution times if available
+      optional_sensitive_not_required_to_start:
+        - credentials, secrets, IP addresses, detailed security topology
+        - vulnerability data
+        - identifiable user access logs
+    - stakeholder_id: SG-05
+      participant: преподаватель или обучающийся
+      current_decision_scopes: [C1, C2]
+      offer_text_ru: >-
+        Если образовательный сегмент будет включен в текущий контур, мы можем превратить учебные задачи в сценарии работы с правовой
+        информацией и показать, какие навыки поиска, понимания и обоснования решения формируются. До отдельного решения о сегменте это предложение не приоритетно.
+      services: [S01, S04]
+      products: [D02, D08]
+      information_minimum:
+        - learning task or educational scenario
+        - intended learner action/result
+        - current use of ConsultantPlus in the learning activity
+      information_useful:
+        - curriculum/module context and assessment method
+        - recurring learner difficulties
+      optional_sensitive_not_required_to_start:
+        - student personal data or grades linked to identity
+        - minors' identifiable information
+    - stakeholder_id: SG-06
+      participant: клиентский менеджер, сопровождение, преподаватель или консультант РИЦ
+      current_decision_scopes: [P1]
+      related_client_scope: [C5]
+      offer_text_ru: >-
+        Дайте несколько обезличенных реальных случаев, когда клиенту требовались не просто документы, а помощь пройти рабочий сценарий.
+        Мы вернем библиотеку клиентских сценариев, разложим вклад продукта и сервиса, покажем повторяющиеся разрывы и подготовим структуру
+        обратной связи, которую можно передавать в Сеть не как «пожелание клиента», а как доказанный сценарий и затруднение.
+      services: [S01, S02, S03, S04, S07]
+      products: [D02, D03, D04, D08, D09]
+      information_minimum:
+        - 3-5 recent de-identified client service episodes
+        - client decision/problem as understood by RIC
+        - RIC intervention: configuration, support, training, consultation or escalation
+        - observed client response/status without claiming causality
+        - recurring questions or gaps
+      information_useful:
+        - onboarding, training, support and renewal process at a high level
+        - common reasons for escalation, non-use or dissatisfaction
+        - existing service standards/metrics if authorized
+        - de-identified use/feedback patterns where available
+      optional_sensitive_not_required_to_start:
+        - raw CRM export
+        - named client contacts
+        - exact commercial terms and margins
+        - confidential client correspondence
+    - stakeholder_id: SG-07
+      participant: Координационный центр, продуктовые и сервисные подразделения Сети
+      current_decision_scopes: [P2]
+      offer_text_ru: >-
+        После накопления клиентских и РИЦ-эпизодов мы можем дать не поток разрозненных пожеланий, а доказательную карту повторяющихся решений
+        и разрывов: кого затрагивает сценарий, насколько он повторяем, что уже закрывается продуктом/сервисом и какой тип ответа требует проверки.
+        Это дает вход для приоритизации развития без автоматического превращения интервью в требования или дорожную карту.
+      services: [S06, S07]
+      products: [D07, D09, D10]
+      information_minimum:
+        - current feedback intake channels and broad product/service responsibility boundaries
+        - known repeated scenario themes already visible to the Network
+        - how product/service changes are currently evaluated at a high level
+      information_useful:
+        - de-identified feature/service adoption or usage evidence
+        - existing backlog/roadmap categories and decision criteria where authorized
+        - existing client satisfaction/service-quality evidence
+        - known product/service change outcomes for triangulation
+      optional_sensitive_not_required_to_start:
+        - confidential roadmap details not needed for scenario matching
+        - source code or proprietary implementation detail
+        - commercially sensitive internal financial data
+  information_request_by_type:
+    minimum_common_to_any_participant:
+      - participant role/category and decision scope, without a personal name if unnecessary
+      - one recent concrete episode or provider-response episode
+      - trigger, required decision, evidence path, action/status and remaining gap
+      - role of ConsultantPlus and, separately, RIC service where applicable
+    useful_cross_case_context:
+      - recurrence and criticality as perceived by participant
+      - other participants and handoffs
+      - existing workarounds and alternative sources
+      - what evidence would make a better decision possible
+    only_if_later_needed_and_authorized:
+      - detailed usage logs
+      - exact commercial/budget data
+      - internal policies or process documents
+      - CRM extracts
+      - system/security configuration details
+      - audio recordings or direct quotations
+    do_not_request_by_default:
+      - credentials and secrets
+      - unnecessary personal data
+      - privileged case materials
+      - identifiable data about third parties
+      - raw legal/tax/contract documents when a de-identified episode description is sufficient
+  participant_facing_minimum_exchange:
+    professional_user: '45-60 минут + 1 реальный эпизод -> паспорт сценария + предварительная карта покрытия/разрыва'
+    functional_owner: '2-3 эпизода команды -> карта повторяемых решений + роли/передачи + предложения по обучению/сервису'
+    buyer_sponsor: 'критичные сценарии + одно решение о покупке/продлении -> карта покрытия + кандидатная конфигурация + доказательная модель ценности'
+    technical_enabler: '1-2 access incidents + режимы/ограничения -> карта C6-разрывов и кандидатные меры обеспечения'
+    RIC: '3-5 сервисных эпизодов -> библиотека сценариев + карта сервисных разрывов + структурированный пакет обратной связи'
+    network_product_service: 'агрегированные сценарии + текущий контур обратной связи -> доказательный список повторяющихся разрывов и candidate priorities'
+  boundaries_and_risks:
+    - risk: candidate engineering output is mistaken for an official ConsultantPlus/RIC product or commercial promise
+      mitigation: every offer is explicitly candidate; owner/network adoption and external promise are separate
+    - risk: participant is asked for more sensitive information than needed
+      mitigation: use minimum-common episode data first; sensitive detail is optional and purpose-specific
+    - risk: participant receives only research burden and no useful return
+      mitigation: every engagement package returns one or more concrete D01-D10 products
+    - risk: RIC account is treated as direct client evidence
+      mitigation: preserve source/evidence class and triangulate where possible
+    - risk: buyer or sponsor statements are interpreted as accepted requirements
+      mitigation: keep candidate value/evidence separate from TECH-STK requirements acceptance
+    - risk: product value is overstated through financial or risk attribution
+      mitigation: D07 reports observable episode contribution and attribution limits; no ROI/avoided-loss claim without separate design
+    - trend_to_test: scenario-based reciprocal diagnostics may be more useful for participants than generic satisfaction or feature interviews
+  decision_readiness:
+    ready_now:
+      - owner review of participant-specific offer structure
+      - preparation of participant-facing invitations/scripts after owner direction
+      - use of E0/E1 in an owner-authorized pilot with existing TM-MEAS evidence rules
+    not_ready:
+      - public claim that these are official ConsultantPlus/RIС services
+      - pricing or commercial packaging
+      - external participant contact without owner direction
+      - accepted stakeholder needs or requirements
+      - product roadmap or architecture decisions
+conclusions_and_recommendations:
+  conclusion: >-
+    The strongest participant proposition is a reciprocal scenario diagnostic: ask for the minimum evidence needed to reconstruct a real decision,
+    then return a concrete map or scenario artifact useful to the participant. The offer should differ by role: specialist receives an episode/coverage
+    view; functional owner receives a repeatable decision-process view; sponsor receives scenario-to-configuration/value evidence; IT receives access-gap
+    isolation; RIC receives a scenario/service library and structured feedback; the Network receives aggregated evidence for candidate prioritization.
+  recommendation:
+    - start participant communication with E0/E1 offers rather than a generic research invitation
+    - first pilot with SG-01 or SG-02 plus SG-06 because the same scenario can be viewed from client and RIC sides
+    - keep SG-03 in first wave to test purchase/value language, but treat exact economics as optional
+    - bring SG-04 when access/operation is a material part of a scenario; bring SG-07 after repeated scenario evidence exists
+    - do not start with SG-05 until education-sector scope is intentionally selected
+    - after owner review, produce short participant-facing scripts separately; do not send them automatically
+references:
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.1; ГОСТ Р 57193-2025 §6.4.1'
+  - 'ISO/IEC/IEEE 15289:2017 §§7.6, 10.27; ГОСТ Р 58609-2019 §§7.6, 10.27'
+glossary:
+  candidate_delivery_product: participant-facing engineering result inside this BMA report; not a new canonical lifecycle output and not an official ConsultantPlus product name
+  reciprocal_offer: engagement in which participant evidence is exchanged for a concrete useful engineering result
+  decision_episode: recent identifiable situation with trigger, decision, evidence path, action/status and product/service contribution
+  provider_response: P1/P2 supplier-side action or decision responding to client evidence, distinct from C1-C6 client decisions
+  evidence_class: explicit classification distinguishing participant report, participant judgment, RIC account, analyst inference and not-established state
+  data_minimization: collect only information needed for the stated participant result and evidence question
+change_history:
+  - {version: V1, date: '2026-09-05', change: initial participant offer, product/service and information-exchange model}
+subject_unresolved:
+  - participant willingness to exchange information for the proposed outputs
+  - which candidate products participants actually value
+  - actual internal RIC and Network service/product boundaries
+  - pricing and economic value of any future packaged service
+  - owner authority for external contact and any commercial positioning
+owner_product_request:
+  exact_visible_text: 'сделай соотв. предложения от нашей среды участникам. какие продукты и услуги. какая инфа мб нужна от них'
+  request_specific_requirements:
+    - provide participant-specific proposals from the engineering environment
+    - identify candidate products and services for each participant group
+    - identify information that may be needed from each group
+    - distinguish minimum, useful and optional-sensitive information
+    - preserve the difference between candidate engineering offer and official ConsultantPlus/RIC commercial offer
+    - do not infer stakeholder requirements or external-contact authority
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.participant_offer_matrix, body.information_request_by_type]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, body.decision_readiness, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.design_method_and_evidence, context_and_assumptions]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_external_worker_and_subject_verification}
+verification:
+  structural_status: pending_exact_external_client_information_product_workers
+  semantic_status: pending_dedicated_TECH_VER_for_offer_scope_information_minimization_and_noncommercial_boundary
+  owner_acceptance: execution_authorized; offer acceptance, external contact, pricing and commercial adoption separate
+artifact_addresses:
+  self: 'MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap'
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: business or mission analysis report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.27-R01, disposition: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, introduction.criteria_basis], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R02, disposition: satisfied, artifact_field_refs: [body.design_method_and_evidence], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R03, disposition: satisfied, artifact_field_refs: [body.candidate_delivery_products, body.candidate_services, body.participant_offer_matrix], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R04, disposition: satisfied, artifact_field_refs: [body.boundaries_and_risks, subject_unresolved], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R05, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_readiness], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: business or mission analysis report, resolution_basis: TECH-BMA exact binding to evaluation report profile §10.27, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: report
+    specific_profiles: ['10.27']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.27'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, introduction.criteria_basis]}
+          - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.design_method_and_evidence]}
+          - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.candidate_delivery_products, body.candidate_services, body.participant_offer_matrix]}
+          - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.boundaries_and_risks, subject_unresolved]}
+          - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_readiness]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: participant offer and information-exchange analysis is represented as TECH-BMA evaluation/report content; candidate delivery products remain internal report content, not new lifecycle outputs
+  information_item_management:
+    version_control: exact V1
+    review_approval: owner requested creation; external participant use and commercial adoption separate
+    quality_evaluation: dedicated TECH-VER plus exact external client structural worker
+    retention: canonical client process-owned product in MOZ1961/consultantplus
+    reuse_and_duplication: future participant evidence or offer change requires a new ArtifactVersion
