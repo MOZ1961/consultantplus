@@ -1,23 +1,24 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-SE-INTERFACE-BINDING-20260904-001
-artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
-supersedes_artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2
+artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V4
+supersedes_artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
 artifact_label: configuration management records/artifacts
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_bound_for_engineering
 acceptance_status: owner_acceptance_activation_and_baseline_separate
 artifact_instance_purpose: >-
-  Установить клиентскую конфигурационную привязку «Сети КонсультантПлюс» к точной версии общего интерфейса SE,
-  сохраняя клиентские ProcessInstance, продукты, конфигурацию и принятие в MOZ1961/consultantplus.
+  Перепривязать клиентскую систему «Сеть КонсультантПлюс» к текущей точной версии общего SE-контура
+  после слияния проверенной способности E0/S01, сохраняя клиентскую семантическую, write и acceptance authority
+  в MOZ1961/consultantplus.
 producer:
   process_type_id: TM-CM
-  process_instance_id: PI-CPLUS-TM-CM-SE-INTERFACE-BINDING-20260904-001
-  activity_instance_id: AI-CPLUS-TM-CM-BIND-SE-INTERFACE-20260904-001
+  process_instance_id: PI-CPLUS-TM-CM-SE-INTERFACE-BINDING-20260906-001
+  activity_instance_id: AI-CPLUS-TM-CM-REBIND-SE-INTERFACE-20260906-001
   methodic_instance: {methodic_id: METH-CLIENT-SYSTEM-CONFIGURATION-REBIND, methodic_version_id: METHVER-CLIENT-SYSTEM-CONFIGURATION-REBIND-V1, methodic_version: '1', status: proposed_reusable_method}
-request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001, required_output_label: operation report}
-issued_at_and_status: {issued_at: '2026-09-05', status: bound_for_engineering_not_active}
-scope: engineering-only cross-boundary execution between generic SE and SYS-CPLUS-NETWORK-001; activation/deployment/baseline/acceptance excluded
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-EXTERNAL-GATE-CLOSEOUT-20260906-001, required_output_label: operation report}
+issued_at_and_status: {issued_at: '2026-09-06', status: rebound_for_engineering_not_active}
+scope: engineering-only cross-boundary execution between generic SE and SYS-CPLUS-NETWORK-001; activation deployment baseline and acceptance excluded
 subject_or_category: client system interface configuration binding
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 references:
@@ -25,45 +26,45 @@ references:
   - ARTVER-SE-PROCESS-CATALOG-ORGANIZATION-PROCESSES-20260904-001-V1
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-record_identifier: ART-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+record_identifier: ART-CPLUS-SE-INTERFACE-BINDING-20260904-001-V4
 body:
   client_system_interface_binding:
     binding_instance_id: BIND-CPLUS-SE-001
-    binding_version: 3
+    binding_version: 4
     client_system_instance_id: SYS-CPLUS-NETWORK-001
     client_environment_instance_id: ENV-CPLUS-ENGINEERING-001
     client_repository: MOZ1961/consultantplus
-    client_exact_ref_or_sha: 695f4620ffe8fe0aeff4beb2772816bfa459dda5
+    client_exact_ref_or_sha: 4905e99702d5c257375358e7397df6bf0ad8a3a5
     client_product_root: artifacts
     client_write_authority: owner_authorized_repository_write_via_GitHub_connector
     client_acceptance_authority: owner
     generic_se_repository: MOZ1961/se
-    generic_se_exact_ref_or_sha: 6d16c0fdb19b47e3ebaa7edb3321230320863d76
+    generic_se_exact_ref_or_sha: 0063010ec4910d6dbefdede22a41b18786d21dba
     generic_interface_artifact_version_id: ARTVER-SE-CLIENT-SYSTEM-INTERFACE-DEFINITION-20260904-001-V1
     generic_interface_id: SE-CLIENT-SELF-CONFIG-IF
     generic_interface_version: 3
     compatibility_status: compatible
     lifecycle_state: bound
   configuration_characteristics:
-    functional: route all client lifecycle outputs to MOZ1961/consultantplus under process-owned artifacts and preserve exact cross-boundary references
+    functional: route client lifecycle outputs to MOZ1961/consultantplus under process-owned artifacts and preserve exact cross-boundary references
     physical: public GitHub repository MOZ1961/consultantplus with product root artifacts
-    exact_version_location: bootstrap authority anchor 695f4620ffe8fe0aeff4beb2772816bfa459dda5 plus this exact ArtifactVersion
-    configuration_status: bound_for_engineering_not_active
+    exact_version_location: client main anchor 4905e99702d5c257375358e7397df6bf0ad8a3a5 and generic SE anchor 0063010ec4910d6dbefdede22a41b18786d21dba
+    configuration_status: rebound_for_engineering_not_active
   approvals_baselines_changes_rationale:
-    approval_basis: owner explicitly requested connection of the ConsultantPlus client system and supplied/accepted the client repository contour
+    approval_basis: owner authorized completion and merge of the ConsultantPlus engineering contour
     baseline_state: not_established
-    change_state: V3 structural normalization of existing compatible engineering binding; binding semantics unchanged from V2
-    rationale: exact generic/client authority boundary is required before client lifecycle persistence
+    change_state: V4 exact rebind to merged generic SE main after PR 221
+    rationale: external-client validation requires exact generic SE anchor matching the interface environment used by the declaring SE execution
   linked_incidents_problems_changes:
-    known_problem: generic/client product mixing is prohibited by the generic interface
-    change_request: none
+    known_problem: V3 referenced an earlier generic SE SHA and therefore failed the exact external-client binding check after SE main advanced
+    change_request: current owner instruction to finish the remaining closeout gate
     incident: none
   requirement_traceability_and_conformance:
     interface_contract: ARTVER-SE-CLIENT-SYSTEM-INTERFACE-DEFINITION-20260904-001-V1
-    generic_interface_sha: 6d16c0fdb19b47e3ebaa7edb3321230320863d76
+    generic_interface_sha: 0063010ec4910d6dbefdede22a41b18786d21dba
     compatibility_status: compatible
-    structural_resolution: pending_exact_external_client_worker_after_V3
-    semantic_adequacy: separate_TECH_VER_or_interface_subject_verification
+    structural_resolution: pending_exact_external_client_worker_after_V4
+    semantic_adequacy: binding semantics unchanged; separate TECH-VER remains authoritative for subject semantics
     client_acceptance: not_inferred
   ownership_use_lifecycle_storage:
     owner: client authority represented by owner of MOZ1961/consultantplus
@@ -76,10 +77,12 @@ body:
 change_history:
   - {version: V1, date: '2026-09-04', change: initial engineering binding candidate}
   - {version: V2, date: '2026-09-05', change: rebind to merged generic interface main SHA and exact reusable rebind method}
-  - {version: V3, date: '2026-09-05', change: normalize active record/R9-CONFIGURATION composition without changing binding compatibility semantics}
+  - {version: V3, date: '2026-09-05', change: normalize active record composition}
+  - {version: V4, date: '2026-09-06', change: rebind exact generic SE anchor to merged PR 221 main commit 0063010ec4910d6dbefdede22a41b18786d21dba}
 owner_product_request:
-  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
-  request_specific_requirements: [use MOZ1961/consultantplus as client authority repository, bind before client BMA persistence, preserve authority separation, do not infer activation/baseline/acceptance]
+  exact_visible_text: 'давай'
+  resolved_referent: finish the remaining external-client validation gate and merge the preserved closeout only when exact-head checks pass
+  request_specific_requirements: [preserve BIND-CPLUS-SE-001 authority separation, rebind to current generic SE main, do not infer activation baseline deployment or acceptance]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_materially_changed_client_TM_CM_binding_product
@@ -98,11 +101,11 @@ product_requirement_compliance:
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_worker}
 verification:
-  structural_status: normalized_pending_exact_external_client_worker
-  semantic_status: binding semantics preserved; client operation/acceptance/activation remain separate
+  structural_status: pending_exact_external_client_worker
+  semantic_status: exact rebind only; interface semantics and authority boundary unchanged
   owner_acceptance: separate_not_inferred
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TM-CM/configuration-management-records-artifacts/ART-CPLUS-SE-INTERFACE-BINDING-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+  self: MOZ1961/consultantplus:artifacts/TM-CM/configuration-management-records-artifacts/ART-CPLUS-SE-INTERFACE-BINDING-20260904-001.yaml@fix/consultantplus-20260906-external-client-gate
 information_product_applicability: applies
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
@@ -141,9 +144,4 @@ content_compliance:
           - {requirement_id: R9-CFG-05, state: satisfied, artifact_field_refs: [body.ownership_use_lifecycle_storage]}
   local_additive_content: {state: not_applicable, basis: active TM-CM records/artifacts binding selects no local additive profile}
   tailoring: binding configuration is represented as a configuration-management record while client ownership remains local
-  information_item_management:
-    version_control: exact V3 supersedes V2; V3 is structural normalization only
-    review_approval: owner acceptance/activation/baseline separate from binding existence
-    quality_evaluation: generic interface resolver plus external client structural worker
-    retention: canonical client TM-CM product in MOZ1961/consultantplus
-    reuse_and_duplication: generic SE keeps only exact locator/evidence; no authoritative client-binding copy
+  information_item_management: {version_control: exact V4 supersedes V3, review_approval: owner acceptance activation and baseline separate, quality_evaluation: generic interface resolver plus external client structural worker, retention: canonical client TM-CM product, reuse_and_duplication: generic SE keeps only exact locator evidence}
