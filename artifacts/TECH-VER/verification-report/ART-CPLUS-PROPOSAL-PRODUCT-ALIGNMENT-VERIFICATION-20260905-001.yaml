@@ -1,0 +1,210 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-VERIFICATION-20260905-001
+artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-VERIFICATION-20260905-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: verification_completed_candidate
+acceptance_status: semantic_mapping_pass_owner_acceptance_and_merge_separate
+artifact_instance_purpose: >-
+  Предметно проверить, что текущие предложения D01-D10, S01-S08 и E0-E4 не образуют самодельных
+  информационных продуктов вне канонических process-owned outputs: каждое долговременное представление
+  должно иметь существующий parent canonical O, каждая услуга/область исполнения — процессы и продукты,
+  а невозможное сопоставление должно идти через явное предложение на добавление.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-VER-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-PROPOSAL-PRODUCT-ALIGNMENT
+    methodic_version_id: METHVER-CPLUS-TECH-VER-PROPOSAL-PRODUCT-ALIGNMENT-V1
+    methodic_version: '1'
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-PROPOSAL-PRODUCT-RESOLUTION-20260905-001
+  required_output_label: operation report
+issued_at_and_status: {issued_at: '2026-09-05', status: verification_completed_candidate}
+scope: semantic verification of ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1 and ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  PASS. Все 10 D-представлений имеют parent canonical O; все 8 S-услуг имеют исполняющие ProcessType
+  и наборы канонических долговременных выходов; все 5 E-пакетов классифицированы как execution scope,
+  а не информационные продукты. Для текущего набора добавление нового canonical O не требуется.
+  Если будущий самостоятельный долговременный результат не разрешится к существующему O без семантической
+  потери, процедура требует явного предложения на добавление, а не force-fit или выдуманного продукта.
+introduction:
+  verified_items:
+    - ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1
+    - ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1
+    - ARTVER-SE-PROCESS-CATALOG-ORGANIZATION-PROCESSES-20260904-001-V1
+    - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  purpose: verify complete and semantically defensible proposal-to-product resolution for the current ConsultantPlus offer set
+  audience: owner and future CPLUS proposal/execution responses
+  criteria_basis:
+    - all D01-D10 are resolved as views of existing canonical products, not standalone pseudo-products
+    - all S01-S08 identify executing processes and standard durable outputs
+    - all E0-E4 are execution scopes with product sets, not information products
+    - every referenced ProcessType → O exists in the canonical output catalog and has normative-first resolution
+    - addition fallback is explicit when no existing output is sufficient
+context_and_assumptions:
+  evidence_boundary: verification concerns proposal/product identity and semantic ownership only; it does not validate participant usefulness, commercial demand, pricing or legal/professional correctness
+  historical_boundary: prior candidate_delivery_products wording remains historical; current interpretation is superseded by the alignment report, not by retroactive rewriting
+body:
+  verification_method_and_evidence:
+    method: inspect each D/S/E mapping against its meaning, current E0/S01 architecture, canonical output identities and normative-first crosswalk; reject nearest-label force-fit where the proposal is only a view/activity/scope
+    evidence:
+      - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+      - ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1
+      - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+      - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+      - ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1
+  criteria_results:
+    VER-PROP-01: {criterion: D01-D10 complete parent-product coverage, result: pass, evidence: 10 of 10 D IDs mapped; none declared as independent canonical product}
+    VER-PROP-02: {criterion: S01-S08 complete process/output coverage, result: pass, evidence: 8 of 8 S IDs list executing ProcessTypes and durable canonical outputs}
+    VER-PROP-03: {criterion: E0-E4 are not misclassified as products, result: pass, evidence: 5 of 5 E IDs explicitly execution_scope_not_information_product}
+    VER-PROP-04: {criterion: referenced parent outputs have existing canonical identities, result: pass, evidence: TECH-BMA business or mission analysis report/life cycle concepts; TM-MEAS measurement register/report; TECH-STK stakeholder needs and requirements; TECH-SYSREQ system requirements; TECH-IMP training materials; OPE-HR training documentation; TM-PAC change request; TM-DEC decision register; TECH-VER verification report; TECH-OP operation report all exist in current process-owned catalog/crosswalk}
+    VER-PROP-05: {criterion: implemented E0/S01 mapping remains consistent, result: pass, evidence: D02/D03/D04 remain views in TECH-BMA and real episode evidence remains TM-MEAS measurement register}
+    VER-PROP-06: {criterion: no unjustified output-catalog addition, result: pass, evidence: every current durable semantic result fits an existing canonical O as product content/view or existing successor output}
+    VER-PROP-07: {criterion: impossible future mapping is fail-visible, result: pass, evidence: global procedure PPRR-06 and PPRR-07 require explicit candidate addition and separate owner/catalog/crosswalk adoption}
+    VER-PROP-08: {criterion: owner-facing naming boundary preserved, result: pass, evidence: descriptive labels карта/паспорт/пакет/библиотека/матрица are not used as Информационный продукт labels; parent product uses controlled Russian ГОСТ nomenclature plus separate canonical O}
+  detailed_results:
+    D_views_checked: 10
+    D_views_passed: 10
+    services_checked: 8
+    services_passed: 8
+    engagement_scopes_checked: 5
+    engagement_scopes_passed: 5
+    current_canonical_additions_required: 0
+    orphan_proposals_found: 0
+  problems_encountered:
+    - id: VER-PROP-P01
+      problem: prior terminology candidate_delivery_products could be read as ten new product identities
+      disposition: treat D01-D10 as descriptive views/deliverables and record exact parent products in the new BMA report
+    - id: VER-PROP-P02
+      problem: some services can mature into different downstream products depending on evidence/authority
+      disposition: record primary current products plus conditional successor products rather than claiming the successor is already required or accepted
+  verification_decisions:
+    overall: pass_for_current_proposal_set
+    rationale: complete coverage with no orphan durable result and no need to extend the canonical output catalog today
+    future_rule: any new proposal must repeat resolution; unresolved independent durable result becomes explicit candidate addition
+conclusions_and_recommendations:
+  conclusion: current ConsultantPlus proposal vocabulary is compatible with the existing canonical product architecture when D labels are treated as views and S/E labels as execution concepts
+  recommendation: use ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1 as pre-emission control for future proposals
+  acceptance_boundary: owner acceptance, merge, deployment and commercial adoption remain separate
+references:
+  - ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1
+  - ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1
+  - ARTVER-SE-PROCESS-CATALOG-ORGANIZATION-PROCESSES-20260904-001-V1
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+bibliography: []
+glossary:
+  orphan_proposal: proposed durable result with neither existing canonical O nor explicit candidate-addition disposition
+  parent_product: existing canonical process-owned information product containing the durable semantics of a descriptive view
+  conditional_successor: existing downstream canonical product used only if evidence/authority later warrants that state transformation
+change_history:
+  - {version: V1, date: '2026-09-05', change: verify full current CPLUS D/S/E proposal-product alignment and addition fallback}
+owner_product_request:
+  exact_visible_text: 'все что предлагаешь либо согласуй с продуктами по ГОСТу либо предлагай на добавление, если это невозможно'
+  request_specific_requirements:
+    - verify no current proposal is orphaned or misrepresented as a product
+    - verify current use of existing canonical products is semantically sufficient
+    - require explicit addition path when future mapping is impossible
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_external_client_worker}
+verification:
+  structural_status: pending_external_client_information_product_worker
+  semantic_status: pass_current_D_S_E_mapping_no_orphans
+  owner_acceptance: direct owner rule applies; report acceptance/merge separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-VERIFICATION-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: applicable, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: applicable, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary,body.verification_decisions], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_items], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [introduction.criteria_basis], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.criteria_results,body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [issued_at_and_status,body.verification_method_and_evidence.evidence], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.criteria_results,body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decisions], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report for ConsultantPlus proposal-product alignment, resolution_basis: TECH-VER verification report exact crosswalk binding to generic report plus §10.93, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: exact, generic_type: report, specific_profiles: ['10.93'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary,body.verification_decisions]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_items]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [introduction.criteria_basis]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.criteria_results,body.detailed_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [issued_at_and_status,body.verification_method_and_evidence.evidence]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.criteria_results,body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions]}
+  local_additive_content: {state: not_applicable, basis: no selected local additive profile}
+  information_item_management: {version_control: material verification change requires new ArtifactVersion, review_approval: owner acceptance and merge separate, quality_evaluation: subject verification plus external-client structural worker, retention: canonical TECH-VER evidence for proposal-product mapping, reuse_and_duplication: downstream responses cite this exact version until mappings change}
