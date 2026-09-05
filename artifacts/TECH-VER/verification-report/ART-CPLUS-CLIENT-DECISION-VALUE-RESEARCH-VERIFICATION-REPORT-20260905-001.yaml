@@ -1,0 +1,251 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-CLIENT-DECISION-VALUE-RESEARCH-VERIFICATION-REPORT-20260905-001
+artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-VALUE-RESEARCH-VERIFICATION-REPORT-20260905-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_semantic_verification_complete
+acceptance_status: verification_not_owner_acceptance_or_pilot_authority
+artifact_instance_purpose: >-
+  Проверить предметную пригодность уточненной модели клиентской ценности и плана первой волны исследования:
+  границы клиентских/поставщицких решений, проверяемость гипотез через конкретные эпизоды, нейтральность сбора данных,
+  отделение фактов от оценок и отсутствие недоказанной причинной, финансовой или требований-ориентированной атрибуции.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-DECISION-VALUE-RESEARCH-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-VER-DECISION-VALUE-RESEARCH-20260905-001
+  methodic_instance:
+    methodic_id: METH-TECH-VER-SEMANTIC-MODEL-AND-MEASUREMENT-REVIEW
+    methodic_version_id: METHVER-CPLUS-TECH-VER-SEMANTIC-MODEL-AND-MEASUREMENT-REVIEW-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-DECISION-RESEARCH-WAVE1-20260905-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-05', status: semantic_verification_complete}
+scope: semantic verification of the refined ConsultantPlus decision-value research basis before pilot execution
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [ChatGPT engineering actor as verification performer]
+summary: >-
+  Уточненная модель и план первой волны проходят предметную верификацию для ограниченного назначения «кандидат к пилоту».
+  Ключевой дефект исходной рамки устранен: C1-C6 описывают решения клиента, P1-P2 — ответные решения РИЦ/Сети.
+  План интервью строится от последнего конкретного эпизода до обсуждения продукта, сохраняет классы доказательств
+  и не выдает контрфактические оценки, выборочную частоту, ROI или возможные требования за установленные факты.
+introduction:
+  verified_object:
+    - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+    - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  verification_context: semantic pre-pilot review separate from structural composition, client validation and owner acceptance
+  verification_date: '2026-09-05'
+  intended_decision: whether the research basis is sufficiently coherent and bounded to proceed to a two-interview pilot after owner pilot authorization
+context_and_assumptions:
+  prior_candidate_model: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+  stakeholder_basis: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
+  evidence_state: no new client or RIC interviews were conducted in this verification; the products are verified as a research design, not as truth about client behavior
+  structural_boundary: exact external client worker separately verifies product composition and field traceability
+body:
+  verification_requirements_and_criteria:
+    - {id: VER-DV-01, criterion: client decision levels and provider response levels are semantically separated and each has an identifiable decision owner/object}
+    - {id: VER-DV-02, criterion: model hypotheses are testable through concrete decision episodes and do not require respondents to endorse the proposed value statement}
+    - {id: VER-DV-03, criterion: interview sequence reconstructs the episode before asking about ConsultantPlus or RIC contribution, reducing confirmation bias}
+    - {id: VER-DV-04, criterion: fact, participant judgment, RIC account and interviewer inference are explicitly separable in the record}
+    - {id: VER-DV-05, criterion: product/RIC contribution is not promoted to causal business outcome, ROI, avoided penalties or statistical prevalence}
+    - {id: VER-DV-06, criterion: sample and completion rules are fit for qualitative hypothesis testing and do not claim population representativeness}
+    - {id: VER-DV-07, criterion: measurement definitions, collection/storage, analysis, roles and process-evaluation rules are operational enough for a controlled pilot}
+    - {id: VER-DV-08, criterion: no stakeholder need, requirement, target architecture, pricing or market positioning is accepted by the research design itself}
+  verified_items_and_dates:
+    - {artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1, date: '2026-09-05', role: contextual stakeholder basis}
+  method_and_evidence:
+    method:
+      - semantic decomposition by decision owner, decision object and evidence source
+      - inspect interview ordering for leading-product prompts
+      - inspect measure operational definitions and causal-claim boundaries
+      - inspect sampling/completion statements for qualitative-versus-statistical overclaim
+      - inspect transitions to later BMA/STK for automatic requirement promotion
+    evidence:
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+      - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
+  detailed_results:
+    - {criterion_id: VER-DV-01, result: pass, observation: C1-C6 are client-side decision levels while P1-P2 are explicitly provider responses; the original L7/L8 mixing is corrected}
+    - {criterion_id: VER-DV-02, result: pass, observation: H1-H5 can be supported, contradicted, mixed or left untested by episode evidence; value wording is asked only after episode reconstruction}
+    - {criterion_id: VER-DV-03, result: pass, observation: common core reconstructs trigger, decision, consequence, evidence path, uncertainty, participants and action before ConsultantPlus/RIC prompts}
+    - {criterion_id: VER-DV-04, result: pass, observation: evidence_class_by_field and separate RIC_account/interviewer_inference categories prevent silent promotion to fact}
+    - {criterion_id: VER-DV-05, result: pass, observation: counterfactual is explicitly participant judgment and the plan excludes ROI, avoided fines and general organizational efficiency attribution}
+    - {criterion_id: VER-DV-06, result: pass_with_scope_condition, observation: 8-12 contexts, 12-20 interviews and target 25 valid episodes are design targets for qualitative coverage only; insufficiency must be reported rather than treated as statistical failure}
+    - {criterion_id: VER-DV-07, result: pass, observation: M01-M09, record fields, pilot revision rule, storage classification and analysis rules are operational enough for a two-interview pilot}
+    - {criterion_id: VER-DV-08, result: pass, observation: later TECH-BMA/TECH-STK updates require evidence; requirements, architecture, pricing and positioning are not advanced by the plan}
+  analysis_of_results:
+    overall: pass_for_candidate_pilot_use_subject_to_owner_pilot_authority_and_structural_worker
+    strengths:
+      - research unit is a concrete episode rather than product opinion
+      - client and provider decision contours are separated
+      - contribution is measured before business-outcome attribution
+      - evidence provenance is field-level rather than interview-level only
+    residual_limits:
+      - C6 technical-enabler decisions are not a dedicated first-wave quota and may need a later wave if access/security repeatedly emerges as a blocker
+      - P2 network/product prioritization is intentionally not measured directly in first-wave interviews and requires later internal network evidence
+      - wording neutrality and coding usability still need empirical pilot evidence
+  problems_encountered:
+    - no direct client/RIC episode evidence exists yet, so verification cannot confirm any value hypothesis
+    - no empirical inter-rater coding result exists before pilot
+    - no authorized calendar, recruitment list or research budget exists; the plan correctly leaves these unresolved
+  verification_decision_rationale: >-
+    The research basis is suitable for pilot because its claims are bounded to a candidate framework, its units and measures are operational,
+    and its main semantic confounders are explicitly separated. Remaining gaps concern empirical execution and owner authority rather than an
+    internal contradiction that would make the pilot instrument misleading.
+conclusions_and_recommendations:
+  conclusion: semantic TECH-VER passes the refined model and measurement plan for candidate two-interview pilot use; this is not client validation or owner acceptance
+  recommendations:
+    - obtain explicit owner authority for the pilot before contacting participants if such authority is required operationally
+    - conduct one client-side and one RIC-side pilot interview before the main wave
+    - version the measurement plan if core prompts, evidence classes or measure definitions materially change after pilot
+    - do not form stakeholder requirements until direct evidence supports needs beyond isolated anecdotes
+references:
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
+  - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  semantic_verification: проверка смысла, границ вывода и пригодности к заявленному назначению, отдельная от структурного наличия полей
+  candidate_pilot_use: разрешенный предметной верификацией уровень зрелости дизайна, не означающий разрешение владельца на внешнее взаимодействие
+  field_level_evidence_class: классификация происхождения конкретного записанного утверждения, а не интервью целиком
+  causal_attribution: утверждение, что продукт вызвал бизнес-исход; в первой волне не устанавливается
+change_history:
+  - {version: V1, date: '2026-09-05', change: semantic verification of refined model and first-wave measurement plan for candidate pilot use}
+subject_unresolved:
+  - owner pilot/contact authority where operationally required
+  - direct client/RIC episode evidence
+  - pilot-based wording and coding usability
+  - structural exact-head external client verification
+owner_product_request:
+  exact_visible_text: 'давай'
+  resolved_referent: execute the previously proposed next step, including semantic TECH-VER and a working first-wave research instrument
+  request_specific_requirements:
+    - verify the decision-value research basis rather than merely restating it
+    - preserve evidence and acceptance boundaries
+    - identify blockers before pilot execution
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.verification_requirements_and_criteria]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, verification, body.problems_encountered]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_semantic_candidate_pending_exact_external_structural_worker}
+verification:
+  structural_status: pending_exact_external_client_information_product_worker
+  semantic_status: pass_for_candidate_pilot_use
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-CLIENT-DECISION-VALUE-RESEARCH-VERIFICATION-REPORT-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.analysis_of_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decision_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to §10.93 verification report, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.analysis_of_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: verification-report composition applied to semantic pre-pilot review of the refined decision-value model and measurement plan
+  information_item_management:
+    version_control: exact V1
+    review_approval: semantic verification is complete; owner acceptance/pilot authorization separate
+    quality_evaluation: subject TECH-VER plus external structural worker
+    retention: client process-owned verification product in MOZ1961/consultantplus
+    reuse_and_duplication: material plan/model changes require renewed verification or explicit disposition

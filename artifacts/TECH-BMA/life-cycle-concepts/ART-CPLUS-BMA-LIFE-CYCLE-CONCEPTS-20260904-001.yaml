@@ -1,0 +1,137 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V1
+artifact_label: life cycle concepts
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_partial_open_source
+acceptance_status: current_concept_described_future_concept_not_accepted
+artifact_instance_purpose: >-
+  Описать подтверждаемую открытыми источниками текущую концепцию использования и функционирования Сети КонсультантПлюс
+  с точки зрения пользователей и организационного взаимодействия, не выдавая неизвестное целевое состояние за установленное.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-CHARACTERIZE-SOLUTION-SPACE-20260904-001
+  methodic_instance: {methodic_id: METH-TECH-BMA-OPEN-SOURCE-EVIDENCE-ANALYSIS, methodic_version_id: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: current_concept_described}
+scope: current public operating/use concept of the nationwide ConsultantPlus network
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - https://www.consultant.ru/about/company/structure/
+  - https://www.consultant.ru/about/company/structure/ric/
+  - https://www.consultant.ru/about/
+  - https://www.consultant.ru/about/purchase/
+context:
+  evidence_boundary: official public sources only; internal architecture, economics and future operating concept are unresolved
+  related_problem_opportunity: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V3
+identifier: CPLUS-LIFE-CYCLE-CONCEPTS-PUBLIC-V2
+body:
+  user_and_stakeholder_perspective:
+    user_classes: [бухгалтеры, юристы, аудиторы, финансовые специалисты, руководители, преподаватели, студенты, школьники]
+    user_purpose: obtain, search and apply current legal information, judicial practice and analytical materials
+    service_relation: users receive product delivery/access and service support through the published network model
+  interfaces_and_organizational_impacts:
+    coordination_center: strategy, software technology development, information content/legal processing, network management and service-quality standard development
+    regional_information_centers: supply, service support and regional legal/judicial content participation
+    user_interface_forms: [local, network, remote internet, online/mobile access]
+    internal_interfaces: unresolved_not_publicly_supported
+  cost_criticality_feasibility:
+    cost: individualized package/price parameters are public; internal cost/economic model is not public
+    criticality: legal-information currentness and practical usability are mission-relevant analytical concerns, not a published risk rating
+    feasibility: current multiple delivery modes and continuing product evolution demonstrate existing operating feasibility only; future-change feasibility is unresolved
+  operational_scenarios:
+    - user obtains a configured ConsultantPlus product/access form through the regional service network and receives ongoing support
+    - system/content is updated repeatedly during the day; user searches legal information and analytical materials for work tasks
+    - regional and central participants maintain their published roles in content/service/product evolution
+  current_future_comparison:
+    current_state: distributed Coordination Center + RIC service/content model with multiple access forms and continuous product development
+    future_state: not_accepted_or_publicly_defined
+    known_change_problem: no specific internal problem is established by public evidence
+    assumptions_constraints: [regional service role is material, multiple access forms exist, detailed internal contractual/technical interfaces are unknown]
+summary: >-
+  The public concept of operations is sufficiently visible to describe current user access and central/regional roles.
+  It is insufficient to define a future concept, business case, transition concept or accepted change requirement.
+glossary:
+  current_operating_concept: source-supported description of how users and network participants currently interact with the system
+  future_concept: proposed target operating state; none is accepted in this product
+  RIC: regional information center in the published ConsultantPlus network structure
+change_history:
+  - {version: V1, date: '2026-09-05', change: initial public-source life-cycle concept}
+  - {version: V2, date: '2026-09-05', change: normalize active description and concept-of-operations composition}
+subject_unresolved: [target future operating concept, internal interfaces, internal economics, transition implications]
+owner_product_request:
+  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
+  request_specific_requirements: [describe only public-source-supported concept, do not invent future state, keep client ownership]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_materially_changed_client_TECH_BMA_life_cycle_concepts
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, subject_unresolved]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_worker}
+verification:
+  structural_status: normalized_pending_exact_external_client_worker
+  semantic_status: source/inference boundary subject to separate client TECH-VER
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/life-cycle-concepts/ART-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: concept of operations specialization for TECH-BMA life cycle concepts, resolution_basis: TECH-BMA exact binding to description plus §10.15, state: resolved}
+  universal_type: description
+  universal_content:
+    source_section: '7.2'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.2-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.2-B, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.2-C, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.2-D, state: satisfied, artifact_field_refs: [context]}
+      - {requirement_id: U7.2-E, state: satisfied, artifact_field_refs: [identifier]}
+      - {requirement_id: U7.2-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.2-G, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.2-H, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.2-I, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: description
+    specific_profiles: ['10.15']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.15'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.15-N01, state: satisfied, artifact_field_refs: [body.user_and_stakeholder_perspective]}
+          - {requirement_id: S10.15-N02, state: satisfied, artifact_field_refs: [body.interfaces_and_organizational_impacts]}
+          - {requirement_id: S10.15-N03, state: satisfied, artifact_field_refs: [body.cost_criticality_feasibility]}
+          - {requirement_id: S10.15-N04, state: satisfied, artifact_field_refs: [body.operational_scenarios]}
+          - {requirement_id: S10.15-N05, state: satisfied, artifact_field_refs: [body.current_future_comparison]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: current concept is source-bounded; future concept remains explicitly unresolved
+  information_item_management:
+    version_control: exact V2 supersedes V1
+    review_approval: current concept described; future concept and owner acceptance separate
+    quality_evaluation: external structural worker plus semantic TECH-VER
+    retention: client process-owned product in MOZ1961/consultantplus
+    reuse_and_duplication: future target concept requires a new ArtifactVersion

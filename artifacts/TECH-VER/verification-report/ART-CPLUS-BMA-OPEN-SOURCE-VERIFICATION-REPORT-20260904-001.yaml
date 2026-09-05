@@ -1,0 +1,165 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-OPEN-SOURCE-VERIFICATION-REPORT-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-VERIFICATION-REPORT-20260904-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-VERIFICATION-REPORT-20260904-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_semantic_verification_complete
+acceptance_status: verification_not_owner_acceptance
+artifact_instance_purpose: >-
+  Проверить семантическую корректность открытого BMA: соответствие фактических утверждений официальным источникам,
+  отделение аналитических гипотез от фактов и недопустимость вывода внутренней проблемы или целевого решения без внутренних данных.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-VER-BMA-SOURCE-TRACE-20260904-001
+  methodic_instance: {methodic_id: METH-TECH-VER-SOURCE-TRACE-SEMANTIC-REVIEW, methodic_version_id: METHVER-CPLUS-TECH-VER-SOURCE-TRACE-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: semantic_verification_complete}
+scope: semantic source-to-claim verification of the open-source ConsultantPlus BMA product set
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [ChatGPT engineering actor as verification performer]
+summary: >-
+  Проверка подтверждает допустимость source-supported current-state assertions и маркировки analyst inference.
+  Внутренняя бизнес-проблема, KPI, экономика, предпочтительная альтернатива и целевая архитектура не подтверждены
+  открытыми источниками и верификацией не объявляются установленными.
+introduction:
+  verified_object: normalized ConsultantPlus open-source BMA product set
+  verification_context: source-bounded semantic verification separate from structural composition and owner acceptance
+  verification_date: '2026-09-05'
+context_and_assumptions:
+  source_policy: official consultant.ru pages are factual evidence for claims attributed to them
+  limitation: mutable web pages are referenced by URL/retrieval date; immutable snapshots/hashes are not controlled in this run
+body:
+  verification_requirements_and_criteria:
+    - {id: VER-CPLUS-01, criterion: sourced factual claims are attributable to identified official sources}
+    - {id: VER-CPLUS-02, criterion: analyst inferences are explicitly marked and are not represented as official statements}
+    - {id: VER-CPLUS-03, criterion: absence of internal evidence prevents accepted internal problem/KPI/economic/target-state claims}
+    - {id: VER-CPLUS-04, criterion: alternative classes remain unselected hypotheses}
+  verified_items_and_dates:
+    - {artifact_version_id: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V3, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V3, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V2, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V2, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2, date: '2026-09-05'}
+  method_and_evidence:
+    method: compare product claims/evidence classes against official source statements and inspect conclusions for unsupported promotion of inference to fact
+    evidence:
+      - https://www.consultant.ru/about/company/structure/
+      - https://www.consultant.ru/about/company/structure/ric/
+      - https://www.consultant.ru/about/
+      - https://www.consultant.ru/about/purchase/
+      - https://www.consultant.ru/about/company/history/system/
+  detailed_results:
+    - {criterion_id: VER-CPLUS-01, result: pass, observation: mission/network-role/product/access/update claims are tied to official pages}
+    - {criterion_id: VER-CPLUS-02, result: pass, observation: opportunity and alternative classes are marked analyst inference candidates}
+    - {criterion_id: VER-CPLUS-03, result: pass, observation: internal problem/KPI/economics/target state remain unresolved rather than asserted}
+    - {criterion_id: VER-CPLUS-04, result: pass, observation: no preferred alternative is selected}
+  analysis_of_results:
+    overall: pass_for_declared_source_vs_inference_boundary
+    structural_truth_scope: this result does not verify ГОСТ field composition; external structural worker performs that separately
+    decision_scope: this result does not create client acceptance, business approval, deployment or baseline
+  problems_encountered:
+    - immutable snapshots/content hashes of public pages are absent, limiting exact historical replay
+    - internal data required for problem-driven decisions is unavailable by design of this public-source run
+  verification_decision_rationale: >-
+    The products consistently distinguish what the official sources state from what the analysis proposes and explicitly preserve
+    unavailable internal evidence as unresolved. Therefore the declared semantic boundary passes, while subject decision readiness remains blocked.
+conclusions_and_recommendations:
+  conclusion: semantic source/inference boundary verified for the normalized public-source BMA set
+  recommendation: continue TECH-BMA with internal evidence before accepting a business problem or advancing accepted needs to TECH-STK
+references:
+  - ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V3
+  - ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V3
+  - ARTVER-CPLUS-BMA-LIFE-CYCLE-CONCEPTS-20260904-001-V2
+  - ARTVER-CPLUS-BMA-OPEN-SOURCE-TRACEABILITY-20260904-001-V2
+  - ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2
+bibliography: ['ГОСТ Р 58609-2019 / ISO/IEC/IEEE 15289:2017 §§7.6, 10.93']
+glossary:
+  semantic_verification: verification of claim/evidence meaning and inference boundaries, distinct from structural field presence
+  decision_readiness: sufficiency of evidence and authority for a business decision; not established by this verification
+change_history:
+  - {version: V1, date: '2026-09-05', change: initial semantic source/inference verification}
+  - {version: V2, date: '2026-09-05', change: bind verification to normalized BMA ArtifactVersions and active §10.93 composition}
+subject_unresolved: [immutable web source snapshots, internal business evidence for problem and solution decisions]
+owner_product_request:
+  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
+  request_specific_requirements: [verify facts versus inference, do not imply owner acceptance, keep verification client-owned]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_materially_changed_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, subject_unresolved]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [body.method_and_evidence, references]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_worker}
+verification:
+  structural_status: normalized_pending_exact_external_client_worker
+  semantic_status: pass_for_declared_source_vs_inference_boundary
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-BMA-OPEN-SOURCE-VERIFICATION-REPORT-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to §10.93 verification report, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.analysis_of_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: §10.93 verification-report composition is applied to source-to-claim semantic verification
+  information_item_management:
+    version_control: exact V2 supersedes V1
+    review_approval: verification result does not imply owner acceptance
+    quality_evaluation: subject TECH-VER semantics plus external structural worker
+    retention: client process-owned verification product in MOZ1961/consultantplus
+    reuse_and_duplication: any material BMA/source change requires a new verification ArtifactVersion

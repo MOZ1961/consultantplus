@@ -1,0 +1,268 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-VERIFICATION-REPORT-20260905-001
+artifact_version_id: ARTVER-CPLUS-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-VERIFICATION-REPORT-20260905-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_semantic_verification_complete
+acceptance_status: verification_not_owner_acceptance_external_contact_or_commercial_adoption
+artifact_instance_purpose: >-
+  Проверить предметную пригодность предложений инженерной среды участникам модели клиентской ценности КонсультантПлюс:
+  взаимность обмена, привязку продуктов/услуг к решениям C1-C6/P1-P2, минимизацию запрашиваемой информации,
+  отделение чувствительных данных, отсутствие ложного коммерческого статуса и автоматического вывода требований.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-PARTICIPANT-OFFER-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-VER-PARTICIPANT-OFFER-20260905-001
+  methodic_instance:
+    methodic_id: METH-TECH-VER-PARTICIPANT-OFFER-SEMANTIC-REVIEW
+    methodic_version_id: METHVER-CPLUS-TECH-VER-PARTICIPANT-OFFER-SEMANTIC-REVIEW-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-PARTICIPANT-OFFER-20260905-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-05', status: semantic_verification_complete}
+scope: semantic verification of participant offers, candidate delivery products/services and information-request boundaries
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [ChatGPT engineering actor as verification performer]
+summary: >-
+  Проверка PASS для использования модели как кандидатной основы owner-facing предложений и последующей подготовки
+  participant-facing приглашений. Каждый приоритетный участник получает конкретный возврат в обмен на данные; минимальный
+  информационный запрос связан с результатом; чувствительные данные отделены и не обязательны для старта; РИЦ/Сеть не смешаны
+  с клиентскими решениями; кандидатные продукты/услуги не объявлены официальными предложениями КонсультантПлюс; требования,
+  цены, ROI и внешняя коммуникация не выводятся автоматически.
+introduction:
+  verified_object:
+    - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+    - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  verification_context: pre-external-contact semantic review against the refined decision model and first-wave evidence plan
+  verification_date: '2026-09-05'
+  audience: owner, future interviewers, RIC/client participants and subsequent TECH-BMA/TM-MEAS/TECH-STK execution
+context_and_assumptions:
+  refined_model_ref: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  measurement_plan_ref: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  evidence_boundary: verification reviews internal consistency and evidence discipline, not participant desirability, market demand or commercial feasibility
+  authority_boundary: no external contact, incentive, price, product promise, stakeholder requirement or adoption is authorized by verification
+body:
+  verification_requirements_and_criteria:
+    - id: VER-OFFER-01
+      criterion: every participant group in the current stakeholder identification has an explicit engagement disposition and current C/P scope
+    - id: VER-OFFER-02
+      criterion: first-wave participant offers are reciprocal and return a tangible participant-useful result rather than research burden only
+    - id: VER-OFFER-03
+      criterion: every minimum information request is traceable to reconstruction of a decision/provider-response episode or to the promised output
+    - id: VER-OFFER-04
+      criterion: optional-sensitive information is separated from minimum information and unnecessary secrets/personal data are excluded by default
+    - id: VER-OFFER-05
+      criterion: candidate engineering products/services are not represented as official ConsultantPlus or RIC commercial offerings
+    - id: VER-OFFER-06
+      criterion: C1-C6 client decisions and P1-P2 provider responses remain distinct in participant proposals
+    - id: VER-OFFER-07
+      criterion: participant statements, pain points and candidate priorities are not automatically promoted to stakeholder/system requirements or roadmap decisions
+    - id: VER-OFFER-08
+      criterion: participant evidence requests remain compatible with the existing episode-based TM-MEAS evidence classes and privacy rules
+    - id: VER-OFFER-09
+      criterion: no avoided-fine, ROI, financial benefit or risk-reduction attribution is claimed without a separate evidence design
+  verified_items_and_dates:
+    - {artifact_version_id: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1, date: '2026-09-05'}
+    - {artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1, date: '2026-09-05'}
+  method_and_evidence:
+    method: >-
+      Inspect stakeholder coverage, decision-scope mapping, each participant offer, candidate product/service catalog,
+      information-minimum/useful/optional-sensitive lists, data-minimization controls, commercial-status wording and
+      requirement/causality boundaries; compare with the refined BMA and TM-MEAS evidence rules.
+    evidence:
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+      - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+      - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  detailed_results:
+    - {criterion_id: VER-OFFER-01, result: pass, observation: SG-01..SG-07 are represented; C/P notation is aligned and engagement priority/deferment is explicit}
+    - {criterion_id: VER-OFFER-02, result: pass, observation: first-wave offers return D01-D09 outputs such as scenario passports, coverage/gap maps, role maps and structured feedback}
+    - {criterion_id: VER-OFFER-03, result: pass, observation: minimum asks center on role, episode, decision, evidence path, SPS/RIC contribution, action/status and relevant contextual constraints}
+    - {criterion_id: VER-OFFER-04, result: pass, observation: raw documents, exact budget, CRM exports, logs, security detail and identifiable data are optional or excluded; credentials/secrets are explicitly not requested}
+    - {criterion_id: VER-OFFER-05, result: pass, observation: candidate_delivery_product and candidate_services are explicitly bounded as engineering candidates and not official commercial offerings}
+    - {criterion_id: VER-OFFER-06, result: pass, observation: SG-01..SG-05 map to client C scopes while SG-06/SG-07 use P1/P2 provider-response scopes; related C5 evidence is labeled separately for RIC}
+    - {criterion_id: VER-OFFER-07, result: pass, observation: D10 and participant statements are candidate inputs only; no stakeholder/system requirement or roadmap acceptance is inferred}
+    - {criterion_id: VER-OFFER-08, result: pass, observation: offer evidence unit remains a de-identified episode compatible with existing direct-report/judgment/RIC-account/inference/not-established evidence classes}
+    - {criterion_id: VER-OFFER-09, result: pass, observation: D07 explicitly preserves attribution limits and postpones ROI/avoided-loss/risk-reduction claims}
+  analysis_of_results:
+    overall: pass_for_owner_review_and_candidate_participant_communication_basis
+    strengths:
+      - tangible return is defined for each active participant group
+      - information burden is staged from minimum to useful to optional-sensitive
+      - the same episode can support client/RIC triangulation without merging evidence classes
+      - commercial and requirements boundaries are explicit
+    limitations:
+      - no participant has yet confirmed that the proposed outputs are valuable enough to motivate participation
+      - exact RIC and Network internal service/product responsibilities remain unknown
+      - E0-E4 are engagement designs, not priced or operationally staffed service packages
+      - first-wave measurement plan does not yet give SG-04 or SG-07 a dedicated sample quota
+    decision_scope: >-
+      Verification supports owner review and drafting of invitations. It does not authorize external contact, prove demand,
+      accept service packaging, set price, adopt positioning, establish stakeholder requirements or merge repository changes.
+  problems_encountered:
+    - stakeholder V1 used obsolete L1-L8 notation after the BMA refinement; corrected by V2 to C1-C6/P1-P2 before verifying offers
+    - current evidence cannot determine whether a participant prefers a scenario passport, organizational map or another return product
+    - client/RIC confidential data may exist but is intentionally not treated as required until a specific evidence need justifies it
+  verification_decision_rationale: >-
+    The participant-offer design is internally consistent with the current decision model, returns concrete engineering value,
+    requests a minimum episode-centered evidence set, separates sensitive information and preserves commercial/requirements/causal boundaries.
+    Therefore it is semantically suitable as a candidate communication basis, while participant desirability and external use remain unverified.
+conclusions_and_recommendations:
+  conclusion: semantic verification passes for owner review and candidate participant communication basis
+  recommendation:
+    - present first-wave participants with E0/E1 reciprocal offers rather than a generic research request
+    - after owner choice of first contacts, produce short role-specific invitation text and one-page return-product examples
+    - pilot one client-side participant and one SG-06 RIC participant on related scenarios before scaling
+    - record participant response to the offer itself as evidence: accepted, declined, requested different output or refused information category
+    - do not package pricing or claim official ConsultantPlus service status until owner/Network authority and evidence exist
+references:
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9; ГОСТ Р 57193-2025 §6.4.9'
+  - 'ISO/IEC/IEEE 15289:2017 §§7.6, 10.93; ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  semantic_verification: verification of model meaning, boundary consistency and evidence discipline distinct from structural field checks
+  reciprocal_offer: participant evidence exchange for a concrete participant-useful engineering output
+  participant_desirability: participant judgment that the proposed return is worth the effort/data exchange; not established by this verification
+  candidate_communication_basis: internally verified content suitable for owner-approved drafting, not external-contact authority
+  evidence_class: source category preserving participant report, participant judgment, RIC account, analyst inference or not-established state
+change_history:
+  - {version: V1, date: '2026-09-05', change: initial semantic verification of participant offers and information exchange}
+subject_unresolved:
+  - participant desirability and willingness to participate
+  - external-contact and incentive authority
+  - official ConsultantPlus/RIC service scope and commercial packaging
+  - exact RIC/Network internal roles and data availability
+  - future pricing, ROI and economic evidence
+owner_product_request:
+  exact_visible_text: 'сделай соотв. предложения от нашей среды участникам. какие продукты и услуги. какая инфа мб нужна от них'
+  request_specific_requirements:
+    - verify participant-specific product/service proposals
+    - verify that requested information is justified and minimized
+    - verify candidate versus official commercial boundary
+    - verify that stakeholder requirements and financial attribution are not inferred
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.verification_requirements_and_criteria]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_external_client_worker}
+verification:
+  structural_status: pending_exact_external_client_information_product_workers
+  semantic_status: pass_for_owner_review_and_candidate_participant_communication_basis
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: 'MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-VERIFICATION-REPORT-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap'
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.analysis_of_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decision_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to §10.93 verification report, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.analysis_of_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: §10.93 verification-report composition is applied to semantic verification of participant offer and evidence-exchange design
+  information_item_management:
+    version_control: exact V1
+    review_approval: verification pass does not imply owner acceptance, participant contact or commercial adoption
+    quality_evaluation: subject TECH-VER semantics plus external structural worker
+    retention: client process-owned verification product in MOZ1961/consultantplus
+    reuse_and_duplication: material participant-offer or evidence-boundary change requires a new verification ArtifactVersion

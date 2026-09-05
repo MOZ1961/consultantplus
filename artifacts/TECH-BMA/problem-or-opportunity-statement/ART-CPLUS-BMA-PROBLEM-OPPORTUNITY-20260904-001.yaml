@@ -1,0 +1,175 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V3
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V2
+artifact_label: problem or opportunity statement
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_partial_open_source
+acceptance_status: not_accepted_internal_evidence_required
+artifact_instance_purpose: >-
+  Зафиксировать подтверждаемую открытыми официальными источниками деловую/миссионную ситуацию Сети КонсультантПлюс,
+  отделив факты от аналитических выводов и неизвестных внутренних данных.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-DEFINE-PROBLEM-OPPORTUNITY-SPACE-20260904-001
+  methodic_instance: {methodic_id: METH-TECH-BMA-OPEN-SOURCE-EVIDENCE-ANALYSIS, methodic_version_id: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: partial_open_source_candidate}
+scope: business-or-mission analysis of the public operating model of the nationwide ConsultantPlus network
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Официальные источники подтверждают миссию широкого распространения правовой информации, центрально-региональную
+  модель Сети, разработку/развитие СПС Координационным центром, поставку и сопровождение через РИЦ и несколько форм доступа.
+  Они не подтверждают конкретную внутреннюю бизнес-проблему, целевые KPI, экономику изменения или принятое целевое состояние.
+introduction:
+  purpose: establish source-supported mission/current-state context and evidence gaps before problem-driven decisions
+  audience: owner and subsequent client TECH-BMA/TECH-STK participants
+  coverage: mission, operating structure, delivery/service, users, update/access characteristics and evidence gaps
+context_and_assumptions:
+  official_mission: широкое распространение правовой информации среди населения нашей страны
+  source_boundary: official consultant.ru pages support facts; analyst propositions are marked separately; missing internal state is not guessed
+  system_boundary_inference: Coordination Center + RICs/partners + ConsultantPlus system/content + service support + users
+body:
+  evaluated_need_or_opportunity:
+    sourced_current_situation:
+      - {id: FACT-01, claim: 'Официальный сайт формулирует миссию Сети как широкое распространение правовой информации.', evidence_id: SRC-CPLUS-STRUCTURE}
+      - {id: FACT-02, claim: 'Координационный центр определяет стратегию развития Сети, развивает программные технологии, обеспечивает наполнение и юридическую обработку информации и совершенствует стандарт сервиса.', evidence_id: SRC-CPLUS-STRUCTURE}
+      - {id: FACT-03, claim: 'РИЦ поставляют СПС пользователям, обеспечивают сервисное сопровождение и участвуют в региональном наполнении.', evidence_id: SRC-CPLUS-STRUCTURE}
+      - {id: FACT-04, claim: 'Система содержит законодательство, судебную практику, аналитические материалы, консультации и комментарии.', evidence_id: SRC-CPLUS-ABOUT}
+      - {id: FACT-05, claim: 'Доступны локальные, сетевые и удаленные интернет-варианты; состав и стоимость комплекта индивидуализируются.', evidence_id: SRC-CPLUS-ABOUT}
+      - {id: FACT-06, claim: 'Система автоматически обновляется несколько раз в день и поддерживает онлайн/мобильный доступ.', evidence_id: SRC-CPLUS-PURCHASE}
+      - {id: FACT-07, claim: 'История продукта подтверждает продолжающееся развитие функций, включая ИИ-функции в 2026 году.', evidence_id: SRC-CPLUS-HISTORY}
+    problem_statement:
+      status: unresolved_not_publicly_supported
+      statement: конкретная внутренняя бизнес-проблема, требующая изменения системы или организации, из открытых источников не устанавливается
+      missing_evidence: [owner-defined business objective/problem, service-quality/KPI data, economics, customer outcomes, bottlenecks/incidents]
+    opportunity_statement:
+      status: analyst_inference_candidate
+      statement: распределенная центрально-региональная модель образует пространство для анализа доступности, согласованности сервиса и переноса продуктовых изменений
+      evidence_limit: приоритет, ценность и требуемое изменение открытыми источниками не доказаны
+  proposed_system_and_intended_use:
+    current_system: справочная правовая система КонсультантПлюс в общероссийской сервисной сети
+    user_classes_supported_by_sources: [бухгалтеры, юристы, аудиторы, финансовые специалисты, руководители, преподаватели, студенты, школьники]
+    intended_use_supported_by_sources: поиск и практическое использование правовой информации и аналитических материалов с сервисным сопровождением
+    relation_to_existing_systems_and_procedures: опубликованная центрально-региональная модель поставки и сервиса; внутренние интерфейсы не опубликованы
+    new_or_improved_system_decision: not_established
+  improvements_deficiencies_constraints_alternatives:
+    confirmed_improvement_activity: Координационный центр постоянно развивает СПС и сервисный стандарт; история продукта показывает регулярное развитие функций
+    deficiencies: unknown_not_publicly_supported
+    constraints_confirmed: [RIC delivery/support role, multiple access forms, individualized package/price parameters]
+    alternatives_ref: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
+    tradeoffs: unresolved_until_internal_problem_metrics_costs_and_constraints_are_available
+  technical_strategic_economic_market_basis:
+    strategic_basis_supported: published mission and Coordination Center responsibilities
+    technical_basis_supported: multiple access variants, frequent updates, mobile/online access and continuing evolution
+    economic_basis: unknown_not_publicly_supported_beyond_individualized_pricing
+    market_basis: official_site_self_characterization_only
+    preliminary_requirements: not_accepted; require subsequent TECH-STK/TECH-SYSREQ after accepted need/problem evidence
+  risks_and_management_methods:
+    risk_hypotheses:
+      - mistaking normal product evolution for an internal business problem
+      - mistaking distributed delivery for proven service inconsistency
+    management_method: require internal evidence before problem acceptance, alternative selection or requirements derivation
+conclusions_and_recommendations:
+  - retain mission, network roles, access forms and service model as evidence-backed BMA context
+  - do not register an accepted business problem or investment rationale from public current-state material alone
+  - obtain internal objectives, service/RIC metrics, economics, customer outcomes and known problem evidence before selecting an alternative
+references:
+  - {id: SRC-CPLUS-STRUCTURE, url: 'https://www.consultant.ru/about/company/structure/', authority: official_ConsultantPlus_site, accessed: '2026-09-05'}
+  - {id: SRC-CPLUS-RIC, url: 'https://www.consultant.ru/about/company/structure/ric/', authority: official_ConsultantPlus_site, accessed: '2026-09-05'}
+  - {id: SRC-CPLUS-ABOUT, url: 'https://www.consultant.ru/about/', authority: official_ConsultantPlus_site, accessed: '2026-09-05'}
+  - {id: SRC-CPLUS-PURCHASE, url: 'https://www.consultant.ru/about/purchase/', authority: official_ConsultantPlus_site, accessed: '2026-09-05'}
+  - {id: SRC-CPLUS-HISTORY, url: 'https://www.consultant.ru/about/company/history/system/', authority: official_ConsultantPlus_site, accessed: '2026-09-05'}
+bibliography: ['ГОСТ Р 58609-2019 / ISO/IEC/IEEE 15289:2017 §§7.6, 10.53']
+glossary:
+  source_supported_fact: statement directly supportable by an identified official source
+  analyst_inference_candidate: analysis-derived proposition not asserted by the source and not accepted by owner
+  unresolved_internal_information: subject information required for fuller analysis but absent from reviewed public sources
+change_history:
+  - {version: V1, date: '2026-09-04', change: initial open-source BMA problem/opportunity product}
+  - {version: V2, date: '2026-09-05', change: refresh public evidence and current binding references}
+  - {version: V3, date: '2026-09-05', change: normalize active normative-first product composition; subject evidence gaps remain explicit}
+subject_unresolved:
+  - internal business problem and impact baseline
+  - owner business objectives and decision questions
+  - service/customer/KPI evidence and economics
+owner_product_request:
+  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
+  request_specific_requirements: [fill only what open sources support, distinguish facts/inference/unknowns, keep client output in MOZ1961/consultantplus]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_materially_changed_client_TECH_BMA_problem_or_opportunity_statement
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, subject_unresolved]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.evaluated_need_or_opportunity]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_worker}
+verification:
+  structural_status: normalized_pending_exact_external_client_worker
+  semantic_status: official-source trace manually checked; separate client TECH-VER remains authority for source/inference verification
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/problem-or-opportunity-statement/ART-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: product needs assessment specialization for problem or opportunity statement, resolution_basis: TECH-BMA exact binding to report plus §10.53, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: specialization
+    generic_type: report
+    specific_profiles: ['10.53']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.53'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.53-N01, state: satisfied, artifact_field_refs: [body.evaluated_need_or_opportunity.problem_statement, body.evaluated_need_or_opportunity.opportunity_statement]}
+          - {requirement_id: S10.53-N02, state: satisfied, artifact_field_refs: [body.proposed_system_and_intended_use]}
+          - {requirement_id: S10.53-N03, state: satisfied, artifact_field_refs: [body.improvements_deficiencies_constraints_alternatives]}
+          - {requirement_id: S10.53-N04, state: satisfied, artifact_field_refs: [body.technical_strategic_economic_market_basis]}
+          - {requirement_id: S10.53-N05, state: satisfied, artifact_field_refs: [body.risks_and_management_methods]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: specific product-needs-assessment content is specialized to source-bounded BMA problem/opportunity analysis
+  information_item_management:
+    version_control: exact V3 supersedes V2
+    review_approval: owner acceptance of problem/opportunity remains separate
+    quality_evaluation: structural external-client worker plus separate semantic TECH-VER
+    retention: client process-owned product in MOZ1961/consultantplus
+    reuse_and_duplication: future internal evidence requires a new ArtifactVersion rather than overwriting public-evidence state

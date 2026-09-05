@@ -1,0 +1,266 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001
+artifact_version_id: ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+artifact_label: system design description
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_for_execution_capability
+acceptance_status: design_candidate_pending_implementation_and_canary_TECH_VER
+artifact_instance_purpose: >-
+  Спроектировать исполнимую вручную/LLM-поддерживаемую процедуру E0/S01 без нового приложения: точные входные поля,
+  правила минимизации и классификации доказательств, структуру D02/D03/D04, трассу к каноническим продуктам,
+  проверочный чек-лист и производное представление для участника.
+producer:
+  process_type_id: TECH-DES
+  process_instance_id: PI-CPLUS-TECH-DES-OFFER-EXECUTION-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-DES-DEFINE-OFFER-EXECUTION-20260905-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-DES-OFFER-EXECUTION
+    methodic_version_id: METHVER-CPLUS-TECH-DES-OFFER-EXECUTION-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-OFFER-EXECUTION-CAPABILITY-20260905-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+exact_inputs:
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate_for_execution_capability}
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+context:
+  design_problem: turn the E0/S01 architecture into a precise repeatable actor procedure while keeping templates inside process-owned design/procedure products rather than new semantic sidecars
+  design_assumption: ChatGPT engineering actor can perform structured extraction, classification and synthesis from participant text; GitHub connector persists exact process-owned products
+  design_limits: no external contact, no commercial promise, no automated legal correctness analysis, no full E1-E4/S02-S08 coverage
+  designation: CPLUS-OFFER-EXECUTION-DESIGN-V1
+body:
+  execution_unit:
+    name: E0_S01_single_episode_execution
+    admission:
+      - owner or authorized participant input explicitly requests/permits analysis of one episode
+      - participant group or role is known at a non-identifying level
+      - data can be minimized before persistence
+    completion:
+      - minimum input fields are dispositioned
+      - canonical evidence/result/verification/operation products are identified or explicit no-real-evidence canary mode is used
+      - D02, preliminary D03 and D04 are generated with evidence trace
+      - TECH-VER result is pass or pass_with_explicit_limitations before delivery
+  intake_contract:
+    required_fields:
+      - {id: IN-01, name: participant_group_or_role, evidence_default: direct_episode_fact_reported_by_participant}
+      - {id: IN-02, name: trigger, evidence_default: direct_episode_fact_reported_by_participant}
+      - {id: IN-03, name: required_decision_or_action, evidence_default: direct_episode_fact_reported_by_participant}
+      - {id: IN-04, name: deadline_or_pressure, evidence_default: direct_episode_fact_reported_by_participant, allow_not_established: true}
+      - {id: IN-05, name: information_path, evidence_default: direct_episode_fact_reported_by_participant}
+      - {id: IN-06, name: consultantplus_contribution, evidence_default: participant_interpretation_or_judgment, allow_none: true}
+      - {id: IN-07, name: ric_contribution, evidence_default: participant_interpretation_or_judgment, allow_none: true}
+      - {id: IN-08, name: final_action_or_status, evidence_default: direct_episode_fact_reported_by_participant}
+      - {id: IN-09, name: remaining_uncertainty, evidence_default: participant_interpretation_or_judgment, allow_none: true}
+    optional_fields:
+      - {id: IN-10, name: recurrence_or_typicality}
+      - {id: IN-11, name: perceived_consequence_of_error_or_delay}
+      - {id: IN-12, name: handoffs_or_other_participants}
+      - {id: IN-13, name: retained_reasoning_or_evidence}
+    normalization_rules:
+      - missing required field is represented as not_established, never invented
+      - names of natural persons and counterparties are removed unless indispensable and separately authorized
+      - free-text participant judgments remain participant judgments after paraphrase
+      - direct quotes are not retained unless consent is explicit
+      - credentials, secrets and privileged raw materials are rejected from canonical persistence
+  evidence_record_design:
+    canonical_owner_when_real: TM-MEAS -> measurement register
+    record_fields:
+      - episode_id
+      - participant_group_or_role
+      - trigger
+      - required_decision_or_action
+      - deadline_or_pressure
+      - information_path
+      - consultantplus_contribution
+      - ric_contribution
+      - final_action_or_status
+      - remaining_uncertainty
+      - optional_context
+      - evidence_class_by_field
+      - minimization_actions
+      - unresolved_fields
+    identifier_rule: use non-identifying execution-local IDs; no participant name required
+  analysis_design:
+    canonical_owner: TECH-BMA -> business or mission analysis report
+    D02_critical_scenario_passport:
+      fields:
+        - trigger
+        - participant_role
+        - decision_or_action
+        - time_pressure
+        - evidence_path
+        - final_action_or_status
+        - retained_basis_if_known
+        - unresolved_uncertainty
+      trace_rule: every field traces to IN-* or is not_established
+    D03_preliminary_coverage_map:
+      dimensions:
+        - ConsultantPlus
+        - RIC_service
+        - client_organization_or_colleagues
+        - other_sources
+      allowed_contribution_labels: [find, applicability, interpret, compare, justify, monitor, setup, training, consultation, support, other, none, not_established]
+      inference_rule: analyst may classify contribution only from participant-described action; classification is interviewer_coding_or_inference
+    D04_preliminary_gap_map:
+      allowed_gap_types: [remaining_uncertainty, duplicated_search, manual_workaround, access_barrier, escalation, missing_evidence, process_handoff, other, none, not_established]
+      inference_rule: gap exists only if supported by participant statement or explicitly marked analyst inference
+    prohibited_output_claims:
+      - ROI or payback
+      - avoided fine or loss
+      - causal reduction of legal/regulatory risk
+      - statistical prevalence from one episode
+      - official ConsultantPlus/RIC service promise
+      - correctness of the participant legal or professional decision
+  verification_design:
+    required_checks:
+      - {id: VC-01, check: every IN-01..IN-09 has present/none/not_established disposition}
+      - {id: VC-02, check: no credentials/secrets/unnecessary identifiers persisted}
+      - {id: VC-03, check: every D02 field traces to an intake field or not_established}
+      - {id: VC-04, check: each D03/D04 analytical classification is tagged analyst inference when not direct participant wording}
+      - {id: VC-05, check: ConsultantPlus and RIC contributions remain separate}
+      - {id: VC-06, check: prohibited output claims absent}
+      - {id: VC-07, check: unresolved data block only dependent conclusions}
+      - {id: VC-08, check: participant rendering references exact verified TECH-BMA ArtifactVersion}
+      - {id: VC-09, check: client authority and BIND-CPLUS-SE-001 preserved}
+      - {id: VC-10, check: exactly one TECH-OP operation report exists for a real execution request}
+  participant_rendering_design:
+    title_pattern: 'Разбор рабочего эпизода — <role/context without identifying details>'
+    sections:
+      - Что произошло и какое решение требовалось
+      - Как шел поиск основания и принятие решения
+      - Где помог КонсультантПлюс
+      - Где участвовал РИЦ или сопровождение
+      - Что осталось неопределенным или потребовало обходного пути
+      - Что можно проверить или улучшить дальше
+      - Ограничения вывода
+    mandatory_footer: 'Результат основан на описанном эпизоде; это не юридическое заключение, не оценка ROI и не официальное коммерческое обязательство КонсультантПлюс/РИЦ.'
+    authority_note: rendering is derived from exact verified TECH-BMA ArtifactVersion and is not canonical on its own
+  persistence_design:
+    real_execution_products:
+      - TM-MEAS -> measurement register
+      - TECH-BMA -> business or mission analysis report
+      - TECH-VER -> verification report
+      - TECH-OP -> operation report
+    capability_definition_products:
+      - TECH-SYSREQ -> system requirements
+      - TECH-ARCH -> system architecture description
+      - TECH-DES -> system design description
+      - TECH-IMP -> implementation procedure
+    canary_mode: synthetic fixture may be embedded in TECH-VER and shall not be persisted as client evidence or measurement register
+  requirement_traceability:
+    SR-OEX-01: [body.execution_unit.admission]
+    SR-OEX-02: [body.intake_contract.required_fields]
+    SR-OEX-03: [body.intake_contract.normalization_rules]
+    SR-OEX-04: [body.evidence_record_design, body.intake_contract.required_fields]
+    SR-OEX-05: [body.evidence_record_design.canonical_owner_when_real]
+    SR-OEX-06: [body.analysis_design]
+    SR-OEX-07: [body.analysis_design.D02_critical_scenario_passport.trace_rule, body.analysis_design.D03_preliminary_coverage_map.inference_rule, body.analysis_design.D04_preliminary_gap_map.inference_rule]
+    SR-OEX-08: [body.verification_design]
+    SR-OEX-09: [body.participant_rendering_design]
+    SR-OEX-10: [body.persistence_design.real_execution_products]
+    SR-OEX-11: [body.analysis_design.prohibited_output_claims]
+    SR-OEX-12: [body.intake_contract.normalization_rules, body.verification_design]
+    SR-OEX-13: [interface_binding_ref, body.verification_design]
+    SR-OEX-14: [context.design_assumption]
+    SR-OEX-15: [body.persistence_design.canary_mode, body.verification_design]
+summary:
+  conclusion: design is sufficiently explicit to be executed by the current engineering actor without a new software tool and without semantic sidecars
+  remaining_gap: implementation procedure must bind this design into ordered execution and TECH-VER must pass a synthetic canary before capability claim
+glossary:
+  intake_field: normalized field accepted from one episode narrative
+  evidence_class: provenance category distinguishing participant report, participant judgment, analyst inference, RIC account and unknown
+  participant_rendering: non-authoritative human-readable view of exact canonical analysis
+  canary_mode: synthetic test execution used only to verify capability mechanics, not client truth
+change_history:
+  - {version: V1, date: '2026-09-05', change: define executable E0/S01 offer-execution design inside process-owned client products}
+owner_product_request:
+  exact_visible_text: 'дальше'
+  resolved_referent: continue from requirements and architecture into a concrete E0/S01 execution design and implementation/verification path
+  request_specific_requirements: [make the offer practically executable, avoid a new application unless required, preserve standard products and client authority, prove by synthetic canary before capability claim]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_DES_system_design_description
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_resolution]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [summary.remaining_gap, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, exact_inputs, body.requirement_traceability]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_client_worker_and_subject_TECH_VER}
+verification:
+  structural_status: pending_exact_head_external_client_information_product_worker
+  semantic_status: executable design complete; implementation procedure and canary TECH-VER pending
+  owner_acceptance: design baseline separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-DES/system-design-description/ART-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.5', process_name: 'Design definition process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.5', process_name: 'Процесс определения проекта'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: system design description
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.2', specific_status: absent_no_specific_information_item, specific_items: []}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.2', specific_status: absent_no_specific_information_item, specific_items: []}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.2-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-B, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-C, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-D, disposition: satisfied, artifact_field_refs: [context], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-E, disposition: satisfied, artifact_field_refs: [context.designation], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-G, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-H, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-I, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: system design description for ConsultantPlus E0/S01 offer execution, resolution_basis: exact TECH-DES system design description generic-only normative binding, state: resolved}
+  universal_type: description
+  universal_content:
+    source_section: '7.2'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.2-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.2-B, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.2-C, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.2-D, state: satisfied, artifact_field_refs: [context]}
+      - {requirement_id: U7.2-E, state: satisfied, artifact_field_refs: [context.designation]}
+      - {requirement_id: U7.2-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.2-G, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.2-H, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.2-I, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: generic_only_normative, generic_type: description, specific_profiles: [], specific_records: [], local_additive_profile: null}
+  normative_specific_content: {state: not_applicable, basis: exact crosswalk selects no §9.2/§10 specific profile for TECH-DES|system design description, profile_coverage: []}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-DES|system design description}
+  tailoring: generic description is specialized to the field-level and procedural design of one E0/S01 offer execution
+  information_item_management: {version_control: exact V1, review_approval: candidate pending implementation/canary verification, quality_evaluation: external structural worker plus subject TECH-VER, retention: canonical client TECH-DES product, reuse_and_duplication: implementation references this exact ArtifactVersion}

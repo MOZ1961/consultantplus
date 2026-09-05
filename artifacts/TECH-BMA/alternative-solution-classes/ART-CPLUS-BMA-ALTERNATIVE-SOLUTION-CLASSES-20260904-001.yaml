@@ -1,0 +1,121 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001
+artifact_version_id: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V3
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001-V2
+artifact_label: alternative solution classes
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_partial_open_source
+acceptance_status: alternatives_not_selected_or_accepted
+artifact_instance_purpose: >-
+  Сформировать классы альтернатив, допустимые на текущей открытой доказательной базе, не превращая аналитические
+  гипотезы в принятую стратегию или проект изменения.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-OPEN-SOURCE-20260904-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-EVALUATE-ALTERNATIVE-SOLUTION-CLASSES-20260904-001
+  methodic_instance: {methodic_id: METH-TECH-BMA-OPEN-SOURCE-EVIDENCE-ANALYSIS, methodic_version_id: METHVER-CPLUS-TECH-BMA-OPEN-SOURCE-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-BMA-20260904-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V2, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-05', status: partial_open_source_candidate}
+scope: candidate alternative classes for the ConsultantPlus network business/mission analysis
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - https://www.consultant.ru/about/company/structure/
+  - https://www.consultant.ru/about/
+  - https://www.consultant.ru/about/purchase/
+  - https://www.consultant.ru/about/company/history/system/
+context:
+  problem_evidence_ref: ARTVER-CPLUS-BMA-PROBLEM-OPPORTUNITY-20260904-001-V3
+  evidence_limit: no accepted internal business problem, target metric, budget, economics or investment decision is established by public sources
+  decision_rule: classes are retained for later comparison only; none is selected
+identifier: CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-V3
+body:
+  current_solution_class:
+    id: ALT-CPLUS-00
+    evidence_class: sourced_current_state_baseline
+    description: distributed model in which Coordination Center develops product/technology/content and manages network strategy while RICs supply and support users and contribute regional content
+  candidate_classes:
+    - {id: ALT-CPLUS-01, evidence_class: analyst_inference_candidate, description: preserve the current central/RIC responsibility model and improve product/service incrementally, decision_status: not_evaluated}
+    - {id: ALT-CPLUS-02, evidence_class: analyst_inference_candidate, description: expand digital/self-service access while retaining RIC service functions, decision_status: not_evaluated}
+    - {id: ALT-CPLUS-03, evidence_class: analyst_inference_candidate, description: strengthen central-regional standardization of quality and information/service flows, decision_status: hypothesis_only}
+    - {id: ALT-CPLUS-04, evidence_class: analyst_inference_candidate, description: evolve product/service packages by professional user segment while preserving a common legal-information platform, decision_status: not_evaluated}
+  future_comparison_dimensions: [mission contribution, accessibility/workflow fit, currentness/usability, service consistency, cost/economic effect, central/RIC impact, risk/transition burden]
+  exclusions:
+    - no class is selected or recommended
+    - no architecture replacement is justified by public evidence alone
+    - current AI functions are evidence of product evolution, not proof of an AI-centric target strategy
+summary: >-
+  Four bounded analyst-generated classes are retained for future comparison. Their selection is blocked until internal objectives,
+  problem evidence, measures, constraints, costs, risks and stakeholder needs are available.
+glossary:
+  alternative_solution_class: broad class of possible response retained before selecting a specific solution
+  sourced_current_state_baseline: source-supported current model used for comparison
+  analyst_inference_candidate: analysis-derived candidate not asserted by source and not accepted by owner
+change_history:
+  - {version: V1, date: '2026-09-04', change: initial source-bounded alternative classes}
+  - {version: V2, date: '2026-09-05', change: refresh sources and current binding}
+  - {version: V3, date: '2026-09-05', change: normalize active generic description composition; retain decision gaps separately}
+subject_unresolved: [accepted problem/opportunity, comparison data, economics, selection criteria and owner decision]
+owner_product_request:
+  exact_visible_text: 'подключи клиентскую систему - сеть консультант плюс. заполни что можешь по артефактам ЖЦ из открытых источников в части БА'
+  request_specific_requirements: [populate only defensible alternatives, do not select inferred strategy, keep client ownership]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_materially_changed_client_TECH_BMA_alternative_solution_classes
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_resolution]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, subject_unresolved]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, context]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_worker}
+verification:
+  structural_status: normalized_pending_exact_external_client_worker
+  semantic_status: alternatives remain bounded analyst inference; separate client TECH-VER applies
+  owner_acceptance: separate_not_inferred
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/alternative-solution-classes/ART-CPLUS-BMA-ALTERNATIVE-SOLUTION-CLASSES-20260904-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: alternative solution classes, resolution_basis: TECH-BMA exact generic-only description binding, state: resolved}
+  universal_type: description
+  universal_content:
+    source_section: '7.2'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.2-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.2-B, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.2-C, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.2-D, state: satisfied, artifact_field_refs: [context]}
+      - {requirement_id: U7.2-E, state: satisfied, artifact_field_refs: [identifier]}
+      - {requirement_id: U7.2-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.2-G, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.2-H, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.2-I, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: generic_only_normative
+    generic_type: description
+    specific_profiles: []
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content: {state: not_applicable, basis: active exact binding selects no §9.2/§10 specific profile, profile_coverage: []}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: alternative classes are a structured description; no selection or acceptance is inferred
+  information_item_management:
+    version_control: exact V3 supersedes V2
+    review_approval: alternatives not selected; owner acceptance separate
+    quality_evaluation: external structural worker plus semantic TECH-VER
+    retention: client process-owned product in MOZ1961/consultantplus
+    reuse_and_duplication: future comparison evidence requires a new ArtifactVersion
