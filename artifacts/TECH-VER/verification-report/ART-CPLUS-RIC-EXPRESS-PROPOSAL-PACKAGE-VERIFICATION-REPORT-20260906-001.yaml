@@ -1,0 +1,296 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: verification_completed_candidate_pending_exact_head_worker
+acceptance_status: subject_pass_owner_external_issue_and_RIC_acceptance_separate
+artifact_instance_purpose: >-
+  Проверить комплект подготовки пилотного предложения РИЦ: внешний AGR-SUP → supply response как продукт
+  «Предложение» по §10.56, внутренний TM-PLAN → SEMP как План управления проектом по §10.55 и
+  AGR-SUP → supply records/artifacts как запись передачи с представлением «сопроводительное письмо».
+  Проверить, что внешняя структура работ присутствует в Предложении, но внутренний SEMP не передается адресату.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-20260906-001
+  activity_instance_id: AI-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-20260906-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE
+    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-DELIVERY-PACKAGE-20260906-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-06', status: verification_completed_candidate_pending_exact_head_worker}
+scope: subject verification of the exact draft RIC E0/S01 proposal package; no actual external transmission, RIC acceptance or real pilot execution
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Предметная проверка пройдена: Предложение содержит стоимость, график, риски, методику, подтвержденные
+  возможности поставщика и границу полномочий; внешняя структура W01–W08 достаточна для понимания участия
+  РИЦ и прослеживается к внутренней WBS. Внутренний SEMP содержит полный план и непоставляемые работы,
+  но исключен из внешнего пакета. Сопроводительное письмо является представлением supply-record, ссылается
+  только на точную версию Предложения и не сообщает внутренний план. Цена 0 рублей относится только к одному
+  кандидатному пилоту и не действует как внешнее обязательство до owner approval. Exact-head structural worker
+  остается отдельным обязательным gate.
+introduction:
+  verified_items:
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+  verification_requirements:
+    - Proposal must satisfy universal description §7.2 and specific proposal §10.56
+    - internal SEMP must satisfy universal plan §7.3 and project-management-plan §10.55
+    - transmittal record must satisfy record §9.1 plus information-item distribution/version record content
+    - external Proposal must include a recipient-facing work structure derived from internal WBS
+    - internal SEMP must not be listed as an external attachment or recipient deliverable
+    - cost, schedule, risks, methodology, supplier capability and authorization boundaries must be explicit
+    - unverified market, ROI, legal correctness or official-service claims must be absent
+    - external sending must remain blocked until explicit owner approval
+  criteria_basis:
+    - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+    - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    - AGR-SUP §10.56 local content contract
+    - TM-PLAN §10.55 local content contract
+    - TECH-VER §10.93 local content contract
+context_and_assumptions:
+  proposal_basis: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  verified_execution_basis: ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
+  evidence_boundary: >-
+    This verification checks product composition, internal/external boundary, traceability and claim discipline.
+    It does not prove RIC usefulness, participant willingness, commercial demand, professional correctness of
+    client decisions, legal/tax conclusions or official ConsultantPlus/RIC product status.
+  owner_authority: purpose change and package preparation authorized; external transmission and external commitment not authorized by this request
+body:
+  verification_method_and_evidence:
+    method: inspect exact draft products against universal/specific content contracts, compare W01–W08 external work structure to internal WBS recipient_projection fields, and inspect external attachment/distribution lists for leakage of internal SEMP
+    evidence:
+      - exact three verified ArtifactVersions listed in introduction.verified_items
+      - existing E0/S01 requirements, architecture, design, implementation procedure and canary
+      - current AGR-SUP/TM-PLAN/TECH-VER normative content contracts from generic SE environment
+  criteria_results:
+    - id: V-RIC-PKG-01
+      criterion: Proposal identity and GOST composition
+      result: pass
+      evidence: supply response resolves to proposal; U7.2 and S10.56 rows are explicitly covered
+    - id: V-RIC-PKG-02
+      criterion: Proposal cost
+      result: pass_with_authority_boundary
+      evidence: one-pilot proposed cost is 0 RUB; follow-on price is not established; external effect blocked until owner approval
+    - id: V-RIC-PKG-03
+      criterion: Proposal schedule
+      result: pass
+      evidence: trigger, 45–60-minute session, preparation window and overall three-working-day target are explicit
+    - id: V-RIC-PKG-04
+      criterion: Proposal risks and mitigations
+      result: pass
+      evidence: specificity, recall, confidentiality, attribution and schedule risks are explicitly addressed
+    - id: V-RIC-PKG-05
+      criterion: methodology and supplier capability
+      result: pass_with_scope_limit
+      evidence: E0/S01 implementation/canary are cited; real RIC usefulness and commercial demand remain not established
+    - id: V-RIC-PKG-06
+      criterion: external work structure
+      result: pass
+      evidence: Proposal contains W01–W08 with work, content, RIC input, result, duration, responsibility and completion criterion
+    - id: V-RIC-PKG-07
+      criterion: internal plan composition
+      result: pass
+      evidence: SEMP contains universal planning content and §10.55 lifecycle/organization/resources/reviews/security/deliverables/risks/WBS/alternatives/closure
+    - id: V-RIC-PKG-08
+      criterion: internal plan confidentiality boundary
+      result: pass
+      evidence: Proposal states internal SEMP is not transmitted; cover-letter attachment list contains only the Proposal; SEMP WBS marks internal-only I00/I01/I02/I09
+    - id: V-RIC-PKG-09
+      criterion: cover letter product identity
+      result: pass
+      evidence: cover-letter text is embedded as rendering of AGR-SUP supply records/artifacts with §9.1 + R9-INFORMATION-ITEM content
+    - id: V-RIC-PKG-10
+      criterion: prohibited unsupported claims
+      result: pass
+      evidence: no official RIC service, ROI, avoided fine, risk reduction or professional correctness claim is asserted
+    - id: V-RIC-PKG-11
+      criterion: external-send authority
+      result: pass
+      evidence: proposal and transmittal record both state not sent / pending owner approval
+  detailed_results:
+    proposal_normative_identity: pass
+    internal_plan_normative_identity: pass
+    cover_letter_as_record_identity: pass
+    proposal_contains_external_work_projection: pass
+    proposal_does_not_attach_internal_SEMP: pass
+    cover_letter_does_not_attach_internal_SEMP: pass
+    cost_schedule_risk_method_capability_authorization: pass
+    evidence_and_claim_boundary: pass
+    subject_verification: pass_candidate
+    exact_head_structural_verification: pending_after_SE_request_operation_report_and_PR
+    external_issue: not_authorized
+    real_RIC_validation: not_performed
+  problems_encountered:
+    - id: P-RIC-PKG-01
+      problem: standalone «сопроводительное письмо» has no dedicated current canonical O or Section 10 identity
+      disposition: represent it as a human-readable view of AGR-SUP → supply records/artifacts using §9.1 and R9-INFORMATION-ITEM; no new product added
+    - id: P-RIC-PKG-02
+      problem: standalone breakdown structures has canonical TM-PLAN O but no direct §10 document identity
+      disposition: keep full WBS inside internal TM-PLAN → SEMP §10.55 and expose only a derived recipient-facing work structure inside the Proposal
+    - id: P-RIC-PKG-03
+      problem: proposed monetary condition could be mistaken for an already authorized commercial promise
+      disposition: 0 RUB is explicitly limited to one candidate pilot and external effectiveness is blocked until owner approval
+  verification_decisions:
+    - decision: package is suitable for owner review after exact-head structural verification
+      rationale: product identities, GOST composition and internal/external boundaries are coherent
+    - decision: do not send package externally
+      rationale: current request authorized engineering execution, not external transmission or commercial commitment
+    - decision: do not expose internal SEMP to RIC
+      rationale: user explicitly defined the plan as an internal engineering product; recipient needs only work structure projection in Proposal
+    - decision: no canonical product addition is required
+      rationale: Proposal resolves to AGR-SUP supply response; plan to TM-PLAN SEMP; cover letter to supply records/artifacts
+conclusions_and_recommendations:
+  conclusion: >-
+    Subject verification passes for the candidate RIC proposal package. The package realizes the new branch purpose at the
+    preparation layer: a GOST-composed Proposal with external work structure, an internal GOST-composed SEMP and a controlled
+    cover-letter/transmittal record. External issue, RIC acceptance and real pilot execution remain separate.
+  recommendation: after exact-head structural PASS, present the Proposal and cover-letter text to owner for external-issue decision; if approved, execute one real E0/S01 pilot and persist TM-MEAS + TECH-BMA + TECH-VER + TECH-OP evidence
+references:
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §§6.1.2, 6.3.1, 6.4.9 — Supply, Project Planning and Verification processes'
+  - 'ГОСТ Р 57193-2025 §§6.1.2, 6.3.1, 6.4.9 — процесс поставки, процесс планирования проекта, процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.2, 7.3, 7.6, 9.1, 10.55, 10.56, 10.93'
+glossary:
+  Proposal: информационный элемент «Предложение» §10.56, реализованный как AGR-SUP → supply response
+  SEMP: внутренний План управления проектом §10.55, реализованный как TM-PLAN → SEMP
+  cover_letter: человекочитаемое представление записи передачи, а не отдельный новый канонический продукт
+  external_work_structure: recipient-facing projection of W01-W08 from the internal SEMP WBS
+change_history:
+  - {version: V1, date: '2026-09-06', change: verify first normative RIC proposal + internal plan + cover-letter/transmittal package}
+owner_product_request:
+  exact_visible_text: 'измени назначение соответственно и выполняй'
+  request_specific_requirements:
+    - verify that Proposal is a GOST product
+    - verify that internal plan remains internal
+    - verify that Proposal contains recipient-facing work structure instead of attaching internal plan
+    - verify cover letter is supplied without inventing an unsupported canonical product
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.criteria_results]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_external_worker}
+verification:
+  structural_status: pending_exact_head_external_client_worker
+  semantic_status: pass_candidate_package_semantics_and_internal_external_boundary
+  owner_acceptance: engineering_execution_authorized_external_issue_and_package_acceptance_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_items, scope], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [introduction.verification_requirements, introduction.criteria_basis], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [introduction.verified_items, issued_at_and_status], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decisions], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to §10.93, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: direct_section10_match
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_items, scope]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [introduction.verification_requirements, introduction.criteria_basis]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [introduction.verified_items, issued_at_and_status]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected for TECH-VER report}
+  tailoring: report verifies a package of three process-owned information products and the boundary between internal plan and external recipient content
+  information_item_management:
+    version_control: V1 first candidate
+    review_approval: subject PASS does not authorize external transmission or RIC acceptance
+    quality_evaluation: exact-head external client structural worker remains required
+    retention: canonical client TECH-VER product
+    reuse_and_duplication: future package revisions must cite exact successor products
