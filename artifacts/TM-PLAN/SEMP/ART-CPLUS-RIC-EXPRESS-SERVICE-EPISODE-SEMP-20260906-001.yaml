@@ -1,0 +1,424 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+artifact_label: SEMP
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_internal_plan_candidate
+acceptance_status: owner_plan_acceptance_and_external_service_acceptance_separate
+artifact_instance_purpose: >-
+  Внутренне спланировать поставку пилотного предложения «Экспресс-разбор сервисного эпизода РИЦ»:
+  определить полный состав выполняемых и обеспечивающих работ, роли, ресурсы, сроки, внутренние проверки,
+  риски, информационную безопасность и завершение. Этот План управления проектом является внутренним
+  управляющим продуктом инженерной среды. Внешнему РИЦ передается только контролируемое представление
+  работ внутри продукта AGR-SUP → supply response.
+producer:
+  process_type_id: TM-PLAN
+  process_instance_id: PI-CPLUS-TM-PLAN-RIC-EXPRESS-EPISODE-20260906-001
+  activity_instance_id: AI-CPLUS-TM-PLAN-PLAN-RIC-PILOT-20260906-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-PLAN-RIC-PILOT
+    methodic_version_id: METHVER-CPLUS-TM-PLAN-RIC-PILOT-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-DELIVERY-PACKAGE-20260906-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-06', status: internal_plan_candidate}
+scope: internal planning and management of one E0/S01 RIC pilot from proposal preparation through closeout and evidence capture
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+applicable_references:
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+  - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
+authorizing_organization: owner of MOZ1961/consultantplus engineering contour
+introduction:
+  purpose: управлять одной пилотной поставкой E0/S01 без раскрытия внутренней инженерной структуры адресату
+  audience: owner and authorized engineering actors only
+  applicability: from owner authorization to prepare the RIC package through pilot closeout; external issue and real execution require separate owner gates
+planned_activities_and_tasks:
+  - prepare and verify the external Proposal
+  - prepare the external transmittal/cover-letter record
+  - obtain owner approval before any external issue
+  - receive and minimize one authorized RIC episode
+  - conduct one 45–60-minute reconstruction session
+  - persist measurement evidence and analysis through canonical process-owned products
+  - perform subject verification before participant delivery
+  - deliver recipient-facing result and capture factual corrections/usefulness feedback
+  - close the pilot and preserve evidence for offer improvement
+tools_methods_and_techniques:
+  tools: [ChatGPT engineering actor, GitHub connector, process-owned artifact repository, structural workers]
+  methods:
+    - E0/S01 normalized intake and evidence-class separation
+    - data minimization and de-identification by default
+    - scenario reconstruction from trigger through decision/status
+    - explicit separation of ConsultantPlus contribution, RIC contribution, client/colleague contribution and other sources
+    - fail-closed verification of normative product composition
+    - no causal/economic/legal claim without independent evidence design
+schedule:
+  planning_and_package_preparation: engineering execution before external issue
+  external_trigger: adequate input plus agreed session time after owner-approved issue and RIC participation
+  W01_W02: up to 1 working day after RIC response
+  W03: one 45–60-minute session
+  W04_W07: up to 2 working days after the session
+  W08: participant result delivery no later than the third working day from adequate input; optional review up to 30 minutes
+  closeout: after feedback is recorded or after explicit no-feedback disposition
+budget_and_cost_estimate:
+  external_pilot_price_rub: 0
+  internal_engineering_effort_estimate: 4-6 actor-hours excluding waiting time
+  monetary_internal_budget: not_established
+  rule: no external paid follow-on work is authorized or priced by this plan
+resources_and_allocation:
+  supplier_resources:
+    - owner authority for external issue and final acceptance decisions
+    - one engineering actor for intake, analysis, product generation and verification coordination
+    - GitHub repositories MOZ1961/se and MOZ1961/consultantplus
+  expected_RIC_participation:
+    - one authorized participant
+    - one concrete de-identified episode
+    - 45–60 minutes for session
+    - optional up-to-30-minute review
+  non_required_resources:
+    - raw CRM export
+    - named client data
+    - credentials or secrets
+    - paid software or external infrastructure
+responsibilities_and_authorities:
+  owner:
+    authority: approve external issue, changes to commercial conditions, acceptance/adoption and merge
+  engineering_actor:
+    responsibility: execute planned process instances, preserve evidence boundaries, generate products and verify composition
+    authority_limit: may not externally send, bind RIC commercially, or claim official ConsultantPlus/RIC status without owner approval
+  RIC_participant:
+    responsibility: provide authorized factual episode information and review factual reconstruction
+    authority_limit: participant feedback does not automatically become an accepted product/service requirement
+party_interfaces:
+  supplier_to_RIC:
+    input: owner-approved Proposal and cover-letter rendering
+    RIC_response: participant + episode + schedule confirmation
+    delivery: verified recipient-facing analysis rendering
+  internal_cross_environment:
+    generic_SE: MOZ1961/se request-level TECH-OP and generic process/content controls
+    client_system: MOZ1961/consultantplus subject products and client acceptance authority
+    binding: BIND-CPLUS-SE-001 / ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+risk_assessment_and_mitigation:
+  - {risk: insufficient specificity of episode, likelihood: medium, consequence: unusable analysis, mitigation: W01/W02 adequacy gate before session}
+  - {risk: participant recall bias, likelihood: medium, consequence: unsupported reconstruction, mitigation: distinguish reported fact, participant judgment, analyst inference and not_established}
+  - {risk: sensitive data oversharing, likelihood: medium, consequence: confidentiality exposure, mitigation: do not request raw records/identifiers; stop and minimize if supplied}
+  - {risk: false attribution of value or economic effect, likelihood: medium, consequence: misleading offer claims, mitigation: prohibit ROI/avoided-fine/risk-reduction claim without separate measurement design}
+  - {risk: external schedule slip, likelihood: medium, consequence: delayed delivery, mitigation: schedule begins only on adequate input and agreed session}
+  - {risk: internal plan leakage, likelihood: low, consequence: unnecessary internal engineering exposure, mitigation: recipient package contains only Proposal and cover-letter record/rendering}
+quality_and_effectiveness_measures:
+  - all material outputs are process-owned ArtifactVersions
+  - all required GOST content rows resolve to nonempty fields
+  - every analytic material claim is evidence-classed or explicitly unresolved
+  - TECH-VER passes before participant-facing result delivery
+  - participant receives only declared external outputs
+  - feedback records whether factual reconstruction was accurate and whether result was useful
+environment_infrastructure_security:
+  environment: owner-authorized GitHub-backed engineering environment plus participant communication channel selected later
+  storage: process-owned artifacts in MOZ1961/consultantplus; request-level operation report in MOZ1961/se
+  access: repository write through authorized GitHub connector; external communication only after owner approval
+  security:
+    - minimum necessary de-identified information
+    - no passwords, tokens, keys or detailed security topology
+    - no confidential client documents by default
+    - preserve exact version and distribution lineage for externally issued products
+training_and_briefing:
+  engineering_actor: existing E0/S01 implementation procedure and product-content controls are mandatory controls
+  RIC_participant: short pre-session briefing on scope, de-identification, evidence boundary and right to leave unknown fields unknown
+technical_management_analysis_reporting:
+  internal_status: tracked in TECH-OP operation report and target products
+  verification: TECH-VER report before delivery
+  measurement: real participant execution creates TM-MEAS evidence; synthetic examples never enter real measurement evidence
+  reporting_boundary: recipient-facing rendering excludes internal SEMP and internal control details
+related_plans_and_task_descriptions:
+  - existing E0/S01 architecture/design/implementation products govern execution mechanics
+  - this SEMP governs only the representative RIC pilot delivery package and real pilot if separately authorized
+  - no subcontractor or external service plan applies
+work_breakdown_structure:
+  rule: includes both deliverable and non-deliverable lifecycle work; recipient-facing projection is explicitly identified
+  work_packages:
+    - id: I00
+      name: Управление и разрешение поставки
+      kind: non_deliverable_internal
+      activities: [maintain owner authority boundary, control exact versions, stop external issue without approval]
+      owner: owner + engineering actor
+      exit: authorization state explicit and exact product versions known
+      recipient_projection: none
+    - id: I01
+      name: Формирование Предложения
+      kind: deliverable_preparation
+      process: AGR-SUP
+      activities: [compose §7.2 + §10.56 content, include external work structure, state cost/schedule/risks/capability/authorization]
+      output: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+      owner: engineering actor
+      exit: product structurally and semantically verified for owner review
+      recipient_projection: Proposal itself
+    - id: I02
+      name: Подготовка записи передачи и сопроводительного письма
+      kind: deliverable_preparation
+      process: AGR-SUP
+      activities: [identify exact proposal version, recipient category, requested next action, distribution/security status]
+      output: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+      owner: engineering actor
+      exit: record is complete; human rendering does not duplicate internal plan
+      recipient_projection: cover-letter rendering
+    - id: W01
+      name: Выбор эпизода и участника
+      kind: execution
+      process: AGR-SUP/TM-MEAS intake boundary
+      input: RIC participant and one de-identified episode
+      output: agreed pilot object
+      owner: RIC with supplier support
+      exit: participant and episode are adequate
+      recipient_projection: W01
+    - id: W02
+      name: Прием и минимизация информации
+      kind: execution
+      process: TM-MEAS
+      input: initial episode facts
+      output: normalized adequate intake
+      owner: engineering actor
+      exit: required fields are present/none/not_established and sensitive data is unnecessary
+      recipient_projection: W02
+    - id: W03
+      name: Рабочая сессия
+      kind: execution
+      process: TM-MEAS
+      input: normalized intake and participant
+      output: real measurement/episode evidence
+      owner: engineering actor + RIC participant
+      exit: scenario facts sufficiently reconstructed
+      recipient_projection: W03
+    - id: W04
+      name: Реконструкция сценария
+      kind: execution
+      process: TECH-BMA
+      input: exact TM-MEAS evidence
+      output: scenario representation in BMA report
+      owner: engineering actor
+      exit: material scenario fields trace to evidence or not_established
+      recipient_projection: W04
+    - id: W05
+      name: Анализ покрытия
+      kind: execution
+      process: TECH-BMA
+      input: scenario and evidence
+      output: coverage representation in BMA report
+      owner: engineering actor
+      exit: product/RIC/client/other contributions are separated
+      recipient_projection: W05
+    - id: W06
+      name: Выявление разрывов
+      kind: execution
+      process: TECH-BMA
+      input: scenario and evidence
+      output: gap representation in BMA report
+      owner: engineering actor
+      exit: gaps have evidence class and no unsupported causal claim
+      recipient_projection: W06
+    - id: W07
+      name: Формирование и верификация результата
+      kind: execution_and_assurance
+      process: TECH-BMA + TECH-VER
+      input: exact analysis product
+      output: verified participant-facing result + verification report
+      owner: engineering actor
+      exit: subject TECH-VER pass and structural gates pass
+      recipient_projection: W07
+    - id: W08
+      name: Передача и обсуждение
+      kind: execution
+      process: AGR-SUP + TM-MEAS feedback capture
+      input: verified result and owner-approved external channel
+      output: delivery record and participant feedback
+      owner: both parties
+      exit: delivery and feedback/no-feedback disposition recorded
+      recipient_projection: W08
+    - id: I09
+      name: Закрытие и накопление доказательств
+      kind: non_deliverable_internal
+      process: TECH-OP/TM-MEAS
+      input: all execution products and feedback
+      output: closeout status and evidence for next offer revision
+      owner: engineering actor
+      exit: operation report is complete; unresolved next-step items are explicit
+      recipient_projection: none
+  external_projection_rule: only W01-W08 fields necessary for RIC participation, result, timing, responsibility and completion are copied into the Proposal; I00/I01/I02/I09 and internal controls stay internal
+replanning_and_service_alternatives:
+  applicability: applicable_if_pilot_input_or_scope_changes
+  rule: material expansion beyond one participant/one episode requires new or revised Proposal and corresponding plan version
+  subcontractors: none planned
+closure_and_archival:
+  closure_conditions:
+    - participant-facing result delivered or explicit cancellation recorded
+    - factual corrections and usefulness feedback captured or explicitly unavailable
+    - TECH-OP operation report finalized
+  staff_disposition: no dedicated staff assignment persists after pilot
+  archival: retain process-owned products and distribution/measurement records under repository policy
+  final_reporting: operation report plus real-pilot verification/measurement products
+  lessons: candidate improvements remain evidence, not accepted requirements until separately processed
+glossary:
+  SEMP: внутренний План управления проектом, канонический выход TM-PLAN
+  WBS: структура декомпозиции работ, содержащая поставляемые и непоставляемые работы жизненного цикла
+  внешняя проекция работ: ограниченное представление W01-W08 внутри Предложения для адресата РИЦ
+  E0/S01: минимальный кандидатный пакет/услуга реконструкции одного реального эпизода решения
+change_procedure_and_history:
+  change_rule: material scope/cost/schedule/deliverable change requires new SEMP version and, where recipient terms change, a new Proposal version
+  history:
+    - {version: V1, date: '2026-09-06', change: first internal SEMP for normative RIC E0/S01 proposal and pilot delivery}
+completion_process:
+  completion_state: plan_prepared_external_issue_not_authorized
+  completion_authority: owner
+  post_completion: evaluate evidence before extending to E1/E3 or paid service
+owner_product_request:
+  exact_visible_text: 'измени назначение соответственно и выполняй'
+  request_specific_requirements:
+    - внутренний план является продуктом нашей инженерной среды
+    - наружу внутренний план не передается и Предложение на него не ссылается как на вложение
+    - из плана в Предложение выводится только необходимая внешняя структура работ
+    - структура работ должна сохранять связь с полной внутренней WBS
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_PLAN_SEMP
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, work_breakdown_structure.external_projection_rule]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, completion_process]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [applicable_references, work_breakdown_structure]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self, work_breakdown_structure.external_projection_rule]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_procedure_and_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
+verification:
+  structural_status: composed_pending_exact_head_external_client_worker
+  semantic_status: candidate_subject_verification_pending_package_TECH_VER
+  owner_acceptance: planning authorized; plan adoption and real execution separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-PLAN/SEMP/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.1', process_name: 'Project Planning Process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.1', process_name: 'Процесс планирования проекта'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: SEMP
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.55']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.55']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [applicable_references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [authorizing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_and_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [party_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training_and_briefing], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_analysis_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [completion_process], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.55-R01, disposition: satisfied, artifact_field_refs: [work_breakdown_structure, tools_methods_and_techniques, planned_activities_and_tasks], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R02, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R03, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R04, disposition: satisfied, artifact_field_refs: [technical_management_analysis_reporting, quality_and_effectiveness_measures, responsibilities_and_authorities], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R05, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R06, disposition: satisfied, artifact_field_refs: [technical_management_analysis_reporting, related_plans_and_task_descriptions], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R07, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation, budget_and_cost_estimate, schedule], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R08, disposition: satisfied, artifact_field_refs: [work_breakdown_structure], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-O01, disposition: satisfied, artifact_field_refs: [replanning_and_service_alternatives], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-O02, disposition: satisfied, artifact_field_refs: [closure_and_archival], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: project management plan, resolution_basis: TM-PLAN SEMP controlled semantic match to §10.55, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [applicable_references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [authorizing_organization]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_and_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [party_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training_and_briefing]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_analysis_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [completion_process]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: plan
+    specific_profiles: ['10.55']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.55'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.55-R01, state: satisfied, artifact_field_refs: [work_breakdown_structure, tools_methods_and_techniques, planned_activities_and_tasks]}
+          - {requirement_id: S10.55-R02, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+          - {requirement_id: S10.55-R03, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+          - {requirement_id: S10.55-R04, state: satisfied, artifact_field_refs: [technical_management_analysis_reporting, quality_and_effectiveness_measures, responsibilities_and_authorities]}
+          - {requirement_id: S10.55-R05, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+          - {requirement_id: S10.55-R06, state: satisfied, artifact_field_refs: [technical_management_analysis_reporting, related_plans_and_task_descriptions]}
+          - {requirement_id: S10.55-R07, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation, budget_and_cost_estimate, schedule]}
+          - {requirement_id: S10.55-R08, state: satisfied, artifact_field_refs: [work_breakdown_structure]}
+          - {requirement_id: S10.55-O01, state: satisfied, artifact_field_refs: [replanning_and_service_alternatives]}
+          - {requirement_id: S10.55-O02, state: satisfied, artifact_field_refs: [closure_and_archival]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected for TM-PLAN SEMP}
+  tailoring: internal plan includes full lifecycle WBS; only recipient-relevant W01-W08 projection may appear in the external Proposal
+  information_item_management:
+    version_control: V1 first candidate
+    review_approval: owner plan acceptance and real execution are separate gates
+    quality_evaluation: subject TECH-VER plus exact-head structural worker
+    retention: internal canonical client TM-PLAN product; never external attachment by default
+    reuse_and_duplication: external work structure is a derived view only and must trace to this exact SEMP version
