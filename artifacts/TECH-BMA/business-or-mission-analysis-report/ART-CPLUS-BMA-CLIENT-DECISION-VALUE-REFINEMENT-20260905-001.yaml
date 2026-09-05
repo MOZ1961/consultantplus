@@ -1,19 +1,20 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001
-artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
 artifact_label: business or mission analysis report
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_for_research
-acceptance_status: model_refinement_not_client_validated_or_baselined
+acceptance_status: semantic_refinement_preserved_structural_repair_not_client_validated_or_baselined
 artifact_instance_purpose: >-
-  Уточнить кандидатную модель смысла КонсультантПлюс через решения клиента до первой волны исследований:
-  отделить клиентские решения от ответных действий РИЦ/Сети, устранить смешение последовательности решения
-  с организационной способностью и задать проверяемые гипотезы для интервью по реальным рабочим эпизодам.
+  Сохранить уточненную кандидатную модель смысла КонсультантПлюс через решения клиента и устранить
+  структурный YAML-разрыв V1 без изменения исследовательской гипотезы: клиентские решения C1-C6
+  отделены от ответных решений РИЦ/Сети P1-P2, а наблюдаемые результаты ограничены уровнем эпизода.
 producer:
   process_type_id: TECH-BMA
-  process_instance_id: PI-CPLUS-TECH-BMA-DECISION-VALUE-REFINEMENT-20260905-001
-  activity_instance_id: AI-CPLUS-TECH-BMA-REFINE-DECISION-VALUE-MODEL-20260905-001
+  process_instance_id: PI-CPLUS-TECH-BMA-PRODUCT-COMPLETENESS-REPAIR-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-REPAIR-DECISION-VALUE-REFINEMENT-20260905-001
   methodic_instance:
     methodic_id: METH-TECH-BMA-DECISION-VALUE-REFINEMENT
     methodic_version_id: METHVER-CPLUS-TECH-BMA-DECISION-VALUE-REFINEMENT-V1
@@ -22,181 +23,83 @@ producer:
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-DECISION-RESEARCH-WAVE1-20260905-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-PRODUCT-COMPLETENESS-REPAIR-20260905-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-05', status: candidate_refinement_for_research}
-scope: decision-centric ConsultantPlus client-value model used as the basis for first-wave qualitative evidence acquisition
+issued_at_and_status: {issued_at: '2026-09-05', status: candidate_refinement_structurally_repaired}
+scope: decision-centric ConsultantPlus client-value research model and its first-wave evidence boundary
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
-  Исходная модель полезна как исследовательская рамка, но смешивала два разных контура: решения клиента L1-L6
-  и ответные решения поставщика/Сети L7-L8. Также «организовать» было поставлено в один последовательный ряд
-  со «знать-понять-решить», хотя это организационная мета-способность. Уточненная модель разделяет эти оси,
-  делает управленческий уровень решения конкретнее и ограничивает наблюдаемый результат уровнем рабочего эпизода.
+  V2 сохраняет предметную модель V1 и исправляет только структурную непригодность YAML. Клиентские решения C1-C6,
+  ответные решения P1-P2, ось знать-понять-решить и организационная мета-способность организовать остаются
+  гипотезами до прямых клиентских и РИЦ-эпизодов.
 introduction:
   evaluated_object: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-  evaluation_context: pre-research semantic refinement before constructing the first-wave measurement plan
+  evaluation_context: structural repair of the exact V1 semantic refinement before first-wave research
   criteria_basis:
-    - client decisions and provider responses are distinguishable
-    - each decision level can be tested through a concrete episode
-    - product contribution is separated from unsupported business-outcome attribution
-    - hypotheses remain candidates until direct client/RIC evidence is obtained
+    - preserve client/provider decision separation
+    - preserve concrete-episode testability
+    - preserve unsupported-outcome attribution boundary
+    - remove YAML parse defect without silently changing the hypothesis
   audience: owner, first-wave interviewers, RIC participants, subsequent TECH-BMA/TECH-STK/TECH-VER
 context_and_assumptions:
-  prior_model_ref: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-  stakeholder_ref: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
-  evidence_boundary: public BMA supports product/network context but does not establish real client decision episodes, frequency, criticality, price of error, ROI or accepted value wording
-  intended_use: research frame only; no stakeholder requirement, target architecture, KPI, commercial promise or accepted positioning follows from this refinement
+  predecessor: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  evidence_boundary: no direct client/RIC episodes yet establish frequency, criticality, ROI, price of error or accepted value wording
+  repair_boundary: V2 is a structural successor; semantic acceptance and participant validation remain separate
 body:
   evaluation_method_and_evidence:
-    method: semantic decomposition of the prior candidate model by decision owner, decision object, episode testability, causal claim and provider/client boundary
+    method: preserve the V1 semantic decomposition and restate it in parse-safe structured YAML
     evidence:
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
       - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
-      - ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
   findings:
-    - id: F1
-      result: correction_required
-      finding: L7 сервис РИЦ и L8 развитие Сети являются решениями поставщика/сервисного контура, а не уровнями клиентского решения
-      consequence: смешение затрудняет объяснение клиентской ценности и искажает единицу интервью
-      correction: вынести их в отдельный контур provider_response_levels
-    - id: F2
-      result: correction_required
-      finding: слой «организовать» не является следующим шагом одного рабочего решения после «знать-понять-решить»
-      consequence: последовательность пользователя смешивалась с организационной воспроизводимостью
-      correction: оставить цикл решения отдельным, а «организовать» определить как мета-способность повторяемо поддерживать множество решений
-    - id: F3
-      result: refinement_required
-      finding: прежний L4 сформулирован как общее состояние надежности организации, а не как явный управленческий выбор
-      consequence: респонденту трудно привязать его к последнему конкретному эпизоду
-      correction: сформулировать C4 как решение о том, какое регулируемое изменение/риск требует организационной реакции, кто владелец и какой режим контроля нужен
-    - id: F4
-      result: boundary_required
-      finding: ценность нельзя до клиентских данных доказывать через штрафы, ROI или общую эффективность организации
-      consequence: высокий риск постфактум приписать продукту бизнес-результат
-      correction: в первой волне измерять только наблюдаемый вклад в конкретный эпизод и отделять его от бизнес-исхода
+    - {id: F1, result: preserved, finding: 'P1/P2 are provider-response decisions, not client-decision levels'}
+    - {id: F2, result: preserved, finding: 'организовать is an organizational meta-capability, not the next step after знать-понять-решить'}
+    - {id: F3, result: preserved, finding: 'C4 is a concrete organizational response decision to regulated change or risk'}
+    - {id: F4, result: preserved, finding: 'ROI, avoided fines and general efficiency are outside current evidence boundary'}
   revised_candidate_model:
     value_hypothesis:
       status: owner_directed_analyst_candidate_not_official_positioning
       formulation: КонсультантПлюс — рабочая среда поддержки актуальных и обоснованных профессиональных решений в изменяющейся правовой среде.
-      authority_boundary: продукт и сервис поддерживают решение и его доказательную основу, но не принимают профессиональное или управленческое решение вместо участника
-    client_decision_cycle:
-      status: hypothesis_to_validate
-      stages:
-        - распознать значимый триггер или вопрос
-        - установить применимость нормы, изменения или практики
-        - понять последствия для своей ситуации
-        - выбрать действие, позицию или способ организации работы
-        - выполнить или инициировать действие
-        - сохранить достаточное основание и при необходимости передать решение другим
     client_decision_levels:
-      - id: C1
-        level: рабочее действие
-        typical_participants: [бухгалтер, юрист, аудитор, финансовый специалист]
-        decision: что конкретно сделать в текущей ситуации
-        product_meaning: быстро перейти от вопроса к актуальному применимому основанию и действию
-        evidence_state: direct_client_episode_required
-      - id: C2
-        level: профессиональная позиция
-        typical_participants: [эксперт, ведущий специалист, руководитель функции как эксперт]
-        decision: какую профессиональную позицию выбрать и как ее обосновать
-        product_meaning: сопоставить нормы, практику, разъяснения и аналитику и сформировать воспроизводимое основание позиции
-        evidence_state: direct_client_episode_required
-      - id: C3
-        level: правило или процесс подразделения
-        typical_participants: [главный бухгалтер, руководитель юридической или иной регулируемой функции]
-        decision: как команда должна повторяемо решать класс регулируемых задач
-        product_meaning: превратить единичное знание в стандарт работы, обучение и общую информационную основу
-        evidence_state: direct_client_episode_required
-      - id: C4
-        level: организационная реакция на регулируемое изменение или риск
-        typical_participants: [руководитель, собственник, финансовый руководитель, руководитель функции]
-        decision: какое изменение или риск требует реакции организации, кто владелец реакции и какой режим контроля нужен
-        product_meaning: обеспечить раннее распознавание значимого изменения, достаточное основание управленческого решения и контроль исполнения
-        evidence_state: direct_client_episode_required
-      - id: C5
-        level: приобретение и конфигурация информационно-сервисного решения
-        typical_participants: [экономический заказчик, руководитель, закупщик, руководитель функции]
-        decision: какой комплект, доступ, обучение и сервис нужны для критичных задач и за что организация готова платить
-        product_meaning: конфигурация продукта и сервиса от задач и критичных решений, а не от перечня функций
-        evidence_state: direct_client_and_RIC_evidence_required
-      - id: C6
-        level: техническое и режимное обеспечение доступа
-        typical_participants: [ИТ, информационная безопасность, администратор]
-        decision: как обеспечить надежный, управляемый и допустимый доступ к решению
-        product_meaning: обеспечивающая среда доступа, администрирования и эксплуатации
-        evidence_state: direct_client_episode_required
+      - {id: C1, level: рабочее действие, decision: что конкретно сделать в текущей ситуации, evidence_state: direct_client_episode_required}
+      - {id: C2, level: профессиональная позиция, decision: какую профессиональную позицию выбрать и как ее обосновать, evidence_state: direct_client_episode_required}
+      - {id: C3, level: правило или процесс подразделения, decision: как команда должна повторяемо решать класс регулируемых задач, evidence_state: direct_client_episode_required}
+      - {id: C4, level: организационная реакция на регулируемое изменение или риск, decision: какое изменение или риск требует реакции организации кто владелец и какой режим контроля нужен, evidence_state: direct_client_episode_required}
+      - {id: C5, level: приобретение и конфигурация информационно-сервисного решения, decision: какой комплект доступ обучение и сервис нужны для критичных задач, evidence_state: direct_client_and_RIC_evidence_required}
+      - {id: C6, level: техническое и режимное обеспечение доступа, decision: как обеспечить надежный управляемый и допустимый доступ, evidence_state: direct_client_episode_required}
     provider_response_levels:
-      - id: P1
-        level: ответ РИЦ на клиентскую ситуацию
-        participants: [менеджер РИЦ, специалист сопровождения, преподаватель или консультант]
-        decision: какое сопровождение, настройка, обучение или иное действие поможет клиенту проходить критичный сценарий
-        relation_to_client_value: enabling_response_not_client_decision
-        evidence_state: internal_RIC_episode_required
-      - id: P2
-        level: развитие Сети и продукта
-        participants: [Координационный центр, РИЦ, продуктовые и сервисные подразделения]
-        decision: какие повторяющиеся клиентские сценарии и разрывы приоритизировать в развитии продукта и сервиса
-        relation_to_client_value: supplier_feedback_response_not_client_decision
-        evidence_state: internal_network_evidence_required
+      - {id: P1, level: ответ РИЦ на клиентскую ситуацию, decision: какое сопровождение настройка обучение или действие поможет клиенту пройти критичный сценарий, evidence_state: internal_RIC_episode_required}
+      - {id: P2, level: развитие Сети и продукта, decision: какие повторяющиеся клиентские сценарии и разрывы приоритизировать, evidence_state: internal_network_evidence_required}
     meaning_model:
-      individual_decision_axis:
-        - {name: знать, meaning: найти актуальную релевантную информацию и распознать изменение}
-        - {name: понять, meaning: установить значение информации для конкретной ситуации}
-        - {name: решить, meaning: выбрать и обосновать действие или позицию}
-      organizational_meta_capability:
-        name: организовать
-        meaning: сделать критичные решения повторяемыми, распределенными по ролям, обучаемыми и контролируемыми
-        status: hypothesis_requires_validation
+      individual_decision_axis: [знать, понять, решить]
+      organizational_meta_capability: {name: организовать, meaning: сделать критичные решения повторяемыми распределенными по ролям обучаемыми и контролируемыми, status: hypothesis_requires_validation}
     observable_result_boundary:
-      measure_now:
-        - решение или действие участника сформулировано
-        - основание решения найдено и может быть воспроизведено
-        - неопределенность/разрыв зафиксированы
-        - роль КонсультантПлюс и роль сервиса РИЦ в эпизоде описаны участником
-        - необходимые следующие действия и участники идентифицированы
-      do_not_attribute_now:
-        - предотвращенные штрафы или убытки
-        - ROI продукта
-        - общий рост эффективности организации
-        - снижение юридического риска без отдельного дизайна доказательства
-    first_wave_research_hypotheses:
-      - {id: H1, hypothesis: клиент лучше описывает ценность через последний конкретный эпизод решения, чем через оценку функций продукта}
-      - {id: H2, hypothesis: смысл продукта различается между C1-C2 специалистом, C3-C4 владельцем процесса/риска и C5 экономическим заказчиком}
-      - {id: H3, hypothesis: сервис РИЦ создает отдельную часть ценности, когда помогает превратить доступ к информации в устойчивый рабочий сценарий}
-      - {id: H4, hypothesis: повторяющиеся высококритичные сценарии являются лучшей единицей конфигурации комплекта и сервиса, чем общий отраслевой портрет}
-      - {id: H5, hypothesis: P1/P2 должны оцениваться как ответные решения поставщика на доказанные клиентские разрывы, а не как уровни клиентской ценности}
+      measure_now: [решение или действие сформулировано, основание найдено и воспроизводимо, неопределенность зафиксирована, вклад КонсультантПлюс и РИЦ описан участником]
+      do_not_attribute_now: [предотвращенные штрафы или убытки, ROI продукта, общий рост эффективности организации, снижение риска без отдельного доказательного дизайна]
   deficiencies_risks_and_trends:
-    - real client episodes are not yet available
-    - role boundaries will blur in small organizations where one person combines C1-C5 decisions
-    - frequency and criticality cannot be inferred from the role list
-    - current value wording may be too abstract for client-facing communication and must be tested verbatim only after episode discovery
-    - provider contribution can be over-attributed unless client and RIC accounts of the same scenario are compared
+    - real client and RIC decision episodes are not yet available
+    - role boundaries may blur in small organizations
+    - frequency and criticality cannot be inferred from role labels
+    - provider contribution can be over-attributed unless client and RIC accounts are compared
   decision_support:
-    supported_now:
-      - use C1-C6 as client-decision coding frame
-      - use P1-P2 as provider-response coding frame
-      - construct a first-wave measurement plan around last concrete episodes
-    not_supported_now:
-      - market positioning approval
-      - stakeholder requirements
-      - target architecture or service redesign
-      - KPI, ROI or pricing conclusions
+    supported_now: [use C1-C6 as client-decision coding frame, use P1-P2 as provider-response coding frame, collect last concrete episodes]
+    not_supported_now: [market positioning approval, stakeholder requirements, target architecture redesign, KPI ROI or pricing conclusions]
 conclusions_and_recommendations:
   conclusion: >-
-    Уточненная модель пригодна как гипотезная рамка исследования: клиентские решения и ответные решения поставщика разделены,
-    единицей доказательства является конкретный эпизод, а организационная воспроизводимость вынесена из линейного пользовательского цикла.
-  recommendation: создать TM-MEAS measurement strategy/approach для первой волны и проверить модель на четырех группах: конечный специалист, руководитель функции, экономический заказчик/спонсор и клиентский участник РИЦ
+    Уточненная модель остается пригодной как гипотезная рамка исследования; V2 устраняет структурный дефект V1 без изменения этой предметной оценки.
+  recommendation: >-
+    Использовать существующую TM-MEAS стратегию первой волны для проверки модели на четырех группах: конечный специалист,
+    руководитель функции, экономический заказчик/спонсор и клиентский участник РИЦ.
 references:
-  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
-  - ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
   - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
-  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
 bibliography:
   - 'ISO/IEC/IEEE 15288:2023 §6.4.1 — Business or mission analysis process'
   - 'ГОСТ Р 57193-2025 §6.4.1 — Процесс анализа бизнеса или назначения'
@@ -204,47 +107,41 @@ bibliography:
 glossary:
   client_decision: решение участника клиентской организации в конкретном рабочем контексте
   provider_response: решение РИЦ/Сети о способе ответа на выявленную клиентскую ситуацию или разрыв
-  decision_episode: конкретный завершенный или текущий случай от триггера до действия/позиции и ее основания
-  organizational_meta_capability: способность организации повторяемо поддерживать класс решений, а не отдельный шаг одного решения
-  observable_result_boundary: граница результатов, которые можно фиксировать в первой волне без недоказанной финансовой атрибуции
+  decision_episode: конкретный случай от триггера до действия или позиции и ее основания
+  structural_repair: изменение представления/структуры без принятия новой предметной семантики
 change_history:
   - {version: V1, date: '2026-09-05', change: separate client decisions from provider responses and define first-wave research hypotheses}
-subject_unresolved:
-  - real client and RIC decision episodes
-  - frequency and criticality by scenario
-  - actual decision authority by organization type
-  - accepted client-facing value wording
-  - economics, ROI and pricing attribution
+  - {version: V2, date: '2026-09-05', change: repair YAML serialization and preserve V1 semantic refinement}
 owner_product_request:
   exact_visible_text: 'давай'
-  resolved_referent: execute the previously proposed next step for the current branch purpose: semantic verification plus a working first-wave research instrument
+  resolved_referent: finish the previously identified client structural repairs and obtain exact-head information-product verification
   request_specific_requirements:
-    - keep the current dialogue branch purpose unchanged
-    - prepare the research basis rather than advance unsupported requirements
-    - preserve the client/provider evidence and authority boundary
+    - preserve the current dialogue branch purpose
+    - repair structural defects without inventing new product semantics
+    - keep proposal-to-product resolution under the existing ГОСТ product rule
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
+  applicability: applies_materially_repaired_client_TECH_BMA_report
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.revised_candidate_model]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
-    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
-    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
-    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, verification]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends, verification]}
     - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.evaluation_method_and_evidence]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
-    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, supersedes_artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_external_worker_and_TECH_VER}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_worker}
 verification:
-  structural_status: pending_exact_external_client_information_product_worker
-  semantic_status: refinement_self_review_complete_independent_TECH_VER_pending
-  owner_acceptance: work_execution_authorized_model_acceptance_separate
+  structural_status: repaired_pending_exact_head_external_client_worker
+  semantic_status: V1 semantic refinement preserved; separate client evidence still pending
+  owner_acceptance: repair execution authorized; model acceptance remains separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001.yaml@change/consultantplus-20260905-product-completeness-repair
 information_product_applicability: applies
 standards_trace:
   process:
@@ -320,10 +217,10 @@ content_compliance:
           - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends]}
           - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
   local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
-  tailoring: evaluation-report composition applied to semantic refinement of the decision-value model before client research
+  tailoring: evaluation-report composition applied to structural repair while preserving the prior decision-value semantic refinement
   information_item_management:
-    version_control: exact V1
-    review_approval: independent TECH-VER and owner acceptance remain separate
-    quality_evaluation: external structural worker plus client TECH-VER
+    version_control: exact V2 supersedes V1
+    review_approval: subject evidence validation and owner model acceptance remain separate
+    quality_evaluation: external structural worker plus existing subject TECH-VER semantics
     retention: client process-owned product in MOZ1961/consultantplus
-    reuse_and_duplication: first-wave measurement plan and later BMA must cite this exact ArtifactVersion or a successor
+    reuse_and_duplication: first-wave measurement and later BMA must cite V2 or a successor
