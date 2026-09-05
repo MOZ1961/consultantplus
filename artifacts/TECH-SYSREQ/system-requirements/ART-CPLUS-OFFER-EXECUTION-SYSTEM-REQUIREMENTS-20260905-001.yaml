@@ -1,21 +1,20 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001
-artifact_version_id: ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
+artifact_version_id: ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
 artifact_label: system requirements
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_for_execution_capability
 acceptance_status: requirements_candidate_not_baselined_or_deployed
 artifact_instance_purpose: >-
-  Задать проверяемые системные требования к минимальной способности инженерной среды практически исполнять
-  предложения участникам Сети КонсультантПлюс, начиная с E0/S01: принять разрешенную информацию об одном
-  реальном эпизоде решения, минимизировать данные, сформировать D02 и предварительные D03/D04, провести
-  предметную верификацию, выдать участнику трассируемый результат и сохранить доказательства без создания
-  параллельного источника истины.
+  Задать полный проверяемый нормативный состав системных требований к минимальной способности E0/S01:
+  принять разрешенный эпизод решения, минимизировать данные, сформировать трассируемый результат,
+  верифицировать его и сохранить доказательства в process-owned продуктах.
 producer:
   process_type_id: TECH-SYSREQ
-  process_instance_id: PI-CPLUS-TECH-SYSREQ-OFFER-EXECUTION-20260905-001
-  activity_instance_id: AI-CPLUS-TECH-SYSREQ-DEFINE-OFFER-EXECUTION-20260905-001
+  process_instance_id: PI-CPLUS-TECH-SYSREQ-PRODUCT-COMPLETENESS-REPAIR-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-SYSREQ-COMPLETE-OFFER-EXECUTION-REQUIREMENTS-20260905-001
   methodic_instance:
     methodic_id: METH-SYSREQ-GTWR-RUNTIME
     methodic_version_id: METHVER-SYSREQ-GTWR-RUNTIME-V1
@@ -24,135 +23,115 @@ producer:
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-OFFER-EXECUTION-CAPABILITY-20260905-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-PRODUCT-COMPLETENESS-REPAIR-20260905-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate_for_execution_capability}
-scope: minimum reusable execution capability for candidate engagement package E0 / service S01 and its D02-D04 outputs; extension to E1-E4/S02-S08 requires separate coverage evidence
+issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate_normative_composition_repaired}
+scope: minimum reusable E0/S01 execution capability; E1-E4 and S02-S08 expansion require separate evidence
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 approving_authority: owner
 references:
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
   - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
   - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
-  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
   - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
-  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
 stakeholder_basis:
-  owner_need: >-
-    Для клиентской системы «Сеть КонсультантПлюс» вырабатывать предложения участникам по продуктам, услугам
-    и требуемому информационному обмену и обеспечить в инженерной среде возможность их практического исполнения:
-    от приема исходной информации и формирования результата до верификации, выдачи участнику и накопления
-    доказательств для последующего улучшения предложений.
-  offer_basis: E0 Экспресс-сессия / S01 Реконструкция реального эпизода решения from ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
-  evidence_boundary: no real participant episode is used in this requirements product; operational capability is not accepted until implementation and end-to-end TECH-VER pass
+  business_need: practically execute a bounded participant offer from authorized input through verified participant-facing result
+  organizational_need: preserve client authority and process-owned persistence while separating participant fact from analyst inference
+  user_classes: [professional participant, functional owner, buyer or sponsor, RIC client-facing participant, owner, engineering actor]
+  expectations: [minimal information request, no invented values, traceable result, explicit limitations, reusable execution path]
+  constraints: [no secrets or unnecessary personal data, no unsupported ROI or risk attribution, no automatic promotion to official service or requirement]
 body:
-  selected_system: ConsultantPlus client engineering offer-execution capability inside ENV-CPLUS-ENGINEERING-001 using the generic SE actor through BIND-CPLUS-SE-001
+  selected_system: ConsultantPlus client engineering offer-execution capability in ENV-CPLUS-ENGINEERING-001 through BIND-CPLUS-SE-001
   technical_characteristics:
     - reusable request-to-result path for one E0/S01 episode
-    - canonical persistence only through standard process-owned ArtifactVersions
-    - participant-facing D02/D03/D04 are views of canonical products, not new lifecycle output types
-    - evidence-class preservation and information minimization are mandatory
-    - client source/persistence/acceptance authority remains in MOZ1961/consultantplus
+    - process-owned canonical persistence only
+    - participant-facing D02/D03/D04 remain views of canonical products
+    - evidence classes and information minimization are mandatory
   intended_human_system_use:
-    primary_users: [professional participant, functional owner, buyer or sponsor, RIC client-facing participant, owner, engineering actor]
-    interaction: authorized participant or owner provides a minimally sufficient episode narrative; the actor executes the governed path and returns a verified participant-facing result
-    observable_result: traceable D02 critical-scenario passport plus preliminary D03 coverage map and D04 gap map, with limitations and exact canonical artifact address
+    interaction: authorized participant or owner provides a minimally sufficient episode narrative; actor returns a verified human-readable view linked to exact canonical products
+    observable_result: critical-scenario view plus preliminary product/RIC coverage and gap views with evidence status
   system_functions:
-    - accept and classify an authorized E0/S01 execution request
-    - check minimum information and mark absent or intentionally omitted fields without inventing values
-    - minimize personal, confidential and privileged information before persistence
+    - accept and classify an authorized E0/S01 request
+    - disposition all minimum episode fields and preserve not_established where absent
+    - minimize sensitive data before persistence
     - classify material statements by evidence class
-    - persist de-identified episode evidence through TM-MEAS measurement register when real evidence is collected
-    - transform evidence into a TECH-BMA report containing D02, preliminary D03 and preliminary D04 views
-    - run TECH-VER against evidence fidelity, traceability, claim boundaries and output completeness before delivery
-    - render a participant-facing view from the exact verified canonical ArtifactVersion
-    - record every execution in exactly one TECH-OP operation report with actual IOPEC and ExecutionContour
-    - retain feedback and verification evidence for later improvement without automatically promoting observations to requirements
+    - persist real evidence through TM-MEAS when collected
+    - produce TECH-BMA analysis views D02-D04
+    - run TECH-VER before delivery
+    - render participant-facing view from exact verified ArtifactVersion
+    - record each execution in one TECH-OP operation report
   safety_and_security:
-    - credentials, passwords, tokens and secrets shall never be requested
-    - unnecessary names, identifiable third-party data, privileged case materials and raw internal documents shall not be required for E0 start
-    - direct quotations and audio require separate explicit consent; paraphrase is the default
-    - the capability shall not provide legal correctness judgments about the participant decision as part of the E0 analysis
-    - the capability shall not claim avoided fines, ROI, causal risk reduction, official ConsultantPlus/RIC service status or pricing without separate evidence and authority
+    - credentials passwords tokens and secrets shall never be requested
+    - unnecessary identifiable third-party data or privileged case material shall not be required
+    - direct quotations or audio require separate explicit consent
+    - E0 shall not claim legal correctness of the participant decision
+    - no avoided-fine ROI causal-risk-reduction official-service or pricing claims without separate evidence and authority
   critical_performance_limits:
     minimum_input_fields_dispositioned: 100_percent
     persisted_material_claims_with_evidence_class: 100_percent
     delivered_conclusions_traceable_to_canonical_fields: 100_percent
     required_secrets_or_credentials: 0
     unsupported_financial_or_causal_attribution_allowed: 0
-    operational_capability_claim_before_end_to_end_TECH_VER_pass: 0
   applicable_design_and_test_standards:
     process: ISO/IEC/IEEE 15288:2023 and ГОСТ Р 57193-2025
     information_products: ISO/IEC/IEEE 15289:2017 and ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017
     requirements_method: METHVER-SYSREQ-GTWR-RUNTIME-V1
+  enabling_system_requirements:
+    - {id: ESR-OEX-01, statement_ru: 'Для E0/S01 должны быть доступны ChatGPT engineering actor и разрешенный GitHub connector как обеспечивающие средства; их наличие не переносит клиентскую authority.', verification: execution_environment_inspection}
   requirements:
-    - {id: SR-OEX-01, statement_ru: 'Способность должна принимать к исполнению только явно разрешенный запрос E0/S01 с указанной группой участника и областью одного эпизода.', source: owner_current_dialogue_purpose + ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, verification: inspection_and_canary}
-    - {id: SR-OEX-02, statement_ru: 'Способность должна для каждого эпизода disposition-ировать минимум: роль, триггер, требуемое решение/действие, срок или давление времени, путь информации, вклад КонсультантПлюс, вклад РИЦ, итоговое действие/статус и оставшуюся неопределенность.', source: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1, verification: canary_field_coverage}
-    - {id: SR-OEX-03, statement_ru: 'Способность должна до персистирования удалять или обобщать данные, не необходимые для реконструкции решения, и не требовать секреты, учетные данные, персональные имена или идентифицируемые данные третьих лиц.', source: owner_current_dialogue_purpose + measurement_plan_privacy_rules, verification: negative_input_test}
-    - {id: SR-OEX-04, statement_ru: 'Способность должна различать как минимум прямой факт эпизода со слов участника, интерпретацию участника, вывод аналитика, описание эпизода РИЦ и состояние not_established.', source: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1, verification: evidence_class_inspection}
-    - {id: SR-OEX-05, statement_ru: 'При сборе реальных эпизодов способность должна сохранять входную доказательную запись как process-owned TM-MEAS measurement register, а не как самостоятельную таблицу или файл-источник истины.', source: current SE persistence architecture + measurement plan, verification: artifact_lineage_inspection}
-    - {id: SR-OEX-06, statement_ru: 'Способность должна формировать process-owned TECH-BMA business or mission analysis report, содержащий D02 и предварительные D03/D04 как трассируемые представления одного эпизода.', source: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, verification: output_content_inspection}
-    - {id: SR-OEX-07, statement_ru: 'Каждый элемент D02/D03/D04 должен ссылаться на входное поле или быть явно помечен как analyst_inference/not_established; неподтвержденное значение не должно выглядеть как факт участника.', source: evidence_boundary, verification: traceability_canary}
-    - {id: SR-OEX-08, statement_ru: 'До выдачи участнику способность должна выполнять TECH-VER результата по полноте, трассируемости, разделению факта и вывода, информационной минимизации и границам утверждений.', source: owner_current_dialogue_purpose, verification: verification_report_required}
-    - {id: SR-OEX-09, statement_ru: 'Участнику должен выдаваться производный человекочитаемый вид точной проверенной версии TECH-BMA ArtifactVersion; производный вид не должен становиться параллельным каноническим источником.', source: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1, verification: delivery_lineage_inspection}
-    - {id: SR-OEX-10, statement_ru: 'Каждый запуск способности должен иметь ровно один TECH-OP operation report с exact owner/participant input, actual IOPEC, использованными и произведенными ArtifactVersions, verification state, unresolved и адресами.', source: generic SE execution procedure, verification: operation_report_inspection}
-    - {id: SR-OEX-11, statement_ru: 'Способность не должна выводить из одного эпизода статистическую распространенность, ROI, предотвращенные потери, снижение риска или причинный эффект продукта/РИЦ.', source: offer and measurement evidence boundaries, verification: forbidden_claim_scan}
-    - {id: SR-OEX-12, statement_ru: 'Недостаточные или противоречивые данные должны сохраняться как unresolved/not_established и блокировать только зависимый вывод, а не заполняться предположением.', source: owner product requirements + evidence rules, verification: incomplete_input_canary}
-    - {id: SR-OEX-13, statement_ru: 'Cross-environment исполнение должно использовать BIND-CPLUS-SE-001 и сохранять клиентскую семантическую, write и acceptance authority в MOZ1961/consultantplus.', source: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, verification: interface_boundary_inspection}
-    - {id: SR-OEX-14, statement_ru: 'Минимальная E0/S01 способность должна быть исполнима имеющимися enablers ChatGPT engineering actor и GitHub connector без обязательного нового программного инструмента.', source: owner instruction to ensure execution capability in current environment, verification: end_to_end_manual_actor_canary}
-    - {id: SR-OEX-15, statement_ru: 'Среда не должна заявлять E0/S01 operationally executable, пока синтетический end-to-end canary не пройдет TECH-VER на точных версиях требований, архитектуры, проекта и процедуры реализации.', source: owner_current_dialogue_purpose, verification: exact_version_canary_TECH_VER}
-  requirement_traceability:
-    SR-OEX-01: [E0, S01]
-    SR-OEX-02: [measurement_plan.interview_protocol, measurement_plan.episode_record]
-    SR-OEX-03: [measurement_plan.environment_infrastructure_security]
-    SR-OEX-04: [measurement_plan.evidence_classes]
-    SR-OEX-05: [TM-MEAS measurement register]
-    SR-OEX-06: [D02, D03, D04, TECH-BMA]
-    SR-OEX-07: [evidence_classification]
-    SR-OEX-08: [TECH-VER]
-    SR-OEX-09: [derived_participant_view]
-    SR-OEX-10: [TECH-OP]
-    SR-OEX-11: [observable_result_boundary]
-    SR-OEX-12: [unresolved_rule]
-    SR-OEX-13: [BIND-CPLUS-SE-001]
-    SR-OEX-14: [ChatGPT engineering actor, GitHub connector]
-    SR-OEX-15: [end_to_end_canary]
+    - {id: SR-OEX-01, statement_ru: 'Принимать только явно разрешенный E0/S01 запрос с областью одного эпизода.', verification: inspection_and_canary}
+    - {id: SR-OEX-02, statement_ru: 'Disposition-ировать роль триггер решение срок путь информации вклад КонсультантПлюс вклад РИЦ итог и оставшуюся неопределенность.', verification: canary_field_coverage}
+    - {id: SR-OEX-03, statement_ru: 'Минимизировать данные и не требовать секреты учетные данные персональные имена или идентифицируемые данные третьих лиц.', verification: negative_input_test}
+    - {id: SR-OEX-04, statement_ru: 'Различать факт участника интерпретацию участника вывод аналитика описание РИЦ и not_established.', verification: evidence_class_inspection}
+    - {id: SR-OEX-05, statement_ru: 'Реальные эпизоды сохранять через TM-MEAS measurement register.', verification: artifact_lineage_inspection}
+    - {id: SR-OEX-06, statement_ru: 'Формировать TECH-BMA report с D02 и предварительными D03/D04 как представлениями.', verification: output_content_inspection}
+    - {id: SR-OEX-07, statement_ru: 'Каждый элемент результата трассировать к входу либо маркировать analyst_inference/not_established.', verification: traceability_canary}
+    - {id: SR-OEX-08, statement_ru: 'До выдачи выполнять TECH-VER по полноте трассируемости и границам утверждений.', verification: verification_report_required}
+    - {id: SR-OEX-09, statement_ru: 'Выдавать производный человекочитаемый вид точной проверенной версии без создания параллельного источника истины.', verification: delivery_lineage_inspection}
+    - {id: SR-OEX-10, statement_ru: 'Каждый запуск иметь ровно один TECH-OP operation report с actual IOPEC и ExecutionContour.', verification: operation_report_inspection}
+    - {id: SR-OEX-11, statement_ru: 'Не выводить из одного эпизода распространенность ROI предотвращенные потери снижение риска или причинный эффект.', verification: forbidden_claim_scan}
+    - {id: SR-OEX-12, statement_ru: 'Недостаточные данные сохранять unresolved/not_established вместо предположения.', verification: incomplete_input_canary}
+    - {id: SR-OEX-13, statement_ru: 'Cross-environment исполнение использовать BIND-CPLUS-SE-001 и сохранять client authority в MOZ1961/consultantplus.', verification: interface_boundary_inspection}
+    - {id: SR-OEX-14, statement_ru: 'Минимальная E0/S01 способность должна быть исполнима ChatGPT engineering actor и GitHub connector без обязательного нового инструмента.', verification: end_to_end_manual_actor_canary}
+    - {id: SR-OEX-15, statement_ru: 'Не заявлять operationally executable до exact-version end-to-end TECH-VER.', verification: exact_version_canary_TECH_VER}
 credibility_requirements:
-  - every SR-OEX requirement has stable identity, source and verification method
-  - current owner purpose is treated as authority for capability direction, not as evidence that implementation already exists
-  - real participant validity and desirability remain separate from engineering verification
+  - every SR-OEX and ESR-OEX requirement has stable identity and verification method
+  - current owner continuation authorizes repair but not baseline deployment or commercial adoption
+  - participant desirability remains separate from engineering verification
 conditions_constraints_characteristics:
   representative_offer: E0/S01
-  participant_outputs: [D02, preliminary D03, preliminary D04]
   canonical_execution_products_when_real: [TM-MEAS measurement register, TECH-BMA business or mission analysis report, TECH-VER verification report, TECH-OP operation report]
   excluded_from_current_scope: [E1, E2, E3, E4, full S02-S08 execution coverage, external participant recruitment, pricing, commercial adoption, deployment]
   authority: owner acceptance and expansion remain separate
 success_measures:
-  - all SR-OEX-01..15 have verification evidence in subject TECH-VER
-  - a synthetic E0/S01 canary completes intake-to-rendering without secret data or unsupported claims
-  - exact-head external-client information-product verification passes
-  - no claim is made that a synthetic canary validates client value or participant desirability
+  - all minimum fields receive explicit disposition
+  - all material claims receive an evidence class
+  - every participant-facing conclusion traces to canonical content
+  - no secret or credential is required
+  - exact-head structural verification passes before readiness claim
+  - synthetic canary does not validate participant value or demand
 glossary:
-  E0: candidate express session with one participant and one recent meaningful episode
-  S01: candidate service for reconstructing one real decision episode
-  D02: critical decision scenario passport view
-  D03: preliminary ConsultantPlus/RIC scenario coverage view
-  D04: preliminary gaps, delays and workarounds view
-  operationally_executable: engineering capability has passed exact-version end-to-end TECH-VER; it does not mean commercial adoption or participant validation
+  E0: candidate express session with one participant and one episode
+  S01: candidate service for reconstruction of one decision episode
+  operationally_executable: exact-version end-to-end TECH-VER passed; not equivalent to commercial adoption
 change_history:
-  - {version: V1, date: '2026-09-05', change: define minimum E0/S01 offer-execution system requirements under new owner-authorized dialogue purpose}
+  - {version: V1, date: '2026-09-05', change: define minimum E0/S01 system requirements}
+  - {version: V2, date: '2026-09-05', change: complete full §10.84 stakeholder effectiveness and enabling-system dispositions required by active normative worker}
 owner_product_request:
-  exact_visible_text: 'дальше'
-  resolved_referent: continue the previously stated next subject contour and create the minimum reusable offer-execution capability, beginning with system requirements and proving one representative E0/S01 path
-  request_specific_requirements: [continue under unchanged new dialogue purpose, close the execution-capability gap rather than elaborate offers only, preserve client authority, no external contact, prove one representative offer before expansion]
+  exact_visible_text: 'давай'
+  resolved_referent: finish the previously identified client structural repairs and obtain exact-head information-product verification
+  request_specific_requirements:
+    - preserve existing E0/S01 requirement semantics while completing active ГОСТ composition
+    - do not infer baseline deployment commercial adoption or participant validation
+    - keep client authority bound through BIND-CPLUS-SE-001
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_SYSREQ_system_requirements
+  applicability: applies_materially_repaired_client_TECH_SYSREQ_product
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.requirements]}
@@ -161,18 +140,18 @@ product_requirement_compliance:
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
     - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [conditions_constraints_characteristics, verification]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.requirement_traceability]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.requirements]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
-    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, supersedes_artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_client_worker_and_subject_TECH_VER}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_worker}
 verification:
-  structural_status: pending_exact_head_external_client_information_product_worker
-  semantic_status: requirements defined; downstream architecture/design/implementation/canary TECH-VER pending
-  owner_acceptance: continuation authorized; requirements baseline and capability acceptance separate
+  structural_status: full_10_84_coverage_authored_pending_exact_head_external_client_worker
+  semantic_status: V1 E0/S01 intent preserved; added rows are explicit existing stakeholder success and enabling-system content
+  owner_acceptance: repair execution authorized; baseline and deployment separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TECH-SYSREQ/system-requirements/ART-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+  self: MOZ1961/consultantplus:artifacts/TECH-SYSREQ/system-requirements/ART-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001.yaml@change/consultantplus-20260905-product-completeness-repair
 information_product_applicability: applies
 standards_trace:
   process:
@@ -197,17 +176,20 @@ standards_trace:
         - {requirement_id: U7.8-H, disposition: satisfied, artifact_field_refs: [conditions_constraints_characteristics], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
         - {requirement_id: U7.8-I, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
         - {requirement_id: U7.8-J, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: S10.84-R01, disposition: satisfied, artifact_field_refs: [stakeholder_basis], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R02, disposition: satisfied, artifact_field_refs: [success_measures], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
         - {requirement_id: S10.84-R03, disposition: satisfied, artifact_field_refs: [body.technical_characteristics], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
         - {requirement_id: S10.84-R04, disposition: satisfied, artifact_field_refs: [body.intended_human_system_use], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
         - {requirement_id: S10.84-R05, disposition: satisfied, artifact_field_refs: [body.system_functions], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
         - {requirement_id: S10.84-R06, disposition: satisfied, artifact_field_refs: [body.safety_and_security], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
         - {requirement_id: S10.84-R07, disposition: satisfied, artifact_field_refs: [body.critical_performance_limits], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
         - {requirement_id: S10.84-R08, disposition: satisfied, artifact_field_refs: [body.applicable_design_and_test_standards], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
-        - {requirement_id: S10.84-R09, disposition: satisfied, artifact_field_refs: [body.requirements], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R09, disposition: satisfied, artifact_field_refs: [body.requirements, body.enabling_system_requirements], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-O01, disposition: satisfied, artifact_field_refs: [body.enabling_system_requirements], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: system requirements specification for ConsultantPlus offer-execution capability, resolution_basis: exact TECH-SYSREQ system requirements binding to §10.84, state: resolved}
+  information_item_identity: {resolved_name_or_semantic_identity: system requirements specification for ConsultantPlus offer-execution capability, resolution_basis: exact TECH-SYSREQ binding to §10.84, state: resolved}
   universal_type: specification
   universal_content:
     source_section: '7.8'
@@ -230,13 +212,21 @@ content_compliance:
       - profile_id: '10.84'
         kind: section10
         requirement_coverage:
+          - {requirement_id: S10.84-R01, state: satisfied, artifact_field_refs: [stakeholder_basis]}
+          - {requirement_id: S10.84-R02, state: satisfied, artifact_field_refs: [success_measures]}
           - {requirement_id: S10.84-R03, state: satisfied, artifact_field_refs: [body.technical_characteristics]}
           - {requirement_id: S10.84-R04, state: satisfied, artifact_field_refs: [body.intended_human_system_use]}
           - {requirement_id: S10.84-R05, state: satisfied, artifact_field_refs: [body.system_functions]}
           - {requirement_id: S10.84-R06, state: satisfied, artifact_field_refs: [body.safety_and_security]}
           - {requirement_id: S10.84-R07, state: satisfied, artifact_field_refs: [body.critical_performance_limits]}
           - {requirement_id: S10.84-R08, state: satisfied, artifact_field_refs: [body.applicable_design_and_test_standards]}
-          - {requirement_id: S10.84-R09, state: satisfied, artifact_field_refs: [body.requirements]}
-  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-SYSREQ|system requirements}
-  tailoring: requirements specialize the §10.84 system-requirements content to the minimum E0/S01 participant-offer execution capability
-  information_item_management: {version_control: exact V1, review_approval: owner-directed candidate; baseline separate, quality_evaluation: external structural worker plus subject TECH-VER, retention: canonical client TECH-SYSREQ product, reuse_and_duplication: downstream products reference this exact ArtifactVersion}
+          - {requirement_id: S10.84-R09, state: satisfied, artifact_field_refs: [body.requirements, body.enabling_system_requirements]}
+          - {requirement_id: S10.84-O01, state: satisfied, artifact_field_refs: [body.enabling_system_requirements]}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-SYSREQ system requirements}
+  tailoring: §10.84 composition is applied to the minimum E0/S01 capability including stakeholder needs effectiveness measures and enabling-system requirements
+  information_item_management:
+    version_control: exact V2 supersedes V1
+    review_approval: owner-directed candidate; baseline separate
+    quality_evaluation: external structural worker plus subject TECH-VER
+    retention: canonical client TECH-SYSREQ product
+    reuse_and_duplication: downstream execution products reference V2 or successor
