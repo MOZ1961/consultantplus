@@ -1,59 +1,153 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001
-artifact_version_id: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
+artifact_version_id: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
 artifact_label: stakeholder identification
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_for_client_validation
-acceptance_status: identification_candidate_needs_and_requirements_not_accepted
+lifecycle_status: owner_directed_candidate_for_participant_engagement
+acceptance_status: identification_candidate_needs_requirements_and_external_contact_not_accepted
 artifact_instance_purpose: >-
-  Идентифицировать участников, чьи решения надо проверить для модели клиентской ценности КонсультантПлюс,
-  связать их с уровнями решений и отделить подтвержденные роли от аналитических кандидатов.
+  Идентифицировать участников, для которых проектируются предложения инженерной среды по модели клиентской
+  ценности КонсультантПлюс, привести их к актуальной системе уровней C1-C6/P1-P2 и отделить подтвержденные
+  роли от аналитических кандидатов без вывода потребностей, требований или полномочий конкретной организации.
 producer:
   process_type_id: TECH-STK
-  process_instance_id: PI-CPLUS-TECH-STK-CLIENT-VALUE-20260905-001
-  activity_instance_id: AI-CPLUS-TECH-STK-IDENTIFY-CLIENT-DECISION-PARTICIPANTS-20260905-001
-  methodic_instance: {methodic_id: METH-RUNTIME-TECH-STK-STAKEHOLDER-IDENTIFICATION, methodic_version_id: runtime-provisional-v1, methodic_version: stakeholder-identification-from-BMA-v1, status: provisional_runtime_not_adopted}
-request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-CLIENT-VALUE-20260905-001, required_output_label: operation report}
-interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
-issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate_for_client_validation}
-scope: participants relevant to validating the ConsultantPlus decision-centric client-value model
-subject_or_category: stakeholder identification for client decisions, RIC service and product-development feedback
+  process_instance_id: PI-CPLUS-TECH-STK-PARTICIPANT-OFFER-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-STK-ALIGN-PARTICIPANTS-TO-OFFER-MODEL-20260905-001
+  methodic_instance:
+    methodic_id: METH-RUNTIME-TECH-STK-STAKEHOLDER-IDENTIFICATION
+    methodic_version_id: runtime-provisional-v1
+    methodic_version: stakeholder-identification-from-BMA-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-PARTICIPANT-OFFER-20260905-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate_for_participant_engagement}
+scope: participants relevant to candidate products/services and evidence exchange for the ConsultantPlus decision-value model
+subject_or_category: stakeholder identification for client decisions C1-C6 and provider responses P1-P2
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
-references: [ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1, ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2, ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, ARTVER-SE-PROCESS-ACTIVITY-METHOD-ORGANIZATION-PROCEDURES-20260904-001-V1]
-record_identifier: CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-V1
+references:
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  - ARTVER-SE-PROCESS-ACTIVITY-METHOD-ORGANIZATION-PROCEDURES-20260904-001-V1
+record_identifier: CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-V2
 body:
   methodic_application:
     status: provisional_runtime
-    purpose: extract candidate stakeholder roles from owner intent and BMA evidence, classify evidence state and assign decision-validation scope
-    known_inputs: [owner request, ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1, ARTVER-CPLUS-BMA-OPEN-SOURCE-REPORT-20260904-001-V2]
-    missing_inputs: [client organization role maps, RIC internal process/responsibility maps, actual decision episodes and authority evidence]
-    execution_steps: [identify sourced roles, add roles needed to test the model only as candidates, assign decision levels, keep needs/requirements unresolved]
-    expected_output: candidate stakeholder identification record
-    acceptance_checks: [every participant has evidence class, inferred roles are not presented as sourced facts, no stakeholder need or requirement is accepted]
+    purpose: >-
+      Reconcile candidate participant identities with the refined C1-C6/P1-P2 decision model and classify which groups
+      can receive participant-specific engineering offers without asserting accepted needs or requirements.
+    known_inputs:
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
+      - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+      - owner request for participant proposals, products/services and required information
+    missing_inputs:
+      - client organization role and authority maps
+      - RIC internal process and responsibility maps
+      - actual participant decision episodes
+      - Coordination Center internal product/service responsibility map
+    execution_steps:
+      - retain sourced role classes and evidence states
+      - replace obsolete L1-L8 notation with current C1-C6/P1-P2 decision scopes
+      - keep provider-response roles separate from client decision owners
+      - assign engagement priority without asserting stakeholder needs or requirements
+    expected_output: evidence-classified participant identification aligned to the current decision-value model
+    acceptance_checks:
+      - every participant group has evidence class and current C/P scope
+      - candidate roles remain explicitly candidate
+      - no stakeholder need, requirement, buying authority or internal responsibility is accepted
   stakeholder_groups:
-    - {id: SG-01, group: professional end users, members: [бухгалтеры, юристы, аудиторы, финансовые специалисты], evidence_class: sourced_public_user_class, decision_levels: [L1, L2], validation_status: direct_client_evidence_required}
-    - {id: SG-02, group: functional decision owners, members: [руководители, главный бухгалтер, руководитель юридической службы, финансовый руководитель], evidence_class: mixed_sourced_broad_and_owner_analyst_candidate, decision_levels: [L2, L3, L4], validation_status: direct_client_evidence_required}
-    - {id: SG-03, group: organizational buyer and sponsor, members: [руководитель организации, собственник, экономический заказчик, закупщик], evidence_class: owner_analyst_candidate, decision_levels: [L4, L5], validation_status: direct_client_and_RIC_evidence_required}
-    - {id: SG-04, group: technical enablers, members: [ИТ, информационная безопасность, администратор доступа], evidence_class: owner_analyst_candidate, decision_levels: [L6], validation_status: direct_client_evidence_required}
-    - {id: SG-05, group: education-sector users, members: [преподаватели, студенты, школьники], evidence_class: sourced_public_user_class, decision_levels: [L1], validation_status: segment_scope_decision_required}
-    - {id: SG-06, group: RIC client-facing participants, members: [РИЦ, менеджер РИЦ, специалист сопровождения, преподаватель или консультант РИЦ], evidence_class: sourced_network_role_plus_candidate_role_decomposition, decision_levels: [L5, L7], validation_status: internal_RIC_evidence_required}
-    - {id: SG-07, group: Coordination Center and network/product development, members: [Координационный центр, продуктовые подразделения, сервисные подразделения, РИЦ], evidence_class: sourced_network_role_plus_candidate_role_decomposition, decision_levels: [L8], validation_status: internal_network_evidence_required}
-  first_research_wave:
-    candidate_groups: [professional end users, functional decision owners, organizational buyer/economic sponsor, RIC client-facing participants]
-    rationale: span direct use, team process, purchase/value judgment and service delivery
-    status: candidate_priority_not_accepted_sampling_plan
-  exclusions: [no stakeholder needs asserted, no stakeholder requirements asserted, no purchasing authority or internal titles asserted for a specific client, no target architecture or RIC redesign asserted]
-change_history: [{version: V1, date: '2026-09-05', change: owner-directed stakeholder identification for decision-centric validation}]
-subject_unresolved: [exact stakeholder population, actual authority/responsibility by client, actual decision scenarios and needs, RIC internal role/process evidence]
+    - id: SG-01
+      group: professional end users
+      members: [бухгалтеры, юристы, аудиторы, финансовые специалисты]
+      evidence_class: sourced_public_user_class
+      decision_scopes: [C1, C2]
+      engagement_priority: first_wave
+      validation_status: direct_client_evidence_required
+    - id: SG-02
+      group: functional decision owners
+      members: [руководители функций, главный бухгалтер, руководитель юридической службы, финансовый руководитель]
+      evidence_class: mixed_sourced_broad_and_owner_analyst_candidate
+      decision_scopes: [C2, C3, C4]
+      engagement_priority: first_wave
+      validation_status: direct_client_evidence_required
+    - id: SG-03
+      group: organizational buyer and sponsor
+      members: [руководитель организации, собственник, экономический заказчик, закупщик]
+      evidence_class: owner_analyst_candidate
+      decision_scopes: [C4, C5]
+      engagement_priority: first_wave
+      validation_status: direct_client_and_RIC_evidence_required
+    - id: SG-04
+      group: technical enablers
+      members: [ИТ, информационная безопасность, администратор доступа]
+      evidence_class: owner_analyst_candidate
+      decision_scopes: [C6]
+      engagement_priority: second_wave_or_when_access_constraint_is_material
+      validation_status: direct_client_evidence_required
+    - id: SG-05
+      group: education-sector users
+      members: [преподаватели, студенты, школьники]
+      evidence_class: sourced_public_user_class
+      decision_scopes: [C1, C2]
+      engagement_priority: deferred_until_segment_scope_decision
+      validation_status: segment_scope_decision_required
+    - id: SG-06
+      group: RIC client-facing participants
+      members: [РИЦ, менеджер РИЦ, специалист сопровождения, преподаватель или консультант РИЦ]
+      evidence_class: sourced_network_role_plus_candidate_role_decomposition
+      decision_scopes: [P1]
+      related_client_scope: [C5]
+      engagement_priority: first_wave
+      validation_status: internal_RIC_evidence_required
+    - id: SG-07
+      group: Coordination Center and network/product development
+      members: [Координационный центр, продуктовые подразделения, сервисные подразделения, РИЦ]
+      evidence_class: sourced_network_role_plus_candidate_role_decomposition
+      decision_scopes: [P2]
+      engagement_priority: second_wave_after_client_episode_evidence
+      validation_status: internal_network_evidence_required
+  engagement_priority:
+    first_wave: [SG-01, SG-02, SG-03, SG-06]
+    second_wave_or_conditional: [SG-04, SG-07]
+    deferred: [SG-05]
+    rationale: >-
+      First wave spans direct professional decisions, process ownership, economic/configuration decisions and RIC response;
+      technical and network-development participation becomes materially stronger after concrete access or repeated scenario evidence exists.
+  exclusions:
+    - no stakeholder needs asserted
+    - no stakeholder requirements asserted
+    - no purchasing authority or internal title asserted for a specific client
+    - no target architecture or RIC redesign asserted
+    - no external participant contact or commercial commitment authorized by this record
+change_history:
+  - {version: V1, date: '2026-09-05', change: owner-directed stakeholder identification for decision-centric validation}
+  - {version: V2, date: '2026-09-05', change: align participant decision scopes to refined C1-C6/P1-P2 model and engagement priorities for participant offers}
+subject_unresolved:
+  - exact stakeholder population and role combinations by organization
+  - actual authority and responsibility by client/RIC
+  - actual decision scenarios, needs and priorities
+  - Coordination Center internal role/product responsibility evidence
 owner_product_request:
-  exact_visible_text: |-
-    для клиентской системы консультант плюс предложи что сделать чтобы донести смысл продукта для клиента. какие решения на каком уровне для каких участников
-    поменяй назначение в соотв. с запросом и приступай
-  request_specific_requirements: [identify participants by decision level, distinguish sourced roles from candidates, keep needs and requirements separate]
+  exact_visible_text: 'сделай соотв. предложения от нашей среды участникам. какие продукты и услуги. какая инфа мб нужна от них'
+  request_specific_requirements:
+    - align participants to the current decision model before designing proposals
+    - distinguish client decision owners from RIC/Network provider-response participants
+    - keep sourced roles separate from candidate roles
+    - do not infer stakeholder needs or requirements from the proposed offers
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_STK_stakeholder_identification
+  applicability: applies_materially_changed_client_TECH_STK_stakeholder_identification
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
@@ -68,8 +162,12 @@ product_requirement_compliance:
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_external_worker_and_stakeholder_validation}
-verification: {structural_status: pending_exact_external_client_information_product_workers, semantic_status: sourced and inferred participant identities separated; no needs or requirements accepted, owner_acceptance: work_start_authorized_identification_acceptance_separate}
-artifact_addresses: {self: 'MOZ1961/consultantplus:artifacts/TECH-STK/stakeholder-identification/ART-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap'}
+verification:
+  structural_status: pending_exact_external_client_information_product_workers
+  semantic_status: participant scopes aligned to C/P model; needs, requirements and authority remain unaccepted
+  owner_acceptance: work_execution_authorized; stakeholder acceptance and external contact separate
+artifact_addresses:
+  self: 'MOZ1961/consultantplus:artifacts/TECH-STK/stakeholder-identification/ART-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap'
 information_product_applicability: applies
 standards_trace:
   process:
@@ -107,8 +205,21 @@ content_compliance:
       - {requirement_id: U9.1-E, state: satisfied, artifact_field_refs: [references]}
       - {requirement_id: U9.1-F, state: satisfied, artifact_field_refs: [body]}
       - {requirement_id: U9.1-G, state: satisfied, artifact_field_refs: [record_identifier]}
-  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: generic_only_normative, generic_type: record, specific_profiles: [], specific_records: [], local_additive_profile: null}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: generic_only_normative
+    generic_type: record
+    specific_profiles: []
+    specific_records: []
+    local_additive_profile: null
   normative_specific_content: {state: not_applicable, basis: active exact binding selects no §9.2/§10 specific profile, profile_coverage: []}
   local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
   tailoring: stakeholder identification is a record of candidate participants and evidence state; needs and requirements remain separate
-  information_item_management: {version_control: exact V1, review_approval: work start authorized; stakeholder acceptance and requirements separate, quality_evaluation: external structural worker plus stakeholder validation, retention: client process-owned product, reuse_and_duplication: evidence change requires a new ArtifactVersion}
+  information_item_management:
+    version_control: exact V2 supersedes V1
+    review_approval: owner execution authority does not imply stakeholder acceptance or external-contact authority
+    quality_evaluation: external structural worker plus subject TECH-VER
+    retention: client process-owned product
+    reuse_and_duplication: participant/evidence change requires a new ArtifactVersion
