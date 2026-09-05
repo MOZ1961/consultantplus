@@ -1,0 +1,278 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-MULTI-EPISODE-EXECUTION-SYSTEM-REQUIREMENTS-20260906-001
+artifact_version_id: ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-SYSTEM-REQUIREMENTS-20260906-001-V1
+artifact_label: system requirements
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_for_execution_capability
+acceptance_status: requirements_candidate_not_baselined_or_deployed
+artifact_instance_purpose: >-
+  Задать системные требования к расширению уже верифицированной минимальной E0/S01 способности
+  до внутреннего многоэпизодного контура РИЦ: принять 3-5 обезличенных сервисных эпизодов,
+  нормализовать и сопоставить их без смешения доказательных классов, сформировать библиотеку
+  повторяемых сценариев и структурированную обратную связь, верифицировать результат и накопить
+  доказательства для последующего улучшения. Формирование конкретного внешнего Предложения,
+  структуры работ и сопроводительного письма исключено из этого продукта и выполняется параллельно.
+producer:
+  process_type_id: TECH-SYSREQ
+  process_instance_id: PI-CPLUS-TECH-SYSREQ-RIC-MULTI-EPISODE-EXECUTION-20260906-001
+  activity_instance_id: AI-CPLUS-TECH-SYSREQ-DEFINE-RIC-MULTI-EPISODE-EXECUTION-20260906-001
+  methodic_instance:
+    methodic_id: METH-SYSREQ-GTWR-RUNTIME
+    methodic_version_id: METHVER-SYSREQ-GTWR-RUNTIME-V1
+    methodic_version: '1'
+    status: provisional_runtime_pattern
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-MULTI-EPISODE-EXECUTION-20260906-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-06', status: owner_directed_candidate}
+scope: >-
+  Internal execution capability for one RIC multi-episode set based on S02/S03/S04/S07 and E3 semantics.
+  External Proposal/cover-letter/work-structure package, pricing, commercial adoption, participant recruitment,
+  and E4 cross-RIC network synthesis are out of scope.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+references:
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+  - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V2
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+stakeholder_basis:
+  business_need: >-
+    РИЦ должен иметь возможность превращать несколько реальных сервисных эпизодов не в набор мнений,
+    а в трассируемую библиотеку сценариев, наблюдаемые повторяющиеся разрывы и структурированную обратную связь.
+  organizational_need: >-
+    Расширить односценарный E0/S01 механизм до многоэпизодного внутреннего исполнения, не ожидая завершения
+    параллельного внешнего пакета Предложения.
+  user_classes: [RIC client-facing participant, RIC manager, owner, engineering actor, verifier]
+  expectations: [minimal de-identified input, cross-episode traceability, separate RIC-account and direct-client evidence classes, reusable scenario library, structured feedback without automatic requirement promotion]
+  constraints: [no secrets or unnecessary personal data, no unsupported population prevalence ROI avoided-loss or causal-risk claims, no official RIC or Network commercial commitment, parallel Proposal package is not a prerequisite for internal engineering execution]
+body:
+  selected_system: ConsultantPlus client engineering RIC multi-episode execution capability in ENV-CPLUS-ENGINEERING-001 through BIND-CPLUS-SE-001
+  technical_characteristics:
+    - reuse verified E0/S01 intake and evidence-class rules for each episode
+    - aggregate one bounded set of 3-5 de-identified RIC service episodes
+    - preserve exact episode-to-cluster and episode-to-conclusion traceability
+    - produce D08 as a view of TECH-BMA life cycle concepts and D09 as a view of TM-MEAS measurement report
+    - keep candidate training/service improvements non-authoritative until separately produced and accepted
+    - process-owned canonical persistence only
+  intended_human_system_use:
+    interaction: >-
+      Authorized RIC participant or owner provides 3-5 de-identified service episodes; the actor normalizes each episode,
+      compares them, identifies only evidence-supported recurring scenario/gap patterns, and returns verified
+      participant-facing renderings linked to exact canonical products.
+    observable_result: >-
+      Verified scenario library plus structured RIC-to-Network feedback with explicit sample counts, evidence classes,
+      limitations and exact source episode references.
+  system_functions:
+    - accept only an explicitly authorized bounded RIC multi-episode execution request
+    - assign a stable episode identifier and disposition the E0/S01 minimum fields for every episode
+    - minimize sensitive data before persistence and preserve omitted values as not_established
+    - classify every material episode statement as direct participant report, participant judgment, RIC account of client episode, analyst inference, or not_established
+    - persist each real episode through TM-MEAS measurement register before aggregation
+    - normalize episode fields to comparable scenario dimensions without overwriting source wording or evidence class
+    - form candidate scenario clusters only from explicit comparable dimensions and retain exact membership trace to episode IDs
+    - represent recurrence only as observed count within the supplied bounded sample unless a separate sampling design authorizes broader inference
+    - produce TECH-BMA life cycle concepts containing D08 scenario-library views traced to episode IDs and cluster rules
+    - produce TM-MEAS measurement report containing D09 structured-feedback views with scenario, required decision, gap, workaround, observed recurrence count, criticality basis and evidence class
+    - derive candidate service/training actions only as candidate analysis output; create TECH-IMP training materials only when separately requested and actually produced
+    - run TECH-VER before any participant-facing delivery of the aggregate result
+    - render participant-facing views only from exact verified canonical ArtifactVersions
+    - record each multi-episode execution in exactly one TECH-OP operation report with actual IOPEC and ExecutionContour
+    - retain participant feedback and verification results as evidence for later improvement without automatic promotion to requirements roadmap or official service
+  safety_and_security:
+    - credentials passwords tokens secrets and unnecessary identifiers shall not be requested or persisted
+    - raw CRM exports named client contacts exact commercial terms and confidential correspondence shall not be required by default
+    - RIC account of a client episode shall never be relabeled as direct client evidence
+    - one RIC sample shall not be generalized to Network-wide prevalence without separate evidence design
+    - no legal-correctness ROI avoided-fine avoided-loss or causal-risk-reduction claim shall be produced by this capability
+    - parallel Proposal work-structure and cover-letter artifacts shall not be treated as accepted commercial authority for execution
+  critical_performance_limits:
+    episode_identifier_coverage: 100_percent
+    minimum_field_disposition_per_episode: 100_percent
+    persisted_material_claims_with_evidence_class: 100_percent
+    cluster_membership_trace_to_episode_ids: 100_percent
+    aggregate_conclusion_trace_to_episode_ids: 100_percent
+    RIC_account_reclassified_as_direct_client_evidence_allowed: 0
+    unsupported_population_or_causal_claims_allowed: 0
+    required_secrets_or_credentials: 0
+  applicable_design_and_test_standards:
+    process: ISO/IEC/IEEE 15288:2023 and ГОСТ Р 57193-2025
+    information_products: ISO/IEC/IEEE 15289:2017 and ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017
+    requirements_method: METHVER-SYSREQ-GTWR-RUNTIME-V1
+    existing_execution_basis: ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+  enabling_system_requirements:
+    - id: ESR-RICX-01
+      statement_ru: >-
+        Для многоэпизодного исполнения должны быть доступны ChatGPT engineering actor, разрешенный GitHub connector
+        и точные client ArtifactVersions; использование этих средств не переносит клиентскую authority.
+      verification: execution_environment_inspection
+  requirements:
+    - {id: SR-RICX-01, statement_ru: 'Принимать только явно разрешенный запрос одного РИЦ на bounded-набор 3-5 обезличенных сервисных эпизодов.', verification: scope_inspection}
+    - {id: SR-RICX-02, statement_ru: 'Каждому эпизоду присваивать стабильный идентификатор и disposition-ировать все минимальные поля E0/S01.', verification: episode_field_coverage}
+    - {id: SR-RICX-03, statement_ru: 'До persistence минимизировать данные; отсутствующие сведения сохранять как not_established без догадки.', verification: negative_input_and_incomplete_input_test}
+    - {id: SR-RICX-04, statement_ru: 'Не смешивать direct participant report, participant judgment, RIC_account_of_client_episode, analyst inference и not_established.', verification: evidence_class_inspection}
+    - {id: SR-RICX-05, statement_ru: 'Каждый реальный эпизод сохранять через TM-MEAS measurement register до агрегирования.', verification: artifact_lineage_inspection}
+    - {id: SR-RICX-06, statement_ru: 'Нормализовать эпизоды по сравнимым полям, сохраняя исходную формулировку и класс доказательства.', verification: normalization_trace_canary}
+    - {id: SR-RICX-07, statement_ru: 'Каждому кластеру сценариев и разрывов сохранять точный список входящих episode IDs и правило группировки.', verification: cluster_membership_trace}
+    - {id: SR-RICX-08, statement_ru: 'Повторяемость представлять как наблюдаемое число эпизодов в bounded-наборе; не выдавать его за распространенность в клиентской или сетевой популяции.', verification: forbidden_generalization_scan}
+    - {id: SR-RICX-09, statement_ru: 'Формировать D08 как представление TECH-BMA life cycle concepts с трассой каждого сценария к episode IDs.', verification: D08_product_and_trace_inspection}
+    - {id: SR-RICX-10, statement_ru: 'Формировать D09 как представление TM-MEAS measurement report с трассой каждого feedback item к episode IDs и evidence class.', verification: D09_product_and_trace_inspection}
+    - {id: SR-RICX-11, statement_ru: 'Кандидатные улучшения сервиса или обучения не превращать автоматически в требования roadmap или официальные обязательства.', verification: authority_boundary_scan}
+    - {id: SR-RICX-12, statement_ru: 'TECH-IMP training materials создавать только при отдельном фактическом выполнении S04 и сохранять как самостоятельный канонический продукт.', verification: conditional_product_lineage}
+    - {id: SR-RICX-13, statement_ru: 'До внешней выдачи агрегированного результата выполнять TECH-VER по полноте трассируемости evidence-class границам и запретам на недоказанные выводы.', verification: verification_report_required}
+    - {id: SR-RICX-14, statement_ru: 'Выдавать только производные человекочитаемые представления точных проверенных ArtifactVersions без параллельного источника истины.', verification: delivery_lineage_inspection}
+    - {id: SR-RICX-15, statement_ru: 'Каждый многоэпизодный запуск иметь ровно один TECH-OP operation report с actual IOPEC ExecutionContour и точными адресами продуктов.', verification: operation_report_inspection}
+    - {id: SR-RICX-16, statement_ru: 'Cross-environment исполнение использовать BIND-CPLUS-SE-001 и сохранять authority/persistence в MOZ1961/consultantplus.', verification: interface_boundary_inspection}
+    - {id: SR-RICX-17, statement_ru: 'Не требовать завершения параллельного внешнего пакета Предложения для внутренней инженерной разработки и верификации данной способности.', verification: dependency_inspection}
+    - {id: SR-RICX-18, statement_ru: 'Не заявлять E3/S02/S03/S04/S07 operationally executable до отдельной архитектуры дизайна реализации и exact-version end-to-end TECH-VER.', verification: lifecycle_gate_inspection}
+    - {id: SR-RICX-19, statement_ru: 'Не включать E4 cross-RIC network synthesis в область данной способности; расширение E4 требует отдельной evidence-based lifecycle проверки.', verification: scope_boundary_inspection}
+credibility_requirements:
+  - every SR-RICX and ESR-RICX requirement has stable identity and verification method
+  - requirements reuse only current client products and direct owner instruction as authority
+  - parallel PR #6 is treated as concurrent separate work and not as an input authority
+  - participant usefulness demand and commercial adoption remain separate from engineering verification
+conditions_constraints_characteristics:
+  execution_scope: one RIC multi-episode set using E3 semantics and S02/S03/S04/S07
+  expected_episode_set: 3-5 de-identified RIC service episodes for the first bounded execution
+  canonical_execution_products_when_real:
+    - TM-MEAS measurement register for each episode
+    - TECH-BMA life cycle concepts for D08
+    - TM-MEAS measurement report for D09
+    - TECH-IMP training materials only when actually produced
+    - TECH-VER verification report
+    - TECH-OP operation report
+  excluded_from_current_scope: [external Proposal / work-structure / cover-letter package, pricing or commercial terms, official RIC or Network service adoption, external participant recruitment, E4 cross-RIC network synthesis]
+  authority: owner acceptance deployment and external communication remain separate
+success_measures:
+  - all supplied episodes have stable IDs and complete minimum-field dispositions
+  - all aggregate claims trace to exact episode IDs and evidence classes
+  - no RIC account is promoted to direct client evidence
+  - observed recurrence is limited to the bounded sample
+  - D08 and D09 resolve to existing canonical products rather than new pseudo-products
+  - subject TECH-VER and exact-head structural verification pass before operational capability claim
+glossary:
+  RIC_multi_episode_set: bounded set of de-identified RIC service episodes analyzed together
+  D08: participant-facing scenario-library view of TECH-BMA life cycle concepts
+  D09: participant-facing structured-feedback view of TM-MEAS measurement report
+  observed_recurrence: count of comparable episodes inside the supplied bounded set, not population prevalence
+  RIC_account_of_client_episode: provider-side account of a client episode; not direct client evidence
+  operationally_executable: exact-version architecture/design/implementation/TECH-VER chain passed; not commercial adoption
+change_history:
+  - {version: V1, date: '2026-09-06', change: 'define RIC multi-episode execution requirements independently of parallel external Proposal-package work'}
+owner_product_request:
+  exact_visible_text: 'конкретно это не делай. делается параллельно. кроме этого иди по цели'
+  resolved_referent: >-
+    Do not work on the concrete Proposal/internal-plan/cover-letter package because it is being handled in parallel;
+    continue toward the fixed dialogue goal through the next independent delivery-capability gap.
+  request_specific_requirements:
+    - do not modify or duplicate the parallel Proposal-package work
+    - advance practical execution capability for RIC multi-episode work
+    - preserve the fixed Current dialogue branch purpose
+    - keep client authority and canonical product rules
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_SYSREQ_product
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.requirements]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [conditions_constraints_characteristics, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.requirements]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_worker_and_subject_TECH_VER}
+verification:
+  structural_status: full_10_84_coverage_authored_pending_exact_head_external_client_worker
+  semantic_status: requirements define independent RIC multi-episode extension; downstream architecture/design/implementation/TECH-VER not yet produced
+  owner_acceptance: continued engineering authorized; baseline deployment external communication and commercial adoption separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-SYSREQ/system-requirements/ART-CPLUS-RIC-MULTI-EPISODE-EXECUTION-SYSTEM-REQUIREMENTS-20260906-001.yaml@change/consultantplus-20260906-ric-multi-episode-execution
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.3', process_name: 'System requirements definition process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.3', process_name: 'Процесс определения системных требований'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: system requirements
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.8', specific_status: present, specific_items: ['10.84']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.8', specific_status: present, specific_items: ['10.84']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.8-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-D, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-E, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-G, disposition: satisfied, artifact_field_refs: [credibility_requirements], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-H, disposition: satisfied, artifact_field_refs: [conditions_constraints_characteristics], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-I, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: U7.8-J, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.8'}, gost: {section_or_item: '7.8'}, correspondence: IDT}
+        - {requirement_id: S10.84-R01, disposition: satisfied, artifact_field_refs: [stakeholder_basis], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R02, disposition: satisfied, artifact_field_refs: [success_measures], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R03, disposition: satisfied, artifact_field_refs: [body.technical_characteristics], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R04, disposition: satisfied, artifact_field_refs: [body.intended_human_system_use], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R05, disposition: satisfied, artifact_field_refs: [body.system_functions], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R06, disposition: satisfied, artifact_field_refs: [body.safety_and_security], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R07, disposition: satisfied, artifact_field_refs: [body.critical_performance_limits], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R08, disposition: satisfied, artifact_field_refs: [body.applicable_design_and_test_standards], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-R09, disposition: satisfied, artifact_field_refs: [body.requirements], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+        - {requirement_id: S10.84-O01, disposition: satisfied, artifact_field_refs: [body.enabling_system_requirements], iso: {section_or_item: '10.84'}, gost: {section_or_item: '10.84'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: system requirements specification for ConsultantPlus RIC multi-episode execution capability, resolution_basis: exact TECH-SYSREQ binding to §10.84, state: resolved}
+  universal_type: specification
+  universal_content:
+    source_section: '7.8'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.8-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.8-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.8-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.8-D, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.8-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.8-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.8-G, state: satisfied, artifact_field_refs: [credibility_requirements]}
+      - {requirement_id: U7.8-H, state: satisfied, artifact_field_refs: [conditions_constraints_characteristics]}
+      - {requirement_id: U7.8-I, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.8-J, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: exact, generic_type: specification, specific_profiles: ['10.84'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.84'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.84-R01, state: satisfied, artifact_field_refs: [stakeholder_basis]}
+          - {requirement_id: S10.84-R02, state: satisfied, artifact_field_refs: [success_measures]}
+          - {requirement_id: S10.84-R03, state: satisfied, artifact_field_refs: [body.technical_characteristics]}
+          - {requirement_id: S10.84-R04, state: satisfied, artifact_field_refs: [body.intended_human_system_use]}
+          - {requirement_id: S10.84-R05, state: satisfied, artifact_field_refs: [body.system_functions]}
+          - {requirement_id: S10.84-R06, state: satisfied, artifact_field_refs: [body.safety_and_security]}
+          - {requirement_id: S10.84-R07, state: satisfied, artifact_field_refs: [body.critical_performance_limits]}
+          - {requirement_id: S10.84-R08, state: satisfied, artifact_field_refs: [body.applicable_design_and_test_standards]}
+          - {requirement_id: S10.84-R09, state: satisfied, artifact_field_refs: [body.requirements]}
+          - {requirement_id: S10.84-O01, state: satisfied, artifact_field_refs: [body.enabling_system_requirements]}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-SYSREQ system requirements}
+  tailoring: §10.84 is specialized to the RIC multi-episode execution extension while the external Proposal-package track remains outside this product
+  information_item_management: {version_control: exact V1, review_approval: owner-directed candidate baseline separate, quality_evaluation: external structural worker plus downstream subject TECH-VER, retention: canonical client TECH-SYSREQ product, reuse_and_duplication: downstream architecture design implementation reference this exact ArtifactVersion or successor}
