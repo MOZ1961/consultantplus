@@ -1,11 +1,12 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001
-artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1
+artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V1
 artifact_label: business or mission analysis report
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate
-acceptance_status: candidate_mapping_pending_TECH_VER_and_owner_acceptance
+acceptance_status: candidate_mapping_TECH_VER_pass_owner_acceptance_separate
 artifact_instance_purpose: >-
   Согласовать все ранее предложенные для участников D01-D10, S01-S08 и E0-E4 с существующими
   каноническими процессными выходами и нормативными профилями ГОСТ Р 58609; устранить впечатление,
@@ -22,7 +23,7 @@ issued_at_and_status: {issued_at: '2026-09-05', status: owner_directed_candidate
 scope: current ConsultantPlus participant-offer proposal set D01-D10, S01-S08 and E0-E4
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
-references: [ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1, ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1, ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3]
+references: [ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1, ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1, ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V2, ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3]
 summary: >-
   Для текущего набора предложений новых canonical O не требуется. D01-D10 являются представлениями/разделами существующих канонических продуктов; S01-S08 являются видами деятельности/услугами, для которых определены исполняющие процессы и стандартные долговременные выходы; E0-E4 являются областями исполнения/пакетами взаимодействия, а не информационными продуктами. Если будущий предлагаемый результат нельзя будет разместить таким образом без потери самостоятельной семантики, он должен идти отдельным предложением на добавление canonical O.
 introduction:
@@ -33,7 +34,7 @@ introduction:
 context_and_assumptions:
   prior_offer_artifact: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
   terminology_correction: Field candidate_delivery_products in the prior report is historical wording; for current and future use D01-D10 are candidate participant-facing views/deliverables unless independently resolved to canonical O. Historical artifact is not rewritten retroactively.
-  addition_rule: ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V1
+  addition_rule: ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V2
 body:
   proposal_resolution_policy:
     product_identity_rule: only an existing ProcessType → canonical O may be presented as an existing information product
@@ -100,16 +101,21 @@ body:
 conclusions_and_recommendations:
   conclusion: current ConsultantPlus proposal set can be fully reconciled with existing 30 ProcessTypes and 249 canonical O; no output-catalog addition is justified now
   recommendation: treat global proposal-product resolution procedure as mandatory pre-emission control and use this report as current CPLUS mapping evidence
-  unresolved: semantic adequacy requires TECH-VER; commercial adoption and participant usefulness remain separate
-bibliography: []
+  unresolved: semantic adequacy is covered by dedicated TECH-VER; commercial adoption and participant usefulness remain separate
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.1 — Business or mission analysis process'
+  - 'ГОСТ Р 57193-2025 §6.4.1 — Процесс анализа бизнеса или назначения'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.27'
 glossary: {D_view: descriptive participant-facing rendering of canonical product content, service: activity/execution concept not information product identity, engagement_package: bounded execution scope grouping services/processes, parent_product: existing process-owned canonical O containing durable semantics behind a view, candidate_addition: proposed new canonical O not yet part of authoritative process catalog}
-change_history: [{version: V1, date: '2026-09-05', change: reconcile D01-D10 S01-S08 E0-E4 with existing canonical outputs and define no-addition conclusion}]
+change_history:
+  - {version: V1, date: '2026-09-05', change: 'reconcile D01-D10 S01-S08 E0-E4 with existing canonical outputs and define no-addition conclusion'}
+  - {version: V2, date: '2026-09-05', change: 'complete bibliography and normative tailoring fields required by structural information-product contract; mapping semantics unchanged'}
 owner_product_request:
   exact_visible_text: 'все что предлагаешь либо согласуй с продуктами по ГОСТу либо предлагай на добавление, если это невозможно'
   request_specific_requirements: [reconcile all current ConsultantPlus proposal labels with existing canonical outputs and ГОСТ composition, classify non-product services/packages as execution concepts with producing processes/products, use explicit addition only where existing outputs are semantically insufficient]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_BMA_report
+  applicability: applies_materially_revised_client_TECH_BMA_report
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
@@ -121,11 +127,11 @@ product_requirement_compliance:
     - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.view_mappings, body.service_mappings]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
-    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, supersedes_artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_exact_head_external_client_worker}
-verification: {structural_status: pending_external_client_information_product_worker, semantic_status: mapping_drafted_dedicated_TECH_VER_pending, owner_acceptance: direct_owner_rule_applies_mapping_acceptance_merge_separate}
-artifact_addresses: {self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001.yaml@change/consultantplus-20260905-proposal-product-alignment}
+verification: {structural_status: pending_external_client_information_product_worker, semantic_status: dedicated_TECH_VER_pass_current_proposal_set_no_orphans, owner_acceptance: direct_owner_rule_applies_mapping_acceptance_merge_separate}
+artifact_addresses: {self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001.yaml@change/consultantplus-20260905-product-completeness-repair}
 information_product_applicability: applies
 standards_trace:
   process:
@@ -192,4 +198,5 @@ content_compliance:
           - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [context_and_assumptions.terminology_correction,body.addition_assessment]}
           - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
   local_additive_content: {state: not_applicable, basis: no selected local additive profile}
-  information_item_management: {version_control: material mapping change requires new ArtifactVersion, review_approval: dedicated TECH-VER and owner acceptance separate, quality_evaluation: complete D/S/E coverage and semantic sufficiency of parent mappings, retention: canonical CPLUS TECH-BMA alignment evidence, reuse_and_duplication: future responses reference this exact version until superseded}
+  tailoring: proposal labels D01-D10 are specialized as views of existing products; S01-S08 as execution concepts with durable outputs; E0-E4 as bounded execution scopes; no new canonical O is introduced by this report
+  information_item_management: {version_control: exact V2 supersedes V1, review_approval: dedicated TECH-VER and owner acceptance separate, quality_evaluation: complete D/S/E coverage and semantic sufficiency of parent mappings, retention: canonical CPLUS TECH-BMA alignment evidence, reuse_and_duplication: future responses reference this exact version until superseded}
