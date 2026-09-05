@@ -1,0 +1,210 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001
+artifact_version_id: ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+artifact_label: implementation procedure
+project_contour: client_system_consultantplus
+lifecycle_status: implemented_candidate_for_canary_verification
+acceptance_status: implementation_exists_not_yet_owner_accepted_or_deployed
+artifact_instance_purpose: >-
+  Реализовать минимальную E0/S01 способность как точную исполнимую процедуру текущего SE-актора: прием одного
+  эпизода, минимизация и классификация информации, формирование канонических продуктов, D02/D03/D04,
+  обязательная TECH-VER, производная выдача участнику и фиксация доказательств.
+producer:
+  process_type_id: TECH-IMP
+  process_instance_id: PI-CPLUS-TECH-IMP-OFFER-EXECUTION-20260905-001
+  activity_instance_id: AI-CPLUS-TECH-IMP-IMPLEMENT-OFFER-EXECUTION-20260905-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-IMP-OFFER-EXECUTION
+    methodic_version_id: METHVER-CPLUS-TECH-IMP-OFFER-EXECUTION-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-OFFER-EXECUTION-CAPABILITY-20260905-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-05', status: implemented_candidate_for_canary_verification}
+scope: executable actor procedure for E0/S01 only; future E1-E4/S02-S08 require separate design/verification coverage
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+relations:
+  requirements: ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
+  architecture: ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  design: ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+  offer_model: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+normative_references:
+  - ISO/IEC/IEEE 15288:2023 §6.4.7
+  - ГОСТ Р 57193-2025 §6.4.7
+  - ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.5, 10.28
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+inputs_outputs:
+  required_inputs:
+    - explicit execution authority for one E0/S01 episode
+    - participant group or non-identifying role
+    - episode narrative sufficient to disposition IN-01..IN-09
+    - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V1
+    - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+    - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+    - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  produced_outputs_when_real:
+    - TM-MEAS measurement register containing de-identified episode evidence
+    - TECH-BMA business or mission analysis report containing D02 plus preliminary D03/D04
+    - TECH-VER verification report
+    - TECH-OP operation report
+    - derived participant-facing rendering from exact verified TECH-BMA ArtifactVersion
+  canary_output: TECH-VER verification report containing synthetic fixture, transformed packet, requirement/check results and capability disposition; no synthetic TM-MEAS/client evidence product is created
+  enablers: [ChatGPT engineering actor, GitHub connector, MOZ1961/consultantplus repository, MOZ1961/se request execution]
+ordered_steps:
+  - id: IMP-OEX-01
+    actor: SE actor
+    action: Confirm current dialogue purpose, one request-level TECH-OP identity, E0/S01 scope, participant/owner authority and BIND-CPLUS-SE-001.
+  - id: IMP-OEX-02
+    actor: SE actor
+    action: Extract IN-01..IN-09 and optional IN-10..IN-13 from the supplied episode; mark missing values not_established and do not infer hidden facts.
+  - id: IMP-OEX-03
+    actor: SE actor
+    action: Minimize before persistence by removing unnecessary names, third-party identifiers, credentials, secrets, privileged raw materials and unsupported direct quotations.
+  - id: IMP-OEX-04
+    actor: SE actor
+    action: Assign evidence class to every material field; participant wording/paraphrase remains distinct from analyst coding or inference.
+  - id: IMP-OEX-05
+    actor: SE actor
+    action: For a real episode persist the normalized evidence through TM-MEAS measurement register; in synthetic canary mode keep fixture only inside TECH-VER.
+  - id: IMP-OEX-06
+    actor: SE actor
+    action: Build D02 strictly from traceable intake fields, using not_established for unavailable content.
+  - id: IMP-OEX-07
+    actor: SE actor
+    action: Build preliminary D03 by separately describing ConsultantPlus, RIC, client-organization and other-source contribution; analyst classification is explicitly tagged interviewer_coding_or_inference.
+  - id: IMP-OEX-08
+    actor: SE actor
+    action: Build preliminary D04 only from reported uncertainty/workarounds/barriers/handoffs or explicit analyst inference; do not infer ROI, avoided losses, prevalence or causal risk reduction.
+  - id: IMP-OEX-09
+    actor: SE actor
+    action: For a real episode persist D02/D03/D04 in a TECH-BMA business or mission analysis report with field-level evidence trace and limitations.
+  - id: IMP-OEX-10
+    actor: TECH-VER
+    action: Check VC-01..VC-10 and SR-OEX-01..15 against exact inputs/products; unresolved required evidence yields fail or pass_with_explicit_limitations, never silent completion.
+  - id: IMP-OEX-11
+    actor: SE actor
+    action: Only after TECH-VER pass/pass_with_explicit_limitations create a participant-facing rendering from the exact verified TECH-BMA ArtifactVersion and include the mandatory limitations footer.
+  - id: IMP-OEX-12
+    actor: SE actor
+    action: Finalize the TECH-OP operation report with actual IOPEC, exact product addresses, verification, delivery state, participant feedback if available and unresolved items.
+  - id: IMP-OEX-13
+    actor: SE actor
+    action: Use accumulated evidence only as input to later TM-MEAS/TECH-BMA improvement; do not automatically promote one participant observation to requirement, roadmap or commercial offer.
+error_and_problem_resolution:
+  - {condition: minimum field absent, action: mark not_established and block only dependent D02/D03/D04 claim}
+  - {condition: sensitive or secret input supplied, action: do not persist it; ask for or retain only a minimized paraphrase if needed and authorized}
+  - {condition: evidence class ambiguous, action: use interviewer_coding_or_inference or not_established rather than participant fact}
+  - {condition: participant asks for legal correctness opinion, action: keep E0 output to decision-path analysis and state that legal correctness is outside this capability}
+  - {condition: TECH-VER fails, action: do not deliver as verified result; correct dependent product/procedure and re-verify}
+  - {condition: client authority/interface unresolved, action: stop cross-environment persistence/delivery dependent on that boundary}
+  - {condition: request expands beyond E0/S01, action: record capability gap and route extension through TECH-SYSREQ/ARCH/DES/IMP/VER before claiming coverage}
+completion_and_verification_conditions:
+  implementation_exists_when: this exact procedure plus requirements/architecture/design exact ArtifactVersions are addressable in MOZ1961/consultantplus
+  operational_capability_when: synthetic end-to-end canary passes TECH-VER on the exact versions and exact-head structural external-client verification passes
+  real_service_validated_when: separate participant use evidence demonstrates intended usefulness; not inferred from canary
+  commercial_offer_when: separate owner/Network/RIC authority establishes official service scope and terms
+  merge_or_deployment: separate owner authority
+  canary_fixture_rule: synthetic fixture must be clearly marked non-client evidence and cannot enter TM-MEAS measurement register as real episode data
+glossary:
+  implementation_procedure: ordered actor-executable control implementing the E0/S01 design without requiring new application software
+  verified_delivery: participant rendering may be issued only after subject TECH-VER of its canonical analysis basis
+  synthetic_canary: fabricated non-client episode used to test the mechanics and constraints of the execution path
+change_history:
+  - {version: V1, date: '2026-09-05', change: implement actor-executable E0/S01 offer-execution path and canary boundary}
+owner_product_request:
+  exact_visible_text: 'дальше'
+  resolved_referent: continue through implementation of the minimum reusable offer-execution capability and verify it end-to-end
+  request_specific_requirements: [make one representative offer executable now, use current environment, preserve process-owned products and client authority, no external participant contact, verify before capability claim]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_IMP_implementation_procedure
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, ordered_steps]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [error_and_problem_resolution, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [relations, normative_references, inputs_outputs]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_client_worker_and_subject_TECH_VER}
+verification:
+  structural_status: pending_exact_head_external_client_information_product_worker
+  semantic_status: actor-executable implementation procedure established; synthetic canary TECH-VER pending
+  owner_acceptance: implementation work authorized; operational capability acceptance and deployment separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-IMP/implementation-procedure/ART-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.7', process_name: 'Implementation process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.7', process_name: 'Процесс реализации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: implementation procedure
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.5', specific_status: present, specific_items: ['10.28']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.5', specific_status: present, specific_items: ['10.28']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.5-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-D, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-E, disposition: satisfied, artifact_field_refs: [relations], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-F, disposition: satisfied, artifact_field_refs: [normative_references], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-G, disposition: satisfied, artifact_field_refs: [inputs_outputs], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-H, disposition: satisfied, artifact_field_refs: [ordered_steps], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-I, disposition: satisfied, artifact_field_refs: [error_and_problem_resolution, completion_and_verification_conditions], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-J, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: U7.5-K, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.5'}, gost: {section_or_item: '7.5'}, correspondence: IDT}
+        - {requirement_id: S10.28-N01, disposition: satisfied, artifact_field_refs: [ordered_steps], iso: {section_or_item: '10.28'}, gost: {section_or_item: '10.28'}, correspondence: IDT}
+        - {requirement_id: S10.28-N02, disposition: satisfied, artifact_field_refs: [inputs_outputs], iso: {section_or_item: '10.28'}, gost: {section_or_item: '10.28'}, correspondence: IDT}
+        - {requirement_id: S10.28-N03, disposition: satisfied, artifact_field_refs: [error_and_problem_resolution, completion_and_verification_conditions], iso: {section_or_item: '10.28'}, gost: {section_or_item: '10.28'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: implementation procedure for ConsultantPlus E0/S01 offer execution, resolution_basis: exact TECH-IMP implementation procedure binding to §10.28, state: resolved}
+  universal_type: procedure
+  universal_content:
+    source_section: '7.5'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.5-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.5-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.5-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.5-D, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.5-E, state: satisfied, artifact_field_refs: [relations]}
+      - {requirement_id: U7.5-F, state: satisfied, artifact_field_refs: [normative_references]}
+      - {requirement_id: U7.5-G, state: satisfied, artifact_field_refs: [inputs_outputs]}
+      - {requirement_id: U7.5-H, state: satisfied, artifact_field_refs: [ordered_steps]}
+      - {requirement_id: U7.5-I, state: satisfied, artifact_field_refs: [error_and_problem_resolution, completion_and_verification_conditions]}
+      - {requirement_id: U7.5-J, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.5-K, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: exact, generic_type: procedure, specific_profiles: ['10.28'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.28'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.28-N01, state: satisfied, artifact_field_refs: [ordered_steps]}
+          - {requirement_id: S10.28-N02, state: satisfied, artifact_field_refs: [inputs_outputs]}
+          - {requirement_id: S10.28-N03, state: satisfied, artifact_field_refs: [error_and_problem_resolution, completion_and_verification_conditions]}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-IMP|implementation procedure}
+  tailoring: §10.28 is specialized to actor-based realization of the minimum E0/S01 offer-execution capability
+  information_item_management: {version_control: exact V1, review_approval: implementation candidate pending canary TECH-VER, quality_evaluation: external structural worker plus subject TECH-VER, retention: canonical client TECH-IMP procedure, reuse_and_duplication: runtime execution binds this exact ArtifactVersion as control}
