@@ -1,34 +1,39 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001
-artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
 artifact_label: supply records/artifacts
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_draft_not_sent
 acceptance_status: external_transmission_requires_owner_approval
 artifact_instance_purpose: >-
-  Сохранить управляемую запись предполагаемой передачи РИЦ точной версии продукта «Предложение» и
-  человекочитаемое сопроводительное письмо. Письмо является представлением записи AGR-SUP → supply
-  records/artifacts; внутренний TM-PLAN → SEMP во внешний комплект не включается.
+  Сохранить управляемую запись предполагаемой передачи РИЦ exact Proposal V3 на пилотный пакет
+  продуктов «Диагностика клиентского случая РИЦ» и человекочитаемое сопроводительное письмо.
+  Письмо является представлением AGR-SUP → supply records/artifacts; внутренний SEMP и иные
+  внутренние продукты среды в адресатский комплект не включаются.
 producer:
   process_type_id: AGR-SUP
   process_instance_id: PI-CPLUS-AGR-SUP-RIC-EXPRESS-EPISODE-TRANSMITTAL-20260906-001
   activity_instance_id: AI-CPLUS-AGR-SUP-PREPARE-RIC-TRANSMITTAL-20260906-001
   methodic_instance: {methodic_id: METH-CPLUS-AGR-SUP-INFORMATION-ITEM-TRANSMITTAL, methodic_version_id: METHVER-CPLUS-AGR-SUP-INFORMATION-ITEM-TRANSMITTAL-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime_not_adopted}
-request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-DELIVERY-PACKAGE-20260906-001, required_output_label: operation report}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001, required_output_label: operation report}
 interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
 date_and_status: {date: '2026-09-06', status: draft_not_sent}
-scope: prospective external transmittal of one exact RIC pilot Proposal; no actual sending in this execution
-subject_or_category: proposal transmittal and cover-letter record
-issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
-references: [ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1]
+scope: prospective external transmittal of exact RIC package Proposal V3; no actual sending in this execution
+subject_or_category: proposal transmittal and cover-letter record for RIC product package
+issuing_organization: owner-authorized engineering environment
+references:
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
 body:
   information_status_and_version_description:
-    transmitted_information_item: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
-    title_ru: Предложение по пилотной поставке «Экспресс-разбор сервисного эпизода РИЦ»
+    transmitted_information_item: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+    title_ru: Предложение по пилотной поставке пакета продуктов «Диагностика клиентского случая РИЦ»
     status: candidate_draft_not_yet_authorized_for_external_issue
     canonical_product: AGR-SUP → supply response
-    exclusions_from_external_package: [ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1, internal process controls and verification internals]
+    defined_recipient_package: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+    exclusions_from_external_package: [TM-PLAN → SEMP, TM-MEAS → measurement register, TECH-OP → operation report, internal process controls and package-model verification internals]
   distribution_record_and_security_classification:
     intended_recipient_category: руководитель или уполномоченный сотрудник РИЦ КонсультантПлюс
     actual_recipient: not_established
@@ -40,58 +45,59 @@ body:
   configuration_record_content:
     functional_and_physical_characteristics_version_location_status:
       controlled_item: AGR-SUP → supply response / «Предложение»
-      exact_version: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
+      exact_version: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
       repository_location: artifacts/AGR-SUP/supply-response/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001.yaml
       configuration_status: candidate_draft_pending_owner_external_issue
     approvals_baselines_changes_rationale:
       approval_state: not_authorized_for_external_issue
-      baseline: client branch exact version is controlled; main/accepted baseline remains separate
+      baseline: exact branch version controlled; main/accepted baseline separate
       change_state: no recipient transmission yet
-      rationale: preserve exact external proposal identity and prevent accidental release of internal SEMP
+      rationale: preserve exact Proposal/package identity and prevent accidental release of internal products
     linked_incidents_problems_known_errors_change_requests:
       incidents: []
       problems: []
       known_errors: []
       change_requests: []
-      note: no external issue has occurred, therefore no delivery incident/change request exists yet
+      note: no external issue has occurred therefore no delivery incident/change request exists yet
     requirement_traceability_and_conformance_state:
       traces_to_owner_requirements: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-      proposal_conformance: subject TECH-VER candidate; exact-head worker remains required
-      distribution_conformance: internal SEMP explicitly excluded from recipient package
+      package_definition: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+      proposal_conformance: subject TECH-VER and exact-head worker required before owner issue decision
+      distribution_conformance: internal SEMP and production products explicitly excluded
     ownership_use_maintenance_failure_disposal_backup_storage_archive_handling_delivery:
       semantic_owner: MOZ1961/consultantplus
-      use: controlled preparation of RIC proposal transmission
-      maintenance: successor version required for material recipient/cost/scope change after issue
-      failure_disposition: do not send if exact proposal version or owner approval is unresolved
+      use: controlled preparation of RIC package Proposal transmission
+      maintenance: successor version required for material recipient cost scope package or Proposal change
+      failure_disposition: do not send if exact Proposal version package definition or owner approval is unresolved
       storage_archive: process-owned artifact in client repository with Git history
-      handling_delivery: only exact proposal version may be attached; recipient/channel recorded at actual issue
+      handling_delivery: only exact owner-approved Proposal rendering may be attached; recipient/channel recorded at actual issue
   requested_next_action:
-    - ознакомиться с Предложением
+    - ознакомиться с Предложением о пилотном пакете продуктов
     - при заинтересованности выбрать одного сотрудника РИЦ и один недавний обезличенный сервисный эпизод
     - согласовать дату 45–60-минутной пилотной сессии
   human_readable_cover_letter: |-
     Уважаемые коллеги!
 
-    Направляем на рассмотрение предложение о проведении пилотного «Экспресс-разбора сервисного эпизода РИЦ».
+    Направляем на рассмотрение предложение о пилотной поставке пакета продуктов «Диагностика клиентского случая РИЦ».
 
-    Цель пилота — на одном реальном обезличенном случае проверить, как можно описать рабочую задачу клиента целиком: что требовалось решить, какую роль сыграл КонсультантПлюс, что дополнительно сделал РИЦ и где осталась неопределенность, задержка или иной разрыв.
+    На одном реальном обезличенном случае предлагаем подготовить для РИЦ два результата: Отчет о диагностике клиентского сценария и отдельный Отчет о верификации результата. В основном Отчете будет показано, что требовалось решить клиенту, какой информационный путь был пройден, какую наблюдаемую роль сыграли КонсультантПлюс и сервис РИЦ и где сохранились подтвержденные разрывы или неопределенность. Второй Отчет покажет, в каких границах эти выводы проверены.
 
     Для пилота со стороны РИЦ достаточно одного сотрудника, участвовавшего в недавнем клиентском случае, одного обезличенного эпизода и 45–60 минут на рабочую сессию. Выгрузки CRM, персональные данные клиентов, конфиденциальная переписка и коммерческие условия для начала не требуются.
 
-    В приложенном Предложении приведены ожидаемый результат, состав работ, требуемое участие РИЦ, сроки, стоимость пилота, ограничения и порядок завершения.
+    В Предложении приведены состав пакета, структура работ, необходимое участие РИЦ, сроки, стоимость пилота, риски и порядок завершения.
 
-    Если подход представляет интерес, предлагаем выбрать участника и эпизод и согласовать удобное время пилотной сессии.
+    Если такой формат представляет интерес, предлагаем выбрать участника и эпизод и согласовать удобное время пилотной сессии.
 
     С уважением,
     уполномоченный представитель поставщика
     [ФИО и контакт указываются при внешней выдаче]
-record_identifier: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+record_identifier: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2
 owner_product_request:
-  exact_visible_text: 'измени назначение соответственно и выполняй'
-  request_specific_requirements: [сопроводительное письмо входит во внешний комплект, письмо является управляемым представлением существующего продукта, внешним приложением является Предложение, внутренний План не передается]
+  exact_visible_text: 'меняй и приступай'
+  request_specific_requirements: [сопроводительное письмо относится к Proposal на пакет продуктов, письмо является управляемым представлением существующего продукта, внутренний План и производственные продукты не передаются, письмо должно объяснять два результата пакета для РИЦ]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_AGR_SUP_supply_record
+  applicability: applies_material_revision_client_AGR_SUP_supply_record
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.human_readable_cover_letter, body.configuration_record_content]}
@@ -106,7 +112,7 @@ product_requirement_compliance:
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, body.configuration_record_content.functional_and_physical_characteristics_version_location_status]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
-verification: {structural_status: worker_profile_correction_applied_exact_head_pending, semantic_status: candidate_subject_verification_pending_package_TECH_VER, owner_acceptance: preparation_authorized_external_transmission_separate}
+verification: {structural_status: material_revision_exact_head_pending, semantic_status: package_transmittal_subject_verification_pending_current_set, owner_acceptance: preparation_authorized_external_transmission_separate}
 artifact_addresses: {self: 'MOZ1961/consultantplus:artifacts/AGR-SUP/supply-records-artifacts/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package'}
 information_product_applicability: applies
 standards_trace:
@@ -163,5 +169,5 @@ content_compliance:
           - {requirement_id: R9-CFG-04, state: satisfied, artifact_field_refs: [body.configuration_record_content.requirement_traceability_and_conformance_state]}
           - {requirement_id: R9-CFG-05, state: satisfied, artifact_field_refs: [body.configuration_record_content.ownership_use_maintenance_failure_disposal_backup_storage_archive_handling_delivery]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected for AGR-SUP supply record}
-  tailoring: cover-letter text is a human-readable view of the controlled supply record; internal SEMP is explicitly excluded from distribution
-  information_item_management: {version_control: V1 draft corrected before external issue, review_approval: owner approval required before actual recipient/channel and send state, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: canonical client AGR-SUP supply record, reuse_and_duplication: externally sent rendering must cite this exact record/version or successor}
+  tailoring: cover-letter text is human-readable view of controlled supply record for Proposal V3/package V3; internal SEMP and production products excluded
+  information_item_management: {version_control: V2 successor after package-centric Proposal V3, review_approval: owner approval required before actual recipient/channel and send state, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: canonical client AGR-SUP supply record, reuse_and_duplication: externally sent rendering must cite this exact record/version or successor}
