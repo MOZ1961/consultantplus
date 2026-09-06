@@ -8,9 +8,9 @@ lifecycle_status: verification_completed_candidate
 acceptance_status: engineering_canary_pass_owner_acceptance_real_RIC_validation_and_deployment_separate
 artifact_instance_purpose: >-
   Проверить на синтетическом, явно не клиентском и не РИЦ-доказательстве многоэпизодную способность:
-  три эпизода проходят E0/S01-подобную нормализацию, два образуют доказательно ограниченный повторяющийся
-  кластер, третий остается singleton; D08/D09 сохраняют episode-level trace, повторяемость не превращается
-  в популяционную распространенность, а параллельный пакет Предложения не используется как зависимость.
+  три эпизода проходят нормализацию, два образуют ограниченный выборкой повторяющийся кластер,
+  третий остается singleton; D08/D09 сохраняют episode-level trace, а параллельный пакет Предложения
+  не используется как зависимость.
 producer:
   process_type_id: TECH-VER
   process_instance_id: PI-CPLUS-TECH-VER-RIC-MULTI-EPISODE-CANARY-20260906-001
@@ -29,39 +29,46 @@ interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-06', status: verification_completed_candidate}
+issued_at_and_status:
+  issued_at: '2026-09-06'
+  status: verification_completed_candidate
 scope: exact-version engineering verification of one synthetic bounded 3-episode RIC multi-episode execution; no real participant, RIC or client validation
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
   Синтетический canary прошел предметные проверки многоэпизодного преобразования: три episode_id имеют
   полные dispositions; два сходных сервисных эпизода образуют cluster C-RICX-01 с observed_count=2 of 3,
-  третий остается singleton и не назван повторяющимся; D08 и D09 имеют точную трассу к episode IDs;
-  RIC account не превращен в direct client evidence; популяционная распространенность, ROI, предотвращенные
-  потери, причинное снижение риска и юридическая корректность не утверждаются. Внешний Proposal/package PR
-  не использован как вход. Capability disposition: pass_for_internal_RIC_multi_episode_execution_after
-  request_operation_report_completion_and_exact_head_external_client_worker. Canary не подтверждает полезность
-  для реального РИЦ, спрос, официальный статус услуги или коммерческую готовность.
+  третий остается singleton; D08 и D09 имеют точную трассу к episode IDs; RIC account не превращен в
+  direct client evidence; популяционная распространенность, ROI, предотвращенные потери, причинное снижение
+  риска и юридическая корректность не утверждаются. Параллельный Proposal-package PR не использован как вход.
+  Capability disposition: pass_for_internal_RIC_multi_episode_execution_after request operation report completion
+  and exact-head external-client structural verification. Canary не подтверждает полезность для реального РИЦ,
+  спрос, официальный статус услуги, цены, коммерческую готовность или E4 cross-RIC synthesis.
 introduction:
   verified_object:
     - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-SYSTEM-REQUIREMENTS-20260906-001-V1
     - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-ARCHITECTURE-20260906-001-V1
     - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1
     - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-IMPLEMENTATION-PROCEDURE-20260906-001-V1
-  purpose: prove that the current actor environment can perform the independent RIC multi-episode transform without external contact and without the parallel Proposal-package workstream
+  purpose: prove current actor environment can perform the independent RIC multi-episode transform without external contact and without the parallel Proposal-package workstream
   audience: owner and subsequent authorized internal RIC multi-episode executions
-  criteria_basis: SR-RICX-01..19 plus ESR-RICX-01 and VC-RICX-01..16 from exact requirements/design/implementation products
+  criteria_basis: SR-RICX-01..19 plus ESR-RICX-01 and VC-RICX-01..16 from exact requirements, design and implementation products
 context_and_assumptions:
   canary_mode: synthetic_fixture_only_not_client_not_RIC_not_measurement_evidence
   no_TM_MEAS_real_records_created: true
   reason: implementation procedure forbids synthetic fixture from entering real measurement evidence
   enablers_used: [ChatGPT engineering actor, GitHub connector, exact client artifacts]
   bounded_sample_size: 3
-  unresolved_external_evidence: [real RIC usefulness, willingness to share 3-5 episodes, observed real recurrence, official Network/RIC service status, pricing, commercial terms]
-  parallel_work_boundary: consultantplus PR #6 proposal/work-structure/cover-letter track is concurrent and was not consumed as semantic input to this canary
+  unresolved_external_evidence:
+    - real RIC usefulness
+    - willingness to share 3-5 episodes
+    - observed real recurrence
+    - official Network or RIC service status
+    - pricing and commercial terms
+  parallel_work_boundary: external Proposal/work-structure/cover-letter track is concurrent and not a semantic input to this canary
 body:
   verification_method_and_evidence:
-    method: execute IMP-RICX-01..16 conceptually on three fabricated de-identified RIC service episodes and inspect every aggregate field/claim against exact RICX requirements and design checks
+    method: execute IMP-RICX-01..16 conceptually on three fabricated de-identified RIC service episodes and inspect every aggregate claim against exact RICX requirements and design checks
     exact_evidence:
       - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-SYSTEM-REQUIREMENTS-20260906-001-V1
       - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-ARCHITECTURE-20260906-001-V1
@@ -74,148 +81,72 @@ body:
     evidence_status: synthetic_non_client_non_RIC_non_measurement
     episodes:
       - episode_id: CANARY-RICX-E01
-        participant_group_or_role: бухгалтер клиента по сообщению консультанта РИЦ
         evidence_class_for_client_episode: RIC_account_of_client_episode
-        trigger: изменение порядка применения налоговой нормы перед закрытием месяца
-        required_decision_or_action: определить требуется ли изменить рабочий порядок и внутренний чек-лист
-        deadline_or_pressure: два рабочих дня
-        information_path: [поиск актуальной нормы в КонсультантПлюс, сравнение редакций, просмотр разъяснений, консультация с РИЦ по поисковой стратегии]
-        consultantplus_contribution: поиск актуального текста сравнение редакций и доступ к разъяснениям
-        ric_contribution: консультация по последовательности поиска и дополнительным источникам в системе
-        final_action_or_status: проект изменения внутреннего чек-листа передан главному бухгалтеру
-        remaining_uncertainty: применимость к одному нетипичному случаю не установлена
-        workaround_or_handoff: эскалация нетипичного случая главному бухгалтеру
+        required_decision_or_action: определить требуется ли изменить рабочий налоговый порядок после изменения нормы
+        ric_contribution: консультация по последовательности поиска и дополнительным источникам
+        remaining_uncertainty: применимость к нетипичному случаю не установлена
       - episode_id: CANARY-RICX-E02
-        participant_group_or_role: бухгалтер другого клиента по сообщению специалиста сопровождения РИЦ
         evidence_class_for_client_episode: RIC_account_of_client_episode
-        trigger: новое разъяснение по той же категории налоговой операции
-        required_decision_or_action: проверить нужно ли скорректировать текущий порядок до ближайшей отчетной даты
-        deadline_or_pressure: три рабочих дня
-        information_path: [поиск разъяснения в КонсультантПлюс, сравнение с действующей нормой, просмотр связанных материалов, обращение в РИЦ для уточнения навигации]
-        consultantplus_contribution: поиск нормы и разъяснения сопоставление связанных материалов
+        required_decision_or_action: проверить нужно ли скорректировать текущий налоговый порядок до отчетной даты
         ric_contribution: помощь в построении маршрута поиска и подборе связанных материалов
-        final_action_or_status: подготовлена кандидатная корректировка рабочего алгоритма
         remaining_uncertainty: исключительная операция требует внутреннего решения руководителя функции
-        workaround_or_handoff: передача исключительной операции руководителю функции
       - episode_id: CANARY-RICX-E03
-        participant_group_or_role: специалист по кадрам клиента по сообщению преподавателя РИЦ
         evidence_class_for_client_episode: RIC_account_of_client_episode
-        trigger: подготовка локального документа после изменения трудового регулирования
-        required_decision_or_action: определить состав корректировок и обучить ответственных сотрудников
-        deadline_or_pressure: одна неделя
-        information_path: [поиск изменения в КонсультантПлюс, изучение обзора, участие в обучающей сессии РИЦ]
-        consultantplus_contribution: поиск изменения и обзор связанных материалов
+        required_decision_or_action: определить состав корректировок локальных кадровых документов
         ric_contribution: обучающая сессия по работе с материалами системы
-        final_action_or_status: сформирован перечень локальных документов для пересмотра
         remaining_uncertainty: порядок внедрения изменений внутри организации не установлен
-        workaround_or_handoff: передача перечня руководителю кадровой функции
-    minimization_check: no personal names, client identifiers, counterparties, credentials, CRM keys, exact prices or privileged raw documents present
-  normalized_episode_packets:
-    CANARY-RICX-E01:
-      minimum_fields_disposition: complete
-      evidence_class: RIC_account_of_client_episode
-      comparable_decision_code: TAX_RULE_WORKFLOW_UPDATE
-      comparable_trigger_code: REGULATORY_CHANGE_OR_CLARIFICATION
-      ric_intervention_code: CONSULTATION_SEARCH_PATH
-      gap_code: EXCEPTION_APPLICABILITY_UNCERTAINTY
-      workaround_or_handoff_code: FUNCTION_OWNER_ESCALATION
-      coding_evidence_class: interviewer_coding_or_inference
-    CANARY-RICX-E02:
-      minimum_fields_disposition: complete
-      evidence_class: RIC_account_of_client_episode
-      comparable_decision_code: TAX_RULE_WORKFLOW_UPDATE
-      comparable_trigger_code: REGULATORY_CHANGE_OR_CLARIFICATION
-      ric_intervention_code: CONSULTATION_SEARCH_PATH
-      gap_code: EXCEPTION_APPLICABILITY_UNCERTAINTY
-      workaround_or_handoff_code: FUNCTION_OWNER_ESCALATION
-      coding_evidence_class: interviewer_coding_or_inference
-    CANARY-RICX-E03:
-      minimum_fields_disposition: complete
-      evidence_class: RIC_account_of_client_episode
-      comparable_decision_code: HR_LOCAL_DOCUMENT_UPDATE
-      comparable_trigger_code: REGULATORY_CHANGE
-      ric_intervention_code: TRAINING
-      gap_code: INTERNAL_IMPLEMENTATION_UNCERTAINTY
-      workaround_or_handoff_code: FUNCTION_OWNER_HANDOFF
-      coding_evidence_class: interviewer_coding_or_inference
+    minimization_check: no personal names, client identifiers, credentials, CRM keys, exact prices or privileged raw documents present
   transformed_packet:
     clusters:
       - cluster_id: C-RICX-01
-        label: налоговое изменение -> проверка рабочего порядка -> поиск/сопоставление -> помощь РИЦ -> внутренняя эскалация исключения
         grouping_basis: E01 and E02 share comparable decision, trigger class, RIC intervention and exception-related gap pattern
         member_episode_ids: [CANARY-RICX-E01, CANARY-RICX-E02]
         observed_count: 2
         bounded_sample_size: 3
         status: recurring_within_sample
         evidence_class_summary: source episodes are RIC_account_of_client_episode; grouping is interviewer_coding_or_inference
-        unresolved_variation: exact legal subject and organization-specific application remain different/not established
       - cluster_id: C-RICX-02
-        label: кадровое изменение -> пересмотр локальных документов -> обучение -> внутренняя передача
         grouping_basis: no second comparable episode in supplied set
         member_episode_ids: [CANARY-RICX-E03]
         observed_count: 1
         bounded_sample_size: 3
         status: singleton_candidate
         evidence_class_summary: source episode is RIC_account_of_client_episode; coding is interviewer_coding_or_inference
-        unresolved_variation: recurrence not established
     D08_scenario_library_view:
       - scenario_id: SC-RICX-01
         scenario_status: recurring_within_sample
         client_problem_or_decision: проверить необходимость изменения рабочего налогового порядка после изменения или разъяснения
-        trigger_pattern_within_sample: regulatory change or clarification
-        evidence_path_pattern: актуальная норма -> сравнение/связанные материалы -> консультация РИЦ -> внутреннее решение по исключению
-        ConsultantPlus_contribution: search/current text/comparison/related explanations as reported in E01/E02
-        RIC_contribution: search-route consultation as reported in E01/E02
-        expected_or_observed_participant_action: candidate workflow/checklist correction followed by internal owner review
-        gap_or_uncertainty: applicability to exceptional operation remains unresolved
         member_episode_ids: [CANARY-RICX-E01, CANARY-RICX-E02]
         observed_count: 2
         bounded_sample_size: 3
         evidence_class_summary: RIC_account_of_client_episode plus interviewer_coding_or_inference
-        limitations: no direct client confirmation and no prevalence/legal-correctness claim
+        limitations: no direct client confirmation and no prevalence or legal-correctness claim
       - scenario_id: SC-RICX-02
         scenario_status: singleton_candidate
         client_problem_or_decision: пересмотреть локальные кадровые документы после изменения регулирования
-        trigger_pattern_within_sample: one regulatory-change episode
-        evidence_path_pattern: поиск изменения -> обзор -> обучение РИЦ -> передача руководителю функции
-        ConsultantPlus_contribution: search and overview as reported in E03
-        RIC_contribution: training as reported in E03
-        expected_or_observed_participant_action: list of local documents for revision
-        gap_or_uncertainty: internal implementation procedure unresolved
         member_episode_ids: [CANARY-RICX-E03]
         observed_count: 1
         bounded_sample_size: 3
-        evidence_class_summary: RIC_account_of_client_episode plus interviewer_coding_or_inference
         limitations: recurrence not established; no direct client confirmation
     D09_structured_feedback_view:
       - feedback_id: FB-RICX-01
         scenario_id: SC-RICX-01
-        participant_or_role_scope: accountants described by RIC-side participants in two synthetic episodes
-        required_decision: whether to update a working tax procedure after a change/clarification
         gap: exceptional-case applicability remains unresolved after normal search path
-        workaround_or_handoff: escalation to internal function owner
         observed_recurrence_count: 2
         bounded_sample_size: 3
-        criticality_basis: deadline pressure reported in both synthetic episode descriptions; no financial consequence inferred
         evidence_classes: [RIC_account_of_client_episode, interviewer_coding_or_inference]
         member_episode_ids: [CANARY-RICX-E01, CANARY-RICX-E02]
         candidate_response_type: needs_further_evidence
-        unresolved_questions: whether the pattern recurs in real RIC data and what response is useful
         limitations: not a Network-wide prevalence or change request
       - feedback_id: FB-RICX-02
         scenario_id: SC-RICX-02
-        participant_or_role_scope: HR role described by one RIC-side synthetic episode
-        required_decision: what local documentation should be revised after regulation changes
-        gap: internal implementation sequence not established
-        workaround_or_handoff: function-owner handoff
+        gap: internal implementation procedure remains unresolved
         observed_recurrence_count: 1
         bounded_sample_size: 3
-        criticality_basis: one-week timing reported in synthetic fixture only
         evidence_classes: [RIC_account_of_client_episode, interviewer_coding_or_inference]
         member_episode_ids: [CANARY-RICX-E03]
-        candidate_response_type: training
-        unresolved_questions: recurrence and usefulness of scenario-based training require real evidence
-        limitations: singleton candidate and not an adopted training product
+        candidate_response_type: needs_further_evidence
+        limitations: singleton only
     prohibited_claims_check:
       Network_wide_prevalence: absent
       client_population_prevalence: absent
@@ -226,21 +157,23 @@ body:
       official_RIC_or_Network_commitment: absent
   verification_checks:
     VC-RICX-01: {result: pass, evidence: synthetic bounded set contains exactly 3 stable episode IDs}
-    VC-RICX-02: {result: pass, evidence: all three packets state complete minimum-field disposition}
-    VC-RICX-03: {result: pass_by_design_for_real_execution, evidence: canary intentionally creates no real TM-MEAS records; implementation requires them for real episodes}
+    VC-RICX-02: {result: pass, evidence: all three packets retain source evidence class}
+    VC-RICX-03: {result: pass_by_design_for_real_execution, evidence: synthetic canary creates no real TM-MEAS records}
     VC-RICX-04: {result: pass, evidence: all provider-side client accounts remain RIC_account_of_client_episode}
-    VC-RICX-05: {result: pass, evidence: C-RICX-01 and C-RICX-02 contain grouping basis and exact member IDs}
-    VC-RICX-06: {result: pass, evidence: recurring label appears only on two-member C-RICX-01; C-RICX-02 is singleton_candidate}
-    VC-RICX-07: {result: pass, evidence: cluster and D08/D09 counts equal exact member counts and bounded_sample_size=3 is stated}
-    VC-RICX-08: {result: pass, evidence: every D08 scenario carries exact member_episode_ids and source-bounded fields}
-    VC-RICX-09: {result: pass, evidence: each D09 feedback item traces to scenario/member IDs and evidence classes}
-    VC-RICX-10: {result: pass, evidence: transformed_packet.prohibited_claims_check contains no forbidden claims}
-    VC-RICX-11: {result: pass, evidence: D08 canonical owner is TECH-BMA life cycle concepts and D09 owner is TM-MEAS measurement report by exact requirements/design}
-    VC-RICX-12: {result: pass, evidence: training/other candidate responses remain candidate and no requirement/change/roadmap is created}
-    VC-RICX-13: {result: pass_by_design_for_real_execution, evidence: participant rendering requires exact verified aggregate ArtifactVersions; canary has no real aggregate evidence products}
+    VC-RICX-05: {result: pass, evidence: both clusters contain grouping basis and exact member IDs}
+    VC-RICX-06: {result: pass, evidence: recurring label appears only on two-member cluster; singleton remains singleton_candidate}
+    VC-RICX-07: {result: pass, evidence: counts equal exact membership and bounded_sample_size is stated}
+    VC-RICX-08: {result: pass, evidence: every D08 scenario carries exact member_episode_ids}
+    VC-RICX-09: {result: pass, evidence: every D09 feedback item carries scenario and member IDs plus evidence classes}
+    VC-RICX-10: {result: pass, evidence: prohibited claims are absent}
+    VC-RICX-11: {result: pass, evidence: D08 owner is TECH-BMA life cycle concepts and D09 owner is TM-MEAS measurement report}
+    VC-RICX-12: {result: pass, evidence: candidate responses are not promoted to requirements or roadmap commitments}
+    VC-RICX-13: {result: pass_by_design_for_real_execution, evidence: participant rendering requires exact verified aggregate ArtifactVersions}
     VC-RICX-14: {result: pass, evidence: BIND-CPLUS-SE-001 explicit and client products remain in MOZ1961/consultantplus}
-    VC-RICX-15: {result: pass_with_external_condition, evidence: request-level TECH-OP operation report must be persisted in MOZ1961/se after final client head is known}
-    VC-RICX-16: {result: pass, evidence: no PR #6 Proposal-package artifact appears in exact_evidence or execution inputs}
+    VC-RICX-15: {result: pass_with_external_condition, evidence: request-level TECH-OP operation report must bind final client head and pass exact-head worker}
+    VC-RICX-16:
+      result: pass
+      evidence: parallel Proposal-package artifacts are absent from exact evidence and execution inputs
   system_requirement_results:
     SR-RICX-01: pass
     SR-RICX-02: pass
@@ -282,29 +215,34 @@ body:
     exact_head_external_client_worker: pending_after_generic_SE_operation_report_write_and_PR
   problems_encountered:
     - id: VER-RICX-P01
-      problem: synthetic canary cannot honestly create real TM-MEAS episode records or prove usefulness of D08/D09 to a RIC
-      disposition: keep all synthetic data embedded in TECH-VER and leave real evidence/validation separate
+      problem: synthetic canary cannot create real TM-MEAS episode records or prove usefulness of D08/D09 to a RIC
+      disposition: keep synthetic data inside TECH-VER and leave real evidence/validation separate
     - id: VER-RICX-P02
-      problem: two similar fabricated episodes can test clustering mechanics but cannot establish real recurrence
-      disposition: label recurrence only recurring_within_sample and explicitly synthetic; real recurrence remains unvalidated
+      problem: similar fabricated episodes can test clustering mechanics but cannot establish real recurrence
+      disposition: label recurrence only recurring_within_sample and explicitly synthetic
     - id: VER-RICX-P03
-      problem: request operation report must reference the final client branch head and therefore cannot be finalized before client capability artifacts are written
-      disposition: overall capability result remains conditional until generic SE operation report and external-client exact-head worker evidence exist
+      problem: request operation report must reference the final client branch head
+      disposition: final capability result remains conditional until generic SE exact-head worker evidence exists
     - id: VER-RICX-P04
-      problem: a concurrent PR builds the external Proposal package and could be mistaken for a required dependency
-      disposition: exact evidence list excludes PR #6 artifacts and verification explicitly checks independence
+      problem: concurrent external Proposal package could be mistaken for a dependency
+      disposition: exact evidence excludes it and verification checks independence
   verification_decisions_and_rationale:
-    - {decision: allow internal bounded RIC multi-episode execution after external conditions pass, rationale: requirements architecture design implementation and synthetic transform satisfy episode trace sample-bound and authority rules without a new software tool}
-    - {decision: do not claim real RIC validation, rationale: canary contains no real RIC participant evidence}
-    - {decision: do not claim E4 cross-RIC synthesis, rationale: current capability is deliberately bounded to one RIC episode set}
-    - {decision: do not make Proposal-package work a prerequisite, rationale: owner explicitly directed that track to run in parallel}
-    - {decision: keep D08 and D09 as views of existing canonical products, rationale: current product alignment resolves their durable semantics without adding canonical O}
+    - decision: allow internal bounded RIC multi-episode execution after external structural conditions pass
+      rationale: exact requirements, architecture, design, implementation and synthetic transform satisfy episode trace, sample-bound and authority rules
+    - decision: do not claim real RIC validation
+      rationale: canary contains no real RIC participant evidence
+    - decision: do not claim E4 cross-RIC synthesis
+      rationale: current capability is bounded to one RIC episode set
+    - decision: keep parallel Proposal-package work independent
+      rationale: owner explicitly directed that track to run in parallel
+    - decision: keep D08 and D09 as views of existing canonical products
+      rationale: existing canonical outputs preserve their durable semantics
 conclusions_and_recommendations:
   conclusion: >-
-    The independent RIC multi-episode mechanics and semantic boundaries pass the synthetic canary. After the request-level
-    operation report declares the final client head and applicable exact-head external-client structural verification passes,
-    the engineering environment may treat one bounded E3/S02/S03/S04/S07 RIC set as internally executable. Real RIC usefulness,
-    external delivery authority, commercial adoption and E4 network synthesis remain unvalidated/separate.
+    Independent RIC multi-episode mechanics and semantic boundaries pass the synthetic canary. After the request-level
+    operation report binds the final client head and exact-head external-client structural verification passes,
+    one bounded E3/S02/S03/S04/S07 RIC set is internally executable. Real RIC usefulness, external delivery authority,
+    commercial adoption and E4 network synthesis remain unvalidated and separate.
   recommendation: >-
     First real use should accept one authorized RIC set of 3-5 de-identified episodes, persist episode measurement records,
     produce exact TECH-BMA life cycle concepts and TM-MEAS measurement report, verify them, deliver derived D08/D09 views,
@@ -321,17 +259,23 @@ bibliography:
   - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
   - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
 glossary:
-  canary: controlled synthetic execution proving mechanics but not participant truth usefulness or demand
+  canary: controlled synthetic execution proving mechanics but not participant truth, usefulness or demand
   bounded_sample: explicitly limited set whose observed counts are not generalized to a population
   recurring_within_sample: at least two comparable episode members in this bounded set; not population prevalence
   RIC_account_of_client_episode: provider-side account of a client episode, never direct client evidence
   external_condition: evidence produced outside this client TECH-VER product but required before final capability claim
 change_history:
-  - {version: V1, date: '2026-09-06', change: 'execute and verify synthetic three-episode RIC multi-episode canary independent of parallel Proposal-package work'}
+  - version: V1
+    date: '2026-09-06'
+    change: execute and verify synthetic three-episode RIC multi-episode canary; serialization repaired without semantic expansion
 owner_product_request:
   exact_visible_text: 'конкретно это не делай. делается параллельно. кроме этого иди по цели'
-  resolved_referent: continue the full independent RIC execution-capability chain while leaving the external Proposal package to concurrent work.
-  request_specific_requirements: [do not duplicate Proposal/work-structure/cover-letter work, continue toward practical RIC delivery, verify before capability claim, preserve client/evidence authority]
+  resolved_referent: continue the independent RIC execution-capability chain while leaving the external Proposal package to concurrent work.
+  request_specific_requirements:
+    - do not duplicate Proposal/work-structure/cover-letter work
+    - continue toward practical RIC delivery
+    - verify before capability claim
+    - preserve client and evidence authority
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_new_client_TECH_VER_verification_report
@@ -352,7 +296,7 @@ product_requirement_compliance:
 verification:
   structural_status: pending_exact_head_external_client_information_product_worker
   semantic_status: pass_for_internal_RIC_multi_episode_execution_after_request_operation_report_completion_and_exact_head_external_client_worker
-  owner_acceptance: capability engineering continued; real-use validation deployment external delivery and commercial adoption separate
+  owner_acceptance: capability engineering continued; real-use validation, deployment, external delivery and commercial adoption separate
 artifact_addresses:
   self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001.yaml@change/consultantplus-20260906-ric-multi-episode-execution
 information_product_applicability: applies
@@ -428,5 +372,5 @@ content_compliance:
           - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
           - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale]}
   local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-VER|verification report}
-  tailoring: §10.93 is specialized to exact-version verification of the bounded RIC multi-episode actor-execution capability and synthetic three-episode canary
+  tailoring: §10.93 is specialized to exact-version verification of bounded RIC multi-episode actor execution and synthetic three-episode canary
   information_item_management: {version_control: exact V1, review_approval: subject verification complete with external conditions, quality_evaluation: exact-head external-client worker plus owner review, retention: canonical client TECH-VER product, reuse_and_duplication: future real execution references this report only as capability evidence not participant evidence}
