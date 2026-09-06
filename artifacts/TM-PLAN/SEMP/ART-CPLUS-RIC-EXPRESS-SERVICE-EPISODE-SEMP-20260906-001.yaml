@@ -1,42 +1,30 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001
-artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
-supersedes_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
 artifact_label: SEMP
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_internal_plan_candidate
 acceptance_status: owner_plan_acceptance_and_external_package_acceptance_separate
 artifact_instance_purpose: >-
-  Внутренне спланировать производство и поставку пилотного пакета продуктов «Диагностика клиентского
-  случая РИЦ»: определить полную WBS, процессы-производители продуктов пакета, роли, ресурсы, сроки,
-  внутренние проверки, риски, информационную безопасность, выдачу и завершение. План является внутренним
-  управляющим продуктом инженерной среды; РИЦ видит только состав своего пакета и внешнюю структуру работ
-  внутри AGR-SUP → supply response.
+  Внутренне спланировать производство и поставку exact package definition
+  ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3 по Proposal V3: определить полную WBS,
+  процессы-производители членов пакета, роли, ресурсы, сроки, проверки, риски, информационную безопасность,
+  выдачу и завершение. План является внутренним управляющим продуктом и РИЦ не передается.
 producer:
   process_type_id: TM-PLAN
   process_instance_id: PI-CPLUS-TM-PLAN-RIC-EXPRESS-EPISODE-20260906-001
   activity_instance_id: AI-CPLUS-TM-PLAN-PLAN-RIC-PILOT-20260906-001
-  methodic_instance:
-    methodic_id: METH-CPLUS-TM-PLAN-RIC-PILOT
-    methodic_version_id: METHVER-CPLUS-TM-PLAN-RIC-PILOT-V1
-    methodic_version: runtime-provisional-v1
-    status: provisional_runtime_not_adopted
-request_operation_ref:
-  repository: MOZ1961/se
-  process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001
-  required_output_label: operation report
-interface_binding_ref:
-  repository: MOZ1961/consultantplus
-  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
-  binding_instance_id: BIND-CPLUS-SE-001
+  methodic_instance: {methodic_id: METH-CPLUS-TM-PLAN-RIC-PILOT, methodic_version_id: METHVER-CPLUS-TM-PLAN-RIC-PILOT-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime_not_adopted}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
 issued_at_and_status: {issued_at: '2026-09-06', status: internal_plan_candidate}
-scope: internal planning and management of one RIC E0/S01 product-package pilot from proposal preparation through closeout and evidence capture
+scope: internal planning and management of one RIC E0/S01 product-package pilot from Proposal preparation through closeout and evidence capture
 issuing_organization: owner-authorized engineering environment
 applicable_references:
-  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
   - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
   - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
@@ -46,285 +34,132 @@ applicable_references:
   - ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
 authorizing_organization: owner of the engineering environment
 introduction:
-  purpose: управлять производством конкретных информационных продуктов пакета, а не выдавать РИЦ внутреннюю инженерную декомпозицию
+  purpose: управлять производством конкретных process-owned продуктов пакета, а не выдавать РИЦ внутреннюю инженерную декомпозицию
   audience: owner and authorized engineering actors only
-  applicability: from owner authorization to prepare the package through pilot closeout; external issue and real execution require separate owner gates
-  recipient_package_ref: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
+  applicability: from package/proposal preparation through pilot closeout; external issue and real execution require separate owner gates
+  recipient_package_ref: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+  external_proposal_ref: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
 planned_activities_and_tasks:
   - maintain exact package composition and visibility boundary
-  - prepare and verify the external Proposal that names the package and work structure
-  - prepare the external transmittal/cover-letter record
-  - obtain owner approval before any external issue
+  - prepare and verify external Proposal and transmittal record
+  - obtain owner approval before external issue
   - receive and minimize one authorized RIC episode
   - conduct one 45–60-minute reconstruction session
   - persist internal measurement evidence through TM-MEAS
-  - produce the recipient TECH-BMA report
-  - produce the recipient TECH-VER verification report
-  - register exact package member versions before delivery
+  - produce recipient TECH-BMA report
+  - produce recipient TECH-VER report
+  - register exact recipient package member versions before delivery
   - deliver only recipient package products and capture factual corrections/usefulness feedback
-  - close the pilot and preserve evidence for package improvement
+  - close pilot and preserve evidence for package improvement
 tools_methods_and_techniques:
   tools: [ChatGPT engineering actor, GitHub connector, process-owned artifact repositories, structural workers]
-  methods:
-    - E0/S01 normalized intake and evidence-class separation
-    - data minimization and de-identification by default
-    - scenario reconstruction from trigger through decision/status
-    - explicit separation of ConsultantPlus contribution, RIC contribution, client/colleague contribution and other sources
-    - package composition control through TM-IM information register
-    - fail-closed verification of normative product composition
-    - no causal/economic/legal claim without independent evidence design
+  methods: [E0/S01 normalized intake, evidence-class separation, data minimization and de-identification, scenario reconstruction, separated contribution coding, package composition control through TM-IM, fail-closed normative composition verification, prohibition of unsupported causal economic or legal claims]
 schedule:
-  planning_and_package_preparation: engineering execution before external issue
-  external_trigger: adequate input plus agreed session time after owner-approved Proposal issue and RIC participation
+  planning_and_package_preparation: before external issue
+  external_trigger: adequate input plus agreed session time after owner-approved Proposal issue
   W01_W02: up to 1 working day after RIC response
   W03: one 45–60-minute session
-  W04_W07: up to 2 working days after the session
-  W08: recipient package delivery no later than the third working day from adequate input; optional review up to 30 minutes
-  closeout: after feedback is recorded or after explicit no-feedback disposition
+  W04_W07: up to 2 working days after session
+  W08: package delivery no later than third working day from adequate input; optional review up to 30 minutes
+  closeout: after feedback or explicit no-feedback disposition
 budget_and_cost_estimate:
   external_pilot_package_price_rub: 0
   internal_engineering_effort_estimate: 4-6 actor-hours excluding waiting time
   monetary_internal_budget: not_established
-  rule: no external paid follow-on package is authorized or priced by this plan
+  rule: no paid follow-on package is authorized or priced by this plan
 resources_and_allocation:
-  supplier_resources:
-    - owner authority for external issue and final acceptance decisions
-    - one engineering actor for intake, analysis, product generation and verification coordination
-    - GitHub repositories MOZ1961/se and MOZ1961/consultantplus
-  expected_RIC_participation:
-    - one authorized participant
-    - one concrete de-identified episode
-    - 45–60 minutes for session
-    - optional up-to-30-minute review
+  supplier_resources: [owner authority, one engineering actor, GitHub repositories MOZ1961/se and MOZ1961/consultantplus]
+  expected_RIC_participation: [one authorized participant, one concrete de-identified episode, 45–60 minute session, optional up-to-30-minute review]
   non_required_resources: [raw CRM export, named client data, credentials or secrets, paid external infrastructure]
 responsibilities_and_authorities:
-  owner:
-    authority: approve external issue, changes to commercial conditions, package composition, acceptance/adoption and merge
-  engineering_actor:
-    responsibility: execute planned ProcessInstances, preserve evidence boundaries, produce package members and verify composition
-    authority_limit: may not externally send, bind RIC commercially, or claim official ConsultantPlus/RIC status without owner approval
-  RIC_participant:
-    responsibility: provide authorized factual episode information and review factual reconstruction
-    authority_limit: participant feedback does not automatically become an accepted product/service requirement
+  owner: {authority: approve external issue changes to commercial conditions package composition acceptance adoption and merge}
+  engineering_actor: {responsibility: execute ProcessInstances preserve evidence boundaries produce and verify package members, authority_limit: may not externally send bind RIC commercially or claim official ConsultantPlus/RIC status without owner approval}
+  RIC_participant: {responsibility: provide authorized factual episode information and review factual reconstruction, authority_limit: feedback does not automatically become an accepted requirement}
 party_interfaces:
-  supplier_to_RIC:
-    pre_delivery: owner-approved Proposal plus cover-letter rendering
-    RIC_response: participant + episode + schedule confirmation
-    delivery: exact recipient package members from TM-IM package register
-    feedback: factual corrections and usefulness assessment
-  internal_cross_environment:
-    generic_SE: MOZ1961/se request-level TECH-OP and generic process/content controls
-    client_system: MOZ1961/consultantplus subject products and client acceptance authority
-    binding: BIND-CPLUS-SE-001 / ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  supplier_to_RIC: {pre_delivery: owner-approved Proposal plus cover-letter rendering, RIC_response: participant plus episode plus schedule confirmation, delivery: exact recipient package members registered in TM-IM, feedback: factual corrections and usefulness assessment}
+  internal_cross_environment: {generic_SE: MOZ1961/se request TECH-OP and generic controls, client_system: MOZ1961/consultantplus subject products, binding: BIND-CPLUS-SE-001 / ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3}
 risk_assessment_and_mitigation:
-  - {risk: insufficient specificity of episode, likelihood: medium, consequence: unusable analysis, mitigation: W01/W02 adequacy gate before session}
+  - {risk: insufficient specificity of episode, likelihood: medium, consequence: unusable analysis, mitigation: W01/W02 adequacy gate}
   - {risk: participant recall bias, likelihood: medium, consequence: unsupported reconstruction, mitigation: distinguish reported fact participant judgment analyst inference and not_established}
-  - {risk: sensitive data oversharing, likelihood: medium, consequence: confidentiality exposure, mitigation: do not request raw records/identifiers; stop and minimize if supplied}
-  - {risk: false attribution of value or economic effect, likelihood: medium, consequence: misleading package claims, mitigation: prohibit ROI/avoided-fine/risk-reduction claim without separate measurement design}
-  - {risk: external schedule slip, likelihood: medium, consequence: delayed delivery, mitigation: schedule begins only on adequate input and agreed session}
-  - {risk: internal products leak into external package, likelihood: low, consequence: recipient confusion and unnecessary disclosure, mitigation: TM-IM package register controls recipient_visible and internal_only membership}
-  - {risk: package marked complete when one recipient product is absent, likelihood: medium, consequence: false delivery claim, mitigation: package completion requires exact TECH-BMA and TECH-VER member versions}
+  - {risk: sensitive data oversharing, likelihood: medium, consequence: confidentiality exposure, mitigation: do not request raw records or identifiers}
+  - {risk: false attribution of value or economic effect, likelihood: medium, consequence: misleading package claims, mitigation: prohibit ROI avoided-fine or risk-reduction claims without separate design}
+  - {risk: schedule slip, likelihood: medium, consequence: delayed delivery, mitigation: schedule starts only on adequate input and agreed session}
+  - {risk: internal products leak into external package, likelihood: low, consequence: recipient confusion and unnecessary disclosure, mitigation: package register controls recipient/internal visibility}
+  - {risk: package marked complete with missing member, likelihood: medium, consequence: false delivery claim, mitigation: completion requires exact TECH-BMA and TECH-VER member versions}
 quality_and_effectiveness_measures:
   - all material outputs are process-owned ArtifactVersions
-  - package membership is registered and exact versions are recorded before delivery
-  - all required GOST content rows resolve to nonempty fields
-  - every analytic material claim is evidence-classed or explicitly unresolved
-  - TECH-VER passes before recipient package delivery
+  - package membership is registered and exact versions recorded before delivery
+  - all mandatory GOST content rows resolve to nonempty fields
+  - material analytic claims are evidence-classed or explicitly unresolved
+  - TECH-VER passes before package delivery
   - participant receives only declared recipient package members
-  - feedback records whether factual reconstruction was accurate and whether package was useful
+  - feedback records factual accuracy and usefulness
 environment_infrastructure_security:
   environment: owner-authorized GitHub-backed engineering environment plus participant communication channel selected later
-  storage: process-owned artifacts in MOZ1961/consultantplus; request-level operation report in MOZ1961/se
+  storage: process-owned artifacts in MOZ1961/consultantplus; request operation report in MOZ1961/se
   access: repository write through authorized GitHub connector; external communication only after owner approval
-  security:
-    - minimum necessary de-identified information
-    - no passwords tokens keys or detailed security topology
-    - no confidential client documents by default
-    - preserve exact version and distribution lineage for externally issued package members
+  security: [minimum necessary de-identified information, no passwords tokens keys or detailed security topology, no confidential client documents by default, exact version and distribution lineage for externally issued members]
 training_and_briefing:
-  engineering_actor: existing E0/S01 implementation procedure, package register and product-content controls are mandatory controls
-  RIC_participant: short pre-session briefing on scope de-identification evidence boundary and right to leave unknown fields unknown
+  engineering_actor: existing E0/S01 procedure package register and product-content controls are mandatory controls
+  RIC_participant: short pre-session briefing on scope de-identification evidence boundary and unknown fields
 technical_management_analysis_reporting:
-  internal_status: tracked in TECH-OP operation report and target products
-  package_control: TM-IM information register records planned/actual package members and visibility
-  verification: TECH-VER report is itself a recipient package member and verifies the main TECH-BMA result
-  measurement: real participant execution creates internal TM-MEAS evidence; synthetic examples never enter real measurement evidence
-  reporting_boundary: recipient package excludes internal SEMP, raw measurement register and TECH-OP
+  internal_status: tracked in TECH-OP and target products
+  package_control: TM-IM information register records planned/actual members and visibility
+  verification: recipient TECH-VER report verifies main TECH-BMA result; separate package-model TECH-VER verifies pre-pilot model
+  measurement: real execution creates internal TM-MEAS evidence; synthetic examples never enter real measurement evidence
+  reporting_boundary: recipient package excludes internal SEMP raw measurement register TECH-OP and package-model verification internals
 related_plans_and_task_descriptions:
-  - existing E0/S01 architecture/design/implementation products govern execution mechanics
-  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1 defines package composition and visibility
-  - this SEMP governs production of the representative RIC package and real pilot if separately authorized
+  - existing E0/S01 architecture design and implementation products govern execution mechanics
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3 defines package composition
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3 defines external terms and work projection
   - no subcontractor or external service plan applies
 work_breakdown_structure:
-  rule: includes deliverable and non-deliverable lifecycle work; every recipient-facing work item traces to a product package member or required participation
+  rule: includes deliverable and non-deliverable lifecycle work; every recipient-facing work item traces to a package member or required participation
   work_packages:
-    - id: I00
-      name: Управление составом пакета и разрешением поставки
-      kind: non_deliverable_internal
-      process: TM-IM + AGR-SUP
-      activities: [maintain package register, maintain owner authority boundary, control exact versions, stop external issue without approval]
-      owner: owner + engineering actor
-      exit: package composition and authorization state explicit
-      recipient_projection: none
-    - id: I01
-      name: Формирование Предложения
-      kind: pre_delivery_product
-      process: AGR-SUP
-      activities: [compose §7.2 + §10.56 content, name recipient package members, include external work structure, state cost schedule risks capability authorization]
-      output: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
-      owner: engineering actor
-      exit: product structurally and semantically verified for owner review
-      recipient_projection: Proposal itself
-    - id: I02
-      name: Подготовка записи передачи и сопроводительного письма
-      kind: pre_delivery_product
-      process: AGR-SUP
-      activities: [identify exact proposal version, recipient category, requested next action, distribution/security status]
-      output: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
-      owner: engineering actor
-      exit: record is complete and internal plan is excluded
-      recipient_projection: cover-letter rendering
-    - id: W01
-      name: Выбор эпизода и участника
-      kind: execution
-      process: AGR-SUP/TM-MEAS intake boundary
-      input: RIC participant and one de-identified episode
-      output: agreed pilot object
-      owner: RIC with supplier support
-      exit: participant and episode are adequate
-      recipient_projection: W01
-    - id: W02
-      name: Прием и минимизация информации
-      kind: execution_internal_evidence
-      process: TM-MEAS
-      input: initial episode facts
-      output: normalized adequate intake / measurement register content
-      owner: engineering actor
-      exit: required fields are present/none/not_established and sensitive data is unnecessary
-      recipient_projection: W02
-    - id: W03
-      name: Рабочая сессия
-      kind: execution_internal_evidence
-      process: TM-MEAS
-      input: normalized intake and participant
-      output: real measurement/episode evidence
-      owner: engineering actor + RIC participant
-      exit: scenario facts sufficiently reconstructed
-      recipient_projection: W03
-    - id: W04
-      name: Реконструкция сценария
-      kind: recipient_product_production
-      process: TECH-BMA
-      input: exact TM-MEAS evidence
-      output: scenario section/view in recipient TECH-BMA report
-      owner: engineering actor
-      exit: material scenario fields trace to evidence or not_established
-      recipient_projection: W04
-    - id: W05
-      name: Анализ покрытия
-      kind: recipient_product_production
-      process: TECH-BMA
-      input: scenario and evidence
-      output: coverage section/view in recipient TECH-BMA report
-      owner: engineering actor
-      exit: product/RIC/client/other contributions are separated
-      recipient_projection: W05
-    - id: W06
-      name: Выявление разрывов
-      kind: recipient_product_production
-      process: TECH-BMA
-      input: scenario and evidence
-      output: gap section/view in recipient TECH-BMA report
-      owner: engineering actor
-      exit: gaps have evidence class and no unsupported causal claim
-      recipient_projection: W06
-    - id: W07A
-      name: Формирование основного продукта пакета
-      kind: recipient_product_production
-      process: TECH-BMA
-      input: scenario coverage gap analysis
-      output: planned TECH-BMA → business or mission analysis report for real episode
-      owner: engineering actor
-      exit: normative report composition complete and subject content ready for verification
-      recipient_projection: W07
-    - id: W07B
-      name: Верификация и формирование второго продукта пакета
-      kind: recipient_product_assurance
-      process: TECH-VER
-      input: exact TECH-BMA report and evidence
-      output: planned TECH-VER → verification report for real episode result
-      owner: engineering actor
-      exit: required verification criteria pass or unresolved state blocks delivery
-      recipient_projection: W07
-    - id: W07C
-      name: Фиксация точного состава выдаваемого пакета
-      kind: non_deliverable_internal
-      process: TM-IM
-      input: exact TECH-BMA and TECH-VER ArtifactVersions
-      output: successor package-register version with exact member versions
-      owner: engineering actor
-      exit: both recipient package members have exact versions and delivery visibility
-      recipient_projection: none
-    - id: W08
-      name: Передача и обсуждение пакета
-      kind: execution
-      process: AGR-SUP + TM-MEAS feedback capture
-      input: exact verified package and owner-approved external channel
-      output: delivery record and participant feedback
-      owner: both parties
-      exit: exact package members delivered and feedback/no-feedback disposition recorded
-      recipient_projection: W08
-    - id: I09
-      name: Закрытие и накопление доказательств
-      kind: non_deliverable_internal
-      process: TECH-OP/TM-MEAS
-      input: all execution products and feedback
-      output: closeout status and evidence for next package revision
-      owner: engineering actor
-      exit: operation report is complete and unresolved next-step items are explicit
-      recipient_projection: none
-  external_projection_rule: >-
-    В Proposal выводятся только W01-W08 сведения, необходимые РИЦ для участия, понимания производства
-    пакета, сроков, ответственности и критериев завершения. I00/I01/I02/I09, W07C и внутренние controls
-    остаются внутри среды.
+    - {id: I00, name: Управление составом пакета и разрешением поставки, kind: non_deliverable_internal, process: TM-IM + AGR-SUP, activities: [maintain package register, maintain authority boundary, control exact versions], owner: owner + engineering actor, exit: package composition and authorization explicit, recipient_projection: none}
+    - {id: I01, name: Формирование Предложения, kind: pre_delivery_product, process: AGR-SUP, activities: [compose §7.2+§10.56, name package members, include external work structure, state cost schedule risks capability authorization], output: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3, owner: engineering actor, exit: Proposal verified for owner review, recipient_projection: Proposal itself}
+    - {id: I02, name: Подготовка записи передачи и сопроводительного письма, kind: pre_delivery_product, process: AGR-SUP, activities: [identify exact Proposal version recipient category next action distribution/security], output: successor cover-letter record required before issue, owner: engineering actor, exit: record references exact Proposal issued, recipient_projection: cover-letter rendering}
+    - {id: W01, name: Выбор эпизода и участника, kind: execution, process: AGR-SUP/TM-MEAS intake boundary, input: RIC participant and one de-identified episode, output: agreed pilot object, owner: RIC with supplier support, exit: participant and episode adequate, recipient_projection: W01}
+    - {id: W02, name: Прием и минимизация информации, kind: execution_internal_evidence, process: TM-MEAS, input: initial episode facts, output: normalized adequate intake / measurement register content, owner: engineering actor, exit: required fields present none or not_established and sensitive data unnecessary, recipient_projection: W02}
+    - {id: W03, name: Рабочая сессия, kind: execution_internal_evidence, process: TM-MEAS, input: normalized intake and participant, output: real measurement evidence, owner: engineering actor + RIC participant, exit: scenario facts sufficiently reconstructed, recipient_projection: W03}
+    - {id: W04, name: Реконструкция сценария, kind: recipient_product_production, process: TECH-BMA, input: exact TM-MEAS evidence, output: scenario view in recipient TECH-BMA report, owner: engineering actor, exit: material fields trace to evidence or not_established, recipient_projection: W04}
+    - {id: W05, name: Анализ покрытия, kind: recipient_product_production, process: TECH-BMA, input: scenario and evidence, output: coverage view in recipient TECH-BMA report, owner: engineering actor, exit: product RIC client other contributions separated, recipient_projection: W05}
+    - {id: W06, name: Выявление разрывов, kind: recipient_product_production, process: TECH-BMA, input: scenario and evidence, output: gap view in recipient TECH-BMA report, owner: engineering actor, exit: gaps evidence-classed no unsupported causal claim, recipient_projection: W06}
+    - {id: W07A, name: Формирование основного продукта пакета, kind: recipient_product_production, process: TECH-BMA, input: scenario coverage gap analysis, output: planned TECH-BMA business or mission analysis report for real episode, owner: engineering actor, exit: normative report complete and ready for verification, recipient_projection: W07}
+    - {id: W07B, name: Верификация и формирование второго продукта пакета, kind: recipient_product_assurance, process: TECH-VER, input: exact TECH-BMA report and evidence, output: planned TECH-VER verification report for real result, owner: engineering actor, exit: criteria pass or unresolved blocks delivery, recipient_projection: W07}
+    - {id: W07C, name: Фиксация точного состава выдаваемого пакета, kind: non_deliverable_internal, process: TM-IM, input: exact TECH-BMA and TECH-VER ArtifactVersions, output: successor package-register version with exact member versions, owner: engineering actor, exit: both recipient members have exact versions and delivery visibility, recipient_projection: none}
+    - {id: W08, name: Передача и обсуждение пакета, kind: execution, process: AGR-SUP + TM-MEAS feedback capture, input: exact verified package and owner-approved channel, output: delivery record and participant feedback, owner: both parties, exit: exact package members delivered and feedback/no-feedback recorded, recipient_projection: W08}
+    - {id: I09, name: Закрытие и накопление доказательств, kind: non_deliverable_internal, process: TECH-OP/TM-MEAS, input: execution products and feedback, output: closeout and evidence for package revision, owner: engineering actor, exit: operation report complete and next items explicit, recipient_projection: none}
+  external_projection_rule: only W01-W08 information necessary for participation package production timing responsibility and completion appears in Proposal; internal packages and controls stay internal
 replanning_and_service_alternatives:
   applicability: applicable_if_pilot_input_scope_or_package_composition_changes
-  rule: material expansion beyond one participant/one episode or change of recipient package members requires new Proposal and corresponding SEMP/package-register version
+  rule: material expansion or recipient member change requires new Proposal SEMP and package-register versions
   subcontractors: none planned
 closure_and_archival:
-  closure_conditions:
-    - recipient TECH-BMA report and TECH-VER report delivered or explicit cancellation recorded
-    - factual corrections and usefulness feedback captured or explicitly unavailable
-    - exact package composition after execution preserved in TM-IM register
-    - TECH-OP operation report finalized
+  closure_conditions: [recipient TECH-BMA and TECH-VER reports delivered or cancellation recorded, corrections/usefulness feedback captured or unavailable, exact package composition preserved, TECH-OP finalized]
   staff_disposition: no dedicated staff assignment persists after pilot
-  archival: retain process-owned products and distribution/measurement/package records under repository policy
+  archival: retain process-owned products and distribution measurement package records
   final_reporting: operation report plus real-pilot package products and measurement evidence
-  lessons: candidate improvements remain evidence not accepted requirements until separately processed
+  lessons: candidate improvements remain evidence until separately processed
 glossary:
   SEMP: внутренний План управления проектом, канонический выход TM-PLAN
-  WBS: структура декомпозиции работ, содержащая поставляемые и непоставляемые работы жизненного цикла
+  WBS: структура декомпозиции работ, включающая поставляемые и непоставляемые работы
   пакет продуктов: управляемая совокупность самостоятельных process-owned информационных продуктов для РИЦ
-  внешний пакет: TECH-BMA Отчет + TECH-VER Отчет о верификации после реального исполнения пилота
-  внешняя проекция работ: ограниченное представление W01-W08 внутри Предложения для адресата РИЦ
-  E0/S01: минимальная исполнимая способность реконструкции одного реального эпизода решения
+  внешний пакет: TECH-BMA Отчет + recipient TECH-VER Отчет после реального исполнения
+  внешняя проекция работ: W01-W08 внутри Предложения
 change_procedure_and_history:
-  change_rule: material scope cost schedule or recipient-package change requires new SEMP version and where recipient terms change a new Proposal version
+  change_rule: material scope cost schedule or recipient-package change requires new SEMP and where external terms change new Proposal
   history:
-    - {version: V1, date: '2026-09-06', change: first internal SEMP for normative RIC E0/S01 proposal and pilot delivery}
-    - {version: V2, date: '2026-09-06', change: replan around an explicit recipient product package controlled by TM-IM register}
+    - {version: V1, date: '2026-09-06', change: first internal SEMP for RIC E0/S01}
+    - {version: V2, date: '2026-09-06', change: replan around explicit recipient product package}
+    - {version: V3, date: '2026-09-06', change: reconcile exact upstream package definition V3 and Proposal V3}
 completion_process:
   completion_state: package_production_plan_prepared_external_issue_not_authorized
   completion_authority: owner
   post_completion: evaluate evidence before extending package composition or paid service
 owner_product_request:
   exact_visible_text: 'меняй и приступай'
-  request_specific_requirements:
-    - внутренний План управляет производством пакета продуктов для РИЦ
-    - пакет должен состоять из самостоятельных process-owned продуктов по ГОСТ
-    - наружу внутренний План полная WBS measurement register и TECH-OP не передаются
-    - из плана в Предложение выводится только внешняя структура работ по производству заявленного пакета
-    - точный состав выданного пакета должен фиксироваться до передачи
+  request_specific_requirements: [внутренний План управляет производством пакета продуктов для РИЦ, пакет состоит из самостоятельных process-owned продуктов по ГОСТ, наружу SEMP полная WBS measurement register и TECH-OP не передаются, из плана в Proposal выводится внешняя структура работ, exact состав выданного пакета фиксируется до передачи]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_material_revision_client_TM_PLAN_SEMP
@@ -342,12 +177,8 @@ product_requirement_compliance:
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self, work_breakdown_structure.external_projection_rule]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_procedure_and_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
-verification:
-  structural_status: material_revision_pending_exact_head_external_client_worker
-  semantic_status: package_plan_subject_verification_pending
-  owner_acceptance: planning authorized; plan adoption and real execution separate
-artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TM-PLAN/SEMP/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
+verification: {structural_status: material_revision_pending_exact_head_external_client_worker, semantic_status: package_plan_reconciled_to_exact_definition_and_proposal, owner_acceptance: planning_authorized_real_execution_separate}
+artifact_addresses: {self: 'MOZ1961/consultantplus:artifacts/TM-PLAN/SEMP/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package'}
 information_product_applicability: applies
 standards_trace:
   process:
@@ -443,10 +274,5 @@ content_compliance:
           - {requirement_id: S10.55-O01, state: satisfied, artifact_field_refs: [replanning_and_service_alternatives]}
           - {requirement_id: S10.55-O02, state: satisfied, artifact_field_refs: [closure_and_archival]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected for TM-PLAN SEMP}
-  tailoring: internal plan manages production of exact recipient package members; only recipient-relevant W01-W08 projection appears in the external Proposal
-  information_item_management:
-    version_control: V2 successor to V1 after package-centric purpose change
-    review_approval: owner plan acceptance and real execution are separate gates
-    quality_evaluation: subject TECH-VER plus exact-head structural worker
-    retention: internal canonical client TM-PLAN product; never external attachment by default
-    reuse_and_duplication: external work structure is a derived view only and must trace to this exact SEMP version
+  tailoring: internal plan manages production of package definition V3; only W01-W08 projection appears in external Proposal V3
+  information_item_management: {version_control: V3 successor after exact reconciliation, review_approval: owner plan acceptance and real execution separate, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: internal canonical client TM-PLAN product, reuse_and_duplication: external work structure derives from this exact SEMP version}
