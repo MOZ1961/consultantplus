@@ -1,112 +1,96 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001
-artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
+artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
 artifact_label: verification report
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_subject_verification
 acceptance_status: subject_verified_candidate_external_issue_and_RIC_acceptance_separate
 artifact_instance_purpose: >-
-  Проверить новую пакетную модель поставки для РИЦ: пакет должен состоять из самостоятельных
-  process-owned информационных продуктов по ГОСТ, Proposal должен описывать их состав и внешнюю
-  структуру работ, внутренний SEMP должен планировать их производство, а internal-only продукты
-  не должны попадать в пакет РИЦ по умолчанию.
+  Проверить reconciled пакетную модель поставки для РИЦ на exact package definition V3, Proposal V3,
+  internal SEMP V3 и cover/transmittal V2: пакет состоит из самостоятельных process-owned продуктов по ГОСТ,
+  Proposal описывает состав и внешнюю структуру работ, SEMP планирует производство, а internal-only
+  продукты не попадают в пакет РИЦ по умолчанию.
 producer:
   process_type_id: TECH-VER
   process_instance_id: PI-CPLUS-TECH-VER-RIC-PRODUCT-PACKAGE-MODEL-20260906-001
   activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-RIC-PRODUCT-PACKAGE-MODEL-20260906-001
-  methodic_instance:
-    methodic_id: METH-CPLUS-TECH-VER-PACKAGE-COMPOSITION
-    methodic_version_id: METHVER-CPLUS-TECH-VER-PACKAGE-COMPOSITION-V1
-    methodic_version: runtime-provisional-v1
-    status: provisional_runtime_not_adopted
-request_operation_ref:
-  repository: MOZ1961/se
-  process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001
-  required_output_label: operation report
-interface_binding_ref:
-  repository: MOZ1961/consultantplus
-  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
-  binding_instance_id: BIND-CPLUS-SE-001
+  methodic_instance: {methodic_id: METH-CPLUS-TECH-VER-PACKAGE-COMPOSITION, methodic_version_id: METHVER-CPLUS-TECH-VER-PACKAGE-COMPOSITION-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime_not_adopted}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
 issued_at_and_status: {issued_at: '2026-09-06', status: subject_pass_candidate_exact_head_worker_pending}
 scope: >-
   Предметная верификация состава и границ пилотного пакета RIC-PKG-E0-S01-001 и согласованности
-  package register, Proposal V2 и internal SEMP V2. Не проверяет реальный клиентский эпизод, поскольку
-  он еще не получен, и не разрешает внешнюю выдачу или коммерческое обязательство.
+  package register V3, Proposal V3, internal SEMP V3 и cover/transmittal V2. Не проверяет реальный
+  клиентский эпизод и не разрешает внешнюю выдачу или коммерческое обязательство.
 issuing_organization: owner-authorized engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
-  PASS по предмету пакетной модели. Для пилота E0/S01 получатель РИЦ должен получить после реального
-  исполнения два продукта ценности: TECH-BMA → business or mission analysis report и TECH-VER →
-  verification report. Proposal и сопроводительная запись относятся к преддоговорной/передаточной
-  оболочке, а TM-PLAN → SEMP, TM-MEAS → measurement register и TECH-OP → operation report остаются
-  internal-only по умолчанию. Пакет не объявлен новым canonical O; его состав управляется через
-  TM-IM → information register. Реальные результирующие ArtifactVersion еще не созданы.
+  PASS по предмету reconciled пакетной модели. РИЦ после реального исполнения получает два продукта:
+  TECH-BMA → business or mission analysis report и TECH-VER → verification report. Proposal и
+  сопроводительная Запись — преддоговорная/передаточная оболочка; SEMP, measurement register и TECH-OP
+  остаются internal-only. Пакет не новый canonical O, его upstream состав фиксирует TM-IM information
+  register V3. Exact downstream products согласованы с этой версией. Реальные result ArtifactVersion еще не созданы.
 introduction:
   verified_items:
-    - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
-    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
-    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
+    - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2
   verification_requirements:
-    - package aggregate is not promoted to a new canonical O without need
-    - each recipient package member resolves to an existing ProcessType → canonical O and GOST composition
-    - Proposal names the actual recipient package and external work required to produce it
-    - SEMP internally plans production and exact-version registration of recipient members
-    - pre-delivery envelope is distinguished from delivered value products
-    - internal production artifacts are excluded from recipient package by default
-    - completion cannot be claimed before real TECH-BMA and TECH-VER member ArtifactVersions exist
+    - package aggregate is not promoted to a new canonical O without semantic need
+    - each recipient package member resolves to existing ProcessType → canonical O and GOST composition
+    - Proposal names exact package definition and external work required to produce it
+    - SEMP references exact package definition/Proposal and plans production plus exact-version registration
+    - cover/transmittal references exact Proposal/package and excludes internal products
+    - pre-delivery envelope is distinguished from recipient value products
+    - package completion is fail-closed until real TECH-BMA and TECH-VER member ArtifactVersions exist
   criteria_basis:
     - ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V2
     - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
     - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-    - direct owner instruction to change the dialogue purpose to normative RIC product packages
+    - owner instruction 'меняй и приступай'
 context_and_assumptions:
-  context: >-
-    Previous package design centered on Proposal and execution internals. Owner clarified that the value object
-    for RIC is a package of products produced by this engineering environment, each aligned to GOST content.
+  context: owner clarified that the value object for RIC is a package of products produced by this engineering environment
   assumptions:
-    - no real RIC episode has been supplied in this execution
+    - no real RIC episode has been supplied
     - no external transmission has occurred
-    - package physical rendering may later combine products but semantic identities remain separate
-    - exact real-result ArtifactVersions will be registered only after execution
+    - package physical rendering may combine products but semantic identities remain separate
+    - exact real-result ArtifactVersions are registered only after execution
 body:
   criteria_results:
-    - {criterion_id: PKG-VER-01, criterion: package aggregate has canonical resolution without orphan pseudo-product, result: pass, evidence: 'TM-IM → information register stores package composition; package itself explicitly states no new canonical O'}
+    - {criterion_id: PKG-VER-01, criterion: package aggregate has canonical resolution without orphan pseudo-product, result: pass, evidence: 'TM-IM → information register V3 stores upstream package composition; no new canonical O'}
     - {criterion_id: PKG-VER-02, criterion: every recipient value product has existing canonical O and GOST basis, result: pass, evidence: ['TECH-BMA → business or mission analysis report / §7.6+§10.27', 'TECH-VER → verification report / §7.6+§10.93']}
-    - {criterion_id: PKG-VER-03, criterion: views are not promoted to standalone products, result: pass, evidence: passport/coverage/gap are declared as views inside TECH-BMA report}
-    - {criterion_id: PKG-VER-04, criterion: Proposal describes package composition and recipient work structure, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2}
-    - {criterion_id: PKG-VER-05, criterion: internal plan controls production of exact package members, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2}
-    - {criterion_id: PKG-VER-06, criterion: internal-only products are excluded from recipient package, result: pass, evidence: package register recipient/internal visibility split}
-    - {criterion_id: PKG-VER-07, criterion: package completion is fail-closed until real result products exist, result: pass, evidence: recipient members are planned_not_instantiated_real_episode_required and package completion rule requires exact versions}
-    - {criterion_id: PKG-VER-08, criterion: external issue and RIC acceptance remain separate authority gates, result: pass, evidence: all three verified products state external issue/acceptance separate}
+    - {criterion_id: PKG-VER-03, criterion: views are not promoted to standalone products, result: pass, evidence: passport coverage gap remain views inside TECH-BMA report}
+    - {criterion_id: PKG-VER-04, criterion: Proposal describes exact package definition and recipient work structure, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3}
+    - {criterion_id: PKG-VER-05, criterion: internal plan controls production of exact package members from same definition, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3}
+    - {criterion_id: PKG-VER-06, criterion: cover record transmits exact current Proposal and excludes internal products, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2}
+    - {criterion_id: PKG-VER-07, criterion: internal-only products are excluded from recipient value package, result: pass, evidence: package register V3 visibility split}
+    - {criterion_id: PKG-VER-08, criterion: package completion is fail-closed until real result products exist, result: pass, evidence: package completion rule requires exact real TECH-BMA and TECH-VER versions in successor register}
+    - {criterion_id: PKG-VER-09, criterion: external issue and RIC acceptance remain separate authority gates, result: pass, evidence: all verified products explicitly separate preparation from issue acceptance and real pilot}
   detailed_results:
     package_semantics:
       package_id: RIC-PKG-E0-S01-001
+      upstream_package_definition: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
       durable_package_state_product: TM-IM → information register
       new_canonical_O_required: false
-      rationale: >-
-        Current requirement is to manage membership, status, visibility and versions of existing information items.
-        TM-IM information register preserves that composition without semantic loss; a new package-specific O is not necessary.
+      rationale: membership status visibility and exact-version composition are preserved by existing information register without semantic loss
     recipient_package_after_real_execution:
       mandatory_members:
         - {information_product_name_ru: Отчет, canonical_output: TECH-BMA → business or mission analysis report, normative_basis: ГОСТ Р 58609-2019 §7.6 + §10.27}
         - {information_product_name_ru: Отчет о верификации, canonical_output: TECH-VER → verification report, normative_basis: ГОСТ Р 58609-2019 §7.6 + §10.93}
       current_state: planned_only_no_real_episode_products_exist
-    not_recipient_value_package_by_default:
-      - AGR-SUP → supply response / Предложение — pre-delivery agreement vehicle
-      - AGR-SUP → supply records/artifacts / Запись — transmittal and cover-letter record
-      - TM-PLAN → SEMP / План — internal production management
-      - TM-MEAS → measurement register / Запись — internal evidence capture
-      - TECH-OP → operation report / Отчет — request execution record
+    pre_delivery_and_internal_boundary:
+      pre_delivery: ['AGR-SUP → supply response / Предложение V3', 'AGR-SUP → supply records/artifacts / Запись V2 with cover-letter rendering']
+      internal_only_by_default: ['TM-PLAN → SEMP V3', 'TM-MEAS → measurement register', 'TECH-OP → operation report', this package-model verification report]
     future_expansion_rule: >-
-      Aggregated measurement report, procedure, training materials or other products may enter a future package only
-      after their need is established and their exact ProcessType → canonical O and GOST composition are resolved.
+      Measurement report, Procedure, training materials or other products enter future package only after need is established
+      and exact ProcessType → O + GOST composition is resolved; unresolved Procedure ProcessType/O is not included.
   problems_encountered:
-    - problem: existing Proposal V1 mixed recipient value with internal execution products
-      disposition: corrected in Proposal V2 by explicit recipient package composition
-    - problem: package as a word could become an unclassified semantic carrier
-      disposition: resolved through TM-IM information register; no new O created
+    - {problem: earlier versions formed circular exact-version references between package definition and downstream Proposal/Plan, disposition: V3 package register is stable upstream definition; downstream Proposal V3 and SEMP V3 reference it}
+    - {problem: cover letter referenced Proposal V1, disposition: cover/transmittal V2 now references Proposal V3 and package definition V3}
+    - {problem: package wording could become unclassified semantic carrier, disposition: TM-IM information register is explicit process-owned carrier}
   verification_decisions:
     package_model_subject_status: pass
     exact_head_structural_status: pending_after_current_client_and_SE_writes
@@ -116,17 +100,18 @@ body:
     merge_authorized_by_this_request: false
 conclusions_and_recommendations:
   conclusion: >-
-    Пакетная модель пригодна как следующий контур: РИЦ получает конкретные продукты ценности, а инженерная
-    среда сохраняет производственные и контрольные продукты внутри. Первый пакет E0/S01 сейчас определен,
-    но не произведен на реальных данных.
+    Reconciled пакетная модель внутренне согласована: один upstream package definition управляет составом,
+    Proposal/SEMP/cover используют exact V3 definition, а РИЦ получает только два продукта ценности после
+    реального исполнения. Реальный пакет еще не произведен.
   recommendation: >-
-    После exact-head structural PASS использовать Proposal V2 как внешний договорный вход. При получении
-    реального эпизода создать TM-MEAS evidence, затем реальный TECH-BMA Отчет и отдельный TECH-VER Отчет,
-    обновить package register точными версиями и только после этого передавать пакет РИЦ.
+    Получить exact-head structural PASS. После отдельного owner approval можно выдавать Proposal V3; после
+    входа РИЦ — создать internal TM-MEAS evidence, реальный TECH-BMA Отчет, recipient TECH-VER Отчет и
+    successor package register с exact member versions.
 references:
-  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V1
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V2
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
 bibliography:
@@ -134,22 +119,19 @@ bibliography:
   - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
   - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
 glossary:
-  пакет продуктов: агрегированное представление набора самостоятельных process-owned информационных продуктов для РИЦ
-  продукт ценности для РИЦ: самостоятельный информационный продукт, которым РИЦ пользуется как результатом поставки либо для подтверждения его качества
-  внутренний продукт: process-owned продукт, необходимый для производства/контроля, но не включаемый во внешний пакет по умолчанию
-  представление: форма/раздел внутри канонического продукта, не самостоятельный информационный продукт
+  пакет_продуктов: агрегированное представление набора самостоятельных process-owned информационных продуктов для РИЦ
+  продукт_ценности_для_РИЦ: самостоятельный информационный продукт используемый как результат поставки или подтверждение его качества
+  внутренний_продукт: process-owned продукт необходимый для производства или контроля но не включаемый во внешний пакет по умолчанию
+  представление: форма или раздел внутри канонического продукта не самостоятельный информационный продукт
 change_history:
-  - {version: V1, date: '2026-09-06', change: subject verification of package-centric RIC delivery model}
+  - {version: V1, date: '2026-09-06', change: initial subject verification of package-centric RIC delivery model}
+  - {version: V2, date: '2026-09-06', change: verify exact reconciled package definition V3 Proposal V3 SEMP V3 and cover/transmittal V2}
 owner_product_request:
   exact_visible_text: 'меняй и приступай'
-  request_specific_requirements:
-    - проверить что пакет состоит из продуктов процессов по ГОСТ
-    - не выдавать пакет как новый canonical O если существующий TM-IM information register сохраняет семантику состава
-    - разделить recipient value products, pre-delivery envelope и internal production products
-    - подтвердить что Proposal и internal SEMP согласованы с пакетной моделью
+  request_specific_requirements: [проверить что пакет состоит из продуктов процессов по ГОСТ, не создавать новый O если TM-IM register сохраняет семантику, разделить recipient value pre-delivery and internal products, подтвердить exact согласование Proposal Plan and cover with package definition]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_VER_verification_report
+  applicability: applies_material_revision_client_TECH_VER_verification_report
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.criteria_results, body.detailed_results]}
@@ -166,7 +148,7 @@ product_requirement_compliance:
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_structural_verification}
 verification:
   structural_status: exact_head_worker_pending
-  semantic_status: subject_pass_package_model
+  semantic_status: subject_pass_reconciled_package_model
   owner_acceptance: package_design_authorized_external_issue_and_real_delivery_separate
 artifact_addresses:
   self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
@@ -243,5 +225,5 @@ content_compliance:
           - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
           - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected for TECH-VER report}
-  tailoring: report verifies package composition, product identities and external/internal boundary; no lifecycle-process tailoring is introduced
-  information_item_management: {version_control: V1 candidate, review_approval: subject PASS does not authorize external transmission or RIC acceptance, quality_evaluation: exact-head structural worker required, retention: canonical client TECH-VER product, reuse_and_duplication: future package revisions cite exact successor products}
+  tailoring: report verifies package definition product identities exact downstream bindings and external/internal boundary; no lifecycle-process tailoring introduced
+  information_item_management: {version_control: V2 current reconciled package-model verification, review_approval: subject PASS does not authorize external transmission or RIC acceptance, quality_evaluation: exact-head structural worker required, retention: canonical client TECH-VER product, reuse_and_duplication: future package revisions cite exact successors}
