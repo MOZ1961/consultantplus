@@ -7,11 +7,9 @@ project_contour: client_system_consultantplus
 lifecycle_status: implemented_candidate_for_canary_verification
 acceptance_status: implementation_exists_not_yet_owner_accepted_or_deployed
 artifact_instance_purpose: >-
-  Реализовать многоэпизодный контур РИЦ как точную исполнимую процедуру текущего SE-актора поверх
-  существующей E0/S01 процедуры: обработать bounded-набор 3-5 эпизодов, сохранить поэпизодную
-  доказательную трассу, сформировать D08 и D09 через существующие канонические продукты,
-  выполнить обязательную TECH-VER и зафиксировать результат без зависимости от параллельного
-  внешнего пакета Предложения.
+  Реализовать многоэпизодный контур РИЦ как исполнимую процедуру текущего SE-актора поверх E0/S01:
+  обработать 3-5 эпизодов, сохранить поэпизодную доказательную трассу, сформировать D08 и D09
+  через существующие канонические продукты и выполнить обязательную TECH-VER без зависимости от параллельного Предложения.
 producer:
   process_type_id: TECH-IMP
   process_instance_id: PI-CPLUS-TECH-IMP-RIC-MULTI-EPISODE-EXECUTION-20260906-001
@@ -30,10 +28,12 @@ interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-06', status: implemented_candidate_for_canary_verification}
+issued_at_and_status:
+  issued_at: '2026-09-06'
+  status: implemented_candidate_for_canary_verification
 scope: >-
   Actor-executable internal RIC multi-episode capability for one 3-5 episode set using E3 and S02/S03/S04/S07 semantics.
-  External Proposal/work-structure/cover-letter package, commercial terms, participant recruitment and E4 cross-RIC synthesis are excluded.
+  External Proposal/work-structure/cover-letter package, commercial terms, participant recruitment and E4 are excluded.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 approving_authority: owner
 relations:
@@ -61,98 +61,108 @@ inputs_outputs:
     - TM-MEAS measurement register for each de-identified real episode
     - TECH-BMA life cycle concepts containing D08 scenario-library view
     - TM-MEAS measurement report containing D09 structured-feedback view
-    - TECH-IMP training materials only when separately authorized and actually produced
     - TECH-VER verification report
     - TECH-OP operation report
     - derived participant-facing rendering from exact verified aggregate ArtifactVersions
-  canary_output: >-
-    TECH-VER verification report containing a synthetic 3-episode fixture, normalized episode packets,
-    clusters, D08/D09 candidate renderings, requirement/check results and capability disposition;
-    synthetic evidence is not persisted in TM-MEAS as real evidence.
+  canary_output: TECH-VER verification report containing synthetic normalized packets, clusters, D08/D09 renderings and check results; synthetic evidence is not persisted as real TM-MEAS evidence.
   enablers: [ChatGPT engineering actor, GitHub connector, MOZ1961/consultantplus repository, MOZ1961/se request execution]
 ordered_steps:
   - id: IMP-RICX-01
     actor: SE actor
-    action: Confirm unchanged dialogue purpose, one request-level TECH-OP identity, bounded RIC scope, execution authority and BIND-CPLUS-SE-001; confirm the parallel Proposal-package workstream is not an execution input.
+    action: Confirm unchanged dialogue purpose, one request-level TECH-OP, bounded RIC scope, execution authority and BIND-CPLUS-SE-001; exclude the parallel Proposal package from inputs.
   - id: IMP-RICX-02
     actor: SE actor
-    action: Create a non-identifying execution_set_id and stable episode_id for each admitted episode; record bounded_sample_size and source identity.
+    action: Create execution_set_id and stable episode_id for each admitted episode; record bounded_sample_size and source identity.
   - id: IMP-RICX-03
     actor: SE actor
-    action: For each episode apply the exact E0/S01 intake semantics IN-01..IN-13 and minimization rules; mark missing values not_established and reject secrets or unnecessary identifiers before persistence.
+    action: Apply E0/S01 intake and minimization rules to each episode; mark missing values not_established and remove unnecessary identifiers before persistence.
   - id: IMP-RICX-04
     actor: SE actor
-    action: Preserve evidence class per material field, including the distinct RIC_account_of_client_episode class; never relabel provider-side account as direct client evidence.
+    action: Preserve evidence class per material field, including RIC_account_of_client_episode; never relabel a provider-side account as direct client evidence.
   - id: IMP-RICX-05
-    actor: SE actor
-    action: For each real episode persist normalized evidence through TM-MEAS measurement register; in synthetic canary mode retain fixture only inside TECH-VER.
+    actor: TM-MEAS
+    action: Persist each real normalized episode in measurement register; retain synthetic fixture only in TECH-VER.
   - id: IMP-RICX-06
     actor: SE actor
-    action: Add cross-episode comparable codes for decision/problem, trigger, RIC intervention, gap and workaround/handoff; tag these codes interviewer_coding_or_inference unless directly supplied as a controlled participant category.
+    action: Add comparable codes for decision/problem, trigger, RIC intervention, gap and workaround/handoff and mark inferred coding explicitly.
   - id: IMP-RICX-07
     actor: SE actor
-    action: Group comparable episodes only when an explicit grouping basis exists; create cluster_id, exact member_episode_ids, observed_count, bounded_sample_size, evidence-class summary and unresolved variation.
+    action: Group episodes only with explicit grouping basis; store cluster_id, exact member_episode_ids, observed_count, bounded_sample_size, evidence-class summary and unresolved variation.
   - id: IMP-RICX-08
     actor: SE actor
-    action: Use recurring_within_sample only for clusters with at least two exact member episodes; retain singleton cases as singleton_candidate and do not infer population prevalence.
+    action: Use recurring_within_sample only for clusters with at least two members; keep singletons separate and never infer population prevalence.
   - id: IMP-RICX-09
     actor: TECH-BMA
-    action: For a real execution persist TECH-BMA life cycle concepts containing D08 scenario-library content traced to exact cluster and episode IDs; every analytical synthesis is explicitly tagged where it is inference.
+    action: Persist life cycle concepts containing D08 scenario-library content traced to exact cluster and episode IDs.
   - id: IMP-RICX-10
     actor: TM-MEAS
-    action: For a real execution persist a measurement report containing D09 structured-feedback content with scenario, decision, gap, workaround, observed recurrence count, sample size, criticality basis, evidence classes, exact member episode IDs and candidate response type.
+    action: Persist measurement report containing D09 structured feedback with scenario, decision, gap, workaround, recurrence count, sample size, evidence classes and member episode IDs.
   - id: IMP-RICX-11
     actor: SE actor
-    action: Keep candidate product/service/training/access/organization responses as candidates only; do not automatically promote them into stakeholder requirements, change requests, roadmap items or official commitments.
+    action: Keep proposed product, service, training, access and organizational responses as candidates; do not automatically promote them to requirements or roadmap commitments.
   - id: IMP-RICX-12
-    actor: TECH-IMP
-    action: Create training materials only when a separate owner-authorized S04 execution actually produces them; otherwise record training_materials_not_produced.
-  - id: IMP-RICX-13
     actor: TECH-VER
-    action: Execute VC-RICX-01..16 and SR-RICX-01..19 against exact inputs and produced/canary content; unresolved required evidence yields fail or pass_with_explicit_limitations, never silent completion.
+    action: Verify exact inputs, produced products, evidence classes, sample bounds, traces and prohibited claims; unresolved required evidence remains explicit.
+  - id: IMP-RICX-13
+    actor: SE actor
+    action: Create participant-facing D08/D09 renderings only after TECH-VER pass or pass_with_explicit_limitations.
   - id: IMP-RICX-14
-    actor: SE actor
-    action: Only after TECH-VER pass/pass_with_explicit_limitations create participant-facing D08/D09 renderings from exact verified canonical ArtifactVersions and include the mandatory sample-bound and non-commercial limitations footer.
+    actor: TECH-OP
+    action: Finalize the operation report with actual IOPEC, exact product addresses, ExecutionContour, verification state, delivery state, feedback and unresolved items.
   - id: IMP-RICX-15
-    actor: SE actor
-    action: Finalize the single TECH-OP operation report with actual IOPEC, exact product addresses, ExecutionContour, verification state, delivery state, participant feedback if available and unresolved items.
+    actor: TM-MEAS
+    action: Retain accumulated evidence for later improvement and comparison.
   - id: IMP-RICX-16
     actor: SE actor
-    action: Retain accumulated evidence for later TM-MEAS/TECH-BMA improvement; expansion to E4 cross-RIC synthesis or external commercial execution requires a separate lifecycle path and authority.
+    action: Route E4 cross-RIC synthesis or external commercial execution through a separate authorized lifecycle path.
 error_and_problem_resolution:
-  - {condition: fewer_than_three_usable_episodes_for_intended_E3_run, action: do not claim full E3 sample completion; either obtain more authorized episodes or execute a limited non-E3 diagnostic with explicit limitation}
-  - {condition: more_than_five_episodes_supplied_for_first_bounded_run, action: select an owner-authorized bounded subset or create a separately scoped execution; do not silently change the designed sample boundary}
-  - {condition: required_episode_field_absent, action: mark not_established and block only dependent synthesis}
-  - {condition: sensitive_or_secret_input_supplied, action: do not persist it; retain only a minimized paraphrase if needed and authorized}
-  - {condition: evidence_class_ambiguous, action: use interviewer_coding_or_inference or not_established; never upgrade to direct evidence}
-  - {condition: cluster_basis_weak_or_conflicting, action: keep episodes separate or record unresolved_variation rather than forcing a recurring cluster}
-  - {condition: recurrence_claim_exceeds_bounded_sample, action: fail verification and rewrite as observed count within supplied sample}
-  - {condition: participant_or_actor_requests_automatic_requirement_or_roadmap_promotion, action: preserve feedback as evidence and route any specific authorized change separately through the responsible process}
-  - {condition: TECH_VER_fails, action: do not deliver aggregate result as verified; correct dependent product/procedure and re-verify}
-  - {condition: client_authority_or_binding_unresolved, action: stop dependent cross-environment persistence or delivery}
-  - {condition: request_expands_to_E4_or_multiple_RICs, action: record capability gap and route extension through TECH-SYSREQ/ARCH/DES/IMP/VER before claiming coverage}
-  - {condition: external_Proposal_package_is_needed, action: hand off to the separate concurrent Proposal-package workstream; do not modify it here}
+  - condition: fewer_than_three_usable_episodes_for_intended_E3_run
+    action: obtain more authorized episodes or execute a limited diagnostic with explicit limitation
+  - condition: more_than_five_episodes_supplied_for_first_bounded_run
+    action: select an authorized subset or create a separate execution scope
+  - condition: required_episode_field_absent
+    action: mark not_established and block only dependent synthesis
+  - condition: sensitive_or_secret_input_supplied
+    action: do not persist it; retain only a minimized authorized paraphrase if needed
+  - condition: evidence_class_ambiguous
+    action: use interviewer_coding_or_inference or not_established; never upgrade evidence class
+  - condition: cluster_basis_weak_or_conflicting
+    action: keep episodes separate or record unresolved_variation
+  - condition: recurrence_claim_exceeds_bounded_sample
+    action: fail verification and rewrite as an observed count within supplied sample
+  - condition: TECH_VER_fails
+    action: do not deliver aggregate result as verified; correct and re-verify
+  - condition: request_expands_to_E4_or_multiple_RICs
+    action: route extension through TECH-SYSREQ, TECH-ARCH, TECH-DES, TECH-IMP and TECH-VER before claiming coverage
+  - condition: external_Proposal_package_is_needed
+    action: hand off to the separate concurrent Proposal-package workstream without modifying it here
 completion_and_verification_conditions:
-  implementation_exists_when: this exact procedure plus exact RICX requirements/architecture/design ArtifactVersions are addressable in MOZ1961/consultantplus
-  operational_capability_when: synthetic 3-episode end-to-end canary passes TECH-VER on exact versions and applicable exact-head structural verification passes
-  real_RIC_use_validated_when: separate authorized real RIC episode-set evidence demonstrates intended usefulness; not inferred from canary
-  commercial_offer_when: separate owner/Network/RIC authority establishes external service scope and terms
+  implementation_exists_when: this exact procedure plus exact RICX requirements, architecture and design are addressable in MOZ1961/consultantplus
+  operational_capability_when: synthetic 3-episode canary passes TECH-VER and applicable exact-head external-client structural verification passes
+  real_RIC_use_validated_when: separate authorized real RIC episode-set evidence demonstrates intended usefulness
+  commercial_offer_when: separate owner, Network or RIC authority establishes external service scope and terms
   proposal_package_dependency: none_for_internal_capability_construction
   merge_or_deployment: separate owner authority
-  canary_fixture_rule: synthetic fixture is explicitly non-client/non-RIC evidence and shall not enter TM-MEAS real evidence products
+  canary_fixture_rule: synthetic fixture is non-client and non-RIC evidence and shall not enter real TM-MEAS evidence products
 glossary:
   bounded_RIC_set: first designed multi-episode execution unit containing 3-5 de-identified RIC service episodes
-  recurring_within_sample: evidence-supported cluster with at least two member episodes inside the bounded supplied set
+  recurring_within_sample: evidence-supported cluster with at least two member episodes inside the bounded set
   D08: scenario-library view of TECH-BMA life cycle concepts
   D09: structured-feedback view of TM-MEAS measurement report
-  verified_delivery: participant aggregate rendering may be issued only after subject TECH-VER of exact canonical bases
-  synthetic_canary: fabricated non-client/non-RIC episode set used to test mechanics and constraints
+  verified_delivery: participant aggregate rendering issued only after subject TECH-VER of exact canonical bases
+  synthetic_canary: fabricated non-client and non-RIC episode set used to test mechanics and constraints
 change_history:
-  - {version: V1, date: '2026-09-06', change: 'implement actor-executable RIC multi-episode transformation independently of parallel Proposal-package work'}
+  - version: V1
+    date: '2026-09-06'
+    change: implement actor-executable RIC multi-episode transformation; serialization repaired without semantic expansion
 owner_product_request:
   exact_visible_text: 'конкретно это не делай. делается параллельно. кроме этого иди по цели'
   resolved_referent: continue toward the fixed dialogue goal while not duplicating the concrete external Proposal/work-structure/cover-letter package.
-  request_specific_requirements: [do not touch PR #6 proposal-package work, implement independent RIC multi-episode delivery capability, preserve standard products and evidence boundaries, verify before capability claim]
+  request_specific_requirements:
+    - 'do not touch PR #6 proposal-package work'
+    - implement independent RIC multi-episode delivery capability
+    - preserve standard products and evidence boundaries
+    - verify before capability claim
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_new_client_TECH_IMP_implementation_procedure
@@ -172,8 +182,8 @@ product_requirement_compliance:
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_client_worker_and_subject_TECH_VER}
 verification:
   structural_status: full_7_5_and_10_28_coverage_authored_pending_exact_head_external_client_worker
-  semantic_status: actor-executable multi-episode procedure established; synthetic aggregate canary TECH-VER pending
-  owner_acceptance: implementation work authorized; operational capability acceptance deployment external communication and commercial adoption separate
+  semantic_status: actor-executable multi-episode procedure established; synthetic aggregate canary TECH-VER is separate
+  owner_acceptance: implementation work authorized; operational capability acceptance, deployment, external communication and commercial adoption are separate
 artifact_addresses:
   self: MOZ1961/consultantplus:artifacts/TECH-IMP/implementation-procedure/ART-CPLUS-RIC-MULTI-EPISODE-EXECUTION-IMPLEMENTATION-PROCEDURE-20260906-001.yaml@change/consultantplus-20260906-ric-multi-episode-execution
 information_product_applicability: applies
