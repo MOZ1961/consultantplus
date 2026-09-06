@@ -208,7 +208,7 @@ content_compliance:
     state: pass
     profile_coverage:
       - profile_id: R9-INFORMATION-ITEM
-        kind: section9_specific_record
+        kind: section9_record
         requirement_coverage:
           - {requirement_id: R9-INF-01, state: satisfied, artifact_field_refs: [body.information_status_and_version_description]}
           - {requirement_id: R9-INF-02, state: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification]}
