@@ -1,7 +1,8 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-BMA-RIC-POSITIONING-20260906-001
-artifact_version_id: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V1
+artifact_version_id: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V1
 artifact_label: business or mission analysis report
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_for_RIC_positioning_validation
@@ -29,47 +30,146 @@ interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status:
-  issued_at: '2026-09-06'
-  status: candidate_for_RIC_positioning_validation
+issued_at_and_status: {issued_at: '2026-09-06', status: candidate_for_RIC_positioning_validation}
 scope: >-
   Кандидатная модель позиционирования КонсультантПлюс для РИЦ: единое смысловое ядро,
-  ролевые обещания, привязка к решениям C1-C6 и ответу P1, архитектура сообщения,
-  доказательный контракт, границы допустимых утверждений и представления для применения.
+  ролевые обещания, C1-C6/P1-P2, архитектура сообщения, доказательный контракт,
+  границы допустимых утверждений и представления для применения.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
-  Наиболее сильным текущим центром позиционирования является не перечень функций,
-  не доступ к правовой информации и не сам поиск ответа, а поддерживаемое профессиональное
-  решение и путь к его актуальному и воспроизводимому основанию. Текущее инженерное ядро
-  «КонсультантПлюс — рабочая среда поддержки актуальных и обоснованных профессиональных
-  решений в изменяющейся правовой среде» сохраняется как проверяемая гипотеза, а не как
-  принятое рыночное позиционирование. Для РИЦ предлагается четырехслойная архитектура:
-  единое ядро → ролевое обещание → конкретный сценарий решения → доказательство по реальному
-  эпизоду. Вклад КонсультантПлюс и вклад РИЦ должны описываться раздельно; P1 пока требует
-  прямого подтверждения сервисными и клиентскими эпизодами. ROI, предотвращенные штрафы,
-  общее снижение риска и рост эффективности не поддержаны текущей доказательной базой.
+  Наиболее сильный текущий центр позиционирования — не перечень функций, не доступ к правовой
+  информации и не сам поиск ответа, а поддерживаемое профессиональное решение и путь к его
+  актуальному и воспроизводимому основанию. Инженерное ядро «КонсультантПлюс — рабочая среда
+  поддержки актуальных и обоснованных профессиональных решений в изменяющейся правовой среде»
+  сохраняется как гипотеза, а не принятое рыночное позиционирование. Для РИЦ предлагается
+  четырехслойная архитектура: ядро → ролевое обещание → конкретный сценарий → доказательство.
+  Вклад КонсультантПлюс и РИЦ описывается раздельно. ROI, предотвращенные штрафы, общее снижение
+  риска и рост эффективности текущей доказательной базой не подтверждены.
 introduction:
-  evaluated_object: >-
-    Способ позиционирования КонсультантПлюс в работе РИЦ по отношению к решениям участников
-    клиентской организации и к отдельному сервисному вкладу РИЦ.
-  evaluation_context: >-
-    Продолжение decision-centric анализа КонсультантПлюс после разделения клиентских решений
-    C1-C6 и ответных решений поставщика P1-P2, до выполнения первой волны прямого исследования.
-  purpose: >-
-    Дать РИЦ одну непротиворечивую кандидатную рамку смысла продукта, которую можно проверять
-    на реальных клиентских эпизодах и затем использовать как источник для производных материалов.
-  intended_audience:
-    - руководители РИЦ
-    - клиентские менеджеры РИЦ
-    - специалисты сопровождения, обучения и консультирования РИЦ
-    - участники Сети, отвечающие за продуктовую и сервисную обратную связь
-  nonpurpose:
-    - не утверждает официальное рыночное позиционирование КонсультантПлюс
-    - не является рекламным текстом, скриптом продаж или учебным материалом
-    - не устанавливает цены, комплект поставки или коммерческие условия
-    - не доказывает ROI, снижение штрафов, снижение риска или рост производительности
-    - не заменяет последующий TM-MEAS отчет по прямым клиентским и РИЦ-эпизодам
+  evaluated_object: способ позиционирования КонсультантПлюс в работе РИЦ относительно решений участников клиентской организации
+  evaluation_context: continuation of decision-centric BMA after separating client decisions C1-C6 from provider responses P1-P2
+  criteria_basis:
+    - единое ядро должно связывать разные роли без независимых несогласованных обещаний
+    - сообщение должно начинаться от решения и ситуации участника, а не от перечня функций
+    - вклад КонсультантПлюс и РИЦ должен быть разделен
+    - сильные утверждения должны иметь определимую единицу доказательства
+    - производное сообщение не может быть сильнее связанного доказательства
+    - представления не становятся самостоятельными информационными продуктами без canonical O
+  purpose: дать РИЦ проверяемую внутреннюю рамку смысла продукта до прямой валидации
+  audience: [руководители РИЦ, клиентские менеджеры РИЦ, специалисты сопровождения и обучения, участники продуктовой обратной связи Сети]
+  nonpurpose: [не утверждает официальное рыночное позиционирование, не является рекламным скриптом, не устанавливает цены, не доказывает ROI или предотвращенные убытки]
+context_and_assumptions:
+  predecessor_model_state:
+    client_decisions: [C1, C2, C3, C4, C5, C6]
+    provider_responses: [P1, P2]
+    evidence_state: candidate_model_pending_direct_client_and_RIC_episodes
+  decision_axis:
+    individual: [знать, понять, решить]
+    organizational_meta_capability: {name: организовать, meaning: сделать критичные решения повторяемыми распределенными по ролям обучаемыми и контролируемыми, status: hypothesis_requires_validation}
+  current_observable_result_boundary:
+    supported: [решение или действие сформулировано, основание найдено и воспроизводимо, оставшаяся неопределенность зафиксирована, вклад КонсультантПлюс и РИЦ описан участником раздельно]
+    unsupported_attribution: [предотвращенные штрафы или убытки, ROI продукта, общее снижение риска, общий рост эффективности или производительности]
+  evidence_limitation: >-
+    Реальные клиентские и РИЦ-эпизоды, частота и критичность сценариев, фактический язык ценности,
+    эмпирический набор альтернатив и причинный вклад продукта/сервиса еще не установлены.
+body:
+  evaluation_method_and_evidence:
+    method: >-
+      Синтез exact decision-centric BMA products, participant model, product-alignment report и
+      measurement plan; оценка кандидатного позиционирования по внутренней непротиворечивости,
+      ролевой применимости, проверяемости на эпизоде и доказательной ограниченности.
+    evidence:
+      - {artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1, use: исходное ядро ценности и decision-value chain}
+      - {artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2, use: C1-C6/P1-P2 и observable-result boundary}
+      - {artifact_version_id: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1, use: DB01-DB05/PB01-PB03 role interfaces}
+      - {artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V2, use: D01-D10 as views of canonical products}
+      - {artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1, use: evidence classes and future episode validation}
+  findings:
+    - {id: F1, result: supported_by_current_model, finding: 'Решение участника и путь к его основанию являются наиболее непротиворечивой общей осью C1-C6.', impact: 'Позиционирование целесообразно строить вокруг профессионального решения, а функции трактовать как средства прохождения сценария.'}
+    - {id: F2, result: analytical_conclusion_not_market_fact, finding: 'Формулы «доступ к правовой информации» или «найти ответ» уже текущей модели C1-C6.', impact: 'Их можно использовать как частные этапы, но не как достаточный общий смысл без дополнительного обоснования.'}
+    - {id: F3, result: supported_by_role_decomposition, finding: 'Одной короткой фразы недостаточно для практической работы РИЦ; смысл инвариантен, но ролевое обещание и сценарий должны меняться.', impact: 'Нужна слоистая архитектура сообщения.'}
+    - {id: F4, result: evidence_boundary, finding: 'Вклад РИЦ нельзя сливать с возможностями СПС; полезность P1 пока требует прямых сервисных и клиентских эпизодов.', impact: 'Раздельно показывать информационный вклад КонсультантПлюс и сервисный вклад РИЦ.'}
+    - {id: F5, result: evidence_gap, finding: 'Exact current artifacts не устанавливают эмпирический набор альтернатив клиента.', impact: 'Не выдавать заранее выбранный список конкурентов/заменителей за факт; собирать реальные альтернативы через TM-MEAS.'}
+    - {id: F6, result: preserved_model_boundary, finding: '«Организовать» — организационная мета-способность, а не четвертый универсальный шаг для каждого пользователя.', impact: 'Не переносить организационное обещание механически в сообщение конечному специалисту.'}
+    - {id: F7, result: current_evidence_limit, finding: 'Нет доказательств ROI, предотвращенных штрафов, общего снижения риска или общего роста эффективности.', impact: 'Исключить такие обещания до отдельного доказательного дизайна.'}
+  candidate_positioning_model:
+    status: owner_directed_analyst_candidate_not_official_positioning
+    category_candidate: {formulation: рабочая информационная среда поддержки профессиональных решений, evidence_state: analytical_candidate_pending_client_language_validation}
+    engineering_core:
+      formulation: КонсультантПлюс — рабочая среда поддержки актуальных и обоснованных профессиональных решений в изменяющейся правовой среде.
+      provenance: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+      evidence_state: existing_candidate_hypothesis_not_market_validated
+    client_translation_candidate:
+      formulation: Не просто найти информацию — понять, что делать, и иметь основание для решения.
+      provenance: analyst_translation_of_existing_decision_model
+      evidence_state: candidate_wording_not_direct_client_quote_not_validated
+    RIC_link_candidate:
+      formulation: КонсультантПлюс дает информационную основу решения; РИЦ помогает превратить возможности системы в реально работающие для клиента сценарии.
+      provenance: analyst_synthesis_of_C_decisions_and_P1_provider_response
+      evidence_state: provider_response_hypothesis_requires_client_and_RIC_validation
+    authority_boundary: >-
+      КонсультантПлюс и РИЦ поддерживают информационную основу и прохождение сценария, но не принимают
+      профессиональное или управленческое решение вместо участника и не гарантируют его правильность.
+  role_positioning_view:
+    rule: все формулировки производны от одного engineering_core и не являются прямыми цитатами клиентов
+    roles:
+      - {participant_id: DB04, role: конечный профессиональный пользователь, primary_decisions: [C1, C2], candidate_promise: 'Понять, что делать в конкретной ситуации, и иметь актуальное основание для действия или позиции.', proof_needed: recent_client_episode_C1_or_C2}
+      - {participant_id: DB03, role: руководитель регулируемой функции, primary_decisions: [C2, C3, C4], candidate_promise: 'Сформировать обоснованный порядок реакции и сделать его воспроизводимым для команды в повторяющихся регулируемых ситуациях.', proof_needed: recent_team_rule_or_response_episode}
+      - {participant_id: DB01, role: руководитель или собственник, primary_decisions: [C4, C5], candidate_promise: 'Понять, какое изменение или риск требует реакции организации, кто отвечает за реакцию и на какой информационной основе она строится.', proof_needed: recent_C4_and_when_applicable_C5_episode}
+      - {participant_id: DB02, role: экономический заказчик или закупщик, primary_decisions: [C5], candidate_promise: 'Выбрать комплект, доступ, обучение и сервис исходя из критичных рабочих сценариев организации.', proof_needed: recent_purchase_or_configuration_episode}
+      - {participant_id: DB05, role: ИТ или администратор доступа, primary_decisions: [C6], candidate_promise: 'Обеспечить управляемый, надежный и допустимый доступ к среде, необходимой участникам для профессиональных решений.', proof_needed: recent_access_episode}
+      - {participant_id: PB01_PB02, role: клиентский менеджер или специалист сопровождения/обучения РИЦ, primary_decisions: [P1], candidate_promise: 'Диагностировать критичный сценарий клиента, определить затруднение и подобрать сопровождение, настройку или обучение, которые помогают пройти сценарий.', proof_needed: paired_RIC_and_client_episode_where_possible}
+      - {participant_id: PB03, role: руководство РИЦ или продуктовая обратная связь, primary_decisions: [P1, P2], candidate_promise: 'Собирать повторяющиеся сценарии и разрывы как доказательную основу приоритизации сервисных и продуктовых улучшений.', proof_needed: repeated_episode_synthesis}
+  message_architecture_view:
+    layers:
+      - {id: L1, name: единое смысловое ядро, rule: одна стабильная формула о поддержке профессионального решения}
+      - {id: L2, name: ролевое обещание, rule: конкретизирует решение или класс решений участника}
+      - {id: L3, name: сценарий, rule: начинается с ситуации/триггера и заканчивается наблюдаемым действием или позицией}
+      - {id: L4, name: доказательство, rule: связывает утверждение с идентифицируемым эпизодом и классом доказательства}
+    strengthening_rule: ни один слой не вводит причинное, финансовое, правовое или результативное утверждение сильнее доказательства
+    RIC_usage_sequence: [определить роль и ситуацию, установить требуемое решение, восстановить информационный путь и неопределенность, показать релевантные возможности внутри сценария, отдельно определить вклад РИЦ, зафиксировать результат и разрыв]
+  positioning_map_view:
+    classification: D01_D02_D03_D04_D05_D06_views_inside_TECH_BMA_report
+    required_fields: [participant, trigger_or_situation, client_decision_C_level, uncertainty_or_consequence, required_information_or_basis, ConsultantPlus_contribution, RIC_contribution_if_any, observable_episode_result, gap_or_workaround, evidence_class, evidence_state]
+  evidence_contract:
+    unit: one recent concrete decision episode
+    evidence_classes: [direct_episode_fact_reported_by_participant, participant_interpretation_or_judgment, interviewer_coding_or_inference, RIC_account_of_client_episode, not_established]
+    claim_states: [confirmed_by_available_episode_evidence, contradicted_by_available_episode_evidence, partially_supported, participant_judgment_only, RIC_account_only, analyst_inference_only, not_established]
+    minimum_rule: логическая согласованность или поддержка сотрудниками РИЦ сама по себе не повышает формулировку до подтвержденного позиционирования
+  alternatives_and_competition:
+    current_state: not_established_by_current_evidence
+    measurement_action: фиксировать в каждом эпизоде реально использованные/рассмотренные альтернативы и синтезировать карту только после повторяемых наблюдений
+  promise_boundaries:
+    allowed_now: [описывать роль КонсультантПлюс как информационной поддержки решения с маркировкой кандидатного статуса, показывать функции внутри сценария, раздельно описывать вклад СПС и РИЦ, фиксировать наблюдаемые результаты уровня эпизода]
+    do_not_say_without_additional_evidence: [гарантирует правильность решения, предотвращает штрафы или убытки, имеет установленный ROI, доказанно снижает риск, доказанно повышает общую эффективность, формулировка уже принята рынком]
+  representation_and_product_boundary:
+    views_inside_this_report: [D01 карта решений роли или подразделения, D02 паспорт критичного сценария, D03 карта покрытия КонсультантПлюс и РИЦ, D04 карта разрывов и обходных путей, D05 матрица ролей передачи и контроля решений, D06 рекомендации по комплекту/доступу/сервису/обучению от сценариев]
+    not_separate_products: D01-D06 являются представлениями TECH-BMA report и не создают новые canonical O
+    future_products:
+      - {need: доказательная синтеза по серии эпизодов, canonical_output: 'TM-MEAS → measurement report', status: future_after_measurement_execution}
+      - {need: материалы применения позиционирования сотрудниками РИЦ, canonical_output: 'TECH-IMP → training materials', status: future_after_validation}
+      - {need: принятое управленческое решение о позиционировании, canonical_output: 'TM-DEC → decision register', status: only_after_actual_decision}
+  decision_support:
+    supported_now: [использовать Отчет как внутреннюю кандидатную рамку, строить обсуждение от решения и сценария, различать ядро/роль/сценарий/доказательство, применять promise boundaries]
+    not_supported_now: [объявлять engineering_core официальным позиционированием, массово внедрять краткие формулировки как утвержденные слоганы, считать role promises прямыми словами клиентов, утверждать карту конкурентов, выводить ROI/частотность/причинное влияние]
+  deficiencies_risks_and_trends:
+    - {id: R1, deficiency: отсутствуют прямые клиентские и РИЦ-эпизоды для кандидатной формулировки, impact: wording_and_claim_strength_not_validated, treatment: execute_existing_TM_MEAS_wave1_plan}
+    - {id: R2, risk: decision-centric рамка может быть сведена обратно к feature pitch, impact: потеря связи с решением клиента, treatment: future training must preserve L1-L4 trace}
+    - {id: R3, risk: вклад РИЦ может быть переоценен по рассказам самого РИЦ, impact: provider_self_attribution_bias, treatment: compare RIC/client accounts and preserve evidence classes}
+    - {id: R4, risk: одна персона может совмещать несколько ролей, impact: role labels may blur, treatment: code actual decision and authority rather than title}
+    - {id: R5, deficiency: фактический язык ценности клиентов не установлен, impact: client translation may be linguistically weak, treatment: capture participant value_language in each episode}
+    - {id: R6, trend_or_watch_item: 'Повторяемый переход от единичного решения к изменению правил работы может усилить организационную meta-capability «организовать».', evidence_state: hypothesis_to_test_not_current_fact}
+conclusions_and_recommendations:
+  conclusion: >-
+    Текущая decision-centric модель позволяет сформировать непротиворечивое кандидатное позиционирование:
+    КонсультантПлюс объясняется через профессиональное решение и путь к его актуальному и воспроизводимому
+    основанию, а не через каталог функций. Ни engineering_core, ни клиентский перевод, ни связка с РИЦ
+    пока не имеют статуса принятого рыночного позиционирования.
+  recommendation: >-
+    Использовать Отчет как базовую гипотезную рамку; затем исполнить
+    ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1 и сформировать
+    TM-MEAS measurement report плюс successor TECH-BMA report с состояниями confirmed/contradicted/not-established.
 references:
   - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
   - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
@@ -78,529 +178,131 @@ references:
   - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
   - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
-  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
-context_and_assumptions:
-  predecessor_model_state:
-    client_decisions: [C1, C2, C3, C4, C5, C6]
-    provider_responses: [P1, P2]
-    evidence_state: candidate_model_pending_direct_client_and_RIC_episodes
-  decision_axis:
-    individual: [знать, понять, решить]
-    organizational_meta_capability:
-      name: организовать
-      meaning: >-
-        Сделать критичные решения повторяемыми, распределенными по ролям, обучаемыми и контролируемыми.
-      status: hypothesis_requires_validation
-  current_observable_result_boundary:
-    supported_episode_level_observables:
-      - решение или действие сформулировано
-      - основание найдено и может быть воспроизведено
-      - оставшаяся неопределенность зафиксирована
-      - вклад КонсультантПлюс и вклад РИЦ описаны участником раздельно
-    unsupported_outcome_attribution:
-      - предотвращенные штрафы или убытки
-      - ROI продукта
-      - общее снижение правового или иного риска
-      - общий рост эффективности или производительности организации
-  evidence_limitation: >-
-    Реальные клиентские и РИЦ-эпизоды, частота и критичность сценариев, фактический язык ценности,
-    эмпирический набор альтернатив и причинный вклад продукта/сервиса еще не установлены.
-body:
-  evaluation_method_and_evidence:
-    method: >-
-      Синтезировать существующую decision-centric BMA-модель, уточнение C/P, модель участников,
-      правила разрешения представлений в канонические продукты и план первой волны измерений;
-      оценить кандидатное позиционирование по критериям внутренней непротиворечивости,
-      ролевой применимости, проверяемости на эпизоде и доказательной ограниченности.
-    exact_evidence:
-      - artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-        use: исходное единое ядро ценности и цепочка от ситуации к решению
-      - artifact_version_id: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
-        use: разделение C1-C6 и P1-P2, границы наблюдаемого результата
-      - artifact_version_id: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
-        use: роли DB01-DB05 и PB01-PB03 и их decision interfaces
-      - artifact_version_id: ARTVER-CPLUS-PROPOSAL-PRODUCT-ALIGNMENT-20260905-001-V2
-        use: D01-D10 как представления существующих канонических продуктов, а не самостоятельные продукты
-      - artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
-        use: классы доказательств и будущая проверка формулировок на реальных эпизодах
-    criteria:
-      - одна смысловая ось должна быть применима к разным ролям без превращения в разные несвязанные обещания
-      - позиционирование должно начинаться от решения и ситуации участника, а не от перечня функций
-      - вклад продукта и вклад РИЦ должны быть разделены
-      - любое сильное утверждение должно иметь определимую единицу доказательства
-      - производные сообщения не должны обещать результат сильнее, чем позволяет доказательство
-      - схема должна позволять РИЦ перейти от общего смысла к конкретному клиентскому сценарию
-  findings:
-    - id: F1
-      result: supported_by_current_model
-      finding: >-
-        Решение участника и путь к его основанию являются наиболее непротиворечивой общей осью,
-        связывающей C1-C6 и уже сформированную value hypothesis.
-      impact: >-
-        Центр позиционирования целесообразно строить вокруг профессионального решения, а функции
-        КонсультантПлюс трактовать как средства прохождения соответствующего сценария.
-    - id: F2
-      result: analytical_conclusion_not_market_fact
-      finding: >-
-        Формулы уровня «доступ к правовой информации» или «найти ответ» уже, чем текущая модель C1-C6:
-        они не покрывают выбор профессиональной позиции, воспроизводимость правила работы,
-        организационную реакцию, конфигурацию решения и управляемый доступ.
-      impact: >-
-        Такие формулы могут использоваться как частные описания этапов, но не рекомендуются как
-        единый верхнеуровневый смысл без дополнительного обоснования.
-    - id: F3
-      result: supported_by_role_decomposition
-      finding: >-
-        Одной короткой фразы недостаточно для практической работы РИЦ: смысл должен быть инвариантен,
-        но ролевое обещание и пример сценария должны меняться в зависимости от решения участника.
-      impact: >-
-        Требуется слоистая архитектура сообщения, а не набор независимых ролевых лозунгов.
-    - id: F4
-      result: evidence_boundary
-      finding: >-
-        Вклад РИЦ не должен сливаться с возможностями СПС. P1 описывает ответ РИЦ на конкретную
-        клиентскую ситуацию, но его фактическая полезность пока требует прямых сервисных и клиентских эпизодов.
-      impact: >-
-        Внешнее сообщение должно различать «что дает информационная среда» и «что делает РИЦ,
-        чтобы клиент применил ее к значимому сценарию».
-    - id: F5
-      result: evidence_gap
-      finding: >-
-        Текущие артефакты не устанавливают эмпирический набор альтернатив, с которыми клиент
-        сравнивает КонсультантПлюс в конкретной ситуации.
-      impact: >-
-        Нельзя выдавать заранее выбранный список конкурентов или заменителей за установленный факт;
-        фактические альтернативы должны собираться в TM-MEAS по реальным эпизодам.
-    - id: F6
-      result: preserved_model_boundary
-      finding: >-
-        «Организовать» является организационной мета-способностью, а не универсальным четвертым
-        шагом после «знать → понять → решить» для каждого пользователя.
-      impact: >-
-        Организационные обещания нельзя механически переносить в сообщение конечному специалисту.
-    - id: F7
-      result: current_evidence_limit
-      finding: >-
-        Существующая доказательная база не позволяет приписывать КонсультантПлюс или РИЦ ROI,
-        предотвращенные штрафы, общее снижение риска или общий рост эффективности.
-      impact: >-
-        Такие утверждения исключаются из кандидатного позиционирования до отдельного доказательного дизайна.
-  candidate_positioning_model:
-    status: owner_directed_analyst_candidate_not_official_positioning
-    category_candidate:
-      formulation: рабочая информационная среда поддержки профессиональных решений
-      evidence_state: analytical_category_candidate_pending_client_language_validation
-    engineering_core:
-      formulation: >-
-        КонсультантПлюс — рабочая среда поддержки актуальных и обоснованных профессиональных
-        решений в изменяющейся правовой среде.
-      provenance: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-      evidence_state: existing_candidate_hypothesis_not_market_validated
-    client_translation_candidate:
-      formulation: >-
-        Не просто найти информацию — понять, что делать, и иметь основание для решения.
-      provenance: analyst_translation_of_existing_decision_model
-      evidence_state: candidate_wording_not_direct_client_quote_not_validated
-    RIC_link_candidate:
-      formulation: >-
-        КонсультантПлюс дает информационную основу решения; РИЦ помогает превратить возможности
-        системы в реально работающие для клиента сценарии.
-      provenance: analyst_synthesis_of_C_decisions_and_P1_provider_response
-      evidence_state: provider_response_hypothesis_requires_client_and_RIC_validation
-    semantic_invariant:
-      - возникла ситуация, изменение или неопределенность
-      - участнику требуется конкретное решение, действие, позиция или организационная реакция
-      - требуется установить применимость и значение информации для ситуации
-      - формируется действие или позиция и ее основание
-      - результат и основание должны быть воспроизводимы в допустимых границах роли
-    authority_boundary: >-
-      КонсультантПлюс и РИЦ поддерживают информационную основу и прохождение сценария, но не принимают
-      профессиональное или управленческое решение вместо уполномоченного участника и не гарантируют его правильность.
-  role_positioning_view:
-    rule: >-
-      Все ролевые формулировки являются производными от единого engineering_core и не являются
-      самостоятельными позиционированиями или доказанными клиентскими цитатами.
-    roles:
-      - participant_id: DB04
-        role: конечный профессиональный пользователь
-        primary_decisions: [C1, C2]
-        candidate_promise: >-
-          Понять, что делать в конкретной ситуации, и иметь актуальное основание для действия или позиции.
-        proof_needed: recent_client_episode_C1_or_C2
-      - participant_id: DB03
-        role: руководитель регулируемой функции
-        primary_decisions: [C2, C3, C4]
-        candidate_promise: >-
-          Сформировать обоснованный порядок реакции и сделать его воспроизводимым для команды
-          в повторяющихся регулируемых ситуациях.
-        proof_needed: recent_client_episode_showing_team_rule_or_organizational_response
-      - participant_id: DB01
-        role: руководитель или собственник организации
-        primary_decisions: [C4, C5]
-        candidate_promise: >-
-          Понять, какое изменение или риск требует реакции организации, кто отвечает за реакцию
-          и на какой информационной основе она строится.
-        proof_needed: recent_client_episode_C4_and_when_applicable_C5
-      - participant_id: DB02
-        role: экономический заказчик или закупщик
-        primary_decisions: [C5]
-        candidate_promise: >-
-          Выбрать комплект, доступ, обучение и сервис исходя из критичных рабочих сценариев организации.
-        proof_needed: recent_purchase_or_configuration_decision_episode
-      - participant_id: DB05
-        role: ИТ, информационная безопасность или администратор доступа
-        primary_decisions: [C6]
-        candidate_promise: >-
-          Обеспечить управляемый, надежный и допустимый доступ к среде, необходимой участникам
-          для профессиональных решений.
-        proof_needed: recent_access_or_administration_episode
-      - participant_id: PB01_PB02
-        role: клиентский менеджер, специалист сопровождения или обучения РИЦ
-        primary_decisions: [P1]
-        candidate_promise: >-
-          Диагностировать критичный сценарий клиента, определить затруднение и подобрать сопровождение,
-          настройку или обучение, которые помогают участнику пройти этот сценарий.
-        proof_needed: paired_RIC_and_client_service_episode_where_possible
-      - participant_id: PB03
-        role: руководство РИЦ или участник продуктовой обратной связи
-        primary_decisions: [P1, P2]
-        candidate_promise: >-
-          Собирать повторяющиеся сценарии и разрывы как доказательную основу для приоритизации
-          сервисных и продуктовых улучшений.
-        proof_needed: repeated_episode_synthesis_not_single_anecdote
-  message_architecture_view:
-    layers:
-      - id: L1
-        name: единое смысловое ядро
-        content_rule: одна стабильная формула о поддержке профессионального решения
-      - id: L2
-        name: ролевое обещание
-        content_rule: конкретизирует, какое решение или класс решений значим для данного участника
-      - id: L3
-        name: сценарий
-        content_rule: начинается с реальной ситуации/триггера и заканчивается наблюдаемым действием или позицией
-      - id: L4
-        name: доказательство
-        content_rule: связывает утверждение с одним или несколькими идентифицируемыми эпизодами и классом доказательства
-    strengthening_rule: >-
-      Ни один нижний слой не может вводить причинное, финансовое, правовое или результативное
-      утверждение сильнее, чем позволяют связанные с ним доказательства.
-    RIC_usage_sequence:
-      - определить роль участника и недавнюю значимую ситуацию
-      - установить, какое решение требовалось принять
-      - восстановить информационный путь и точку неопределенности
-      - показать релевантные возможности КонсультантПлюс внутри этого сценария, а не вне его
-      - отдельно определить возможный вклад РИЦ
-      - зафиксировать наблюдаемый результат и оставшийся разрыв
-  positioning_map_view:
-    classification: D01_D02_D03_D04_D05_D06_views_inside_TECH_BMA_report
-    required_fields:
-      - participant
-      - trigger_or_situation
-      - client_decision_C_level
-      - uncertainty_or_consequence
-      - required_information_or_basis
-      - ConsultantPlus_contribution
-      - RIC_contribution_if_any
-      - observable_episode_result
-      - gap_or_workaround
-      - evidence_class
-      - evidence_state
-    example_template_only_not_evidence:
-      participant: DB04 professional user
-      trigger_or_situation: recent regulated work situation
-      client_decision_C_level: C1 or C2
-      uncertainty_or_consequence: to be established from episode
-      required_information_or_basis: to be established from episode
-      ConsultantPlus_contribution: to be reconstructed from episode
-      RIC_contribution_if_any: to be reconstructed separately
-      observable_episode_result: to be established
-      gap_or_workaround: to be established
-      evidence_class: not_established
-      evidence_state: template_only
-  evidence_contract:
-    unit: one recent concrete decision episode
-    claim_chain: positioning_claim_to_role_to_scenario_to_episode_evidence
-    evidence_classes:
-      - direct_episode_fact_reported_by_participant
-      - participant_interpretation_or_judgment
-      - interviewer_coding_or_inference
-      - RIC_account_of_client_episode
-      - not_established
-    claim_states:
-      - confirmed_by_available_episode_evidence
-      - contradicted_by_available_episode_evidence
-      - partially_supported
-      - participant_judgment_only
-      - RIC_account_only
-      - analyst_inference_only
-      - not_established
-    minimum_rule: >-
-      Формулировка не повышается до подтвержденного позиционирования только потому, что она логически
-      согласуется с моделью или нравится участникам РИЦ; требуется трассировка к прямым эпизодам.
-  alternatives_and_competition:
-    current_state: not_established_by_current_evidence
-    prohibited_inference: >-
-      Не фиксировать список альтернатив клиента как факт на основании общих представлений о рынке.
-    measurement_action: >-
-      В каждом валидном эпизоде фиксировать, что участник реально использовал или рассматривал вместо
-      или вместе с КонсультантПлюс, и только после повторяемых наблюдений синтезировать карту альтернатив.
-  promise_boundaries:
-    allowed_now:
-      - описывать роль КонсультантПлюс как информационной поддержки решения при явной маркировке кандидатного статуса общей формулировки
-      - показывать конкретные функции только внутри подтвержденного или явно гипотезного сценария
-      - раздельно описывать вклад КонсультантПлюс и вклад РИЦ
-      - фиксировать наблюдаемые результаты уровня эпизода
-    do_not_say_without_additional_evidence:
-      - КонсультантПлюс гарантирует правильность профессионального или управленческого решения
-      - КонсультантПлюс или РИЦ предотвращает штрафы или убытки
-      - продукт имеет установленный ROI или срок окупаемости
-      - продукт в целом снижает правовые или иные риски на установленную величину
-      - продукт в целом повышает эффективность или производительность организации
-      - текущая кандидатная формулировка уже является принятой рынком или клиентами
-  representation_and_product_boundary:
-    views_inside_this_report:
-      - D01 карта решений роли или подразделения
-      - D02 паспорт критичного сценария решения
-      - D03 карта покрытия сценария КонсультантПлюс и сервисом РИЦ
-      - D04 карта разрывов, задержек и обходных путей
-      - D05 матрица ролей передачи и контроля решений
-      - D06 рекомендации по комплекту, доступу, сервису и обучению от сценариев
-    not_separate_products: >-
-      Указанные D01-D06 являются представлениями содержания TECH-BMA report и не создают новые canonical O.
-    products_outside_current_report:
-      - {view_or_need: доказательная синтеза по серии эпизодов, canonical_output: 'TM-MEAS → measurement report', status: future_after_measurement_execution}
-      - {view_or_need: материалы применения позиционирования сотрудниками РИЦ, canonical_output: 'TECH-IMP → training materials', status: future_after_positioning_validation}
-      - {view_or_need: принятое управленческое решение о позиционировании, canonical_output: 'TM-DEC → decision register', status: only_after_actual_decision}
-  decision_support:
-    supported_now:
-      - использовать данный Отчет как внутреннюю кандидатную рамку для подготовки и проведения проверки позиционирования в РИЦ
-      - строить обсуждение с клиентом от конкретного решения и сценария, а не от полного перечня функций
-      - различать единую смысловую ось, ролевую конкретизацию, сценарий и доказательство
-      - использовать promise_boundaries как обязательный контроль формулировок до получения новых доказательств
-    not_supported_now:
-      - объявлять engineering_core официальным рыночным позиционированием
-      - массово внедрять client_translation_candidate или RIC_link_candidate как утвержденные рекламные слоганы
-      - считать ролевые формулировки прямыми высказываниями клиентов
-      - утверждать эмпирическую карту конкурентов или заменителей
-      - выводить ROI, цену ошибки, частотность или причинное влияние из текущего набора артефактов
-  deficiencies_risks_and_trends:
-    - id: R1
-      deficiency: отсутствуют прямые клиентские и РИЦ-эпизоды для текущей кандидатной формулировки
-      impact: wording_and_claim_strength_not_validated
-      treatment: execute_existing_TM_MEAS_wave1_plan
-    - id: R2
-      risk: сотрудник РИЦ может превратить decision-centric рамку обратно в feature pitch
-      impact: потеря связи между продуктом и решением клиента
-      treatment: future training materials must preserve L1-L4 trace and start from episode
-    - id: R3
-      risk: вклад РИЦ может быть переоценен по собственным рассказам РИЦ
-      impact: provider_self_attribution_bias
-      treatment: compare RIC accounts with client accounts where possible and keep evidence classes separate
-    - id: R4
-      risk: в малой организации одна персона совмещает несколько DB-ролей
-      impact: role labels may not map one-to-one to people
-      treatment: code actual decision and authority rather than job title only
-    - id: R5
-      deficiency: фактический язык ценности клиентов не установлен
-      impact: client_translation_candidate may be semantically correct but linguistically weak
-      treatment: capture participant value_language in each valid episode before wording adoption
-    - id: R6
-      trend_or_watch_item: >-
-        Если в серии эпизодов повторяется переход от единичного решения к изменению правил работы,
-        организационная meta-capability «организовать» может стать сильным дифференцирующим уровнем.
-      evidence_state: hypothesis_to_test_not_current_fact
-conclusions_and_recommendations:
-  conclusion: >-
-    Текущая decision-centric модель позволяет сформировать внутренне непротиворечивое кандидатное
-    позиционирование РИЦ: КонсультантПлюс следует объяснять через профессиональное решение и путь к
-    его актуальному и воспроизводимому основанию, а не через каталог функций. При этом ни engineering_core,
-    ни клиентский перевод, ни связка с РИЦ пока не имеют статуса принятого рыночного позиционирования.
-  recommendation: >-
-    Использовать этот Отчет как базовую гипотезную рамку и следующим предметным шагом исполнить уже
-    существующий ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1.
-    По результатам сформировать TM-MEAS measurement report и successor TECH-BMA report, где каждое
-    ключевое утверждение будет помечено как подтвержденное, опровергнутое или недостаточно доказанное.
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.1 — Business or mission analysis process'
+  - 'ГОСТ Р 57193-2025 §6.4.1 — Процесс анализа бизнеса или назначения'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.27'
 glossary:
-  positioning: >-
-    В данном Отчете — проверяемая модель того, какое место и смысл КонсультантПлюс занимает
-    относительно решений конкретных участников; не синоним рекламного лозунга.
-  engineering_core: стабильное кандидатное смысловое ядро, от которого выводятся ролевые формулировки
-  client_translation_candidate: краткая пользовательская формулировка, требующая проверки языком реальных клиентов
+  positioning: проверяемая модель места и смысла КонсультантПлюс относительно решений участников; не синоним рекламного лозунга
+  engineering_core: стабильное кандидатное смысловое ядро
   role_promise: конкретизация единого ядра относительно решения и ответственности роли
-  decision_episode: конкретный недавний случай от триггера через информационный путь к действию или позиции
-  provider_response: решение РИЦ или Сети о способе ответа на выявленную клиентскую ситуацию или разрыв
-  evidence_contract: правило связи утверждения позиционирования с классом и состоянием доказательства
+  decision_episode: конкретный случай от триггера через информационный путь к действию или позиции
+  provider_response: решение РИЦ или Сети о способе ответа на клиентскую ситуацию или разрыв
+  evidence_contract: правило связи утверждения с классом и состоянием доказательства
   view: представление части содержания канонического продукта, не самостоятельный информационный продукт
 change_history:
-  - version: V1
-    date: '2026-09-06'
-    change: >-
-      Синтезировано первое кандидатное позиционирование для РИЦ из существующей decision-centric модели;
-      добавлены ролевые формулировки, четырехслойная архитектура сообщения, доказательный контракт,
-      границы обещаний и явный запрет на недоказанную карту альтернатив.
-subject_unresolved:
-  - direct client episodes for C1-C6
-  - direct and paired RIC/client evidence for P1
-  - actual client value language
-  - empirical alternatives used in decision episodes
-  - scenario frequency and criticality
-  - accepted positioning wording
-  - causal or financial outcome evidence
-  - owner or network adoption decision
+  - {version: V1, date: '2026-09-06', change: initial RIC positioning synthesis}
+  - {version: V2, date: '2026-09-06', change: complete full universal §7.6 A-M and §10.27 R01-R05 composition without changing positioning semantics}
+subject_unresolved: [direct client episodes C1-C6, paired RIC/client evidence P1, actual client value language, empirical alternatives, scenario frequency and criticality, accepted positioning wording, causal/financial outcome evidence, owner or Network adoption decision]
 owner_product_request:
   exact_visible_text: 'давай'
-  resolved_referent: >-
-    Создать и персистировать первый предложенный ранее Отчет о позиционировании КонсультантПлюс
-    для РИЦ с полной структурой и предварительным содержанием, опираясь на существующие C1-C6/P1-P2,
-    без изменения назначения текущей ветки диалога.
-  current_dialogue_branch_purpose: >-
-    Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
+  resolved_referent: создать и персистировать первый предложенный Отчет о позиционировании КонсультантПлюс для РИЦ с полной структурой и предварительным содержанием
+  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
   purpose_provenance: current_conversation_first_substantive_owner_request
-  request_specific_requirements:
-    - полная структура Отчета с предварительным содержанием позиционирования
-    - использовать C1-C6 и P1-P2 как текущую кандидатную декомпозицию
-    - основываться на существующих exact client ArtifactVersion
-    - представления сохранять внутри канонических продуктов, не создавать orphan pseudo-products
-    - сохранять позиционирование как гипотезу до прямой клиентской и РИЦ-валидации
+  request_specific_requirements: [полная структура Отчета, использовать C1-C6/P1-P2, exact client evidence, views не orphan products, позиционирование остается гипотезой до валидации]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
   requirement_coverage:
-    - requirement_id: PPR-001
-      state: satisfied
-      artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]
-    - requirement_id: PPR-002
-      state: satisfied
-      artifact_field_refs: [owner_product_request, body]
-    - requirement_id: PPR-003
-      state: satisfied
-      artifact_field_refs: [content_compliance.universal_content]
-    - requirement_id: PPR-004
-      state: satisfied
-      artifact_field_refs: [content_compliance.normative_specific_content]
-    - requirement_id: PPR-005
-      state: satisfied
-      artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]
-    - requirement_id: PPR-006
-      state: satisfied
-      artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]
-    - requirement_id: PPR-007
-      state: satisfied
-      artifact_field_refs: [subject_unresolved, verification]
-    - requirement_id: PPR-008
-      state: satisfied
-      artifact_field_refs: [references, body.evaluation_method_and_evidence]
-    - requirement_id: PPR-009
-      state: satisfied
-      artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]
-    - requirement_id: PPR-010
-      state: satisfied
-      artifact_field_refs: [artifact_addresses.self, verification]
-    - requirement_id: PPR-011
-      state: satisfied
-      artifact_field_refs: [artifact_version_id, artifact_addresses.self]
-    - requirement_id: PPR-012
-      state: satisfied
-      artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]
-  completion_gate:
-    mandatory_missing: []
-    mandatory_failed: []
-    mandatory_unresolved: []
-    state: pass_candidate_structure_pending_exact_head_external_worker_and_subject_TECH_VER
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.evaluation_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, supersedes_artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_external_worker_and_subject_TECH_VER}
 verification:
-  structural_status: pending_exact_head_external_client_information_product_worker
-  semantic_status: candidate_synthesis_pending_independent_TECH_VER_and_direct_participant_validation
-  owner_acceptance: >-
-    Создание Отчета разрешено запросом «давай»; принятие формулировок, merge, официальное
-    позиционирование и внедрение в РИЦ являются отдельными решениями.
+  structural_status: repaired_pending_exact_head_external_client_worker
+  semantic_status: positioning semantics preserved; independent TECH-VER and participant validation pending
+  owner_acceptance: creation authorized; positioning acceptance, merge and rollout separate
 artifact_addresses:
   self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-RIC-POSITIONING-20260906-001.yaml@change/consultantplus-20260906-ric-positioning-report
 information_product_applicability: applies
 standards_trace:
   process:
-    iso:
-      state: present
-      designation: ISO/IEC/IEEE 15288:2023
-      full_title: Systems and software engineering — System life cycle processes
-      clause: '6.4.1'
-      process_name: Business or mission analysis process
-    gost:
-      state: present
-      designation: ГОСТ Р 57193-2025
-      full_title: Системная и программная инженерия. Процессы жизненного цикла систем
-      clause: '6.4.1'
-      process_name: Процесс анализа бизнеса или назначения
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
     correspondence: NEQ_standard_level_clause_identity_mapped
   information_product:
     canonical_O: business or mission analysis report
-    iso:
-      state: present
-      designation: ISO/IEC/IEEE 15289:2017
-      full_title: Systems and software engineering — Content of life-cycle information items (documentation)
-      generic_section: '7.6'
-      specific_status: present
-      specific_items: ['10.27']
-    gost:
-      state: present
-      designation: ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017
-      full_title: Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)
-      generic_section: '7.6'
-      specific_status: present
-      specific_items: ['10.27']
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
     correspondence: IDT
     content_trace:
       normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
       normalized_requirements:
-        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [summary]}
-        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [introduction]}
-        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [references]}
-        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [context_and_assumptions]}
-        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [body]}
-        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
-        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [glossary]}
-        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [change_history]}
-        - {requirement_id: S10.27-R01, disposition: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, body.findings, body.deficiencies_risks_and_trends]}
-        - {requirement_id: S10.27-R02, disposition: satisfied, artifact_field_refs: [body.evaluation_method_and_evidence]}
-        - {requirement_id: S10.27-R03, disposition: satisfied, artifact_field_refs: [body.findings, body.deficiencies_risks_and_trends]}
-        - {requirement_id: S10.27-R04, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.27-R01, disposition: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, introduction.criteria_basis], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R02, disposition: satisfied, artifact_field_refs: [body.evaluation_method_and_evidence], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R03, disposition: satisfied, artifact_field_refs: [body.findings, body.candidate_positioning_model], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R04, disposition: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R05, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity:
-    resolved_name_or_semantic_identity: RIC candidate positioning assessment report for ConsultantPlus
-    resolution_basis: TECH-BMA canonical O business or mission analysis report
-    state: resolved
-  source_mapping:
-    source_id: TECH-BMA-BUSINESS-OR-MISSION-ANALYSIS-REPORT
-    process_mapping_status: controlled_semantic_match
-    source_refs:
-      - ГОСТ Р 58609-2019 §7.6
-      - ГОСТ Р 58609-2019 §10.27
-      - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  information_item_identity: {resolved_name_or_semantic_identity: business or mission analysis report, resolution_basis: TECH-BMA exact binding to §10.27 evaluation report, state: resolved}
   universal_type: report
   universal_content:
     source_section: '7.6'
     state: pass
     requirement_coverage:
-      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [summary]}
-      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [introduction]}
-      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [references]}
-      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [context_and_assumptions]}
-      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [body]}
-      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
-      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [glossary]}
-      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [change_history]}
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: report
+    specific_profiles: ['10.27']
+    specific_records: []
+    local_additive_profile: null
   normative_specific_content:
-    source_sections: ['10.27']
     state: pass
-    requirement_coverage:
-      - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction, body.findings, body.deficiencies_risks_and_trends]}
-      - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.evaluation_method_and_evidence]}
-      - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.findings, body.deficiencies_risks_and_trends]}
-      - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
-  local_additive_content:
-    state: not_applicable
-    requirements: []
-  composition_state: candidate_complete_pending_external_structural_worker
+    profile_coverage:
+      - profile_id: '10.27'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, introduction.criteria_basis]}
+          - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.evaluation_method_and_evidence]}
+          - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.findings, body.candidate_positioning_model]}
+          - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends]}
+          - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: evaluation-report composition applied to RIC positioning synthesis; no lifecycle-process tailoring introduced
+  information_item_management:
+    version_control: exact V2 supersedes structurally incomplete V1 without changing positioning semantics
+    review_approval: independent TECH-VER, participant validation, owner acceptance and Network adoption remain separate
+    quality_evaluation: external structural worker plus future subject TECH-VER
+    retention: client process-owned product in MOZ1961/consultantplus
+    reuse_and_duplication: successor version required for material positioning or evidence change
+  composition_state: candidate_complete_pending_exact_head_external_worker
