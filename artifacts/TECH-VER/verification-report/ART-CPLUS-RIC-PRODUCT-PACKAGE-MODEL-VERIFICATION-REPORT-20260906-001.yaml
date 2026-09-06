@@ -1,0 +1,229 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001
+artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_subject_verification
+acceptance_status: subject_verified_candidate_external_issue_and_RIC_acceptance_separate
+artifact_instance_purpose: >-
+  Проверить reconciled пакетную модель поставки для РИЦ на exact package definition V3, Proposal V3,
+  internal SEMP V3 и cover/transmittal V2: пакет состоит из самостоятельных process-owned продуктов по ГОСТ,
+  Proposal описывает состав и внешнюю структуру работ, SEMP планирует производство, а internal-only
+  продукты не попадают в пакет РИЦ по умолчанию.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-PRODUCT-PACKAGE-MODEL-20260906-001
+  activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-RIC-PRODUCT-PACKAGE-MODEL-20260906-001
+  methodic_instance: {methodic_id: METH-CPLUS-TECH-VER-PACKAGE-COMPOSITION, methodic_version_id: METHVER-CPLUS-TECH-VER-PACKAGE-COMPOSITION-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime_not_adopted}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-06', status: subject_pass_candidate_exact_head_worker_pending}
+scope: >-
+  Предметная верификация состава и границ пилотного пакета RIC-PKG-E0-S01-001 и согласованности
+  package register V3, Proposal V3, internal SEMP V3 и cover/transmittal V2. Не проверяет реальный
+  клиентский эпизод и не разрешает внешнюю выдачу или коммерческое обязательство.
+issuing_organization: owner-authorized engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  PASS по предмету reconciled пакетной модели. РИЦ после реального исполнения получает два продукта:
+  TECH-BMA → business or mission analysis report и TECH-VER → verification report. Proposal и
+  сопроводительная Запись — преддоговорная/передаточная оболочка; SEMP, measurement register и TECH-OP
+  остаются internal-only. Пакет не новый canonical O, его upstream состав фиксирует TM-IM information
+  register V3. Exact downstream products согласованы с этой версией. Реальные result ArtifactVersion еще не созданы.
+introduction:
+  verified_items:
+    - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2
+  verification_requirements:
+    - package aggregate is not promoted to a new canonical O without semantic need
+    - each recipient package member resolves to existing ProcessType → canonical O and GOST composition
+    - Proposal names exact package definition and external work required to produce it
+    - SEMP references exact package definition/Proposal and plans production plus exact-version registration
+    - cover/transmittal references exact Proposal/package and excludes internal products
+    - pre-delivery envelope is distinguished from recipient value products
+    - package completion is fail-closed until real TECH-BMA and TECH-VER member ArtifactVersions exist
+  criteria_basis:
+    - ARTVER-SE-PROPOSED-RESULT-PRODUCT-RESOLUTION-PROCEDURE-20260905-001-V2
+    - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+    - owner instruction 'меняй и приступай'
+context_and_assumptions:
+  context: owner clarified that the value object for RIC is a package of products produced by this engineering environment
+  assumptions:
+    - no real RIC episode has been supplied
+    - no external transmission has occurred
+    - package physical rendering may combine products but semantic identities remain separate
+    - exact real-result ArtifactVersions are registered only after execution
+body:
+  criteria_results:
+    - {criterion_id: PKG-VER-01, criterion: package aggregate has canonical resolution without orphan pseudo-product, result: pass, evidence: 'TM-IM → information register V3 stores upstream package composition; no new canonical O'}
+    - {criterion_id: PKG-VER-02, criterion: every recipient value product has existing canonical O and GOST basis, result: pass, evidence: ['TECH-BMA → business or mission analysis report / §7.6+§10.27', 'TECH-VER → verification report / §7.6+§10.93']}
+    - {criterion_id: PKG-VER-03, criterion: views are not promoted to standalone products, result: pass, evidence: passport coverage gap remain views inside TECH-BMA report}
+    - {criterion_id: PKG-VER-04, criterion: Proposal describes exact package definition and recipient work structure, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3}
+    - {criterion_id: PKG-VER-05, criterion: internal plan controls production of exact package members from same definition, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3}
+    - {criterion_id: PKG-VER-06, criterion: cover record transmits exact current Proposal and excludes internal products, result: pass, evidence: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2}
+    - {criterion_id: PKG-VER-07, criterion: internal-only products are excluded from recipient value package, result: pass, evidence: package register V3 visibility split}
+    - {criterion_id: PKG-VER-08, criterion: package completion is fail-closed until real result products exist, result: pass, evidence: package completion rule requires exact real TECH-BMA and TECH-VER versions in successor register}
+    - {criterion_id: PKG-VER-09, criterion: external issue and RIC acceptance remain separate authority gates, result: pass, evidence: all verified products explicitly separate preparation from issue acceptance and real pilot}
+  detailed_results:
+    package_semantics:
+      package_id: RIC-PKG-E0-S01-001
+      upstream_package_definition: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+      durable_package_state_product: TM-IM → information register
+      new_canonical_O_required: false
+      rationale: membership status visibility and exact-version composition are preserved by existing information register without semantic loss
+    recipient_package_after_real_execution:
+      mandatory_members:
+        - {information_product_name_ru: Отчет, canonical_output: TECH-BMA → business or mission analysis report, normative_basis: ГОСТ Р 58609-2019 §7.6 + §10.27}
+        - {information_product_name_ru: Отчет о верификации, canonical_output: TECH-VER → verification report, normative_basis: ГОСТ Р 58609-2019 §7.6 + §10.93}
+      current_state: planned_only_no_real_episode_products_exist
+    pre_delivery_and_internal_boundary:
+      pre_delivery: ['AGR-SUP → supply response / Предложение V3', 'AGR-SUP → supply records/artifacts / Запись V2 with cover-letter rendering']
+      internal_only_by_default: ['TM-PLAN → SEMP V3', 'TM-MEAS → measurement register', 'TECH-OP → operation report', this package-model verification report]
+    future_expansion_rule: >-
+      Measurement report, Procedure, training materials or other products enter future package only after need is established
+      and exact ProcessType → O + GOST composition is resolved; unresolved Procedure ProcessType/O is not included.
+  problems_encountered:
+    - {problem: earlier versions formed circular exact-version references between package definition and downstream Proposal/Plan, disposition: V3 package register is stable upstream definition; downstream Proposal V3 and SEMP V3 reference it}
+    - {problem: cover letter referenced Proposal V1, disposition: cover/transmittal V2 now references Proposal V3 and package definition V3}
+    - {problem: package wording could become unclassified semantic carrier, disposition: TM-IM information register is explicit process-owned carrier}
+  verification_decisions:
+    package_model_subject_status: pass
+    exact_head_structural_status: pending_after_current_client_and_SE_writes
+    external_issue_authorized: false
+    RIC_acceptance_performed: false
+    real_pilot_performed: false
+    merge_authorized_by_this_request: false
+conclusions_and_recommendations:
+  conclusion: >-
+    Reconciled пакетная модель внутренне согласована: один upstream package definition управляет составом,
+    Proposal/SEMP/cover используют exact V3 definition, а РИЦ получает только два продукта ценности после
+    реального исполнения. Реальный пакет еще не произведен.
+  recommendation: >-
+    Получить exact-head structural PASS. После отдельного owner approval можно выдавать Proposal V3; после
+    входа РИЦ — создать internal TM-MEAS evidence, реальный TECH-BMA Отчет, recipient TECH-VER Отчет и
+    successor package register с exact member versions.
+references:
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V2
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
+  - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  пакет_продуктов: агрегированное представление набора самостоятельных process-owned информационных продуктов для РИЦ
+  продукт_ценности_для_РИЦ: самостоятельный информационный продукт используемый как результат поставки или подтверждение его качества
+  внутренний_продукт: process-owned продукт необходимый для производства или контроля но не включаемый во внешний пакет по умолчанию
+  представление: форма или раздел внутри канонического продукта не самостоятельный информационный продукт
+change_history:
+  - {version: V1, date: '2026-09-06', change: initial subject verification of package-centric RIC delivery model}
+  - {version: V2, date: '2026-09-06', change: verify exact reconciled package definition V3 Proposal V3 SEMP V3 and cover/transmittal V2}
+owner_product_request:
+  exact_visible_text: 'меняй и приступай'
+  request_specific_requirements: [проверить что пакет состоит из продуктов процессов по ГОСТ, не создавать новый O если TM-IM register сохраняет семантику, разделить recipient value pre-delivery and internal products, подтвердить exact согласование Proposal Plan and cover with package definition]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_material_revision_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.criteria_results, body.detailed_results]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, body.verification_decisions]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, introduction.criteria_basis, body.detailed_results]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_structural_verification}
+verification:
+  structural_status: exact_head_worker_pending
+  semantic_status: subject_pass_reconciled_package_model
+  owner_acceptance: package_design_authorized_external_issue_and_real_delivery_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-PRODUCT-PACKAGE-MODEL-VERIFICATION-REPORT-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_items, scope], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [introduction.verification_requirements, introduction.criteria_basis], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [introduction.verified_items, issued_at_and_status], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decisions], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to §10.93, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: exact, generic_type: report, specific_profiles: ['10.93'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_items, scope]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [introduction.verification_requirements, introduction.criteria_basis]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [introduction.verified_items, issued_at_and_status]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.criteria_results, body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected for TECH-VER report}
+  tailoring: report verifies package definition product identities exact downstream bindings and external/internal boundary; no lifecycle-process tailoring introduced
+  information_item_management: {version_control: V2 current reconciled package-model verification, review_approval: subject PASS does not authorize external transmission or RIC acceptance, quality_evaluation: exact-head structural worker required, retention: canonical client TECH-VER product, reuse_and_duplication: future package revisions cite exact successors}

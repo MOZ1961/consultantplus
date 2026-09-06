@@ -1,0 +1,217 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001
+artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V2
+artifact_label: information register
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_package_definition
+acceptance_status: package_definition_owner_directed_external_issue_execution_and_RIC_acceptance_separate
+artifact_instance_purpose: >-
+  Зафиксировать устойчивое определение состава пилотного пакета информационных продуктов для РИЦ.
+  Пакет является управляемой совокупностью существующих process-owned продуктов и не создает новый
+  canonical O. Эта версия является upstream-определением состава: Предложение, внутренний План и
+  верификация пакетной модели должны ссылаться на нее, а не образовывать циклическую зависимость версий.
+producer:
+  process_type_id: TM-IM
+  process_instance_id: PI-CPLUS-TM-IM-RIC-PRODUCT-PACKAGE-20260906-001
+  activity_instance_id: AI-CPLUS-TM-IM-DEFINE-RIC-PRODUCT-PACKAGE-20260906-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-IM-PRODUCT-PACKAGE-COMPOSITION
+    methodic_version_id: METHVER-CPLUS-TM-IM-PRODUCT-PACKAGE-COMPOSITION-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+date_and_status: {date: '2026-09-06', status: package_definition_not_executed_not_delivered}
+scope: >-
+  Один пилотный пакет продуктов для РИЦ по одному обезличенному сервисному эпизоду. Определяет состав,
+  назначение, обязательность и видимость продуктов; не означает фактическое создание результатов по
+  реальному эпизоду, внешнюю выдачу, принятие РИЦ или коммерческий статус услуги.
+subject_or_category: RIC recipient product package definition
+issuing_organization: owner-authorized engineering environment
+references:
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+  - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+body:
+  information_status_and_version_description:
+    package_id: RIC-PKG-E0-S01-001
+    package_title_ru: Пилотный пакет продуктов «Диагностика клиентского случая РИЦ»
+    package_version: V3
+    package_state: defined_not_executed_not_delivered
+    aggregation_rule: >-
+      Пакет не является новым информационным элементом или canonical O. Его состав сохраняется в
+      TM-IM → information register как управляемая совокупность существующих канонических продуктов.
+      Каждый член пакета сохраняет собственного producer ProcessType, canonical O, нормативный состав,
+      ArtifactInstance/ArtifactVersion и отдельный статус верификации/приемки.
+    dependency_direction_rule: >-
+      Эта Запись определяет состав пакета до формирования Proposal/SEMP/verification products. Downstream
+      продукты ссылаются на эту exact версию. Реальный прогон создает successor package-register version,
+      в которой planned member identities заменяются/дополняются точными ArtifactVersion результатов.
+    recipient_value_package:
+      - member_id: RIC-PKG-E0-S01-RESULT-01
+        information_product_name_ru: Отчет
+        deliverable_title_ru: Отчет о диагностике клиентского сценария
+        canonical_output: TECH-BMA → business or mission analysis report
+        normative_basis: ГОСТ Р 58609-2019 §7.6 + §10.27
+        status: planned_not_instantiated_real_episode_required
+        inclusion: mandatory_after_real_execution
+        recipient_purpose: >-
+          Дать РИЦ основной содержательный результат: реконструкцию клиентской ситуации и решения,
+          разделенный вклад КонсультантПлюс, сервиса РИЦ, клиента и иных источников, подтвержденные
+          разрывы и явно неустановленные сведения.
+        recipient_views_inside_product:
+          - паспорт критичного сценария решения
+          - карта покрытия сценария КонсультантПлюс и сервисом РИЦ
+          - карта разрывов, задержек и обходных путей
+      - member_id: RIC-PKG-E0-S01-RESULT-02
+        information_product_name_ru: Отчет о верификации
+        deliverable_title_ru: Отчет о верификации результата диагностики
+        canonical_output: TECH-VER → verification report
+        normative_basis: ГОСТ Р 58609-2019 §7.6 + §10.93
+        status: planned_not_instantiated_real_episode_required
+        inclusion: mandatory_after_real_execution
+        recipient_purpose: >-
+          Показать, что основной отчет проверен на трассируемость к исходным сведениям, полноту
+          заявленного состава, разделение фактов/оценок/выводов и отсутствие недоказанных причинных,
+          финансовых или правовых утверждений.
+    pre_delivery_envelope_definition:
+      proposal:
+        information_product_name_ru: Предложение
+        canonical_output: AGR-SUP → supply response
+        normative_basis: ГОСТ Р 58609-2019 §7.2 + §10.56
+        role: согласовать состав пакета, работы, участие РИЦ, срок, стоимость, риски и условия до исполнения
+      transmittal:
+        information_product_name_ru: Запись
+        canonical_output: AGR-SUP → supply records/artifacts
+        normative_basis: ГОСТ Р 58609-2019 §9.1 + R9-CONFIGURATION
+        role: зафиксировать фактическую/предполагаемую передачу и дать человекочитаемое сопроводительное письмо
+    internal_production_products_not_delivered_by_default:
+      - {information_product_name_ru: План, canonical_output: 'TM-PLAN → SEMP', normative_basis: 'ГОСТ Р 58609-2019 §7.3 + §10.55', reason_not_delivered: 'полный внутренний план и WBS нужны среде для производства пакета'}
+      - {information_product_name_ru: Запись, canonical_output: 'TM-MEAS → measurement register', normative_basis: 'ГОСТ Р 58609-2019 §9.1; specific profile отсутствует по exact crosswalk', reason_not_delivered: 'исходная доказательная запись является внутренней основой анализа'}
+      - {information_product_name_ru: Отчет, canonical_output: 'TECH-OP → operation report', normative_basis: 'ГОСТ Р 58609-2019 §7.6', reason_not_delivered: 'фиксирует исполнение инженерной среды, а не ценность для РИЦ'}
+    conditional_expansion_products:
+      - condition: подтверждена повторяемость нескольких эпизодов и требуется агрегированный измерительный вывод
+        information_product_name_ru: Отчет
+        canonical_output: TM-MEAS → measurement report
+        disposition: separate_future_package_version_or_proposal
+      - condition: подтверждена необходимость изменить повторяемый порядок работы РИЦ
+        information_product_name_ru: Процедура
+        canonical_output: unresolved_until_exact_existing_ProcessType_O_resolution
+        disposition: resolve_exact_ProcessType_and_O_before_inclusion; no orphan product
+      - condition: подтверждена необходимость обучения по повторяемым сценариям
+        information_product_name_ru: Описание
+        canonical_output: TECH-IMP → training materials
+        normative_basis: ГОСТ Р 58609-2019 §7.2 + §10.85
+        disposition: separate_future_package_version_or_proposal
+    package_completion_rule: >-
+      Пакет результата считается сформированным только когда оба mandatory recipient members созданы как
+      exact process-owned ArtifactVersion, основной Отчет прошел предметную TECH-VER, а successor этой
+      Записи фиксирует точные версии и статус выдачи. Наличие внутренних продуктов не означает комплектность
+      внешнего пакета.
+    physical_rendering_rule: >-
+      Пакет может быть выдан одним или несколькими файлами. Физическое объединение в один PDF/DOCX не
+      объединяет канонические идентичности продуктов; каждое представление трассируется к exact ArtifactVersion.
+  distribution_record_and_security_classification:
+    intended_recipient_category: руководитель или уполномоченный сотрудник РИЦ КонсультантПлюс
+    actual_recipient: not_established
+    distribution_status: package_definition_internal_not_delivered
+    recipient_visible_by_default: [RIC-PKG-E0-S01-RESULT-01, RIC-PKG-E0-S01-RESULT-02]
+    pre_delivery_visible: [Предложение, сопроводительное письмо]
+    internal_only_by_default: [TM-PLAN → SEMP, TM-MEAS → measurement register, TECH-OP → operation report, package-model verification internals]
+    security_classification: de_identified_minimum_information_only_for_pilot
+    rule: внешний пакет не включает внутренние продукты только потому, что они участвовали в производстве
+record_identifier: ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+owner_product_request:
+  exact_visible_text: 'меняй и приступай'
+  request_specific_requirements:
+    - изменить назначение диалога на выработку и поставку нормативных пакетов информационных продуктов для РИЦ
+    - пакет должен состоять из реальных продуктов процессов по ГОСТ, а не из псевдопродуктов-карт или услуг
+    - Предложение должно описывать состав пакета и структуру работ по его производству
+    - полный внутренний План и WBS остаются внутри инженерной среды
+    - РИЦ получает только продукты, имеющие для него самостоятельную ценность или подтверждающие качество результата
+    - package register должен быть устойчивым upstream-определением, исключающим циклическую exact-version зависимость
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_material_revision_client_TM_IM_information_register
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.information_status_and_version_description, body.distribution_record_and_security_classification]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.information_status_and_version_description.recipient_value_package]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, body.information_status_and_version_description.aggregation_rule, body.information_status_and_version_description.physical_rendering_rule]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
+verification:
+  structural_status: material_revision_exact_head_worker_pending
+  semantic_status: package_definition_ready_for_downstream_subject_verification
+  owner_acceptance: purpose_change_and_package_definition_authorized_external_issue_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-IM/information-register/ART-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.6', process_name: 'Information Management process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.6', process_name: 'Процесс управления информацией'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: information register
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '9.1', specific_status: present, specific_items: [R9-INFORMATION-ITEM]}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '9.1', specific_status: present, specific_items: [R9-INFORMATION-ITEM]}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U9.1-A, disposition: satisfied, artifact_field_refs: [date_and_status], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-C, disposition: satisfied, artifact_field_refs: [subject_or_category], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-D, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-E, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-G, disposition: satisfied, artifact_field_refs: [record_identifier], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: R9-INF-01, disposition: satisfied, artifact_field_refs: [body.information_status_and_version_description], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+        - {requirement_id: R9-INF-02, disposition: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: information-item storage record, resolution_basis: TM-IM information register exact crosswalk to R9-INFORMATION-ITEM, state: resolved}
+  universal_type: record
+  universal_content:
+    source_section: '9.1'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U9.1-A, state: satisfied, artifact_field_refs: [date_and_status]}
+      - {requirement_id: U9.1-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U9.1-C, state: satisfied, artifact_field_refs: [subject_or_category]}
+      - {requirement_id: U9.1-D, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U9.1-E, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U9.1-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U9.1-G, state: satisfied, artifact_field_refs: [record_identifier]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: record, specific_profiles: [], specific_records: [R9-INFORMATION-ITEM], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: R9-INFORMATION-ITEM
+        kind: section9_record
+        requirement_coverage:
+          - {requirement_id: R9-INF-01, state: satisfied, artifact_field_refs: [body.information_status_and_version_description]}
+          - {requirement_id: R9-INF-02, state: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected for TM-IM information register}
+  tailoring: package aggregation is a controlled information-register use; no lifecycle-process tailoring is introduced
+  information_item_management: {version_control: V3 upstream package-definition baseline candidate, review_approval: external package issue and RIC acceptance are separate, quality_evaluation: downstream TECH-VER plus exact-head structural worker, retention: canonical client TM-IM product, reuse_and_duplication: downstream Proposal/SEMP/renderings cite this exact definition; execution creates successor with exact result-member versions}
