@@ -9,10 +9,9 @@ lifecycle_status: owner_directed_candidate_standard_composition_materialized
 acceptance_status: standard_composition_candidate_not_issued_not_RIC_accepted_or_official_positioning
 artifact_instance_purpose: >-
   Установить стандартный состав ответа поставщика для краткого объяснения руководителю РИЦ предлагаемого
-  взаимодействия и его возможной управленческой пользы. Продукт должен полностью покрывать типовой состав
-  описания по ГОСТ Р 58609-2019 §7.2 и специальный состав предложения §10.56, требования владельца PPR-001..012,
-  парную ISO/ГОСТ-трассировку и явные границы доказуемости: стоимость, график, риски, метод, возможности,
-  полномочия и tailoring должны быть названы прямо, а неподтвержденный финансовый, юридический или сетевой эффект запрещен.
+  взаимодействия и его возможной управленческой пользы. Продукт полностью покрывает типовой состав описания
+  по ГОСТ Р 58609-2019 §7.2, специальный состав предложения §10.56, требования владельца PPR-001..012,
+  парную ISO/ГОСТ-трассировку и явные границы доказуемости.
 producer:
   process_type_id: AGR-SUP
   process_instance_id: PI-CPLUS-AGR-SUP-RIC-DIRECTOR-INTERACTION-BENEFIT-STANDARD-COMPOSITION-20260907-001
@@ -31,9 +30,7 @@ interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status:
-  issued_at: '2026-09-07'
-  status: standard_composition_materialized_pending_exact_head_worker
+issued_at_and_status: {issued_at: '2026-09-07', status: standard_composition_materialized_pending_exact_head_worker}
 scope: >-
   Краткое внешнее объяснение руководителю РИЦ перед обсуждением пилота. Продукт описывает проблему,
   механику взаимодействия, управленческую пользу, стоимость первого пилота, график, риски, метод выполнения,
@@ -53,18 +50,15 @@ references:
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
   - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
 context: >-
-  РИЦ обычно располагает данными об обращениях, продажах, обучении, консультациях и действиях сотрудников.
-  Эти данные хорошо показывают активность, но сами по себе не всегда показывают, какое профессиональное
-  решение клиента стояло за эпизодом, где возникло затруднение, что дало использование КонсультантПлюс,
-  что добавил РИЦ и какой наблюдаемый результат получился. Предлагаемое взаимодействие делает единицей
-  анализа полный путь решения и сохраняет доказательную трассу к исходному эпизоду.
+  РИЦ располагает данными об обращениях, продажах, обучении, консультациях и действиях сотрудников, но эти
+  данные не всегда показывают, какое профессиональное решение клиента стояло за эпизодом, где возникло
+  затруднение, что дало использование КонсультантПлюс, что добавил РИЦ и какой наблюдаемый результат получился.
 designation: CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-20260907-001
 summary: >-
   Предлагается начать с одного реального обезличенного клиентско-сервисного эпизода и восстановить цепочку
   «ситуация клиента → требуемое решение или действие → информационный путь → роль КонсультантПлюс →
-  действие РИЦ → действие клиента → наблюдаемый результат → оставшиеся разрывы». Руководитель получает
-  не новый слой отчетности, а проверяемое основание для управленческого решения. Первый пилот проверяет
-  полезность метода; он не доказывает финансовый эффект, превосходство над альтернативами или результат по Сети.
+  действие РИЦ → действие клиента → наблюдаемый результат → оставшиеся разрывы». Первый пилот проверяет
+  полезность метода и не доказывает финансовый эффект, превосходство над альтернативами или результат по Сети.
 body:
   recipient_and_decision:
     recipient: руководитель или директор РИЦ КонсультантПлюс
@@ -118,7 +112,6 @@ body:
     pilot_success_for_director: >-
       Пилот полезен, если после него руководитель может назвать хотя бы одно управленческое решение,
       которое стало лучше обосновано новым фактом или выявленным разрывом, и проследить вывод к конкретному эпизоду.
-      Положительное впечатление от презентации само по себе успехом не считается.
     call_to_action: 'Выберите один недавний обезличенный случай и сотрудника, который его знает; на первом разборе проверим не презентацию, а полезность результата для ваших решений.'
   relation_to_existing_proposal:
     proposal_version: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
@@ -167,7 +160,7 @@ body:
   tailoring_proposal:
     applicability: not_applicable
     disposition: no lifecycle-process tailoring is proposed by this supply response
-    basis: product uses existing standard process-owned products and the client interface
+    basis: product uses existing standard process-owned products and client interface
   exclusions: [legal or tax opinion, client professional decision, Network-wide market claim, ROI guarantee, prevented-fine claim, automatic product requirement, automatic official positioning]
 standard_product_composition:
   generic_profile:
@@ -201,7 +194,7 @@ glossary:
   standard_composition: applicable generic and specific normative content plus owner-product requirements and explicit traceability
 change_history:
   - {version: V1, date: '2026-09-07', change: create concise director-facing explanation of interaction and management benefit as standard supply response}
-  - {version: V2, date: '2026-09-07', change: materialize explicit standard composition for ГОСТ §7.2 + §10.56, bind current owner request and prepare exact composition verification}
+  - {version: V2, date: '2026-09-07', change: materialize explicit standard composition for ГОСТ §7.2 + §10.56, bind current owner request and correct PPR trace}
 owner_product_request:
   exact_visible_text: 'приведи к стандартному составу эти продукты и верифицируй их состав по требованиям и ГОСТу'
   resolved_referent: normalize the existing director-facing interaction and benefit explanation to the exact standard supply-response composition and verify it
@@ -223,17 +216,13 @@ product_requirement_compliance:
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
-    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.what_we_do_not_promise,verification]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.director_view.what_we_do_not_promise,verification]}
     - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,context,standards_trace,standard_product_composition]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status,verification.semantic_status,verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self,verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id,artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements,change_history]}
-  completion_gate:
-    mandatory_missing: []
-    mandatory_failed: []
-    mandatory_unresolved: []
-    state: pass_candidate_structure_pending_exact_head_worker_and_TECH_VER
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_worker_and_TECH_VER}
 verification:
   structural_status: pending_exact_external_client_information_product_worker_for_V2
   semantic_status: pending_composition_TECH_VER_for_V2
@@ -273,10 +262,7 @@ standards_trace:
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
-  information_item_identity:
-    resolved_name_or_semantic_identity: director-facing supply response explaining interaction and benefit
-    resolution_basis: AGR-SUP supply response controlled semantic match to ГОСТ §10.56 proposal
-    state: resolved
+  information_item_identity: {resolved_name_or_semantic_identity: director-facing supply response explaining interaction and benefit, resolution_basis: AGR-SUP supply response controlled semantic match to ГОСТ §10.56 proposal, state: resolved}
   universal_type: description
   universal_content:
     source_section: '7.2'
@@ -313,9 +299,7 @@ content_compliance:
           - {requirement_id: S10.56-R05, state: satisfied, artifact_field_refs: [body.supplier_experience_and_capabilities]}
           - {requirement_id: S10.56-R06, state: satisfied, artifact_field_refs: [body.authorization]}
           - {requirement_id: S10.56-O01, state: not_applicable, basis: no lifecycle-process tailoring proposed, artifact_field_refs: [body.tailoring_proposal]}
-  local_additive_content:
-    state: not_applicable
-    basis: active exact binding selects no local additive profile
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
   tailoring: concise director-facing explanation specializes existing RIC positioning and pilot package without changing lifecycle process selection
   information_item_management:
     version_control: V2 supersedes V1 for standard composition
