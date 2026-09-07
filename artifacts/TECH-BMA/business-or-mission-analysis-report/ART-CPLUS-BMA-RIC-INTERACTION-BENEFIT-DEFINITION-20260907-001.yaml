@@ -1,0 +1,421 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001
+artifact_version_id: ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: business or mission analysis report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_for_RIC_benefit_validation
+acceptance_status: analytical_candidate_not_yet_RIC_validated_or_baselined
+artifact_instance_purpose: >-
+  Определить конечный результат и полезный эффект взаимодействия инженерной среды с РИЦ,
+  отделить конечную пользу от промежуточных аналитических представлений и разложить путь к ней
+  на стандартные process-owned информационные продукты с нормативным составом ГОСТ Р 58609-2019.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-DEFINE-RIC-INTERACTION-BENEFIT-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-BMA-RIC-BENEFIT-DECOMPOSITION
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-RIC-BENEFIT-DECOMPOSITION-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: owner_directed_candidate_for_RIC_benefit_validation
+scope: >-
+  Конечный результат и польза одного замкнутого цикла взаимодействия с РИЦ: от определения
+  требуемого полезного эффекта и критериев его достижения через реальные эпизоды и анализ до решения РИЦ,
+  измерения результата и подтверждения полезности самим РИЦ. В охват не входит утверждение сетевой
+  распространенности, ROI, предотвращенных убытков, причинного снижения риска, юридической корректности
+  или готовности платить без отдельного доказательного контура.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Конечным результатом взаимодействия с РИЦ следует считать не D08/D09, не отчет и не сам факт анализа,
+  а доказательно обоснованное решение РИЦ о том, что в клиентском сопровождении следует изменить,
+  сохранить или дополнительно проверить, с последующим наблюдением результата этого решения.
+  Конечная кандидатная польза: РИЦ систематически превращает реальные клиентские эпизоды в доказательные
+  решения по развитию клиентского сервиса, понимает вклад КонсультантПлюс и собственного сопровождения,
+  проверяет результат последующими данными и может передавать в Сеть трассируемую обратную связь.
+  Полезность считается подтвержденной только после применения результата РИЦ в реальном контексте и TECH-VAL;
+  до этого это обоснованная гипотеза целевого эффекта.
+introduction:
+  evaluated_object: конечный результат и полезный эффект взаимодействия инженерной среды с РИЦ
+  evaluation_context: >-
+    Предыдущий контур уже умеет разбирать единичные и ограниченные многоэпизодные наборы,
+    формировать сценарии и структурированную обратную связь. Текущий разрыв — отсутствие единого
+    терминального результата, который замыкает анализ на реальное решение РИЦ и подтверждаемую пользу.
+  criteria_basis:
+    - конечный результат должен описывать изменение способности или решения РИЦ, а не создание документа
+    - каждый промежуточный шаг должен завершаться canonical process-owned информационным продуктом
+    - продукт должен иметь один универсальный состав и все применимые специальные составы ГОСТ Р 58609-2019
+    - техническая корректность анализа и полезность для РИЦ должны подтверждаться разными процессами TECH-VER и TECH-VAL
+    - сильные экономические, причинные и сетевые утверждения не допускаются без отдельной доказательной базы
+  purpose: >-
+    установить проверяемую цепочку «данные клиента → доказательство → решение РИЦ → наблюдаемый результат → подтвержденная польза»
+  audience: [руководитель РИЦ, клиентские менеджеры РИЦ, специалисты сопровождения и обучения, участники продуктовой обратной связи Сети]
+context_and_assumptions:
+  dialogue_branch_purpose:
+    purpose_text: 'определить и доказательно подтвердить конечную пользу взаимодействия с РИЦ: какой практически применимый результат получает РИЦ, какие его решения и действия этот результат улучшает, как эта польза проявляется в работе с клиентами и какими наблюдаемыми данными подтверждается её достижение.'
+    purpose_locked: true
+    provenance: explicit_owner_authorized_change
+  exact_owner_input: |-
+    поменяй цель - определить конечный результат/пользу нашего взаимодействия для РИЦ
+    сформулируй сам. декомпозируй. каждое действие - продукт по стандартному составу ГОСТ
+  predecessor_evidence:
+    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+    - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+    - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1
+    - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-IMPLEMENTATION-PROCEDURE-20260906-001-V1
+    - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+  evidence_boundary: >-
+    Existing artifacts support a disciplined diagnostic and multi-episode evidence mechanism, but they do not yet prove
+    that a real RIC used the result to make a decision or that a subsequent client-service outcome improved.
+body:
+  evaluation_method_and_evidence:
+    method: >-
+      Reconcile the existing RIC positioning, pilot-method justification, multi-episode design and verification with the
+      standard purposes/outcomes and canonical outputs of TECH-BMA, TECH-STK, TM-MEAS, TM-DEC, TECH-VER and TECH-VAL;
+      identify the latest observable state that can legitimately be called benefit to RIC rather than an intermediate artifact.
+    evidence:
+      - {artifact_version_id: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2, use: decision-centric value hypothesis and separation of ConsultantPlus/RIC contribution}
+      - {artifact_version_id: ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1, use: evidence that episode-based diagnostic should end in useful management information rather than activity completion}
+      - {artifact_version_id: ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1, use: exact episode-to-cluster-to-D08/D09 trace and sample-bounded claims}
+      - {artifact_version_id: ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1, use: verified synthetic mechanics and explicit absence of real RIC usefulness evidence}
+      - {artifact_version_id: ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1, repository: MOZ1961/se, use: standard process purpose/outcome routing}
+      - {artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, repository: MOZ1961/se, use: deterministic product identity and GOST composition}
+  findings:
+    - id: F-BEN-01
+      result: supported_by_current_artifacts
+      finding: D08, D09, scenario libraries and analytical reports are intermediate information products or views, not the terminal benefit to RIC.
+      impact: success cannot be declared merely because an analytical package was generated.
+    - id: F-BEN-02
+      result: analytical_conclusion_for_validation
+      finding: >-
+        The strongest defensible terminal result of one interaction cycle is an evidence-backed RIC decision to change,
+        retain or further test a concrete client-service practice, with traceable rationale and subsequent observation.
+      impact: the lifecycle must contain a decision product and post-decision measurement, not only diagnostic synthesis.
+    - id: F-BEN-03
+      result: process_boundary
+      finding: TECH-VER proves conformity/correctness against specified criteria; it cannot prove usefulness to RIC in intended operational use.
+      impact: final usefulness requires TECH-VAL with RIC evidence.
+    - id: F-BEN-04
+      result: evidence_boundary
+      finding: current evidence does not establish quantitative business effect, ROI, network prevalence, avoided losses or causal client outcome improvement.
+      impact: initial benefit criteria must be observable and decision/action based; stronger metrics require separate measurement design.
+    - id: F-BEN-05
+      result: lifecycle_rule
+      finding: if a RIC decision requires a new procedure, training product, service design or system change, that change starts its own process/product lifecycle.
+      impact: candidate improvements are not promoted automatically to requirements or implementation commitments.
+  target_result_model:
+    terminal_result_one_cycle:
+      formulation: >-
+        РИЦ принял трассируемое, доказательно обоснованное решение о конкретной практике клиентского сопровождения —
+        изменить ее, сохранить без изменения либо провести дополнительную проверку — и результат этого решения наблюдается
+        по последующим данным в согласованном контексте.
+      status: candidate_terminal_result_pending_real_RIC_validation
+    terminal_benefit:
+      formulation: >-
+        РИЦ получает воспроизводимую способность превращать реальные клиентские эпизоды в обоснованные решения по развитию
+        клиентского сервиса, проверять последствия этих решений и накапливать доказательства для следующего улучшения.
+      status: candidate_benefit_hypothesis_pending_real_RIC_evidence
+    immediate_deliverable_boundary: >-
+      Отчет, библиотека сценариев, D08/D09 и рекомендации являются средствами принятия решения; сами по себе они не доказывают пользу.
+    observable_success_levels:
+      - {level: R0_product_created, evidence: required canonical products exist with complete GOST composition, meaning: инженерный выход создан, польза не доказана}
+      - {level: R1_verified, evidence: TECH-VER passes exact artifacts and trace/evidence boundaries, meaning: результат корректно сформирован относительно заданных требований}
+      - {level: R2_RIC_accepted, evidence: RIC confirms factual adequacy and intended-use fit, meaning: результат признан релевантным, но еще не обязательно использован}
+      - {level: R3_used_for_decision, evidence: TM-DEC decision register records a real RIC decision and rationale linked to result, meaning: практическая полезность результата показана}
+      - {level: R4_effect_observed_and_validated, evidence: post-decision TM-MEAS plus TECH-VAL confirm outcome in intended context, meaning: конечная польза одного цикла подтверждена в пределах конкретного РИЦ/контекста}
+  product_based_decomposition:
+    invariant: every material action ends in a standard canonical process-owned information product; views do not become independent products.
+    steps:
+      - id: P01
+        state_transformation: from an unspecific wish for value to an explicit RIC problem/opportunity and intended useful effect
+        process_type_id: TECH-BMA
+        canonical_O: problem or opportunity statement
+        owner_facing_product_name_ru: Отчет
+        purpose: определить, какое решение/способность РИЦ должно улучшить взаимодействие и почему это имеет значение
+        gost_composition: {generic: '§7.6 Отчет', specific: ['§10.53 Оценка потребностей в продукции'], relation: specialization}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.6', specific: ['§10.53'], correspondence: IDT}
+        completion_evidence: problem/opportunity, intended use, current deficiency, alternatives/constraints and evidence boundary are explicit
+      - id: P02
+        state_transformation: from the RIC problem to agreed stakeholder needs and requirements
+        process_type_id: TECH-STK
+        canonical_O: stakeholder needs and requirements
+        owner_facing_product_name_ru: Спецификация
+        purpose: зафиксировать, что именно должен получить РИЦ, для каких решений/ролей и при каких ограничениях
+        gost_composition: {generic: '§7.8 Спецификация', specific: ['§10.84 Спецификация системных требований'], relation: specialization}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.8', specific: ['§10.84'], correspondence: IDT}
+        completion_evidence: each need/requirement is traceable to RIC role, decision/use and source or explicit hypothesis
+      - id: P03
+        state_transformation: from needs to observable acceptance of usefulness
+        process_type_id: TECH-STK
+        canonical_O: validation criteria
+        owner_facing_product_name_ru: Спецификация
+        purpose: определить заранее, по каким наблюдаемым признакам РИЦ признает результат полезным
+        gost_composition: {generic: '§7.8 Спецификация', specific: [], relation: generic_only_normative}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.8', specific: [], correspondence: IDT}
+        completion_evidence: criteria distinguish factual adequacy, decision use and observed effect; no circular self-assessment
+      - id: P04
+        state_transformation: from requirements to an explicit interaction/use model
+        process_type_id: TECH-BMA
+        canonical_O: life cycle concepts
+        owner_facing_product_name_ru: Описание
+        purpose: описать роли, входы, сценарии, точки передачи результата, обратную связь и замкнутый цикл улучшения
+        gost_composition: {generic: '§7.2 Описание', specific: ['§10.15 Концепция функционирования'], relation: controlled_semantic_match}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.2', specific: ['§10.15'], correspondence: IDT}
+        completion_evidence: current/future scenarios and context of use show where the RIC benefit should emerge
+      - id: P05
+        state_transformation: from intended usefulness to an evidence collection design
+        process_type_id: TM-MEAS
+        canonical_O: measurement strategy/approach
+        owner_facing_product_name_ru: План
+        purpose: определить измерения, единицы наблюдения, baseline/comparison, evidence classes, frequency and limitations
+        gost_composition: {generic: '§7.3 План', specific: ['§10.46 План измерений'], relation: process_strategy_override}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.3', specific: ['§10.46'], correspondence: IDT}
+        completion_evidence: every benefit criterion has a measurement/evidence source and no stronger inference than design permits
+      - id: P06
+        state_transformation: from planned evidence to traceable real episode/feedback data
+        process_type_id: TM-MEAS
+        canonical_O: measurement register
+        owner_facing_product_name_ru: Запись
+        purpose: фиксировать каждый реальный эпизод, результат, реакцию РИЦ, принятое действие и post-action observation without evidence-class inflation
+        gost_composition: {generic: '§9.1 Запись', specific: [], relation: generic_only_normative}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §9.1', specific: [], correspondence: IDT}
+        completion_evidence: stable identifiers, source/evidence class and exact trace are preserved for every material datum
+      - id: P07
+        state_transformation: from individual observations to an evidence-bounded synthesis for RIC decision
+        process_type_id: TECH-BMA
+        canonical_O: business or mission analysis report
+        owner_facing_product_name_ru: Отчет
+        purpose: показать повторяющиеся ситуации, разрывы, contribution boundaries, alternatives and candidate responses
+        gost_composition: {generic: '§7.6 Отчет', specific: ['§10.27 Отчет об оценке'], relation: controlled_semantic_match}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.6', specific: ['§10.27'], correspondence: IDT}
+        completion_evidence: every material conclusion traces to evidence; unsupported prevalence/ROI/causal/legal claims are absent
+      - id: P08
+        state_transformation: from analysis to a real RIC management decision
+        process_type_id: TM-DEC
+        canonical_O: decision register
+        owner_facing_product_name_ru: Запись
+        purpose: зафиксировать решение РИЦ изменить, сохранить или дополнительно проверить практику, основания, assumptions and open actions
+        gost_composition: {generic: '§9.1 Запись', specific_records: ['§9.2 decision record / R9-DECISION normalized profile'], relation: exact}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §9.1', specific: ['§9.2 decision record'], correspondence: IDT}
+        completion_evidence: decision, rationale, assumptions and unresolved actions are recorded and trace to the analysis
+      - id: P09
+        state_transformation: from the RIC decision/action to observed post-decision performance and feedback
+        process_type_id: TM-MEAS
+        canonical_O: measurement report
+        owner_facing_product_name_ru: Отчет
+        purpose: сопоставить фактические результаты после решения с критериями/исходным состоянием и показать trends, events and limitations
+        gost_composition: {generic: '§7.6 Отчет', specific: ['§10.47 Отчет о мониторинге и контроле'], relation: process_report_override}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.6', specific: ['§10.47'], correspondence: IDT}
+        completion_evidence: actual measures, context, trend/comparison and adverse/neutral outcomes are retained, not only positive evidence
+      - id: P10
+        state_transformation: from produced evidence products to verified traceability and claim discipline
+        process_type_id: TECH-VER
+        canonical_O: verification report
+        owner_facing_product_name_ru: Отчет
+        purpose: проверить exact inputs/versions, traceability, evidence classes, sample bounds, required compositions and prohibited overclaims
+        gost_composition: {generic: '§7.6 Отчет', specific: ['§10.93 Отчет о верификации'], relation: exact}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.6', specific: ['§10.93'], correspondence: IDT}
+        completion_evidence: TECH-VER pass or pass_with_explicit_limitations; this does not prove RIC usefulness
+      - id: P11
+        state_transformation: from internally verified result to evidence that it is useful in the RIC intended-use context
+        process_type_id: TECH-VAL
+        canonical_O: validation report
+        owner_facing_product_name_ru: Отчет
+        purpose: получить объективные evidence-backed conclusions that the result satisfies agreed RIC stakeholder needs and intended use
+        gost_composition: {generic: '§7.6 Отчет', specific: ['§10.90 Отчет об аттестации/одобрении'], relation: controlled_semantic_match}
+        iso_composition: {generic: 'ISO/IEC/IEEE 15289:2017 §7.6', specific: ['§10.90'], correspondence: IDT}
+        completion_evidence: RIC evidence establishes factual adequacy, actual decision use and, where claimed, observed effect within the defined context
+  optional_successor_routes:
+    rule: >-
+      P01-P11 define the evidence/decision cycle. If the RIC decision requires a new operating procedure, training material,
+      service arrangement or system change, that change receives its own appropriate lifecycle products and is not silently
+      treated as already implemented by this analysis.
+    examples:
+      - {trigger: new training content, route: 'TECH-IMP → training materials'}
+      - {trigger: new executable operating/user procedure, route: 'TECH-OP → user documentation or operation procedure as applicable'}
+      - {trigger: client-system capability change, route: 'TECH-STK → TECH-SYSREQ → TECH-ARCH/TECH-DES → TECH-IMP → TECH-VER → TECH-VAL as applicable'}
+  decision_support:
+    recommended_next_state: P01_then_P02_P03
+    rationale: >-
+      The current evidence already supports the diagnostic mechanism, but the RIC-specific terminal benefit and acceptance criteria
+      have not been elicited from a real RIC. Starting with measurement alone would optimize evidence collection before agreeing what
+      counts as useful; starting with architecture/implementation would build before the value endpoint is defined.
+    stop_rule: >-
+      Do not claim R4 benefit until a real RIC decision/action and post-decision evidence are available and TECH-VAL confirms fit to intended use.
+  deficiencies_risks_and_trends:
+    - {id: G-BEN-01, type: evidence_gap, issue: no real RIC has yet validated the terminal benefit formulation, consequence: current terminal result is a candidate hypothesis}
+    - {id: G-BEN-02, type: measurement_gap, issue: no agreed baseline or benefit measures for a real RIC, consequence: quantitative effect is not claimable}
+    - {id: G-BEN-03, type: adoption_gap, issue: no observed RIC management decision currently traced to the analytical output, consequence: practical usefulness is not yet demonstrated}
+    - {id: G-BEN-04, type: scaling_risk, issue: one RIC/context cannot establish Network-wide usefulness or recurrence, consequence: cross-RIC synthesis remains a separate lifecycle path}
+    - {id: T-BEN-01, type: positive_trend, issue: existing multi-episode capability already provides episode-level trace and evidence-class discipline, consequence: the remaining gap is mainly terminal-value validation rather than basic mechanics}
+conclusions_and_recommendations:
+  conclusion: >-
+    The product chain should terminate at R4: a real RIC has used the evidence-backed result in a decision and the resulting
+    outcome has been observed and validated in the intended context. The practical benefit hypothesis is a repeatable RIC capability
+    to turn client episodes into evidence-backed service-development decisions and test their consequences. Intermediate reports/views
+    are means, not the benefit itself.
+  recommendation: >-
+    Execute P01 first with a real RIC: agree the problem/opportunity and intended useful effect, then P02/P03 to establish stakeholder
+    needs and validation criteria before collecting or expanding evidence. Reuse the existing episode-processing mechanics only after
+    these endpoint criteria are explicit.
+references:
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+  - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+  - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1
+  - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-IMPLEMENTATION-PROCEDURE-20260906-001-V1
+  - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+  - ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1
+  - ARTVER-SE-PROCESS-CATALOG-ORGANIZATION-PROCESSES-20260904-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 — Systems and software engineering — System life cycle processes'
+  - 'ГОСТ Р 57193-2025 — Системная и программная инженерия. Процессы жизненного цикла систем'
+  - 'ISO/IEC/IEEE 15289:2017 — Systems and software engineering — Content of life-cycle information items (documentation)'
+  - 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017 — Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)'
+glossary:
+  terminal_result: latest observable result of one interaction cycle that is not merely an intermediate analytical artifact
+  terminal_benefit: stakeholder-useful effect demonstrated in the intended RIC context, not inferred from artifact creation
+  decision_use: recorded use of the analytical result to make, retain or defer a concrete RIC service decision
+  observed_effect: post-decision evidence collected under the defined measurement approach; may be positive, neutral or adverse
+  R0_R4: staged evidence states separating product creation from verified, accepted, used and validated benefit
+change_history:
+  - version: V1
+    date: '2026-09-07'
+    change: define terminal RIC interaction benefit and decompose the evidence-to-decision-to-validation lifecycle into standard products
+owner_product_request:
+  exact_visible_text: |-
+    поменяй цель - определить конечный результат/пользу нашего взаимодействия для РИЦ
+    сформулируй сам. декомпозируй. каждое действие - продукт по стандартному составу ГОСТ
+  current_dialogue_branch_purpose: 'определить и доказательно подтвердить конечную пользу взаимодействия с РИЦ: какой практически применимый результат получает РИЦ, какие его решения и действия этот результат улучшает, как эта польза проявляется в работе с клиентами и какими наблюдаемыми данными подтверждается её достижение.'
+  purpose_provenance: explicit_owner_authorized_change
+  request_specific_requirements:
+    - formulate the new purpose independently from the owner's short formulation
+    - decompose the route from current state to terminal RIC benefit
+    - every material action must end in a standard canonical process-owned information product
+    - every product must declare applicable GOST R 58609 generic and specific composition
+    - do not confuse intermediate analytical outputs with terminal benefit
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, context_and_assumptions.dialogue_branch_purpose, body.product_based_decomposition]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.evaluation_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_candidate_structure_pending_exact_head_external_worker_and_subject_TECH_VER
+verification:
+  structural_status: authored_full_7_6_and_10_27_coverage_pending_exact_head_external_client_worker
+  semantic_status: terminal benefit and product-chain analysis complete as candidate; real RIC TECH-VAL and independent subject TECH-VER pending
+  owner_acceptance: purpose change explicitly authorized; analytical formulation and downstream adoption remain reviewable
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001.yaml@change/consultantplus-20260907-ric-interaction-benefit
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: business or mission analysis report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.27-R01, disposition: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, introduction.criteria_basis], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R02, disposition: satisfied, artifact_field_refs: [body.evaluation_method_and_evidence], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R03, disposition: satisfied, artifact_field_refs: [body.findings, body.target_result_model, body.product_based_decomposition], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R04, disposition: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R05, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: business or mission analysis report, resolution_basis: TECH-BMA exact binding to §10.27 evaluation report, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: report
+    specific_profiles: ['10.27']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.27'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, introduction.criteria_basis]}
+          - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.evaluation_method_and_evidence]}
+          - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.findings, body.target_result_model, body.product_based_decomposition]}
+          - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.deficiencies_risks_and_trends]}
+          - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: evaluation-report composition applied to definition of the terminal RIC benefit and its standard product lifecycle; no process-model tailoring introduced
+  information_item_management:
+    version_control: exact V1
+    review_approval: independent TECH-VER, real RIC TECH-VAL, owner acceptance and Network adoption remain separate
+    quality_evaluation: exact-head external structural worker plus subject TECH-VER
+    retention: canonical client TECH-BMA product in MOZ1961/consultantplus
+    reuse_and_duplication: successor version required for material change to terminal benefit, criteria or decomposition
+  composition_state: candidate_complete_pending_exact_head_external_worker

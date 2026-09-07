@@ -1,0 +1,325 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: subject_verification_completed_with_explicit_limitations
+acceptance_status: verified_candidate_real_RIC_validation_owner_acceptance_and_merge_separate
+artifact_instance_purpose: >-
+  Предметно проверить определение конечного результата/пользы взаимодействия с РИЦ и его P01-P11
+  декомпозицию: соответствие owner-authorized назначению ветки, фактической доказательной базе,
+  canonical process-owned outputs, нормативному составу ГОСТ Р 58609-2019 и границе TECH-VER/TECH-VAL.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-INTERACTION-BENEFIT-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-VER-RIC-INTERACTION-BENEFIT-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-RIC-BENEFIT-DEFINITION
+    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-BENEFIT-DEFINITION-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: subject_verification_completed_with_explicit_limitations
+scope: exact-version subject verification of ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Проверка завершена со статусом pass_with_explicit_limitations. Терминальный результат корректно вынесен
+  за пределы промежуточных D08/D09/отчетов: один цикл завершается реальным решением РИЦ и наблюдением
+  его результата; конечная польза формулируется как воспроизводимая способность превращать клиентские
+  эпизоды в доказательно обоснованные решения и проверять последствия. P01-P11 разрешаются в существующие
+  canonical outputs и применимые нормативные составы. TECH-VER не выдается за доказательство полезности:
+  реальная польза остается неподтвержденной до данных РИЦ и TECH-VAL. ROI, сетевой эффект, причинное снижение
+  риска и юридическая корректность не заявляются.
+introduction:
+  verified_object:
+    - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+  verification_context: owner-authorized branch-purpose change and product-based terminal-benefit decomposition
+  criteria_basis:
+    - exact owner request and exact new Current dialogue branch purpose literal
+    - current process purpose/outcome and canonical output catalogs
+    - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    - evidence boundaries in predecessor RIC positioning, pilot-method and multi-episode products
+    - TECH-VER must establish correctness/conformity, not intended-use usefulness
+  purpose: determine whether the candidate terminal benefit and decomposition are fit to proceed to real RIC elicitation/validation without semantic overclaim
+  audience: [owner, future RIC participant, subsequent TECH-STK/TM-MEAS/TECH-VAL executions]
+context_and_assumptions:
+  dialogue_branch_purpose: 'определить и доказательно подтвердить конечную пользу взаимодействия с РИЦ: какой практически применимый результат получает РИЦ, какие его решения и действия этот результат улучшает, как эта польза проявляется в работе с клиентами и какими наблюдаемыми данными подтверждается её достижение.'
+  owner_change_authority: explicit
+  exact_target_version: ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+  unresolved_external_evidence:
+    - real RIC acceptance of problem/opportunity and terminal benefit
+    - real RIC stakeholder needs and validation criteria
+    - real decision use of the produced analysis
+    - post-decision outcome evidence
+    - cross-RIC or Network-wide recurrence/effect
+    - quantitative business effect or willingness to pay
+body:
+  verification_method_and_evidence:
+    method: >-
+      Inspect every terminal-result statement and P01-P11 transition against current exact process purpose/outcome,
+      canonical O ownership, normative-first GOST composition, predecessor evidence limits and the semantic distinction
+      between verification and validation. Treat absence of real RIC evidence as a limitation, not as a reason to invent it.
+    exact_evidence:
+      - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+      - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+      - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+      - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1
+      - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+      - ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1
+      - ARTVER-SE-PROCESS-CATALOG-ORGANIZATION-PROCESSES-20260904-001-V1
+      - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  verification_checks:
+    - id: V-BEN-01
+      check: new dialogue purpose is explicitly owner-authorized and reproduced literally in the target product
+      result: pass
+      evidence: exact owner input plus identical purpose_text in context and owner_product_request
+    - id: V-BEN-02
+      check: terminal result is not merely document production or D08/D09 generation
+      result: pass
+      evidence: target result requires actual RIC decision use and subsequent observation
+    - id: V-BEN-03
+      check: terminal benefit is stated as candidate until real RIC evidence exists
+      result: pass
+      evidence: target_result_model marks terminal result and benefit pending real RIC validation
+    - id: V-BEN-04
+      check: P01-P11 each resolve to an existing canonical process-owned O
+      result: pass
+      evidence: process catalog/crosswalk contain the declared TECH-BMA, TECH-STK, TM-MEAS, TM-DEC, TECH-VER and TECH-VAL outputs
+    - id: V-BEN-05
+      check: each P01-P11 product declares one applicable generic GOST composition and every applicable special profile
+      result: pass
+      evidence: product_based_decomposition explicitly declares §7/§9.1 and applicable §9.2/§10 bindings from normative-first crosswalk
+    - id: V-BEN-06
+      check: technical correctness and stakeholder usefulness are not conflated
+      result: pass
+      evidence: P10 TECH-VER ends at verified result; P11 TECH-VAL separately establishes intended-use usefulness
+    - id: V-BEN-07
+      check: measurement precedes quantitative benefit claims and preserves adverse/neutral outcomes
+      result: pass
+      evidence: P05/P06/P09 define measurement plan/register/report and require retention of non-positive evidence
+    - id: V-BEN-08
+      check: actual RIC management decision is represented as a process-owned product
+      result: pass
+      evidence: P08 resolves to TM-DEC decision register with decision/rationale/assumptions/open actions
+    - id: V-BEN-09
+      check: candidate improvements do not become requirements or implementation commitments automatically
+      result: pass
+      evidence: optional_successor_routes starts separate lifecycle only after the recorded RIC decision
+    - id: V-BEN-10
+      check: prohibited stronger claims are absent
+      result: pass
+      evidence: no Network prevalence, ROI, avoided-loss, causal-risk-reduction, legal-correctness or willingness-to-pay claim is asserted
+    - id: V-BEN-11
+      check: next action follows value endpoint before data expansion
+      result: pass_with_explicit_limitation
+      evidence: P01 is logically prior to measurement because current real-RIC endpoint/acceptance evidence is absent; actual RIC may revise the formulated benefit
+    - id: V-BEN-12
+      check: current multi-episode capability remains usable without being mistaken for the terminal benefit
+      result: pass
+      evidence: it is treated as an enabling evidence-processing mechanism within later P06/P07 execution rather than the endpoint itself
+  product_chain_verification:
+    P01: {process_type_id: TECH-BMA, canonical_O: problem or opportunity statement, composition: '§7.6 + §10.53', result: pass}
+    P02: {process_type_id: TECH-STK, canonical_O: stakeholder needs and requirements, composition: '§7.8 + §10.84', result: pass}
+    P03: {process_type_id: TECH-STK, canonical_O: validation criteria, composition: '§7.8 generic-only', result: pass}
+    P04: {process_type_id: TECH-BMA, canonical_O: life cycle concepts, composition: '§7.2 + §10.15', result: pass}
+    P05: {process_type_id: TM-MEAS, canonical_O: measurement strategy/approach, composition: '§7.3 + §10.46', result: pass}
+    P06: {process_type_id: TM-MEAS, canonical_O: measurement register, composition: '§9.1 generic-only', result: pass}
+    P07: {process_type_id: TECH-BMA, canonical_O: business or mission analysis report, composition: '§7.6 + §10.27', result: pass}
+    P08: {process_type_id: TM-DEC, canonical_O: decision register, composition: '§9.1 + §9.2 decision record', result: pass}
+    P09: {process_type_id: TM-MEAS, canonical_O: measurement report, composition: '§7.6 + §10.47', result: pass}
+    P10: {process_type_id: TECH-VER, canonical_O: verification report, composition: '§7.6 + §10.93', result: pass}
+    P11: {process_type_id: TECH-VAL, canonical_O: validation report, composition: '§7.6 + §10.90', result: pass}
+  prohibited_claims_check:
+    Network_wide_prevalence: absent
+    ROI_or_payback: absent
+    avoided_fine_or_loss: absent
+    causal_client_outcome_improvement: absent
+    causal_risk_reduction: absent
+    legal_correctness: absent
+    willingness_to_pay: absent
+  problems_encountered:
+    - id: VER-BEN-P01
+      problem: real RIC evidence is absent, so the analyst cannot establish the terminal benefit as achieved
+      disposition: retain candidate status and require TECH-VAL after real use
+    - id: VER-BEN-P02
+      problem: a positive post-decision metric may be impossible or inappropriate for some first decisions
+      disposition: practical usefulness may be evidenced at R3 decision use; R4 requires observed effect only when effect is claimed
+    - id: VER-BEN-P03
+      problem: implementation of a chosen improvement may belong to a different lifecycle process
+      disposition: start a separate process/product chain rather than treating analysis as implementation
+  verification_decisions_and_rationale:
+    - decision: accept terminal-benefit definition as a verified candidate for real RIC elicitation
+      rationale: it follows the owner purpose, current evidence boundary and process/product semantics without claiming achieved benefit
+    - decision: keep R3 and R4 distinct
+      rationale: real decision use demonstrates practical usefulness while observed/validated effect is a stronger evidence state
+    - decision: require P01 before collecting larger datasets
+      rationale: measurement without agreed stakeholder-use endpoint risks optimizing the evidence process rather than RIC value
+    - decision: keep multi-episode capability as an enabler
+      rationale: it is useful for evidence synthesis but does not itself prove stakeholder benefit
+conclusions_and_recommendations:
+  conclusion: >-
+    ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1 passes subject verification with
+    explicit limitations. It is suitable to drive the first real-RIC P01/P02/P03 elicitation. The verification does not establish
+    achieved RIC benefit; that claim remains blocked until real decision-use/post-decision evidence and TECH-VAL as applicable.
+  recommendation: >-
+    Begin with P01 and a real RIC. Treat R3_used_for_decision as the first strong evidence of practical usefulness and R4 as
+    the stronger terminal evidence when a post-decision effect is actually claimed and measurable.
+references:
+  - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+  - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+  - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
+  - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  verified_candidate: analytically verified result whose external intended-use usefulness is still unvalidated
+  R3_used_for_decision: real RIC uses the result in a recorded management/service decision
+  R4_effect_observed_and_validated: post-decision effect is observed and, where claimed, validated in intended context
+  verification: objective evidence that specified requirements/criteria are fulfilled; not intended-use validation
+  validation: evidence that stakeholder needs/intended use are satisfied in the relevant operational context
+change_history:
+  - version: V1
+    date: '2026-09-07'
+    change: subject-verify terminal RIC benefit definition and P01-P11 standard-product decomposition
+owner_product_request:
+  exact_visible_text: |-
+    поменяй цель - определить конечный результат/пользу нашего взаимодействия для РИЦ
+    сформулируй сам. декомпозируй. каждое действие - продукт по стандартному составу ГОСТ
+  current_dialogue_branch_purpose: 'определить и доказательно подтвердить конечную пользу взаимодействия с РИЦ: какой практически применимый результат получает РИЦ, какие его решения и действия этот результат улучшает, как эта польза проявляется в работе с клиентами и какими наблюдаемыми данными подтверждается её достижение.'
+  purpose_provenance: explicit_owner_authorized_change
+  request_specific_requirements: [verify the new terminal benefit formulation, verify every action-to-product mapping, preserve GOST composition and evidence boundaries]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_subject_verification_authored_pending_exact_head_external_client_worker
+verification:
+  structural_status: full_7_6_and_10_93_coverage_authored_pending_exact_head_external_client_worker
+  semantic_status: pass_with_explicit_limitations
+  owner_acceptance: purpose change authorized; benefit/product-chain acceptance and merge separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-ric-interaction-benefit
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [introduction.criteria_basis], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.verification_checks, body.product_chain_verification], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [issued_at_and_status, introduction.verified_object], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.verification_checks, body.prohibited_claims_check], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report for terminal RIC interaction benefit definition, resolution_basis: TECH-VER exact binding to §10.93, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [introduction.criteria_basis]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.verification_checks, body.product_chain_verification]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [issued_at_and_status, introduction.verified_object]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.verification_checks, body.prohibited_claims_check]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: §10.93 specialized to subject verification of terminal RIC benefit and standard product decomposition
+  information_item_management:
+    version_control: exact V1
+    review_approval: subject TECH-VER complete; exact-head external structural worker, owner acceptance, real TECH-VAL and merge remain separate
+    quality_evaluation: external structural worker plus owner review
+    retention: canonical client TECH-VER product in MOZ1961/consultantplus
+    reuse_and_duplication: successor version required if target benefit/decomposition changes materially
+  composition_state: subject_verified_candidate_pending_exact_head_external_worker

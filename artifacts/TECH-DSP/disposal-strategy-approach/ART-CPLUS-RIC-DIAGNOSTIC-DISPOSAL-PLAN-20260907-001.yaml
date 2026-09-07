@@ -1,0 +1,257 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: disposal strategy/approach
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_disposal_plan_defined_not_due
+acceptance_status: disposal_plan_candidate_actual_retirement_and_owner_acceptance_separate
+artifact_instance_purpose: >-
+  Определить безопасное завершение жизненного цикла продукта «Диагностика клиентского случая РИЦ»:
+  прекращение активного предложения/исполнения, уведомление затронутых сторон, прекращение поддержки,
+  disposition активных копий и защищенной информации, сохранение требуемой инженерной/аудитной истории,
+  отключение ненужных обеспечивающих связей и формирование доказательств фактического списания только тогда,
+  когда решение о выводе из применения действительно принято.
+producer:
+  process_type_id: TECH-DSP
+  process_instance_id: PI-CPLUS-TECH-DSP-RIC-DIAGNOSTIC-PLAN-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-DSP-PLAN-RIC-DIAGNOSTIC-RETIREMENT-20260907-001
+  methodic_instance: {methodic_id: METH-CPLUS-TECH-DSP-RIC-DIAGNOSTIC, methodic_version_id: METHVER-CPLUS-TECH-DSP-RIC-DIAGNOSTIC-V1, methodic_version: controlled_retirement_v1, status: provisional_runtime_not_adopted}
+request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001, required_output_label: operation report}
+interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
+issued_at_and_status: {issued_at: '2026-09-07', status: disposal_plan_defined_actual_disposal_not_due}
+scope: retirement/disposition of active diagnostic service configuration, issued copies and protected operational data; Git audit history is retained according to governance and is not falsely called deleted
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+applicable_references:
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+introduction:
+  purpose: define end-of-life actions before disposal becomes necessary, without claiming the product is currently retired
+  audience: owner, engineering actor, future RIC recipient/user and information/configuration managers as applicable
+  coverage: service retirement, external notification, records/data disposition, enabling-system bindings, verification and final evidence
+planned_activities_and_tasks:
+  - establish explicit retirement authority and scope: whole product, version, pilot, client relationship or operational copy
+  - stop new external issue/execution for the retiring configuration
+  - identify affected RIC recipients/users and open commitments or support obligations
+  - identify active operational copies, distribution records, measurement/episode data and protected information
+  - notify affected resolved users of end-of-support, replacement/successor or no-replacement state where applicable
+  - preserve canonical engineering/audit history required for traceability while disposing of protected/temporary operational data according to authority
+  - revoke or stop product-specific active access/bindings/configurations that are no longer required without disabling shared generic enablers unnecessarily
+  - verify closure of open delivery/maintenance/change items or record explicit residual disposition
+  - create TECH-DSP disposed-system evidence wrapper only after actual actions complete
+  - issue final operation/maintenance/disposal reporting as applicable; do not infer client acceptance from retirement notice
+tools_methods_and_techniques:
+  methods: [configuration inventory, distribution-record review, retention/disposition classification, access/binding review, closure checklist, TECH-VER of disposal evidence]
+  tools: [GitHub process-owned history, information/configuration records, ChatGPT engineering actor, structural worker]
+schedule:
+  trigger: owner-authorized retirement, supersession with no continued support, unacceptable maintainability/risk, or terminated pilot/service scope
+  preparation: before end-of-support date when external users exist
+  execution: after commitments/notification arrangements permit retirement
+  final_verification: after applicable disposal actions and before complete status is claimed
+budget_and_cost_estimate: {disposal_budget_rub: not_established, rule: no paid migration or external disposal service is authorized by this plan}
+resources_and_allocation:
+  owner: retirement authority and exceptions
+  engineering_actor: inventory, controlled disposition records and verification coordination
+  RIC_recipient_when_resolved: acknowledge migration/end-of-support information and manage its own local copies under its authority
+  information_configuration_management: support exact inventory and retention classification where applicable
+responsibilities_and_authorities:
+  owner: decides retirement scope/date/replacement policy and approves exceptions
+  engineering_actor: executes authorized product-side disposition; cannot delete or alter RIC-owned data/systems without authority
+  RIC: controls its local operational/adopted copies and internal retention; supplier records only what is evidenced
+participant_interfaces:
+  supplier_to_RIC: end-of-support/replacement/data-return-or-disposition communication where applicable
+  TM_IM_TM_CM_to_disposal: exact information/configuration/distribution inventory
+  TECH_MNT_to_disposal: open maintenance/problems and migration recommendation
+  disposal_to_TECH_VER: exact performed-actions evidence for completion verification
+risk_assessment_and_mitigation:
+  - {risk: Git history is falsely described as deleted, mitigation: distinguish active/protected-data disposition from retained canonical audit history}
+  - {risk: recipient still relies on retired version, mitigation: identify distribution and notify resolved recipients before end-of-support when applicable}
+  - {risk: protected episode data retained without purpose, mitigation: explicit retention/disposition classification and minimum necessary archival}
+  - {risk: shared SE/GitHub infrastructure is disabled for one product, mitigation: dispose only product-specific binding/configuration not shared enablers unless separately authorized}
+  - {risk: open agreement/support obligation ignored, mitigation: closure checklist includes commitments/agreement state}
+quality_and_effectiveness_measures:
+  disposal_evidence_coverage: {metric: G07, target: 100_percent_applicable_actions}
+  unresolved_open_commitments_at_complete: {target: 0_or_explicit_owner_accepted_residual}
+  notified_known_affected_external_recipients: {target: 100_percent_when_applicable}
+  protected_data_items_without_disposition: {target: 0_applicable_items}
+environment_infrastructure_security:
+  canonical_history: retain exact process-owned ArtifactVersion lineage required for audit/engineering trace; do not rewrite historical truth
+  active_data: minimize/archive/delete only according to actual authority and retention basis
+  shared_enablers: ChatGPT/GitHub generic availability is outside product disposal unless separately affected
+  security_privacy: secure removal/disposition of protected operational data and access references as applicable
+training:
+  engineering_actor: distinguish retirement, archival, protected-data disposition and immutable historical records
+  external_users: replacement/migration instructions only if a successor or migration path exists
+technical_management_review_reporting:
+  pre_disposal_review: confirm scope, commitments, users, configuration, data, storage and replacement status
+  completion_evidence: TECH-DSP disposed system record with R9-DISPOSAL and R9-CONFIGURATION when actual disposal occurs
+  verification: verify applicable actions, residuals and version/state before declaring complete
+related_plans_and_task_descriptions:
+  lifecycle_SEMP: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+  maintenance_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
+  measurement_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+disposition_or_removal_activities:
+  active_offer: stop issue/execution of retired exact configuration
+  external_copies: identify issued versions and communicate replacement/end-support where applicable; recipient-controlled copies remain under recipient authority
+  operational_data: classify and disposition temporary/protected episode data according to retention authority
+  canonical_artifacts: retain controlled historical versions and their truth/verification/distribution lineage unless repository governance separately requires lawful removal
+  bindings: retire only product-specific active bindings/configurations no longer needed
+affected_stakeholders_notifications_replacement:
+  current_known_external_recipients: none_established_for_actual_product_issue_at_plan_time
+  future_rule: derive affected list from AGR-SUP/TM-IM distribution records, not assumptions
+  replacement_state: not_established; successor must be exact ArtifactVersion if one exists
+  end_support_notice: required for known affected active recipients when retirement affects their supported use
+protected_information_disposition:
+  classify: [protected_personal_or_confidential_episode_data, temporary_working_material, canonical_minimized_evidence, distribution_and_verification_history]
+  rule: authority/retention basis controls each class; no blanket claim that all historical repository data can or must be erased
+schedule_actions_resources_for_disposal:
+  sequence: [authorize_scope, inventory, resolve_commitments, notify, stop_new_use, migrate_or_archive_or_delete_as_authorized, retire_bindings, verify, record_disposed_state]
+  resources: owner plus engineering actor plus affected client/information roles when applicable
+safety_security_privacy_environmental_obligations:
+  safety: no special physical safety obligation currently identified for information-service product
+  security_privacy: protect identifiers/secrets and dispose of protected operational data only through authorized means
+  environmental: no material physical disposal/environmental burden identified; shared infrastructure remains outside product-specific disposal
+adverse_effect_prevention:
+  - do not strand a known active RIC without notice when supported use is being ended
+  - preserve evidence necessary to understand prior decisions/version states
+  - do not delete or modify client-owned external systems/data without explicit authority
+  - do not leave obsolete version presented as current after retirement
+affected_enabling_systems_and_storage:
+  enabling_systems: [ChatGPT engineering actor, GitHub connector, SE-GENERIC-ENVIRONMENT]
+  product_specific_effect: stop product-specific execution/configuration references only; shared enablers continue unless separate decision
+  storage: MOZ1961/consultantplus canonical artifacts plus any separately authorized operational communication/work storage
+  current_actual_external_storage: not_established
+glossary:
+  disposal: controlled cessation/removal/disposition actions at end of supported lifecycle
+  retirement: decision to stop supported use/issue of a product or configuration; precedes evidence of completed disposal
+  canonical_history: controlled historical ArtifactVersions retained to preserve engineering/audit truth
+  protected_operational_data: client/participant information whose retention/disposition requires explicit basis and minimization
+change_procedure_and_history:
+  change_rule: retirement scope, replacement, retention or privacy disposition change requires successor plan or controlled change
+  history: [{version: V1, date: '2026-09-07', change: establish product retirement/disposal plan before actual end-of-life}]
+closure:
+  plan_closes_when: actual disposal completion is evidenced and verified or this plan is superseded; current state remains not_due
+owner_product_request:
+  exact_visible_text: |-
+    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
+    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
+  request_specific_requirements: [cover disposal stage, standard product/GOST composition, truthful not-due state, protect client authority and history]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_DSP_strategy
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, disposition_or_removal_activities]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [applicable_references, affected_enabling_systems_and_storage]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_procedure_and_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+verification:
+  structural_status: pending_fresh_exact_head
+  semantic_status: disposal_plan_candidate_actual_disposal_not_due_or_performed
+  owner_acceptance: planning_authorized_retirement_execution_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-DSP/disposal-strategy-approach/ART-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.14', process_name: 'Disposal process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.14', process_name: 'Процесс изъятия и списания'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: disposal strategy/approach
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.23']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.23']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [applicable_references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_and_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [participant_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_review_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [closure], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.23-R01, disposition: satisfied, artifact_field_refs: [disposition_or_removal_activities], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+        - {requirement_id: S10.23-R02, disposition: satisfied, artifact_field_refs: [affected_stakeholders_notifications_replacement], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+        - {requirement_id: S10.23-R03, disposition: satisfied, artifact_field_refs: [protected_information_disposition], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+        - {requirement_id: S10.23-R04, disposition: satisfied, artifact_field_refs: [schedule_actions_resources_for_disposal], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+        - {requirement_id: S10.23-R05, disposition: satisfied, artifact_field_refs: [safety_security_privacy_environmental_obligations], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+        - {requirement_id: S10.23-R06, disposition: satisfied, artifact_field_refs: [adverse_effect_prevention], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+        - {requirement_id: S10.23-R07, disposition: satisfied, artifact_field_refs: [affected_enabling_systems_and_storage], iso: {section_or_item: '10.23'}, gost: {section_or_item: '10.23'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: disposal plan for RIC diagnostic product, resolution_basis: TECH-DSP strategy/approach resolves to GOST 10.23, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [applicable_references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_and_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [participant_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_review_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [closure]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: F01, relation: controlled_semantic_match, generic_type: plan, specific_profiles: ['10.23'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.23'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.23-R01, state: satisfied, artifact_field_refs: [disposition_or_removal_activities]}
+          - {requirement_id: S10.23-R02, state: satisfied, artifact_field_refs: [affected_stakeholders_notifications_replacement]}
+          - {requirement_id: S10.23-R03, state: satisfied, artifact_field_refs: [protected_information_disposition]}
+          - {requirement_id: S10.23-R04, state: satisfied, artifact_field_refs: [schedule_actions_resources_for_disposal]}
+          - {requirement_id: S10.23-R05, state: satisfied, artifact_field_refs: [safety_security_privacy_environmental_obligations]}
+          - {requirement_id: S10.23-R06, state: satisfied, artifact_field_refs: [adverse_effect_prevention]}
+          - {requirement_id: S10.23-R07, state: satisfied, artifact_field_refs: [affected_enabling_systems_and_storage]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected}
+  tailoring: disposal plan applies to an information-service product; no physical dismantling is invented when no physical product-specific asset exists
+  information_item_management: {version_control: V1, review_approval: owner acceptance separate, quality_evaluation: exact-head worker plus TECH-VER, retention: canonical disposal plan, reuse_and_duplication: actual disposed-system record is created only after execution}

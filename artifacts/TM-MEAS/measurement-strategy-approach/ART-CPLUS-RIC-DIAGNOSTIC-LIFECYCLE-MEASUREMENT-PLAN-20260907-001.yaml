@@ -1,0 +1,319 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: measurement strategy/approach
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_measurement_plan_defined_real_data_pending
+acceptance_status: measurement_plan_candidate_empirical_thresholds_and_owner_acceptance_separate
+artifact_instance_purpose: >-
+  Установить измерительную модель полного жизненного цикла продукта «Диагностика клиентского случая РИЦ»:
+  отдельно измерять качество и воспроизводимость исполнения SE-среды, наблюдаемые характеристики клиентского
+  пути решения и прохождение жизненных ворот. Не подменять эксплуатационные метрики недоказанными бизнес-эффектами
+  и не задавать произвольных положительных порогов для эмпирической ценности до реального пилота.
+producer:
+  process_type_id: TM-MEAS
+  process_instance_id: PI-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE-20260907-001
+  activity_instance_id: AI-CPLUS-TM-MEAS-DEFINE-RIC-DIAGNOSTIC-LIFECYCLE-METRICS-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE
+    methodic_version_id: METHVER-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE-V1
+    methodic_version: lifecycle_measurement_v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: measurement_plan_defined_real_measurement_pending}
+scope: lifecycle measurement for one-episode E0/S01 pilot and later repeated comparable executions; no population inference
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+applicable_references:
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+introduction:
+  purpose: provide operationally defined measures for engineering quality, client decision-path evidence and lifecycle gates
+  audience: owner, engineering actor, RIC pilot participant, TECH-VAL, TECH-MNT, TECH-VER
+  coverage: supplier execution, episode/client effects, adoption/usefulness evidence and lifecycle transition evidence
+  nonpurpose: >-
+    This plan does not establish ROI, avoided penalties/losses, generalized risk reduction, legal correctness,
+    statistically representative Network prevalence, productivity growth or causal business effect.
+measurement_needs_and_information_requirements:
+  questions:
+    - can the SE environment produce a complete, evidence-classed, traceable and verified package within declared local service terms
+    - does the diagnostic reconstruction accurately reflect the participant-described episode after factual review
+    - does the result give a RIC a concrete decision basis for service, training, process, product research or no-action disposition
+    - what role do ConsultantPlus and RIC support play in the actual decision path without assigning unsupported causality
+    - what gaps remain and do they recur across later episodes
+    - after an explicitly authorized change, does a comparable later episode show an observable difference
+    - which lifecycle gates are genuinely passed and which remain planned, blocked or conditional
+  evidence_unit: one de-identified real decision episode plus its exact process-owned execution, analysis, verification and feedback records
+  baseline_rule: >-
+    Baseline/after comparisons are permitted only when a meaningful pre-change or comparable episode basis exists.
+    Missing baseline is recorded not_available and is not synthesized from memory, averages or assumptions.
+planned_activities_and_tasks:
+  - instrument the first real E0/S01 execution using the defined hard engineering and descriptive client measures
+  - collect exact timestamps/status only when the relevant event actually occurs
+  - reuse compatible M01-M09 episode coding definitions from the Wave1 plan rather than redefining them incompatibly
+  - record factual-review corrections and RIC usefulness/actionability disposition after package review
+  - after several real runs analyze distributions and missingness before proposing empirical thresholds
+  - if a RIC implements a specific change, define the comparable retest before collecting post-change evidence
+  - feed measured gaps to TECH-BMA/TECH-STK/TM-PAC only as evidence/candidate inputs
+  - evaluate whether each measure remains useful; retire noisy or decision-irrelevant measures through controlled revision
+tools_methods_and_techniques:
+  methods: [event timestamping, structured episode coding, evidence-class tagging, exact traceability inspection, participant factual review, descriptive cross-episode analysis, controlled before-after comparison only when comparable]
+  tools: [ChatGPT engineering actor, GitHub process-owned artifacts, structured measurement register, exact-head structural worker]
+  inherited_episode_coding: M01-M09 from ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+schedule:
+  first_capture: during first real authorized pilot
+  review_capture: at package review or explicit no-review disposition
+  cross_episode_review: after at least 3 real executions; descriptive only
+  threshold_review: after enough real evidence to justify thresholds; no fixed sample size is claimed here
+  retest: only after an explicit RIC change and a comparable new episode
+budget_and_cost_estimate:
+  incremental_measurement_budget_rub: 0_not_separately_authorized
+  rule: current first pilot price remains 0 RUB; no paid research/incentive/travel commitment is created by this plan
+resources_and_allocation:
+  owner: measurement scope and threshold authority
+  engineering_actor: collection, coding, traceability and reporting
+  RIC_participant: factual episode evidence and optional review/usefulness disposition
+  verifier: independent subject/structural checks as applicable
+responsibilities_and_authorities:
+  owner: {authority: accept or revise measurement plan and later establish empirical decision thresholds}
+  engineering_actor: {authority: record observed values and provisional codes, limit: cannot convert descriptive value into accepted requirement or causal claim}
+  RIC_participant: {authority: confirm/correct facts and express usefulness for own scope, limit: cannot establish Network-wide effectiveness}
+participant_interfaces:
+  RIC_to_TM_MEAS: minimized episode facts, timing statements, factual corrections, usefulness/actionability feedback
+  SE_execution_to_TM_MEAS: exact timestamps, verification states, package/version state and rework events
+  TM_MEAS_to_TECH_VAL: exact values/evidence for validation criteria
+  TM_MEAS_to_TECH_MNT: observed defects, repeated gaps and change/retest evidence
+risk_assessment_and_mitigation:
+  - {risk: process conformance metrics are mistaken for client value, mitigation: separate S/G hard gates from C empirical value measures}
+  - {risk: one episode is generalized, mitigation: report scope and episode count with every synthesis}
+  - {risk: participant judgment is treated as causal fact, mitigation: evidence-class every contribution/counterfactual field}
+  - {risk: arbitrary target makes pilot appear successful, mitigation: empirical C measures initially descriptive unless owner later approves evidence-based threshold}
+  - {risk: sensitive data collected for measurement convenience, mitigation: minimize identifiers and never require raw CRM/client documents/secrets}
+  - {risk: incomparable before-after episodes produce false delta, mitigation: define comparability dimensions before retest and use not_comparable when violated}
+quality_and_effectiveness_measures:
+  hard_engineering_targets:
+    input_disposition_coverage: 100_percent
+    evidence_class_coverage: 100_percent_material_fields
+    claim_traceability_coverage: 100_percent_material_conclusions
+    unnecessary_sensitive_data_required_or_persisted: 0
+    unresolved_mandatory_verification_at_delivery: 0
+    exact_package_version_coverage: 100_percent
+  measurement_process_quality:
+    - every observed value has source/evidence reference or explicit not_available/not_applicable
+    - calculated values preserve numerator denominator and time-basis where applicable
+    - no C-series empirical measure is silently converted into a hard acceptance threshold
+    - comparable-retest claim requires predeclared comparability basis
+environment_infrastructure_security:
+  environment: SE-GENERIC-ENVIRONMENT operating through BIND-CPLUS-SE-001 plus actual RIC communication environment when resolved
+  storage: process-owned TM-MEAS measurement register/report in MOZ1961/consultantplus
+  security: [coded identifiers by default, no credentials/secrets, minimum necessary episode detail, no raw confidential client files by default]
+training:
+  engineering_actor: apply evidence-class and not_established rules consistently
+  RIC_participant: short briefing that factual confirmation and usefulness are distinct from legal correctness or Network-wide proof
+technical_management_review_reporting:
+  per_run: measurement register plus applicable values cited by TECH-BMA/TECH-VER/TECH-OP
+  cross_run: TM-MEAS measurement report when real evidence is sufficient for synthesis
+  gate_reporting: lifecycle gate state in SEMP/project assessment products
+  threshold_governance: new owner-approved ArtifactVersion required before an empirical threshold becomes normative for the product
+related_plans_and_task_descriptions:
+  lifecycle_concept: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
+  full_lifecycle_SEMP: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+  validation_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
+  maintenance_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
+  disposal_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001-V1
+glossary:
+  hard_gate_metric: measure whose target follows an engineering requirement or explicit service term
+  empirical_value_metric: observed client/RIC measure initially descriptive until sufficient evidence and owner authority establish a threshold
+  adequate_input: input meeting the existing E0/S01 minimum-field disposition gate, including explicit not_established where permitted
+  sufficient_decision_basis: participant/RIC-declared point at which enough evidence exists to choose an action; not legal correctness
+change_procedure_and_history:
+  change_rule: changes to identity/definition/formula/source/threshold require a new controlled ArtifactVersion and compatibility assessment
+  history:
+    - {version: V1, date: '2026-09-07', change: establish lifecycle-wide supplier, client and gate metrics}
+closure:
+  condition: measurement plan is retired only with product disposal or superseded measurement strategy; historical measurements retain exact definition version
+measures:
+  supplier_SE_environment:
+    - {id: S01, name: delivery_lead_time_working_days, definition: working days from adequate_input_and_agreed_session_ready timestamp to exact verified package delivery timestamp, target: '<=3', target_basis: existing_local_Proposal_term, source: execution timestamps}
+    - {id: S02, name: RIC_session_minutes, definition: actual reconstruction session duration in minutes, target: '45-60', target_basis: existing_local_pilot_design, source: session record}
+    - {id: S03, name: input_disposition_coverage, definition: required episode fields explicitly valued_or_not_established divided by all required episode fields, target: 100_percent, source: measurement register}
+    - {id: S04, name: evidence_class_coverage, definition: material episode/analysis fields carrying evidence class divided by all material fields, target: 100_percent, source: measurement register_and_TECH_BMA}
+    - {id: S05, name: claim_traceability_coverage, definition: material delivered conclusions with exact evidence/source reference divided by all material delivered conclusions, target: 100_percent, source: TECH_BMA_and_TECH_VER}
+    - {id: S06, name: unnecessary_sensitive_data_count, definition: count of unnecessary personal identifiers credentials secrets or raw confidential client items required_or_persisted, target: 0, source: intake_and_persistence_inspection}
+    - {id: S07, name: unresolved_mandatory_verification_count_at_delivery, definition: mandatory verification criteria unresolved or failed when delivery is claimed, target: 0, source: TECH_VER}
+    - {id: S08, name: verification_rework_cycles, definition: number of material correction cycles from first verification attempt to delivery-ready pass, target: descriptive_initially, source: artifact_history_TECH_VER}
+    - {id: S09, name: package_configuration_coverage, definition: exact recipient member ArtifactVersions registered divided by intended recipient package members, target: 100_percent, source: TM_IM_information_register}
+    - {id: S10, name: schedule_deviation_working_days, definition: actual_delivery minus promised_delivery relative to S01 start basis, target: '<=0', target_basis: existing_Proposal_term, source: execution timestamps}
+    - {id: S11, name: factual_correction_rate, definition: material factual assertions corrected after participant review divided by factual assertions reviewed, target: descriptive_initially, source: participant_review_record}
+    - {id: S12, name: delivery_integrity, definition: whether only declared recipient products/versions were issued and distribution state recorded, values: [pass, fail, not_delivered], target: pass_when_delivery_occurs, source: AGR_SUP_supply_record}
+  client_RIC_episode_and_value:
+    - {id: C01, name: time_to_sufficient_decision_basis, definition: elapsed time reported_or_observed from episode trigger/work start to participant-declared sufficient decision basis, values: duration_or_not_established, threshold: none_initially}
+    - {id: C02, name: initial_action_changed_by_ConsultantPlus_or_RIC, definition: participant judgment whether product/service changed initial intended action, values: [yes, partial, no, not_established], evidence_class: participant_judgment}
+    - {id: C03, name: working_artifact_completion, definition: whether episode ended with reproducible working artifact such as memo calculation contract position procedure or other retained basis, values: [yes, partial, no, not_established]}
+    - {id: C04, name: additional_sources_after_SPS_count, definition: count and types of additional information sources used after ConsultantPlus path before decision, values: nonnegative_integer_plus_types_or_not_established}
+    - {id: C05, name: external_professional_escalation, definition: whether and where the episode escalated outside normal product/RIC path, values: [none, internal_expert, external_expert, regulator_or_authority, other, not_established]}
+    - {id: C06, name: RIC_intervention_role_and_result, definition: reported RIC contribution role and observed episode result without full causal attribution, role_values: [setup, training, consultation, support, escalation, other, none], result: narrative_plus_evidence_class}
+    - {id: C07, name: retained_basis_reproducibility, definition: whether another authorized person could reconstruct the basis of the decision from retained evidence, values: [yes, partial, no, not_established]}
+    - {id: C08, name: repeated_independent_resolution, definition: after prior RIC support whether participant later resolves a materially similar episode without equivalent support, values: [yes, no, not_observed, not_comparable, not_established]}
+    - {id: C09, name: decision_path_gap_profile, definition: count plus dominant remaining gap and severity, gap_values: [information, search, interpretation, workflow, access, training, service, other, none], severity_values: [low, medium, high, critical, not_established]}
+    - {id: C10, name: regulatory_change_to_process_change_time, definition: elapsed time from detected relevant regulatory change to implemented organizational process/rule change when applicable, values: duration_or_not_applicable_or_not_established}
+    - {id: C11, name: recurrence_and_consequence_criticality, definition: reuse Wave1 M03/M04 participant-reported recurrence and consequence categories, values: Wave1_compatible}
+    - {id: C12, name: purchase_renewal_configuration_relevance, definition: whether participant/buyer reports scenario as material to purchase renewal configuration access or service decision, values: [yes, no, not_established], evidence_class: participant_judgment_not_conversion}
+    - {id: C13, name: reconstruction_member_check_state, definition: participant disposition of factual reconstruction, values: [confirmed, corrected, contested, not_reviewed]}
+    - {id: C14, name: diagnostic_actionability, definition: whether the RIC can state a concrete service training process research or no-action decision supported by the diagnostic, values: [action_identified, no_action_with_rationale, insufficient_for_decision, not_reviewed], threshold: none_initially}
+    - {id: C15, name: post_change_retest_delta, definition: predeclared difference in selected comparable measures after an explicitly authorized RIC change, values: delta_or_not_available_or_not_comparable, use_rule: no_causal_claim_without_appropriate_design}
+  lifecycle_gates:
+    - {id: G01, name: canonical_product_mapping_coverage, definition: planned durable lifecycle results mapped to canonical ProcessType/O and applicable GOST composition divided by all planned durable results, target: 100_percent}
+    - {id: G02, name: exact_head_verification_gate, definition: required exact-head structural workflow and subject TECH_VER state for changed products, values: [pass, fail, pending], target: pass_before_readiness_or_merge}
+    - {id: G03, name: transition_authority_resolution, definition: recipient identity channel and applicable authority/acquisition state all resolved before real transition, values: [resolved, unresolved], target: resolved_before_delivery}
+    - {id: G04, name: real_episode_validation_completed, definition: real operational use evaluated under exact validation plan, values: [yes, no, not_started], target: yes_before_pilot_validation_claim}
+    - {id: G05, name: repeated_verified_operation_count, definition: count of real executions with exact products and verification status, target: descriptive_until_scaling_criterion_is_owner_approved}
+    - {id: G06, name: material_change_reverification_coverage, definition: material maintained changes reverified divided by all material maintained changes, target: 100_percent}
+    - {id: G07, name: disposal_evidence_coverage, definition: applicable disposal/retention/privacy/notification actions evidenced divided by applicable planned disposal actions, target: 100_percent_before_disposal_complete}
+data_collection_and_storage:
+  canonical_record: future TM-MEAS measurement register per real execution or controlled batch
+  timestamp_source: actual process/product distribution records; no estimated timestamps substituted
+  client_field_source: participant report/review, separately evidence-classed
+  calculated_measure_rule: store raw inputs plus calculation version
+  missingness: [not_established, not_available, not_applicable, not_comparable] are explicit values, never zero
+analysis_interpretation_and_reporting:
+  single_pilot: report exact values and limitations; no Network inference
+  repeated_runs: descriptive distributions, missingness and pattern recurrence only until a stronger design exists
+  before_after: compare only predeclared comparable measures; report confounders and no causal attribution by default
+  decision_use: hard S/G failures block only dependent readiness; C measures inform validation/improvement decisions without automatic requirement promotion
+evaluation_of_measurement_process:
+  every_review: identify measures with excessive missingness, ambiguous coding, low decision usefulness or high collection burden
+  revision_trigger: materially ambiguous or unused measure, new validation decision, new lifecycle stage, or accepted product change
+  success_of_measurement_process: measures support explicit lifecycle decisions without forcing unsupported claims
+owner_product_request:
+  exact_visible_text: |-
+    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
+    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
+  request_specific_requirements: [define metrics for both lifecycles, distinguish hard engineering gates from empirical client value, preserve evidence boundaries, map measurement product to standard composition]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_MEAS_measurement_strategy
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, measures]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, measurement_needs_and_information_requirements.baseline_rule]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [applicable_references, measures]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_procedure_and_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+verification:
+  structural_status: pending_fresh_exact_head
+  semantic_status: metric_definitions_candidate_pending_TECH_VER_and_first_real_data_review
+  owner_acceptance: purpose_change_and_measurement_design_authorized_threshold_adoption_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.7', process_name: 'Measurement process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.7', process_name: 'Процесс измерений'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: measurement strategy/approach
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [applicable_references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_and_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [participant_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_review_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [closure], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.46-R01, disposition: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R02, disposition: satisfied, artifact_field_refs: [measures], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R03, disposition: satisfied, artifact_field_refs: [data_collection_and_storage], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R04, disposition: satisfied, artifact_field_refs: [analysis_interpretation_and_reporting], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R05, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities, resources_and_allocation, tools_methods_and_techniques, schedule], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R06, disposition: satisfied, artifact_field_refs: [evaluation_of_measurement_process], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: measurement plan for RIC diagnostic lifecycle, resolution_basis: TM-MEAS strategy/approach resolves to GOST 10.46 measurement plan, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [applicable_references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_and_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [participant_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_review_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [closure]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: F01, relation: controlled_semantic_match, generic_type: plan, specific_profiles: ['10.46'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.46'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.46-R01, state: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements]}
+          - {requirement_id: S10.46-R02, state: satisfied, artifact_field_refs: [measures]}
+          - {requirement_id: S10.46-R03, state: satisfied, artifact_field_refs: [data_collection_and_storage]}
+          - {requirement_id: S10.46-R04, state: satisfied, artifact_field_refs: [analysis_interpretation_and_reporting]}
+          - {requirement_id: S10.46-R05, state: satisfied, artifact_field_refs: [responsibilities_and_authorities, resources_and_allocation, tools_methods_and_techniques, schedule]}
+          - {requirement_id: S10.46-R06, state: satisfied, artifact_field_refs: [evaluation_of_measurement_process]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected}
+  tailoring: existing Wave1 M01-M09 are reused where compatible; this product adds lifecycle-specific measures without changing their historical definitions
+  information_item_management: {version_control: V1, review_approval: owner accepts separately, quality_evaluation: exact-head worker plus TECH-VER plus first-real-data review, retention: canonical lifecycle measurement plan, reuse_and_duplication: Wave1 measurement plan remains separate research-wave plan}
