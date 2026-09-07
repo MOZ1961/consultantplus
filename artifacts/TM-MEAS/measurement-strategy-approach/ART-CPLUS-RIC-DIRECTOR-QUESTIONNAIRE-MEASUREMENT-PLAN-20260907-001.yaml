@@ -376,7 +376,7 @@ standards_trace:
         - {requirement_id: S10.46-R06, disposition: satisfied, artifact_field_refs: [measurement_process_evaluation], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
       local_additive_requirements: []
 content_compliance:
-  control_artifact_version_id: ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
   information_item_identity:
     resolved_name_or_semantic_identity: measurement plan for RIC director positioning and interaction interview
     resolution_basis: TM-MEAS measurement strategy/approach represented by ГОСТ §10.46 measurement plan
