@@ -1,0 +1,365 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: measurement strategy/approach
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_director_questionnaire_prepared
+acceptance_status: questionnaire_prepared_not_executed_not_RIC_validated_or_baselined
+artifact_instance_purpose: >-
+  Подготовить для руководителя РИЦ нейтральный доказательный опросник как часть стандартного Плана измерений:
+  сначала получить без подсказок факты о реальных управленческих решениях, клиентских и сервисных эпизодах,
+  используемых основаниях, разрывах и фактических альтернативах, затем отдельно проверить понятность и полезность
+  предлагаемого взаимодействия. Не превращать интерес к пилоту в доказательство рыночного принятия и не требовать
+  персональные данные или выгрузку CRM по умолчанию.
+producer:
+  process_type_id: TM-MEAS
+  process_instance_id: PI-CPLUS-TM-MEAS-RIC-DIRECTOR-QUESTIONNAIRE-20260907-001
+  activity_instance_id: AI-CPLUS-TM-MEAS-PREPARE-RIC-DIRECTOR-QUESTIONNAIRE-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-MEAS-RIC-DIRECTOR-EVIDENCE-INTERVIEW
+    methodic_version_id: METHVER-CPLUS-TM-MEAS-RIC-DIRECTOR-EVIDENCE-INTERVIEW-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: candidate_questionnaire_ready_for_subject_verification}
+scope: >-
+  Интервью руководителя РИЦ ориентировочно 35–50 минут. Часть A реконструирует реальные решения и эпизоды
+  без показа нашей модели; часть B после краткого объяснения взаимодействия проверяет управленческую применимость,
+  доверие, границы обещаний и условия пилота. Опросник не измеряет рыночную долю, ROI или юридическую правильность решений.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+references:
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  - ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-POSITIONING-PILOT-PLAN-VERIFICATION-REPORT-20260907-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+introduction:
+  purpose: получить у руководителя РИЦ проверяемые сведения о реальной управленческой работе и затем отдельно проверить предлагаемое взаимодействие
+  audience: [руководитель РИЦ, owner, interviewer, analyst, subsequent TECH-BMA, subsequent TM-MEAS]
+  coverage: [управленческие решения, конкретный эпизод, основания, неопределенность, альтернативы, вклад КонсультантПлюс, вклад РИЦ, результат, повторяемость, применимость, доверие, границы обещаний, пилот]
+  nonpurpose: [не продажный скрипт, не рыночная валидация, не замена клиентским интервью, не официальный выбор позиционирования]
+measurement_needs_and_information_requirements:
+  primary_questions:
+    - какие управленческие решения руководитель реально принимает и каких оснований ему не хватает
+    - какой конкретный недавний эпизод показывает клиентское решение и действие РИЦ
+    - какие альтернативы и источники реально использовались
+    - что отдельно дали КонсультантПлюс, РИЦ, клиент и другие участники
+    - какой результат наблюдался и что осталось неизвестным
+    - какие повторяющиеся сценарии подтверждены примерами
+    - какой аналитический результат реально пригоден для управленческого решения
+    - какие требования к доверию, границам обещаний и пилоту считает существенными директор
+  evidence_unit: конкретное утверждение руководителя, привязанное к роли, реальному эпизоду или явной реакции на показанное объяснение, с классом доказательства
+  evidence_classes: [director_reported_episode_fact, director_interpretation_or_judgment, director_stated_management_decision, director_stated_choice_or_trust_criterion, director_stated_actual_alternative, director_reaction_to_interaction_view, director_pilot_intent_or_condition, interviewer_coding_or_inference, provider_existing_claim, not_established]
+planned_activities_and_tasks:
+  - завершить Q01-Q17 до показа объяснения взаимодействия
+  - получить один конкретный недавний эпизод или явно зафиксировать недостаточность
+  - зафиксировать фактические альтернативы без заданного исследователем списка
+  - разделить вклад КонсультантПлюс РИЦ клиента и иных источников
+  - показать exact director-facing view только после unaided части
+  - провести Q18-Q26 о полезности доверии границах и условиях пилота
+  - после интервью выполнить reviewer check на наведение пропуски и смешение классов доказательств
+  - реальные ответы сохранять только через будущий TM-MEAS measurement register
+tools_methods_techniques:
+  method: semi-structured director interview with critical-episode reconstruction and unaided-before-aided value testing
+  techniques: [one concrete recent case before generalization, neutral chronology, open question before candidate categories, actual alternatives before provider prompts, separate facts judgments criteria alternatives and inferences, separate ConsultantPlus and RIC contributions, explicit not_established, separate management usefulness and pilot intent]
+  tools: [interview channel, embedded questionnaire, structured coding representation, future TM-MEAS measurement register]
+schedule:
+  sequencing:
+    - {stage: subject_TECH_VER, status: required_before readiness claim}
+    - {stage: director_interview_part_A, duration: approximately 20-30 minutes}
+    - {stage: show_interaction_view, duration: approximately 3-5 minutes}
+    - {stage: director_interview_part_B, duration: approximately 10-15 minutes}
+    - {stage: reviewer_check, status: after interview}
+    - {stage: persistence_and_synthesis, status: only after actual data}
+  dates: not_established
+budget_and_cost_estimate:
+  state: no_external_cost_committed
+  estimate: preparation is internal; incentives travel and other external costs are not authorized or assumed
+resources_and_allocation:
+  owner: scope external-use and acceptance authority
+  director_participant: voluntary evidence from own work
+  interviewer: neutral questioning and sequence control
+  analyst: evidence-class coding and bounded inference
+  repository: process-owned products and future measurement records
+responsibilities_and_authorities:
+  owner: {authority: authorize external use participant contact acceptance and any later positioning decision}
+  interviewer: {authority: ask and clarify; no authority to promise product changes or approved positioning}
+  analyst: {authority: provisional coding and evidence-bounded inference only}
+  director_participant: {authority: describe own decisions and experience; market/Network claims bounded by own knowledge}
+participant_interfaces:
+  director_to_interviewer: management decisions episode facts evidence gaps alternatives criteria value language and pilot conditions
+  interviewer_to_analysis: de-identified structured responses with evidence-class tags
+  analysis_to_TECH_BMA: supported contradicted mixed and unresolved hypotheses
+  analysis_to_TM_DEC: no automatic decision
+risk_assessment_and_mitigation:
+  - {risk: опрос подтверждает нашу презентацию, mitigation: PART_A полностью до показа view}
+  - {risk: общие мнения вместо реального случая, mitigation: concrete recent episode or explicit not_established}
+  - {risk: researcher invents alternatives, mitigation: unaided elicitation and no default competitor set}
+  - {risk: RIC opinion becomes client evidence, mitigation: separate evidence class and later client-side wave}
+  - {risk: pilot interest becomes proof of value, mitigation: separate pilot_intent from management_usefulness}
+  - {risk: unsupported causal/financial claim, mitigation: prohibit ROI prevented fines and general-effect attribution}
+  - {risk: sensitive data enter interview, mitigation: de-identification and no CRM dump names credentials correspondence or margin by default}
+quality_and_effectiveness_measures:
+  quality_criteria:
+    - PART_A completed before view exposure
+    - concrete management decision and episode or explicit insufficiency recorded
+    - actual alternatives participant-stated or not_established
+    - facts and judgments distinguishable
+    - ConsultantPlus and RIC contributions separate
+    - management usefulness and pilot intent separate
+    - aided reactions trace to exact view
+    - no sensitive data required for validity
+  effectiveness_signals:
+    - at least one actionable evidence gap or explicit finding that the method adds no useful management information
+    - director can name a management decision that would or would not use the result
+    - trust and stop/continue criteria are explicit
+  noncriteria: [willingness to talk, one positive interview, aided preference]
+environment_infrastructure_security:
+  environment: authorized RIC director interview plus MOZ1961/consultantplus persistence
+  infrastructure: interview channel and structured response representation
+  privacy_security: [role/context instead of personal identifiers, no client names contacts credentials CRM dumps correspondence or margin by default, direct quotations only with consent, audio only with consent and retention decision]
+  safety: interview makes no legal tax professional or client decision
+training:
+  interviewer_orientation: [do not show view until Q17, ask one question at a time where feasible, probe concrete examples without forcing, distinguish evidence classes, preserve disagreement]
+technical_management_review_reporting:
+  pre_use_review: supporting TECH-VER
+  post_interview_review: question-order contamination missing fields coding drift and privacy
+  structural_review: generic-SE external-client worker
+  future_reporting: TM-MEAS measurement report after data; TECH-BMA successor only if evidence materially changes hypotheses
+related_plans_and_task_descriptions:
+  positioning_report: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  broad_wave_plan: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  pilot_plan: ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
+  existing_director_offer: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  standard_product_rule: questionnaire is a view inside this TM-MEAS Plan and not a standalone persistent product
+questionnaire:
+  instructions_to_interviewer:
+    - explain that the aim is to understand real management work rather than confirm a slogan
+    - finish PART_A before showing any interaction/benefit explanation
+    - when an answer is general ask for one recent concrete example
+    - allow not_established and do not fill gaps for the participant
+  PART_A_unaided_real_management_and_episode:
+    - {id: Q01, question: 'Какие 2–3 решения о клиентах, сервисе или использовании КонсультантПлюс вам как руководителю РИЦ приходится принимать регулярно?'}
+    - {id: Q02, question: 'Какое из этих решений в последний раз было реально важным или трудным? Возьмем один конкретный недавний случай.'}
+    - {id: Q03, question: 'Что произошло и что стало сигналом, что решение нужно принимать?'}
+    - {id: Q04, question: 'Что именно требовалось решить или изменить и к какому сроку?'}
+    - {id: Q05, question: 'На какие факты, данные, отчеты, разговоры или наблюдения вы реально опирались?'}
+    - {id: Q06, question: 'Чего вам не хватало для уверенного решения? Что осталось неизвестным?'}
+    - {id: Q07, question: 'Какие другие варианты действий или источники информации вы реально рассматривали?'}
+    - {id: Q08, question: 'Был ли в этом случае конкретный клиентский эпизод? Какое решение или действие требовалось самому клиенту?'}
+    - {id: Q09, question: 'Что в этом эпизоде конкретно позволил сделать КонсультантПлюс, а чего он сам не решил?'}
+    - {id: Q10, question: 'Что конкретно сделал РИЦ: консультация, обучение, сопровождение, настройка, эскалация или другое?'}
+    - {id: Q11, question: 'Что сделал сам клиент и какие еще люди или источники повлияли на результат?'}
+    - {id: Q12, question: 'Чем эпизод закончился на тот момент? Какой результат или статус можно было наблюдать?'}
+    - {id: Q13, question: 'Что осталось нерешенным, спорным или неясным?'}
+    - {id: Q14, question: 'Насколько похожие случаи повторяются? На чем основано ваше мнение — можете привести еще один реальный пример?'}
+    - {id: Q15, question: 'Какое управленческое решение сегодня труднее всего принять по обычным данным CRM, статистике обращений, продаж или обучения?'}
+    - {id: Q16, question: 'Что должно быть в доказательстве, чтобы вы реально использовали его в управленческом решении: воспроизводимость, связь с конкретным случаем, сравнение, скорость, другое?'}
+    - {id: Q17, question: 'Какой анализ клиентских случаев был бы для вас бесполезным или даже вводящим в заблуждение?'}
+  PART_B_after_showing_interaction_and_benefit_view:
+    view_ref: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1
+    questions:
+      - {id: Q18, question: 'Что в этом способе взаимодействия полезно именно для ваших управленческих решений, если полезно вообще?'}
+      - {id: Q19, question: 'Что звучит слишком общо, неправдоподобно или не соответствует работе вашего РИЦ?'}
+      - {id: Q20, question: 'Какие решения вы могли бы принимать лучше, если бы разобрали 3–5 таких обезличенных эпизодов?'}
+      - {id: Q21, question: 'Какой результат такого анализа вы реально использовали бы на совещании: короткий вывод, типовые сценарии, подтвержденные разрывы, рекомендации, другое?'}
+      - {id: Q22, question: 'Что вам нужно увидеть, чтобы доверять выводам: исходный эпизод, трассу к фактам, независимую проверку, повторяемость, сравнение, другое?'}
+      - {id: Q23, question: 'Где для вас проходит граница ответственности КонсультантПлюс, РИЦ и самого клиента?'}
+      - {id: Q24, question: 'Какое обещание о пользе такого взаимодействия мы точно не должны давать?'}
+      - {id: Q25, question: 'Имеет ли смысл проверить подход на одном реальном обезличенном случае? Если да — какой участник и какой тип случая подходят лучше всего; если нет — почему?'}
+      - {id: Q26, question: 'Какой результат первого пилота будет для вас достаточным основанием продолжить на 3–5 случаях, а какой — основанием остановиться?'}
+measures:
+  - {id: M01, name: director_management_decision, operational_definition: concrete recurring management decision plus recent instance}
+  - {id: M02, name: decision_evidence_base, operational_definition: data facts conversations or observations actually used}
+  - {id: M03, name: evidence_gap, operational_definition: missing uncertain or unavailable decision information}
+  - {id: M04, name: actual_alternatives, operational_definition: participant-stated alternatives; not_established allowed}
+  - {id: M05, name: client_decision_episode, operational_definition: concrete client-side required decision/action when known}
+  - {id: M06, name: consultantplus_contribution, operational_definition: participant-described contribution separated from total outcome}
+  - {id: M07, name: RIC_contribution, operational_definition: RIC intervention separated from ConsultantPlus client and others}
+  - {id: M08, name: observable_result_and_uncertainty, operational_definition: episode status/result plus unresolved uncertainty}
+  - {id: M09, name: recurrence_evidence, operational_definition: repeated-case claim plus example or explicit weak basis}
+  - {id: M10, name: management_usefulness, operational_definition: concrete management decision that would use or reject proposed analysis}
+  - {id: M11, name: trust_criterion, operational_definition: evidence feature required for reliance}
+  - {id: M12, name: unacceptable_promise, operational_definition: director-stated credibility boundary}
+  - {id: M13, name: pilot_intent_and_condition, operational_definition: yes/no/conditional pilot interest and rationale}
+  - {id: M14, name: continuation_stop_criterion, operational_definition: evidence threshold to continue or stop}
+data_collection_and_storage:
+  collection: [one structured response set per director, one concrete episode preferred, paraphrase by default]
+  storage:
+    canonical_future_state: actual responses become TM-MEAS measurement register rows after data exist
+    temporary_notes: transient only
+    sensitive_data: unnecessary identifiers and confidential details excluded
+analysis_interpretation_reporting:
+  analysis: [analyze PART_A before PART_B, distinguish episode facts from general judgments, preserve not_established and contradictions, compare recurrence claims with examples, separate management usefulness from pilot intent, separate contributions]
+  interpretation_rules: [one director is not Network prevalence, aided preference does not replace unaided evidence, pilot intent is not proof of usefulness or willingness to pay, no superiority without comparison]
+  reporting: [supported contradicted mixed and unresolved hypotheses, evidence class per finding, next measurement only where decision or gap is explicit]
+measurement_process_evaluation:
+  after_first_interview: [test unaided completion, test concrete-case yield, inspect sales pressure in PART_B, version material question changes]
+  after_three_director_interviews_if_authorized: [compare evidence yield, assess coding consistency, decide whether to integrate into broader wave]
+change_procedure_and_history:
+  procedure: material change to sequence evidence classes questions measures or privacy requires successor ArtifactVersion and renewed TECH-VER as applicable
+  history: V1 establishes director-specific questionnaire inside standard TM-MEAS measurement plan
+completion_process:
+  plan_completion: structurally verified and semantically reviewed candidate; execution and RIC acceptance separate
+  interview_completion_candidate: [PART_A before view, concrete decision/episode or insufficiency, PART_B reactions/trust/stop criteria, privacy/evidence rules followed]
+  next_gate: actual response data -> TM-MEAS measurement register -> measurement report; official positioning only via separate decision
+glossary:
+  director_interview: interview focused on real RIC management decisions and evidence needs
+  unaided: response before candidate explanation
+  aided: response after exact candidate explanation
+  management_usefulness: support for a concrete management decision, separate from liking the idea
+  pilot_intent: willingness or condition to try, not adoption evidence
+  evidence_gap: materially relevant unavailable uncertain or untraceable information
+change_history:
+  - {version: V1, date: '2026-09-07', change: create director-specific positioning and interaction questionnaire inside standard measurement plan}
+owner_product_request:
+  exact_visible_text: 'сливай все что сделал. сделай опросник для руководителя РИЦ. сделай взгляд для него, объясняющий наше взаимодействие и пользу. краткую сводку работ в этом диалоге'
+  resolved_referent: create a directly usable RIC-director questionnaire without making it a nonstandard standalone product
+  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
+  purpose_provenance: current_conversation_first_substantive_owner_request
+  request_specific_requirements:
+    - опросник адресован руководителю РИЦ
+    - сначала unaided часть затем реакция на объяснение взаимодействия
+    - вопросы поддерживают реальные управленческие решения и проверку позиционирования
+    - персональные и конфиденциальные данные не требуются по умолчанию
+    - опросник остается представлением стандартного TM-MEAS Плана
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_MEAS_measurement_strategy_approach
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, questionnaire, measures]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [completion_process, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, measurement_needs_and_information_requirements, analysis_interpretation_reporting]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker_and_TECH_VER}
+verification:
+  structural_status: pending_exact_external_client_information_product_worker
+  semantic_status: pending_supporting_TECH_VER
+  owner_acceptance: questionnaire creation authorized; external use participant contact execution and positioning adoption separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001.yaml@change/consultantplus-20260907-ric-director-questionnaire-and-view
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.7', process_name: 'Measurement process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.7', process_name: 'Процесс измерений'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: measurement strategy/approach
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [participant_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_review_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history, change_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [completion_process], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.46-R01, disposition: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R02, disposition: satisfied, artifact_field_refs: [measures, questionnaire], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R03, disposition: satisfied, artifact_field_refs: [data_collection_and_storage], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R04, disposition: satisfied, artifact_field_refs: [analysis_interpretation_reporting], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R05, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities, resources_and_allocation, schedule], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R06, disposition: satisfied, artifact_field_refs: [measurement_process_evaluation], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: measurement plan for RIC director positioning and interaction interview, resolution_basis: TM-MEAS measurement strategy/approach specialized by §10.46 measurement plan, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [participant_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_review_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history, change_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [completion_process]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: plan
+    specific_profiles: ['10.46']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.46'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.46-R01, state: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements]}
+          - {requirement_id: S10.46-R02, state: satisfied, artifact_field_refs: [measures, questionnaire]}
+          - {requirement_id: S10.46-R03, state: satisfied, artifact_field_refs: [data_collection_and_storage]}
+          - {requirement_id: S10.46-R04, state: satisfied, artifact_field_refs: [analysis_interpretation_reporting]}
+          - {requirement_id: S10.46-R05, state: satisfied, artifact_field_refs: [responsibilities_and_authorities, resources_and_allocation, schedule]}
+          - {requirement_id: S10.46-R06, state: satisfied, artifact_field_refs: [measurement_process_evaluation]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: director-specific interview instrument represented inside the measurement plan; no lifecycle process tailoring introduced
+  information_item_management:
+    version_control: V1 first director-specific plan
+    review_approval: supporting TECH-VER and structural worker required before readiness claim; external use authority separate
+    quality_evaluation: semantic TECH-VER plus generic-SE external-client structural gate
+    retention: client process-owned measurement strategy/approach in MOZ1961/consultantplus
+    reuse_and_duplication: material question order or measure changes require successor ArtifactVersion
+  composition_state: candidate_complete_pending_exact_head_external_worker
