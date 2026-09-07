@@ -1,56 +1,159 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001
-artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
-supersedes_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V2
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
 artifact_label: supply response
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_draft_not_issued
+lifecycle_status: owner_directed_candidate_draft_method_evidence_integrated_not_issued
 acceptance_status: owner_external_issue_and_RIC_acceptance_separate
 artifact_instance_purpose: >-
-  Сформировать нормативно полный внешний продукт «Предложение» для РИЦ на поставку пакета
-  информационных продуктов «Диагностика клиентского случая РИЦ». Предложение использует exact upstream
-  определение пакета, называет продукты ценности для РИЦ и внешнюю структуру работ по их производству.
-  Полный План/SEMP, полная WBS и внутренние доказательные/операционные продукты адресату не передаются.
+  Сформировать нормативно полный и краткий внешний продукт «Предложение» для директора РИЦ на
+  пилотный пакет «Диагностика клиентского случая РИЦ», объяснив не только состав результата и работ,
+  но и почему выбран именно такой диагностический контур. Доказательная защита опирается на exact
+  process-owned Запись источников и Отчет о методическом обосновании; сильные эффекты, не подтвержденные
+  реальными данными РИЦ, не заявляются.
 producer:
   process_type_id: AGR-SUP
   process_instance_id: PI-CPLUS-AGR-SUP-RIC-EXPRESS-EPISODE-PROPOSAL-20260906-001
-  activity_instance_id: AI-CPLUS-AGR-SUP-PREPARE-RIC-PROPOSAL-20260906-001
-  methodic_instance: {methodic_id: METH-CPLUS-AGR-SUP-RIC-PROPOSAL, methodic_version_id: METHVER-CPLUS-AGR-SUP-RIC-PROPOSAL-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime_not_adopted}
-request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PRODUCT-PACKAGE-20260906-001, required_output_label: operation report}
-interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
-issued_at_and_status: {issued_at: '2026-09-06', status: draft_candidate_not_sent}
+  activity_instance_id: AI-CPLUS-AGR-SUP-PREPARE-RIC-PROPOSAL-EVIDENCE-V4-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-AGR-SUP-RIC-PROPOSAL
+    methodic_version_id: METHVER-CPLUS-AGR-SUP-RIC-PROPOSAL-V2
+    methodic_version: runtime-provisional-evidence-integrated-v2
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-EVIDENCE-V4-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: draft_candidate_method_evidence_integrated_not_sent}
 scope: >-
   Однократная пилотная поставка пакета продуктов по одному обезличенному реальному сервисному эпизоду
-  РИЦ с одним сотрудником РИЦ: получение минимальной исходной информации, 45–60-минутная рабочая
-  сессия, реконструкция клиентского сценария, анализ вклада КонсультантПлюс и сервиса РИЦ, выявление
-  разрывов, формирование основного аналитического продукта, отдельная верификация и передача пакета РИЦ.
+  РИЦ с одним сотрудником РИЦ: минимальный вход, 45–60-минутная рабочая сессия, реконструкция клиентского
+  сценария решения, анализ вклада КонсультантПлюс и сервиса РИЦ, выявление разрывов, формирование
+  основного аналитического Отчета, отдельная верификация и обсуждение результата. Методические основания
+  и их ограничения включены в краткой форме; сетевой, финансовый и причинный эффект одним пилотом не доказываются.
 issuing_organization: owner-authorized engineering environment
 references:
   - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
   - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
   - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
 context: >-
-  РИЦ является получателем продуктов и услуг этой инженерной среды. Контекст Сети КонсультантПлюс
-  определяет предмет анализа и адресата, но не делает КонсультантПлюс поставщиком данного предложения.
-  Ценность для РИЦ оформляется как пакет самостоятельных информационных продуктов процессов по ГОСТ,
-  а не как набор внутренних артефактов среды или псевдопродуктов «карта/паспорт».
+  РИЦ хорошо видит собственные действия — консультации, обучение, сопровождение, настройку, эскалацию,
+  — но обычная сервисная запись не показывает, в каком профессиональном решении клиента действие стало
+  существенным, что произошло до обращения и после него, какая часть результата связана с СПС, какая —
+  с РИЦ, клиентом и иными источниками. Пилот создает именно эту недостающую единицу управленческого знания:
+  решение клиента → путь принятия → вклад участников → наблюдаемый результат → подтвержденный разрыв.
 designation: CPLUS-RIC-PROP-E0-S01-20260906-001
 summary: >-
-  Предлагается бесплатно провести один пилот и поставить РИЦ пакет из двух результатов: Отчета о
-  диагностике клиентского сценария и Отчета о верификации этого результата. Внутри основного Отчета
-  РИЦ получает представления сценария, покрытия и разрывов. РИЦ предоставляет одного сотрудника и один
-  недавний обезличенный эпизод. Внешний цикл — до трех рабочих дней после достаточного входа; рабочая
-  сессия — 45–60 минут. SEMP, полная WBS, измерительная запись и TECH-OP остаются внутри среды.
+  Предлагается бесплатно проверить на одном реальном обезличенном случае, можно ли превратить привычную
+  сервисную историю РИЦ в проверяемую модель клиентского решения. РИЦ предоставляет одного сотрудника
+  и один недавний эпизод; поставщик за 45–60 минут восстанавливает путь решения и в течение до трех
+  рабочих дней выдает два самостоятельных продукта: Отчет о диагностике клиентского сценария и Отчет
+  о верификации. Методика опирается на Critical Incident/Decision Method, исследования клиентского пути,
+  service blueprinting и contribution analysis. Пилот не обещает ROI, предотвращенные штрафы, общее
+  снижение риска или репрезентативность по Сети: его задача — проверить полезность самой единицы анализа
+  и получить первый управленчески пригодный случай.
 body:
   recipient_and_subject:
-    recipient: руководитель или уполномоченный сотрудник РИЦ КонсультантПлюс
+    recipient: директор или уполномоченный руководитель РИЦ КонсультантПлюс
     subject: пилотная поставка пакета продуктов «Диагностика клиентского случая РИЦ»
-    recipient_decision_requested: выбрать одного участника, один обезличенный эпизод и согласовать время пилотной сессии
+    recipient_decision_requested: выбрать одного участника, один недавний обезличенный эпизод и согласовать время пилотной сессии
+
+  recipient_facing_short_version:
+    headline: 'Понять не только что сделал РИЦ, а где именно он создал ценность в решении клиента'
+    problem: >-
+      Звонок, консультация, обучение или использованная функция показывают активность. Для развития сервиса
+      директору важнее другое: какое решение должен был принять клиент, где он остановился, что изменилось
+      после вмешательства РИЦ и какую часть результата дали КонсультантПлюс, РИЦ, сам клиент и другие источники.
+    offer: >-
+      Возьмем один недавний обезличенный случай и за одну рабочую сессию восстановим цепочку
+      «задача клиента → путь решения → роль КонсультантПлюс → роль РИЦ → результат → разрывы».
+      Через два рабочих дня после сессии РИЦ получает основной Отчет и отдельный Отчет о его верификации.
+    why_it_matters_for_RIC: >-
+      Такой объект позволяет увидеть, какие вмешательства РИЦ действительно нужны в конкретных сценариях,
+      какие затруднения повторяются как кандидаты на улучшение, чему обучать сотрудников и пользователей и
+      какой конкретный участок клиентского решения можно объяснять как ценность сервиса РИЦ.
+    why_it_matters_for_consultantplus: >-
+      Накопление однотипных эпизодов потенциально дает Координационному центру более содержательный сигнал,
+      чем отдельная просьба «добавить функцию»: фиксируются задача, точка затруднения, использованные
+      возможности системы, действие РИЦ, обходной путь и наблюдаемый результат. Использование такого сигнала
+      КЦ еще должно быть проверено и не заявляется как установленный эффект.
+    why_it_matters_for_client: >-
+      Метод делает будущие изменения сервиса привязанными к реальным профессиональным ситуациям клиента,
+      а не только к внутренним представлениям поставщика. Измеримое улучшение клиентского результата требует
+      последующего цикла «разрыв → изменение → новый эпизод → сравнение» и одним пилотом не доказывается.
+    pilot_boundary: >-
+      Один эпизод проверяет полезность метода и результата для конкретного РИЦ. Он не доказывает частотность
+      паттернов по Сети, финансовый эффект, готовность платить, предотвращенные штрафы или общее снижение риска.
+    call_to_action: >-
+      От РИЦ требуется один сотрудник, один конкретный недавний случай и 45–60 минут. Стоимость первого пилота — 0 руб.
+
+  method_evidence_basis:
+    evidence_products:
+      source_register:
+        artifact_version_id: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+        exact_address: MOZ1961/consultantplus:artifacts/TM-IM/information-register/ART-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001.yaml@5ec3ceb8d77b0815fd9fef7b3281497caf621b58
+      method_justification_report:
+        artifact_version_id: ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+        exact_address: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001.yaml@5ec3ceb8d77b0815fd9fef7b3281497caf621b58
+    concise_anchors:
+      - id: ME-01
+        claim: конкретный недавний эпизод информативнее общего мнения для реконструкции фактического поведения и решения
+        source_ids: [SRC-FLANAGAN-CIT-1954, SRC-KLEIN-CDM-1989]
+        stable_links: [https://doi.org/10.1037/h0061470, https://doi.org/10.1109/21.31053]
+        body_summary: >-
+          Critical Incident Technique систематизирует конкретные значимые наблюдения; Critical Decision Method
+          развивает incident-based подход для извлечения ключевых признаков и оснований сложного решения.
+        supports_works: [W01, W03, W04]
+      - id: ME-02
+        claim: обращение в РИЦ надо рассматривать как часть полного пути до и после точки контакта
+        source_ids: [SRC-LEMON-VERHOEF-2016, SRC-BITNER-OSTROM-MORGAN-2008]
+        stable_links: [https://doi.org/10.1509/jm.15.0420, https://doi.org/10.2307/41166446]
+        body_summary: >-
+          Исследования customer journey показывают множественность точек контакта, а service blueprinting
+          связывает действия клиента, сотрудников и технологий и помогает обнаруживать зависимости и точки улучшения.
+        supports_works: [W04, W06]
+      - id: ME-03
+        claim: вклад РИЦ нужно отделять от полного причинного присвоения результата
+        source_ids: [SRC-VARGO-LUSCH-2004, SRC-MAYNE-2012]
+        stable_links: [https://doi.org/10.1509/jmkg.68.1.1.24036, https://doi.org/10.1177/1356389012451663]
+        body_summary: >-
+          Сервисная логика рассматривает ценность как совместно создаваемую участниками; contribution analysis
+          требует учитывать другие причины и не приписывать вмешательству весь результат без доказательного дизайна.
+        supports_works: [W05]
+      - id: ME-04
+        claim: фактологическая сверка с участником полезна, но не заменяет независимую проверку интерпретации
+        source_ids: [SRC-BIRT-ETAL-2016]
+        stable_links: [https://doi.org/10.1177/1049732316654870]
+        body_summary: >-
+          Member checking помогает проверить точность и соответствие опыта участника, однако согласие участника
+          не является автоматическим доказательством истинности всей аналитической интерпретации.
+        supports_works: [W06, W08]
+      - id: ME-05
+        claim: для управленческого применения выводы должны сохранять доказательную трассу и границы утверждений
+        source_ids: [SRC-ROUSSEAU-2006, SRC-SOPBENCH-2025]
+        stable_links: [https://doi.org/10.5465/AMR.2006.20208679, https://arxiv.org/abs/2503.08669]
+        body_summary: >-
+          Evidence-based management требует опоры на лучшую доступную доказательную базу; SOPBench в своей
+          предметной области показывает полезность раздельной оценки результата и корректности процедуры.
+        supports_works: [W07]
+    evidence_boundary: >-
+      Методические источники поддерживают выбор единицы анализа, реконструкцию решения, whole-journey контекст,
+      разделение вкладов, поиск разрывов и доказательную дисциплину. Они не являются эмпирическим доказательством
+      того, что этот сервис уже улучшает показатели РИЦ, продукт КонсультантПлюс или клиентские outcomes.
+
   proposed_product_package:
     package_register_ref: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
     package_id: RIC-PKG-E0-S01-001
@@ -87,6 +190,7 @@ body:
     package_completion_rule: >-
       Пакет сформирован только после создания exact TECH-BMA и TECH-VER ArtifactVersion по реальному
       эпизоду, успешной требуемой верификации и регистрации их точных версий в successor package register.
+
   information_required_from_RIC:
     minimum:
       - один сотрудник РИЦ, участвовавший в реальном клиентском эпизоде
@@ -96,19 +200,22 @@ body:
       - чем закончился эпизод и что осталось нерешенным или неясным
     useful_if_available: [сроки или давление времени, участники передачи или эскалации без идентификаторов, повторяемость аналогичного запроса]
     not_required_for_pilot: [ФИО клиента и контактных лиц, сырой экспорт CRM, точные договорные цены скидки и маржа, конфиденциальная переписка клиента, учетные данные пароли ключи или подробная схема информационной безопасности]
+
   work_structure_for_recipient:
     derivation_rule: >-
       Внешнее представление работ производно от внутреннего TM-PLAN → SEMP и показывает только работы,
-      необходимые РИЦ для понимания производства и приемки заявленного пакета.
+      необходимые РИЦ для понимания производства и приемки заявленного пакета. Методические основания
+      W01–W08 трассируются к ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1.
     works:
-      - {id: W01, work: Выбор эпизода и участника, content: определить один реальный недавний сервисный случай, required_from_RIC: назначить участника и кратко обозначить эпизод, result: согласованный объект пилота, duration: до 1 рабочего дня со стороны РИЦ, responsibility: РИЦ при методической поддержке поставщика, completion_criterion: участник и эпизод определены}
-      - {id: W02, work: Прием и минимизация исходной информации, content: получить минимальные сведения и классифицировать доказательную основу, required_from_RIC: краткое обезличенное описание, result: достаточный вход либо явный перечень недостающих сведений, duration: до 0.5 рабочего дня, responsibility: поставщик, completion_criterion: обязательный вход определен или явно not_established; лишние чувствительные данные не требуются}
-      - {id: W03, work: Рабочая сессия, content: восстановить ситуацию решение информационный путь действия РИЦ и статус, required_from_RIC: участие назначенного сотрудника, result: фактическая доказательная запись эпизода, duration: 45–60 минут, responsibility: поставщик и участник РИЦ, completion_criterion: достаточность фактов подтверждена участником}
-      - {id: W04, work: Реконструкция сценария решения, content: связать триггер требуемое действие доказательный путь передачи и итоговый статус, required_from_RIC: точечные уточнения при необходимости, result: раздел основного Отчета с представлением сценария, duration: до 0.5 рабочего дня, responsibility: поставщик, completion_criterion: существенные поля трассируются к фактам либо помечены неустановленными}
-      - {id: W05, work: Анализ покрытия КонсультантПлюс и сервисом РИЦ, content: отдельно классифицировать вклад СПС сервиса РИЦ клиента и иных источников, required_from_RIC: при необходимости подтвердить действия РИЦ, result: раздел основного Отчета с представлением покрытия, duration: до 0.5 рабочего дня, responsibility: поставщик, completion_criterion: вклад сторон разделен и причинный эффект не приписан без доказательств}
-      - {id: W06, work: Выявление разрывов, content: зафиксировать подтвержденные неопределенность задержки ручные обходы передачи и барьеры, required_from_RIC: подтвердить или поправить фактическое описание, result: раздел основного Отчета с представлением разрывов, duration: в составе аналитического дня, responsibility: поставщик с фактологической сверкой РИЦ, completion_criterion: факт оценка участника и аналитический вывод различимы}
-      - {id: W07, work: Формирование пакета и верификация, content: сформировать основной TECH-BMA Отчет и отдельный TECH-VER Отчет о верификации, required_from_RIC: не требуется, result: два канонических продукта пакета, duration: до конца 2-го рабочего дня после сессии, responsibility: поставщик, completion_criterion: оба продукта созданы и обязательных failed/unresolved для выдачи нет}
-      - {id: W08, work: Передача и обсуждение пакета, content: передать exact версии двух продуктов и зафиксировать замечания и оценку полезности, required_from_RIC: рассмотреть пакет и сообщить корректировки/оценку, result: переданный пакет и запись обратной связи, duration: не позднее 3-го рабочего дня; обсуждение до 30 минут, responsibility: обе стороны, completion_criterion: exact версии переданы; замечания и дальнейшее решение зафиксированы}
+      - {id: W01, work: Выбор эпизода и участника, content: определить один реальный недавний сервисный случай, required_from_RIC: назначить участника и кратко обозначить эпизод, result: согласованный объект пилота, duration: до 1 рабочего дня со стороны РИЦ, responsibility: РИЦ при методической поддержке поставщика, completion_criterion: участник и эпизод определены, method_basis: ME-01}
+      - {id: W02, work: Прием и минимизация исходной информации, content: получить минимальные сведения и классифицировать доказательную основу, required_from_RIC: краткое обезличенное описание, result: достаточный вход либо явный перечень недостающих сведений, duration: до 0.5 рабочего дня, responsibility: поставщик, completion_criterion: обязательный вход определен или явно not_established; лишние чувствительные данные не требуются, method_basis: local_pilot_design_not_external_method_requirement}
+      - {id: W03, work: Рабочая сессия, content: восстановить ситуацию решение информационный путь действия РИЦ и статус, required_from_RIC: участие назначенного сотрудника, result: фактическая доказательная запись эпизода, duration: 45–60 минут, responsibility: поставщик и участник РИЦ, completion_criterion: достаточность фактов подтверждена участником, method_basis: ME-01_duration_is_local_project_choice}
+      - {id: W04, work: Реконструкция сценария решения, content: связать триггер требуемое действие доказательный путь передачи и итоговый статус, required_from_RIC: точечные уточнения при необходимости, result: раздел основного Отчета с представлением сценария, duration: до 0.5 рабочего дня, responsibility: поставщик, completion_criterion: существенные поля трассируются к фактам либо помечены неустановленными, method_basis: ME-01+ME-02}
+      - {id: W05, work: Анализ покрытия КонсультантПлюс и сервисом РИЦ, content: отдельно классифицировать вклад СПС сервиса РИЦ клиента и иных источников, required_from_RIC: при необходимости подтвердить действия РИЦ, result: раздел основного Отчета с представлением покрытия, duration: до 0.5 рабочего дня, responsibility: поставщик, completion_criterion: вклад сторон разделен и причинный эффект не приписан без доказательств, method_basis: ME-03}
+      - {id: W06, work: Выявление разрывов, content: зафиксировать подтвержденные неопределенность задержки ручные обходы передачи и барьеры, required_from_RIC: подтвердить или поправить фактическое описание, result: раздел основного Отчета с представлением разрывов, duration: в составе аналитического дня, responsibility: поставщик с фактологической сверкой РИЦ, completion_criterion: факт оценка участника и аналитический вывод различимы, method_basis: ME-02+ME-04}
+      - {id: W07, work: Формирование пакета и верификация, content: сформировать основной TECH-BMA Отчет и отдельный TECH-VER Отчет о верификации, required_from_RIC: не требуется, result: два канонических продукта пакета, duration: до конца 2-го рабочего дня после сессии, responsibility: поставщик, completion_criterion: оба продукта созданы и обязательных failed/unresolved для выдачи нет, method_basis: ME-05}
+      - {id: W08, work: Передача и обсуждение пакета, content: передать exact версии двух продуктов и зафиксировать замечания и оценку полезности отдельно от фактологической корректировки, required_from_RIC: рассмотреть пакет и сообщить корректировки/оценку, result: переданный пакет и запись обратной связи, duration: не позднее 3-го рабочего дня; обсуждение до 30 минут, responsibility: обе стороны, completion_criterion: exact версии переданы; замечания и дальнейшее решение зафиксированы, method_basis: ME-04}
+
   commercial_and_cost:
     proposed_cost: {amount_rub: 0, basis: 'один пилотный пакет E0/S01 предоставляется без оплаты для проверки полезности и поставочного контура', boundary: 'кандидатное условие не является внешним обязательством до owner approval'}
     subsequent_work: стоимость последующих пакетов не установлена и определяется отдельным предложением после пилота
@@ -118,6 +225,8 @@ body:
     - {risk: воспоминания участника неполны или смешивают факты и оценки, mitigation: маркировать факт оценку вывод и not_established раздельно}
     - {risk: попадут лишние конфиденциальные или персональные данные, mitigation: минимизация и отказ от исходных документов/идентификаторов по умолчанию}
     - {risk: вклад продукта или РИЦ будет ошибочно трактован как причинный экономический эффект, mitigation: не заявлять ROI предотвращенные штрафы и снижение риска без отдельного доказательного дизайна}
+    - {risk: методическая публикация будет ошибочно трактована как доказательство эффекта именно для РИЦ, mitigation: отделять method support от real-RIC validation и хранить limitations в source register}
+    - {risk: один эпизод будет ошибочно обобщен на Сеть, mitigation: явно ограничить пилот проверкой применимости метода к одному случаю}
     - {risk: срок сдвинется из-за недоступности участника или недостаточного входа, mitigation: срок начинается после достаточного входа и согласования сессии}
     - {risk: РИЦ получит внутренние инженерные продукты вместо полезного пакета, mitigation: package register разделяет recipient value products и internal-only products}
   delivery_methodology:
@@ -125,7 +234,9 @@ body:
       E0/S01 использует нормализованный вход, доказательные классы, реконструкцию эпизода, раздельное
       кодирование вкладов, формирование TECH-BMA Отчета с представлениями сценария/покрытия/разрывов и
       отдельный TECH-VER Отчет перед выдачей пакета.
-    evidence_rule: неизвестные сведения остаются not_established; выводы среды не приписываются респонденту
+    method_evidence_ref: ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+    source_register_ref: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+    evidence_rule: неизвестные сведения остаются not_established; выводы среды не приписываются респонденту; method support не приравнивается к real-RIC effect
     data_minimization_rule: использовать минимально достаточные обезличенные сведения и не принимать секреты
     package_rule: только recipient_value_products из package register входят в результат для РИЦ по умолчанию
     internal_plan_boundary: TM-PLAN → SEMP и полная внутренняя WBS используются только для управления исполнением
@@ -135,23 +246,29 @@ body:
       - синтетический CANARY-OEX-001 прошел предметную проверку механики и границ утверждений
       - инженерная среда поддерживает process-owned продукты exact-version трассировку и структурную проверку нормативного состава
       - состав пакета определен exact ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
-    not_established: [полезность пакета для реального РИЦ, коммерческий спрос и готовность платить, официальный статус услуги в Сети КонсультантПлюс]
+      - методическая доказательная база зафиксирована в ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+      - связь W01–W08 с источниками и границами утверждений зафиксирована в ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+    not_established: [полезность пакета для реального РИЦ, коммерческий спрос и готовность платить, официальный статус услуги в Сети КонсультантПлюс, принятие данных Координационным центром, измеримый клиентский outcome, причинный финансовый эффект]
   acceptance_and_feedback:
     technical_completion_basis: [получен достаточный обезличенный вход, создан TECH-BMA Отчет по реальному эпизоду, создан TECH-VER Отчет, exact версии зарегистрированы в successor package register, пакет передан РИЦ]
     factual_review: РИЦ вправе указать ошибки реконструкции фактов; они фиксируются отдельно от оценки полезности
-    usefulness_review: оценка полезности собирается как последующее доказательство
+    usefulness_review: оценка полезности собирается как последующее доказательство и не смешивается с фактологической сверкой
     no_automatic_requirement_promotion: замечания РИЦ не становятся требованиями без отдельного процесса принятия
   authorization:
     supplier_responsible_approval: owner of the engineering environment
-    preparation_authority: owner explicitly authorized purpose change to RIC product packages and execution on 2026-09-06
+    preparation_authority: owner directed continuation after merge with visible input 'слил. дальше'
     external_issue_state: not_authorized_yet
     rule: черновик не отправляется РИЦ и не создает обязательство до отдельного owner approval
   tailoring_proposal: {applicability: not_applicable_for_pilot, disposition: 'специального изменения применимых процессов ЖЦ или нормативных требований не предлагается', basis: 'используются действующие process-owned продукты и существующий клиентский интерфейс'}
-  exclusions: [юридическое или налоговое заключение, обещание экономии предотвращенного штрафа или измеримого снижения риска, изменение официального состава КонсультантПлюс или сервиса РИЦ, доступ к CRM ПД или конфиденциальной переписке без отдельной необходимости и полномочий]
+  exclusions: [юридическое или налоговое заключение, обещание экономии предотвращенного штрафа или измеримого снижения риска, утверждение репрезентативности одного эпизода по Сети, утверждение принятия КЦ, изменение официального состава КонсультантПлюс или сервиса РИЦ, доступ к CRM ПД или конфиденциальной переписке без отдельной необходимости и полномочий]
+
 glossary:
   РИЦ: региональный информационный центр КонсультантПлюс как получатель пакета продуктов инженерной среды
   пакет продуктов: управляемая совокупность самостоятельных process-owned информационных продуктов; пакет не новый canonical O
   сервисный эпизод: конкретный случай взаимодействия РИЦ с клиентом по рабочей задаче или решению
+  сценарий решения: последовательность от клиентской задачи и оснований решения до действий участников и наблюдаемого результата
+  доказательная база метода: контролируемая совокупность источников, их содержательных парафразов, поддерживаемых суждений и ограничений
+  вклад: подтверждаемая роль вмешательства среди других действующих причин; не тождествен полной причинности результата
   паспорт сценария: представление части канонического TECH-BMA Отчета
   карта покрытия: представление вклада СПС РИЦ клиента и иных источников внутри TECH-BMA Отчета
   карта разрывов: представление подтвержденных точек неопределенности задержек передач или обходов внутри TECH-BMA Отчета
@@ -160,33 +277,42 @@ change_history:
   - {version: V1, date: '2026-09-06', change: first normative proposal for RIC E0/S01 pilot}
   - {version: V2, date: '2026-09-06', change: reframe external value as a recipient product package}
   - {version: V3, date: '2026-09-06', change: bind proposal to stable upstream package definition V3 and remove package-version cycle}
+  - {version: V4, date: '2026-09-07', change: integrate concise director-facing value argument, exact source-register/method-report evidence, W01-W08 method trace and explicit claim boundaries}
 owner_product_request:
-  exact_visible_text: 'меняй и приступай'
+  exact_visible_text: 'слил. дальше'
+  resolved_referent: >-
+    После слияния доказательной базы выполнить ранее названный следующий шаг: выпустить V4 Предложения,
+    встроив краткую доказательную защиту метода и exact ссылки на Запись источников и Отчет о методическом обосновании.
   request_specific_requirements:
-    - изменить назначение на выработку и поставку нормативных пакетов информационных продуктов для РИЦ
-    - Предложение должно называть конкретный состав пакета продуктов по ГОСТ и объяснять пользу каждого продукта для РИЦ
-    - структура работ должна быть ориентирована на производство заявленных продуктов пакета
-    - внутренний План полная WBS измерительная запись и operation report остаются внутри среды
-    - package register является exact upstream определением состава
+    - сохранить назначение текущей ветки диалога без изменения
+    - продолжить после слияния предыдущих продуктов, а не пересоздавать доказательную базу
+    - встроить в Предложение краткое объяснение пользы для РИЦ, КонсультантПлюс и клиента
+    - объяснить, почему нужны W01–W08, и связать шаги с exact доказательными продуктами
+    - сохранить ограничения доказуемости и не обещать ROI, предотвращенные штрафы, сетевую репрезентативность, принятие КЦ или клиентский outcome без данных
+    - не отправлять предложение РИЦ и не выполнять merge без отдельной authority
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_material_revision_client_AGR_SUP_supply_response
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.proposed_product_package, body.work_structure_for_recipient, body.delivery_methodology.internal_plan_boundary]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.recipient_facing_short_version, body.method_evidence_basis, body.work_structure_for_recipient]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
-    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, body.authorization.external_issue_state]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.proposed_product_package.recipient_value_products, body.supplier_experience_and_capabilities]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, body.authorization.external_issue_state, body.method_evidence_basis.evidence_boundary]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.method_evidence_basis, body.delivery_methodology.method_evidence_ref, body.delivery_methodology.source_register_ref]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
-    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self, body.proposed_product_package.package_register_ref, body.work_structure_for_recipient.derivation_rule]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self, body.proposed_product_package.package_register_ref, body.method_evidence_basis.evidence_products]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_subject_and_exact_head_verification}
-verification: {structural_status: material_revision_exact_head_pending, semantic_status: package_subject_verification_pending_current_downstream_set, owner_acceptance: drafting_authorized_external_issue_separate}
-artifact_addresses: {self: 'MOZ1961/consultantplus:artifacts/AGR-SUP/supply-response/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package'}
+verification:
+  structural_status: material_revision_exact_head_pending
+  semantic_status: subject_TECH_VER_pending_for_V4_evidence_integration
+  owner_acceptance: drafting_authorized_external_issue_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/AGR-SUP/supply-response/ART-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001.yaml@change/consultantplus-20260907-ric-proposal-evidence-v4
 information_product_applicability: applies
 standards_trace:
   process:
@@ -250,5 +376,5 @@ content_compliance:
           - {requirement_id: S10.56-R06, state: satisfied, artifact_field_refs: [body.authorization]}
           - {requirement_id: S10.56-O01, state: not_applicable, basis: no process tailoring is proposed for this pilot, artifact_field_refs: [body.tailoring_proposal]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected for AGR-SUP supply response}
-  tailoring: external proposal defines exact recipient product package V3 and recipient-facing work structure; internal SEMP and internal-only controls are not transmitted
-  information_item_management: {version_control: V3 successor after stable package-definition binding, review_approval: external issue requires separate owner approval, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: canonical client AGR-SUP product, reuse_and_duplication: human-readable renderings derive from this exact ArtifactVersion}
+  tailoring: external Proposal V4 retains package V3 and recipient-facing W01-W08 while adding concise evidence-backed value/method rationale and claim boundaries; internal SEMP remains internal
+  information_item_management: {version_control: V4 successor to V3 after source-evidence products merged, review_approval: external issue requires separate owner approval, quality_evaluation: subject TECH-VER plus exact-head structural worker, retention: canonical client AGR-SUP product, reuse_and_duplication: human-readable renderings derive from this exact ArtifactVersion}
