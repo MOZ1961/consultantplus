@@ -1,0 +1,248 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-VERIFICATION-REPORT-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-VERIFICATION-REPORT-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: subject_verification_completed_with_limitations_real_evidence_pending
+acceptance_status: verified_proof_design_candidate_real_RIC_TECH_VAL_and_owner_acceptance_separate
+artifact_instance_purpose: >-
+  Проверить доказательную модель полезности продукта «Диагностика клиентского случая РИЦ»:
+  убедиться, что утверждения BP-01–BP-05 фальсифицируемы, связаны с измерениями, допускают отрицательные
+  исходы, не смешивают инженерную верификацию с полезностью/аттестацией и не выдают отсутствие реальных
+  данных РИЦ за доказанный эффект.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-RIC-BENEFIT-PROOF
+    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-BENEFIT-PROOF-V1
+    methodic_version: claim_metric_falsifiability_verification_v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-MERGE-AND-EVIDENCE-LIFECYCLE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: subject_verification_pass_with_explicit_empirical_blockers
+scope: exact subject verification of ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Доказательная модель проходит предметную TECH-VER как дизайн проверки. BP-01–BP-05 имеют различимые
+  уровни доказательств, метрики/свидетельства, контрсвидетельства и четыре допустимых disposition. Модель
+  корректно фиксирует current state: инженерная готовность не равна реальной пользе; BP-02–BP-05 пока
+  insufficient_evidence. Выявленный gap BP-05 — отсутствие dedicated Network-decision-use metric — сохранен
+  как блокер, а не закрыт выдуманным показателем. Предметный PASS не является TECH-VAL реального продукта.
+introduction:
+  verified_object: ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
+  purpose: verify claim/metric/evidence logic and boundaries before real RIC evidence collection
+  audience: owner, TM-MEAS, TECH-VAL, future RIC participant
+  criteria_basis:
+    - each benefit claim must be observable/falsifiable and have adverse outcome handling
+    - process/structural conformance must not be accepted as proof of RIC/client usefulness
+    - current evidence state must preserve absent real RIC evidence
+    - one episode must not establish Network/economic/general causal claims
+    - real validation remains TECH-VAL and actual intended-use evidence
+context_and_assumptions:
+  target_branch: change/consultantplus-20260907-ric-diagnostic-benefit-proof-model
+  target_base_main: 858b3c5afff5edd91e5592b917c939045e239c3a
+  target_version: ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
+  evidence_inputs:
+    - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+    - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+    - ARTVER-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+  empirical_boundary:
+    real_RIC_evidence: absent
+    actual_decision_use: absent
+    post_decision_comparison: absent
+    actual_validation_report: absent
+body:
+  verification_method_and_evidence:
+    method: >-
+      Inspect each claim for measurement mapping, minimum evidence level, support rule, counter-evidence, current disposition,
+      and prohibited inference; cross-check with lifecycle measurement/validation plans and P01 evidence boundary.
+    evidence:
+      - target proof model exact V1
+      - lifecycle S/C/G metric definitions V1
+      - lifecycle TECH-VAL strategy V1
+      - P01 candidate problem and dedicated verification
+  verification_checks:
+    - {id: V-BP-01, check: 'claim states are not self-validating', result: pass, evidence: 'claim_disposition_contract forbids support from report creation or structural PASS'}
+    - {id: V-BP-02, check: 'BP-01 engineering claim separated from BP-02 RIC-use and BP-03 client-outcome claims', result: pass, evidence: 'distinct minimum evidence E0/E1, E2, E4 and separate metric sets'}
+    - {id: V-BP-03, check: 'negative and neutral results are admissible', result: pass, evidence: 'supported/not_supported/insufficient_evidence/not_applicable plus per-claim counter-evidence'}
+    - {id: V-BP-04, check: 'real current evidence is not overstated', result: pass, evidence: 'BP-01 real execution and BP-02–BP-05 all remain insufficient_evidence where actual evidence is absent'}
+    - {id: V-BP-05, check: 'one episode cannot establish generalized Network or economic claims', result: pass, evidence: 'E5/generalization boundary and explicit excluded claims'}
+    - {id: V-BP-06, check: 'TECH-VER does not substitute TECH-VAL', result: pass, evidence: 'proof report and this verifier both state real intended-use TECH-VAL is pending'}
+    - {id: V-BP-07, check: 'measurement gaps are explicit rather than invented', result: pass, evidence: 'BP-05 records missing Network-decision-use metric and requires controlled TM-MEAS revision'}
+    - {id: V-BP-08, check: 'next lifecycle gate is factual', result: pass, evidence: 'P01/P02 real RIC evidence and E1→E2 are required before empirical proof claims'}
+  problems_encountered:
+    - {id: VB-P01, problem: 'no real RIC evidence exists', disposition: 'retain proof design only and block empirical benefit conclusion'}
+    - {id: VB-P02, problem: 'existing S/C/G metrics do not directly measure Network decision-use', disposition: 'preserve BP-05 metric gap for future controlled TM-MEAS successor; do not infer from C12 or service activity'}
+    - {id: VB-P03, problem: 'participant positive rating could be mistaken for validation', disposition: 'require E2 decision-use and TECH-VAL criteria; satisfaction alone insufficient'}
+  verification_decisions_and_rationale:
+    - decision: pass_proof_design_with_empirical_blockers
+      rationale: >-
+        Claim structure is falsifiable, metric-linked and evidence-bounded; all absent empirical evidence remains explicit and
+        each strong claim has a non-support path.
+    - decision: block_empirical_benefit_claims_until_real_RIC
+      rationale: >-
+        BP-02 requires actual decision-use; BP-03 requires comparable post-decision observation; BP-04/BP-05 require repetition
+        and/or an actual downstream decision-maker.
+  verification_result: PASS_WITH_EXPLICIT_EMPIRICAL_BLOCKERS
+conclusions_and_recommendations:
+  conclusion: >-
+    ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1 предметно пригоден как
+    доказательный дизайн. Он не доказывает полезность продукта сейчас; он задает условия, при которых польза будет
+    поддержана, опровергнута или останется недоказанной.
+  recommendations:
+    - structurally verify both products at exact head
+    - next substantive external step is real RIC validation/correction of P01 followed by P02
+    - create no measurement register or TECH-VAL result until actual evidence exists
+    - revise TM-MEAS before any BP-05 Network-decision-use claim
+references:
+  - ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+  - ARTVER-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001-V1
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
+  - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  proof_design: схема утверждений, измерений, свидетельств и критериев, еще не являющаяся empirical proof
+  falsifiable_claim: утверждение, для которого заранее определено наблюдение, способное его не поддержать
+  empirical_blocker: отсутствующее реальное свидетельство, без которого claim не может получить supported
+  subject_TECH_VER: проверка предметной корректности/границ продукта, отличная от structural worker и TECH-VAL
+change_history:
+  - {version: V1, date: '2026-09-07', change: subject verification of metric-linked benefit proof model}
+owner_product_request:
+  exact_visible_text: 'смерджи все пр в кплюс и продолжай'
+  current_dialogue_branch_purpose: 'для продукта «Диагностика клиентского случая РИЦ» пройти полный жизненный цикл как продукта SE-среды и как продукта клиентской системы «Сеть КонсультантПлюс»: декомпозировать ЖЦ, определить метрики и критерии переходов и на их основе получить проверяемые доказательства того, в какой мере продукт полезен РИЦ, создает клиентскую ценность и приводит к наблюдаемым результатам, включая границы и случаи неподтверждения этих утверждений; свести каждый результат к каноническому ProcessType/O и стандартному информационному продукту с полным применимым составом по ГОСТ Р 58609, персистировать результаты и проверки до фактических блокеров.'
+  request_specific_requirements:
+    - verify the continuation proof model after merging the pre-existing ConsultantPlus PRs
+    - preserve negative/non-confirming evidence and real-RIC blockers
+    - keep TECH-VER distinct from TECH-VAL
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_subject_verification_authored_pending_exact_head_worker}
+verification:
+  structural_status: authored_pending_exact_head_external_client_worker
+  semantic_status: PASS_WITH_EXPLICIT_EMPIRICAL_BLOCKERS
+  owner_acceptance: merge of prior PRs authorized; acceptance of proof model and empirical benefit conclusions separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-benefit-proof-model
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [introduction.criteria_basis], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.verification_checks], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [issued_at_and_status, introduction.verified_object], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.verification_checks, body.verification_result], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report for RIC diagnostic benefit proof model, resolution_basis: TECH-VER exact binding to §10.93, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [introduction.criteria_basis]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.verification_checks]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [issued_at_and_status, introduction.verified_object]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.verification_checks, body.verification_result]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale]}
+  local_additive_content: {state: not_applicable, basis: active binding selects no local additive profile}
+  tailoring: §10.93 specialized to subject verification of metric-linked benefit proof design
+  information_item_management:
+    version_control: exact V1
+    review_approval: subject TECH-VER complete; exact-head external structural worker and real TECH-VAL remain separate
+    quality_evaluation: exact claim/metric/falsifiability and boundary checks
+    retention: canonical client TECH-VER product
+    reuse_and_duplication: successor version required if target proof model changes materially
+  composition_state: subject_verified_candidate_pending_exact_head_external_worker

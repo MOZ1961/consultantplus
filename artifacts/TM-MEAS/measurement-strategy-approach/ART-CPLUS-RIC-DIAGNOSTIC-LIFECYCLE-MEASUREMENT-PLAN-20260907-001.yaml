@@ -1,37 +1,39 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001
-artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
-supersedes_artifact_version_id: null
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
 artifact_label: measurement strategy/approach
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_measurement_plan_defined_real_data_pending
+lifecycle_status: owner_directed_candidate_measurement_plan_network_decision_use_added_real_data_pending
 acceptance_status: measurement_plan_candidate_empirical_thresholds_and_owner_acceptance_separate
 artifact_instance_purpose: >-
   Установить измерительную модель полного жизненного цикла продукта «Диагностика клиентского случая РИЦ»:
   отдельно измерять качество и воспроизводимость исполнения SE-среды, наблюдаемые характеристики клиентского
-  пути решения и прохождение жизненных ворот. Не подменять эксплуатационные метрики недоказанными бизнес-эффектами
-  и не задавать произвольных положительных порогов для эмпирической ценности до реального пилота.
+  пути решения, полезность результата для решения РИЦ, фактическое использование агрегированного сигнала
+  уполномоченным участником Сети КонсультантПлюс и прохождение жизненных ворот. Не подменять эксплуатационные
+  метрики недоказанными бизнес-эффектами и не задавать произвольных положительных порогов для эмпирической
+  ценности до реального наблюдения.
 producer:
   process_type_id: TM-MEAS
   process_instance_id: PI-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE-20260907-001
-  activity_instance_id: AI-CPLUS-TM-MEAS-DEFINE-RIC-DIAGNOSTIC-LIFECYCLE-METRICS-20260907-001
+  activity_instance_id: AI-CPLUS-TM-MEAS-ADD-NETWORK-DECISION-USE-METRIC-20260907-001
   methodic_instance:
     methodic_id: METH-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE
-    methodic_version_id: METHVER-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE-V1
-    methodic_version: lifecycle_measurement_v1
+    methodic_version_id: METHVER-CPLUS-TM-MEAS-RIC-DIAGNOSTIC-LIFECYCLE-V2
+    methodic_version: lifecycle_measurement_network_decision_use_v2
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-MERGE-AND-EVIDENCE-LIFECYCLE-20260907-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-07', status: measurement_plan_defined_real_measurement_pending}
-scope: lifecycle measurement for one-episode E0/S01 pilot and later repeated comparable executions; no population inference
+issued_at_and_status: {issued_at: '2026-09-07', status: measurement_plan_v2_defined_real_measurement_pending}
+scope: lifecycle measurement for one-episode E0/S01 pilot, repeated comparable executions and later bounded Network decision-use observation; no population inference
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 approving_authority: owner
 applicable_references:
@@ -40,12 +42,13 @@ applicable_references:
   - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
   - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
   - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  - ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
 introduction:
-  purpose: provide operationally defined measures for engineering quality, client decision-path evidence and lifecycle gates
-  audience: owner, engineering actor, RIC pilot participant, TECH-VAL, TECH-MNT, TECH-VER
-  coverage: supplier execution, episode/client effects, adoption/usefulness evidence and lifecycle transition evidence
+  purpose: provide operationally defined measures for engineering quality, RIC/client decision-path evidence, bounded Network decision-use and lifecycle gates
+  audience: owner, engineering actor, RIC pilot participant, authorized Network decision-maker when resolved, TECH-VAL, TECH-MNT, TECH-VER
+  coverage: supplier execution, episode/client effects, RIC adoption/usefulness evidence, Network decision-use evidence and lifecycle transition evidence
   nonpurpose: >-
     This plan does not establish ROI, avoided penalties/losses, generalized risk reduction, legal correctness,
     statistically representative Network prevalence, productivity growth or causal business effect.
@@ -57,8 +60,9 @@ measurement_needs_and_information_requirements:
     - what role do ConsultantPlus and RIC support play in the actual decision path without assigning unsupported causality
     - what gaps remain and do they recur across later episodes
     - after an explicitly authorized change, does a comparable later episode show an observable difference
+    - when bounded aggregated evidence is actually presented to an authorized Network decision-maker, is it used, rejected, judged duplicative or judged insufficient for a concrete decision
     - which lifecycle gates are genuinely passed and which remain planned, blocked or conditional
-  evidence_unit: one de-identified real decision episode plus its exact process-owned execution, analysis, verification and feedback records
+  evidence_unit: one de-identified real decision episode plus its exact process-owned execution, analysis, verification and feedback records; Network decision-use additionally requires an exact downstream decision context and decision evidence
   baseline_rule: >-
     Baseline/after comparisons are permitted only when a meaningful pre-change or comparable episode basis exists.
     Missing baseline is recorded not_available and is not synthesized from memory, averages or assumptions.
@@ -70,15 +74,17 @@ planned_activities_and_tasks:
   - after several real runs analyze distributions and missingness before proposing empirical thresholds
   - if a RIC implements a specific change, define the comparable retest before collecting post-change evidence
   - feed measured gaps to TECH-BMA/TECH-STK/TM-PAC only as evidence/candidate inputs
+  - if bounded aggregate evidence is intentionally supplied to an authorized Network decision-maker, record C16 only from the actual decision/disposition and exact evidence reference; mere transmission does not count as use
   - evaluate whether each measure remains useful; retire noisy or decision-irrelevant measures through controlled revision
 tools_methods_and_techniques:
-  methods: [event timestamping, structured episode coding, evidence-class tagging, exact traceability inspection, participant factual review, descriptive cross-episode analysis, controlled before-after comparison only when comparable]
+  methods: [event timestamping, structured episode coding, evidence-class tagging, exact traceability inspection, participant factual review, descriptive cross-episode analysis, controlled before-after comparison only when comparable, downstream decision-use observation]
   tools: [ChatGPT engineering actor, GitHub process-owned artifacts, structured measurement register, exact-head structural worker]
   inherited_episode_coding: M01-M09 from ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
 schedule:
   first_capture: during first real authorized pilot
   review_capture: at package review or explicit no-review disposition
   cross_episode_review: after at least 3 real executions; descriptive only
+  network_decision_use_capture: only after bounded evidence is actually presented to an identified authorized Network decision-maker in a concrete decision context
   threshold_review: after enough real evidence to justify thresholds; no fixed sample size is claimed here
   retest: only after an explicit RIC change and a comparable new episode
 budget_and_cost_estimate:
@@ -88,16 +94,20 @@ resources_and_allocation:
   owner: measurement scope and threshold authority
   engineering_actor: collection, coding, traceability and reporting
   RIC_participant: factual episode evidence and optional review/usefulness disposition
+  Network_decision_maker: only when actually identified and authorized; source of downstream decision-use evidence, not assumed participant
   verifier: independent subject/structural checks as applicable
 responsibilities_and_authorities:
   owner: {authority: accept or revise measurement plan and later establish empirical decision thresholds}
   engineering_actor: {authority: record observed values and provisional codes, limit: cannot convert descriptive value into accepted requirement or causal claim}
   RIC_participant: {authority: confirm/correct facts and express usefulness for own scope, limit: cannot establish Network-wide effectiveness}
+  Network_decision_maker: {authority: provide actual disposition for the concrete Network decision within own authority, limit: one disposition does not establish Network-wide effect or causal outcome}
 participant_interfaces:
   RIC_to_TM_MEAS: minimized episode facts, timing statements, factual corrections, usefulness/actionability feedback
   SE_execution_to_TM_MEAS: exact timestamps, verification states, package/version state and rework events
   TM_MEAS_to_TECH_VAL: exact values/evidence for validation criteria
   TM_MEAS_to_TECH_MNT: observed defects, repeated gaps and change/retest evidence
+  TM_MEAS_to_Network_decision: bounded aggregate evidence only after authority/recipient/context are resolved
+  Network_decision_to_TM_MEAS: exact C16 disposition plus decision/evidence reference and stated rationale when available
 risk_assessment_and_mitigation:
   - {risk: process conformance metrics are mistaken for client value, mitigation: separate S/G hard gates from C empirical value measures}
   - {risk: one episode is generalized, mitigation: report scope and episode count with every synthesis}
@@ -105,6 +115,7 @@ risk_assessment_and_mitigation:
   - {risk: arbitrary target makes pilot appear successful, mitigation: empirical C measures initially descriptive unless owner later approves evidence-based threshold}
   - {risk: sensitive data collected for measurement convenience, mitigation: minimize identifiers and never require raw CRM/client documents/secrets}
   - {risk: incomparable before-after episodes produce false delta, mitigation: define comparability dimensions before retest and use not_comparable when violated}
+  - {risk: evidence transmission is counted as Network decision-use, mitigation: C16 requires an actual decision/disposition and exact decision evidence; sent-only remains not_observed}
 quality_and_effectiveness_measures:
   hard_engineering_targets:
     input_disposition_coverage: 100_percent
@@ -118,16 +129,19 @@ quality_and_effectiveness_measures:
     - calculated values preserve numerator denominator and time-basis where applicable
     - no C-series empirical measure is silently converted into a hard acceptance threshold
     - comparable-retest claim requires predeclared comparability basis
+    - C16 cannot be valued as used from delivery or acknowledgment alone; it requires an actual authorized decision/disposition reference
 environment_infrastructure_security:
-  environment: SE-GENERIC-ENVIRONMENT operating through BIND-CPLUS-SE-001 plus actual RIC communication environment when resolved
+  environment: SE-GENERIC-ENVIRONMENT operating through BIND-CPLUS-SE-001 plus actual RIC and Network communication environments only when resolved
   storage: process-owned TM-MEAS measurement register/report in MOZ1961/consultantplus
   security: [coded identifiers by default, no credentials/secrets, minimum necessary episode detail, no raw confidential client files by default]
 training:
-  engineering_actor: apply evidence-class and not_established rules consistently
+  engineering_actor: apply evidence-class and not_established rules consistently and distinguish signal delivery from decision-use
   RIC_participant: short briefing that factual confirmation and usefulness are distinct from legal correctness or Network-wide proof
+  Network_decision_maker: no special training assumed; record only observed decision use and explicit rationale/evidence provided
 technical_management_review_reporting:
   per_run: measurement register plus applicable values cited by TECH-BMA/TECH-VER/TECH-OP
   cross_run: TM-MEAS measurement report when real evidence is sufficient for synthesis
+  network_use: report C16 only with exact recipient authority/context and decision reference; absence of such evidence remains not_observed/not_established
   gate_reporting: lifecycle gate state in SEMP/project assessment products
   threshold_governance: new owner-approved ArtifactVersion required before an empirical threshold becomes normative for the product
 related_plans_and_task_descriptions:
@@ -136,15 +150,18 @@ related_plans_and_task_descriptions:
   validation_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
   maintenance_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
   disposal_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001-V1
+  benefit_proof_model: ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
 glossary:
   hard_gate_metric: measure whose target follows an engineering requirement or explicit service term
-  empirical_value_metric: observed client/RIC measure initially descriptive until sufficient evidence and owner authority establish a threshold
+  empirical_value_metric: observed client/RIC/Network measure initially descriptive until sufficient evidence and owner authority establish a threshold
   adequate_input: input meeting the existing E0/S01 minimum-field disposition gate, including explicit not_established where permitted
   sufficient_decision_basis: participant/RIC-declared point at which enough evidence exists to choose an action; not legal correctness
+  Network_decision_use: actual use, rejection or explicit non-use of bounded evidence by an identified authorized Network decision-maker in a concrete decision context; not mere receipt
 change_procedure_and_history:
   change_rule: changes to identity/definition/formula/source/threshold require a new controlled ArtifactVersion and compatibility assessment
   history:
     - {version: V1, date: '2026-09-07', change: establish lifecycle-wide supplier, client and gate metrics}
+    - {version: V2, date: '2026-09-07', change: close BP-05 design gap by adding dedicated C16 Network decision-use measure and its collection/interpretation controls}
 closure:
   condition: measurement plan is retired only with product disposal or superseded measurement strategy; historical measurements retain exact definition version
 measures:
@@ -177,6 +194,7 @@ measures:
     - {id: C13, name: reconstruction_member_check_state, definition: participant disposition of factual reconstruction, values: [confirmed, corrected, contested, not_reviewed]}
     - {id: C14, name: diagnostic_actionability, definition: whether the RIC can state a concrete service training process research or no-action decision supported by the diagnostic, values: [action_identified, no_action_with_rationale, insufficient_for_decision, not_reviewed], threshold: none_initially}
     - {id: C15, name: post_change_retest_delta, definition: predeclared difference in selected comparable measures after an explicitly authorized RIC change, values: delta_or_not_available_or_not_comparable, use_rule: no_causal_claim_without_appropriate_design}
+    - {id: C16, name: Network_decision_use_of_aggregated_RIC_evidence, definition: actual disposition by an identified authorized Network decision-maker when bounded aggregate RIC evidence is presented for a concrete product/service/research decision, values: [used_materially, considered_no_change_with_rationale, rejected_not_actionable, duplicate_of_existing_evidence, insufficient_for_decision, not_observed, not_established, not_applicable], evidence_required: exact_decision_context_plus_decision_or_disposition_reference, threshold: none_initially, use_rule: delivery_or_acknowledgment_alone_does_not_count_as_use}
   lifecycle_gates:
     - {id: G01, name: canonical_product_mapping_coverage, definition: planned durable lifecycle results mapped to canonical ProcessType/O and applicable GOST composition divided by all planned durable results, target: 100_percent}
     - {id: G02, name: exact_head_verification_gate, definition: required exact-head structural workflow and subject TECH_VER state for changed products, values: [pass, fail, pending], target: pass_before_readiness_or_merge}
@@ -186,28 +204,29 @@ measures:
     - {id: G06, name: material_change_reverification_coverage, definition: material maintained changes reverified divided by all material maintained changes, target: 100_percent}
     - {id: G07, name: disposal_evidence_coverage, definition: applicable disposal/retention/privacy/notification actions evidenced divided by applicable planned disposal actions, target: 100_percent_before_disposal_complete}
 data_collection_and_storage:
-  canonical_record: future TM-MEAS measurement register per real execution or controlled batch
+  canonical_record: future TM-MEAS measurement register per real execution or controlled batch; C16 may be recorded only in a real downstream Network decision-use record/batch with exact context
   timestamp_source: actual process/product distribution records; no estimated timestamps substituted
   client_field_source: participant report/review, separately evidence-classed
+  network_field_source: actual authorized Network decision/disposition record or direct documented decision-maker statement tied to a concrete decision context
   calculated_measure_rule: store raw inputs plus calculation version
-  missingness: [not_established, not_available, not_applicable, not_comparable] are explicit values, never zero
+  missingness: [not_established, not_available, not_applicable, not_comparable, not_observed] are explicit values, never zero
 analysis_interpretation_and_reporting:
   single_pilot: report exact values and limitations; no Network inference
   repeated_runs: descriptive distributions, missingness and pattern recurrence only until a stronger design exists
   before_after: compare only predeclared comparable measures; report confounders and no causal attribution by default
+  Network_decision_use: C16 supports only a bounded statement about actual decision use/non-use in the recorded context; it does not by itself prove product or client outcome effect
   decision_use: hard S/G failures block only dependent readiness; C measures inform validation/improvement decisions without automatic requirement promotion
 evaluation_of_measurement_process:
   every_review: identify measures with excessive missingness, ambiguous coding, low decision usefulness or high collection burden
-  revision_trigger: materially ambiguous or unused measure, new validation decision, new lifecycle stage, or accepted product change
+  revision_trigger: materially ambiguous or unused measure, new validation decision, new lifecycle stage, accepted product change, or inability of C16 to distinguish actual use from mere receipt
   success_of_measurement_process: measures support explicit lifecycle decisions without forcing unsupported claims
 owner_product_request:
-  exact_visible_text: |-
-    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
-    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
-  request_specific_requirements: [define metrics for both lifecycles, distinguish hard engineering gates from empirical client value, preserve evidence boundaries, map measurement product to standard composition]
+  exact_visible_text: 'смерджи все пр в кплюс и продолжай'
+  current_dialogue_branch_purpose: 'для продукта «Диагностика клиентского случая РИЦ» пройти полный жизненный цикл как продукта SE-среды и как продукта клиентской системы «Сеть КонсультантПлюс»: декомпозировать ЖЦ, определить метрики и критерии переходов и на их основе получить проверяемые доказательства того, в какой мере продукт полезен РИЦ, создает клиентскую ценность и приводит к наблюдаемым результатам, включая границы и случаи неподтверждения этих утверждений; свести каждый результат к каноническому ProcessType/O и стандартному информационному продукту с полным применимым составом по ГОСТ Р 58609, персистировать результаты и проверки до фактических блокеров.'
+  request_specific_requirements: [continue proof-by-metrics lifecycle after merge, close internal BP-05 measurement-design gap without inventing Network use, retain standard GOST composition and negative outcomes]
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TM_MEAS_measurement_strategy
+  applicability: applies_materially_revised_client_TM_MEAS_measurement_strategy
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, measures]}
@@ -221,13 +240,13 @@ product_requirement_compliance:
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_procedure_and_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker_and_subject_TECH_VER}
 verification:
-  structural_status: pending_fresh_exact_head
-  semantic_status: metric_definitions_candidate_pending_TECH_VER_and_first_real_data_review
-  owner_acceptance: purpose_change_and_measurement_design_authorized_threshold_adoption_separate
+  structural_status: authored_pending_fresh_exact_head_external_client_worker
+  semantic_status: C16_added_to_close_BP05_design_gap_subject_TECH_VER_pending
+  owner_acceptance: continuation_authorized_empirical_thresholds_and_actual_Network_use_separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-benefit-proof-model
 information_product_applicability: applies
 standards_trace:
   process:
@@ -273,7 +292,7 @@ standards_trace:
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: measurement plan for RIC diagnostic lifecycle, resolution_basis: TM-MEAS strategy/approach resolves to GOST 10.46 measurement plan, state: resolved}
+  information_item_identity: {resolved_name_or_semantic_identity: measurement plan for RIC diagnostic lifecycle with Network decision-use, resolution_basis: TM-MEAS strategy/approach resolves to GOST 10.46 measurement plan, state: resolved}
   universal_type: plan
   universal_content:
     source_section: '7.3'
@@ -315,5 +334,5 @@ content_compliance:
           - {requirement_id: S10.46-R05, state: satisfied, artifact_field_refs: [responsibilities_and_authorities, resources_and_allocation, tools_methods_and_techniques, schedule]}
           - {requirement_id: S10.46-R06, state: satisfied, artifact_field_refs: [evaluation_of_measurement_process]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected}
-  tailoring: existing Wave1 M01-M09 are reused where compatible; this product adds lifecycle-specific measures without changing their historical definitions
-  information_item_management: {version_control: V1, review_approval: owner accepts separately, quality_evaluation: exact-head worker plus TECH-VER plus first-real-data review, retention: canonical lifecycle measurement plan, reuse_and_duplication: Wave1 measurement plan remains separate research-wave plan}
+  tailoring: existing Wave1 M01-M09 and S/C/G lifecycle measures are preserved; V2 adds C16 Network decision-use without changing historical definitions of C01-C15
+  information_item_management: {version_control: V2 superseding V1, review_approval: owner accepts separately, quality_evaluation: exact-head worker plus TECH-VER plus first-real-data review, retention: canonical lifecycle measurement plan, reuse_and_duplication: Wave1 measurement plan remains separate research-wave plan}
