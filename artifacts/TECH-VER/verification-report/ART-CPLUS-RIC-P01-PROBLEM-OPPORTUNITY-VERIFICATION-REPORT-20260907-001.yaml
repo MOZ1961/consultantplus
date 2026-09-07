@@ -1,0 +1,247 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: subject_verification_completed_with_explicit_limitations
+acceptance_status: verified_candidate_pending_real_RIC_validation_and_owner_acceptance
+artifact_instance_purpose: >-
+  Предметно проверить P01 — кандидатную проблему/возможность взаимодействия с РИЦ — до merge:
+  проверить соответствие исходной доказательной базе, отсутствие ложного приписывания дефекта конкретному РИЦ,
+  логичность opportunity, полноту явных неизвестных и корректность gate P01→P02.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-P01-PROBLEM-OPPORTUNITY-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-VER-RIC-P01-PROBLEM-OPPORTUNITY-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-RIC-P01
+    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-P01-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-MERGE-AND-EVIDENCE-LIFECYCLE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: subject_verification_completed_with_explicit_limitations
+scope: exact-version subject verification of ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  P01 проходит предметную верификацию как аналитический кандидат для разговора с реальным РИЦ.
+  Поддерживается утверждение только о доказательном разрыве: в текущем контуре еще не установлена
+  воспроизводимая трасса от реального клиентского эпизода через вывод к реальному решению РИЦ и наблюдаемому
+  результату. Не подтверждается утверждение, что конкретный РИЦ работает плохо или не имеет собственных механизмов.
+  Opportunity — замкнуть доказательный цикл на решение и post-decision observation — логически согласуется с разрывом.
+  Переход к P02 остается заблокирован до прямых данных реального РИЦ.
+introduction:
+  verified_object: ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+  purpose: определить, пригоден ли P01 как проверяемая гипотеза для реального RIC elicitation без semantic overclaim
+  audience: [owner, future RIC participant, subsequent TECH-STK execution]
+  criteria_basis:
+    - predecessor evidence and explicit evidence boundaries
+    - TECH-BMA purpose/outcome and canonical O ownership
+    - ГОСТ Р 58609-2019 generic report §7.6 and verification report §10.93
+    - candidate problem must not be promoted to stakeholder need before direct RIC evidence
+    - neutral and adverse evidence must remain admissible
+context_and_assumptions:
+  target_version: ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+  target_branch: change/consultantplus-20260907-ric-interaction-benefit
+  predecessor_versions:
+    - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+    - ARTVER-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+    - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+    - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+  unresolved_external_evidence:
+    - identity of first real RIC participant
+    - accepted RIC problem/opportunity
+    - actual RIC decision process and current evidence sources
+    - actual decision-use and post-decision observation
+    - economic value, ROI, willingness to pay and Network prevalence
+body:
+  verification_method_and_evidence:
+    method: >-
+      Проверить каждое существенное утверждение P01 на происхождение из predecessor evidence, разграничить
+      отсутствие доказательств и утверждение о дефекте, проверить соответствие problem→opportunity и gate к P02,
+      отдельно проверить наличие альтернатив, ограничений и явных unknowns.
+    evidence:
+      - ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+      - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+      - ARTVER-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001-V1
+      - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+      - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+  verification_checks:
+    - {id: V-P01-01, check: 'проблема сформулирована как evidence/decision gap, а не как дефект конкретного РИЦ', result: pass, evidence: 'problem_statement.nonclaim and missing_evidence'}
+    - {id: V-P01-02, check: 'отсутствие real-RIC evidence явно сохранено', result: pass, evidence: 'context_and_assumptions.evidence_boundary and subject_unresolved'}
+    - {id: V-P01-03, check: 'opportunity логически отвечает проблеме', result: pass, evidence: 'замыкание эпизод→решение РИЦ→post-decision observation устраняет именно незамкнутую доказательную цепочку'}
+    - {id: V-P01-04, check: 'классы решений РИЦ не выданы за принятый scope', result: pass, evidence: 'candidate_RIC_decision_classes.status=hypotheses_to_validate_not_accepted_scope'}
+    - {id: V-P01-05, check: 'альтернативы и ограничения допускают отказ от предлагаемого цикла', result: pass, evidence: 'improvements_deficiencies_constraints_alternatives and risks'}
+    - {id: V-P01-06, check: 'сильные economic/network/causal claims исключены', result: pass, evidence: 'scope, economic_basis, market_basis, constraints'}
+    - {id: V-P01-07, check: 'P01→P02 gate требует прямых данных РИЦ', result: pass, evidence: 'P01_acceptance_gate_for_P02'}
+    - {id: V-P01-08, check: 'negative outcome допустим', result: pass, evidence: 'если РИЦ отвергает проблему, требуется новая версия P01, а не подбор подтверждающих эпизодов'}
+  problems_encountered:
+    - {id: VP01-P01, problem: 'нет прямых данных реального РИЦ', disposition: 'не трактовать как провал P01; сохранить candidate status и блокировать P02'}
+    - {id: VP01-P02, problem: 'термин полезность может провоцировать confirmation bias', disposition: 'считать допустимыми подтверждение, корректировку и опровержение гипотезы'}
+  verification_decisions_and_rationale:
+    - decision: accept_P01_as_verified_candidate_for_real_RIC_elicitation
+      rationale: >-
+        Формулировка ограничена доказательным разрывом, сохраняет неизвестное, не обвиняет конкретный РИЦ,
+        допускает опровержение и содержит явный gate до stakeholder needs.
+    - decision: do_not_promote_to_P02_without_real_RIC
+      rationale: stakeholder needs and validation criteria require actual stakeholder evidence.
+conclusions_and_recommendations:
+  conclusion: >-
+    ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1 предметно верифицирован как
+    кандидатный P01 с explicit limitations. Он пригоден для merge и последующего предъявления реальному РИЦ,
+    но не является подтвержденной проблемой или доказательством пользы.
+  recommendation: >-
+    Следующий substantive gate — получить прямое подтверждение/корректировку P01 от реального РИЦ;
+    только затем создавать P02 TECH-STK stakeholder needs and requirements.
+references:
+  - ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+  - ARTVER-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
+  - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  P01: candidate problem or opportunity statement before stakeholder-needs elicitation
+  evidence_decision_gap: absence of verified trace from evidence through actual RIC decision to subsequent observation
+  verified_candidate: subject-checked analytical candidate that remains unvalidated by the real stakeholder
+change_history:
+  - {version: V1, date: '2026-09-07', change: 'subject verification of P01 before merge'}
+owner_product_request:
+  exact_visible_text: 'смерджи все пр в кплюс и продолжай'
+  current_dialogue_branch_purpose: 'для продукта «Диагностика клиентского случая РИЦ» пройти полный жизненный цикл как продукта SE-среды и как продукта клиентской системы «Сеть КонсультантПлюс»: декомпозировать ЖЦ, определить метрики и критерии переходов и на их основе получить проверяемые доказательства того, в какой мере продукт полезен РИЦ, создает клиентскую ценность и приводит к наблюдаемым результатам, включая границы и случаи неподтверждения этих утверждений; свести каждый результат к каноническому ProcessType/O и стандартному информационному продукту с полным применимым составом по ГОСТ Р 58609, персистировать результаты и проверки до фактических блокеров.'
+  request_specific_requirements:
+    - satisfy subject-verification merge gate for P01
+    - preserve negative and neutral evidence
+    - do not infer real-RIC validation
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_subject_verification_authored_pending_exact_head_worker
+verification:
+  structural_status: full_7_6_and_10_93_coverage_authored_pending_exact_head_external_client_worker
+  semantic_status: pass_with_explicit_limitations
+  owner_acceptance: merge authorized by current owner request; real-RIC validation separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-ric-interaction-benefit
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status]}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope]}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization]}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants]}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary]}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction]}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions]}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body]}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references]}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography]}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary]}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history]}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object]}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [introduction.criteria_basis]}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.verification_checks]}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [issued_at_and_status, introduction.verified_object]}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.verification_checks]}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered]}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale]}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report for RIC P01 problem/opportunity, resolution_basis: TECH-VER exact binding to §10.93, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [introduction.criteria_basis]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.verification_checks]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [issued_at_and_status, introduction.verified_object]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.verification_checks]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions_and_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: §10.93 specialized to subject verification of RIC P01 problem/opportunity statement
+  information_item_management:
+    version_control: exact V1
+    review_approval: subject TECH-VER complete; exact-head external structural worker and real-RIC TECH-VAL remain separate
+    quality_evaluation: external structural worker plus owner review
+    retention: canonical client TECH-VER product
+    reuse_and_duplication: successor version required if P01 changes materially
+  composition_state: subject_verified_candidate_pending_exact_head_external_worker
