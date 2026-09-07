@@ -1,0 +1,331 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: SEMP
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_full_lifecycle_plan
+acceptance_status: plan_candidate_owner_acceptance_client_execution_and_each_gate_separate
+artifact_instance_purpose: >-
+  Спланировать полный жизненный цикл продукта «Диагностика клиентского случая РИЦ» как двух связанных,
+  но не смешиваемых контуров: производство/поставка через SE-среду и приобретение/использование/изменение
+  конкретным РИЦ. Декомпозировать работы, стандартные ProcessType/O, нормативные информационные продукты,
+  переходы, метрики, проверки и условия завершения; текущий узкий SEMP V3 сохранить как подчиненный план
+  выполнения одного пилотного пакета, а не переписывать его назначение.
+producer:
+  process_type_id: TM-PLAN
+  process_instance_id: PI-CPLUS-TM-PLAN-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  activity_instance_id: AI-CPLUS-TM-PLAN-PLAN-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-PLAN-RIC-DIAGNOSTIC-LIFECYCLE
+    methodic_version_id: METHVER-CPLUS-TM-PLAN-RIC-DIAGNOSTIC-LIFECYCLE-V1
+    methodic_version: dual_track_full_lifecycle_v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: full_lifecycle_plan_candidate}
+scope: product-specific full lifecycle planning from opportunity through disposal; real client-side transitions remain evidence-gated
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+authorizing_organization: owner
+applicable_references:
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+  - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+introduction:
+  purpose: make the whole product lifecycle executable as evidence-backed transitions rather than a one-off proposal or report
+  audience: owner, engineering actor, future RIC acquirer/participant, verifiers
+  applicability: current candidate product and successors until superseded or disposed
+planned_activities_and_tasks:
+  - maintain product-specific lifecycle concept and measurement plan
+  - preserve existing E0/S01 system requirements architecture design implementation and pilot SEMP as controlled inputs
+  - verify every materially changed lifecycle product on exact head
+  - complete supplier Proposal/supply records only with truthful issue/delivery state
+  - resolve concrete RIC/acquirer before acquisition or transition claims
+  - collect one real de-identified episode and execute the existing E0/S01 pilot plan
+  - produce real TM-MEAS evidence, recipient TECH-BMA report and recipient TECH-VER report
+  - validate actual usefulness in the RIC environment under a standard validation plan
+  - route accepted product/service changes through change/configuration and required downstream technical processes
+  - remeasure/revalidate after material accepted change when comparable evidence exists
+  - maintain/sustain or scale only after repeated evidence and explicit authority
+  - execute disposal only when retirement is authorized; preserve audit lineage and handle protected data according to plan
+tools_methods_and_techniques:
+  tools: [ChatGPT engineering actor, GitHub connector, MOZ1961/se, MOZ1961/consultantplus, structural verification workers]
+  methods: [process-purpose routing, canonical ProcessType/O ownership, normative-first GOST composition, evidence-class separation, data minimization, exact configuration control, lifecycle gate measurement]
+schedule:
+  current_planning: immediate in this engineering request
+  external_transition: after named RIC recipient/acquirer and channel/authority are resolved
+  real_pilot: after adequate input and agreed session; existing 45-60 minute session and up-to-3-working-day package term apply
+  pilot_validation: after real package use/review
+  improvement_cycle: only after explicit RIC decision on a diagnosed gap or opportunity
+  sustained_operation: only after repeated verified executions and owner/client authority
+  disposal: only on retirement decision or supersession requiring disposition
+budget_and_cost_estimate:
+  first_pilot_external_price_rub: 0
+  existing_internal_effort_estimate: 4-6 actor-hours excluding waiting time for one pilot
+  lifecycle_expansion_budget: not_established
+  rule: no paid scaling, travel, incentive or external infrastructure commitment is authorized by this plan
+resources_and_allocation:
+  supplier: owner authority, engineering actor, SE environment, client repository and verification workers
+  client_RIC_when_resolved: director/acquirer, one authorized participant for first pilot, appropriate service/training/process owners for action decisions
+  not_required_for_first_pilot: [raw CRM export, client names, credentials, secrets, full confidential correspondence]
+responsibilities_and_authorities:
+  owner: approve external issue, material scope/price change, lifecycle-plan acceptance, merge, scaling and retirement
+  engineering_actor: produce/verify canonical artifacts and execute authorized lifecycle activities without claiming client decisions
+  RIC_acquirer: decide acquisition/participation/acceptance and any internal change; identity currently unresolved
+  RIC_participant: provide authorized episode evidence and factual/usefulness review within known scope
+  independent_verification: TECH-VER provides conformance evidence; does not grant client acceptance
+party_interfaces:
+  generic_SE_to_client_repository: {binding: BIND-CPLUS-SE-001, authority_transfer: false, persistence: client semantic products remain in MOZ1961/consultantplus}
+  supplier_to_RIC: {precondition: concrete recipient/channel/authority, outputs: Proposal then exact verified package, feedback: corrections/usefulness/action decision}
+  RIC_to_internal_change: {rule: diagnostic result is candidate evidence only; an accepted RIC change creates its own controlled lifecycle execution}
+risk_assessment_and_mitigation:
+  - {risk: full-lifecycle plan is mistaken for completed lifecycle, mitigation: every stage carries actual/planned/blocked/conditional state and evidence gate}
+  - {risk: supplier authority is mistaken for RIC acquisition/acceptance, mitigation: keep AGR-SUP and AGR-ACQ products and authorities separate}
+  - {risk: one pilot is generalized to Network effect, mitigation: validation scope limited to actual RIC/use and measurement plan forbids population inference}
+  - {risk: findings become requirements without decision, mitigation: route through TECH-STK/TM-PAC/change request only after stakeholder/owner evidence and authority}
+  - {risk: metric compliance is mistaken for user value, mitigation: hard S/G metrics and empirical C metrics remain separate}
+  - {risk: stale pilot artifacts conflict with lifecycle plan, mitigation: lifecycle plan references exact subordinate SEMP V3 and Proposal V4; material production change requires controlled successor}
+  - {risk: protected information retained unnecessarily, mitigation: minimization plus maintenance/disposal plans and exact records}
+quality_and_effectiveness_measures:
+  lifecycle_mapping_coverage: G01 target 100_percent
+  exact_head_verification: G02 must pass before readiness/merge
+  external_transition_authority: G03 must resolve before actual delivery
+  real_validation: G04 required before empirical pilot-validation claim
+  material_change_reverification: G06 target 100_percent
+  disposal_evidence_coverage: G07 target 100_percent when disposal occurs
+  detailed_measurement_ref: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+environment_infrastructure_security:
+  supplier_environment: SE-GENERIC-ENVIRONMENT plus GitHub connector
+  client_engineering_environment: ENV-CPLUS-ENGINEERING-001 / MOZ1961/consultantplus
+  real_RIC_environment: unresolved_until_specific_RIC_selected
+  security: minimum necessary de-identified input, no secrets/credentials, exact distribution lineage, protected data retention/disposal controls
+training_and_briefing:
+  engineering_actor: lifecycle/gate, evidence-class, normative composition and client-authority controls are mandatory
+  RIC_participant: brief scope, de-identification, factual review and non-causal/non-legal boundary before session
+technical_management_analysis_reporting:
+  planning_control: this SEMP plus subordinate one-pilot SEMP V3
+  measurement: lifecycle measurement plan and future TM-MEAS register/report
+  verification: subject TECH-VER plus exact-head structural workflow on every material change set
+  validation: dedicated TECH-VAL strategy/approach now; validation report only after real use
+  maintenance: dedicated TECH-MNT strategy/approach now
+  disposal: dedicated TECH-DSP strategy/approach now
+  request_functioning: exactly one generic-SE TECH-OP operation report per owner engineering request
+related_plans_and_task_descriptions:
+  subordinate_execution_plan: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  lifecycle_measurement_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+  validation_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
+  maintenance_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
+  disposal_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001-V1
+lifecycle_model_and_standard_product_matrix:
+  supplier_SE_track:
+    - {stage: S0, process: TECH-BMA, canonical_O: life cycle concepts, owner_name: Описание, gost: '§7.2 + §10.15', state: produced_current_request}
+    - {stage: S0, process: TECH-BMA, canonical_O: business or mission analysis report, owner_name: Отчет, gost: '§7.6 + §10.27', state: existing_upstream_evidence}
+    - {stage: S1, process: TECH-SYSREQ, canonical_O: system requirements, owner_name: Спецификация, gost: '§7.8 + §10.84', state: existing_E0_S01_V2}
+    - {stage: S1, process: TECH-ARCH, canonical_O: system architecture description, owner_name: Описание, gost: '§7.2 + §10.82', state: existing_E0_S01}
+    - {stage: S1, process: TECH-DES, canonical_O: system design description, owner_name: Описание, gost: '§7.2 generic normative', state: existing_E0_S01}
+    - {stage: S2, process: TECH-IMP, canonical_O: implementation procedure, owner_name: Процедура, gost: '§7.5 + §10.28', state: existing_E0_S01}
+    - {stage: S3, process: TECH-VER, canonical_O: verification report, owner_name: Отчет, gost: '§7.6 + §10.93', state: existing_and_current_package_verification}
+    - {stage: S4, process: AGR-SUP, canonical_O: supply response, owner_name: Описание, gost: '§7.2 + §10.56', state: Proposal_V4_merged_not_issued}
+    - {stage: S4, process: AGR-SUP, canonical_O: supply records/artifacts, owner_name: Запись, gost: '§9.1 + R9-CONFIGURATION', state: successor_issue_readiness_PR11_open}
+    - {stage: S5, process: TECH-TRN, canonical_O: transition strategy/approach, owner_name: План, gost: '§7.3 + §10.38 + §10.61', state: future_when_recipient_resolved}
+    - {stage: S5, process: TECH-TRN, canonical_O: transition report, owner_name: Отчет, gost: '§7.6 + §10.39', state: future_after_actual_transition}
+    - {stage: S6, process: TM-MEAS, canonical_O: measurement strategy/approach, owner_name: План, gost: '§7.3 + §10.46', state: produced_current_request}
+    - {stage: S6, process: TM-MEAS, canonical_O: measurement register, owner_name: Запись, gost: '§9.1 generic normative', state: future_real_episode}
+    - {stage: S6, process: TECH-BMA, canonical_O: business or mission analysis report, owner_name: Отчет, gost: '§7.6 + §10.27', state: future_recipient_product}
+    - {stage: S6, process: TECH-VER, canonical_O: verification report, owner_name: Отчет, gost: '§7.6 + §10.93', state: future_recipient_assurance}
+    - {stage: S6, process: TECH-OP, canonical_O: operation report, owner_name: Отчет, gost: '§7.6 generic normative', state: one_per_actual_request_execution}
+    - {stage: S7, process: TECH-VAL, canonical_O: validation strategy/approach, owner_name: План, gost: '§7.3 + §10.89', state: produced_current_request}
+    - {stage: S7, process: TECH-VAL, canonical_O: validation report, owner_name: Отчет, gost: '§7.6 + §10.90', state: future_real_use}
+    - {stage: S8, process: TECH-MNT, canonical_O: maintenance and logistics strategy/approach, owner_name: План, gost: '§7.3 + §10.44', state: produced_current_request}
+    - {stage: S8, process: TECH-MNT, canonical_O: maintenance and logistics procedure, owner_name: Процедура, gost: '§7.5 + §10.45', state: create_only_if_operational_maintenance_execution_requires_it}
+    - {stage: S8, process: TM-CM, canonical_O: change request, owner_name: Запрос, gost: '§7.7 + §10.12', state: future_on_material_change}
+    - {stage: S9, process: TECH-DSP, canonical_O: disposal strategy/approach, owner_name: План, gost: '§7.3 + §10.23', state: produced_current_request}
+    - {stage: S9, process: TECH-DSP, canonical_O: disposed system, owner_name: Запись, gost: '§9.1 + R9-DISPOSAL + R9-CONFIGURATION', state: future_on_actual_retirement}
+  client_RIC_track:
+    - {stage: C0, process: TECH-BMA, canonical_O: problem or opportunity statement, owner_name: Отчет, gost: '§7.6 + §10.53 specialization', state: blocked_specific_RIC_absent}
+    - {stage: C1, process: AGR-ACQ, canonical_O: acquisition strategy/approach, owner_name: План, gost: '§7.3 + §10.4', state: blocked_specific_acquirer_absent}
+    - {stage: C1, process: AGR-ACQ, canonical_O: request for supply, owner_name: Запрос, gost: '§7.7 + §10.62', state: blocked}
+    - {stage: C1, process: AGR-ACQ, canonical_O: acquisition agreement, owner_name: Спецификация, gost: '§7.8 + §10.19', state: conditional_if_formal_agreement_needed}
+    - {stage: C2, process: TECH-STK, canonical_O: stakeholder needs and requirements, owner_name: Спецификация, gost: '§7.8 + §10.84 specialization', state: blocked_direct_RIC_evidence_absent}
+    - {stage: C2, process: TECH-STK, canonical_O: validation criteria, owner_name: Спецификация, gost: '§7.8 generic normative', state: future_after_RIC_stakeholder_context}
+    - {stage: C3, process: AGR-ACQ, canonical_O: accepted system or system element, owner_name: Запись, gost: '§9.1 + R9-ACCEPTANCE + R9-CONFIGURATION', state: blocked_until_delivery_and_acceptance}
+    - {stage: C4, process: TM-DEC, canonical_O: decision register, owner_name: Запись, gost: '§9.1 + R9-DECISION', state: optional_when_RIC_records_action_decision}
+    - {stage: C5, process: TM-PAC, canonical_O: change request, owner_name: Запрос, gost: '§7.7 + §10.12', state: future_only_after_RIC_accepts_change}
+    - {stage: C6, process: TM-MEAS, canonical_O: measurement report, owner_name: Отчет, gost: '§7.6 + §10.47 process override', state: future_retest_analysis}
+    - {stage: C6, process: TECH-VAL, canonical_O: validation report, owner_name: Отчет, gost: '§7.6 + §10.90', state: future_after_retest_or_use}
+    - {stage: C7, process: TECH-OP, canonical_O: operation report, owner_name: Отчет, gost: '§7.6 generic normative', state: future_repeated_operation}
+    - {stage: C8, process: TECH-MNT, canonical_O: maintenance and logistics report, owner_name: Отчет, gost: '§7.6 process override currently no specific profile', state: conditional}
+    - {stage: C9, process: TECH-DSP, canonical_O: disposed system, owner_name: Запись, gost: '§9.1 + R9-DISPOSAL + R9-CONFIGURATION', state: future}
+work_breakdown_structure:
+  - {id: L00, work: establish dual lifecycle and exact standard-product map, process: TECH-BMA, output: life cycle concepts, state: current}
+  - {id: L01, work: establish lifecycle measurement definitions and gates, process: TM-MEAS, output: measurement strategy/approach, state: current}
+  - {id: L02, work: establish full lifecycle management plan/WBS, process: TM-PLAN, output: SEMP, state: current}
+  - {id: L03, work: establish real-use validation plan, process: TECH-VAL, output: validation strategy/approach, state: current}
+  - {id: L04, work: establish maintenance/improvement plan, process: TECH-MNT, output: maintenance and logistics strategy/approach, state: current}
+  - {id: L05, work: establish retirement/disposal plan, process: TECH-DSP, output: disposal strategy/approach, state: current}
+  - {id: L06, work: verify current lifecycle package against standards, purpose and truth boundaries, process: TECH-VER, output: verification report, state: current}
+  - {id: L10, work: resolve named RIC/acquirer/recipient/channel, process: AGR-ACQ+AGR-SUP, output: request/agreement/supply records as applicable, state: blocked_external}
+  - {id: L11, work: execute one real pilot under subordinate SEMP V3, process: TM-MEAS+TECH-BMA+TECH-VER+AGR-SUP, output: real evidence and two recipient reports plus delivery record, state: blocked_real_episode}
+  - {id: L12, work: validate intended usefulness in actual RIC environment, process: TECH-VAL, output: validation report, state: blocked_real_use}
+  - {id: L13, work: disposition any diagnosed change through RIC authority and controlled change lifecycle, process: TM-PAC+applicable technical processes, output: change request and successor products, state: conditional}
+  - {id: L14, work: remeasure/revalidate after accepted change, process: TM-MEAS+TECH-VAL, output: measurement report+validation report, state: conditional}
+  - {id: L15, work: sustain/reverify or scale only on repeated evidence, process: TECH-MNT+TECH-VER+TM-PAC, output: standard successor products, state: conditional}
+  - {id: L16, work: retire/dispose on authority, process: TECH-DSP, output: disposed system record, state: not_due}
+replanning_and_service_alternatives:
+  triggers: [material package member change, price/scope change, new RIC stakeholder requirement, accepted product capability change, scaling from one episode to multi-episode, measurement/validation design change]
+  rule: route each material change to owning ProcessType/O and create successor ArtifactVersions; do not silently broaden E0/S01
+closure_and_archival:
+  lifecycle_plan_closure: this plan closes when superseded or product disposal is completed
+  pilot_closeout: governed by subordinate SEMP V3 after delivery/cancellation and feedback disposition
+  archive: preserve canonical ArtifactVersion history and distribution/verification evidence; disposal plan governs protected data and active operational copies
+glossary:
+  SEMP: Plan that maps lifecycle work, products, authority, resources, risks and verification; not an external recipient deliverable by default
+  subordinate_SEMP: existing one-pilot production plan V3 retained for actual E0/S01 execution
+  supplier_track: SE-environment production/supply lifecycle whose client semantic state persists in consultantplus
+  client_track: acquisition/use/change lifecycle owned by a concrete RIC
+  current: product/activity can be truthfully performed in this request
+  blocked: required external evidence/authority is absent
+  conditional: lifecycle activity becomes applicable only after an upstream decision/event
+change_procedure_and_history:
+  change_rule: material lifecycle/WBS/authority/product-map changes require successor SEMP and affected plans
+  history:
+    - {version: V1, date: '2026-09-07', change: establish full dual-track lifecycle plan and standard-product matrix}
+completion_process:
+  current_request_complete_when: current six lifecycle target products and supporting TECH-VER are persisted and structurally checked; external lifecycle remains blocked explicitly
+  lifecycle_complete_when: actual disposal/retirement conditions are fulfilled or the product is formally superseded with transition/retention obligations resolved
+owner_product_request:
+  exact_visible_text: |-
+    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
+    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
+  request_specific_requirements: [full dual lifecycle, decomposition, metrics and gates, standard products and GOST composition, truthful future blockers]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_PLAN_SEMP
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, lifecycle_model_and_standard_product_matrix, work_breakdown_structure]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [completion_process, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [applicable_references, lifecycle_model_and_standard_product_matrix]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_procedure_and_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+verification:
+  structural_status: pending_fresh_exact_head
+  semantic_status: full_lifecycle_plan_candidate_pending_TECH_VER
+  owner_acceptance: planning_execution_authorized_plan_acceptance_and_external_client_decisions_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-PLAN/SEMP/ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.1', process_name: 'Project planning process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.1', process_name: 'Процесс планирования проекта'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: SEMP
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.55']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.55']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [applicable_references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [authorizing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_and_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [party_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training_and_briefing], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_analysis_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [completion_process], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.55-R01, disposition: satisfied, artifact_field_refs: [lifecycle_model_and_standard_product_matrix, work_breakdown_structure], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R02, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities, party_interfaces], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R03, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R04, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks, technical_management_analysis_reporting], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R05, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R06, disposition: satisfied, artifact_field_refs: [technical_management_analysis_reporting, related_plans_and_task_descriptions], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R07, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation, budget_and_cost_estimate, schedule], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+        - {requirement_id: S10.55-R08, disposition: satisfied, artifact_field_refs: [work_breakdown_structure], iso: {section_or_item: '10.55'}, gost: {section_or_item: '10.55'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: project management plan/SEMP for full RIC diagnostic product lifecycle, resolution_basis: TM-PLAN SEMP controlled match to GOST 10.55, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [applicable_references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [authorizing_organization]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_and_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [party_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training_and_briefing]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_analysis_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [completion_process]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: plan, specific_profiles: ['10.55'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.55'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.55-R01, state: satisfied, artifact_field_refs: [lifecycle_model_and_standard_product_matrix, work_breakdown_structure]}
+          - {requirement_id: S10.55-R02, state: satisfied, artifact_field_refs: [responsibilities_and_authorities, party_interfaces]}
+          - {requirement_id: S10.55-R03, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+          - {requirement_id: S10.55-R04, state: satisfied, artifact_field_refs: [planned_activities_and_tasks, technical_management_analysis_reporting]}
+          - {requirement_id: S10.55-R05, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+          - {requirement_id: S10.55-R06, state: satisfied, artifact_field_refs: [technical_management_analysis_reporting, related_plans_and_task_descriptions]}
+          - {requirement_id: S10.55-R07, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation, budget_and_cost_estimate, schedule]}
+          - {requirement_id: S10.55-R08, state: satisfied, artifact_field_refs: [work_breakdown_structure]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected}
+  tailoring: full lifecycle plan layers over rather than replaces the narrower one-pilot SEMP V3
+  information_item_management: {version_control: V1, review_approval: owner acceptance separate, quality_evaluation: exact-head worker plus TECH-VER, retention: canonical full-lifecycle SEMP, reuse_and_duplication: subordinate SEMP V3 remains exact plan for actual one-pilot production}
