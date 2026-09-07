@@ -1,323 +1,386 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001
-artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
 artifact_label: measurement strategy/approach
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_ready_for_pilot_after_verification
+lifecycle_status: owner_directed_candidate_ready_for_positioning_pilot_after_verification
 acceptance_status: measurement_plan_not_yet_piloted_or_owner_baselined
 artifact_instance_purpose: >-
-  Задать рабочий план первой волны исследования реальных клиентских решений, позволяющий проверить кандидатную
-  модель ценности КонсультантПлюс на конкретных эпизодах и отдельно зафиксировать вклад СПС, сервиса РИЦ,
-  неустраненную неопределенность и отсутствующие возможности без недоказанной финансовой атрибуции.
+  Материально расширить первую волну исследования реальных клиентских решений так, чтобы она проверяла
+  не только decision-centric модель ценности C1-C6/P1-P2, но и сравнительные гипотезы позиционирования:
+  сегмент и роль, конкретный эпизод, frame of reference, фактические альтернативы, points of parity,
+  points of difference, reason to believe, язык ценности, отдельный вклад КонсультантПлюс и РИЦ и
+  реакцию на альтернативные территории после нейтральной реконструкции эпизода.
 producer:
   process_type_id: TM-MEAS
-  process_instance_id: PI-CPLUS-TM-MEAS-DECISION-RESEARCH-WAVE1-20260905-001
-  activity_instance_id: AI-CPLUS-TM-MEAS-PREPARE-DECISION-RESEARCH-WAVE1-20260905-001
+  process_instance_id: PI-CPLUS-TM-MEAS-POSITIONING-VALIDATION-WAVE1-20260907-001
+  activity_instance_id: AI-CPLUS-TM-MEAS-PREPARE-POSITIONING-VALIDATION-WAVE1-20260907-001
   methodic_instance:
-    methodic_id: METH-TM-MEAS-EPISODE-INTERVIEW-RESEARCH
-    methodic_version_id: METHVER-CPLUS-TM-MEAS-EPISODE-INTERVIEW-RESEARCH-V1
-    methodic_version: runtime-provisional-v1
+    methodic_id: METH-TM-MEAS-EPISODE-POSITIONING-INTERVIEW-RESEARCH
+    methodic_version_id: METHVER-CPLUS-TM-MEAS-EPISODE-POSITIONING-INTERVIEW-RESEARCH-V2
+    methodic_version: runtime-provisional-v2
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-DECISION-RESEARCH-WAVE1-20260905-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-20260907-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-05', status: candidate_ready_for_pilot_after_verification}
-scope: first-wave qualitative measurement of real decision episodes relevant to the ConsultantPlus decision-value model
+issued_at_and_status: {issued_at: '2026-09-07', status: candidate_ready_for_positioning_pilot_after_TECH_VER}
+scope: >-
+  Первая качественная волна исследования позиционирования КонсультантПлюс для РИЦ на реальных
+  decision episodes: сравнение PT2 «От информации к действию», PT3 «Основание профессионального решения»,
+  PT6 «КонсультантПлюс + РИЦ как система применения» и контрольной PT7 «Доказательная база категории»,
+  с возможностью фиксировать PT1/PT4/PT5 как спонтанно возникающие территории.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 approving_authority: owner
 references:
-  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
-  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
-  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
-  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
+  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
 introduction:
-  purpose: test the decision-centric value model through recent concrete episodes rather than opinions about product features
-  audience: owner, interviewers, RIC client-facing participants, subsequent TECH-BMA/TECH-STK/TECH-VER
-  coverage: four first-wave participant groups, episode interview protocol, coding measures, evidence classification, storage, analysis and completion rules
-  nonpurpose: this plan does not measure market share, ROI, avoided fines, legal correctness of participant decisions or statistically representative population parameters
+  purpose: >-
+    проверить сравнительное позиционирование через реальные недавние эпизоды и организационный контекст,
+    а не через изолированное голосование за рекламные формулировки
+  audience: [owner, interviewers, RIC client-facing participants, subsequent TECH-BMA, subsequent TECH-VER, future TM-DEC after evidence]
+  coverage: [four participant groups, episode reconstruction, category/frame, alternatives, choice criteria, PoP, PoD, reason to believe, message territory test, evidence classes, storage, cross-case analysis]
+  nonpurpose: [не измеряет рыночную долю, не доказывает ROI, не доказывает предотвращенные штрафы, не устанавливает юридическую правильность решений, не дает статистически репрезентативные оценки рынка, не принимает официальное позиционирование]
 measurement_needs_and_information_requirements:
   primary_questions:
-    - what concrete decisions do participants actually make and at which C1-C5 client decision level
-    - what triggers those decisions and what consequences do participants associate with error or delay
-    - what information and evidence are required before the participant considers the decision sufficiently grounded
-    - what role ConsultantPlus plays in finding, understanding, comparing, justifying or monitoring information in the episode
-    - what separate role the RIC service plays in configuring access, teaching, supporting or resolving the scenario
-    - where uncertainty, delay, workaround or missing capability remains
-    - how buyer/sponsor language about value differs from end-user language
-    - which provider responses P1/P2 are supported by repeated client evidence rather than internal assumption
-  evidence_unit: one recent concrete decision episode with identifiable trigger, participant, decision, evidence path, action/status and product/service contribution
+    - какое конкретное решение или действие участник принимал в недавнем рабочем эпизоде и какой C1-C6 код применим
+    - что было триггером, ожидаемым результатом и последствием ошибки или задержки в пределах знания участника
+    - какую категорию решения или инструмента участник фактически использовал как frame of reference
+    - какие альтернативы реально рассматривались, использовались параллельно или были бы использованы при недоступности КонсультантПлюс
+    - какие свойства участник считает обязательными для приемлемого решения в этой категории
+    - какое отличие КонсультантПлюс участник считает реально значимым в эпизоде и чем оно подтверждается
+    - что отдельно дал КонсультантПлюс и что отдельно дал РИЦ
+    - как пользователь, руководитель функции, экономический заказчик и ИТ-участник различаются по критериям выбора
+    - какой спонтанный язык ценности возникает до показа кандидатных формулировок
+    - как после реконструкции эпизода участник оценивает PT2, PT3, PT6 и PT7 по релевантности, правдоподобию и отличительности
+    - какие территории отвергаются, смешиваются или требуют другого frame of reference
+    - какие выводы остаются not_established и не должны усиливаться аналитиком
+  evidence_unit: >-
+    один недавний конкретный decision episode с идентифицируемым триггером, ролью, решением, информационным
+    путем, фактическими альтернативами либо explicit not_established, действием/status, вкладом продукта/РИЦ
+    и отдельным блоком сравнительной реакции на positioning territories
   evidence_classes:
     - direct_episode_fact_reported_by_participant
     - participant_interpretation_or_judgment
+    - participant_stated_choice_criterion
+    - participant_stated_alternative
+    - participant_message_reaction
     - interviewer_coding_or_inference
     - RIC_account_of_client_episode
+    - official_provider_claim
     - not_established
   first_wave_groups:
-    - {id: G1, group: professional end user, target_roles: [бухгалтер, юрист, аудитор, финансовый специалист], primary_levels: [C1, C2]}
+    - {id: G1, group: professional end user, target_roles: [бухгалтер, юрист, аудитор, финансовый специалист, кадровый специалист, специалист по закупкам], primary_levels: [C1, C2]}
     - {id: G2, group: functional decision owner, target_roles: [главный бухгалтер, руководитель юридической или иной регулируемой функции], primary_levels: [C2, C3, C4]}
     - {id: G3, group: economic buyer or sponsor, target_roles: [руководитель, собственник, экономический заказчик, закупщик], primary_levels: [C4, C5]}
-    - {id: G4, group: RIC client-facing participant, target_roles: [менеджер РИЦ, специалист сопровождения, преподаватель или консультант], primary_levels: [P1], relation: provider_response_evidence}
+    - {id: G4, group: RIC client-facing participant, target_roles: [менеджер РИЦ, специалист сопровождения, преподаватель, консультант], primary_levels: [P1], relation: provider_response_evidence}
+  positioning_territories_under_test:
+    primary: [PT2, PT3, PT6]
+    control: [PT7]
+    secondary_or_spontaneous: [PT1, PT4, PT5]
 planned_activities_and_tasks:
-  - pilot the protocol with one client-side participant and one RIC participant
-  - revise wording only where pilot reveals ambiguity or leading questions; preserve measure identities or version them explicitly
-  - recruit a purposive first-wave sample spanning the four groups and materially different organization contexts
-  - reconstruct recent decision episodes before asking about ConsultantPlus or product value
-  - code each valid episode against decision level, trigger, consequence, information path, product contribution, RIC contribution and gap type
-  - compare client-side and RIC-side accounts where they refer to similar scenarios
-  - synthesize confirmed, contradicted and still-unresolved model hypotheses
-  - feed confirmed needs/gaps back to TECH-BMA/TECH-STK without converting them automatically into requirements
+  - pilot the V2 protocol with one client-side participant and one RIC participant after owner pilot authority
+  - revise wording only where pilot reveals ambiguity, leading questions or category confusion; version material measure changes
+  - recruit a purposive first-wave sample spanning all four groups and materially different organization contexts
+  - reconstruct each recent episode before mentioning ConsultantPlus value or showing any positioning formulation
+  - collect frame of reference and factual alternatives before presenting candidate territory names
+  - code each valid episode against role, C/P level, trigger, consequence, information path, alternative set, choice criteria, product contribution, RIC contribution and gap type
+  - derive candidate PoP/PoD only from participant evidence plus clearly labeled analyst synthesis
+  - test PT2/PT3/PT6/PT7 only after spontaneous value language is captured
+  - compare client-side and RIC-side accounts where they refer to similar scenarios without treating one as substitute for the other
+  - synthesize supported, contradicted, mixed, role-specific and untested territory hypotheses
+  - feed evidence back to TECH-BMA; create TM-DEC only if owner or authorized governance actually makes a positioning decision
 tools_methods_techniques:
-  method: semi-structured critical-incident-style interview centered on the last concrete meaningful episode
+  method: >-
+    semi-structured critical-incident/critical-decision-style interview combined with a positioning comparison module;
+    episode reconstruction precedes category/alternative elicitation, which precedes candidate message testing
   techniques:
     - neutral chronological reconstruction before product prompts
-    - separate fact, participant judgment and interviewer inference
-    - counterfactual probe without claiming causality
+    - explicit distinction among fact, participant judgment, stated criterion, stated alternative and interviewer inference
+    - counterfactual probe used only as perception evidence, not causal proof
+    - unaided category and alternative elicitation before aided territory comparison
     - role-specific probes after a common core
-    - cross-case coding against the same stable measure set
-  tools: [interview guide derived from this plan, structured episode record, spreadsheet or repository-backed coding table as a derived representation, audio recording only with explicit participant consent]
+    - points-of-parity and points-of-difference coding as hypotheses, not automatic facts
+    - reason-to-believe trace for every claimed difference
+    - cross-case coding against a stable measure set
+    - preserve contradiction and minority cases rather than averaging them away
+  tools: [interview guide derived from this plan, structured episode record, controlled coding representation, repository-backed measurement register after data collection, audio only with explicit participant consent]
 schedule:
   sequencing:
-    - stage: pilot
-      scope: 2 interviews minimum, preferably one client-side and one RIC-side
-    - stage: instrument revision
-      scope: one controlled revision after pilot if needed
-    - stage: main wave
-      scope: 8-12 organizations or comparable client contexts, approximately 12-20 interviews, target at least 25 valid episodes
-    - stage: synthesis
-      scope: cross-case analysis and recommendation to TECH-BMA/TECH-STK
-  timing_rule: exact calendar dates are not established in this plan and require owner/participant availability
+    - {stage: pre_pilot_TECH_VER, scope: semantic verification of V2 plan and positioning V3}
+    - {stage: pilot, scope: 2 interviews minimum preferably one client-side and one RIC-side; requires separate external execution authority}
+    - {stage: instrument_revision, scope: one controlled revision after pilot if needed}
+    - {stage: main_wave, scope: '8-12 organizations or comparable client contexts, approximately 12-20 interviews, target at least 25 valid episodes'}
+    - {stage: synthesis, scope: cross-case measurement report and recommendation to TECH-BMA/TM-DEC}
+  timing_rule: exact calendar dates are not established and depend on owner/participant availability
 budget_and_cost_estimate:
   state: not_established
-  rule: no client research budget, incentive or travel cost is authorized or inferred by this plan
+  rule: no research budget, incentive, travel or external commitment is authorized or inferred by this plan
   decision_needed_if_costs_arise: owner authorization before commitment
 resources_and_allocation:
-  owner: research scope and acceptance authority
-  interviewer: conduct neutral episode reconstruction and distinguish report from inference
-  analyst: code episodes, compare cases and maintain evidence state
-  RIC_contact: recruit or coordinate RIC/client participants only within authorized relationship boundaries
-  repository: process-owned canonical products; derived coding table must trace to the exact ArtifactVersion and must not become an independent semantic authority
+  owner: research scope, external pilot authority and acceptance authority
+  interviewer: neutral episode reconstruction and later aided positioning test without selling the hypothesis
+  analyst: coding, source/evidence separation and cross-case comparison
+  RIC_contact: recruitment/coordination only within authorized relationship boundaries
+  repository: canonical process-owned products; derived tables are representations and must trace to exact ArtifactVersions
 responsibilities_and_authorities:
   owner:
-    authority: approve use of the plan, changes to scope and any external communication or incentive commitment
+    authority: approve use of plan, external participant contact, scope changes, costs and any eventual positioning decision
   interviewer:
-    authority: collect only consented research information; no authority to promise product changes or interpret interview statements as requirements
+    authority: collect only consented research information; no authority to promise product changes or present candidate territories as approved
   analyst:
-    authority: assign provisional codes and evidence classes; no authority to accept stakeholder needs or product requirements
+    authority: assign provisional codes and hypothesis dispositions; no authority to adopt positioning or promote observations directly to requirements
   participant:
-    authority: describe own episode and interpretation; statements about organizational policy or outcomes are evidence only within the participant's known scope
+    authority: describe own episode and own interpretation; claims about organization/market remain bounded by participant knowledge
 participant_interfaces:
-  client_to_interviewer: recent episode narrative, decision context and perceived product/service contribution
-  RIC_to_interviewer: service episode, intervention and observed client response
+  client_to_interviewer: episode narrative, category, alternatives, criteria, value language and message reactions
+  RIC_to_interviewer: service episode, intervention, perceived client response and RIC-language hypotheses
   interviewer_to_analysis: de-identified structured episode record plus evidence-class tags
-  analysis_to_TECH_BMA_TECH_STK: confirmed/contradicted hypotheses and evidence-backed candidate needs/gaps; no automatic requirement promotion
+  analysis_to_TECH_BMA: comparative positioning evidence and unresolved gaps
+  analysis_to_TM_DEC: no automatic decision; only decision-support evidence if owner later requests a positioning choice
 risk_assessment_and_mitigation:
-  - {risk: feature-led interviewing produces confirmation bias, mitigation: reconstruct episode and decision before mentioning ConsultantPlus contribution}
-  - {risk: respondents describe general habits instead of a real episode, mitigation: require a recent identifiable trigger, sequence and action/status for a valid episode}
-  - {risk: RIC description is mistaken for client evidence, mitigation: classify RIC account separately and triangulate with client evidence where possible}
-  - {risk: business outcome is attributed to the product without causal basis, mitigation: record only participant-perceived contribution and episode-level observable result}
-  - {risk: sensitive client facts or personal data enter the record, mitigation: minimize data, use coded participant/organization IDs and exclude unnecessary names/case details}
-  - {risk: small sample is treated as statistically representative, mitigation: label wave as qualitative purposive evidence and report coverage rather than population estimates}
-  - {risk: interviewer coding drifts, mitigation: use fixed code definitions and second-review a sample of records before synthesis}
+  - {risk: feature-led or slogan-led interviewing creates confirmation bias, mitigation: reconstruct episode and unaided frame/alternatives before product or territory prompts}
+  - {risk: participant gives generic habits instead of real episode, mitigation: require recent identifiable trigger, sequence and action/status for valid episode}
+  - {risk: researcher invents competitor set, mitigation: collect actual alternative names/types from participant and allow not_established}
+  - {risk: RIC account is mistaken for client evidence, mitigation: classify RIC account separately and triangulate where possible}
+  - {risk: provider official message is mistaken for market perception, mitigation: classify as official_provider_claim not participant evidence}
+  - {risk: message preference is constructed by the interview task, mitigation: capture spontaneous value language first and preserve aided versus unaided evidence separately}
+  - {risk: product gets causal credit for business outcome, mitigation: separate contribution fields and treat counterfactual as perception only}
+  - {risk: small sample is treated as statistically representative, mitigation: label wave qualitative/purposive and report sample coverage not population prevalence}
+  - {risk: interviewer coding drifts, mitigation: use fixed definitions and second-review a sample before synthesis}
+  - {risk: sensitive client facts enter record, mitigation: coded IDs, data minimization, no unnecessary names or privileged case materials}
 quality_and_effectiveness_measures:
   quality_criteria:
-    - every valid episode has trigger, participant role, decision, evidence path, action/status and evidence-class tags
+    - every valid episode has trigger, role, decision, evidence path, action/status and evidence-class tags
+    - category/frame and actual alternatives are present or explicitly not_established
     - product contribution and RIC contribution are separate fields
-    - interviewer inference is never stored as direct participant fact
-    - each conclusion in synthesis can trace to one or more episode IDs
+    - spontaneous value language is captured before aided message test
+    - PoP/PoD/RTB fields distinguish participant statement from analyst inference
+    - every territory disposition traces to episode IDs
+    - contradictory cases remain visible
   effectiveness_signals:
-    - at least 25 valid episodes across all four first-wave groups
-    - at least one materially distinct confirmed or contradicted hypothesis per client-side group, or explicit evidence insufficiency
-    - no unresolved ambiguity about C versus P level coding in the analyzed set
-  noncriterion: absence of new themes is a useful saturation signal but is not treated as statistical proof
+    - at least 25 valid episodes across all four groups or explicit evidence-insufficiency stop decision
+    - all primary territories PT2/PT3/PT6 and control PT7 tested across more than one client-side role when feasible
+    - at least one materially supported, contradicted or role-specific finding per client-side group or explicit insufficiency
+    - no unresolved systematic ambiguity between C/P coding and positioning-dimension coding
+  noncriteria:
+    - territory preference count alone is not adoption evidence
+    - theme saturation is informative but not statistical proof
 environment_infrastructure_security:
   environment: authorized client/RIC interviews plus MOZ1961/consultantplus process-owned persistence
-  infrastructure: interview channel, structured recording template and analysis representation
+  infrastructure: interview channel, structured recording template and controlled analysis representation
   privacy_security:
-    - use coded participant and organization identifiers by default
-    - do not persist unnecessary personal data, credentials, client secrets or privileged case materials
-    - direct quotations require explicit consent; paraphrase is the default research record
-    - audio recording is optional and requires explicit consent and a defined retention decision
+    - coded participant and organization identifiers by default
+    - no unnecessary personal data, credentials, client secrets or privileged case materials
+    - direct quotations require explicit consent; paraphrase is default
+    - audio is optional and requires explicit consent and a defined retention decision
   safety: no legal advice or correctness judgment about the participant's substantive decision is provided by the research interview
 training:
   interviewer_orientation:
-    - distinguish episode fact, participant judgment and interviewer inference
-    - avoid feature prompting before episode reconstruction
-    - do not convert stated pain points directly into requirements
-    - use the same core sequence across roles and only then apply role probes
+    - distinguish episode fact, participant judgment, choice criterion, alternative and interviewer inference
+    - do not show positioning territories before unaided episode/category/value elicitation
+    - avoid converting pain points directly into requirements or positioning decisions
+    - maintain same common core across roles before role-specific probes
+    - separate feedback on factual reconstruction from preference for candidate wording
 technical_management_review_reporting:
-  pilot_review: owner or designated reviewer checks whether questions are neutral and whether records can be coded consistently
-  structural_review: exact external client information-product worker
-  semantic_review: TECH-VER of plan against the refined BMA model and evidence boundaries
-  future_reporting: after data collection TM-MEAS measurement report plus updated TECH-BMA/TECH-STK products as warranted
+  pilot_review: owner or designated reviewer checks neutrality, category/alternative elicitation and coding consistency
+  structural_review: exact external-client information-product worker
+  semantic_review: TECH-VER of BMA V3, source register V1 and this V2 plan before pilot
+  future_reporting: TM-MEAS measurement report after data collection; updated TECH-BMA and optional later TM-DEC only as warranted
 related_plans_and_task_descriptions:
-  refined_model: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V1
-  stakeholder_identification: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V1
+  positioning_report: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  positioning_source_register: ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+  refined_model: ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
   next_expected_products_after_execution:
     - TM-MEAS measurement register for de-identified episode records
-    - TM-MEAS measurement report for cross-case findings
-    - TECH-BMA report update for confirmed/contradicted value hypotheses
-    - TECH-STK products only where direct evidence supports stakeholder needs
+    - TM-MEAS measurement report for cross-case positioning findings
+    - TECH-BMA report successor for confirmed/contradicted positioning hypotheses if material
+    - TM-DEC decision register only after an actual authorized positioning decision
 interview_protocol:
-  duration_target: 35-45 minutes
+  duration_target: 40-50 minutes
   common_core:
-    - step: opening
-      prompt: Коротко обозначить цель как изучение того, как человек решает реальные рабочие задачи; не презентовать гипотезу ценности.
-    - step: select_episode
-      prompt: Вспомните последний конкретный случай, когда изменение нормы, требование, спорная ситуация или профессиональный вопрос заставили вас принимать значимое решение. Что произошло?
-    - step: decision
-      prompt: Какое именно решение или действие от вас требовалось и к какому сроку?
-    - step: consequence
-      prompt: Что могло произойти, если решение оказалось бы неверным или запоздало?
-    - step: information_path
-      prompt: Какую информацию и основания вы искали, где искали и в какой последовательности?
-    - step: uncertainty
-      prompt: В какой момент оставалась наибольшая неопределенность и что помогло ее уменьшить?
-    - step: participants
-      prompt: Кто еще участвовал, согласовывал, исполнял или зависел от решения?
-    - step: action_and_evidence
-      prompt: Что в итоге сделали и какое основание решения сохранилось или могло быть показано другому человеку?
-    - step: consultantplus_role
-      prompt: На каких этапах использовался КонсультантПлюс? Что конкретно он позволил сделать, а чего не позволил?
-    - step: ric_role
-      prompt: Обращались ли к РИЦ или использовали обучение/сопровождение? Что изменилось благодаря этому, если изменилось?
-    - step: counterfactual
-      prompt: Если бы в этот момент КонсультантПлюс был недоступен, что вы сделали бы иначе? Это не считается доказательством причинности и фиксируется как оценка участника.
-    - step: recurrence
-      prompt: Как часто возникают похожие ситуации и насколько они типичны для вашей роли?
-    - step: value_language
-      prompt: Если объяснять коллеге одним предложением, за что именно здесь была ценность продукта или сервиса, как бы вы это сказали?
-    - step: gap
-      prompt: Что было самым трудным или недостающим в этом эпизоде?
+    - {step: opening, prompt: 'Изучаем, как решаются реальные рабочие задачи и как в них используются информационные источники и сервис; кандидатное позиционирование заранее не показывать.'}
+    - {step: select_episode, prompt: 'Вспомните последний конкретный случай, когда изменение нормы, требование, спорная ситуация или профессиональный вопрос заставили вас принимать значимое решение. Что произошло?'}
+    - {step: decision, prompt: 'Какое именно решение или действие от вас требовалось и к какому сроку?'}
+    - {step: consequence, prompt: 'Что могло произойти при ошибке или задержке — только в пределах того, что вы реально знаете или ожидали?'}
+    - {step: information_path, prompt: 'Какую информацию и основания вы искали, где и в какой последовательности?'}
+    - {step: category_unaided, prompt: 'Как вы сами называете класс инструмента или помощи, который нужен был в этой ситуации?'}
+    - {step: alternatives_unaided, prompt: 'Что еще вы реально использовали или рассматривали вместо этого или вместе с этим?'}
+    - {step: criteria, prompt: 'По каким признакам вы понимали, что источник или инструмент достаточно хорош для этой задачи?'}
+    - {step: parity, prompt: 'Какие свойства для вас здесь обязательны — без них вариант вообще не подходит?'}
+    - {step: difference, prompt: 'Что в КонсультантПлюс в этом эпизоде реально отличалось или было особенно полезно?'}
+    - {step: reason_to_believe, prompt: 'Из чего вы сделали вывод, что этому свойству или результату можно доверять?'}
+    - {step: consultantplus_role, prompt: 'Что конкретно позволил сделать КонсультантПлюс, а чего он не решил?'}
+    - {step: ric_role, prompt: 'Был ли вклад РИЦ, обучения или сопровождения? Что именно изменилось благодаря этому, если изменилось?'}
+    - {step: counterfactual, prompt: 'Если бы КонсультантПлюс был недоступен, что бы вы сделали? Ответ фиксируется как ваша оценка, не как доказательство причинности.'}
+    - {step: spontaneous_value_language, prompt: 'Если объяснить коллеге одним предложением, в чем здесь была ценность КонсультантПлюс и отдельно РИЦ?'}
+    - {step: aided_PT2, prompt: 'Насколько к этому эпизоду подходит смысл «понять, что это значит и что делать»? Что подходит и что нет?'}
+    - {step: aided_PT3, prompt: 'Насколько подходит смысл «иметь актуальную и проверяемую основу профессионального решения»? Что подходит и что нет?'}
+    - {step: aided_PT6, prompt: 'Насколько подходит смысл «система дает правовую основу, РИЦ помогает применять ее в рабочих сценариях»? Где граница вклада каждого?'}
+    - {step: aided_PT7, prompt: 'Насколько достаточно обычного объяснения через полную и актуальную правовую базу, аналитику и профессиональные инструменты? Чего в нем не хватает или что лишнее?'}
+    - {step: distinguishability, prompt: 'Какое из этих объяснений, если какое-то, действительно отличает решение от ваших реальных альтернатив? Почему?'}
+    - {step: gap, prompt: 'Что было самым трудным или недостающим в эпизоде и какое обещание продукта здесь было бы неправдоподобным?'}
   role_specific_probes:
-    G1_professional_end_user:
-      - что стало достаточным основанием для действия или позиции
-      - приходилось ли сравнивать несколько норм, версий, разъяснений или практик
-    G2_functional_owner:
-      - было ли решение единичным или потребовало изменить правило работы команды
-      - как решение передавалось сотрудникам и как контролировалось повторное применение
-    G3_buyer_sponsor:
-      - какое решение о покупке, продлении, составе комплекта, доступе, обучении или сервисе реально принималось
-      - какие рабочие сценарии считались достаточно значимыми, чтобы за них платить
-    G4_RIC_client_facing:
-      - с каким клиентским решением или затруднением пришел клиент
-      - какое действие РИЦ было предпринято и какое изменение поведения/результата наблюдалось
-      - что осталось предположением РИЦ без прямого подтверждения клиента
+    G1_professional_end_user: [что стало достаточным основанием действия или позиции, какие источники приходилось сопоставлять, что означало доверие к ответу]
+    G2_functional_owner: [потребовалось ли менять правило работы команды, как решение передавалось и контролировалось, что требуется для воспроизводимости]
+    G3_buyer_sponsor: [что реально влияло на покупку или продление, какие сценарии оправдывают комплект доступ обучение или сервис, какие альтернативы рассматривались]
+    G4_RIC_client_facing: [с каким клиентским затруднением пришли, какое действие РИЦ было выполнено, что клиент мог бы сделать без РИЦ, где РИЦ не должен приписывать себе результат]
+measures:
+  - {id: M01, name: participant_role_and_context, operational_definition: coded participant group plus organization-context descriptors without unnecessary identifiers}
+  - {id: M02, name: decision_level, operational_definition: C1-C6 or P1 with explicit not_established option}
+  - {id: M03, name: episode_trigger_and_required_action, operational_definition: reported trigger plus concrete decision/action and timing}
+  - {id: M04, name: frame_of_reference, operational_definition: participant unaided category wording plus analyst normalized code kept separately}
+  - {id: M05, name: actual_alternatives, operational_definition: alternatives actually used/considered/counterfactually stated; no researcher-invented default set}
+  - {id: M06, name: choice_criteria, operational_definition: participant-stated criteria and their role-specific importance}
+  - {id: M07, name: points_of_parity, operational_definition: criteria participant treats as mandatory for any acceptable option in frame}
+  - {id: M08, name: points_of_difference_candidate, operational_definition: participant-stated or analyst-coded differentiating property with evidence-class tag}
+  - {id: M09, name: reason_to_believe, operational_definition: evidence or experience cited as basis for believing the claimed property}
+  - {id: M10, name: consultantplus_contribution, operational_definition: episode-level participant-described contribution of CP separated from total outcome}
+  - {id: M11, name: RIC_contribution, operational_definition: episode-level participant/RIC-described contribution of service separated from CP and client}
+  - {id: M12, name: spontaneous_value_language, operational_definition: unaided participant wording captured before candidate territory presentation}
+  - {id: M13, name: territory_relevance, operational_definition: qualitative fit plus rationale for PT2/PT3/PT6/PT7; not a standalone adoption score}
+  - {id: M14, name: territory_believability, operational_definition: participant judgment of credibility and cited reason to believe}
+  - {id: M15, name: territory_distinctiveness, operational_definition: participant comparison against actual alternatives with explicit not_established}
+  - {id: M16, name: hypothesis_support, operational_definition: supported/contradicted/mixed/role_specific/not_tested per territory with episode IDs}
+  - {id: M17, name: evidence_boundary_flags, operational_definition: unsupported causal financial legal or market-generalization claims encountered during analysis}
 episode_record_template:
   required_fields:
-    episode_id: coded unique identifier
-    interview_id: coded identifier
-    participant_group: G1|G2|G3|G4
-    participant_role: free controlled text without personal name
-    organization_context: sector/size/use-maturity at non-identifying level where useful
-    trigger: concise factual trigger
-    decision_or_action_required: concise decision statement
-    decision_level: C1|C2|C3|C4|C5|C6|P1|P2|unresolved
-    deadline_or_time_pressure: none|low|medium|high|critical|not_established
-    consequence_if_wrong_or_late: participant description plus ordinal criticality code
-    participants_involved: role list
-    information_needed: evidence/information sought
-    sources_used: source classes
-    uncertainty_point: main unresolved point in episode
-    consultantplus_contribution: none|find|applicability|interpret|compare|justify|monitor|other plus narrative
-    ric_contribution: none|setup|training|consultation|support|other plus narrative
-    action_or_status: decided|implemented|pending|abandoned|other
-    retained_basis: what evidence or rationale could be reproduced
-    recurrence: participant-reported frequency or qualitative class
-    gap_type: information|search|interpretation|workflow|access|training|service|other|none
-    counterfactual_without_product: participant judgment, not causal fact
-    value_wording_verbatim_or_paraphrase: consent-dependent
-    evidence_class_by_field: direct_episode_fact|participant_judgment|interviewer_inference|RIC_account|not_established
-    interviewer_notes: explicitly non-factual unless supported
-measures:
-  - {id: M01, name: decision_level, operational_definition: code the principal decision owner/object as C1-C6 or provider response P1-P2; unresolved when evidence is insufficient}
-  - {id: M02, name: episode_validity, operational_definition: valid only when trigger, decision/action, sequence/evidence path and action/status are reconstructable}
-  - {id: M03, name: consequence_criticality, operational_definition: participant-reported consequence if wrong/late coded low-medium-high-critical with narrative retained}
-  - {id: M04, name: recurrence, operational_definition: participant-reported occurrence frequency preserved as exact statement and optionally coded one_off-rare-monthly-weekly-daily_or_more}
-  - {id: M05, name: consultantplus_contribution_role, operational_definition: classify reported contribution as find/applicability/interpret/compare/justify/monitor/other/none}
-  - {id: M06, name: RIC_contribution_role, operational_definition: classify reported service contribution as setup/training/consultation/support/other/none}
-  - {id: M07, name: retained_basis_reproducibility, operational_definition: yes/partial/no/not_established based on whether participant can describe a reproducible basis for the decision}
-  - {id: M08, name: gap_type, operational_definition: dominant remaining gap coded information/search/interpretation/workflow/access/training/service/other/none}
-  - {id: M09, name: hypothesis_support, operational_definition: supported/contradicted/mixed/not_tested for H1-H5 with episode IDs as evidence}
+    - episode_id
+    - participant_group
+    - role_context
+    - trigger
+    - decision_or_action
+    - C_or_P_code
+    - information_path
+    - frame_of_reference_unaided
+    - actual_alternatives
+    - choice_criteria
+    - points_of_parity
+    - points_of_difference_candidates
+    - reasons_to_believe
+    - consultantplus_contribution
+    - RIC_contribution
+    - other_contributions
+    - action_or_status
+    - remaining_uncertainty
+    - spontaneous_value_language
+    - PT2_reaction
+    - PT3_reaction
+    - PT6_reaction
+    - PT7_reaction
+    - distinctiveness_against_actual_alternatives
+    - evidence_classes
+    - interviewer_inferences
+    - unresolved
+  validity_rule: >-
+    episode is valid for core analysis only when trigger, role, decision/action, information path and action/status are concrete;
+    positioning-specific frame/alternative fields may be not_established but may not be silently filled by analyst
+  separation_rules:
+    - participant wording and analyst normalized code are distinct fields
+    - aided and unaided value language are distinct
+    - CP and RIC contribution are distinct
+    - counterfactual is perception evidence only
+    - provider official claim is never reclassified as client fact
 data_collection_and_storage:
   collection:
-    - interviewer completes one episode record per distinct episode immediately after or during interview
-    - raw audio is not required; if used it requires consent and separate retention decision
-    - direct quotation is optional; paraphrase is default
+    - one episode record per distinct episode during or immediately after interview
+    - raw audio not required; if used requires consent and separate retention decision
+    - direct quotation optional; paraphrase default
   storage:
-    canonical_future_state: de-identified episode data must be persisted through a TM-MEAS measurement register or another exact canonical O resolved before persistence
-    temporary_notes: may be used only as transient working material and must not become an unclassified persistent semantic carrier
-    identifiers: coded IDs; no personal names required in the canonical measurement record
+    canonical_future_state: de-identified episode data must be persisted through TM-MEAS measurement register or another exact canonical O resolved before persistence
+    temporary_notes: transient only and must not become unclassified persistent semantic carrier
+    identifiers: coded IDs; personal names not required in canonical measurement record
 analysis_interpretation_reporting:
   analysis:
-    - first inspect within each participant group, then compare across groups
-    - compare client and RIC accounts without treating one as substitute for the other
-    - trace every hypothesis disposition and reported pattern to episode IDs
-    - distinguish frequency in the sample from population prevalence
-    - record contradictory cases rather than averaging them away
+    - analyze within each participant group before cross-group comparison
+    - reconstruct frames and alternatives before scoring territory support
+    - compare client and RIC accounts without substitution
+    - trace every territory disposition to episode IDs
+    - distinguish sample frequency from population prevalence
+    - preserve contradictory cases and alternative frames
+    - separate official product facts, participant facts, participant judgments and analyst inference
   interpretation_rules:
-    - one episode can reveal a scenario but cannot establish market prevalence
+    - one episode can reveal a scenario/frame/alternative but cannot establish market prevalence
+    - aided message preference cannot replace spontaneous language or actual episode evidence
     - participant counterfactual is perception evidence, not causal proof
-    - repeated high-criticality scenarios can justify further BMA/STK analysis but not automatic requirements
+    - repeated high-criticality scenarios can justify further analysis but not automatic requirements or adoption
+    - relative superiority is not established without explicit comparison evidence
   reporting:
-    - report confirmed, contradicted, mixed and untested hypotheses separately
-    - report uncovered decision scenarios by level and participant group
-    - report product and RIC contribution separately
+    - report supported, contradicted, mixed, role-specific and untested territories separately
+    - report observed frames and actual alternatives by role/context
+    - report PoP/PoD/RTB with evidence classes
+    - report CP and RIC contribution separately
     - carry unresolved evidence explicitly forward
 responsibilities_resources_tools_schedule:
   responsibilities: see responsibilities_and_authorities
   resources: interviewer, analyst, participant access, authorized repository and coding representation
   tools: interview guide, episode record, controlled coding representation
-  schedule: pilot -> one controlled revision -> main wave -> synthesis; calendar dates pending participant availability
+  schedule: pre-pilot TECH-VER -> pilot -> controlled revision -> main wave -> measurement report; dates pending authorization and availability
 measurement_process_evaluation:
   after_pilot:
-    - check whether participants can reliably identify a concrete recent episode without product prompting
-    - check whether C/P level coding is unambiguous enough for two reviewers
-    - remove or rewrite leading or duplicative prompts while versioning material measure changes
+    - check whether participants can identify concrete episode without product prompting
+    - check whether unaided frame and alternatives can be elicited without excessive interviewer interpretation
+    - check whether aided territory module changes or contaminates earlier answers
+    - check reviewer agreement on C/P, frame, alternative, contribution and territory-support coding
+    - rewrite leading/duplicative prompts while versioning material changes
   after_main_wave:
-    - assess percentage of interviews yielding at least one valid episode
-    - assess proportion of required episode fields left not_established
-    - assess reviewer agreement on a sample of decision-level and contribution-role codes
-    - identify measures that did not affect any decision or hypothesis and consider retiring them in a successor plan
+    - assess share of interviews yielding valid episodes
+    - assess share of frame/alternative fields left not_established
+    - assess second-review agreement on sampled codes
+    - identify territories that are consistently redundant, implausible or role-specific
+    - identify whether any new territory emerges repeatedly from spontaneous value language
 change_procedure_and_history:
-  procedure: any material change to sample scope, core interview sequence, measure definition, evidence classes or privacy rules requires a new ArtifactVersion and renewed TECH-VER as applicable
-  history: initial V1 created from the refined decision-value model before pilot
+  procedure: any material change to sample scope, core interview sequence, measure definitions, territory set, evidence classes or privacy rules requires a new ArtifactVersion and renewed TECH-VER as applicable
+  history: V2 materially expands V1 from decision-value testing to comparative positioning validation
 completion_process:
-  plan_completion: this plan is complete when structurally verified and semantically reviewed; execution remains future work
+  plan_completion: this V2 plan is complete only when structurally verified and semantically reviewed; execution remains separate future work
   wave_completion_candidate:
-    - pilot completed and any material revision versioned
+    - pilot completed and material revision versioned
     - all four first-wave groups represented or explicit recruitment gap recorded
     - target at least 25 valid episodes or explicit evidence-insufficiency stop decision
-    - every analyzed claim traces to episode IDs
-    - synthesis separates confirmed, contradicted, mixed and unresolved hypotheses
-  next_gate: owner decides whether evidence is sufficient to update BMA/STK and whether a second wave is justified
+    - every analyzed claim and territory disposition traces to episode IDs
+    - synthesis separates supported contradicted mixed role-specific and unresolved hypotheses
+  next_gate: owner decides whether evidence is sufficient for BMA update and whether an actual positioning choice should enter TM-DEC
 glossary:
   critical_incident_style_interview: semi-structured reconstruction of a concrete meaningful episode rather than general attitude questioning
-  valid_episode: episode with enough concrete sequence and decision evidence to support coding
-  measure: operationally defined field or classification used consistently across episodes
-  provider_response: RIC/Network action taken in response to a client scenario, not a client decision level
-  purposive_sample: intentionally selected qualitative sample for variation and hypothesis testing, not a statistical population sample
+  frame_of_reference: participant category or competitive frame used to understand the solution
+  actual_alternative: option actually used considered or explicitly named by participant, not a researcher-prescribed competitor list
+  point_of_parity: property treated as necessary for acceptable participation in a category
+  point_of_difference: candidate differentiating property whose relevance and evidence must be tested
+  reason_to_believe: basis for believing a claimed difference
+  aided_message_test: reaction after candidate wording is shown; stored separately from spontaneous value language
+  purposive_sample: intentionally selected qualitative sample for variation and hypothesis testing, not statistical population sample
 change_history:
-  - {version: V1, date: '2026-09-05', change: establish first-wave episode-based measurement plan and working interview/record instrument}
+  - {version: V1, date: '2026-09-05', change: establish first-wave episode-based measurement plan for decision-value model}
+  - {version: V2, date: '2026-09-07', change: add comparative positioning dimensions, actual alternatives, PoP/PoD/RTB and aided territory test after unaided episode reconstruction}
 owner_product_request:
-  exact_visible_text: 'давай'
-  resolved_referent: execute the previously proposed next step for the current branch purpose, including a working first-wave research instrument for end user, functional owner, buyer/sponsor and RIC participant
+  exact_visible_text: 'продолжай. все своди к стандартным продуктам с составом по ГОСТ'
+  resolved_referent: продолжить позиционирование и перевести его эмпирическую проверку в стандартный TM-MEAS План с полным составом ГОСТ
+  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
+  purpose_provenance: current_conversation_first_substantive_owner_request
   request_specific_requirements:
-    - provide an executable interview protocol, not only a conceptual recommendation
-    - capture real decisions by participant level and preserve evidence classes
-    - avoid unsupported ROI or requirement claims
+    - сохранить эпизодную проверку C1-C6 как одну из осей, но не единственную модель позиционирования
+    - добавить frame of reference, фактические альтернативы, PoP, PoD, reason to believe и ролевой B2B-контекст
+    - сравнивать альтернативные территории после unaided эпизодной части
+    - долговременный результат оформить как существующий стандартный продукт
+    - применить полный состав ГОСТ Р 58609 для measurement plan
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TM_MEAS_measurement_strategy_approach
+  applicability: applies_material_successor_client_TM_MEAS_measurement_strategy_approach
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, interview_protocol, episode_record_template]}
@@ -329,15 +392,15 @@ product_requirement_compliance:
     - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, measurement_needs_and_information_requirements]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
-    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, supersedes_artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_external_worker_and_TECH_VER}
 verification:
   structural_status: pending_exact_external_client_information_product_worker
-  semantic_status: plan_ready_for_independent_TECH_VER_before_pilot
-  owner_acceptance: work_execution_authorized_plan_acceptance_and_pilot_authority_separate
+  semantic_status: V2 ready for independent positioning TECH-VER before any external pilot
+  owner_acceptance: plan creation authorized; external participant contact, pilot execution, plan acceptance and positioning adoption separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001.yaml@change/consultantplus-20260904-client-binding-bma-bootstrap
+  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001.yaml@change/consultantplus-20260907-ric-positioning-standard-products
 information_product_applicability: applies
 standards_trace:
   process:
@@ -383,7 +446,7 @@ standards_trace:
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: measurement plan, resolution_basis: TM-MEAS measurement strategy/approach fallback F01 specialized by §10.46 measurement plan, state: resolved}
+  information_item_identity: {resolved_name_or_semantic_identity: measurement plan, resolution_basis: TM-MEAS measurement strategy/approach specialized by §10.46 measurement plan, state: resolved}
   universal_type: plan
   universal_content:
     source_section: '7.3'
@@ -414,7 +477,7 @@ content_compliance:
   normative_resolution:
     catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
     crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
-    route: F01
+    route: exact_binding
     relation: controlled_semantic_match
     generic_type: plan
     specific_profiles: ['10.46']
@@ -432,11 +495,12 @@ content_compliance:
           - {requirement_id: S10.46-R04, state: satisfied, artifact_field_refs: [analysis_interpretation_reporting]}
           - {requirement_id: S10.46-R05, state: satisfied, artifact_field_refs: [responsibilities_resources_tools_schedule, resources_and_allocation, schedule]}
           - {requirement_id: S10.46-R06, state: satisfied, artifact_field_refs: [measurement_process_evaluation]}
-  local_additive_content: {state: not_applicable, basis: active TM-MEAS strategy/approach binding selects no local additive profile}
-  tailoring: qualitative episode-based first-wave plan with a working interview and episode-record instrument; statistical representativeness is explicitly outside scope
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: measurement-plan composition applied to first-wave positioning validation; no lifecycle-process tailoring introduced
   information_item_management:
-    version_control: exact V1
-    review_approval: independent TECH-VER and owner pilot authority separate
-    quality_evaluation: external structural worker plus semantic TECH-VER and pilot review
-    retention: client process-owned plan in MOZ1961/consultantplus
-    reuse_and_duplication: pilot changes to core measures or protocol require a successor ArtifactVersion
+    version_control: exact V2 supersedes V1 with material positioning-measure expansion
+    review_approval: subject TECH-VER and owner pilot authority required before external execution
+    quality_evaluation: external structural worker plus positioning TECH-VER
+    retention: client process-owned measurement strategy/approach in MOZ1961/consultantplus
+    reuse_and_duplication: material instrument or measure changes require successor ArtifactVersion
+  composition_state: candidate_complete_pending_exact_head_external_worker
