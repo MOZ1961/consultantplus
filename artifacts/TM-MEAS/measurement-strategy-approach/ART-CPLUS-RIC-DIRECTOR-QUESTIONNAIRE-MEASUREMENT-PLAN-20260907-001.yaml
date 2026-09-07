@@ -11,8 +11,8 @@ artifact_instance_purpose: >-
   Подготовить для руководителя РИЦ нейтральный доказательный опросник как часть стандартного Плана измерений:
   сначала получить без подсказок факты о реальных управленческих решениях, клиентских и сервисных эпизодах,
   используемых основаниях, разрывах и фактических альтернативах, затем отдельно проверить понятность и полезность
-  предлагаемого взаимодействия и кандидатных формулировок ценности. Не превращать интерес к пилоту в доказательство
-  рыночного принятия и не требовать персональные данные или выгрузку CRM по умолчанию.
+  предлагаемого взаимодействия. Не превращать интерес к пилоту в доказательство рыночного принятия и не требовать
+  персональные данные или выгрузку CRM по умолчанию.
 producer:
   process_type_id: TM-MEAS
   process_instance_id: PI-CPLUS-TM-MEAS-RIC-DIRECTOR-QUESTIONNAIRE-20260907-001
@@ -33,10 +33,9 @@ interface_binding_ref:
   binding_instance_id: BIND-CPLUS-SE-001
 issued_at_and_status: {issued_at: '2026-09-07', status: candidate_questionnaire_ready_for_subject_verification}
 scope: >-
-  Интервью руководителя РИЦ продолжительностью ориентировочно 35–50 минут. Первая часть реконструирует
-  реальные решения и эпизоды без показа нашей модели; вторая часть после краткого объяснения взаимодействия
-  проверяет управленческую применимость, доверие, границы обещаний и условия пилота. Опросник не измеряет
-  рыночную долю, статистическую распространенность мнений, ROI или юридическую правильность решений.
+  Интервью руководителя РИЦ ориентировочно 35–50 минут. Часть A реконструирует реальные решения и эпизоды
+  без показа нашей модели; часть B после краткого объяснения взаимодействия проверяет управленческую применимость,
+  доверие, границы обещаний и условия пилота. Опросник не измеряет рыночную долю, ROI или юридическую правильность решений.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 approving_authority: owner
 references:
@@ -49,152 +48,113 @@ references:
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
 introduction:
-  purpose: >-
-    Получить у руководителя РИЦ сведения, пригодные для проверки позиционирования и пользы предлагаемого
-    взаимодействия через его реальные управленческие задачи, а не через абстрактное голосование за лозунги.
+  purpose: получить у руководителя РИЦ проверяемые сведения о реальной управленческой работе и затем отдельно проверить предлагаемое взаимодействие
   audience: [руководитель РИЦ, owner, interviewer, analyst, subsequent TECH-BMA, subsequent TM-MEAS]
-  coverage: [управленческие решения, конкретный эпизод, основания и данные, неопределенность, фактические альтернативы, вклад КонсультантПлюс, вклад РИЦ, наблюдаемый результат, повторяемость, управленческая применимость, доверие, границы обещаний, готовность к пилоту]
-  nonpurpose: [не является продажным скриптом, не доказывает рыночное принятие, не заменяет клиентские интервью, не требует персональные данные, не принимает официальное позиционирование]
+  coverage: [управленческие решения, конкретный эпизод, основания, неопределенность, альтернативы, вклад КонсультантПлюс, вклад РИЦ, результат, повторяемость, применимость, доверие, границы обещаний, пилот]
+  nonpurpose: [не продажный скрипт, не рыночная валидация, не замена клиентским интервью, не официальный выбор позиционирования]
 measurement_needs_and_information_requirements:
   primary_questions:
-    - какие управленческие решения руководитель РИЦ реально принимает о клиентах, сервисе, обучении, продуктовой конфигурации и развитии
-    - каких данных и доказательств ему не хватает для этих решений
-    - какие реальные недавние эпизоды позволяют проследить решение клиента и действие РИЦ
-    - какие альтернативные способы решения или источники фактически использовались
-    - что в эпизоде сделал КонсультантПлюс и что отдельно сделал РИЦ
-    - какой результат наблюдался и какая неопределенность осталась
-    - повторяются ли похожие случаи и на чем основано это суждение
-    - какие виды аналитического результата директор реально использовал бы в управленческой работе
-    - какие условия делают выводы достаточно надежными и проверяемыми
-    - какие обещания взаимодействия директор считает неправдоподобными или недопустимыми
-    - готов ли руководитель проверить метод на одном или нескольких обезличенных эпизодах и при каких условиях
-  evidence_unit: >-
-    конкретное утверждение руководителя, привязанное к его роли, одному реальному недавнему управленческому
-    или клиентско-сервисному эпизоду либо к явной оценке предлагаемого взаимодействия, с отдельным тегом
-    факта, оценки, критерия, альтернативы, реакции на предложение или аналитического вывода.
-  evidence_classes:
-    - director_reported_episode_fact
-    - director_interpretation_or_judgment
-    - director_stated_management_decision
-    - director_stated_choice_or_trust_criterion
-    - director_stated_actual_alternative
-    - director_reaction_to_interaction_view
-    - director_pilot_intent_or_condition
-    - interviewer_coding_or_inference
-    - provider_existing_claim
-    - not_established
+    - какие управленческие решения руководитель реально принимает и каких оснований ему не хватает
+    - какой конкретный недавний эпизод показывает клиентское решение и действие РИЦ
+    - какие альтернативы и источники реально использовались
+    - что отдельно дали КонсультантПлюс, РИЦ, клиент и другие участники
+    - какой результат наблюдался и что осталось неизвестным
+    - какие повторяющиеся сценарии подтверждены примерами
+    - какой аналитический результат реально пригоден для управленческого решения
+    - какие требования к доверию, границам обещаний и пилоту считает существенными директор
+  evidence_unit: конкретное утверждение руководителя, привязанное к роли, реальному эпизоду или явной реакции на показанное объяснение, с классом доказательства
+  evidence_classes: [director_reported_episode_fact, director_interpretation_or_judgment, director_stated_management_decision, director_stated_choice_or_trust_criterion, director_stated_actual_alternative, director_reaction_to_interaction_view, director_pilot_intent_or_condition, interviewer_coding_or_inference, provider_existing_claim, not_established]
 planned_activities_and_tasks:
-  - до показа объяснения взаимодействия провести unaided часть A и зафиксировать один конкретный недавний эпизод
-  - отделить сведения о факте от оценок и обобщений руководителя
-  - получить фактические альтернативы и используемые основания без заранее заданного списка конкурентов
-  - отдельно зафиксировать вклад КонсультантПлюс, РИЦ, клиента и иных источников
-  - только после завершения части A показать краткий director-facing interaction and benefit view
-  - провести часть B о полезности, доверии, границах обещаний и условиях пилота
-  - сохранить прямые формулировки только с согласия; по умолчанию использовать смысловой пересказ
-  - после интервью выполнить reviewer check на наведение, пропуски и смешение provider/client evidence
-  - фактические данные сохранять в TM-MEAS measurement register только после появления реальных ответов
+  - завершить Q01-Q17 до показа объяснения взаимодействия
+  - получить один конкретный недавний эпизод или явно зафиксировать недостаточность
+  - зафиксировать фактические альтернативы без заданного исследователем списка
+  - разделить вклад КонсультантПлюс РИЦ клиента и иных источников
+  - показать exact director-facing view только после unaided части
+  - провести Q18-Q26 о полезности доверии границах и условиях пилота
+  - после интервью выполнить reviewer check на наведение пропуски и смешение классов доказательств
+  - реальные ответы сохранять только через будущий TM-MEAS measurement register
 tools_methods_techniques:
   method: semi-structured director interview with critical-episode reconstruction and unaided-before-aided value testing
-  techniques:
-    - one concrete recent case before generalization
-    - neutral chronological reconstruction
-    - open question before any candidate answer categories where feasible
-    - actual alternatives before provider territory prompts
-    - facts judgments criteria alternatives and inferences stored separately
-    - ConsultantPlus and RIC contributions coded separately
-    - explicit not_established instead of analyst completion
-    - management-usefulness test separated from purchase or adoption intent
-  tools: [conversation or interview channel, embedded questionnaire below, structured coding representation, future TM-MEAS measurement register after real data]
+  techniques: [one concrete recent case before generalization, neutral chronology, open question before candidate categories, actual alternatives before provider prompts, separate facts judgments criteria alternatives and inferences, separate ConsultantPlus and RIC contributions, explicit not_established, separate management usefulness and pilot intent]
+  tools: [interview channel, embedded questionnaire, structured coding representation, future TM-MEAS measurement register]
 schedule:
   sequencing:
     - {stage: subject_TECH_VER, status: required_before readiness claim}
     - {stage: director_interview_part_A, duration: approximately 20-30 minutes}
     - {stage: show_interaction_view, duration: approximately 3-5 minutes}
     - {stage: director_interview_part_B, duration: approximately 10-15 minutes}
-    - {stage: reviewer_check, duration: after interview}
+    - {stage: reviewer_check, status: after interview}
     - {stage: persistence_and_synthesis, status: only after actual data}
   dates: not_established
 budget_and_cost_estimate:
   state: no_external_cost_committed
-  estimate: questionnaire preparation is internal; participant incentives travel and external costs are not authorized or assumed
+  estimate: preparation is internal; incentives travel and other external costs are not authorized or assumed
 resources_and_allocation:
-  owner: scope and external-use authority
-  director_participant: provides own experience and management judgments voluntarily
+  owner: scope external-use and acceptance authority
+  director_participant: voluntary evidence from own work
   interviewer: neutral questioning and sequence control
-  analyst: evidence-class coding and synthesis without promoting hypotheses to facts
-  repository: canonical process-owned products and future measurement records
+  analyst: evidence-class coding and bounded inference
+  repository: process-owned products and future measurement records
 responsibilities_and_authorities:
-  owner: {authority: authorize external use, participant contact if needed, acceptance and any later positioning decision}
-  interviewer: {authority: ask and clarify only; no authority to sell an approved positioning or promise product changes}
+  owner: {authority: authorize external use participant contact acceptance and any later positioning decision}
+  interviewer: {authority: ask and clarify; no authority to promise product changes or approved positioning}
   analyst: {authority: provisional coding and evidence-bounded inference only}
-  director_participant: {authority: describe own decisions and experience; statements about market or Network remain bounded by own knowledge}
+  director_participant: {authority: describe own decisions and experience; market/Network claims bounded by own knowledge}
 participant_interfaces:
-  director_to_interviewer: management decisions, episode facts, evidence gaps, alternatives, criteria, value language and pilot conditions
+  director_to_interviewer: management decisions episode facts evidence gaps alternatives criteria value language and pilot conditions
   interviewer_to_analysis: de-identified structured responses with evidence-class tags
-  analysis_to_TECH_BMA: supported contradicted mixed and unresolved positioning/interaction hypotheses
-  analysis_to_TM_DEC: no automatic decision; only evidence if an authorized positioning decision is later requested
+  analysis_to_TECH_BMA: supported contradicted mixed and unresolved hypotheses
+  analysis_to_TM_DEC: no automatic decision
 risk_assessment_and_mitigation:
-  - {risk: опрос превращается в презентацию и подтверждает нашу гипотезу, mitigation: часть A полностью завершается до показа interaction view}
-  - {risk: руководитель отвечает общими мнениями вместо реального случая, mitigation: требовать конкретный недавний эпизод и допускать not_established}
-  - {risk: фактические альтернативы подменяются заранее выбранным списком, mitigation: unaided elicitation и запрет analyst default competitor set}
-  - {risk: мнение руководителя РИЦ принимается за мнение клиента, mitigation: хранить director/RIC evidence отдельным классом и не подменять client-side wave}
-  - {risk: интерес к пилоту трактуется как доказательство ценности или спроса, mitigation: pilot_intent кодируется отдельно от management usefulness and outcome evidence}
-  - {risk: сервису приписывается причинный финансовый результат, mitigation: запрещены ROI предотвращенные штрафы и общая эффективность без отдельного дизайна}
-  - {risk: в ответы попадают персональные или конфиденциальные данные, mitigation: просить обезличенный эпизод и не запрашивать CRM dump договорные цены пароли или клиентскую переписку по умолчанию}
+  - {risk: опрос подтверждает нашу презентацию, mitigation: PART_A полностью до показа view}
+  - {risk: общие мнения вместо реального случая, mitigation: concrete recent episode or explicit not_established}
+  - {risk: researcher invents alternatives, mitigation: unaided elicitation and no default competitor set}
+  - {risk: RIC opinion becomes client evidence, mitigation: separate evidence class and later client-side wave}
+  - {risk: pilot interest becomes proof of value, mitigation: separate pilot_intent from management_usefulness}
+  - {risk: unsupported causal/financial claim, mitigation: prohibit ROI prevented fines and general-effect attribution}
+  - {risk: sensitive data enter interview, mitigation: de-identification and no CRM dump names credentials correspondence or margin by default}
 quality_and_effectiveness_measures:
   quality_criteria:
-    - unaided section completed before interaction view is shown
-    - at least one concrete management decision and one concrete recent episode or explicit insufficiency are recorded
-    - actual alternatives are participant-stated or explicitly not_established
-    - facts and judgments are distinguishable
-    - ConsultantPlus and RIC contributions are separate
-    - management usefulness and pilot intent are separate
-    - every aided reaction traces to the exact view shown
-    - no sensitive data are required for validity
+    - PART_A completed before view exposure
+    - concrete management decision and episode or explicit insufficiency recorded
+    - actual alternatives participant-stated or not_established
+    - facts and judgments distinguishable
+    - ConsultantPlus and RIC contributions separate
+    - management usefulness and pilot intent separate
+    - aided reactions trace to exact view
+    - no sensitive data required for validity
   effectiveness_signals:
-    - interview produces at least one actionable evidence gap or explicit finding that current proposal adds no useful management information
-    - director can state what management decision would or would not use the proposed output
-    - trust criteria and stop/continue conditions are explicit
-  noncriteria:
-    - willingness to talk is not evidence of product value
-    - one director interview is not market validation
-    - positive reaction is not official positioning adoption
+    - at least one actionable evidence gap or explicit finding that the method adds no useful management information
+    - director can name a management decision that would or would not use the result
+    - trust and stop/continue criteria are explicit
+  noncriteria: [willingness to talk, one positive interview, aided preference]
 environment_infrastructure_security:
-  environment: authorized RIC director interview plus MOZ1961/consultantplus process-owned persistence
+  environment: authorized RIC director interview plus MOZ1961/consultantplus persistence
   infrastructure: interview channel and structured response representation
-  privacy_security:
-    - use role/context rather than personal identifiers by default
-    - do not request client names contacts credentials raw CRM exports confidential correspondence or margin data by default
-    - direct quotations require explicit consent; paraphrase is default
-    - audio recording is optional and requires explicit consent and retention decision
-  safety: no legal tax professional or client decision is made by the interview process
+  privacy_security: [role/context instead of personal identifiers, no client names contacts credentials CRM dumps correspondence or margin by default, direct quotations only with consent, audio only with consent and retention decision]
+  safety: interview makes no legal tax professional or client decision
 training:
-  interviewer_orientation:
-    - do not show the interaction view until Q17 is completed
-    - ask one question at a time when conversationally feasible
-    - probe for concrete examples without forcing an answer
-    - distinguish fact judgment criterion alternative and inference
-    - preserve disagreement and negative responses
+  interviewer_orientation: [do not show view until Q17, ask one question at a time where feasible, probe concrete examples without forcing, distinguish evidence classes, preserve disagreement]
 technical_management_review_reporting:
-  pre_use_review: subject TECH-VER verifies neutrality, evidence boundaries and standard-product resolution
-  post_interview_review: check question-order contamination, missing fields, coding drift and privacy
-  structural_review: generic-SE external-client information-product worker
-  future_reporting: TM-MEAS measurement report only after actual interviews/data; TECH-BMA successor only if evidence materially changes hypotheses
+  pre_use_review: supporting TECH-VER
+  post_interview_review: question-order contamination missing fields coding drift and privacy
+  structural_review: generic-SE external-client worker
+  future_reporting: TM-MEAS measurement report after data; TECH-BMA successor only if evidence materially changes hypotheses
 related_plans_and_task_descriptions:
   positioning_report: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
   broad_wave_plan: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
   pilot_plan: ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
   existing_director_offer: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
-  standard_product_rule: questionnaire is a view inside this TM-MEAS Plan and is not a standalone persistent product
+  standard_product_rule: questionnaire is a view inside this TM-MEAS Plan and not a standalone persistent product
 questionnaire:
   instructions_to_interviewer:
-    - introduce the study as an attempt to understand real management work, not to sell a prepared slogan
-    - complete PART_A before showing any interaction/benefit view
-    - when an answer is general, ask for one recent concrete example
+    - explain that the aim is to understand real management work rather than confirm a slogan
+    - finish PART_A before showing any interaction/benefit explanation
+    - when an answer is general ask for one recent concrete example
     - allow not_established and do not fill gaps for the participant
   PART_A_unaided_real_management_and_episode:
     - {id: Q01, question: 'Какие 2–3 решения о клиентах, сервисе или использовании КонсультантПлюс вам как руководителю РИЦ приходится принимать регулярно?'}
-    - {id: Q02, question: 'Какое из этих решений в последний раз было для вас реально важным или трудным? Возьмем один конкретный недавний случай.'}
+    - {id: Q02, question: 'Какое из этих решений в последний раз было реально важным или трудным? Возьмем один конкретный недавний случай.'}
     - {id: Q03, question: 'Что произошло и что стало сигналом, что решение нужно принимать?'}
     - {id: Q04, question: 'Что именно требовалось решить или изменить и к какому сроку?'}
     - {id: Q05, question: 'На какие факты, данные, отчеты, разговоры или наблюдения вы реально опирались?'}
@@ -212,84 +172,58 @@ questionnaire:
     - {id: Q17, question: 'Какой анализ клиентских случаев был бы для вас бесполезным или даже вводящим в заблуждение?'}
   PART_B_after_showing_interaction_and_benefit_view:
     view_ref: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1
-    - {id: Q18, question: 'Что в этом способе взаимодействия полезно именно для ваших управленческих решений, если полезно вообще?'}
-    - {id: Q19, question: 'Что звучит слишком общо, неправдоподобно или не соответствует работе вашего РИЦ?'}
-    - {id: Q20, question: 'Какие решения вы могли бы принимать лучше, если бы разобрали 3–5 таких обезличенных эпизодов?'}
-    - {id: Q21, question: 'Какой результат такого анализа вы реально использовали бы на совещании: короткий вывод, типовые сценарии, подтвержденные разрывы, рекомендации, другое?'}
-    - {id: Q22, question: 'Что вам нужно увидеть, чтобы доверять выводам: исходный эпизод, трассу к фактам, независимую проверку, повторяемость, сравнение, другое?'}
-    - {id: Q23, question: 'Где для вас проходит граница ответственности КонсультантПлюс, РИЦ и самого клиента?'}
-    - {id: Q24, question: 'Какое обещание о пользе такого взаимодействия мы точно не должны давать?'}
-    - {id: Q25, question: 'Имеет ли смысл проверить подход на одном реальном обезличенном случае? Если да — какой участник и какой тип случая подходят лучше всего; если нет — почему?'}
-    - {id: Q26, question: 'Какой результат первого пилота будет для вас достаточным основанием продолжить на 3–5 случаях, а какой — основанием остановиться?'}
+    questions:
+      - {id: Q18, question: 'Что в этом способе взаимодействия полезно именно для ваших управленческих решений, если полезно вообще?'}
+      - {id: Q19, question: 'Что звучит слишком общо, неправдоподобно или не соответствует работе вашего РИЦ?'}
+      - {id: Q20, question: 'Какие решения вы могли бы принимать лучше, если бы разобрали 3–5 таких обезличенных эпизодов?'}
+      - {id: Q21, question: 'Какой результат такого анализа вы реально использовали бы на совещании: короткий вывод, типовые сценарии, подтвержденные разрывы, рекомендации, другое?'}
+      - {id: Q22, question: 'Что вам нужно увидеть, чтобы доверять выводам: исходный эпизод, трассу к фактам, независимую проверку, повторяемость, сравнение, другое?'}
+      - {id: Q23, question: 'Где для вас проходит граница ответственности КонсультантПлюс, РИЦ и самого клиента?'}
+      - {id: Q24, question: 'Какое обещание о пользе такого взаимодействия мы точно не должны давать?'}
+      - {id: Q25, question: 'Имеет ли смысл проверить подход на одном реальном обезличенном случае? Если да — какой участник и какой тип случая подходят лучше всего; если нет — почему?'}
+      - {id: Q26, question: 'Какой результат первого пилота будет для вас достаточным основанием продолжить на 3–5 случаях, а какой — основанием остановиться?'}
 measures:
   - {id: M01, name: director_management_decision, operational_definition: concrete recurring management decision plus recent instance}
-  - {id: M02, name: decision_evidence_base, operational_definition: data sources facts conversations or observations actually used}
-  - {id: M03, name: evidence_gap, operational_definition: explicitly missing uncertain or unavailable information relevant to the decision}
-  - {id: M04, name: actual_alternatives, operational_definition: participant-stated alternative actions or information sources; not_established allowed}
-  - {id: M05, name: client_decision_episode, operational_definition: concrete client-side required decision/action linked to the director case when known}
-  - {id: M06, name: consultantplus_contribution, operational_definition: participant-described contribution of ConsultantPlus separated from total outcome}
-  - {id: M07, name: RIC_contribution, operational_definition: participant-described RIC intervention separated from ConsultantPlus client and others}
+  - {id: M02, name: decision_evidence_base, operational_definition: data facts conversations or observations actually used}
+  - {id: M03, name: evidence_gap, operational_definition: missing uncertain or unavailable decision information}
+  - {id: M04, name: actual_alternatives, operational_definition: participant-stated alternatives; not_established allowed}
+  - {id: M05, name: client_decision_episode, operational_definition: concrete client-side required decision/action when known}
+  - {id: M06, name: consultantplus_contribution, operational_definition: participant-described contribution separated from total outcome}
+  - {id: M07, name: RIC_contribution, operational_definition: RIC intervention separated from ConsultantPlus client and others}
   - {id: M08, name: observable_result_and_uncertainty, operational_definition: episode status/result plus unresolved uncertainty}
-  - {id: M09, name: recurrence_evidence, operational_definition: repeated-case claim plus one additional example or explicit weak basis}
-  - {id: M10, name: management_usefulness, operational_definition: specific management decision that would use or reject the proposed analysis}
-  - {id: M11, name: trust_criterion, operational_definition: evidence feature required for director to rely on findings}
-  - {id: M12, name: unacceptable_promise, operational_definition: director-stated claim boundary or credibility failure}
-  - {id: M13, name: pilot_intent_and_condition, operational_definition: yes/no/conditional pilot interest with participant/case candidate and rationale}
-  - {id: M14, name: continuation_stop_criterion, operational_definition: explicit evidence threshold to continue or stop after pilot}
+  - {id: M09, name: recurrence_evidence, operational_definition: repeated-case claim plus example or explicit weak basis}
+  - {id: M10, name: management_usefulness, operational_definition: concrete management decision that would use or reject proposed analysis}
+  - {id: M11, name: trust_criterion, operational_definition: evidence feature required for reliance}
+  - {id: M12, name: unacceptable_promise, operational_definition: director-stated credibility boundary}
+  - {id: M13, name: pilot_intent_and_condition, operational_definition: yes/no/conditional pilot interest and rationale}
+  - {id: M14, name: continuation_stop_criterion, operational_definition: evidence threshold to continue or stop}
 data_collection_and_storage:
-  collection:
-    - one structured response set per director interview
-    - one concrete episode is preferred; multiple examples can be referenced but not silently merged
-    - wording is paraphrased by default; direct quotes only with consent
+  collection: [one structured response set per director, one concrete episode preferred, paraphrase by default]
   storage:
-    canonical_future_state: actual responses become TM-MEAS measurement register rows after data exist and exact O is resolved
-    temporary_notes: transient and not a parallel semantic source
-    sensitive_data: unnecessary personal and confidential details are excluded
+    canonical_future_state: actual responses become TM-MEAS measurement register rows after data exist
+    temporary_notes: transient only
+    sensitive_data: unnecessary identifiers and confidential details excluded
 analysis_interpretation_reporting:
-  analysis:
-    - analyze PART_A before PART_B reactions
-    - distinguish episode facts from general director judgments
-    - preserve not_established and contradictions
-    - compare claimed recurrence against actual examples
-    - separate management usefulness from pilot intent
-    - separate ConsultantPlus RIC client and other contributions
-  interpretation_rules:
-    - one director can establish that a management problem exists for that respondent but not its Network prevalence
-    - positive reaction to our view is aided evidence and cannot replace unaided value language or real episode evidence
-    - willingness to pilot is an action intention not proof of usefulness or willingness to pay
-    - no relative superiority claim without explicit comparison evidence
-  reporting:
-    - report supported contradicted mixed and unresolved hypotheses
-    - preserve exact evidence class and source per material finding
-    - recommend next measurement only where a management decision or evidence gap is explicit
+  analysis: [analyze PART_A before PART_B, distinguish episode facts from general judgments, preserve not_established and contradictions, compare recurrence claims with examples, separate management usefulness from pilot intent, separate contributions]
+  interpretation_rules: [one director is not Network prevalence, aided preference does not replace unaided evidence, pilot intent is not proof of usefulness or willingness to pay, no superiority without comparison]
+  reporting: [supported contradicted mixed and unresolved hypotheses, evidence class per finding, next measurement only where decision or gap is explicit]
 measurement_process_evaluation:
-  after_first_interview:
-    - test whether Q01-Q17 can be completed without revealing our proposed value frame
-    - test whether director can identify a concrete case rather than only strategic generalizations
-    - inspect whether Q18-Q26 create acquiescence or sales pressure
-    - remove or rewrite leading duplicate or low-yield questions in a successor version
-  after_three_director_interviews_if_authorized:
-    - compare yield of concrete episodes and evidence gaps
-    - assess coding consistency for contribution/usefulness/trust fields
-    - decide whether the director instrument should remain separate or merge into the broader wave protocol
+  after_first_interview: [test unaided completion, test concrete-case yield, inspect sales pressure in PART_B, version material question changes]
+  after_three_director_interviews_if_authorized: [compare evidence yield, assess coding consistency, decide whether to integrate into broader wave]
 change_procedure_and_history:
-  procedure: material change to sequence, evidence classes, core questions, measures or privacy boundary requires a successor ArtifactVersion and renewed TECH-VER where applicable
-  history: V1 establishes the director-specific questionnaire as a view inside a standard TM-MEAS measurement plan
+  procedure: material change to sequence evidence classes questions measures or privacy requires successor ArtifactVersion and renewed TECH-VER as applicable
+  history: V1 establishes director-specific questionnaire inside standard TM-MEAS measurement plan
 completion_process:
-  plan_completion: V1 is complete as a candidate only after structural worker and subject TECH-VER; execution and RIC acceptance remain separate
-  interview_completion_candidate:
-    - PART_A completed before view exposure
-    - concrete decision and episode captured or explicit insufficiency recorded
-    - PART_B reactions and trust/stop criteria captured
-    - privacy and evidence-class rules followed
-  next_gate: actual response data -> TM-MEAS measurement register -> later measurement report; official positioning only via separate authorized decision
+  plan_completion: structurally verified and semantically reviewed candidate; execution and RIC acceptance separate
+  interview_completion_candidate: [PART_A before view, concrete decision/episode or insufficiency, PART_B reactions/trust/stop criteria, privacy/evidence rules followed]
+  next_gate: actual response data -> TM-MEAS measurement register -> measurement report; official positioning only via separate decision
 glossary:
-  director_interview: interview of a RIC leader focused on real management decisions and evidence needs
-  unaided: response elicited before candidate explanation or wording is shown
-  aided: response after the exact candidate interaction/value view is shown
-  management_usefulness: whether a result can support a concrete management decision; separate from liking the idea
-  pilot_intent: stated willingness or condition to try the method; not adoption evidence
-  evidence_gap: information materially relevant to a decision that is unavailable uncertain or untraceable
+  director_interview: interview focused on real RIC management decisions and evidence needs
+  unaided: response before candidate explanation
+  aided: response after exact candidate explanation
+  management_usefulness: support for a concrete management decision, separate from liking the idea
+  pilot_intent: willingness or condition to try, not adoption evidence
+  evidence_gap: materially relevant unavailable uncertain or untraceable information
 change_history:
   - {version: V1, date: '2026-09-07', change: create director-specific positioning and interaction questionnaire inside standard measurement plan}
 owner_product_request:
@@ -299,10 +233,10 @@ owner_product_request:
   purpose_provenance: current_conversation_first_substantive_owner_request
   request_specific_requirements:
     - опросник адресован руководителю РИЦ
-    - сначала фактическая и unaided часть затем реакция на наше объяснение взаимодействия и пользы
-    - вопросы должны поддерживать реальные управленческие решения и проверку позиционирования
+    - сначала unaided часть затем реакция на объяснение взаимодействия
+    - вопросы поддерживают реальные управленческие решения и проверку позиционирования
     - персональные и конфиденциальные данные не требуются по умолчанию
-    - долговременный опросник остается представлением стандартного TM-MEAS Плана
+    - опросник остается представлением стандартного TM-MEAS Плана
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_new_client_TM_MEAS_measurement_strategy_approach
