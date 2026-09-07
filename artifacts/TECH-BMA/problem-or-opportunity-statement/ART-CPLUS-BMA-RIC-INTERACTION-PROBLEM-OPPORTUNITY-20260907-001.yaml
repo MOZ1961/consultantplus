@@ -1,0 +1,375 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001
+artifact_version_id: ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: problem or opportunity statement
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_pending_real_RIC_problem_validation
+acceptance_status: candidate_problem_opportunity_not_yet_accepted_by_real_RIC
+artifact_instance_purpose: >-
+  Выполнить P01 ранее установленной цепочки P01–P11: превратить общее намерение быть полезными РИЦ
+  в явную кандидатную проблему/возможность, решение и предполагаемый полезный эффект, которые можно
+  предъявить реальному РИЦ для подтверждения или опровержения до формирования требований P02.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-DEFINE-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-BMA-RIC-PROBLEM-OPPORTUNITY-SYNTHESIS
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-RIC-PROBLEM-OPPORTUNITY-SYNTHESIS-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-P01-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: candidate_pending_real_RIC_problem_validation
+scope: >-
+  P01 для первого реального цикла взаимодействия с РИЦ: определить кандидатную проблему/возможность,
+  управленческие решения РИЦ, на которые предполагается влиять, предполагаемый полезный эффект,
+  существующие ограничения и альтернативные способы получить ту же пользу. В охват не входят принятие
+  потребностей и требований, выбор окончательной реализации, доказательство ROI, причинного экономического
+  эффекта, сетевой распространенности или фактической полезности конкретному РИЦ.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Наиболее сильная кандидатная формулировка проблемы сейчас не в том, что РИЦ «плохо обслуживает» клиентов,
+  а в доказательном разрыве: существующие материалы еще не показывают воспроизводимый контур, в котором
+  реальные клиентские эпизоды превращаются в трассируемые решения РИЦ по сопровождению, позиционированию,
+  обучению или обратной связи, а последствия этих решений затем наблюдаются. Возможность состоит в создании
+  такого замкнутого доказательного цикла. Это аналитическая гипотеза, а не установленный факт о конкретном РИЦ;
+  до P02 реальный РИЦ должен подтвердить, уточнить либо отвергнуть саму проблему и назвать хотя бы одно решение,
+  для которого такой контур полезен.
+introduction:
+  purpose: >-
+    определить кандидатную проблему/возможность РИЦ и сформулировать проверяемый вопрос для первого разговора
+    с реальным РИЦ до перехода к потребностям и требованиям
+  audience: [руководитель РИЦ, руководитель клиентского сервиса, специалисты сопровождения и обучения, владелец инженерной среды]
+  coverage:
+    - текущий доказательный разрыв
+    - предполагаемые классы решений РИЦ
+    - предполагаемый полезный эффект
+    - альтернативные способы получить такой эффект
+    - ограничения и риски
+    - критерий готовности к P02
+  nonpurpose:
+    - не утверждает наличие дефекта конкретного РИЦ
+    - не является принятой потребностью или требованием
+    - не выбирает техническую реализацию
+    - не доказывает экономический эффект или готовность платить
+context_and_assumptions:
+  dialogue_branch_purpose:
+    purpose_text: 'определить и доказательно подтвердить конечную пользу взаимодействия с РИЦ: какой практически применимый результат получает РИЦ, какие его решения и действия этот результат улучшает, как эта польза проявляется в работе с клиентами и какими наблюдаемыми данными подтверждается её достижение.'
+    purpose_locked: true
+    provenance: explicit_owner_authorized_change
+  exact_owner_input: 'давай'
+  continuation_basis: >-
+    Текущий запрос разрешен как явное продолжение непосредственно предшествующего шага P01: создать
+    TECH-BMA → problem or opportunity statement до P02. Слово «давай» не трактуется как принятие заранее
+    неизвестной формулировки проблемы или как внешняя валидация РИЦ.
+  predecessor_evidence:
+    - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+    - ARTVER-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+    - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+    - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1
+    - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+  evidence_boundary: >-
+    Предшествующие продукты подтверждают наличие аналитической и многоэпизодной механики и явно фиксируют,
+    что реальный РИЦ еще не использовал результат для решения и post-decision effect не наблюдался. Поэтому
+    текущая проблема формулируется только как candidate evidence/decision gap и требует прямой проверки на РИЦ.
+body:
+  evaluated_need_or_opportunity:
+    decision_context_candidate:
+      focal_question: >-
+        Может ли РИЦ принимать более обоснованные и воспроизводимые решения о клиентском сопровождении,
+        если реальные клиентские эпизоды систематически связываются с решением клиента, вкладом СПС/РИЦ,
+        повторяющимися разрывами и последующим результатом решения РИЦ?
+      status: candidate_question_for_real_RIC
+    problem_statement:
+      status: analyst_candidate_pending_real_RIC_confirmation
+      statement: >-
+        В текущем доказательном контуре не установлена воспроизводимая связь «реальный клиентский эпизод →
+        решение/действие клиента → вклад КонсультантПлюс и РИЦ → вывод для РИЦ → реальное решение РИЦ →
+        наблюдаемый результат». Из-за этого аналитические материалы пока нельзя считать доказательством того,
+        что они улучшают управленческие или сервисные решения РИЦ.
+      nonclaim: >-
+        Это не утверждение, что конкретный РИЦ фактически принимает плохие решения или не имеет собственных
+        механизмов обратной связи; существование и достаточность таких механизмов должны быть установлены прямыми данными.
+      missing_evidence:
+        - идентифицированный реальный РИЦ и участники решения
+        - конкретное недавно принятое или предстоящее решение РИЦ
+        - текущие источники данных/обратной связи, которыми РИЦ уже пользуется
+        - текущая трудность, неопределенность или цена ошибки этого решения
+        - факт использования или неиспользования аналитических результатов для решения
+    opportunity_statement:
+      status: analyst_candidate_pending_real_RIC_confirmation
+      statement: >-
+        Создать замкнутый доказательный цикл, в котором реальные клиентские эпизоды превращаются в проверяемые
+        основания для решения РИЦ, решение фиксируется отдельно, а последствия наблюдаются и возвращаются в следующий цикл.
+      intended_use: поддержка решений РИЦ о том, что изменить, сохранить либо дополнительно проверить в клиентском сопровождении
+      intended_useful_effect: >-
+        не гарантированное «улучшение показателей», а повышение проверяемости, воспроизводимости и обоснованности
+        выбранного решения РИЦ с возможностью проверить его последствия по последующим данным
+    candidate_RIC_decision_classes:
+      status: hypotheses_to_validate_not_accepted_scope
+      classes:
+        - {id: RIC-D01, decision: 'какие клиентские ситуации/сценарии требуют приоритетного внимания', evidence_basis: repeated_real_episode_patterns}
+        - {id: RIC-D02, decision: 'что в практике сопровождения изменить, сохранить или дополнительно проверить', evidence_basis: episode_reconstruction_and_gap_analysis}
+        - {id: RIC-D03, decision: 'как объяснять смысл КонсультантПлюс и роли РИЦ разным участникам клиента', evidence_basis: decision_context_and_contribution_evidence}
+        - {id: RIC-D04, decision: 'какие темы и сценарии использовать в обучении сотрудников РИЦ', evidence_basis: recurring_decision_and_service_breakdowns}
+        - {id: RIC-D05, decision: 'какую трассируемую обратную связь передавать в Сеть', evidence_basis: bounded_multi_episode_evidence_and_explicit_contribution_limits}
+  proposed_system_and_intended_use:
+    proposed_system: >-
+      Не новая ИТ-система как обязательное условие, а организационно-информационный цикл доказательного взаимодействия
+      «эпизод → реконструкция решения → разделение вкладов → синтез → решение РИЦ → измерение после решения».
+    relation_to_existing_systems_and_procedures: >-
+      Цикл должен использовать существующие данные и рабочие процессы РИЦ/Сети настолько, насколько они доступны;
+      существующая многоэпизодная способность инженерной среды является обеспечивающим механизмом, но не доказанной пользой.
+    intended_users: [руководитель РИЦ, руководитель сервиса, специалисты сопровождения/обучения, участники обратной связи Сети]
+    intended_use: >-
+      предоставлять проверяемое основание для конкретного решения РИЦ и создавать данные для последующей проверки результата этого решения
+    conops_boundary: >-
+      первоначальный пилот может выполняться без интеграции с CRM и без создания нового программного продукта;
+      необходимость интеграции или автоматизации является отдельным последующим решением и требует своих продуктов ЖЦ.
+  improvements_deficiencies_constraints_alternatives:
+    current_deficiency_candidate: >-
+      доказательный контур заканчивается на аналитическом выводе/представлении и еще не замкнут на реальное решение РИЦ и его результат
+    desired_improvement_candidate: >-
+      замкнуть контур на решение и наблюдение результата, сохраняя трассируемость и границы силы утверждений
+    constraints:
+      - до прямой проверки нельзя приписывать конкретному РИЦ отсутствие или низкое качество существующих механизмов
+      - малые выборки не доказывают распространенность сценариев в клиентской базе или Сети
+      - вклад СПС, РИЦ, клиента и иных источников должен различаться
+      - персональные/конфиденциальные данные не должны становиться обязательным условием пилота; предпочтительны обезличенные эпизоды
+      - ROI, предотвращенные штрафы/убытки и причинный рост эффективности требуют отдельного дизайна измерений
+      - аналитический вывод не должен автоматически становиться требованием, процедурой или системным изменением
+    alternatives:
+      - id: ALT-0
+        name: сохранить существующий способ без нового доказательного цикла
+        advantages: [нулевая дополнительная нагрузка, не требует новых процедур]
+        limitations: [не устраняет текущий доказательный разрыв между аналитикой и decision-use]
+        evidence_status: logical_baseline_not_real_RIC_assessed
+      - id: ALT-1
+        name: использовать только опросы/общую обратную связь клиентов и сотрудников
+        advantages: [быстрее масштабируется по числу респондентов, удобно для широких тем]
+        limitations: [может не восстанавливать конкретное решение, контекст и вклад участников]
+        evidence_status: analytical_alternative_not_compared_on_real_RIC
+      - id: ALT-2
+        name: использовать эпизодный доказательный цикл с последующим решением РИЦ
+        advantages: [высокая контекстность, трасса от факта к решению, совместим с текущей многоэпизодной механикой]
+        limitations: [выше трудоемкость на эпизод, малая выборка ограничивает обобщение]
+        evidence_status: current_candidate_not_yet_real_RIC_validated
+      - id: ALT-3
+        name: строить полный инструментированный контур CRM/поведенческой аналитики
+        advantages: [большой объем наблюдений, возможность регулярного мониторинга]
+        limitations: [интеграционная стоимость, качество событийных данных, необходимость отдельной архитектуры/требований/реализации]
+        evidence_status: future_solution_class_not_justified_for_initial_pilot
+    tradeoffs: >-
+      На P01 ни одна альтернатива не принимается как целевое решение. ALT-2 является наиболее непосредственно связанным
+      с уже созданной аналитической способностью, но реальный РИЦ должен подтвердить саму проблему и ценность результата до выбора.
+  technical_strategic_economic_market_basis:
+    strategic_basis:
+      - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2 связывает позиционирование РИЦ с решениями клиента, но оставляет прямую RIC/client validation незавершенной
+      - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1 устанавливает terminal benefit через реальное решение РИЦ и post-decision observation
+    technical_basis:
+      - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1 задает существующий механизм обработки ограниченного набора эпизодов
+      - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1 подтверждает синтетическую механику, но не реальную полезность РИЦ
+    economic_basis: unresolved_no_current_evidence_for_ROI_or_willingness_to_pay
+    market_basis: unresolved_no_current_evidence_for_prevalence_across_RIC_network
+    preliminary_requirements: not_accepted
+    downstream_rule: >-
+      Потребности/требования P02 могут формироваться только после подтверждения или корректировки P01 реальным РИЦ;
+      текущие decision classes и альтернативы остаются гипотезами.
+  risks_and_management_methods:
+    risks:
+      - {id: R-P01-01, risk: confirmation_bias, description: 'искать эпизоды, подтверждающие уже выбранную идею услуги', mitigation: 'фиксировать альтернативы и отрицательные/нейтральные случаи; P01 не выбирает решение'}
+      - {id: R-P01-02, risk: sample_bias, description: 'обобщить несколько эпизодов на весь РИЦ или Сеть', mitigation: 'sample-bounded claims и отдельный measurement design'}
+      - {id: R-P01-03, risk: false_attribution, description: 'приписать итог клиентского решения только СПС или РИЦ', mitigation: 'разделение contribution и сохранение иных причин'}
+      - {id: R-P01-04, risk: participant_burden, description: 'сделать доказательный цикл слишком трудоемким для РИЦ', mitigation: 'начать с одного решения/небольшого числа обезличенных эпизодов и измерять стоимость процесса'}
+      - {id: R-P01-05, risk: premature_automation, description: 'начать интеграцию/разработку до доказательства проблемы', mitigation: 'пилот без обязательной CRM-интеграции; отдельный ЖЦ для любой реализации'}
+      - {id: R-P01-06, risk: privacy_or_confidentiality, description: 'получить лишние клиентские данные', mitigation: 'минимизация и обезличивание данных; фиксировать только необходимое для решения'}
+      - {id: R-P01-07, risk: self_validating_metric, description: 'считать создание отчета доказательством пользы', mitigation: 'отдельные R0–R4, TM-DEC и TECH-VAL; decision-use обязателен для сильного claim о пользе'}
+    management_method: >-
+      На P01 удерживать проблему как проверяемую гипотезу, а не как факт; переход к P02 только после прямого RIC evidence.
+  P01_acceptance_gate_for_P02:
+    status: not_met
+    required_real_RIC_evidence:
+      - реальный участник РИЦ подтверждает либо корректирует сформулированную проблему/возможность
+      - названо минимум одно конкретное решение или действие РИЦ, для которого результат нужен
+      - описано, как это решение принимается сейчас и какими данными РИЦ уже пользуется
+      - зафиксировано, что именно в текущем положении недостаточно, неопределенно или дорого по ошибке
+      - определена допустимая единица первого пилота без обещания экономического эффекта
+    consequence_if_not_met: do_not_promote_P01_hypotheses_to_TECH_STK_needs_or_requirements
+conclusions_and_recommendations:
+  - >-
+    Считать P01 сформированным как аналитический кандидат, но не принятым: основной проверяемый разрыв — отсутствие
+    доказанной цепочки от клиентского эпизода до реального решения РИЦ и наблюдаемого результата.
+  - >-
+    Первый разговор с реальным РИЦ строить не вокруг предложения «пришлите 3–5 случаев», а вокруг одного конкретного
+    решения РИЦ: что он сейчас решает, на каких данных, что остается неопределенным и что будет признаком полезности.
+  - >-
+    Если РИЦ подтверждает проблему, следующий canonical product — TECH-STK → stakeholder needs and requirements (P02).
+    Если отвергает, P01 должен получить новую ArtifactVersion с исправленной проблемой, а не подгонять эпизоды под исходную гипотезу.
+references:
+  - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
+  - ARTVER-CPLUS-RIC-INTERACTION-BENEFIT-VERIFICATION-REPORT-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+  - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+  - ARTVER-CPLUS-RIC-MULTI-EPISODE-EXECUTION-DESIGN-20260906-001-V1
+  - ARTVER-CPLUS-RIC-MULTI-EPISODE-CANARY-VERIFICATION-REPORT-20260906-001-V1
+  - ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1
+  - ARTVER-SE-PROCESS-IOPEC-ORGANIZATION-PROCESSES-20260904-001-V2
+  - ARTVER-SE-SE-ACTOR-EXECUTION-PROCEDURE-20260903-001-V12
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 — Systems and software engineering — System life cycle processes, §6.4.1'
+  - 'ГОСТ Р 57193-2025 — Системная и программная инженерия. Процессы жизненного цикла систем, §6.4.1'
+  - 'ISO/IEC/IEEE 15289:2017 — Systems and software engineering — Content of life-cycle information items (documentation), §§7.6, 10.53'
+  - 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017 — Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации), §§7.6, 10.53'
+glossary:
+  P01: первый продукт цепочки доказательства пользы — problem or opportunity statement
+  evidence_decision_gap: отсутствие подтвержденной трассы от наблюдения/анализа к реальному решению и последующему результату
+  decision_use: фактическое использование результата анализа для конкретного решения
+  post_decision_observation: измерение или иное наблюдение после решения, пригодное для сопоставления с исходным состоянием/критерием
+  candidate_problem: аналитическая гипотеза проблемы, которая не становится установленной потребностью до прямой проверки заинтересованной стороной
+  real_RIC: фактически участвующая организация/роль РИЦ, предоставляющая прямые данные и подтверждение контекста использования
+change_history:
+  - {version: V1, date: '2026-09-07', change: 'P01 candidate problem/opportunity derived from terminal-benefit model; real RIC acceptance explicitly pending'}
+subject_unresolved:
+  - identity and direct evidence of first real RIC participant
+  - accepted RIC problem/opportunity statement
+  - current RIC decision process and existing evidence sources
+  - frequency/criticality/cost of error of the focal decision
+  - baseline and post-decision measures
+  - economic value, ROI and willingness to pay
+owner_product_request:
+  exact_visible_text: 'давай'
+  resolved_continuation: 'выполнить следующий объявленный шаг P01 — TECH-BMA → problem or opportunity statement — без молчаливого принятия гипотез реальным РИЦ'
+  request_specific_requirements:
+    - continue the declared P01 step now
+    - preserve the exact locked dialogue purpose
+    - do not infer real RIC acceptance from the continuation instruction
+    - every material result remains a standard process-owned product with ГОСТ composition
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_problem_or_opportunity_statement
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, context_and_assumptions.exact_owner_input, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, context_and_assumptions.predecessor_evidence, body]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_product_structure_candidate_pending_exact_head_worker
+verification:
+  structural_status: pending_exact_external_client_and_dual_standard_workers
+  semantic_status: candidate problem/opportunity synthesized from predecessor evidence; direct real-RIC confirmation remains pending
+  owner_acceptance: owner authorized continuation to P01; acceptance of the candidate problem/opportunity remains separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/problem-or-opportunity-statement/ART-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001.yaml@change/consultantplus-20260907-ric-interaction-benefit
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.53']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.53']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.53-N01, disposition: satisfied, artifact_field_refs: [body.evaluated_need_or_opportunity.problem_statement, body.evaluated_need_or_opportunity.opportunity_statement], iso: {section_or_item: '10.53'}, gost: {section_or_item: '10.53'}, correspondence: IDT}
+        - {requirement_id: S10.53-N02, disposition: satisfied, artifact_field_refs: [body.proposed_system_and_intended_use], iso: {section_or_item: '10.53'}, gost: {section_or_item: '10.53'}, correspondence: IDT}
+        - {requirement_id: S10.53-N03, disposition: satisfied, artifact_field_refs: [body.improvements_deficiencies_constraints_alternatives], iso: {section_or_item: '10.53'}, gost: {section_or_item: '10.53'}, correspondence: IDT}
+        - {requirement_id: S10.53-N04, disposition: satisfied, artifact_field_refs: [body.technical_strategic_economic_market_basis], iso: {section_or_item: '10.53'}, gost: {section_or_item: '10.53'}, correspondence: IDT}
+        - {requirement_id: S10.53-N05, disposition: satisfied, artifact_field_refs: [body.risks_and_management_methods], iso: {section_or_item: '10.53'}, gost: {section_or_item: '10.53'}, correspondence: IDT}
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  universal_content_policy_artifact_version_id: ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
+  information_item_identity:
+    resolved_name_or_semantic_identity: product needs assessment specialization for RIC interaction problem or opportunity statement
+    resolution_basis: TECH-BMA exact binding to report plus §10.53 in ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    state: resolved
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: specialization
+    generic_type: report
+    specific_profiles: ['10.53']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.53'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.53-N01, state: satisfied, artifact_field_refs: [body.evaluated_need_or_opportunity.problem_statement, body.evaluated_need_or_opportunity.opportunity_statement]}
+          - {requirement_id: S10.53-N02, state: satisfied, artifact_field_refs: [body.proposed_system_and_intended_use]}
+          - {requirement_id: S10.53-N03, state: satisfied, artifact_field_refs: [body.improvements_deficiencies_constraints_alternatives]}
+          - {requirement_id: S10.53-N04, state: satisfied, artifact_field_refs: [body.technical_strategic_economic_market_basis]}
+          - {requirement_id: S10.53-N05, state: satisfied, artifact_field_refs: [body.risks_and_management_methods]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: specific product-needs-assessment content specialized to RIC problem/opportunity P01 without promoting unvalidated RIC claims
+  information_item_management:
+    version_control: exact V1 initial P01 candidate
+    review_approval: real RIC confirmation plus owner acceptance remain separate
+    quality_evaluation: structural exact-head worker plus subsequent subject TECH-VER as needed
+    retention: client process-owned product in MOZ1961/consultantplus
+    reuse_and_duplication: any real-RIC correction creates a new ArtifactVersion rather than overwriting this evidence state
