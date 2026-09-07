@@ -1,0 +1,245 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: life cycle concepts
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_full_lifecycle_defined_actual_future_gates_open
+acceptance_status: lifecycle_concept_candidate_owner_acceptance_and_client_adoption_separate
+artifact_instance_purpose: >-
+  Описать полный связанный жизненный цикл продукта «Диагностика клиентского случая РИЦ» одновременно
+  в двух контурах: как продукта, производимого SE-средой для клиентской системы, и как приобретаемого,
+  принимаемого, используемого, изменяемого и выводимого из применения продукта конкретного РИЦ.
+  Разделить уже достигнутые состояния, планируемые переходы и переходы, заблокированные отсутствием
+  конкретного РИЦ, получателя, реального эпизода или решения клиента.
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-DEFINE-RIC-DIAGNOSTIC-DUAL-LIFECYCLE-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-BMA-DUAL-LIFECYCLE-CONCEPT
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-DUAL-LIFECYCLE-CONCEPT-V1
+    methodic_version: dual_supplier_client_lifecycle_v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: candidate_dual_lifecycle_defined}
+scope: >-
+  Product-specific lifecycle from opportunity and definition through supply/acquisition, transition, operation,
+  validation, maintenance/improvement and disposal. The lifecycle concept does not assert that future client-side
+  processes have occurred; it identifies their standard products, transition criteria and blockers.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+  - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+  - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+context:
+  current_product: «Диагностика клиентского случая РИЦ» / E0-S01 one-episode pilot
+  semantic_owner: MOZ1961/consultantplus
+  producing_environment: SE-GENERIC-ENVIRONMENT through BIND-CPLUS-SE-001
+  client_environment: concrete RIC operational environment, currently not_resolved
+  invariant: >-
+    The SE environment may produce and verify client-owned ArtifactVersions through the interface, but client-system
+    authority, acquisition, acceptance, operational adoption and empirical validation are not transferred to MOZ1961/se.
+designation: CPLUS-RIC-DIAGNOSTIC-DUAL-LIFECYCLE-V1
+body:
+  user_and_stakeholder_perspective:
+    supplier_side_users: [owner, engineering actor, verifier]
+    client_side_users: [RIC director, authorized RIC participant, RIC service or training owner]
+    ultimate_subject: professional client decision episode in which ConsultantPlus and/or RIC support may contribute
+    intended_use: >-
+      Give a RIC a traceable reconstruction of one real client decision path, distinguish contributions and gaps,
+      and provide evidence suitable for a concrete RIC decision about service, training, process or further research.
+    non_intended_claims: [ROI, prevented fines or losses, general risk reduction, Network prevalence, Coordination Center adoption, legal correctness, measurable client outcome before retest]
+  interfaces_and_organizational_impacts:
+    supplier_client_intersection:
+      supply_side: AGR-SUP
+      acquisition_side: AGR-ACQ
+      interface: BIND-CPLUS-SE-001 plus actual RIC communication/agreement interface when resolved
+      authority_rule: Proposal or delivery by supplier does not constitute acquisition, acceptance or adoption by RIC
+    information_flow: >-
+      owner/РИЦ authority → minimized episode evidence → TM-MEAS record → TECH-BMA diagnostic report → TECH-VER report
+      → exact package delivery → RIC decision/feedback → optional change request and later retest.
+    product_state_location: client lifecycle products persist in MOZ1961/consultantplus; generic request functioning persists in MOZ1961/se
+  cost_criticality_feasibility:
+    first_pilot_price_rub: 0
+    supplier_internal_effort_existing_estimate: 4-6 actor-hours excluding waiting time
+    delivery_commitment_existing: up to 3 working days from adequate input and agreed session
+    RIC_session_target_existing: 45-60 minutes plus optional review up to 30 minutes
+    criticality: evidence integrity, privacy minimization and avoidance of unsupported attribution are critical to trustworthy use
+    feasibility: minimum E0/S01 requirements, architecture, design and actor-executable implementation already exist as candidates; real usefulness remains unvalidated
+  operational_scenarios:
+    - id: SC-SUP-01
+      scenario: SE environment receives owner-authorized RIC pilot input, executes E0/S01, produces exact client-owned evidence/analysis/verification products and records request functioning.
+    - id: SC-CLIENT-01
+      scenario: RIC acquires or accepts the pilot, provides one authorized participant and episode, receives the verified package and decides whether a concrete service/training/process action is warranted.
+    - id: SC-CLIENT-02
+      scenario: if RIC implements a change, a later comparable episode is reconstructed and measured; only this later cycle can support before/after evidence.
+    - id: SC-SCALE-01
+      scenario: repeated independently verified episodes may justify multi-episode or Network-facing research, but scaling requires separate evidence and authority.
+  current_future_comparison:
+    current_state: >-
+      Proposal V4 is merged and evidence-backed. Minimum E0/S01 requirements/architecture/design/implementation exist.
+      A prior pilot SEMP covers production of one package. No concrete RIC recipient, acquisition decision, actual delivery,
+      real episode, real validation report, operational series, maintenance result or disposal result has yet been established.
+    future_state: >-
+      A controlled lifecycle in which each transition is evidenced by canonical process products; empirical value is measured
+      in real RIC episodes; material changes are reverified; retirement/disposal preserves audit history while disposing of protected data appropriately.
+    assumptions_constraints:
+      - a real RIC/acquirer must be identified before AGR-ACQ or actual transition can be claimed
+      - one episode validates only pilot-level usefulness, not Network-wide effect
+      - a diagnostic finding is evidence/candidate input and not automatically a stakeholder requirement or change request
+      - client-side adoption and change implementation are separate lifecycle decisions owned by the RIC
+  lifecycle_tracks:
+    supplier_SE_environment:
+      - {stage: S0_opportunity_and_value_basis, processes: [TECH-BMA], canonical_products: [business or mission analysis report, life cycle concepts], state: candidate_evidence_exists}
+      - {stage: S1_definition, processes: [TECH-SYSREQ, TECH-ARCH, TECH-DES], canonical_products: [system requirements, system architecture description, system design description], state: E0_S01_candidate_products_exist}
+      - {stage: S2_implementation, processes: [TECH-IMP], canonical_products: [implementation procedure], state: actor_executable_candidate_exists}
+      - {stage: S3_verification, processes: [TECH-VER], canonical_products: [verification report], state: canary_and_proposal_subject_verification_exist_exact_head_each_change_required}
+      - {stage: S4_supply, processes: [AGR-SUP], canonical_products: [supply response, supply records/artifacts], state: Proposal_V4_merged_external_delivery_not_completed}
+      - {stage: S5_transition_and_delivery, processes: [TECH-TRN, AGR-SUP], canonical_products: [transition report, supply records/artifacts], state: blocked, blocker: concrete_recipient_channel_and_acquisition_or_issue_authority}
+      - {stage: S6_operation, processes: [TECH-OP, TM-MEAS, TECH-BMA, TECH-VER], canonical_products: [operation report, measurement register, business or mission analysis report, verification report], state: blocked, blocker: real_authorized_RIC_episode}
+      - {stage: S7_validation, processes: [TECH-VAL], canonical_products: [validation strategy/approach, validation report], state: plan_now_execution_blocked, blocker: real_operational_use_and_validation_evidence}
+      - {stage: S8_maintenance_and_improvement, processes: [TECH-MNT, TM-CM, TM-PAC], canonical_products: [maintenance and logistics strategy/approach, change request, configuration baseline, project status report/dashboard], state: plan_now_execution_conditional, blocker: observed_problem_change_or_improvement_decision}
+      - {stage: S9_disposal, processes: [TECH-DSP], canonical_products: [disposal strategy/approach, disposed system], state: plan_now_execution_not_due}
+    client_RIC:
+      - {stage: C0_problem_or_opportunity, processes: [TECH-BMA], canonical_products: [problem or opportunity statement], state: specific_RIC_not_established}
+      - {stage: C1_acquisition, processes: [AGR-ACQ], canonical_products: [acquisition need, acquisition strategy/approach, request for supply, acquisition agreement], state: blocked, blocker: named_RIC_and_acquirer_decision}
+      - {stage: C2_stakeholder_definition, processes: [TECH-STK], canonical_products: [stakeholder needs and requirements, validation criteria], state: blocked, blocker: authorized_RIC_stakeholders_and_direct_evidence}
+      - {stage: C3_acceptance_and_transition, processes: [AGR-ACQ, TECH-TRN], canonical_products: [accepted system or system element, transition report], state: blocked, blocker: acquisition_and_verified_delivery}
+      - {stage: C4_use_and_decision, processes: [TECH-OP, TM-MEAS, TM-DEC], canonical_products: [operation report, measurement register, decision register], state: blocked, blocker: real_package_use_by_RIC}
+      - {stage: C5_change_implementation, processes: [TM-PAC, TECH-SYSREQ, TECH-ARCH, TECH-DES, TECH-IMP, TECH-VER], canonical_products: [change request, system requirements, system architecture description, system design description, implementation procedure, verification report], state: conditional, condition: RIC_accepts_specific_improvement}
+      - {stage: C6_retest_and_validation, processes: [TM-MEAS, TECH-VAL], canonical_products: [measurement register, measurement report, validation report], state: conditional, condition: comparable_post_change_episode}
+      - {stage: C7_sustained_operation_or_scaling, processes: [TECH-OP, TM-PAC], canonical_products: [operation report, project status report/dashboard], state: conditional, condition: repeated_use_and_owner_RIC_authority}
+      - {stage: C8_maintenance, processes: [TECH-MNT], canonical_products: [maintenance and logistics report], state: conditional}
+      - {stage: C9_retirement, processes: [TECH-DSP], canonical_products: [disposed system], state: not_due}
+  lifecycle_gates:
+    - {gate: G0_definition, criterion: every planned durable result maps to canonical ProcessType/O and applicable GOST composition, current_state: target_of_current_verification}
+    - {gate: G1_engineering_readiness, criterion: exact-head structural PASS plus subject TECH-VER for changed products, current_state: pending_current_PR}
+    - {gate: G2_external_transition, criterion: concrete recipient plus channel plus applicable authority/acquisition state resolved, current_state: blocked}
+    - {gate: G3_real_pilot_operation, criterion: authorized real episode plus adequate input and session, current_state: blocked}
+    - {gate: G4_pilot_validation, criterion: real use evaluated against validation plan without generalizing beyond scope, current_state: blocked}
+    - {gate: G5_change_and_reverify, criterion: every material accepted change gets controlled change/configuration and re-verification, current_state: conditional}
+    - {gate: G6_sustained_use, criterion: repeated real executions and operational measures available, current_state: conditional}
+    - {gate: G7_disposal, criterion: obligations/records/data disposition complete and audit history retained, current_state: not_due}
+summary: >-
+  The product has two coupled but authority-separated lifecycles. The SE environment can complete engineering definition,
+  planning, measurement design, verification and supplier-side readiness now. The client lifecycle cannot legitimately pass
+  acquisition/transition/operation/validation gates until a concrete RIC and real episode exist. The next factual lifecycle
+  blocker is therefore not missing engineering decomposition but missing actual client/acquirer/recipient state.
+glossary:
+  supplier_lifecycle: lifecycle of producing and supplying the diagnostic capability/package through the SE environment
+  client_lifecycle: lifecycle of acquiring, accepting, using, changing, sustaining and retiring the product within a concrete RIC
+  gate: evidence-backed transition condition; a planned gate is not evidence that the transition occurred
+  E0_S01: one-participant, one-real-episode pilot configuration
+  diagnostic_finding: evidence-backed observation/candidate input that is not automatically a requirement or authorized change
+change_history:
+  - {version: V1, date: '2026-09-07', change: establish product-specific dual supplier/client lifecycle and truthful current/future gate states}
+owner_product_request:
+  exact_visible_text: |-
+    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
+    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
+  request_specific_requirements:
+    - cover full product lifecycle in both SE-environment supplier and client/RIC tracks
+    - decompose stages, transitions and blockers
+    - map every durable lifecycle result to standard ProcessType/O and GOST composition
+    - do not fabricate future acquisition, delivery, operation, validation, maintenance or disposal evidence
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_life_cycle_concepts
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.lifecycle_tracks, body.lifecycle_gates]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.lifecycle_gates, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, context, body.lifecycle_tracks]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+verification:
+  structural_status: pending_fresh_exact_head
+  semantic_status: dual_lifecycle_decomposition_candidate_pending_independent_TECH_VER
+  owner_acceptance: purpose_change_and_execution_authorized_product_acceptance_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/life-cycle-concepts/ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: life cycle concepts
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.2', specific_status: present, specific_items: ['10.15']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.2', specific_status: present, specific_items: ['10.15']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.2-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status, scope], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-B, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-C, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-D, disposition: satisfied, artifact_field_refs: [context], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-E, disposition: satisfied, artifact_field_refs: [designation], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-G, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-H, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: U7.2-I, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.2'}, gost: {section_or_item: '7.2'}, correspondence: IDT}
+        - {requirement_id: S10.15-N01, disposition: satisfied, artifact_field_refs: [body.user_and_stakeholder_perspective], iso: {section_or_item: '10.15'}, gost: {section_or_item: '10.15'}, correspondence: IDT}
+        - {requirement_id: S10.15-N02, disposition: satisfied, artifact_field_refs: [body.interfaces_and_organizational_impacts], iso: {section_or_item: '10.15'}, gost: {section_or_item: '10.15'}, correspondence: IDT}
+        - {requirement_id: S10.15-N03, disposition: satisfied, artifact_field_refs: [body.cost_criticality_feasibility], iso: {section_or_item: '10.15'}, gost: {section_or_item: '10.15'}, correspondence: IDT}
+        - {requirement_id: S10.15-N04, disposition: satisfied, artifact_field_refs: [body.operational_scenarios], iso: {section_or_item: '10.15'}, gost: {section_or_item: '10.15'}, correspondence: IDT}
+        - {requirement_id: S10.15-N05, disposition: satisfied, artifact_field_refs: [body.current_future_comparison], iso: {section_or_item: '10.15'}, gost: {section_or_item: '10.15'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: product-specific concept of operations/life-cycle concepts, resolution_basis: TECH-BMA life cycle concepts controlled match to GOST 10.15, state: resolved}
+  universal_type: description
+  universal_content:
+    source_section: '7.2'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.2-A, state: satisfied, artifact_field_refs: [issued_at_and_status, scope]}
+      - {requirement_id: U7.2-B, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.2-C, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.2-D, state: satisfied, artifact_field_refs: [context]}
+      - {requirement_id: U7.2-E, state: satisfied, artifact_field_refs: [designation]}
+      - {requirement_id: U7.2-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.2-G, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.2-H, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.2-I, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: description, specific_profiles: ['10.15'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.15'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.15-N01, state: satisfied, artifact_field_refs: [body.user_and_stakeholder_perspective]}
+          - {requirement_id: S10.15-N02, state: satisfied, artifact_field_refs: [body.interfaces_and_organizational_impacts]}
+          - {requirement_id: S10.15-N03, state: satisfied, artifact_field_refs: [body.cost_criticality_feasibility]}
+          - {requirement_id: S10.15-N04, state: satisfied, artifact_field_refs: [body.operational_scenarios]}
+          - {requirement_id: S10.15-N05, state: satisfied, artifact_field_refs: [body.current_future_comparison]}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile}
+  tailoring: dual supplier/client lifecycle is represented inside the product-specific concept; future states remain explicitly blocked or conditional
+  information_item_management: {version_control: V1, review_approval: owner purpose change authorized but product acceptance separate, quality_evaluation: exact-head worker plus TECH-VER, retention: canonical client product, reuse_and_duplication: whole-network life-cycle concept remains separate because this is product-specific}
