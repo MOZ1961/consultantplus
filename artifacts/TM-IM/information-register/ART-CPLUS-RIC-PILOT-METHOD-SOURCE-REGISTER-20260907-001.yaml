@@ -1,0 +1,368 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: information register
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_source_capture
+acceptance_status: source_capture_complete_subject_use_and_owner_acceptance_separate
+artifact_instance_purpose: >-
+  Зафиксировать устойчивые ссылки, идентичность и содержательные тела источников, использованных для
+  методического обоснования пилота «Диагностика клиентского случая РИЦ». Тела внешних публикаций
+  сохраняются как проверяемые русскоязычные парафразы доступных аннотаций/разделов, а не как полные
+  копии защищенных текстов; для каждого источника явно указаны поддерживаемые суждения и ограничения.
+producer:
+  process_type_id: TM-IM
+  process_instance_id: PI-CPLUS-TM-IM-RIC-PILOT-METHOD-SOURCES-20260907-001
+  activity_instance_id: AI-CPLUS-TM-IM-CAPTURE-RIC-PILOT-METHOD-SOURCES-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-IM-SOURCE-EVIDENCE-CAPTURE
+    methodic_version_id: METHVER-CPLUS-TM-IM-SOURCE-EVIDENCE-CAPTURE-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PILOT-SOURCE-EVIDENCE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+date_and_status: {date: '2026-09-07', status: source_capture_candidate_complete}
+scope: >-
+  Методические и нормативные источники, фактически использованные для защиты логики W01-W08 пилота
+  РИЦ: конкретный эпизод, реконструкция пути решения, разделение вкладов, поиск разрывов, фактологическая
+  сверка, доказательная дисциплина, отдельная верификация и ограничение выводов одного пилота.
+subject_or_category: RIC pilot methodology evidence sources
+issuing_organization: owner-authorized engineering environment
+references:
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
+  - https://doi.org/10.1037/h0061470
+  - https://doi.org/10.1109/21.31053
+  - https://naturalisticdecisionmaking.org/new-ndm-tools/
+  - https://doi.org/10.1509/jm.15.0420
+  - https://doi.org/10.2307/41166446
+  - https://doi.org/10.1509/jmkg.68.1.1.24036
+  - https://doi.org/10.1177/1356389012451663
+  - https://doi.org/10.1177/1049732316654870
+  - https://doi.org/10.5465/AMR.2006.20208679
+  - https://doi.org/10.1007/s11747-023-00923-9
+  - https://arxiv.org/abs/2503.08669
+body:
+  information_status_and_version_description:
+    register_id: CPLUS-RIC-PILOT-METHOD-SOURCES-20260907-V1
+    capture_date: '2026-09-07'
+    capture_rule: >-
+      Для внешних публикаций фиксируются устойчивый URL/DOI, библиографическая идентичность, доступное
+      тело источника в форме краткой парафразы аннотации или релевантного открытого раздела, поддерживаемые
+      суждения и ограничения. Полный текст внешних публикаций не копируется. Для загруженных владельцем
+      стандартов и статей фиксируются точный идентификатор файла/название и релевантная содержательная
+      выдержка в парафразе; исходный файл остается отдельным входом.
+    copyright_and_reuse_disposition: paraphrased_source_bodies_no_full_copyrighted_text_replication
+    source_records:
+      - source_id: SRC-GOST-33001-2017
+        title: ГОСТ Р ИСО/МЭК 33001-2017 «Информационные технологии. Оценка процесса. Понятия и терминология»
+        source_type: owner_uploaded_standard_plus_public_mirror
+        stable_locator: https://meganorm.ru/mega_doc/norm/gost-r_gosudarstvennyj-standart/13/gost_r_iso_mek_33001-2017_natsionalnyy_standart_rossiyskoy.html
+        owner_uploaded_file_id: file_00000000f14081f5bbc2d46e247b8cf0
+        relevant_locator: clauses_3.3.11_3.3.13
+        body_capture_mode: paraphrased_from_uploaded_source
+        source_body_summary_ru: >-
+          Стандарт определяет результат процесса как наблюдаемый результат успешного достижения цели
+          процесса; результатом может быть продукт, существенное изменение или соблюдение заданных
+          ограничений. Цель процесса связывается с ожидаемыми результатами, а реализация процесса должна
+          давать реальную пользу заинтересованным сторонам.
+        supports_claims: [CLM-01-activity_is_not_outcome, CLM-02-observable_result_matters]
+        limitations: >-
+          Стандарт задает терминологию оценки процессов и сам по себе не доказывает, что выбранная
+          методика РИЦ улучшает клиентскую ценность или экономический результат.
+      - source_id: SRC-FLANAGAN-CIT-1954
+        title: John C. Flanagan — The Critical Incident Technique
+        authors: [John C. Flanagan]
+        year: 1954
+        source_type: peer_reviewed_primary_method_article
+        doi: 10.1037/h0061470
+        stable_locator: https://doi.org/10.1037/h0061470
+        secondary_locator: https://pubmed.ncbi.nlm.nih.gov/13177800/
+        body_capture_mode: paraphrased_from_method_description_and_bibliographic_sources
+        source_body_summary_ru: >-
+          Critical Incident Technique предназначена для систематического сбора конкретных значимых
+          наблюдений о поведении и опыте, а не общих мнений. Систематизированные критические эпизоды
+          используются для выявления требований к деятельности, обучению, процедурам, рабочему дизайну
+          и другим практическим решениям.
+        supports_claims: [CLM-03-specific_episode_over_generic_opinion, CLM-09-episodes_can_inform_improvement]
+        limitations: >-
+          Метод не устанавливает репрезентативность одного эпизода и не дает причинной оценки
+          экономического эффекта конкретного вмешательства.
+      - source_id: SRC-KLEIN-CDM-1989
+        title: Gary A. Klein, Roberta Calderwood, Donald MacGregor — Critical decision method for eliciting knowledge
+        authors: [Gary A. Klein, Roberta Calderwood, Donald MacGregor]
+        year: 1989
+        source_type: peer_reviewed_primary_method_article
+        doi: 10.1109/21.31053
+        stable_locator: https://doi.org/10.1109/21.31053
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          Авторы описывают Critical Decision Method как развитие Critical Incident Technique для
+          естественных задач с высокой информационной нагрузкой, изменяющимися условиями и сложным
+          принятием решений. Метод использует специальные вопросы для извлечения оснований различений,
+          ключевых признаков и экспертного решения; среди применений названы выявление требований к
+          обучению и моделирование экспертной деятельности.
+        supports_claims: [CLM-03-specific_episode_over_generic_opinion, CLM-04-reconstruct_decision_basis]
+        limitations: >-
+          Публикация обосновывает метод извлечения знаний, а не конкретную длительность 45–60 минут и
+          не коммерческую полезность пилота для РИЦ.
+      - source_id: SRC-NDMA-CDM-TOOLS
+        title: Naturalistic Decision Making Association — Critical Decision Method tool description
+        source_type: professional_method_summary
+        stable_locator: https://naturalisticdecisionmaking.org/new-ndm-tools/
+        accessed_at: '2026-09-07'
+        body_capture_mode: paraphrased_from_public_method_page
+        source_body_summary_ru: >-
+          NDMA описывает CDM как технику извлечения знаний, использующую когнитивные вопросы и несколько
+          ретроспективных проходов по нестандартному эпизоду, чтобы установить основания оценки ситуации
+          и принятия решения.
+        supports_claims: [CLM-04-reconstruct_decision_basis, CLM-05-retrospective_session_is_methodologically_grounded]
+        limitations: professional_summary_not_substitute_for_primary_method_article
+      - source_id: SRC-LEMON-VERHOEF-2016
+        title: Katherine N. Lemon, Peter C. Verhoef — Understanding Customer Experience Throughout the Customer Journey
+        authors: [Katherine N. Lemon, Peter C. Verhoef]
+        year: 2016
+        source_type: peer_reviewed_review_article
+        doi: 10.1509/jm.15.0420
+        stable_locator: https://doi.org/10.1509/jm.15.0420
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          Авторы рассматривают клиентский опыт и клиентский путь во времени как критически важный объект
+          для фирмы. Клиент взаимодействует с организацией через множество точек контакта, каналов и
+          медиа; создание опыта требует согласования нескольких бизнес-функций и иногда внешних партнеров.
+        supports_claims: [CLM-06-full_journey_not_single_RIC_touchpoint, CLM-07-cross_function_and_external_context]
+        limitations: conceptual_review_not_direct_test_of_ConsultantPlus_or_RIC
+      - source_id: SRC-BITNER-OSTROM-MORGAN-2008
+        title: Mary Jo Bitner, Amy L. Ostrom, Felicia N. Morgan — Service Blueprinting: A Practical Technique for Service Innovation
+        authors: [Mary Jo Bitner, Amy L. Ostrom, Felicia N. Morgan]
+        year: 2008
+        source_type: peer_reviewed_service_design_article
+        doi: 10.2307/41166446
+        stable_locator: https://doi.org/10.2307/41166446
+        public_summary_locator: https://cmr.berkeley.edu/2008/05/50-3-service-blueprinting-a-practical-technique-for-service-innovation/
+        body_capture_mode: paraphrased_from_public_abstract_and_author_center_summary
+        source_body_summary_ru: >-
+          Сервис описывается как динамический, опытный и часто совместно производимый клиентами,
+          сотрудниками и технологиями. Service blueprinting опирается на опыт клиента и визуализирует
+          динамический процесс сервиса; в описанных применениях метод помогает видеть взаимозависимости
+          людей и функций, находить точки для стратегических и тактических улучшений и уточнять
+          конкурентное позиционирование.
+        supports_claims: [CLM-06-full_journey_not_single_RIC_touchpoint, CLM-08-gap_mapping_for_service_improvement, CLM-09-episodes_can_inform_improvement]
+        limitations: method_supports_design_logic_but_does_not_prove_specific_RIC_improvement
+      - source_id: SRC-VARGO-LUSCH-2004
+        title: Stephen L. Vargo, Robert F. Lusch — Evolving to a New Dominant Logic for Marketing
+        authors: [Stephen L. Vargo, Robert F. Lusch]
+        year: 2004
+        source_type: peer_reviewed_conceptual_article
+        doi: 10.1509/jmkg.68.1.1.24036
+        stable_locator: https://doi.org/10.1509/jmkg.68.1.1.24036
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          Статья описывает переход от логики встроенной в товар ценности и разовой транзакции к логике
+          нематериальных ресурсов, отношений, сервиса и совместного создания ценности. Это поддерживает
+          рассмотрение результата как совместного вклада системы, сервиса и пользователя, а не как
+          результата одного поставщика.
+        supports_claims: [CLM-10-value_is_cocreated, CLM-11-separate_contributions]
+        limitations: conceptual_marketing_framework_not_causal_evidence_for_RIC
+      - source_id: SRC-MAYNE-2012
+        title: John Mayne — Contribution analysis: Coming of age?
+        authors: [John Mayne]
+        year: 2012
+        source_type: peer_reviewed_evaluation_method_article
+        doi: 10.1177/1356389012451663
+        stable_locator: https://doi.org/10.1177/1356389012451663
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          В центре contribution analysis находится построение правдоподобных причинных утверждений о
+          вкладе вмешательства в наблюдаемый результат. Вмешательство рассматривается как одна из
+          нескольких действующих причин и часто само по себе не является ни необходимым, ни достаточным;
+          поэтому вклад следует отделять от полной причинной атрибуции.
+        supports_claims: [CLM-11-separate_contributions, CLM-12-no_automatic_ROI_or_risk_attribution]
+        limitations: method_requires_theory_and_evidence_beyond_single_episode_for_strong_causal_claims
+      - source_id: SRC-BIRT-ETAL-2016
+        title: Linda Birt et al. — Member Checking: A Tool to Enhance Trustworthiness or Merely a Nod to Validation?
+        authors: [Linda Birt, Suzanne Scott, Debbie Cavers, Christine Campbell, Fiona Walter]
+        year: 2016
+        source_type: peer_reviewed_qualitative_methods_article
+        doi: 10.1177/1049732316654870
+        stable_locator: https://doi.org/10.1177/1049732316654870
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          Member checking возвращает данные или результаты участникам, чтобы проверить точность и
+          соответствие их опыту; авторы одновременно предупреждают, что формальное использование этой
+          техники как единственного доказательства валидности упрощает интерпретативную природу
+          качественного исследования.
+        supports_claims: [CLM-13-factual_review_useful_but_not_truth_oracle, CLM-14-separate_factual_review_from_usefulness]
+        limitations: participant_agreement_does_not_by_itself_verify_analytical_truth
+      - source_id: SRC-ROUSSEAU-2006
+        title: Denise M. Rousseau — Is there Such a thing as Evidence-Based Management?
+        authors: [Denise M. Rousseau]
+        year: 2006
+        source_type: peer_reviewed_management_article
+        doi: 10.5465/AMR.2006.20208679
+        stable_locator: https://doi.org/10.5465/AMR.2006.20208679
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          Автор рассматривает разрыв между организационными исследованиями и управленческой практикой
+          и предлагает ориентировать управленческие практики на лучшую доступную доказательную базу,
+          а не только на привычные представления и неявные допущения.
+        supports_claims: [CLM-15-management_decisions_should_use_best_available_evidence]
+        limitations: general_management_principle_not_specific_RIC_effect_evidence
+      - source_id: SRC-HOMBURG-TISCHER-2023
+        title: Christian Homburg, Moritz Tischer — Customer journey management capability in business-to-business markets
+        authors: [Christian Homburg, Moritz Tischer]
+        year: 2023
+        source_type: peer_reviewed_open_access_empirical_article
+        doi: 10.1007/s11747-023-00923-9
+        stable_locator: https://doi.org/10.1007/s11747-023-00923-9
+        body_capture_mode: paraphrased_from_open_access_abstract
+        source_body_summary_ru: >-
+          В B2B-контексте авторы определяют способность управления клиентским путем как умение создавать
+          ценностно ориентированные точки контакта, согласованно использовать ресурсы через внутренние
+          организационные границы и постоянно отслеживать создание ценности для участников закупочного
+          центра. Эмпирический анализ показывает как положительный механизм через лояльность, так и
+          отрицательный через координационные издержки; общий эффект в исследованной выборке положительный.
+        supports_claims: [CLM-16-journey_management_can_be_organizational_capability, CLM-17-benefit_has_coordination_costs]
+        limitations: external_B2B_sample_not_directly_generalizable_to_ConsultantPlus_network
+      - source_id: SRC-SOPBENCH-2025
+        title: SOPBench: Evaluating Language Agents at Following Standard Operating Procedures and Constraints
+        authors: [Zekun Li, Shinda Huang, Jiangtian Wang, Nathan Zhang, Antonis Antoniades, Wenyue Hua, Kaijie Zhu, Sirui Zeng, Chi Wang, William Yang Wang, Xifeng Yan]
+        year: 2025
+        source_type: owner_uploaded_research_preprint
+        stable_locator: https://arxiv.org/abs/2503.08669
+        owner_uploaded_file_id: file_000000001fac722fb824d5a43792ceef
+        relevant_locator: section_2_evaluation_dimensions_and_procedure_completeness
+        body_capture_mode: paraphrased_from_uploaded_source
+        source_body_summary_ru: >-
+          SOPBench оценивает агентное выполнение по нескольким измерениям, включая правильность
+          конечного результата и полноту обязательной процедуры. Это поддерживает инженерное решение
+          проверять не только итог аналитики, но и наличие требуемой доказательной/проверочной цепочки.
+        supports_claims: [CLM-18-separate_result_from_procedure_verification]
+        limitations: benchmark_of_LLM_agents_not_validation_of_RIC_service_methodology
+    claim_catalog:
+      CLM-01-activity_is_not_outcome: факт выполнения сервисного действия сам по себе не равен наблюдаемому результату процесса
+      CLM-02-observable_result_matters: результат процесса должен описываться через наблюдаемое достижение цели
+      CLM-03-specific_episode_over_generic_opinion: конкретный эпизод дает более пригодные данные о фактическом поведении, чем общая декларация о работе
+      CLM-04-reconstruct_decision_basis: ретроспективный разбор позволяет восстанавливать основания оценки ситуации и решения
+      CLM-05-retrospective_session_is_methodologically_grounded: рабочая сессия по одному эпизоду имеет методическое основание, но ее длительность является проектным ограничением
+      CLM-06-full_journey_not_single_RIC_touchpoint: обращение в РИЦ следует анализировать как часть более полного клиентского пути
+      CLM-07-cross_function_and_external_context: ценность может формироваться через несколько функций организации и внешних участников
+      CLM-08-gap_mapping_for_service_improvement: визуализация процесса и разрывов пригодна для поиска точек улучшения сервиса
+      CLM-09-episodes_can_inform_improvement: систематизированные эпизоды могут давать требования к процедурам, обучению и сервисному дизайну
+      CLM-10-value_is_cocreated: профессиональный результат создается во взаимодействии нескольких ресурсов и участников
+      CLM-11-separate_contributions: вклад СПС, РИЦ, клиента и иных источников следует разделять
+      CLM-12-no_automatic_ROI_or_risk_attribution: один успешный эпизод не обосновывает приписывание ROI, предотвращенных штрафов или общего снижения риска РИЦ/СПС
+      CLM-13-factual_review_useful_but_not_truth_oracle: фактологическая сверка с участником полезна для исправления реконструкции, но не доказывает всю аналитическую интерпретацию
+      CLM-14-separate_factual_review_from_usefulness: исправление фактов и оценка полезности результата являются разными видами обратной связи
+      CLM-15-management_decisions_should_use_best_available_evidence: развитие сервиса следует опирать на лучшую доступную доказательную базу
+      CLM-16-journey_management_can_be_organizational_capability: управление клиентским путем может быть самостоятельной организационной способностью в B2B
+      CLM-17-benefit_has_coordination_costs: управление клиентским путем создает не только выгоды, но и координационные издержки
+      CLM-18-separate_result_from_procedure_verification: правильность результата и соблюдение проверочной процедуры следует оценивать раздельно
+  distribution_record_and_security_classification:
+    intended_users: [TECH-BMA, AGR-SUP, TECH-VER, owner, RIC proposal authors]
+    distribution_status: internal_engineering_source_register
+    security_classification: public_and_owner_provided_non_secret_sources_only
+    information_status: source_links_and_paraphrased_bodies_captured
+    version_description: V1_initial_methodological_source_capture
+    raw_external_full_text_persisted: false
+    reason_raw_full_text_not_persisted: copyright_and_unnecessary_duplication; stable_locator_plus_paraphrased_body_is_sufficient_for_current_claim_trace
+record_identifier: ART-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+owner_product_request:
+  exact_visible_text: 'зафиксируй ссылки и тела источников в продуктах'
+  request_specific_requirements:
+    - сохранить устойчивые ссылки на методические и исследовательские источники
+    - сохранить содержательное тело каждого источника, достаточное для проверки поддерживаемого суждения
+    - не подменять недоступный полный текст домыслом
+    - использовать process-owned информационные продукты, а не только чат
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_IM_information_register
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.information_status_and_version_description.source_records]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, body.information_status_and_version_description.capture_rule]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker_and_subject_verification}
+verification:
+  structural_status: pending_exact_head_worker
+  semantic_status: source_identity_and_claim_fit_reviewed_in_chat_pending_independent_TECH_VER
+  owner_acceptance: direct_request_authorized_capture_content_acceptance_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-IM/information-register/ART-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001.yaml@change/consultantplus-20260907-ric-pilot-source-evidence
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.6', process_name: 'Information Management process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.6', process_name: 'Процесс управления информацией'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: information register
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '9.1', specific_status: present, specific_items: [R9-INFORMATION-ITEM]}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '9.1', specific_status: present, specific_items: [R9-INFORMATION-ITEM]}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U9.1-A, disposition: satisfied, artifact_field_refs: [date_and_status], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-C, disposition: satisfied, artifact_field_refs: [subject_or_category], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-D, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-E, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-G, disposition: satisfied, artifact_field_refs: [record_identifier], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: R9-INF-01, disposition: satisfied, artifact_field_refs: [body.information_status_and_version_description, body.distribution_record_and_security_classification.information_status], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+        - {requirement_id: R9-INF-02, disposition: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: information-item storage record specialization for methodological source register, resolution_basis: 'TM-IM → information register; normative-first exact record binding', state: resolved}
+  universal_type: record
+  universal_content:
+    source_section: '9.1'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U9.1-A, state: satisfied, artifact_field_refs: [date_and_status]}
+      - {requirement_id: U9.1-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U9.1-C, state: satisfied, artifact_field_refs: [subject_or_category]}
+      - {requirement_id: U9.1-D, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U9.1-E, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U9.1-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U9.1-G, state: satisfied, artifact_field_refs: [record_identifier]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: record
+    specific_profiles: []
+    specific_records: [R9-INFORMATION-ITEM]
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: R9-INFORMATION-ITEM
+        kind: section9_specific_record
+        requirement_coverage:
+          - {requirement_id: R9-INF-01, state: satisfied, artifact_field_refs: [body.information_status_and_version_description, body.distribution_record_and_security_classification.information_status]}
+          - {requirement_id: R9-INF-02, state: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification]}
+  local_additive_content: {state: not_applicable, basis: no local additive profile selected}
+  tailoring: information-register record is specialized to methodological source capture without changing normative record identity
+  information_item_management: {version_control: initial V1, review_approval: owner-requested capture with acceptance separate, quality_evaluation: exact-head structural worker plus subject TECH-VER, retention: canonical client TM-IM information register, reuse_and_duplication: downstream products reference this exact ArtifactVersion and may reproduce only claim-specific source summaries}

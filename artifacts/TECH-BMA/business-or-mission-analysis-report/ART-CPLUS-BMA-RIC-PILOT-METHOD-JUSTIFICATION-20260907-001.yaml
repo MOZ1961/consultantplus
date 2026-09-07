@@ -1,0 +1,418 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001
+artifact_version_id: ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: business or mission analysis report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_method_justification
+acceptance_status: analytical_candidate_subject_verification_and_owner_acceptance_separate
+artifact_instance_purpose: >-
+  Обосновать, почему работы W01–W08 пилота «Диагностика клиентского случая РИЦ» нужны именно в
+  заявленной последовательности, какую потенциальную пользу они создают для РИЦ, КонсультантПлюс и
+  клиентов, и где проходят доказательные границы. Сохранить не только ссылки, но и содержательные
+  тела использованных методических источников в проверяемой парафразе с трассой «суждение → источник».
+producer:
+  process_type_id: TECH-BMA
+  process_instance_id: PI-CPLUS-TECH-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-EVALUATE-RIC-PILOT-METHOD-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-BMA-RIC-PILOT-METHOD-EVIDENCE-SYNTHESIS
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-RIC-PILOT-METHOD-EVIDENCE-SYNTHESIS-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PILOT-SOURCE-EVIDENCE-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: method_justification_candidate}
+scope: >-
+  Аналитическая проверка логики W01–W08 существующего Предложения V3. В охват входят единица анализа,
+  реконструкция решения и клиентского пути, разделение вкладов, выявление разрывов, доказательная
+  дисциплина, фактологическая сверка, отдельная верификация и границы выводов одного пилота. В охват не
+  входят доказательство ROI, готовности платить, принятия КЦ, сетевой репрезентативности или измеримого
+  улучшения клиентских результатов.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner, ChatGPT engineering actor]
+summary: >-
+  Состав W01–W08 имеет сильное методическое основание как диагностический контур: конкретный реальный
+  эпизод снижает абстрактность; ретроспективная реконструкция выявляет основания решения; полный путь
+  показывает место обращения в РИЦ; раздельное кодирование вкладов предотвращает ложную атрибуцию;
+  карта разрывов превращает случай в кандидаты на улучшение; фактологическая сверка и отдельная
+  верификация повышают проверяемость. При этом один пилот проверяет полезность метода и производства
+  результата, но не доказывает распространенность, причинный экономический эффект, готовность платить,
+  использование результатов Координационным центром или улучшение клиентских outcomes.
+introduction:
+  evaluated_object: методический дизайн пилотного пакета «Диагностика клиентского случая РИЦ» W01–W08
+  evaluation_context: owner request to defend and persist source basis for the original RIC proposal
+  criteria_basis:
+    - источник должен поддерживать конкретное суждение, а не только тематически совпадать
+    - методическая поддержка шага не означает доказанный эффект шага в Сети КонсультантПлюс
+    - операционные ограничения пилота должны быть отделены от требований исследовательских методик
+    - причинная атрибуция должна быть слабее либо равна силе доказательств
+    - один эпизод не может использоваться как статистическое доказательство распространенности
+  purpose: дать проверяемую аналитическую основу для защиты состава пилота перед директором РИЦ
+  audience: [руководитель РИЦ, владелец инженерной среды, разработчики предложения, будущий TECH-VER]
+context_and_assumptions:
+  proposal_ref: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  source_register_ref: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  predecessor_model_refs:
+    - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+    - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
+    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+  evidence_boundary: >-
+    Исследования подтверждают пригодность отдельных методов и логических переходов, но не являются
+    эмпирической проверкой РИЦ/КонсультантПлюс. Полезность для реального РИЦ, частотность паттернов,
+    экономический эффект и клиентский outcome должны измеряться на последующих данных.
+body:
+  evaluation_criteria:
+    - {id: CRIT-01, criterion: concrete_episode_evidence, rule: выбранная единица анализа должна давать данные о фактическом поведении и решении, а не только общие мнения}
+    - {id: CRIT-02, criterion: whole_journey_context, rule: обращение в РИЦ должно рассматриваться в контексте событий до и после точки контакта}
+    - {id: CRIT-03, criterion: contribution_discipline, rule: вклад СПС, РИЦ, клиента и иных источников должен отделяться от полной причинной атрибуции результата}
+    - {id: CRIT-04, criterion: improvement_value, rule: результат должен позволять локализовать подтвержденные разрывы и кандидаты на улучшение без автоматического превращения их в требования}
+    - {id: CRIT-05, criterion: evidence_and_review, rule: фактологическая реконструкция, аналитическая интерпретация и полезность должны проверяться раздельно}
+    - {id: CRIT-06, criterion: pilot_scope_discipline, rule: один эпизод проверяет применимость метода к одному случаю, а не распространенность или сетевой эффект}
+  method_and_evidence:
+    method: >-
+      Сопоставление каждого W01–W08 с claim catalog источников; оценка source-to-claim fit; отделение
+      исследовательского основания от локального проектного решения; фиксация unsupported stronger claims.
+    evidence_sources:
+      - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+      - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+      - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
+  source_evidence_snapshots:
+    capture_rule: >-
+      Эти тела — компактные русскоязычные парафразы релевантного открытого содержания. Полный
+      первичный текст и лицензия источника ими не заменяются; устойчивые ссылки и полные записи
+      находятся в source_register_ref.
+    snapshots:
+      - source_id: SRC-GOST-33001-2017
+        locator: https://meganorm.ru/mega_doc/norm/gost-r_gosudarstvennyj-standart/13/gost_r_iso_mek_33001-2017_natsionalnyy_standart_rossiyskoy.html
+        body_ru: >-
+          Результат процесса определяется через наблюдаемое успешное достижение цели, а не просто
+          выполнение активности; реализация процесса должна давать пользу заинтересованным сторонам.
+        supports: [отделение сервисной активности от наблюдаемого результата, требование фиксировать результат эпизода]
+      - source_id: SRC-FLANAGAN-CIT-1954
+        locator: https://doi.org/10.1037/h0061470
+        body_ru: >-
+          Critical Incident Technique систематизирует конкретные значимые наблюдения поведения и может
+          использовать такие эпизоды для выявления требований к работе, обучению и процедурам.
+        supports: [W01 конкретный эпизод, W06 превращение эпизодов в материал для улучшения]
+      - source_id: SRC-KLEIN-CDM-1989
+        locator: https://doi.org/10.1109/21.31053
+        body_ru: >-
+          Critical Decision Method развивает incident-based подход для сложных естественных решений и
+          использует специальные вопросы для выявления ключевых признаков, различений и оснований решения.
+        supports: [W03 ретроспективная рабочая сессия, W04 реконструкция решения]
+      - source_id: SRC-LEMON-VERHOEF-2016
+        locator: https://doi.org/10.1509/jm.15.0420
+        body_ru: >-
+          Клиентский опыт формируется на протяжении пути через множество точек контакта, каналов и функций;
+          поэтому отдельное обращение следует понимать в контексте более полного клиентского пути.
+        supports: [W04 полный сценарий до и после обращения]
+      - source_id: SRC-BITNER-OSTROM-MORGAN-2008
+        locator: https://doi.org/10.2307/41166446
+        body_ru: >-
+          Service blueprinting визуализирует динамический сервис с участием клиента, сотрудников и
+          технологий и помогает обнаруживать межфункциональные зависимости и точки улучшения.
+        supports: [W04 карта сценария, W06 разрывы и обходы]
+      - source_id: SRC-VARGO-LUSCH-2004
+        locator: https://doi.org/10.1509/jmkg.68.1.1.24036
+        body_ru: >-
+          Сервисная логика рассматривает ценность как создаваемую во взаимодействии ресурсов и участников,
+          а не как односторонне встроенную поставщиком в продукт.
+        supports: [W05 совместность результата, необходимость различать вклад участников]
+      - source_id: SRC-MAYNE-2012
+        locator: https://doi.org/10.1177/1356389012451663
+        body_ru: >-
+          Contribution analysis строит доказательное суждение о вкладе вмешательства, учитывая другие
+          действующие причины; вмешательство часто не является ни необходимым, ни достаточным само по себе.
+        supports: [W05 разделение вкладов, запрет автоматически приписывать ROI/штрафы/снижение риска]
+      - source_id: SRC-BIRT-ETAL-2016
+        locator: https://doi.org/10.1177/1049732316654870
+        body_ru: >-
+          Member checking позволяет возвращать данные участнику для проверки точности и соответствия
+          опыту, но согласие участника не является автоматическим доказательством всей интерпретации.
+        supports: [W06 фактологическая сверка, W08 отдельная фиксация замечаний и полезности]
+      - source_id: SRC-ROUSSEAU-2006
+        locator: https://doi.org/10.5465/AMR.2006.20208679
+        body_ru: >-
+          Evidence-based management предлагает опирать управленческие практики на лучшую доступную
+          доказательную базу, а не только на привычку, авторитет или недокументированные предположения.
+        supports: [общая ценность доказательного контура для управленческого решения РИЦ]
+      - source_id: SRC-HOMBURG-TISCHER-2023
+        locator: https://doi.org/10.1007/s11747-023-00923-9
+        body_ru: >-
+          В B2B управление клиентским путем может быть организационной способностью: ценностно
+          ориентированные точки контакта, согласованное использование ресурсов через внутренние границы
+          и постоянное наблюдение за созданием ценности. При этом возникают и координационные издержки.
+        supports: [потенциальное масштабирование повторяемых сценариев, необходимость проверять издержки масштабирования]
+      - source_id: SRC-SOPBENCH-2025
+        locator: https://arxiv.org/abs/2503.08669
+        body_ru: >-
+          SOPBench различает правильность конечного результата и полноту обязательной процедуры; успешный
+          итог сам по себе не доказывает соблюдение требуемой проверочной цепочки.
+        supports: [узкое основание для отдельной проверки результата и процедуры в W07]
+  results_against_criteria:
+    - criterion_id: CRIT-01
+      result: supported_with_scope_limit
+      finding: >-
+        W01 нужен, потому что incident-based методы опираются на конкретные реальные эпизоды и позволяют
+        извлекать наблюдаемые действия и решения вместо общих деклараций. Один эпизод не дает статистической
+        репрезентативности.
+      source_refs: [SRC-FLANAGAN-CIT-1954, SRC-KLEIN-CDM-1989]
+    - criterion_id: CRIT-02
+      result: supported
+      finding: >-
+        W03–W04 нужны для восстановления не только самого контакта с РИЦ, но и ситуации, требуемого решения,
+        событий до обращения и результата после него; иначе роль точки контакта невозможно интерпретировать
+        в полном клиентском пути.
+      source_refs: [SRC-KLEIN-CDM-1989, SRC-LEMON-VERHOEF-2016, SRC-BITNER-OSTROM-MORGAN-2008]
+    - criterion_id: CRIT-03
+      result: strongly_supported_as_methodological_guardrail
+      finding: >-
+        W05 обязателен для раздельного описания вклада СПС, РИЦ, клиента и иных источников. Совместное
+        создание результата и contribution logic не позволяют автоматически приписывать конечный outcome
+        одному участнику. Поэтому ROI, предотвращенные штрафы или общее снижение риска исключены без
+        отдельного причинного дизайна.
+      source_refs: [SRC-VARGO-LUSCH-2004, SRC-MAYNE-2012]
+    - criterion_id: CRIT-04
+      result: supported_as_candidate_generation_not_requirement_acceptance
+      finding: >-
+        W06 нужен, потому что карта процесса и критические эпизоды позволяют обнаруживать повторяемые
+        препятствия, передачи, задержки и обходы как материал для обучения, процедур и сервисного дизайна.
+        Один найденный разрыв не становится автоматически принятым требованием.
+      source_refs: [SRC-FLANAGAN-CIT-1954, SRC-BITNER-OSTROM-MORGAN-2008]
+    - criterion_id: CRIT-05
+      result: supported_with_member_check_boundary
+      finding: >-
+        W07–W08 нужны для сохранения доказательной дисциплины: основной результат проверяется отдельно,
+        участник исправляет фактологическую реконструкцию, а оценка полезности фиксируется отдельно. Согласие
+        участника не объявляется доказательством аналитической истины.
+      source_refs: [SRC-BIRT-ETAL-2016, SRC-SOPBENCH-2025]
+    - criterion_id: CRIT-06
+      result: supported_boundary_not_external_effect
+      finding: >-
+        Первый пилот следует использовать как проверку выполнимости и управленческой полезности метода на
+        одном случае. Из него нельзя выводить частотность паттерна, модель ценности всей Сети, причинный
+        экономический эффект, готовность платить или клиентское улучшение.
+      source_refs: [SRC-FLANAGAN-CIT-1954, SRC-KLEIN-CDM-1989, SRC-MAYNE-2012]
+  step_justification:
+    W01: {decision: retain, reason: конкретный недавний эпизод — требуемая bounded unit для incident-based анализа, sources: [SRC-FLANAGAN-CIT-1954, SRC-KLEIN-CDM-1989]}
+    W02: {decision: retain_as_local_design_constraint, reason: минимальный обезличенный вход снижает информационную нагрузку и риск лишних данных; конкретный объем не установлен cited research, sources: []}
+    W03: {decision: retain, reason: ретроспективное интервью с когнитивными вопросами нужно для восстановления признаков и оснований решения; 45–60 минут — операционное ограничение пилота, sources: [SRC-KLEIN-CDM-1989, SRC-NDMA-CDM-TOOLS]}
+    W04: {decision: retain, reason: полный сценарий нужен, чтобы увидеть место точки контакта РИЦ в клиентском пути, sources: [SRC-LEMON-VERHOEF-2016, SRC-BITNER-OSTROM-MORGAN-2008]}
+    W05: {decision: retain_as_core_guardrail, reason: без разделения вкладов возникает ложная атрибуция результата СПС или РИЦ, sources: [SRC-VARGO-LUSCH-2004, SRC-MAYNE-2012]}
+    W06: {decision: retain, reason: подтвержденные разрывы дают материал для кандидатов на улучшение, но не автоматические требования, sources: [SRC-FLANAGAN-CIT-1954, SRC-BITNER-OSTROM-MORGAN-2008]}
+    W07: {decision: retain, reason: аналитический результат и проверочная дисциплина должны быть различимы; separate TECH-VER — инженерное усиление, sources: [SRC-SOPBENCH-2025]}
+    W08: {decision: retain, reason: фактологическая сверка исправляет реконструкцию, а feedback о полезности дает новое evidence; эти оценки не смешиваются, sources: [SRC-BIRT-ETAL-2016]}
+  stakeholder_value_and_limits:
+    RIC:
+      supported_value: >-
+        Получает более информативную для развития сервиса единицу анализа: клиентское решение и путь к
+        нему, место вмешательства РИЦ, наблюдаемый результат и разрывы. Это дополняет, а не заменяет
+        операционные показатели звонков, обращений, SLA и продаж.
+      source_basis: [SRC-GOST-33001-2017, SRC-FLANAGAN-CIT-1954, SRC-BITNER-OSTROM-MORGAN-2008, SRC-ROUSSEAU-2006]
+      not_established: [финансовый эффект, снижение churn, готовность платить, рост продаж]
+    ConsultantPlus_and_Coordination_Center:
+      supported_value: >-
+        Пилот способен сформировать структурированное описание сценария и разрыва как более богатый
+        кандидатный вход для продуктовой обратной связи, чем изолированный feature request.
+      source_basis: [SRC-LEMON-VERHOEF-2016, SRC-HOMBURG-TISCHER-2023]
+      not_established: [фактическое принятие формата КЦ, влияние на roadmap, сетевой экономический эффект]
+    clients:
+      supported_value: >-
+        Метод создает лучшее доказательное основание для последующих решений по сервису и продукту,
+        ориентированных на реальный рабочий путь клиента.
+      source_basis: [SRC-LEMON-VERHOEF-2016, SRC-BITNER-OSTROM-MORGAN-2008]
+      not_established: [измеримое улучшение качества профессиональных решений, экономия времени, снижение правового риска]
+  local_design_decisions_not_claimed_as_research_requirements:
+    - {decision: session_duration_45_60_minutes, rationale: ограничить стоимость участия и сделать пилот практически приемлемым, status: local_project_choice}
+    - {decision: overall_cycle_up_to_3_working_days, rationale: сохранить быстрый экспериментальный цикл, status: local_project_choice}
+    - {decision: first_pilot_cost_zero, rationale: снизить барьер проверки полезности метода, status: commercial_candidate_not_research_requirement}
+    - {decision: data_minimization_and_de_identification, rationale: не запрашивать данные, не необходимые для stated pilot purpose, status: local_information_risk_control}
+  stronger_claims_not_supported_now:
+    - пилот доказанно улучшает финансовый результат РИЦ
+    - Координационный центр будет использовать результаты для продуктовой приоритизации
+    - один эпизод репрезентативен для клиентской базы или всей Сети
+    - клиенты получают измеримое снижение правового риска или предотвращенные штрафы
+    - бесплатный пилот доказывает готовность платить за последующие пакеты
+  scaling_hypothesis:
+    stage_1: один эпизод — проверить работоспособность и полезность единицы анализа
+    stage_2: 3–5 эпизодов — искать повторяющиеся структуры без заявления распространенности
+    stage_3: разные сценарии участники и клиенты — проверять переносимость и вариативность
+    stage_4: прямые клиентские данные и измерения — проверять клиентский outcome и причинные гипотезы
+    stage_5: межРИЦ сравнение — только после унификации единицы данных и acceptance criteria
+  decision_support:
+    supported_now:
+      - сохранить W01–W08 как методически связанный минимальный диагностический контур
+      - усилить предложение источниковой трассой и явными доказательными границами
+      - использовать первый пилот для проверки полезности метода, а не для доказательства сетевой модели ценности
+    not_supported_now:
+      - обещать ROI, снижение риска, предотвращенные штрафы или рост эффективности
+      - объявлять готовность КЦ использовать данные
+      - масштабировать без проверки первых реальных эпизодов
+conclusions_and_recommendations:
+  conclusion: >-
+    Оригинальный состав пилота следует защищать не как произвольный набор интервьюерских действий, а как
+    связанный доказательный контур: incident-based выбор случая → реконструкция решения → восстановление
+    клиентского пути → contribution analysis → gap analysis → раздельная проверка → фактологическая и
+    полезностная обратная связь. Наиболее сильные основания имеют W01, W03–W06 и границы W07–W08.
+    W02, конкретные 45–60 минут, трехдневный срок и бесплатность — локальные проектные решения, которые
+    не следует выдавать за требования научной методики.
+  recommendations:
+    - встроить ссылку на этот Отчет и source register в следующую версию Предложения
+    - после первого пилота отдельно зафиксировать usefulness evidence и фактологические исправления
+    - не изменять модель сервиса/продукта по одному эпизоду; сначала искать повторяемость
+references:
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-MODEL-20260905-001-V1
+  - ARTVER-CPLUS-BMA-CLIENT-DECISION-VALUE-REFINEMENT-20260905-001-V2
+  - https://doi.org/10.1037/h0061470
+  - https://doi.org/10.1109/21.31053
+  - https://doi.org/10.1509/jm.15.0420
+  - https://doi.org/10.2307/41166446
+  - https://doi.org/10.1509/jmkg.68.1.1.24036
+  - https://doi.org/10.1177/1356389012451663
+  - https://doi.org/10.1177/1049732316654870
+  - https://doi.org/10.5465/AMR.2006.20208679
+  - https://doi.org/10.1007/s11747-023-00923-9
+  - https://arxiv.org/abs/2503.08669
+bibliography:
+  - Flanagan JC. The Critical Incident Technique. Psychological Bulletin. 1954.
+  - Klein GA, Calderwood R, MacGregor D. Critical decision method for eliciting knowledge. IEEE Trans SMC. 1989.
+  - Lemon KN, Verhoef PC. Understanding Customer Experience Throughout the Customer Journey. Journal of Marketing. 2016.
+  - Bitner MJ, Ostrom AL, Morgan FN. Service Blueprinting: A Practical Technique for Service Innovation. California Management Review. 2008.
+  - Vargo SL, Lusch RF. Evolving to a New Dominant Logic for Marketing. Journal of Marketing. 2004.
+  - Mayne J. Contribution analysis: Coming of age? Evaluation. 2012.
+  - Birt L et al. Member Checking: A Tool to Enhance Trustworthiness or Merely a Nod to Validation? Qualitative Health Research. 2016.
+  - Rousseau DM. Is there Such a thing as Evidence-Based Management? Academy of Management Review. 2006.
+  - Homburg C, Tischer M. Customer journey management capability in business-to-business markets. Journal of the Academy of Marketing Science. 2023.
+  - Li Z et al. SOPBench: Evaluating Language Agents at Following Standard Operating Procedures and Constraints. arXiv:2503.08669.
+glossary:
+  critical_incident: конкретный значимый эпизод деятельности, анализируемый по фактическим событиям и поведению
+  customer_journey: последовательность взаимодействий и событий клиента во времени вокруг его задачи
+  contribution: обоснованный вклад вмешательства в результат без автоматического присвоения всей причинности
+  member_checking: возврат фактических данных/результатов участнику для проверки точности или резонанса
+  not_established: сведения или эффект, для которых текущая доказательная база недостаточна
+change_history:
+  - {version: V1, date: '2026-09-07', change: initial source-body-backed methodological justification of W01-W08}
+subject_unresolved:
+  - полезность пакета для реального РИЦ не проверена
+  - частотность и повторяемость сценариев не измерены
+  - готовность платить не установлена
+  - фактическое использование результатов Координационным центром не установлено
+  - измеримый клиентский outcome не установлен
+owner_product_request:
+  exact_visible_text: 'зафиксируй ссылки и тела источников в продуктах'
+  request_specific_requirements:
+    - сохранить ссылки и содержательные тела источников непосредственно в process-owned продукте
+    - связать источники с защищаемыми суждениями и шагами W01–W08
+    - отделить методически поддержанные выводы от локальных проектных решений и недоказанных эффектов
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body, references]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, subject_unresolved]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [body.source_evidence_snapshots, references, bibliography]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self, body.source_evidence_snapshots.capture_rule]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker_and_subject_verification}
+verification:
+  structural_status: pending_exact_head_worker
+  semantic_status: source_to_claim_fit_reviewed_in_chat_pending_independent_TECH_VER
+  owner_acceptance: direct_request_authorized_creation_content_acceptance_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001.yaml@change/consultantplus-20260907-ric-pilot-source-evidence
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.1', process_name: 'Business or mission analysis process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.1', process_name: 'Процесс анализа бизнеса или назначения'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: business or mission analysis report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.27']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.27-R01, disposition: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, body.evaluation_criteria], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R02, disposition: satisfied, artifact_field_refs: [body.method_and_evidence, body.source_evidence_snapshots], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R03, disposition: satisfied, artifact_field_refs: [body.results_against_criteria, body.step_justification], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R04, disposition: satisfied, artifact_field_refs: [body.stronger_claims_not_supported_now, subject_unresolved], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+        - {requirement_id: S10.27-R05, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support], iso: {section_or_item: '10.27'}, gost: {section_or_item: '10.27'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: evaluation report specialization for RIC pilot methodological justification, resolution_basis: TECH-BMA business or mission analysis report controlled semantic match to §10.27, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: report
+    specific_profiles: ['10.27']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.27'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.27-R01, state: satisfied, artifact_field_refs: [introduction.evaluated_object, introduction.evaluation_context, body.evaluation_criteria]}
+          - {requirement_id: S10.27-R02, state: satisfied, artifact_field_refs: [body.method_and_evidence, body.source_evidence_snapshots]}
+          - {requirement_id: S10.27-R03, state: satisfied, artifact_field_refs: [body.results_against_criteria, body.step_justification]}
+          - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.stronger_claims_not_supported_now, subject_unresolved]}
+          - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: evaluation-report semantics are specialized to evidence-backed justification of the RIC pilot methodology
+  information_item_management: {version_control: initial V1, review_approval: owner-requested creation with acceptance separate, quality_evaluation: exact-head structural worker plus independent subject TECH-VER, retention: canonical client TECH-BMA product, reuse_and_duplication: downstream proposal/reference may quote only concise claim-specific summaries and points back to this exact ArtifactVersion}
