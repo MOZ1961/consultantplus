@@ -1,0 +1,278 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-VERIFICATION-REPORT-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-VERIFICATION-REPORT-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_subject_verification_complete
+acceptance_status: verification_completed_owner_acceptance_positioning_adoption_and_pilot_authority_separate
+artifact_instance_purpose: >-
+  Предметно верифицировать новый стандартный комплект позиционирования КонсультантПлюс для РИЦ:
+  источник-доказательство, сравнительный TECH-BMA Отчет V3 и TM-MEAS План V2. Проверить, что C1-C6
+  корректно ограничены одной кодировочной осью, альтернативные территории действительно различаются,
+  методика содержит frame/alternatives/PoP/PoD/reason-to-believe и B2B-роли, сильные утверждения не
+  превышают доказательства, а План пригоден для контролируемой эмпирической проверки без преждевременного принятия позиционирования.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-POSITIONING-STANDARD-PRODUCTS-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-VER-RIC-POSITIONING-STANDARD-PRODUCTS-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-POSITIONING-EVIDENCE-AND-MEASUREMENT
+    methodic_version_id: METHVER-CPLUS-TECH-VER-POSITIONING-EVIDENCE-AND-MEASUREMENT-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: subject_verification_complete_candidate}
+scope: >-
+  Семантическая и доказательная проверка трех связанных ArtifactVersions текущего позиционирования;
+  структурная полнота ГОСТ/PPR проверяется отдельным deterministic worker и не подменяется настоящей проверкой.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [ChatGPT engineering actor as TECH-VER executor]
+summary: >-
+  Предметная верификация завершена с результатом PASS_WITH_EVIDENCE_GAPS для перехода к контролируемой
+  эмпирической проверке. BMA V3 устраняет главный дефект V2: C1-C6 больше не выдаются за полную модель
+  позиционирования. Введены самостоятельные измерения сегмента/роли, эпизода, frame of reference,
+  фактических альтернатив, PoP, PoD, reason to believe и раздельного вклада СПС/РИЦ. Семь территорий
+  имеют разные обещания и риски; PT2/PT3/PT6 вместе с контрольной PT7 дают информативный набор для
+  первой волны. План V2 правильно ставит unaided реконструкцию до aided теста формулировок и запрещает
+  исследователю додумывать альтернативы. Комплект НЕ верифицирован для официального принятия
+  позиционирования: отсутствуют реальные эпизоды, эмпирическая конкурентная рамка и сравнительные реакции клиентов.
+introduction:
+  verified_object: linked positioning source register, comparative BMA positioning report and first-wave positioning measurement plan
+  verification_context: owner requested continuation with all durable outputs resolved to standard GOST-composed products
+  verification_purpose: determine readiness for controlled measurement testing while preserving evidence and adoption boundaries
+  acceptance_boundary: subject TECH-VER does not grant owner acceptance, external pilot authority, Network adoption, merge authority or rollout
+context_and_assumptions:
+  verified_versions:
+    - ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+    - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  predecessor_versions:
+    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+    - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  source_basis:
+    - ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+    - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  structural_boundary: >-
+    This TECH-VER checks meaning, source-to-claim fit and suitability for intended measurement use.
+    Normative field presence, exact PPR rows and crosswalk coverage remain the responsibility of the external structural worker.
+body:
+  verified_items_and_dates:
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1, date: '2026-09-07', verification_scope: source identity claim fit limitations and nonduplication}
+    - {item: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3, date: '2026-09-07', verification_scope: positioning model alternatives evidence boundaries and decision support}
+    - {item: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2, date: '2026-09-07', verification_scope: measurement validity sequencing evidence classes and adoption boundaries}
+  verification_requirements_and_criteria:
+    - {id: VER-POS-01, criterion: C1_C6_scope, required: true, expected: C1-C6 retained only as one coding dimension not complete positioning model}
+    - {id: VER-POS-02, criterion: positioning_method_completeness, required: true, expected: explicit segment_or_role plus episode plus frame plus actual alternatives plus PoP plus PoD plus reason_to_believe plus contribution plus evidence boundary}
+    - {id: VER-POS-03, criterion: alternative_territory_distinctness, required: true, expected: each territory has distinct formulation frame difference strength risk and evidence need}
+    - {id: VER-POS-04, criterion: source_to_claim_fit, required: true, expected: method sources support method structure without being promoted to ConsultantPlus-specific outcome proof}
+    - {id: VER-POS-05, criterion: official_source_boundary, required: true, expected: ConsultantPlus official pages treated as provider description not customer preference evidence}
+    - {id: VER-POS-06, criterion: empirical_alternative_boundary, required: true, expected: competitors or substitutes are not declared universal without participant evidence}
+    - {id: VER-POS-07, criterion: contribution_separation, required: true, expected: ConsultantPlus RIC client and other contribution can be separately recorded}
+    - {id: VER-POS-08, criterion: measurement_order, required: true, expected: episode and unaided frame alternatives and value language precede aided territory testing}
+    - {id: VER-POS-09, criterion: evidence_classification, required: true, expected: participant fact judgment criterion alternative message reaction provider claim and analyst inference are distinguishable}
+    - {id: VER-POS-10, criterion: unsupported_claim_boundary, required: true, expected: no ROI avoided fines general risk reduction market superiority or official adoption is inferred}
+    - {id: VER-POS-11, criterion: standard_product_resolution, required: true, expected: durable results resolve to TM-IM information register TECH-BMA report TM-MEAS plan and TECH-VER report rather than orphan views}
+    - {id: VER-POS-12, criterion: readiness_boundary, required: true, expected: verdict may support controlled measurement testing but not official positioning adoption before evidence}
+  analysis_of_results:
+    overall_result: PASS_WITH_EVIDENCE_GAPS
+    readiness: fit_for_controlled_measurement_testing_after_structural_PASS_and_owner_pilot_authority
+    adoption_readiness: NOT_READY_FOR_OFFICIAL_POSITIONING_ADOPTION
+    rationale: >-
+      Методическая архитектура исправлена и проверяемый план создан, но ключевые переменные позиционирования
+      по определению должны быть измерены в реальных эпизодах. Отсутствие этих данных не делает План
+      дефектным; оно является ожидаемым входным разрывом будущего TM-MEAS исполнения и блокирует только
+      принятие официального позиционирования и сильные сравнительные утверждения.
+  detailed_results:
+    - {criterion: VER-POS-01, result: PASS, evidence: 'BMA V3 context_and_assumptions.C1_C6_disposition and positioning_dependency_model D3'}
+    - {criterion: VER-POS-02, result: PASS, evidence: 'BMA V3 evaluation_method_and_evidence.method_sequence M1-M10 and D1-D11'}
+    - {criterion: VER-POS-03, result: PASS, evidence: 'BMA V3 positioning_territories PT1-PT7 each carries formulation/frame/parity/difference/RTB/strength/risk/evidence_need'}
+    - {criterion: VER-POS-04, result: PASS, evidence: 'source register records explicit supports_claims and limitations; Keller/Smith/Webster-Wind/Bettman support method concepts only'}
+    - {criterion: VER-POS-05, result: PASS, evidence: 'official source records limitations mark provider-owned messaging as not customer perception evidence'}
+    - {criterion: VER-POS-06, result: PASS, evidence: 'BMA F5 plus TM-MEAS M05 forbid researcher-invented default alternatives'}
+    - {criterion: VER-POS-07, result: PASS, evidence: 'BMA D10 and TM-MEAS M10/M11 plus episode separation rules'}
+    - {criterion: VER-POS-08, result: PASS, evidence: 'TM-MEAS interview_protocol orders episode/category/alternatives/spontaneous language before aided PT2/PT3/PT6/PT7'}
+    - {criterion: VER-POS-09, result: PASS, evidence: 'TM-MEAS evidence_classes and episode separation rules preserve distinct provenance'}
+    - {criterion: VER-POS-10, result: PASS, evidence: 'BMA decision_support.not_supported_now and TM-MEAS nonpurpose/risk rules'}
+    - {criterion: VER-POS-11, result: PASS_SUBJECT_TO_STRUCTURAL_WORKER, evidence: 'current set uses only canonical outputs; exact normative composition is declared in each product and requires external deterministic verification'}
+    - {criterion: VER-POS-12, result: PASS, evidence: 'BMA conclusion and TM-MEAS completion_process reserve adoption for later evidence and actual decision'}
+  problems_encountered:
+    - {id: GAP-01, problem: empirical frame of reference is absent, consequence: cannot choose final market category or claim relative distinction, disposition: collect in TM-MEAS V2}
+    - {id: GAP-02, problem: actual alternative set is absent, consequence: cannot assert competitive superiority or universal competitor list, disposition: participant elicitation with not_established allowed}
+    - {id: GAP-03, problem: direct client value language is absent, consequence: candidate formulations are analyst hypotheses not quotes, disposition: capture spontaneous language before aided test}
+    - {id: GAP-04, problem: incremental RIC contribution is not client-validated across episodes, consequence: PT6 cannot be adopted as proven differentiator, disposition: paired RIC/client evidence where possible}
+    - {id: GAP-05, problem: structural worker has not yet executed on exact branch head, consequence: no structural completeness/readiness claim yet, disposition: run generic-SE external-client gate}
+  verification_decision_rationale:
+    decision: PASS_WITH_EVIDENCE_GAPS_FOR_CONTROLLED_MEASUREMENT_TESTING
+    basis:
+      - all method-defect criteria VER-POS-01 through VER-POS-10 pass semantically
+      - standard-product resolution is semantically coherent and awaiting deterministic structural confirmation
+      - remaining gaps are exactly the empirical variables the measurement process is intended to obtain
+      - no gap justifies inventing a final positioning or competitor set
+    blocked_actions:
+      - official positioning adoption
+      - universal market or competitor claims
+      - relative superiority claims
+      - ROI avoided-fines general-risk-reduction or general-efficiency claims
+      - external pilot execution until owner authorizes participant contact
+    allowed_next_after_structural_pass:
+      - owner review of the candidate product set
+      - controlled pilot preparation
+      - external pilot only after separate owner authority
+conclusions_and_recommendations:
+  conclusion: >-
+    Комплект предметно пригоден как проверяемая система гипотез и измерительный дизайн. Он существенно
+    сильнее V2 позиционирования именно потому, что отделяет решение C1-C6 от рыночной/организационной
+    рамки выбора и не подменяет отсутствующие альтернативы аналитическими догадками.
+  recommendation: >-
+    После exact-head structural PASS не создавать новые «карты позиционирования», «паспорта ролей» или
+    «матрицы» как отдельные продукты: использовать их только как представления BMA/TM-MEAS. Следующий
+    новый долговременный продукт после фактического сбора данных — TM-MEAS measurement register и затем
+    TM-MEAS measurement report. TM-DEC decision register создавать только при реальном выборе позиционирования.
+references:
+  - ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
+  - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+glossary:
+  subject_verification: предметная проверка корректности и достаточности содержания относительно заданных критериев
+  structural_verification: детерминированная проверка обязательных полей, нормативного состава и трассировки без вывода о предметной истинности
+  controlled_measurement_testing: ограниченная проверка гипотез по утвержденному Плану без принятия их как официальной позиции
+  adoption: отдельное полномочное решение о принятии позиционирования, не следствие TECH-VER или worker PASS
+change_history:
+  - {version: V1, date: '2026-09-07', change: verify source register, comparative positioning BMA V3 and positioning measurement plan V2 for controlled testing readiness}
+owner_product_request:
+  exact_visible_text: 'продолжай. все своди к стандартным продуктам с составом по ГОСТ'
+  resolved_referent: предметно проверить созданный стандартный комплект позиционирования после сведения результатов к process-owned продуктам
+  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
+  purpose_provenance: current_conversation_first_substantive_owner_request
+  request_specific_requirements:
+    - проверять стандартные продукты, а не самостоятельные представления
+    - отделить предметную проверку от структурного ГОСТ-worker
+    - не принимать позиционирование без клиентских данных и полномочного решения
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.detailed_results]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_subject_verification_pending_exact_head_structural_worker}
+verification:
+  structural_status: pending_exact_head_external_client_information_product_worker
+  semantic_status: pass_with_evidence_gaps_for_controlled_measurement_testing
+  owner_acceptance: verification execution complete; owner acceptance positioning adoption external pilot and merge separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-ric-positioning-standard-products
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.analysis_of_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decision_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to §10.93 verification report, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary, conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.analysis_of_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: verification-report composition applied to positioning standard-product semantic review; no lifecycle-process tailoring introduced
+  information_item_management:
+    version_control: exact V1
+    review_approval: subject verification complete; owner acceptance and adoption separate
+    quality_evaluation: this TECH-VER plus external structural worker
+    retention: client process-owned verification product in MOZ1961/consultantplus
+    reuse_and_duplication: material changes to verified source/BMA/plan require renewed verification or explicit disposition
+  composition_state: candidate_complete_pending_exact_head_external_worker

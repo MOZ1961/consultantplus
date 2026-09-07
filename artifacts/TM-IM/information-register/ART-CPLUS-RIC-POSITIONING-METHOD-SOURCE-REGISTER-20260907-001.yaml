@@ -1,0 +1,281 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: information register
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_positioning_source_capture
+acceptance_status: source_capture_candidate_subject_use_and_owner_acceptance_separate
+artifact_instance_purpose: >-
+  Зафиксировать управляемую доказательную базу методики позиционирования КонсультантПлюс для РИЦ:
+  источники по сегментации, конкурентной рамке, точкам паритета и различия, организационному B2B-выбору,
+  конструктивному формированию предпочтений, эпизодному исследованию и текущему официальному описанию
+  КонсультантПлюс. Для каждого источника сохранить устойчивый локатор, проверяемую парафразу поддерживаемого
+  содержания, применимые суждения и ограничения, не превращая внешний защищенный текст в параллельный мастер-источник.
+producer:
+  process_type_id: TM-IM
+  process_instance_id: PI-CPLUS-TM-IM-RIC-POSITIONING-SOURCES-20260907-001
+  activity_instance_id: AI-CPLUS-TM-IM-CAPTURE-RIC-POSITIONING-SOURCES-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-IM-POSITIONING-SOURCE-EVIDENCE-CAPTURE
+    methodic_version_id: METHVER-CPLUS-TM-IM-POSITIONING-SOURCE-EVIDENCE-CAPTURE-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+date_and_status: {date: '2026-09-07', status: candidate_source_register}
+scope: >-
+  Методические и предметные источники, необходимые для перехода от одной decision-centric гипотезы к
+  сравнительной модели позиционирования: сегменты и роли, ситуация выбора, конкурентная категория,
+  реальные альтернативы, points of parity, points of difference, reason to believe, язык ценности,
+  вклад КонсультантПлюс и вклад РИЦ, а также доказательные границы.
+subject_or_category: ConsultantPlus RIC positioning method and evidence sources
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+references:
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V2
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - https://hbr.org/2002/09/three-questions-you-need-to-ask-about-your-brand
+  - https://doi.org/10.1177/002224295602100102
+  - https://doi.org/10.1177/002224297203600204
+  - https://doi.org/10.1086/209535
+  - https://www.consultant.ru/about/
+  - https://www.consultant.ru/about/purchase/
+body:
+  information_status_and_version_description:
+    register_id: CPLUS-RIC-POSITIONING-METHOD-SOURCES-20260907-V1
+    capture_date: '2026-09-07'
+    capture_rule: >-
+      Фиксировать только источники, фактически использованные для методики или предметного утверждения.
+      Для внешнего защищенного текста хранить библиографическую идентичность, устойчивый URL/DOI и
+      краткую русскоязычную парафразу доступной аннотации/официальной страницы; полный текст не копировать.
+      Для уже process-owned источников использовать exact ArtifactVersion как вход и не дублировать их тело.
+    copyright_and_reuse_disposition: paraphrased_source_bodies_no_full_copyrighted_text_replication
+    source_records:
+      - source_id: SRC-KELLER-STERNTHAL-TYBOUT-2002
+        title: Three Questions You Need to Ask About Your Brand
+        authors: [Kevin Lane Keller, Brian Sternthal, Alice M. Tybout]
+        year: 2002
+        source_type: practitioner_research_article
+        stable_locator: https://hbr.org/2002/09/three-questions-you-need-to-ask-about-your-brand
+        body_capture_mode: paraphrased_from_public_article_summary_and_product_description
+        source_body_summary_ru: >-
+          Эффективное позиционирование требует сначала установить конкурентную рамку или категорию,
+          затем обеспечить необходимые точки паритета с участниками категории и только после этого
+          формулировать значимые, правдоподобные и отличительные точки различия. Одних отличий недостаточно.
+        supports_claims: [POS-CLM-01-frame_required, POS-CLM-02-parity_and_difference_both_required, POS-CLM-03-difference_must_be_relevant_and_believable]
+        limitations: general_brand_positioning_framework_not_ConsultantPlus_specific_evidence
+      - source_id: SRC-SMITH-1956
+        title: Product Differentiation and Market Segmentation as Alternative Marketing Strategies
+        authors: [Wendell R. Smith]
+        year: 1956
+        source_type: peer_reviewed_marketing_article
+        doi: 10.1177/002224295602100102
+        stable_locator: https://doi.org/10.1177/002224295602100102
+        body_capture_mode: paraphrased_from_bibliographic_and_available_publisher_material
+        source_body_summary_ru: >-
+          Работа различает рыночную сегментацию и продуктовую дифференциацию как самостоятельные
+          стратегические способы согласования предложения с неоднородным спросом. Для текущей задачи это
+          означает, что единая формула позиционирования не должна механически подменять различия сегментов и ролей.
+        supports_claims: [POS-CLM-04-segmentation_separate_from_differentiation, POS-CLM-05-universal_message_requires_testing]
+        limitations: historic_general_marketing_framework_not_direct_evidence_of_current_Russian_legal_information_market
+      - source_id: SRC-WEBSTER-WIND-1972
+        title: A General Model for Understanding Organizational Buying Behavior
+        authors: [Frederick E. Webster Jr., Yoram Wind]
+        year: 1972
+        source_type: peer_reviewed_B2B_marketing_article
+        doi: 10.1177/002224297203600204
+        stable_locator: https://doi.org/10.1177/002224297203600204
+        body_capture_mode: paraphrased_from_publisher_abstract
+        source_body_summary_ru: >-
+          Промышленная и институциональная покупка рассматривается как организационный процесс принятия
+          решений, а не как изолированный выбор одного пользователя. Следовательно, пользователь, владелец
+          функции, экономический заказчик и технический участник могут иметь разные критерии ценности и выбора.
+        supports_claims: [POS-CLM-06-B2B_buying_is_organizational, POS-CLM-07-role_specific_value_and_criteria_needed]
+        limitations: general_B2B_model_not_empirical_map_of_ConsultantPlus_buying_centers
+      - source_id: SRC-BETTMAN-LUCE-PAYNE-1998
+        title: Constructive Consumer Choice Processes
+        authors: [James R. Bettman, Mary Frances Luce, John W. Payne]
+        year: 1998
+        source_type: peer_reviewed_consumer_decision_review
+        doi: 10.1086/209535
+        stable_locator: https://doi.org/10.1086/209535
+        body_capture_mode: paraphrased_from_public_abstract
+        source_body_summary_ru: >-
+          Предпочтения нередко не существуют заранее в полностью определенном виде, а формируются в
+          зависимости от задачи выбора и ограничений обработки информации. Поэтому исследование
+          позиционирования должно опираться не только на прямой вопрос «что для вас важно», но и на
+          конкретный контекст, альтернативы, критерии и эпизод принятия решения.
+        supports_claims: [POS-CLM-08-preferences_can_be_constructed, POS-CLM-09-contextual_episode_over_abstract_preference_only]
+        limitations: consumer_choice_review_not_direct_B2B_ConsultantPlus_effect_evidence
+      - source_id: SRC-CPLUS-OFFICIAL-ABOUT-20260907
+        title: Компания «КонсультантПлюс» — официальная страница о компании и продуктах
+        source_type: official_product_source
+        stable_locator: https://www.consultant.ru/about/
+        accessed_at: '2026-09-07'
+        body_capture_mode: paraphrased_from_official_page
+        source_body_summary_ru: >-
+          Официальная страница определяет КонсультантПлюс как справочную правовую систему, содержащую
+          федеральное и региональное законодательство, судебную практику, фирменные аналитические материалы,
+          консультации, комментарии и другие информационные банки. Это надежное свидетельство текущей
+          продуктовой категории и состава предложения, но не доказательство того, какое позиционирование
+          сильнее воспринимается клиентом.
+        supports_claims: [POS-CLM-10-current_category_is_legal_reference_system, POS-CLM-11-official_product_scope_is_broader_than_document_search]
+        limitations: provider_self_description_not_customer_perception_evidence
+      - source_id: SRC-CPLUS-OFFICIAL-PURCHASE-20260907
+        title: Купить систему КонсультантПлюс — официальное описание возможностей и профессиональных профилей
+        source_type: official_product_source
+        stable_locator: https://www.consultant.ru/about/purchase/
+        accessed_at: '2026-09-07'
+        body_capture_mode: paraphrased_from_official_page
+        source_body_summary_ru: >-
+          Официальная страница покупки описывает готовые решения по профессиональным профилям, быстрый
+          поиск, оперативное обновление, аналитику, судебную практику, конструкторы и иные инструменты.
+          Формулировки связывают систему не только с нахождением документов, но и с пониманием того, как
+          действовать в конкретной ситуации. Это поддерживает наличие нескольких правдоподобных территорий
+          позиционирования, но не выбирает победителя между ними.
+        supports_claims: [POS-CLM-12-current_message_contains_action_orientation, POS-CLM-13-role_profiles_are_existing_product_pattern, POS-CLM-14-multiple_positioning_territories_are_plausible]
+        limitations: provider_owned_marketing_source_not_independent_customer_validation
+      - source_id: SRC-CPLUS-RIC-PILOT-METHOD-REGISTER-V1
+        title: Existing RIC pilot method source register
+        source_type: process_owned_internal_source_register
+        artifact_version_id: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+        body_capture_mode: exact_process_owned_reference_no_duplication
+        source_body_summary_ru: >-
+          Существующая запись уже фиксирует Flanagan Critical Incident Technique, Klein Critical Decision
+          Method, customer journey, service blueprinting, contribution analysis, evidence-based management и
+          другие основания эпизодного исследования и дисциплины причинной атрибуции. Новый регистр не
+          дублирует эти тела, а повторно использует exact ArtifactVersion.
+        supports_claims: [POS-CLM-15-episode_reconstruction_has_method_basis, POS-CLM-16-contribution_must_be_separated, POS-CLM-17-evidence_strength_bounds_claim_strength]
+        limitations: internal_source_synthesis_requires_subject_use_verification_for_new_positioning_context
+  claim_catalog:
+    POS-CLM-01-frame_required: конкурентная рамка или категория должна быть установлена до утверждения различий
+    POS-CLM-02-parity_and_difference_both_required: позиционирование требует как точек паритета, так и точек различия
+    POS-CLM-03-difference_must_be_relevant_and_believable: заявляемое отличие должно быть значимым и правдоподобным для целевой аудитории
+    POS-CLM-04-segmentation_separate_from_differentiation: сегментация и дифференциация не являются одной и той же операцией
+    POS-CLM-05-universal_message_requires_testing: единое ядро не отменяет необходимость проверки ролевых и сегментных вариантов
+    POS-CLM-06-B2B_buying_is_organizational: выбор B2B-решения является организационным процессом
+    POS-CLM-07-role_specific_value_and_criteria_needed: участники организационного выбора могут иметь разные критерии ценности и доказательства
+    POS-CLM-08-preferences_can_be_constructed: предпочтения могут формироваться в контексте конкретной задачи выбора
+    POS-CLM-09-contextual_episode_over_abstract_preference_only: контекст и конкретный эпизод должны дополнять прямые декларации предпочтений
+    POS-CLM-10-current_category_is_legal_reference_system: официальная продуктовая категория КонсультантПлюс остается справочной правовой системой
+    POS-CLM-11-official_product_scope_is_broader_than_document_search: официальный состав включает аналитику и профессиональные материалы помимо поиска документов
+    POS-CLM-12-current_message_contains_action_orientation: официальные материалы уже содержат язык «понять, как действовать»
+    POS-CLM-13-role_profiles_are_existing_product_pattern: профессиональные профили являются частью текущего продуктового представления
+    POS-CLM-14-multiple_positioning_territories_are_plausible: из официального состава не следует единственная обязательная территория позиционирования
+    POS-CLM-15-episode_reconstruction_has_method_basis: конкретный эпизод и реконструкция решения имеют отдельное методическое основание
+    POS-CLM-16-contribution_must_be_separated: вклад КонсультантПлюс, РИЦ, клиента и иных источников следует кодировать раздельно
+    POS-CLM-17-evidence_strength_bounds_claim_strength: сила позиционирующего обещания не должна превышать силу доказательств
+  distribution_record_and_security_classification:
+    intended_users: [TECH-BMA, TM-MEAS, TECH-VER, owner, RIC positioning authors]
+    distribution_status: internal_engineering_source_register
+    security_classification: public_and_process_owned_non_secret_sources_only
+    information_status: source_links_and_paraphrased_bodies_captured
+    version_description: V1_initial_positioning_method_source_capture
+    raw_external_full_text_persisted: false
+    reason_raw_full_text_not_persisted: copyright_and_unnecessary_duplication
+record_identifier: ART-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+owner_product_request:
+  exact_visible_text: 'продолжай. все своди к стандартным продуктам с составом по ГОСТ'
+  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
+  purpose_provenance: current_conversation_first_substantive_owner_request
+  request_specific_requirements:
+    - все долговременные результаты текущего продолжения разрешить к стандартным process-owned продуктам
+    - применить полный обязательный состав ГОСТ Р 58609 к каждому создаваемому или существенно изменяемому продукту
+    - сохранить доказательные источники как стандартную запись, а не как отдельную неуправляемую библиотеку
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_IM_information_register
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [verification, product_requirement_compliance.completion_gate]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.information_status_and_version_description.source_records]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, body.information_status_and_version_description.capture_rule]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker_and_subject_verification}
+verification:
+  structural_status: pending_exact_head_external_client_worker
+  semantic_status: source_identity_and_source_to_claim_fit_pending_positioning_TECH_VER
+  owner_acceptance: direct_request_authorizes_creation; source selection acceptance separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-IM/information-register/ART-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001.yaml@change/consultantplus-20260907-ric-positioning-standard-products
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.6', process_name: 'Information Management process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.6', process_name: 'Процесс управления информацией'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: information register
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '9.1', specific_status: present, specific_items: [R9-INFORMATION-ITEM]}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '9.1', specific_status: present, specific_items: [R9-INFORMATION-ITEM]}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U9.1-A, disposition: satisfied, artifact_field_refs: [date_and_status], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-C, disposition: satisfied, artifact_field_refs: [subject_or_category], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-D, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-E, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-F, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: U9.1-G, disposition: satisfied, artifact_field_refs: [record_identifier], iso: {section_or_item: '9.1'}, gost: {section_or_item: '9.1'}, correspondence: IDT}
+        - {requirement_id: R9-INF-01, disposition: satisfied, artifact_field_refs: [body.information_status_and_version_description, body.distribution_record_and_security_classification.information_status], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+        - {requirement_id: R9-INF-02, disposition: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification], iso: {section_or_item: '9.2 information-item storage record'}, gost: {section_or_item: '9.2 information-item storage record'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: information-item storage record specialization for positioning source register, resolution_basis: 'TM-IM → information register; normative-first exact record binding', state: resolved}
+  universal_type: record
+  universal_content:
+    source_section: '9.1'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U9.1-A, state: satisfied, artifact_field_refs: [date_and_status]}
+      - {requirement_id: U9.1-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U9.1-C, state: satisfied, artifact_field_refs: [subject_or_category]}
+      - {requirement_id: U9.1-D, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U9.1-E, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U9.1-F, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U9.1-G, state: satisfied, artifact_field_refs: [record_identifier]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: record
+    specific_profiles: []
+    specific_records: [R9-INFORMATION-ITEM]
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: R9-INFORMATION-ITEM
+        kind: section9_specific_record
+        requirement_coverage:
+          - {requirement_id: R9-INF-01, state: satisfied, artifact_field_refs: [body.information_status_and_version_description, body.distribution_record_and_security_classification.information_status]}
+          - {requirement_id: R9-INF-02, state: satisfied, artifact_field_refs: [body.distribution_record_and_security_classification]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: information-item storage record specialized to a controlled source and claim register; no lifecycle-process tailoring introduced
+  information_item_management:
+    version_control: exact V1
+    review_approval: source fit subject verification and owner acceptance separate
+    quality_evaluation: external structural worker plus positioning TECH-VER
+    retention: client process-owned information register in MOZ1961/consultantplus
+    reuse_and_duplication: source bodies remain paraphrased; exact predecessor source register reused by reference
+  composition_state: candidate_complete_pending_exact_head_external_worker
