@@ -1,0 +1,454 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001
+artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
+supersedes_artifact_version_id: null
+artifact_label: measurement strategy/approach
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_pilot_execution_plan_prepared
+acceptance_status: pilot_plan_prepared_not_executed_not_owner_baselined
+artifact_instance_purpose: >-
+  Операционализировать первую контролируемую проверку кандидатного позиционирования КонсультантПлюс для РИЦ
+  без создания нестандартных самостоятельных «гайдов», «анкет», «карт» или «матриц»: встроить интервью,
+  критерии валидности эпизода, кодирование, правила остановки и переход к будущим measurement register/report
+  как представления и разделы стандартного TM-MEAS measurement plan с полным применимым составом ГОСТ Р 58609.
+producer:
+  process_type_id: TM-MEAS
+  process_instance_id: PI-CPLUS-TM-MEAS-RIC-POSITIONING-PILOT-20260907-001
+  activity_instance_id: AI-CPLUS-TM-MEAS-PREPARE-RIC-POSITIONING-PILOT-EXECUTION-20260907-001
+  methodic_instance:
+    methodic_id: METH-TM-MEAS-RIC-POSITIONING-PILOT
+    methodic_version_id: METHVER-CPLUS-TM-MEAS-RIC-POSITIONING-PILOT-V1
+    methodic_version: runtime-provisional-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-POSITIONING-PILOT-PREP-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: candidate_ready_for_subject_TECH_VER_and_owner_pilot_execution_choice
+scope: >-
+  Минимальный пилот позиционирования: один РИЦ-side эпизод в текущем взаимодействии с владельцем и один
+  client-side эпизод после явного определения реального участника. Пилот проверяет исполнимость и нейтральность
+  измерительной методики, а не устанавливает окончательное позиционирование, рыночную долю или сравнительное превосходство.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+references:
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-RIC-POSITIONING-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-RIC-POSITIONING-STANDARD-PRODUCTS-VERIFICATION-REPORT-20260907-001-V1
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+introduction:
+  purpose: >-
+    проверить на двух реальных ролях, что порядок episode-first → unaided frame/alternatives/value → aided territory test
+    дает пригодные данные без наведения на заранее выбранное позиционирование
+  audience: [owner, interviewer, analyst, future client-side participant, subsequent TM-MEAS measurement register, subsequent TM-MEAS measurement report]
+  coverage: [RIC-side pilot, client-side pilot, episode validity, neutrality, coding reproducibility, privacy, stop rules, handoff to future register/report]
+  nonpurpose:
+    - не принимать официальное позиционирование
+    - не утверждать универсальный набор конкурентов
+    - не доказывать ROI, предотвращенные штрафы, общее снижение риска или общую эффективность
+    - не выдавать ответы РИЦ за ответы клиента
+    - не создавать measurement register до фактического появления измерительных данных
+planned_activities_and_tasks:
+  - провести первый RIC-side пилот в текущем диалоге только после явного ответа участника на вопросы эпизода
+  - определить роль участника и один конкретный недавний эпизод до показа кандидатных территорий
+  - зафиксировать unaided frame of reference, реальные альтернативы и спонтанный язык ценности
+  - после unaided части проверить реакции на PT2, PT3, PT6 и контрольную PT7
+  - проверить различимость вклада КонсультантПлюс, РИЦ, клиента и иных источников
+  - после первого эпизода выполнить reviewer check на нейтральность, полноту и необходимость корректировки инструмента
+  - только после определения конкретного client-side участника провести второй пилот тем же общим ядром
+  - не создавать постоянные episode rows до появления фактических ответов; после первого валидного эпизода открыть TM-MEAS measurement register
+  - после двух пилотных эпизодов принять одно из решений: instrument_ok, revise_before_main_wave, stop_due_to_invalid_measurement
+  - не создавать TM-DEC decision register, пока нет фактического решения уполномоченного лица о позиционировании
+tools_methods_techniques:
+  method: semi-structured critical-episode interview with unaided-before-aided positioning test
+  techniques:
+    - chronological episode reconstruction
+    - one-question-at-a-time interaction for the pilot
+    - separate participant wording from analyst coding
+    - explicit not_established instead of analyst completion
+    - actual-alternative elicitation before candidate territory prompts
+    - contribution separation for ConsultantPlus, RIC, client and other sources
+    - evidence-class tagging
+    - post-episode reviewer check for leading wording and coding drift
+  tools:
+    - current ChatGPT conversation as interview channel for the RIC-side pilot
+    - structured fields defined inside this plan
+    - repository-backed TM-MEAS measurement register only after actual episode data exist
+schedule:
+  sequencing:
+    - {stage: subject_TECH_VER, status: required_before_claiming_pilot_readiness}
+    - {stage: RIC_side_pilot, status: may_start_in_current_dialogue_after_owner_answer}
+    - {stage: reviewer_check_1, status: after_first_valid_episode}
+    - {stage: client_side_participant_resolution, status: unresolved}
+    - {stage: client_side_pilot, status: blocked_until_real_participant_is_defined}
+    - {stage: reviewer_check_2, status: after_second_valid_episode}
+    - {stage: disposition, status: choose_instrument_ok_or_revision_or_stop}
+  dates: not_established
+budget_and_cost_estimate:
+  state: no_external_cost_committed
+  estimate: current RIC-side chat pilot requires no new external spend; client-side incentives/travel/other costs are not authorized or assumed
+resources_and_allocation:
+  owner_participant: may provide one RIC-side episode in current dialogue and retains pilot/acceptance authority
+  interviewer: ChatGPT engineering actor under this plan
+  analyst: ChatGPT engineering actor with evidence-class separation
+  future_client_participant: unresolved_not_selected
+  repository: MOZ1961/consultantplus for client process-owned products
+responsibilities_and_authorities:
+  owner:
+    responsibilities: [choose whether to answer pilot questions, authorize external client-side contact if later needed, accept or reject pilot findings]
+    authority: owner only
+  interviewer:
+    responsibilities: [ask neutral questions, preserve ordering, avoid selling candidate territories before unaided section]
+    authority: no authority to adopt positioning or make external commitments
+  analyst:
+    responsibilities: [code only supported content, preserve not_established, identify instrument defects]
+    authority: no authority to promote pilot observations to market facts or requirements automatically
+  participant:
+    responsibilities: [describe own concrete episode and own interpretation]
+    authority: statements are bounded to participant knowledge and role
+participant_interfaces:
+  owner_to_interviewer: answers about one concrete RIC-side episode
+  interviewer_to_owner: one question at a time followed by explicit reconstruction checks when needed
+  future_client_to_interviewer: client-side episode only after a specific participant is defined and contact is authorized
+  interviewer_to_register: only de-identified factual/coded fields after a valid episode exists
+  register_to_report: cross-episode synthesis only after at least two valid pilot rows or explicit insufficiency disposition
+risk_assessment_and_mitigation:
+  - {risk: vague continuation request is mistaken for external-contact authority, mitigation: current plan prepares and may run only the owner RIC-side pilot; external client contact remains separate until a recipient is resolved}
+  - {risk: current owner role biases RIC-side account, mitigation: classify as RIC-side evidence and never substitute for client evidence}
+  - {risk: interviewer leads participant toward PT2/PT3/PT6, mitigation: no territory wording before episode/frame/alternatives/spontaneous-value capture}
+  - {risk: generic recollection replaces a concrete episode, mitigation: require identifiable trigger, role, required action, sequence and outcome/status}
+  - {risk: participant names confidential client facts, mitigation: ask for de-identified description and omit unnecessary names or privileged details}
+  - {risk: analyst invents missing competitors or reasons, mitigation: use not_established and explicit evidence classes}
+  - {risk: one pilot is over-generalized, mitigation: pilot result evaluates instrument and hypothesis directions only, not market prevalence}
+quality_and_effectiveness_measures:
+  quality_criteria:
+    - RIC-side episode is valid only with role, trigger, required decision/action, information path and action/status
+    - frame and alternatives are participant-provided or explicitly not_established
+    - spontaneous value language precedes aided territory reactions
+    - CP and RIC contributions remain separate
+    - analyst inference is explicitly tagged
+    - no market-general claim is produced from pilot evidence
+  effectiveness_signals:
+    - first participant can answer core episode sequence without material clarification loops
+    - unaided category and actual alternatives can be elicited before territory prompts
+    - at least one interpretable reaction to PT2/PT3/PT6/PT7 can be linked to the same episode
+    - reviewer can reproduce primary coding from the recorded answer set
+  stop_conditions:
+    - no concrete episode can be established after two clarification attempts
+    - participant cannot safely de-identify sensitive facts
+    - leading wording materially contaminates unaided answers
+    - role boundary makes participant evidence unsuitable for the intended measure
+environment_infrastructure_security:
+  environment: current owner ChatGPT dialogue plus controlled repository persistence
+  infrastructure: ChatGPT interaction, GitHub client repository, exact ArtifactVersion references
+  privacy_security:
+    - default to de-identified episode description
+    - do not request names of client employees or confidential document contents
+    - no audio recording in current chat pilot
+    - persistent data only after measurement register is created under TM-MEAS
+  safety: no legal advice or substantive correctness judgment of participant decisions is part of the interview
+training:
+  interviewer_orientation:
+    - use the common core verbatim enough to preserve construct order, but allow neutral clarification
+    - ask one question at a time in pilot mode
+    - do not show PT2/PT3/PT6/PT7 until spontaneous value language is captured
+    - code facts, judgments, alternatives and inference separately
+technical_management_review_reporting:
+  before_execution: supporting TECH-VER checks completeness, neutrality, authority boundaries and register/report transition rule
+  after_first_episode: reviewer checks valid-episode criteria and prompt contamination
+  after_second_episode: reviewer checks cross-role comparability and disposition
+  structural_review: external client information-product worker through generic SE operation report
+  future_reporting: measurement register after first valid episode; measurement report only after sufficient pilot rows or explicit insufficiency stop
+related_plans_and_task_descriptions:
+  parent_measurement_plan: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  positioning_report: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  standard_product_rule: interview guide, question set, coding table and territory comparison are representations inside this plan, not standalone products
+  future_products:
+    - TM-MEAS measurement register after actual episode data exist
+    - TM-MEAS measurement report after pilot synthesis
+    - TECH-BMA business or mission analysis report successor only if evidence materially changes positioning hypotheses
+    - TM-DEC decision register only after an actual authorized positioning decision
+measurement_needs_and_information_requirements:
+  needs:
+    - verify whether the interview instrument yields concrete, traceable episode evidence
+    - verify whether frame, alternatives and spontaneous value can be elicited without aided contamination
+    - verify whether RIC contribution can be separated from product/client contribution
+    - identify pilot-level evidence for or against PT2, PT3, PT6 and PT7 without adoption inference
+  information_requirements:
+    - participant role and context
+    - episode trigger and required decision/action
+    - information path and actual alternative set
+    - frame of reference in participant wording
+    - choice criteria and mandatory parity properties
+    - candidate differentiators and reason to believe
+    - CP/RIC/other contribution separation
+    - spontaneous value language
+    - aided territory reactions and distinctiveness rationale
+measures:
+  - {id: PM01, name: episode_validity, operational_definition: role+trigger+decision/action+information_path+action/status all present}
+  - {id: PM02, name: frame_elicitation, operational_definition: participant unaided category wording or explicit not_established}
+  - {id: PM03, name: actual_alternatives, operational_definition: participant-named used/considered/substitute options or explicit not_established}
+  - {id: PM04, name: spontaneous_value_language, operational_definition: participant wording captured before any territory prompt}
+  - {id: PM05, name: contribution_separation, operational_definition: distinct CP, RIC, client and other contribution fields}
+  - {id: PM06, name: territory_reaction, operational_definition: relevance/believability/distinctiveness rationale for PT2/PT3/PT6/PT7 linked to episode}
+  - {id: PM07, name: prompt_contamination, operational_definition: reviewer judgment whether aided content influenced earlier unaided answers}
+  - {id: PM08, name: coding_reproducibility, operational_definition: second-review agreement on role, episode validity, frame, alternatives and contribution codes}
+interview_protocol:
+  order_rule: do not show candidate territories before steps Q01-Q12 are complete
+  common_core:
+    - {id: Q01, prompt: 'В какой роли вы были в этом конкретном случае: руководитель/собственник, руководитель функции, специалист, сотрудник РИЦ или другая роль?'}
+    - {id: Q02, prompt: 'Вспомните один недавний конкретный рабочий случай. Что именно произошло и что запустило необходимость что-то решать или делать?'}
+    - {id: Q03, prompt: 'Какое именно решение или действие требовалось и к какому сроку, если срок был существенен?'}
+    - {id: Q04, prompt: 'Какой результат считался приемлемым и что могло пойти не так — только в пределах того, что вы реально знали тогда?'}
+    - {id: Q05, prompt: 'Какую информацию или основания искали и где, в какой последовательности?'}
+    - {id: Q06, prompt: 'Как вы сами называете класс инструмента или помощи, который был нужен в этой ситуации?'}
+    - {id: Q07, prompt: 'Что еще реально использовали, рассматривали или использовали бы вместо КонсультантПлюс либо вместе с ним?'}
+    - {id: Q08, prompt: 'По каким признакам понимали, что источник или инструмент достаточно хорош для этого случая?'}
+    - {id: Q09, prompt: 'Какие свойства здесь обязательны для любого приемлемого варианта?'}
+    - {id: Q10, prompt: 'Что в КонсультантПлюс в этом случае реально отличалось или было особенно полезно и из чего вы это заключили?'}
+    - {id: Q11, prompt: 'Что конкретно дал сам КонсультантПлюс, что отдельно дал РИЦ, а что обеспечили вы или другие источники?'}
+    - {id: Q12, prompt: 'Если объяснить коллеге одним предложением, в чем была ценность КонсультантПлюс и отдельно РИЦ в этом случае?'}
+  aided_module:
+    - {id: Q13_PT2, prompt: 'Насколько к этому случаю подходит смысл «понять, что это значит и что делать»? Что подходит и что нет?'}
+    - {id: Q14_PT3, prompt: 'Насколько подходит смысл «иметь актуальную и проверяемую основу профессионального решения»? Что подходит и что нет?'}
+    - {id: Q15_PT6, prompt: 'Насколько подходит смысл «КонсультантПлюс дает информационную основу, РИЦ помогает применять ее в рабочих сценариях»? Где проходит граница вклада каждого?'}
+    - {id: Q16_PT7, prompt: 'Насколько достаточно обычного объяснения через полную и актуальную правовую базу, аналитику и профессиональные инструменты? Чего в нем не хватает или что лишнее?'}
+    - {id: Q17, prompt: 'Какое из этих объяснений, если какое-то, действительно отличает решение от ваших реальных альтернатив? Почему?'}
+    - {id: Q18, prompt: 'Какое обещание КонсультантПлюс или РИЦ в этом случае было бы неправдоподобным или слишком сильным?'}
+episode_record_schema:
+  future_register_row_fields:
+    - episode_id
+    - participant_type
+    - participant_role
+    - organization_context_code
+    - trigger
+    - required_decision_or_action
+    - expected_result
+    - known_consequence
+    - information_path
+    - frame_unaided
+    - actual_alternatives
+    - choice_criteria
+    - parity_properties
+    - difference_candidates
+    - reasons_to_believe
+    - consultantplus_contribution
+    - RIC_contribution
+    - other_contributions
+    - action_or_status
+    - spontaneous_value_language
+    - PT2_reaction
+    - PT3_reaction
+    - PT6_reaction
+    - PT7_reaction
+    - distinctiveness_rationale
+    - evidence_classes
+    - analyst_inferences
+    - unresolved
+  validity_rule: core episode is valid only when participant_role, trigger, required_decision_or_action, information_path and action_or_status are concrete
+  persistence_rule: schema is a view inside this Plan; rows are not persisted until actual participant data exist and a canonical measurement register is created
+data_collection_and_storage:
+  collection_method: one-question-at-a-time interview with immediate neutral clarification only when required for validity
+  storage_method: no permanent episode row before actual data; after first valid episode create TM-MEAS measurement register with de-identified row
+  temporary_state: conversation context only until canonical register persistence is authorized by existence of real data
+  identifiers: coded participant and organization identifiers; unnecessary names are excluded
+analysis_interpretation_reporting:
+  analysis_method:
+    - assess pilot instrument usability before evaluating territory support
+    - preserve participant wording and analyst normalization separately
+    - evaluate each territory only against the same concrete episode and participant-stated alternatives
+    - treat RIC-side account as provider-side evidence only
+  interpretation_rules:
+    - pilot can reveal method defects and hypothesis directions but not market prevalence
+    - one participant preference is not positioning adoption evidence
+    - not_established is a valid result
+    - unsupported causal, financial, legal or market-general claims are excluded
+  reporting_method: after actual data, register each episode first; then issue a pilot measurement report if at least two valid rows or an explicit insufficiency stop exists
+responsibilities_resources_tools_schedule:
+  responsibilities: owner/interviewer/analyst/future participant as defined above
+  resources: current dialogue, participant time, repository, exact upstream ArtifactVersions
+  tools: ChatGPT interaction and GitHub persistence
+  schedule: subject TECH-VER -> RIC-side pilot -> reviewer check -> participant resolution -> client-side pilot -> disposition
+measurement_process_evaluation:
+  after_RIC_side_pilot:
+    - check question clarity and number of clarification loops
+    - check whether Q06-Q07 are genuinely unaided
+    - check whether Q12 captures value language before candidate territories
+    - check whether CP/RIC contribution can be separated
+    - check whether episode can be coded without inventing missing information
+  after_two_pilots:
+    - compare validity and coding difficulty across RIC-side and client-side evidence
+    - identify leading, duplicate or ambiguous prompts
+    - decide instrument_ok, revise_before_main_wave or stop_due_to_invalid_measurement
+change_procedure_and_history:
+  procedure: any material change to question order, measure definition, validity rule, privacy rule or territory set requires a successor ArtifactVersion and renewed TECH-VER
+  history: V1 narrows the broader first-wave plan into an execution-ready two-participant pilot while keeping all interview/coding views inside the standard Plan
+completion_process:
+  plan_completion: complete after structural worker PASS and supporting TECH-VER PASS_WITH_LIMITATIONS or stronger
+  pilot_completion: two valid pilot episodes or explicit insufficiency/stop disposition plus reviewer checks
+  next_outputs: measurement register after first valid episode; measurement report after pilot synthesis
+  blocked_until_data: measurement register, measurement report and BMA evidence update cannot be fabricated before participant answers
+bibliography:
+  - 'ISO/IEC/IEEE 15288:2023 §6.3.7 — Measurement process'
+  - 'ГОСТ Р 57193-2025 §6.3.7 — Процесс измерений'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.3, 10.46'
+glossary:
+  RIC_side_pilot: pilot interview where evidence comes from the provider/RIC side and cannot substitute for direct client evidence
+  client_side_pilot: pilot interview with a real client-side participant after participant resolution and authority
+  unaided: participant answer captured before showing candidate positioning wording
+  aided: participant reaction after candidate positioning wording is shown
+  valid_episode: concrete episode meeting the core validity rule
+  representation: section/table/form/schema inside a process-owned information product, not an independent durable semantic product
+change_history:
+  - {version: V1, date: '2026-09-07', change: create execution-ready two-participant positioning pilot plan under TM-MEAS with embedded instrument and canonical future register/report transition}
+owner_product_request:
+  exact_visible_text: 'дальше'
+  resolved_referent: >-
+    Продолжить после structurally/subject verified positioning bundle by operationalizing the controlled pilot as the next internally executable step,
+    while preserving the rule that no measurement register/report is created before actual participant data and no external participant is invented.
+  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
+  purpose_provenance: current_conversation_first_substantive_owner_request
+  request_specific_requirements:
+    - continue from exact positioning bundle without creating orphan views
+    - keep all pilot forms/questions/coding schemas inside a standard product
+    - use full GOST composition for the pilot plan
+    - do not fabricate participant data
+    - do not infer an external recipient from the word «дальше»
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_MEAS_measurement_strategy_approach
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, interview_protocol, episode_record_schema]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id, standards_trace]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage, standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [completion_process, verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, measurement_needs_and_information_requirements]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_workers_and_TECH_VER}
+verification:
+  structural_status: pending_exact_external_client_information_product_worker
+  semantic_status: pending_supporting_TECH_VER
+  owner_acceptance: plan preparation authorized by continuation; actual answering, external client contact, pilot acceptance and positioning adoption remain separate acts
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001.yaml@change/consultantplus-20260907-ric-positioning-pilot-plan
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.7', process_name: 'Measurement process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.7', process_name: 'Процесс измерений'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: measurement strategy/approach
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [participant_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_review_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history, change_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [completion_process], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.46-R01, disposition: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R02, disposition: satisfied, artifact_field_refs: [measures, episode_record_schema], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R03, disposition: satisfied, artifact_field_refs: [data_collection_and_storage], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R04, disposition: satisfied, artifact_field_refs: [analysis_interpretation_reporting], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R05, disposition: satisfied, artifact_field_refs: [responsibilities_resources_tools_schedule, responsibilities_and_authorities, schedule], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R06, disposition: satisfied, artifact_field_refs: [measurement_process_evaluation], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: measurement plan, resolution_basis: TM-MEAS measurement strategy/approach → §10.46 measurement plan, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [participant_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_review_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history, change_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [completion_process]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: F03
+    relation: controlled_semantic_match
+    generic_type: plan
+    specific_profiles: ['10.46']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.46'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.46-R01, state: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements]}
+          - {requirement_id: S10.46-R02, state: satisfied, artifact_field_refs: [measures, episode_record_schema]}
+          - {requirement_id: S10.46-R03, state: satisfied, artifact_field_refs: [data_collection_and_storage]}
+          - {requirement_id: S10.46-R04, state: satisfied, artifact_field_refs: [analysis_interpretation_reporting]}
+          - {requirement_id: S10.46-R05, state: satisfied, artifact_field_refs: [responsibilities_resources_tools_schedule, responsibilities_and_authorities, schedule]}
+          - {requirement_id: S10.46-R06, state: satisfied, artifact_field_refs: [measurement_process_evaluation]}
+  local_additive_content: {state: not_applicable, basis: active normative-first route selects no local additive profile}
+  tailoring: two-participant pilot specialization of the broader first-wave positioning measurement plan; no process tailoring introduced
+  information_item_management:
+    version_control: exact V1 pilot plan; material changes require successor version
+    review_approval: subject TECH-VER and owner execution choice before claiming pilot readiness
+    quality_evaluation: structural worker plus subject TECH-VER
+    retention: client process-owned TM-MEAS product in MOZ1961/consultantplus
+    reuse_and_duplication: embedded question/schema views may be reused only through this exact ArtifactVersion or a successor
+  composition_state: candidate_complete_pending_exact_head_external_worker
