@@ -1,120 +1,196 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001
-artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001-V1
+artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001-V1
 artifact_label: verification report
 project_contour: client_system_consultantplus
 lifecycle_status: verification_completed_candidate_pending_exact_head_worker
 acceptance_status: subject_pass_owner_external_issue_and_RIC_acceptance_separate
 artifact_instance_purpose: >-
-  Проверить комплект пилотного предложения РИЦ: внешний AGR-SUP → supply response / «Предложение» §10.56,
-  внутренний TM-PLAN → SEMP / План управления проектом §10.55, AGR-SUP → supply records/artifacts как
-  контролируемую запись передачи с представлением «сопроводительное письмо» и границу внешней структуры работ.
+  Проверить V4 Предложения РИЦ после интеграции доказательной защиты: соответствие §7.2 и §10.56,
+  наличие краткой директорской версии, корректность связей с exact Записью источников и Отчетом о
+  методическом обосновании, трассировку W01–W08, сохранение границ доказуемости и неизменность
+  заявленного пакета и внутренней WBS.
 producer:
   process_type_id: TECH-VER
-  process_instance_id: PI-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-20260906-001
-  activity_instance_id: AI-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-20260906-001
-  methodic_instance: {methodic_id: METH-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE, methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-V1, methodic_version: runtime-provisional-v1, status: provisional_runtime_not_adopted}
-request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-DELIVERY-PACKAGE-20260906-001, required_output_label: operation report}
-interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
-issued_at_and_status: {issued_at: '2026-09-06', status: verification_completed_candidate_pending_exact_head_worker}
-scope: subject verification of the exact draft RIC E0/S01 proposal package; no actual external transmission, RIC acceptance or real pilot execution
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-PROPOSAL-EVIDENCE-V4-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-VER-RIC-PROPOSAL-EVIDENCE-V4-20260907-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE
+    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-PROPOSAL-PACKAGE-V2
+    methodic_version: runtime-provisional-evidence-integration-v2
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-PROPOSAL-EVIDENCE-V4-20260907-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-07', status: subject_verification_completed_candidate_pending_exact_head_worker}
+scope: >-
+  Предметная верификация exact V4 Предложения и его доказательной интеграции. Верификация не означает
+  внешнюю отправку, принятие РИЦ, доказанную полезность реального пилота, готовность платить, принятие
+  Координационным центром, сетевую репрезентативность или причинный финансовый/клиентский эффект.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
-  Предметная проверка пройдена: Предложение содержит обязательные условия §10.56 и внешнюю структуру W01–W08;
-  внутренний SEMP содержит полную WBS и остается внутри среды; сопроводительное письмо является rendering
-  AGR-SUP supply record, а активный exact crosswalk для этого O использует R9-CONFIGURATION. Цена 0 руб. относится
-  только к одному кандидатному пилоту и не является внешним обязательством до отдельного owner approval.
+  Предметная проверка V4 пройдена как кандидат: Предложение сохраняет нормативный состав §7.2+§10.56
+  и пакет V3, добавляет короткую директорскую формулировку ценности, exact ссылки на два merged evidence
+  products, компактные тела ключевых источников и трассу W01–W08. Методические источники используются
+  только для тех переходов, которые они реально поддерживают. 45–60 минут, трехдневный цикл и цена 0 руб.
+  явно остаются локальными параметрами пилота, а не требованиями исследований. ROI, предотвращенные
+  штрафы, общее снижение риска, сетевой эффект, принятие КЦ и измеримый клиентский outcome не заявлены.
 introduction:
   verified_items:
-    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
-    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
-    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+    - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+    - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
   verification_requirements:
-    - Proposal satisfies universal description §7.2 and specific Proposal §10.56, including explicit basis for optional tailoring disposition
-    - internal SEMP satisfies universal plan §7.3 and project-management-plan §10.55
-    - supply transmittal record satisfies record §9.1 plus exact R9-CONFIGURATION active binding
-    - external Proposal includes recipient-facing work structure derived from internal WBS
-    - internal SEMP is not an external attachment or recipient deliverable
-    - cost schedule risks methodology supplier capability and authorization are explicit
-    - unsupported market ROI legal correctness official-service claims are absent
+    - Proposal V4 satisfies universal description §7.2 and Proposal §10.56
+    - director-facing short version answers why the pilot matters for RIC ConsultantPlus and client without unsupported effects
+    - method evidence uses exact merged source register and method justification products
+    - material method claims retain stable source links/body summaries/support limits
+    - W01-W08 have explicit method basis or are marked local pilot design choices
+    - one-episode scope is not generalized to Network prevalence or causal business effect
+    - package definition remains ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+    - no WBS-producing execution change is introduced; SEMP V3 remains applicable as internal plan
+    - cost schedule risks methodology supplier capability and authorization remain explicit
     - external sending remains blocked until explicit owner approval
-  criteria_basis: [ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1, ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, AGR-SUP §10.56 content contract, TM-PLAN §10.55 content contract, TECH-VER §10.93 content contract]
+  criteria_basis:
+    - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+    - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+    - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
 context_and_assumptions:
-  proposal_basis: ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
-  verified_execution_basis: ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
-  evidence_boundary: product-composition/internal-external-boundary verification only; no proof of RIC usefulness commercial demand professional correctness legal/tax effect or official ConsultantPlus/RIC status
-  owner_authority: purpose change and package preparation authorized; external transmission and external commitment not authorized by this request
+  previous_verification: ARTVER-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001-V1
+  proposal_predecessor: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V3
+  package_basis: ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+  internal_plan: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
+  evidence_boundary: >-
+    Проверяется логическая и доказательная дисциплина Предложения V4, а не эмпирическая полезность услуги.
+    External research supports method design; only a real RIC pilot can establish usefulness and observed outcomes.
+  owner_authority: prior evidence products were merged; current visible continuation authorizes drafting and verification, not external issue or merge of this new change
 body:
   verification_method_and_evidence:
-    method: inspect exact draft products against active universal/specific contracts and exact crosswalk, compare Proposal W01–W08 to internal SEMP WBS recipient_projection, inspect external attachment list
-    evidence: [three exact verified ArtifactVersions, existing E0/S01 requirements architecture design implementation and canary, current generic AGR-SUP/TM-PLAN/TECH-VER controls]
+    method: >-
+      Сопоставить exact V4 с V3, source register V1 и method justification V1; проверить каждый evidence
+      anchor ME-01–ME-05, его stated body summary/support/limitations, W01–W08 method_basis, package identity,
+      unsupported-claim exclusions and applicable ГОСТ composition.
+    evidence:
+      - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+      - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+      - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+      - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+      - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
   criteria_results:
-    - {id: V-RIC-PKG-01, criterion: Proposal identity and GOST composition, result: pass, evidence: supply response resolves to Proposal; U7.2 and S10.56 covered including O01 basis}
-    - {id: V-RIC-PKG-02, criterion: Proposal cost, result: pass_with_authority_boundary, evidence: one-pilot 0 RUB candidate; follow-on price not established; owner gate remains}
-    - {id: V-RIC-PKG-03, criterion: Proposal schedule, result: pass, evidence: trigger session preparation window and three-working-day target explicit}
-    - {id: V-RIC-PKG-04, criterion: Proposal risks and mitigations, result: pass, evidence: specificity recall confidentiality attribution schedule risks addressed}
-    - {id: V-RIC-PKG-05, criterion: methodology and supplier capability, result: pass_with_scope_limit, evidence: E0/S01 implementation/canary cited; real usefulness and demand not established}
-    - {id: V-RIC-PKG-06, criterion: external work structure, result: pass, evidence: W01-W08 include work content RIC input result duration responsibility completion}
-    - {id: V-RIC-PKG-07, criterion: internal plan composition, result: pass, evidence: SEMP contains §7.3+§10.55 including full WBS and internal lifecycle work}
-    - {id: V-RIC-PKG-08, criterion: internal plan boundary, result: pass, evidence: Proposal and cover record exclude SEMP from recipient package}
-    - {id: V-RIC-PKG-09, criterion: cover letter product identity, result: pass, evidence: human-readable letter is embedded rendering of AGR-SUP supply records/artifacts using §9.1+R9-CONFIGURATION active binding}
-    - {id: V-RIC-PKG-10, criterion: unsupported claims, result: pass, evidence: no official-service ROI avoided-fine risk-reduction or professional-correctness claim}
-    - {id: V-RIC-PKG-11, criterion: external-send authority, result: pass, evidence: proposal/transmittal both not sent pending owner approval}
-  detailed_results: {proposal_normative_identity: pass, internal_plan_normative_identity: pass, cover_letter_as_record_identity: pass, proposal_contains_external_work_projection: pass, proposal_does_not_attach_internal_SEMP: pass, cover_letter_does_not_attach_internal_SEMP: pass, cost_schedule_risk_method_capability_authorization: pass, evidence_and_claim_boundary: pass, subject_verification: pass_candidate, exact_head_structural_verification: pending_current_head, external_issue: not_authorized, real_RIC_validation: not_performed}
+    - {id: V-RIC-V4-01, criterion: Proposal identity and normative composition, result: pass_candidate, evidence: AGR-SUP supply response retains U7.2 and S10.56 exact binding}
+    - {id: V-RIC-V4-02, criterion: director-facing value proposition, result: pass_candidate, evidence: body.recipient_facing_short_version separately states RIC ConsultantPlus client value and pilot boundary}
+    - {id: V-RIC-V4-03, criterion: exact evidence-product binding, result: pass, evidence: source register V1 and method justification V1 are exact references with merged-main addresses}
+    - {id: V-RIC-V4-04, criterion: source-link and source-body visibility, result: pass, evidence: ME-01 through ME-05 contain stable links and compact source-body summaries while full source bodies remain controlled in source register}
+    - {id: V-RIC-V4-05, criterion: source-to-claim fit, result: pass_candidate, evidence: CIT/CDM support episode/reconstruction; journey/blueprinting support whole path/gaps; service-dominant/contribution support contribution discipline; member checking supports factual review; evidence-management/SOPBench support evidence discipline only}
+    - {id: V-RIC-V4-06, criterion: W01-W08 traceability, result: pass, evidence: each work has method_basis; W02 and exact duration are explicitly local design choices rather than external method requirements}
+    - {id: V-RIC-V4-07, criterion: causal and statistical claim boundary, result: pass, evidence: ROI penalties risk reduction Network representativeness KC adoption and client outcome remain excluded/not_established}
+    - {id: V-RIC-V4-08, criterion: package stability, result: pass, evidence: recipient package remains RIC-PKG-E0-S01-001 from package register V3; no new pseudo-product introduced}
+    - {id: V-RIC-V4-09, criterion: internal plan applicability, result: pass_no_plan_change_required, evidence: V4 changes explanation/evidence only; W01-W08 structure timing and deliverable package remain unchanged from SEMP V3}
+    - {id: V-RIC-V4-10, criterion: cost schedule risks and methodology, result: pass, evidence: 0 RUB pilot boundary schedule risks methodology and supplier capability explicit}
+    - {id: V-RIC-V4-11, criterion: external-send authority, result: pass, evidence: external_issue_state remains not_authorized_yet}
+  detailed_results:
+    proposal_normative_identity: pass_candidate
+    evidence_products_exact_binding: pass
+    source_body_and_link_visibility: pass
+    source_to_claim_fit: pass_candidate_subject_judgment
+    work_method_trace: pass
+    local_design_choice_separation: pass
+    unsupported_claim_boundary: pass
+    package_definition_unchanged: pass
+    internal_SEMP_revision_required: false
+    subject_verification: pass_candidate
+    exact_head_structural_verification: pending_current_head
+    external_issue: not_authorized
+    real_RIC_validation: not_performed
   problems_encountered:
-    - {id: P-RIC-PKG-01, problem: standalone «сопроводительное письмо» has no dedicated Section 10 identity, disposition: use human-readable view of AGR-SUP supply records/artifacts; active exact binding is §9.1+R9-CONFIGURATION; no new product}
-    - {id: P-RIC-PKG-02, problem: standalone breakdown structures has no direct §10 document identity, disposition: keep full WBS inside internal SEMP §10.55 and expose derived W01-W08 inside Proposal}
-    - {id: P-RIC-PKG-03, problem: proposed 0 RUB could be mistaken for authorized promise, disposition: limit to one candidate pilot and block external effect until owner approval}
+    - {id: P-RIC-V4-01, problem: research methods can be overread as proof of commercial effectiveness, disposition: Proposal explicitly separates method support from real-RIC effect and stores source limitations}
+    - {id: P-RIC-V4-02, problem: 45–60 minute session could be misrepresented as CDM requirement, disposition: mark exact duration as local pilot choice}
+    - {id: P-RIC-V4-03, problem: one episode could be generalized to the Network, disposition: pilot boundary explicitly limits inference to method usefulness for one case}
+    - {id: P-RIC-V4-04, problem: adding evidence rationale could accidentally expand recipient package or WBS, disposition: package register V3 and SEMP V3 remain unchanged; evidence rationale is Proposal content only}
   verification_decisions:
-    - {decision: package is suitable for owner review after exact-head structural PASS, rationale: identities composition and internal/external boundaries are coherent}
-    - {decision: do not send externally, rationale: owner authorized engineering execution not transmission}
-    - {decision: do not expose internal SEMP to RIC, rationale: recipient needs only work projection in Proposal}
-    - {decision: no canonical product addition required, rationale: Proposal supply response; plan SEMP; cover letter rendering of supply record}
+    - {decision: Proposal V4 is subject-suitable for owner review after exact-head structural PASS, rationale: value argument and W01-W08 are now evidence-backed without stronger unsupported claims}
+    - {decision: keep package register V3 and SEMP V3 unchanged, rationale: V4 changes justification and recipient explanation rather than production scope deliverables or work decomposition}
+    - {decision: do not send externally, rationale: owner has not authorized external issue in this request}
+    - {decision: empirical value remains a next-stage question, rationale: real RIC usefulness requires actual episode evidence and feedback}
 conclusions_and_recommendations:
-  conclusion: subject verification passes for candidate RIC package; external issue RIC acceptance and real pilot remain separate
-  recommendation: after exact-head structural PASS present Proposal and cover-letter text to owner; if externally approved execute one real E0/S01 pilot and persist TM-MEAS + TECH-BMA + TECH-VER + TECH-OP evidence
+  conclusion: >-
+    V4 materially improves defensibility of the original proposal: it preserves the compact pilot and package while
+    making the crucial causal/managerial transitions inspectable and source-bounded. Subject verification passes as
+    a candidate; exact-head structural worker and owner external-issue authority remain separate.
+  recommendation: >-
+    Obtain exact-head structural PASS. Then present the short external text to owner for issue decision. If externally
+    approved, execute one E0/S01 real pilot and capture usefulness/factual corrections as new evidence rather than
+    treating the method literature as proof of RIC outcome.
 references:
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V1
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V1
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-COVER-LETTER-20260906-001-V1
-  - ARTVER-CPLUS-BMA-PARTICIPANT-OFFER-INFORMATION-EXCHANGE-20260905-001-V1
-  - ARTVER-CPLUS-OFFER-EXECUTION-CANARY-VERIFICATION-REPORT-20260905-001-V1
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
+  - ARTVER-CPLUS-RIC-PRODUCT-PACKAGE-REGISTER-20260906-001-V3
+  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
 bibliography:
-  - 'ISO/IEC/IEEE 15288:2023 §§6.1.2, 6.3.1, 6.4.9'
-  - 'ГОСТ Р 57193-2025 §§6.1.2, 6.3.1, 6.4.9'
-  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.2, 7.3, 7.6, 9.1, 10.55, 10.56, 10.93'
-tailoring: no lifecycle-process tailoring is introduced by this verification; the only presentation tailoring is the recipient-facing W01-W08 projection from internal SEMP into Proposal
+  - 'ISO/IEC/IEEE 15288:2023 §§6.1.2, 6.4.9'
+  - 'ГОСТ Р 57193-2025 §§6.1.2, 6.4.9'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.2, 7.6, 10.56, 10.93'
+  - 'Flanagan 1954, DOI 10.1037/h0061470'
+  - 'Klein, Calderwood & MacGregor 1989, DOI 10.1109/21.31053'
+  - 'Lemon & Verhoef 2016, DOI 10.1509/jm.15.0420'
+  - 'Mayne 2012, DOI 10.1177/1356389012451663'
+tailoring: no lifecycle-process tailoring introduced; evidence rationale is content of Proposal and does not change package or SEMP WBS
 glossary:
   Proposal: информационный элемент «Предложение» §10.56 как AGR-SUP → supply response
-  SEMP: внутренний План управления проектом §10.55 как TM-PLAN → SEMP
-  cover_letter: человекочитаемое представление записи AGR-SUP → supply records/artifacts
-  external_work_structure: recipient-facing projection W01-W08 from internal SEMP WBS
+  evidence_integration: включение exact source products, source-body summaries, claim links and limitations into Proposal without treating method support as outcome proof
+  subject_pass_candidate: предметная проверка содержания в заявленной области; не owner acceptance и не empirical validation
+  SEMP: внутренний План управления проектом §10.55; V3 остается применимым, поскольку production scope не менялся
 change_history:
-  - {version: V1, date: '2026-09-06', change: first package verification; worker corrections align cover record to R9-CONFIGURATION and TECH-VER relation to exact binding}
+  - {version: V1, date: '2026-09-06', change: first package verification}
+  - {version: V2, date: '2026-09-07', change: verify Proposal V4 evidence integration, method boundaries, W01-W08 trace and unchanged package/SEMP scope}
 owner_product_request:
-  exact_visible_text: 'измени назначение соответственно и выполняй'
-  request_specific_requirements: [verify Proposal GOST product, verify internal plan remains internal, verify Proposal contains work structure not internal plan attachment, verify cover letter without unsupported product invention]
+  exact_visible_text: 'слил. дальше'
+  resolved_referent: >-
+    После слияния source-evidence products продолжить ранее названным следующим шагом: сделать Proposal V4
+    evidence-backed и проверить, что защита метода не превращается в недоказанные обещания.
+  request_specific_requirements:
+    - verify Proposal V4 evidence integration
+    - verify W01-W08 source trace and local-design-choice separation
+    - verify package and SEMP scope remain unchanged unless evidence integration actually changes production
+    - verify stronger ROI Network KC and client-outcome claims remain excluded
+    - keep external issue and merge authority separate
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_VER_report
+  applicability: applies_material_revision_client_TECH_VER_report
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.criteria_results]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.criteria_results, body.verification_decisions]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
     - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence, body.criteria_results]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
   completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_external_worker}
-verification: {structural_status: worker_relation_correction_applied_exact_head_pending, semantic_status: pass_candidate_package_semantics_and_internal_external_boundary, owner_acceptance: engineering_execution_authorized_external_issue_and_package_acceptance_separate}
-artifact_addresses: {self: 'MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001.yaml@change/consultantplus-20260906-ric-proposal-delivery-package'}
+verification:
+  structural_status: exact_head_pending
+  semantic_status: pass_candidate_evidence_integration_and_claim_boundary
+  owner_acceptance: engineering_continuation_authorized_external_issue_and_merge_separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-EXPRESS-PROPOSAL-PACKAGE-VERIFICATION-REPORT-20260906-001.yaml@change/consultantplus-20260907-ric-proposal-evidence-v4
 information_product_applicability: applies
 standards_trace:
   process:
@@ -188,5 +264,5 @@ content_compliance:
           - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
           - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected for TECH-VER report}
-  tailoring: report verifies the Proposal/internal-plan/cover-record package and external/internal boundary; no lifecycle process tailoring is introduced
-  information_item_management: {version_control: V1 draft corrected before external issue, review_approval: subject PASS does not authorize external transmission or RIC acceptance, quality_evaluation: exact-head external client structural worker required, retention: canonical client TECH-VER product, reuse_and_duplication: future package revisions cite exact successor products}
+  tailoring: verifies Proposal V4 evidence integration and claim boundaries without changing lifecycle processes, package definition or internal SEMP WBS
+  information_item_management: {version_control: V2 successor to V1 after Proposal V4 evidence integration, review_approval: subject PASS does not authorize external transmission merge or RIC acceptance, quality_evaluation: exact-head external client structural worker required, retention: canonical client TECH-VER product, reuse_and_duplication: future Proposal revisions cite exact successor products}
