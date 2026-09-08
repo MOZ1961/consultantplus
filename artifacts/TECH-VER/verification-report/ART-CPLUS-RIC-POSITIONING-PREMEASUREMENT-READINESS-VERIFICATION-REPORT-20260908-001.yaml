@@ -1,0 +1,280 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-POSITIONING-PREMEASUREMENT-READINESS-VERIFICATION-REPORT-20260908-001
+artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-READINESS-VERIFICATION-REPORT-20260908-001-V1
+supersedes_artifact_version_id: null
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_subject_verification_complete
+acceptance_status: subject_premeasurement_design_verified; structural_worker_external_execution_positioning_adoption_and_baseline_separate
+artifact_instance_purpose: >-
+  Предметно верифицировать, что до эмпирических измерений закрыты материальные разрывы по заинтересованным
+  сторонам, доказательным границам и методике: инициирующий РИЦ, generic SE, другие РИЦ и клиенты имеют
+  различимые решения/потребности/источники свидетельств; координирующий План измерений содержит общий
+  доказательный контракт, отдельные модули, выборку/последовательность, триангуляцию, приватность и критерии
+  входа/остановки, не подменяя будущие эмпирические результаты инженерными предположениями.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-POSITIONING-PREMEASUREMENT-READINESS-20260908-001
+  activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-POSITIONING-PREMEASUREMENT-READINESS-20260908-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-PREMEASUREMENT-READINESS
+    methodic_version_id: METHVER-CPLUS-TECH-VER-PREMEASUREMENT-READINESS-V1
+    methodic_version: stakeholder-method-evidence-readiness-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-POSITIONING-PREMEASUREMENT-READINESS-20260908-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-08', status: subject_verification_pass_pending_exact_external_structural_worker}
+scope: >-
+  Semantic/design verification of ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+  and ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1 against the owner's request,
+  existing RIC positioning/client-decision evidence and explicit premeasurement readiness criteria. No empirical stakeholder
+  response is evaluated and no positioning proposition is accepted by this report.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [ChatGPT engineering actor as TECH-VER executor]
+summary: >-
+  PREMEASUREMENT_DESIGN_PASS_PENDING_EXACT_HEAD_STRUCTURAL_WORKER. Subject inspection finds the previously material
+  gaps closed: the initiating RIC, SE, peer RICs and clients are explicit and non-substitutable evidence domains; client
+  subroles remain C1-C6 aligned; common evidence-unit/evidence-class rules, unaided-before-aided sequence, contribution
+  separation, transferability logic, conflict preservation, privacy/consent, stop/revise criteria and downstream product
+  routing are defined. The remaining work before empirical conclusions is measurement execution itself plus exact-head
+  structural verification; neither is evidence that positioning is true or adopted.
+introduction:
+  verified_object:
+    - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+    - ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+  verification_context: owner requested closure of gaps before measurements with all stakeholder classes explicitly considered
+  verification_purpose: establish whether any material stakeholder/method/evidence design gap remains that should be closed before measurement execution
+  audience: [owner, initiating RIC, peer RIC reviewers, SE analysts, measurement executor]
+  acceptance_boundary: subject design verification does not establish structural worker PASS, external-contact authority, empirical value, market prevalence or positioning adoption
+context_and_assumptions:
+  controlling_inputs:
+    stakeholder_identification: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+    positioning_hypothesis: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+    broad_wave_plan: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+    director_plan: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+    stakeholder_needs_under_verification: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+    coordinating_plan_under_verification: ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+  evidence_state: repository ArtifactVersions and owner instruction are inspected; no new respondent data is claimed
+  structural_boundary: exact field/reference/coverage conformance remains for deterministic external-client structural worker
+  interpretation_boundary: requirements derived here constrain research design but remain candidates until empirical stakeholder evidence/authorized decisions where applicable
+body:
+  verified_items_and_dates:
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1, date: '2026-09-08', verification_scope: four stakeholder domains, needs, decision uses, evidence rights/limits, non-substitution, privacy and claim boundaries}
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1, date: '2026-09-08', verification_scope: common evidence contract, modules, sampling/sequence, triangulation/conflicts, privacy, readiness and downstream products}
+  verification_requirements_and_criteria:
+    - {id: PMR-01, criterion: stakeholder_completeness, required: true, expected: initiating RIC, SE, peer RICs and clients explicitly represented}
+    - {id: PMR-02, criterion: stakeholder_decision_use, required: true, expected: each stakeholder class has decisions/use for the evidence and bounded evidence authority}
+    - {id: PMR-03, criterion: client_role_coverage, required: true, expected: professional user, functional owner, economic buyer/sponsor and technical enabler remain explicit C1-C6 subroles}
+    - {id: PMR-04, criterion: non_substitution, required: true, expected: RIC-side, direct-client and SE-inference evidence cannot silently substitute for each other}
+    - {id: PMR-05, criterion: common_evidence_unit, required: true, expected: source class, role/context, episode/decision, alternatives, contributions, result/status, uncertainty and evidence class are fixed}
+    - {id: PMR-06, criterion: contamination_control, required: true, expected: unaided episode/frame/alternatives/value language precedes aided positioning prompts}
+    - {id: PMR-07, criterion: transferability_design, required: true, expected: initiating RIC and peer RIC evidence stays distinct and peer-RIC module explicitly tests local constraints/transferability}
+    - {id: PMR-08, criterion: contradiction_policy, required: true, expected: conflicting stakeholder evidence preserved and reported by domain rather than averaged}
+    - {id: PMR-09, criterion: privacy_and_consent, required: true, expected: data minimization, consent, audio/quotation and retention rules explicit before collection}
+    - {id: PMR-10, criterion: strong_claim_boundary, required: true, expected: no ROI, prevented-fine, general-efficiency, general-risk-reduction or prevalence claim treated as established by this qualitative design}
+    - {id: PMR-11, criterion: entry_stop_revision_gates, required: true, expected: pre-use TECH-VER/structural/authority/orientation/privacy gates and stop/revise criteria explicit}
+    - {id: PMR-12, criterion: downstream_persistence, required: true, expected: no empty data register before collection; actual data to measurement register, synthesis to measurement report, BMA/TM-DEC only by their own conditions}
+  composition_verification_matrix:
+    stakeholder_needs:
+      artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+      canonical_identity: {process_type_id: TECH-STK, canonical_O: stakeholder needs and requirements, result: PASS_SUBJECT_INSPECTION}
+      normative_expectation: {generic: '7.8 specification 10/10', specific: '10.84 9 required plus optional enabling-system disposition', ppr: '12/12'}
+      semantic_coverage:
+        stakeholder_classes: {expected: 4, observed: [initiating_RIC,generic_SE,peer_RICs,clients], result: PASS}
+        client_subroles: {observed: [professional_end_user,functional_decision_owner,economic_buyer_or_sponsor,technical_enabler], result: PASS}
+        evidence_limits: PASS
+        non_substitution: PASS
+        privacy_and_claim_boundaries: PASS
+      local_additive: {selected: none, result: PASS_subject_inspection}
+      overall: PASS_SUBJECT_INSPECTION
+    measurement_plan:
+      artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+      canonical_identity: {process_type_id: TM-MEAS, canonical_O: measurement strategy/approach, result: PASS_SUBJECT_INSPECTION}
+      normative_expectation: {generic: '7.3 plan 22/22', specific: '10.46 measurement plan 6/6', ppr: '12/12'}
+      semantic_coverage:
+        common_evidence_contract: PASS
+        stakeholder_specific_modules: PASS
+        SE_not_external_respondent: PASS
+        unaided_before_aided: PASS
+        transferability_and_conflict_rules: PASS
+        privacy_consent_retention: PASS
+        entry_stop_revision_gates: PASS
+        downstream_process_products: PASS
+      local_additive: {selected: none, result: PASS_subject_inspection}
+      overall: PASS_SUBJECT_INSPECTION
+  detailed_results:
+    - {criterion: PMR-01, result: PASS, evidence: stakeholder-needs groups STK-PM-01 through STK-PM-04 and plan resource/interface sections}
+    - {criterion: PMR-02, result: PASS, evidence: each stakeholder group records decisions_supported, legitimate_evidence and evidence_limits}
+    - {criterion: PMR-03, result: PASS, evidence: client subroles CL-01 through CL-04 retain C1-C6 allocation}
+    - {criterion: PMR-04, result: PASS, evidence: common_evidence_contract.non_substitution_rules plus plan triangulation_rule}
+    - {criterion: PMR-05, result: PASS, evidence: stakeholder-needs evidence_unit and measurement-plan data capture fields align}
+    - {criterion: PMR-06, result: PASS, evidence: plan collection_sequence, risks and interviewer orientation require unaided-before-aided}
+    - {criterion: PMR-07, result: PASS, evidence: initiating-RIC and peer-RIC modules/strata are separate; peer module asks transferability/local constraints}
+    - {criterion: PMR-08, result: PASS, evidence: conflict_rule and reporting_rule preserve contradictory source domains}
+    - {criterion: PMR-09, result: PASS, evidence: environment_infrastructure_security and data_collection_and_storage establish consent/minimization/retention}
+    - {criterion: PMR-10, result: PASS, evidence: forbidden_inference and stakeholder common need N-CPLUS-PM-09 block unsupported strong claims}
+    - {criterion: PMR-11, result: PASS, evidence: measurement_process_evaluation has entry_criteria and stop_or_revise_criteria}
+    - {criterion: PMR-12, result: PASS, evidence: persistence_rule and completion_process explicitly defer measurement register until actual data and preserve later report/BMA/decision boundaries}
+  problems_encountered:
+    - {id: STRUCT-PENDING-01, problem: exact branch head has not yet been executed through the current deterministic external-client structural worker, consequence: semantic design PASS is not exact-head structural PASS, disposition: run current SE structural verification against exact client head}
+    - {id: EXECUTION-INPUT-01, problem: actual participant availability and external contact/execution authority are not empirical design content, consequence: measurements cannot start solely because design is ready, disposition: obtain/confirm execution authority and participant inputs at measurement start}
+    - {id: EMPIRICAL-OPEN-01, problem: no new measurements exist by design, consequence: positioning hypotheses remain candidate and transferability/client value are unproven, disposition: proceed to TM-MEAS execution only after readiness/authority gates}
+  verification_decision_rationale:
+    decision: PREMEASUREMENT_DESIGN_PASS_PENDING_EXACT_HEAD_STRUCTURAL_WORKER
+    basis:
+      - all owner-named stakeholder classes are explicit with distinct decision/evidence boundaries
+      - the previous omission of stakeholder needs is closed by a standard TECH-STK needs product
+      - initiating RIC and peer RIC are separated to avoid false transferability
+      - clients retain role-specific C1-C6 direct-evidence responsibility
+      - SE is explicitly an engineering stakeholder and inference/verification actor, not a market respondent
+      - one common evidence contract and stakeholder-specific modules enable comparison without authority substitution
+      - privacy, contamination, unsupported-claim and completion boundaries are explicit
+      - remaining items are structural worker evidence and future execution/empirical evidence, not hidden design gaps
+    allowed_next:
+      - exact-head external-client structural verification
+      - owner-authorized instrument pretest/measurement execution after external-contact authority
+      - measurement register after first actual evidence
+    blocked_next:
+      - claim empirical positioning validity before measurements
+      - claim network transferability from initiating RIC alone
+      - claim client value from RIC testimony alone
+      - treat SE inference as stakeholder testimony
+      - adopt official positioning without authorized decision
+conclusions_and_recommendations:
+  conclusion: >-
+    Subject verification finds no remaining material premeasurement design gap in stakeholder scope, evidence authority,
+    measurement logic, transferability testing, privacy or downstream persistence. The measurement design is ready to
+    enter structural checking and then controlled external execution; empirical value and positioning validity remain open by definition.
+  recommendation: >-
+    Use the cross-stakeholder plan as the coordinating measurement contract. At execution, preserve the existing director/client
+    views as modules, add peer-RIC transferability evidence, keep SE outside respondent counts, and create the measurement register
+    only when the first real evidence is collected.
+references:
+  - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+  - ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
+bibliography:
+  - ISO/IEC/IEEE 15288:2023 / ГОСТ Р 57193-2025
+  - ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019
+glossary:
+  premeasurement_design_gap: missing stakeholder, evidence, method, authority-boundary, privacy or decision-use definition that should be resolved before evidence collection
+  evidence_authority: claim boundary supported by a stakeholder/source class without substituting another domain
+  subject_PASS: semantic inspection result that remains distinct from deterministic structural-worker PASS
+change_history:
+  - {version: V1, date: '2026-09-08', change: verify four-stakeholder premeasurement design and readiness boundaries}
+owner_product_request:
+  exact_visible_text: 'закрой разрывы до этих измерений. имей в виду все заинтересованные стороны - риц, СЕ, РИЦы, клиенты'
+  request_specific_requirements: [close gaps before measurements, verify all stakeholder domains, distinguish SE/RIC/peer-RIC/client evidence, verify readiness without inventing empirical results]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id,artifact_label,content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request,body.verification_requirements_and_criteria]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_resolution,content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage,standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered,verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,context_and_assumptions]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self,verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id,artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements,change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_external_worker}
+verification:
+  structural_status: pending_exact_external_client_information_product_worker
+  semantic_status: PREMEASUREMENT_DESIGN_PASS
+  owner_acceptance: engineering gap closure requested; external execution and positioning adoption separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-POSITIONING-PREMEASUREMENT-READINESS-VERIFICATION-REPORT-20260908-001.yaml@change/consultantplus-20260908-positioning-premeasurement-readiness
+information_product_applicability: applies
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: verification report for RIC positioning premeasurement readiness, state: resolved}
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: report, specific_profiles: ['10.93'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary,body.verification_decision_rationale,conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object,body.composition_verification_matrix]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.composition_verification_matrix,body.detailed_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results,body.composition_verification_matrix]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TECH-VER|verification report}
+  tailoring: verification is limited to premeasurement design/readiness and explicitly excludes empirical positioning validity and adoption
+  information_item_management: {version_control: exact V1 candidate, review_approval: subject result complete; structural worker and owner execution authority separate, quality_evaluation: exact-head external-client worker plus owner review, retention: retain as readiness evidence, reuse_and_duplication: future measurement execution references this exact report rather than reinterpreting readiness}
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary,body.verification_decision_rationale,conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object,body.composition_verification_matrix], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.composition_verification_matrix,body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results,body.composition_verification_matrix], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decision_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []

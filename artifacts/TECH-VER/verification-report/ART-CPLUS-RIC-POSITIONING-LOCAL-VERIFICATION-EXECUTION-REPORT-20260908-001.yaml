@@ -1,0 +1,318 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001
+artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001-V1
+artifact_label: verification report
+project_contour: client_system_consultantplus
+lifecycle_status: verification_execution_blocked_owner_local_runtime_required
+acceptance_status: owner_requires_local_only_verification; no_remote_substitution; structural_readiness_merge_acceptance_adoption_deployment_and_baseline_not_established
+artifact_instance_purpose: >-
+  Зафиксировать обязательный локальный exact-head verification gate для текущего полного набора продуктов
+  позиционирования РИЦ, включая V3 директорского ответа поставщика и его V3 предметной верификации.
+  Каждый долговременный выход должен иметь полный применимый состав ГОСТ Р 58609/ISO/IEC/IEEE 15289,
+  PPR-001..012 и парную ISO/ГОСТ-трассировку. Детерминированная верификация выполняется только в локальной
+  среде владельца через штатный runner SE-среды. Этот отчет не подменяет локальный прогон и не заявляет PASS.
+producer:
+  process_type_id: TECH-VER
+  process_instance_id: PI-CPLUS-TECH-VER-POSITIONING-LOCAL-VERIFICATION-20260908-001
+  activity_instance_id: AI-CPLUS-TECH-VER-PREPARE-FINAL-LOCAL-EXACT-HEAD-VERIFICATION-20260908-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-LOCAL-GIT-BASH-EXACT-HEAD
+    methodic_version_id: METHVER-CPLUS-TECH-VER-LOCAL-GIT-BASH-EXACT-HEAD-V2
+    methodic_version: local-owner-exact-head-v2
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-POSITIONING-LOCAL-VERIFICATION-20260908-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status:
+  issued_at: '2026-09-08'
+  status: local_verification_required_pending_owner_execution
+scope: >-
+  Local-only exact-head structural verification gate for ConsultantPlus PR #19 after the director-facing evidence-positioning
+  refinement. Scope includes the premeasurement stakeholder/measurement/readiness products, director supply response V3,
+  its subject TECH-VER V3 and this local execution report V2. It does not establish empirical positioning validity,
+  participant acceptance, official positioning adoption, external issue, deployment or baseline.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+participants: [owner as local verification executor, ChatGPT engineering actor as verification preparer]
+summary: >-
+  LOCAL_VERIFICATION_REQUIRED_NOT_YET_EXECUTED. The in-scope products declare full applicable ГОСТ/PPR composition.
+  The refined director supply response has subject TECH-VER result SUBJECT_PASS_PENDING_OWNER_LOCAL_EXACT_HEAD_VERIFICATION.
+  Per owner instruction, no GitHub Actions or other remote workflow result is accepted as substitute evidence. Final structural
+  readiness requires the local SE aggregate runner to finish with mode=all, failed=0 and result=PASS while CORE-13 validates
+  the exact final ConsultantPlus head declared by the companion TECH-OP operation report.
+introduction:
+  verified_object:
+    - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+    - ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+    - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-READINESS-VERIFICATION-REPORT-20260908-001-V1
+    - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V3
+    - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V3
+    - ARTVER-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001-V2
+  verification_context: owner requires full ГОСТ composition for all durable outputs and local-only execution for verification gates
+  verification_purpose: establish final local execution contract and refuse structural/readiness claims until local exact-head PASS evidence exists
+  audience: [owner, local verification executor, repository reviewer]
+  acceptance_boundary: this report records a required-but-not-yet-executed verification state and cannot itself constitute local structural PASS
+context_and_assumptions:
+  exact_owner_input: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
+  controlling_products:
+    owner_product_requirements: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+    normative_catalog: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    normative_crosswalk: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    universal_content: ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
+    dual_standard_policy: ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
+  local_runtime_profile:
+    host: Windows 10
+    primary_shell: PowerShell
+    conda_environment: se312
+    python_requirement: '3.12+'
+    dependency: PyYAML
+    compatibility_shell: Git for Windows Git Bash
+    wsl_required: false
+  local_runner:
+    repository: MOZ1961/se
+    runner: tools/run_local_verification.sh
+    required_mode: --all
+    required_base: origin/main
+    required_execution: owner_local_Windows_PowerShell_Conda_with_Git_Bash_adapter
+    remote_workflow_as_primary_evidence: forbidden_by_owner_for_this_request
+  evidence_state: subject products and standard-composition declarations exist in repository; local aggregate runner output for the final heads does not yet exist
+  structural_boundary: exact-head structural PASS remains pending until owner-local runner completes successfully
+body:
+  verified_items_and_dates:
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1, date: '2026-09-08', verification_scope: local-run target}
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1, date: '2026-09-08', verification_scope: local-run target}
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-READINESS-VERIFICATION-REPORT-20260908-001-V1, date: '2026-09-08', verification_scope: local-run target}
+    - {item: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V3, date: '2026-09-08', verification_scope: refined director supply response plus full standard composition}
+    - {item: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V3, date: '2026-09-08', verification_scope: subject verification result plus full verification-report composition}
+    - {item: ARTVER-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001-V2, date: '2026-09-08', verification_scope: local execution gate and self composition}
+  verification_requirements_and_criteria:
+    - {id: LVR2-01, criterion: all_persistent_outputs_have_full_standard_composition, required: true, expected: exact ProcessType/O plus applicable generic and specific profiles, PPR-001..012 and paired ISO/GOST trace}
+    - {id: LVR2-02, criterion: subject_verification_present_for_material_director_revision, required: true, expected: TECH-VER V3 covers director semantics, evidence boundaries and metric-linked falsifiability}
+    - {id: LVR2-03, criterion: verification_primary_execution_is_owner_local, required: true, expected: bash tools/run_local_verification.sh --all --base origin/main executed from an owner-local exact SE worktree using Conda Python 3.12+ and PyYAML}
+    - {id: LVR2-04, criterion: exact_head_identity, required: true, expected: local runner records exact SE HEAD/base/merge-base and CORE-13 resolves the exact final ConsultantPlus SHA declared by TECH-OP}
+    - {id: LVR2-05, criterion: no_remote_substitution, required: true, expected: no GitHub Actions/remote result is used to establish requested PASS}
+    - {id: LVR2-06, criterion: aggregate_local_pass, required: true, expected: mode=all, failed=0, result=PASS}
+    - {id: LVR2-07, criterion: lifecycle_boundaries_preserved, required: true, expected: structural PASS does not imply empirical usefulness, RIC acceptance, official Network adoption, deployment or business effect}
+  composition_verification_matrix:
+    director_supply_response:
+      artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V3
+      canonical_identity: {process_type_id: AGR-SUP, canonical_O: supply response}
+      expected_composition: {generic: '7.2 description 9/9', specific: '10.56 6 required plus S10.56-O01 disposition', ppr: '12/12', paired_ISO_GOST_trace: required, local_additive: none}
+      subject_state: SUBJECT_PASS_PENDING_OWNER_LOCAL_EXACT_HEAD_VERIFICATION
+    director_subject_verification:
+      artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V3
+      canonical_identity: {process_type_id: TECH-VER, canonical_O: verification report}
+      expected_composition: {generic: '7.6 report 13/13', specific: '10.93 8/8', ppr: '12/12', paired_ISO_GOST_trace: required, local_additive: none}
+      subject_state: pass_pending_local_structure
+    premeasurement_products:
+      stakeholder_needs: {process_type_id: TECH-STK, canonical_O: stakeholder needs and requirements, generic: '7.8 specification', specific: '10.84', state: pending_local_structure}
+      coordinating_measurement_plan: {process_type_id: TM-MEAS, canonical_O: measurement strategy/approach, generic: '7.3 plan', specific: '10.46', state: pending_local_structure}
+      readiness_report: {process_type_id: TECH-VER, canonical_O: verification report, generic: '7.6 report', specific: '10.93', state: pending_local_structure}
+    this_report:
+      artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001-V2
+      canonical_identity: {process_type_id: TECH-VER, canonical_O: verification report}
+      expected_composition: {generic: '7.6 report 13/13', specific: '10.93 8/8', ppr: '12/12', paired_ISO_GOST_trace: required, local_additive: none}
+  execution_evidence:
+    requested_execution: owner_local_only
+    attempted_remote_verification: false
+    owner_local_runner_executed_for_final_heads: false
+    blocker: local run must be performed by owner on the final SE and ConsultantPlus exact heads
+    effect: no structural PASS/readiness/merge claim may be emitted until local evidence is returned
+  detailed_results:
+    - {criterion: LVR2-01, result: PRECONDITION_DECLARED, evidence: all in-scope products declare full applicable normative/PPR composition; deterministic local confirmation pending}
+    - {criterion: LVR2-02, result: PASS_SUBJECT, evidence: director TECH-VER V3 verifies semantics, evidence boundary, metric binding and standard composition}
+    - {criterion: LVR2-03, result: PENDING_OWNER_EXECUTION, evidence: local commands prepared for Windows PowerShell + Conda + Git Bash}
+    - {criterion: LVR2-04, result: PENDING_FINAL_HEAD_BINDING, evidence: companion SE TECH-OP must be updated to the final client SHA after this report commit}
+    - {criterion: LVR2-05, result: PASS_BOUNDARY, evidence: no remote workflow invoked as substitute}
+    - {criterion: LVR2-06, result: NOT_EXECUTED, evidence: no final owner-local log yet}
+    - {criterion: LVR2-07, result: PASS_BOUNDARY, evidence: empirical and adoption states remain explicitly separate}
+  problems_encountered:
+    - {id: LOCAL-OWNER-RUN-01, problem: owner-local exact-head execution has not yet occurred after final director product refinement, consequence: structural readiness remains pending, disposition: run provided PowerShell/Git-Bash command sequence and return log summary}
+    - {id: HEAD-BIND-01, problem: client head changes when this report is committed, consequence: SE operation report must pin the resulting final client SHA before local verification, disposition: update companion TECH-OP and use its final SE head for owner-local run}
+  verification_decision_rationale:
+    decision: LOCAL_VERIFICATION_REQUIRED_NOT_YET_EXECUTED
+    basis:
+      - owner requires local-only deterministic verification
+      - material director revision has a subject TECH-VER PASS candidate but not structural PASS
+      - the canonical SE runner already provides aggregate --all and exact base/head reporting
+      - remote CI would not satisfy the owner-established evidence rule
+      - empirical usefulness remains a later measurement/validation question even after structural PASS
+    allowed_next:
+      - pin the final client SHA in companion SE TECH-OP
+      - execute final SE branch locally with --all --base origin/main and Conda Python
+      - require mode=all failed=0 result=PASS and CORE-13 exact client verification
+      - persist successor completion evidence only after successful local output
+    blocked_next:
+      - structural readiness claim before local PASS
+      - merge-readiness based on remote status
+      - empirical positioning validity claim
+      - official Network positioning adoption
+conclusions_and_recommendations:
+  conclusion: >-
+    The director-facing capability representation and its subject TECH-VER are now included in the local verification scope.
+    The correct lifecycle state remains verification pending, not PASS, until owner-local exact-head execution succeeds.
+  recommendation: >-
+    Update the generic-SE operation report to the final ConsultantPlus head, then run the canonical local suite from a clean
+    SE worktree with Conda Python 3.12+ through Git Bash. Preserve the full log and use only its successful terminal summary
+    as deterministic structural evidence for this request.
+references:
+  - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+  - ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+  - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-READINESS-VERIFICATION-REPORT-20260908-001-V1
+  - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V3
+  - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V3
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
+bibliography:
+  - ISO/IEC/IEEE 15288:2023 / ГОСТ Р 57193-2025
+  - ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019
+glossary:
+  owner_local_verification: verification executed in the owner's local Windows/PowerShell/Conda environment with Git Bash as compatibility adapter
+  exact_head: immutable commit SHA that is the verification subject
+  structural_PASS: successful deterministic aggregate local verification; distinct from semantic truth, empirical effect or stakeholder acceptance
+  remote_substitution: use of remote CI/workflow evidence in place of the owner-required local run; forbidden for this request
+change_history:
+  - {version: V1, date: '2026-09-08', change: establish owner-required local-only verification gate for premeasurement product set}
+  - {version: V2, date: '2026-09-08', change: extend final local verification scope to director supply response V3 and its subject TECH-VER V3; bind Windows PowerShell + Conda + Git Bash execution profile}
+owner_product_request:
+  exact_visible_text: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
+  resolved_referent: execute the refined director representation, persist its verification state and provide owner-local verification commands
+  current_dialogue_branch_purpose: >-
+    Для продукта помощи РИЦ пройти полный жизненный цикл как продукта SE-среды и клиентской системы,
+    использовать метрики для проверяемого доказательства полезности/неполезности и сводить каждый результат
+    к каноническому ProcessType/O и полному применимому составу ГОСТ.
+  purpose_provenance: owner-authorized current conversation
+  request_specific_requirements:
+    - include director V3 and subject TECH-VER V3 in the local exact-head verification scope
+    - preserve complete standard composition for this verification report
+    - execute no remote workflow as substitute
+    - target Windows 10 PowerShell + Conda se312 + Git for Windows Git Bash
+    - do not claim structural PASS until owner-local runner succeeds
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_materially_revised_client_TECH_VER_verification_report
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id,artifact_label,content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request,body.verification_requirements_and_criteria,body.execution_evidence]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage,standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered,verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,context_and_assumptions,body.composition_verification_matrix,standards_trace]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status,verification.semantic_status,verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self,verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id,artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements,change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_candidate_composition_pending_owner_local_exact_head_verification
+verification:
+  structural_status: pending_owner_local_exact_head_verification_for_final_PR19_head
+  semantic_status: LOCAL_VERIFICATION_REQUIRED_NOT_YET_EXECUTED
+  owner_acceptance: local verification requested; external issue RIC acceptance official positioning merge adoption deployment and baseline remain separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-POSITIONING-LOCAL-VERIFICATION-EXECUTION-REPORT-20260908-001.yaml@change/consultantplus-20260908-positioning-premeasurement-readiness
+information_product_applicability: applies
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.4.9', process_name: 'Verification process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.4.9', process_name: 'Процесс верификации'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: verification report
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.6', specific_status: present, specific_items: ['10.93']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.6-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-D, disposition: satisfied, artifact_field_refs: [participants], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-E, disposition: satisfied, artifact_field_refs: [summary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-G, disposition: satisfied, artifact_field_refs: [context_and_assumptions], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-H, disposition: satisfied, artifact_field_refs: [body], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-I, disposition: satisfied, artifact_field_refs: [conclusions_and_recommendations], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-J, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary,body.verification_decision_rationale,conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object,body.composition_verification_matrix], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.composition_verification_matrix,body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results,body.execution_evidence], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decision_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+      local_additive_requirements: []
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity:
+    resolved_name_or_semantic_identity: verification report for owner-local execution gate of RIC positioning product set
+    resolution_basis: TECH-VER verification report controlled semantic match to ГОСТ §10.93
+    state: resolved
+  universal_type: report
+  universal_content:
+    source_section: '7.6'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.6-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.6-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.6-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.6-D, state: satisfied, artifact_field_refs: [participants]}
+      - {requirement_id: U7.6-E, state: satisfied, artifact_field_refs: [summary]}
+      - {requirement_id: U7.6-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.6-G, state: satisfied, artifact_field_refs: [context_and_assumptions]}
+      - {requirement_id: U7.6-H, state: satisfied, artifact_field_refs: [body]}
+      - {requirement_id: U7.6-I, state: satisfied, artifact_field_refs: [conclusions_and_recommendations]}
+      - {requirement_id: U7.6-J, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
+      - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.93'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary,body.verification_decision_rationale,conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object,body.composition_verification_matrix]}
+          - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.composition_verification_matrix,body.detailed_results]}
+          - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results,body.execution_evidence]}
+          - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
+          - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
+  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
+  tailoring: verification specialized to owner-local exact-head execution for current RIC positioning products; no lifecycle-process tailoring introduced
+  information_item_management:
+    version_control: V2 supersedes V1 after material expansion of local verification scope
+    review_approval: local execution evidence required before structural readiness; owner/external acceptance and merge separate
+    quality_evaluation: full ГОСТ/PPR/paired-trace inspection plus aggregate owner-local deterministic runner
+    retention: canonical client TECH-VER product in MOZ1961/consultantplus
+    reuse_and_duplication: new material product revisions require local-verification scope update before readiness
+  composition_state: full_composition_materialized_local_execution_pending

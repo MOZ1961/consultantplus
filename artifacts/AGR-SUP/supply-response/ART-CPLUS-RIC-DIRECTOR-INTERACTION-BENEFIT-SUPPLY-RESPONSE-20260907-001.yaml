@@ -1,48 +1,57 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001
-artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2
-supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1
+artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V3
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2
 artifact_label: supply response
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_standard_composition_materialized
-acceptance_status: standard_composition_candidate_not_issued_not_RIC_accepted_or_official_positioning
+lifecycle_status: owner_directed_candidate_refined_pending_local_verification
+acceptance_status: candidate_not_issued_not_RIC_accepted_not_official_network_positioning
 artifact_instance_purpose: >-
-  Установить стандартный состав ответа поставщика для краткого объяснения руководителю РИЦ предлагаемого
-  взаимодействия и его возможной управленческой пользы. Продукт полностью покрывает типовой состав описания
-  по ГОСТ Р 58609-2019 §7.2, специальный состав предложения §10.56, требования владельца PPR-001..012,
-  парную ISO/ГОСТ-трассировку и явные границы доказуемости.
+  Дать директору РИЦ краткое и проверяемое представление возможностей среды для решения трех связанных
+  управленческих забот: как позиционировать КонсультантПлюс для клиента через его реальные решения и
+  результаты; как доносить пользу эффективно, не переходя к недоказанным рекламным обещаниям; как действовать,
+  если у РИЦ нет полученной от Сети готовой и применимой к конкретному клиентскому диалогу формулировки,
+  методики или стратегии. Продукт представляет предложение поставщика, а не официальное позиционирование Сети,
+  и полностью материализует применимый состав ГОСТ Р 58609-2019 §7.2 + §10.56, PPR-001..012 и парную ISO/ГОСТ-трассировку.
 producer:
   process_type_id: AGR-SUP
   process_instance_id: PI-CPLUS-AGR-SUP-RIC-DIRECTOR-INTERACTION-BENEFIT-STANDARD-COMPOSITION-20260907-001
-  activity_instance_id: AI-CPLUS-AGR-SUP-STANDARDIZE-RIC-DIRECTOR-SUPPLY-RESPONSE-20260907-001
+  activity_instance_id: AI-CPLUS-AGR-SUP-REFINE-RIC-DIRECTOR-EVIDENCE-POSITIONING-20260908-001
   methodic_instance:
     methodic_id: METH-CPLUS-AGR-SUP-RIC-DIRECTOR-INTERACTION-BENEFIT
-    methodic_version_id: METHVER-CPLUS-AGR-SUP-RIC-DIRECTOR-INTERACTION-BENEFIT-V2
-    methodic_version: standard-composition-v2
+    methodic_version_id: METHVER-CPLUS-AGR-SUP-RIC-DIRECTOR-INTERACTION-BENEFIT-V3
+    methodic_version: evidence-positioning-director-v3
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIRECTOR-PRODUCT-COMPOSITION-20260907-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-POSITIONING-LOCAL-VERIFICATION-20260908-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-07', status: standard_composition_materialized_pending_exact_head_worker}
+issued_at_and_status:
+  issued_at: '2026-09-08'
+  status: refined_candidate_pending_owner_local_exact_head_verification
 scope: >-
-  Краткое внешнее объяснение руководителю РИЦ перед обсуждением пилота. Продукт описывает проблему,
-  механику взаимодействия, управленческую пользу, стоимость первого пилота, график, риски, метод выполнения,
-  релевантные возможности, полномочия и отсутствие предлагаемого tailoring. Он не является официальным
-  позиционированием Сети, договором, тарифом, доказательством ROI или гарантией улучшения результата клиента.
+  Директорское представление перед обсуждением контролируемого пилота. Оно охватывает позиционирование
+  КонсультантПлюс и сервиса РИЦ через клиентские решения, доказательную дисциплину формулировок, способ
+  компенсировать отсутствие у конкретного РИЦ готового прикладного контура формулировок, проверку на реальных
+  эпизодах и превращение повторяющихся наблюдений в структурированную обратную связь. Не охватывает официальное
+  принятие позиционирования Сетью, обещание экономического эффекта, договорные обязательства или причинное
+  доказательство результата без эмпирических данных.
 issuing_organization: owner-authorized engineering environment
 references:
-  - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2
   - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+  - ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
   - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
-  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
   - ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
   - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   - ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
@@ -50,118 +59,202 @@ references:
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
   - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
 context: >-
-  РИЦ располагает данными об обращениях, продажах, обучении, консультациях и действиях сотрудников, но эти
-  данные не всегда показывают, какое профессиональное решение клиента стояло за эпизодом, где возникло
-  затруднение, что дало использование КонсультантПлюс, что добавил РИЦ и какой наблюдаемый результат получился.
+  Публичная доказательная модель уже показывает, что возможности КонсультантПлюс шире модели «база документов»:
+  система поддерживает переход от регулируемой рабочей ситуации к правовой основе, вариантам действий и рабочим
+  артефактам, а РИЦ предоставляет комплекс сервисных действий вокруг использования системы. При этом открытые
+  данные значительно лучше подтверждают возможности и промежуточные результаты, чем конечные клиентские и
+  организационные эффекты. Поэтому директору РИЦ нужен не новый рекламный тезис, а управляемый способ установить,
+  что именно его клиенты ценят, что реально добавляет РИЦ, какие формулировки допустимы и как их проверить.
 designation: CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-20260907-001
 summary: >-
-  Предлагается начать с одного реального обезличенного клиентско-сервисного эпизода и восстановить цепочку
-  «ситуация клиента → требуемое решение или действие → информационный путь → роль КонсультантПлюс →
-  действие РИЦ → действие клиента → наблюдаемый результат → оставшиеся разрывы». Первый пилот проверяет
-  полезность метода и не доказывает финансовый эффект, превосходство над альтернативами или результат по Сети.
+  Предлагается не «придумать позиционирование», а построить в РИЦ доказательный контур управления клиентской
+  ценностью: клиентская ситуация → решение → вклад КонсультантПлюс → вклад РИЦ → наблюдаемый результат →
+  доказательство → формулировка → проверка на клиенте → решение РИЦ об изменении или сохранении подхода.
+  Первый бесплатный пилот на одном обезличенном эпизоде проверяет полезность метода для директора; дальнейшая
+  работа масштабируется только после появления измеряемых оснований.
 body:
   recipient_and_decision:
-    recipient: руководитель или директор РИЦ КонсультантПлюс
-    decision_supported: понять стоит ли проверить на реальных случаях способ анализа клиентской ценности и сервиса РИЦ
-    requested_next_action: выбрать один недавний обезличенный эпизод и сотрудника который его знает
+    recipient: директор или руководитель РИЦ КонсультантПлюс
+    decision_supported: >-
+      решить, стоит ли РИЦ построить собственный доказательный контур позиционирования и клиентской ценности,
+      начиная с одного реального эпизода вместо немедленной разработки масштабной маркетинговой программы
+    requested_next_action: выбрать один недавний обезличенный клиентско-сервисный эпизод и сотрудника, который знает его фактический ход
+
   director_view:
-    headline: 'Не еще один отчет о сервисе, а способ увидеть, какие решения клиента РИЦ действительно помогает продвинуть.'
-    one_sentence_value: >-
-      Мы помогаем РИЦ превратить разрозненные сервисные случаи в проверяемое основание для управленческих
-      решений о том, где и как КонсультантПлюс вместе с сервисом РИЦ создает полезность для клиента.
-    why_current_data_are_not_always_enough:
-      - число обращений показывает нагрузку но не обязательно смысл клиентской задачи
-      - факт консультации показывает действие РИЦ но не устанавливает что изменилось в решении клиента
-      - использование функции показывает инструмент но не полный путь решения и реальные альтернативы
-      - общая удовлетворенность не объясняет конкретный разрыв и механизм его устранения
-    how_we_work:
-      - '1. РИЦ выбирает один реальный недавний обезличенный эпизод; после пилота при необходимости — 3–5.'
-      - '2. Вместе восстанавливаем ситуацию клиента, требуемое решение или действие и фактический информационный путь.'
-      - '3. Раздельно фиксируем вклад КонсультантПлюс, действие РИЦ, действия клиента и другие источники.'
-      - '4. Отделяем факты от оценок и аналитических выводов; неизвестное остается неустановленным.'
-      - '5. Возвращаем краткий анализ: что происходило, где был разрыв, что сработало, что осталось неясным и что имеет смысл проверить дальше.'
-      - '6. Значимые выводы верифицируются отдельно; повторяемость заявляется только после нескольких реальных эпизодов.'
-    what_the_director_can_get:
-      - связь конкретных действий сервиса с реальными решениями и затруднениями клиента а не только со счетчиками активности
-      - подтвержденные кандидаты на приоритеты сопровождения обучения и клиентской работы
-      - понимание какие возможности КонсультантПлюс реально задействуются в критичных сценариях и где остаются обходные пути
-      - общий предметный язык между руководителем менеджерами сопровождением обучением и продуктовой обратной связью
-      - доказательную трассу почему сделан вывод из какого эпизода он следует и что пока не установлено
-    management_decisions_this_can_support_as_hypotheses:
-      - чему в первую очередь обучать клиентов и сотрудников РИЦ
-      - какие сервисные сценарии стандартизировать или пересматривать
-      - какие повторяющиеся затруднения передавать как доказательную продуктовую обратную связь
-      - где требуется не новая функция а изменение консультации настройки маршрута или обучения
-      - какие гипотезы ценности и позиционирования имеет смысл проверять на клиентах
-    boundaries_of_roles:
-      consultantplus: предоставляет информационную и инструментальную основу профессиональной работы в пределах своих возможностей
-      RIC: помогает клиенту освоить и применять возможности системы в конкретных рабочих сценариях и сопровождает взаимодействие
-      client: принимает собственное профессиональное или управленческое решение и несет соответствующую ответственность
-      environment: анализирует доказательства и разрывы но не подменяет решение клиента или руководителя РИЦ
+    headline: 'Не еще одна рекламная формулировка. Способ доказательно ответить клиенту: зачем ему КонсультантПлюс и зачем ему РИЦ.'
+    three_management_concerns:
+      positioning_for_client:
+        concern: >-
+          Перечень функций системы сам по себе все хуже отвечает на клиентский вопрос «что это меняет в моей работе и решении?». Нужна формулировка ценности через реальную профессиональную ситуацию и требуемое действие.
+        response: >-
+          Мы связываем конкретную ситуацию клиента с решением, которое он должен принять, фактическим информационным путем, возможностями КонсультантПлюс, вкладом РИЦ и наблюдаемым рабочим результатом.
+      effective_and_verified_communication:
+        concern: >-
+          Сильная формулировка легко превращается в недоказанное обещание: снижение рисков, экономию, предотвращенные штрафы или рост качества решения нельзя автоматически выводить из факта использования продукта.
+        response: >-
+          Для каждого существенного тезиса фиксируем: что утверждаем, на каких данных, какова сила основания, где заканчивается доказательство, какое контрсвидетельство возможно и что нужно измерить дальше.
+      lack_of_ready_network_support:
+        concern: >-
+          У конкретного РИЦ может не быть полученной от Сети готовой прикладной формулировки, набора доказательств или стратегии, пригодных именно для его клиентских диалогов и управленческих решений.
+        response: >-
+          РИЦ может построить собственную доказательную модель на реальных эпизодах, не объявляя ее официальной позицией Сети. Повторяющиеся доказательства затем можно передавать в Сеть как структурированный продуктовый сигнал.
+        evidence_boundary: >-
+          Этот продукт не утверждает, что у Сети в целом отсутствует стратегия. Публичные материалы указывают на стратегическую и технологическую роль Координационного центра; не установлено лишь наличие у конкретного РИЦ готового доказательного контура, решающего перечисленные здесь задачи.
+
+    positioning_principle:
+      weak_form: 'У нас есть большая правовая база, готовые решения, поиск, формы, обучение и сервис.'
+      stronger_candidate: >-
+        КонсультантПлюс помогает специалисту пройти путь от регулируемой рабочей ситуации к актуальной правовой основе, вариантам действий и рабочему результату; РИЦ помогает пройти участки этого пути, где самообслуживания недостаточно.
+      status: analytical_candidate_supported_by_open_source_capability_evidence_not_official_network_positioning
+
+    what_we_can_do_for_RIC:
+      - id: CAP-01
+        capability: построить карту клиентской ценности по реальным решениям, а не по перечню функций
+        output: решение клиента → информационный путь → роль КонсультантПлюс → роль РИЦ → результат → разрыв
+      - id: CAP-02
+        capability: сформулировать доказуемое позиционирование по ролям, ситуациям и решениям
+        output: уровни формулировок с evidence boundary и статусом доказанности
+      - id: CAP-03
+        capability: установить, где именно РИЦ создает дополнительную ценность
+        output: сценарии самообслуживания, сценарии значимого вмешательства РИЦ и повторяющиеся сервисные разрывы
+      - id: CAP-04
+        capability: превратить доказательную модель в материалы продаж, сопровождения и обучения
+        output: карточки «ситуация → решение → КП → РИЦ → результат», сценарии разговора, вопросы диагностики, демонстрации и аргументы продления
+      - id: CAP-05
+        capability: проверить позиционирование на реальных клиентах
+        output: измерения понимания, изменения решения, пригодности к действию, результата вмешательства и повторяемости
+      - id: CAP-06
+        capability: сформировать доказательную обратную связь в Сеть
+        output: повторяющийся клиентский разрыв с контекстом, частотой, критичностью, обходным путем, вкладом сервиса и наблюдаемым результатом вместо общего пожелания
+
+    operating_chain:
+      - '1. Зафиксировать исходную заботу директора и решение, для которого нужна лучшая доказательная база.'
+      - '2. Взять один недавний обезличенный клиентский эпизод и восстановить фактический путь без подсказки желаемого ответа.'
+      - '3. Разделить вклад КонсультантПлюс, РИЦ, клиента и других источников; неизвестное оставить not_established.'
+      - '4. Вывести кандидатные тезисы позиционирования только из наблюдаемой цепочки и открытой доказательной базы.'
+      - '5. Верифицировать трассируемость тезисов, границы доказательности и отсутствие подмены причинности.'
+      - '6. Проверить формулировки на клиенте отдельно от исходного интервью и измерить результат.'
+      - '7. После 3–5 эпизодов проверить повторяемость; после достаточной выборки — решать о стандартизации, масштабировании или отказе.'
+
+    proof_metrics:
+      purpose: не измерять «красоту презентации», а получать опровержимые доказательства полезности
+      selected_metrics:
+        - {metric_id: C02, question: изменило ли использование КонсультантПлюс или РИЦ первоначально предполагаемое действие клиента}
+        - {metric_id: C06, question: какое вмешательство РИЦ было выполнено и какой наблюдаемый результат последовал}
+        - {metric_id: C08, question: способен ли пользователь позже решить сходную задачу самостоятельно после помощи РИЦ}
+        - {metric_id: C14, question: позволила ли диагностика директору определить действие, обоснованно ничего не менять или признать недостаточность данных}
+        - {metric_id: C15, question: что изменилось после реально выполненного изменения и сопоставимого повторного эпизода}
+        - {metric_id: C16, question: использовал ли уполномоченный участник Сети агрегированные доказательства РИЦ в реальном решении или обоснованно отклонил их}
+      admissible_claim_states: [SUPPORTED, NOT_SUPPORTED, INSUFFICIENT_EVIDENCE, NOT_APPLICABLE]
+      rule: отсутствие эффекта и недостаточность данных являются допустимыми результатами, а не поводом усиливать формулировку
+
+    what_the_director_gets:
+      - карта того, за что клиент реально использует КонсультантПлюс в выбранном сценарии
+      - отдельная карта вклада РИЦ и точек, где сервис действительно необходим или избыточен
+      - набор формулировок с доказательным статусом и запрещенными усилениями
+      - список конкретных решений для продаж, обучения, сопровождения и продуктовой обратной связи
+      - измерительный план проверки формулировок и изменений
+      - трасса «вывод → эпизод/источник → метрика → решение»
+
     what_we_do_not_promise:
-      - не обещаем ROI или готовность платить по результатам одного пилота
-      - не заявляем предотвращенные штрафы убытки или общее снижение риска без отдельного доказательного дизайна
-      - не выдаем мнение одного РИЦ за вывод по всей Сети
-      - не принимаем профессиональное или управленческое решение вместо клиента или руководителя
-      - не объявляем официальное позиционирование КонсультантПлюс без отдельного полномочного решения
+      - не выдаем аналитическую формулировку за официальную позицию КонсультантПлюс или Сети
+      - не утверждаем отсутствие стратегии у Сети без внутреннего доказательства; фиксируем лишь прикладной разрыв конкретного РИЦ, если он подтвержден самим РИЦ
+      - не обещаем ROI, предотвращенные штрафы, снижение общего риска или рост прибыли без отдельного дизайна и данных
+      - не переносим вывод одного эпизода или одного РИЦ на всю Сеть
+      - не принимаем профессиональное решение вместо клиента и управленческое решение вместо директора РИЦ
+
     why_start_small: >-
-      Для проверки метода не нужна реорганизация отчетности или выгрузка CRM. Достаточно одного реального
-      обезличенного эпизода и сотрудника, который его знает. Если результат не дает руководителю нового,
-      проверяемого и пригодного к действию знания — метод не следует масштабировать. Если дает — следующая
-      ступень 3–5 эпизодов позволяет проверить повторяемость и различия между сценариями.
+      Один эпизод не доказывает рынок и не формирует стратегию, но достаточен для дешевой проверки главного:
+      дает ли метод директору новое, трассируемое и пригодное к действию знание. Если нет — масштабировать нельзя.
+      Если да — 3–5 эпизодов позволяют проверить повторяемость сценариев и только затем расширять выборку.
     pilot_success_for_director: >-
-      Пилот полезен, если после него руководитель может назвать хотя бы одно управленческое решение,
-      которое стало лучше обосновано новым фактом или выявленным разрывом, и проследить вывод к конкретному эпизоду.
-    call_to_action: 'Выберите один недавний обезличенный случай и сотрудника, который его знает; на первом разборе проверим не презентацию, а полезность результата для ваших решений.'
+      Успех первого пилота — директор после разбора может назвать как минимум одно управленческое решение,
+      которое стало лучше обосновано новым фактом или выявленным разрывом, и проследить основание этого решения
+      к конкретному эпизоду/источнику. Это критерий полезности метода, а не доказательство бизнес-эффекта.
+    call_to_action: >-
+      Выберите один недавний обезличенный случай и сотрудника, который его знает. За одну сессию проверим не
+      презентацию, а способность получить для ваших решений новое доказательное знание и из него — допустимую
+      клиентскую формулировку.
+
   relation_to_existing_proposal:
     proposal_version: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
-    relation: this supply response is a concise director-facing explanation and does not replace the fuller pilot proposal
-    no_duplicate_authority: official issue commercial terms and acceptance remain controlled by exact proposal and owner authority
+    relation: >-
+      Это главное директорское представление верхнего уровня. Диагностика одного эпизода — первый метод проверки
+      этой способности и вход в последующий доказательный контур, а не конечный предмет предложения.
+    no_duplicate_authority: commercial terms and any external issue remain controlled by exact proposal/owner authority
+
   commercial_and_cost:
     proposed_cost:
       amount_rub: 0
-      basis: existing Proposal V4 states the first one-episode pilot as a candidate zero-cost pilot
-      boundary: this short explanation does not create an independent commercial commitment
-    subsequent_work: not_established; any further commercial proposal is separate
+      basis: existing Proposal V4 defines the first one-episode pilot as a candidate zero-cost pilot
+      boundary: this supply response does not create an independent commercial commitment
+    subsequent_work: not_established; scope and price require separate evidence and agreement
+
   schedule:
-    pilot_entry: one de-identified episode and one knowledgeable RIC participant
-    session: approximately 45-60 minutes under existing Proposal V4
-    follow_up: evidence-backed output and review under exact pilot plan/proposal
+    pilot_entry: one de-identified recent episode plus one knowledgeable RIC participant
+    session: approximately 45-60 minutes under Proposal V4
+    first_output: evidence-backed reconstruction, candidate value statements, gaps and next measurement decision
+    recurrence_check: 3-5 episodes only after first-pilot usefulness is established
     dates: not_established
+
   proposal_risks:
-    - {risk: director interprets the view as a proven business case, mitigation: separate candidate management usefulness from measured effect}
-    - {risk: service contribution is confused with causal ownership of client outcome, mitigation: separate ConsultantPlus RIC client and other contributions}
-    - {risk: one episode is generalized to the Network, mitigation: one episode tests usefulness only; recurrence requires more cases}
-    - {risk: short format hides evidence gaps, mitigation: preserve explicit unknowns and exact upstream references}
-    - {risk: interview becomes sales confirmation, mitigation: use questionnaire PART_A before showing this view}
+    - {risk: director reads the candidate as official Network positioning, mitigation: explicit non-official status and authority boundary}
+    - {risk: concern about lack of Network support is converted into a claim that the Network has no strategy, mitigation: phrase as a concrete RIC-side applicability gap requiring stakeholder confirmation}
+    - {risk: marketing language outruns evidence, mitigation: claim-evidence-counterevidence trace and four-state disposition}
+    - {risk: one episode is generalized to clients or the Network, mitigation: one episode tests method usefulness only; recurrence requires multiple observations}
+    - {risk: RIC activity is confused with causation of client outcome, mitigation: separate contributions and require post-change observation for stronger claims}
+    - {risk: interview is biased by showing our positioning first, mitigation: unaided evidence before aided reaction in the governing measurement plans}
+
   delivery_methodology:
-    approach: episode-first reconstruction plus contribution separation plus evidence trace plus independent verification
+    approach: decision-centered episode reconstruction plus contribution separation plus evidence trace plus measurement plus independent verification
+    source_register_ref: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
+    method_justification_ref: ARTVER-CPLUS-BMA-RIC-PILOT-METHOD-JUSTIFICATION-20260907-001-V1
     measurement_plan_ref: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
     positioning_ref: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
-    pilot_plan_ref: ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
-    evidence_rule: unknown facts stay not_established; aided reaction is separate from unaided evidence; strong causal and financial claims require independent evidence
+    lifecycle_measurement_ref: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+    proof_model_ref: ARTVER-CPLUS-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
+    evidence_rule: >-
+      unknown remains not_established; unaided evidence is collected before showing candidate positioning; source capability
+      evidence is separated from empirical client outcome; causal/financial claims require specific measurement and counterevidence.
+
   supplier_experience_and_capabilities:
     established:
-      - decision-centered and comparative positioning models exist as standard process-owned products
-      - broad-wave and minimal-pilot measurement plans exist with unaided-before-aided evidence rules
-      - current director measurement plan explicitly resolves ГОСТ §7.3 + §10.46 and PPR-001..012
-      - Proposal V4 defines the one-episode pilot boundary and separates recipient-facing products from internal engineering products
+      - open-source evidence model of ConsultantPlus client value and explicit evidence gaps exists as a standard TECH-BMA product
+      - source register preserves stable references, paraphrased source bodies, claim mappings and limitations
+      - method-justification report links the diagnostic sequence to source-supported reasoning and explicit boundaries
+      - director interview, pilot and lifecycle measurement plans exist as standard TM-MEAS products with unaided-before-aided rules
+      - benefit proof model defines falsifiable claim states and links claims to S/C/G evidence
+      - one-episode Proposal V4 defines a bounded zero-cost entry point
+      - standard-product composition and verification are governed by ГОСТ Р 58609/ISO 15289 plus PPR-001..012
     not_established:
-      - usefulness of this interaction for a real external RIC director
-      - Network-wide recurrence or market prevalence
-      - willingness to pay or commercial demand
+      - usefulness of this exact representation for a real external RIC director
+      - whether a specific RIC actually lacks usable Network positioning support
+      - Network-wide recurrence or prevalence of the identified gaps
+      - willingness to pay for subsequent work
       - causal financial or client-outcome effect
-      - official ConsultantPlus positioning adoption
+      - official ConsultantPlus/Network adoption of any proposed positioning
+
   authorization:
-    preparation_authority: owner explicit request to prepare and standardize the director-facing explanation
+    preparation_authority: owner explicitly requested the director-facing representation and its execution in the repository
+    local_verification_authority: owner requires verification to be executed locally
     external_issue_state: not_performed
     commercial_commitment: not_created_by_this_product
-    positioning_adoption: not_granted
+    official_positioning_adoption: not_granted
+
   tailoring_proposal:
     applicability: not_applicable
     disposition: no lifecycle-process tailoring is proposed by this supply response
-    basis: product uses existing standard process-owned products and client interface
-  exclusions: [legal or tax opinion, client professional decision, Network-wide market claim, ROI guarantee, prevented-fine claim, automatic product requirement, automatic official positioning]
+    basis: the product uses the existing process-owned lifecycle and standard information-product mappings
+
+  exclusions:
+    - legal or tax opinion
+    - client professional decision
+    - claim that the Network has no strategy
+    - official Network positioning
+    - Network-wide market claim from one RIC
+    - ROI or prevented-fine guarantee
+    - automatic product requirement without decision authority
+
 standard_product_composition:
   generic_profile:
     standard: ГОСТ Р 58609-2019 / ISO/IEC/IEEE 15289:2017
@@ -185,51 +278,72 @@ standard_product_composition:
       experience_and_capabilities: body.supplier_experience_and_capabilities
       authorization: body.authorization
       tailoring_disposition: body.tailoring_proposal
+
 glossary:
-  management_usefulness: ability of the analysis to support a concrete RIC management decision with traceable evidence
-  episode: concrete recent client or service situation with trigger required action information path interventions and observable status
-  contribution: evidence-bounded role of one participant in the episode and not equivalent to exclusive causality
-  supply_response: process-owned supplier response represented here as a concise proposal for the RIC director
-  pilot: bounded test of method on real de-identified evidence and not adoption or rollout
-  standard_composition: applicable generic and specific normative content plus owner-product requirements and explicit traceability
+  evidence_based_positioning: позиционирование, существенные тезисы которого имеют явные основания, границы и способ проверки
+  client_decision: профессиональное или управленческое решение клиента, ради которого используется информация и сервис
+  management_usefulness: способность результата поддержать конкретное решение директора РИЦ трассируемыми данными
+  contribution: доказательно ограниченный вклад участника; не равен исключительной причинности результата
+  episode: конкретная недавняя клиентско-сервисная ситуация с триггером, решением, информационным путем, действиями и наблюдаемым состоянием
+  supply_response: процессный ответ поставщика, представленный здесь как краткое предложение руководителю РИЦ
+  official_positioning: формулировка, принятая уполномоченным органом Сети; данным продуктом не устанавливается
+
 change_history:
   - {version: V1, date: '2026-09-07', change: create concise director-facing explanation of interaction and management benefit as standard supply response}
-  - {version: V2, date: '2026-09-07', change: materialize explicit standard composition for ГОСТ §7.2 + §10.56, bind current owner request and correct PPR trace}
+  - {version: V2, date: '2026-09-07', change: materialize explicit standard composition for ГОСТ §7.2 + §10.56, PPR and paired standard trace}
+  - {version: V3, date: '2026-09-08', change: make the director representation the upper-level evidence-based positioning offer, explicitly address three director concerns, add metric-linked proof logic and preserve Network-strategy evidence boundary}
+
 owner_product_request:
-  exact_visible_text: 'приведи к стандартному составу эти продукты и верифицируй их состав по требованиям и ГОСТу'
-  resolved_referent: normalize the existing director-facing interaction and benefit explanation to the exact standard supply-response composition and verify it
-  current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
-  purpose_provenance: current_conversation_first_substantive_owner_request
+  exact_visible_text: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
+  resolved_referent: >-
+    Materialize the previously drafted director-facing representation of our capabilities for a RIC director concerned with
+    client positioning, verified communication of benefit and lack of ready applicable Network formulations/support; preserve
+    full standard composition and prepare it for owner-local verification.
+  current_dialogue_branch_purpose: >-
+    Для продукта помощи РИЦ пройти полный жизненный цикл как продукта SE-среды и клиентской системы,
+    определить метрики и критерии переходов и на их основе получать проверяемые доказательства полезности для РИЦ,
+    клиентской ценности и наблюдаемых результатов, включая неподтверждение; каждый результат сводить к
+    каноническому ProcessType/O и стандартному информационному продукту с полным применимым составом ГОСТ.
+  purpose_provenance: owner-authorized purpose update in current conversation
   request_specific_requirements:
-    - explicitly materialize every applicable generic §7.2 description element
-    - explicitly materialize all required §10.56 proposal content and disposition optional tailoring
-    - preserve all 12 active PPR requirements and paired ISO/GOST content trace
-    - retain the concise director-facing value view without stronger unsupported benefit claims
-    - keep official positioning external issue commercial commitment and RIC acceptance separate
+    - make the upper-level offer evidence-based management of RIC client value, not merely one-episode diagnosis
+    - explicitly address positioning for client, verified communication of benefit and lack of ready applicable Network support/formulations/strategy
+    - do not convert the third concern into an unsupported claim that the Network has no strategy
+    - include metric-linked proof logic and falsifiable outcomes
+    - preserve complete ГОСТ §7.2 + §10.56 composition, PPR-001..012 and paired ISO/GOST trace
+    - verification must remain pending until owner-local exact-head execution passes
+
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
   applicability: applies_materially_revised_client_AGR_SUP_supply_response
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id,artifact_label,content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request,standard_product_composition,body]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request,standard_product_composition,body.director_view]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
-    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
-    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.director_view.what_we_do_not_promise,verification]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,context,standards_trace,standard_product_composition]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage,standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.director_view.what_we_do_not_promise,body.proposal_risks,verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,context,standards_trace,body.delivery_methodology]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status,verification.semantic_status,verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self,verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id,artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements,change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_structure_pending_exact_head_worker_and_TECH_VER}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_candidate_composition_pending_subject_and_owner_local_exact_head_verification
+
 verification:
-  structural_status: pending_exact_external_client_information_product_worker_for_V2
-  semantic_status: pending_composition_TECH_VER_for_V2
-  owner_acceptance: standardization requested; external issue RIC acceptance official positioning and commercial commitment separate
+  structural_status: pending_owner_local_exact_head_verification_for_V3
+  semantic_status: pending_successor_TECH_VER_for_V3
+  owner_acceptance: preparation_authorized; external issue RIC acceptance official positioning adoption and commercial commitment remain separate
+
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/AGR-SUP/supply-response/ART-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001.yaml@change/consultantplus-20260907-standardize-ric-director-products
+  self: MOZ1961/consultantplus:artifacts/AGR-SUP/supply-response/ART-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001.yaml@change/consultantplus-20260908-positioning-premeasurement-readiness
 information_product_applicability: applies
+
 standards_trace:
   process:
     iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.1.2', process_name: 'Supply process'}
@@ -260,9 +374,13 @@ standards_trace:
         - {requirement_id: S10.56-R06, disposition: satisfied, artifact_field_refs: [body.authorization], iso: {section_or_item: '10.56'}, gost: {section_or_item: '10.56'}, correspondence: IDT}
         - {requirement_id: S10.56-O01, disposition: not_applicable, basis: no lifecycle-process tailoring proposed, artifact_field_refs: [body.tailoring_proposal], iso: {section_or_item: '10.56'}, gost: {section_or_item: '10.56'}, correspondence: IDT}
       local_additive_requirements: []
+
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: director-facing supply response explaining interaction and benefit, resolution_basis: AGR-SUP supply response controlled semantic match to ГОСТ §10.56 proposal, state: resolved}
+  information_item_identity:
+    resolved_name_or_semantic_identity: director-facing supply response for evidence-based RIC positioning and value management
+    resolution_basis: AGR-SUP supply response controlled semantic match to ГОСТ §10.56 proposal
+    state: resolved
   universal_type: description
   universal_content:
     source_section: '7.2'
@@ -300,11 +418,11 @@ content_compliance:
           - {requirement_id: S10.56-R06, state: satisfied, artifact_field_refs: [body.authorization]}
           - {requirement_id: S10.56-O01, state: not_applicable, basis: no lifecycle-process tailoring proposed, artifact_field_refs: [body.tailoring_proposal]}
   local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
-  tailoring: concise director-facing explanation specializes existing RIC positioning and pilot package without changing lifecycle process selection
+  tailoring: refine director-facing semantics and evidence framing without changing lifecycle process selection or canonical output
   information_item_management:
-    version_control: V2 supersedes V1 for standard composition
-    review_approval: exact-head worker and subject TECH-VER required before readiness; owner acceptance and external issue separate
-    quality_evaluation: PPR exact-set plus ГОСТ generic/specific exact-set plus paired ISO/GOST content trace
+    version_control: V3 supersedes V2; prior versions remain in history
+    review_approval: subject TECH-VER and owner-local exact-head verification required before readiness; external issue and adoption remain separate
+    quality_evaluation: PPR exact-set plus ГОСТ generic/specific exact-set plus paired ISO/GOST trace plus evidence-boundary review
     retention: canonical client AGR-SUP product in MOZ1961/consultantplus
-    reuse_and_duplication: derived chat text does not become a second authority over this ArtifactVersion
-  composition_state: standard_composition_materialized_pending_exact_head_worker
+    reuse_and_duplication: chat rendering is a view of this ArtifactVersion and does not create a second authority
+  composition_state: refined_standard_composition_materialized_pending_local_verification
