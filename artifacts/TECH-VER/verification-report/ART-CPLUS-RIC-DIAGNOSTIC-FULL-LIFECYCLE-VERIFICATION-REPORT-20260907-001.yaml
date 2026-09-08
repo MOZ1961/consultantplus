@@ -1,169 +1,233 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001
-artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001-V1
-supersedes_artifact_version_id: null
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001-V1
 artifact_label: verification report
 project_contour: client_system_consultantplus
-lifecycle_status: verification_completed_candidate_pending_exact_head_structural_worker
-acceptance_status: subject_pass_candidate_structural_owner_client_and_empirical_validation_separate
+lifecycle_status: subject_verification_completed_integrated_lifecycle_with_external_evidence_blockers_exact_head_structural_pending
+acceptance_status: verified_integrated_lifecycle_candidate_structural_owner_RIC_Network_and_empirical_validation_separate
 artifact_instance_purpose: >-
-  Предметно проверить текущий комплект полного жизненного цикла продукта «Диагностика клиентского случая РИЦ»:
-  двухконтурную декомпозицию, связь каждого персистируемого результата со стандартным ProcessType/O и применимым
-  составом ГОСТ Р 58609, измерительные определения, границы полномочий SE-среды и клиентской системы, планы
-  валидации/сопровождения/списания и отсутствие ложных утверждений о еще не состоявшихся клиентских переходах.
+  Предметно проверить текущий интегрированный комплект жизненного цикла продукта «Диагностика клиентского случая РИЦ»:
+  связь клиентов РИЦ, РИЦ, Сети КонсультантПлюс/Координационного центра и SE-среды; разграничение полномочий;
+  актуальность ссылок между текущими ArtifactVersion; согласованность доказательной модели с TM-MEAS V2/C16;
+  стандартные продукты и составы ГОСТ; отсутствие ложных утверждений о еще не состоявшихся внешних переходах.
 producer:
   process_type_id: TECH-VER
-  process_instance_id: PI-CPLUS-TECH-VER-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
-  activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
-  methodic_instance: {methodic_id: METH-CPLUS-TECH-VER-RIC-DIAGNOSTIC-LIFECYCLE, methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-DIAGNOSTIC-LIFECYCLE-V1, methodic_version: lifecycle_package_subject_verification_v1, status: provisional_runtime_not_adopted}
-request_operation_ref: {repository: MOZ1961/se, process_type_id: TECH-OP, process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001, required_output_label: operation report}
-interface_binding_ref: {repository: MOZ1961/consultantplus, artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3, binding_instance_id: BIND-CPLUS-SE-001}
-issued_at_and_status: {issued_at: '2026-09-07', status: subject_verification_pass_candidate_structural_pending}
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-DIAGNOSTIC-INTEGRATED-LIFECYCLE-20260908-001
+  activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-INTEGRATED-PARTICIPANT-LIFECYCLE-CURRENT-VERSIONS-20260908-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TECH-VER-RIC-DIAGNOSTIC-INTEGRATED-LIFECYCLE
+    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-DIAGNOSTIC-INTEGRATED-LIFECYCLE-V2
+    methodic_version: integrated_current_version_subject_verification_v2
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-INTEGRATED-LIFECYCLE-20260908-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-08', status: subject_verification_pass_with_external_evidence_blockers_structural_pending}
 scope: >-
-  Current six-product lifecycle planning package only. It verifies internal semantic coherence and evidence boundaries;
-  it does not validate usefulness in a real RIC, external issue, acquisition, acceptance, operation, maintenance outcome,
-  disposal outcome, Network-scale effect or owner adoption.
+  Subject verification of the current integrated lifecycle concept V2, current benefit proof model V2 and their alignment
+  to stakeholder identification V2, lifecycle measurement plan V2/C16, validation plan V1 and existing engineering products.
+  Structural exact-head worker, real RIC/client/Network evidence, TECH-VAL, owner acceptance and merge are outside this pass.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
-  Subject verification passes as a candidate. The lifecycle is represented as two coupled authority-separated tracks:
-  supplier/SE execution and client/RIC acquisition-use-change. Current engineering planning can legitimately produce
-  lifecycle concepts, SEMP, measurement, validation, maintenance and disposal plans. Actual AGR-ACQ, transition,
-  real operation, TECH-VAL report, maintenance results and disposal evidence remain blocked/conditional. Metrics are
-  separated into hard engineering gates and empirical client measures; no arbitrary positive client-value threshold
-  or unsupported ROI/risk/Network claim is introduced. Fresh exact-head structural verification remains mandatory.
+  The integrated lifecycle passes subject verification as a candidate. The former dual-track limitation is replaced by an
+  authority-separated participant/evidence graph covering clients of RIC, RIC and ConsultantPlus Network/Coordination Center,
+  with SE environment correctly treated as an enabling/supplier system rather than an organizational stakeholder. The stale
+  BP-05 gap is closed at design level because TM-MEAS V2 contains C16; current benefit proof V2 now uses C16. No empirical
+  usefulness is claimed: real RIC/client/Network evidence and TECH-VAL remain blocked.
 introduction:
-  purpose: verify lifecycle package before owner review and any merge-readiness claim
-  audience: owner, SE request execution, future client/RIC reviewers
+  purpose: verify integrated lifecycle coherence and exact current-version alignment before local structural verification
+  audience: owner, SE request execution, future RIC and Network reviewers
   verified_items:
-    - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
-    - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
-    - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+    - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+    - ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
+    - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+    - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
     - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
-    - ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
-    - ARTVER-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001-V1
+    - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+    - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
+    - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
+    - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
+    - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
   verification_requirements:
-    - each current durable result is a canonical process-owned information product rather than a new CASE or ad-hoc semantic carrier
-    - full lifecycle distinguishes actual, planned, blocked and conditional transitions
-    - supplier/SE authority does not become RIC acquisition/acceptance/adoption authority
-    - client/RIC lifecycle includes acquisition, stakeholder definition, acceptance, use, change, retest, sustainment and retirement without fabricating execution
-    - measurement plan provides operational definitions and separates engineering gates from empirical value measures
-    - validation plan requires real intended-use evidence and does not substitute TECH-VER
-    - maintenance plan requires controlled change/reverification and selective revalidation
-    - disposal plan preserves historical truth while defining protected operational-data disposition
-    - applicable generic and specific GOST content profiles are declared with paired ISO/GOST trace
-    - existing narrow E0/S01 SEMP remains subordinate rather than silently repurposed
+    - integrated participant model must distinguish organizational stakeholders from SE enabling/supplier system
+    - client, RIC, Network and SE authority/evidence flows must be explicit and non-transferring
+    - lifecycle concept must reference current TM-MEAS V2 and current benefit proof V2
+    - benefit proof BP-05 must use C16 rather than preserve the obsolete missing-metric statement
+    - stakeholder identification must not be promoted to accepted stakeholder needs/requirements without direct evidence
+    - system requirements/architecture/design/implementation remain engineering candidates and are not falsely traced from nonexistent accepted P02
+    - current durable products must remain canonical ProcessType/O products with applicable GOST/ISO composition
+    - TECH-VER must not substitute real intended-use TECH-VAL
+    - future acquisition, real operation, post-decision observation and Network use must remain blocked or conditional until evidenced
 context_and_assumptions:
-  branch_purpose_change_authority: owner explicitly requested «поменяй назначение под это»
-  upstream_product: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
-  upstream_execution_capability: ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
-  existing_subordinate_pilot_plan: ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
-  empirical_boundary: no concrete RIC recipient/acquirer, real episode or real use evidence is established in this request
+  client_repository_base: 1c137b65bc01b59aebb6cf81a93788ba1a1cac80
+  target_branch: change/consultantplus-20260908-integrated-lifecycle-stakeholders
+  interface_binding: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  generic_SE_interface_anchor: 6d16c0fdb19b47e3ebaa7edb3321230320863d76
+  current_measurement_authority: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+  empirical_boundary:
+    concrete_RIC_acquirer: absent
+    real_client_episode_for_execution: absent
+    accepted_stakeholder_needs_requirements: absent
+    real_measurement_register: absent
+    real_RIC_C14_decision_use: absent
+    comparable_C15_observation: absent
+    actual_authorized_Network_C16: absent
+    real_TECH_VAL_report: absent
 body:
   verification_method_and_evidence:
     method: >-
-      Compare the six exact candidate products against owner request, process-purpose/canonical O ownership,
-      normative-first crosswalk, GOST generic/specific composition, paired-standard trace requirements, current Proposal
-      and E0/S01 execution products; inspect lifecycle stage state and measurement/authority boundaries.
+      Compare the current exact ArtifactVersions against owner request, integrated authority/evidence model, current TM-MEAS V2,
+      canonical ProcessType/O ownership, normative-first crosswalk and GOST composition, and inspect every claim that could
+      incorrectly convert engineering readiness into stakeholder acceptance, empirical usefulness or Network adoption.
     evidence:
+      - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+      - ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
+      - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+      - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
       - ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1
       - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
       - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
-      - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-      - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
-      - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
-      - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
   criteria_results:
-    - {id: V-LC-01, criterion: dual lifecycle coverage, result: pass_candidate, evidence: supplier S0-S9 and client C0-C9 plus gates G0-G7 are explicit}
-    - {id: V-LC-02, criterion: canonical current products, result: pass_candidate, evidence: current targets are TECH-BMA life cycle concepts; TM-PLAN SEMP; TM-MEAS strategy; TECH-VAL strategy; TECH-MNT strategy; TECH-DSP strategy}
-    - {id: V-LC-03, criterion: future truth boundary, result: pass, evidence: acquisition transition real operation validation maintenance result and disposal result are blocked/conditional/not_due}
-    - {id: V-LC-04, criterion: standard composition mapping, result: pass_candidate_pending_worker, evidence: products declare §7.2+10.15, §7.3+10.55/10.46/10.89/10.44/10.23 respectively}
-    - {id: V-LC-05, criterion: metric operationalization, result: pass_candidate, evidence: S01-S12 C01-C15 and G01-G07 define meaning/value/source or use rules; empirical C thresholds are not fabricated}
-    - {id: V-LC-06, criterion: existing evidence compatibility, result: pass, evidence: Wave1 compatible episode measures are reused and Proposal V4 evidence boundaries retained}
-    - {id: V-LC-07, criterion: validation vs verification separation, result: pass, evidence: TECH-VAL plan requires real RIC intended-use evidence; TECH-VER remains conformance gate}
-    - {id: V-LC-08, criterion: maintenance/change discipline, result: pass_candidate, evidence: material changes require standard change/configuration, reverification and revalidation when intended use changes}
-    - {id: V-LC-09, criterion: disposal discipline, result: pass_candidate, evidence: active/protected data disposition is separated from retained canonical history and client-owned copies}
-    - {id: V-LC-10, criterion: no duplicate narrow pilot plan, result: pass, evidence: SEMP V3 is referenced as subordinate and not mutated}
-    - {id: V-LC-11, criterion: unsupported claims, result: pass, evidence: ROI avoided losses general risk Network effect legal correctness and causal client outcome remain excluded unless future evidence supports separately}
-    - {id: V-LC-12, criterion: client authority, result: pass, evidence: AGR-SUP/AGR-ACQ and supplier/client decisions remain separate through BIND-CPLUS-SE-001}
+    - {id: V-INT-01, criterion: integrated participant coverage, result: pass_candidate, evidence: lifecycle V2 explicitly covers clients of RIC, RIC, Network/Coordination Center and SE environment}
+    - {id: V-INT-02, criterion: stakeholder versus enabling-system distinction, result: pass, evidence: SE environment is explicitly participating_engineering_system with authority limit, not organizational stakeholder}
+    - {id: V-INT-03, criterion: authority separation, result: pass, evidence: authority_edges preserve authority_transfer=false and participant-specific decision ownership}
+    - {id: V-INT-04, criterion: current measurement alignment, result: pass, evidence: lifecycle V2 and proof V2 reference TM-MEAS V2 and require C16 for Network decision-use}
+    - {id: V-INT-05, criterion: stale BP-05 gap removed, result: pass, evidence: proof V2 records design_gap_status closed_by measurement V2 C16 and keeps empirical C16 absent}
+    - {id: V-INT-06, criterion: stakeholder-needs truth boundary, result: pass, evidence: accepted TECH-STK stakeholder needs/requirements remain blocked until direct authorized RIC evidence}
+    - {id: V-INT-07, criterion: technical vertical preserved without false provenance, result: pass, evidence: SYSREQ/ARCH/DES/IMP remain candidate engineering products and are not declared accepted outputs of nonexistent P02}
+    - {id: V-INT-08, criterion: verification versus validation, result: pass, evidence: TECH-VER is subject/conformance evidence; TECH-VAL remains real intended-use process}
+    - {id: V-INT-09, criterion: future-state truthfulness, result: pass, evidence: real RIC acquisition, client episode, C14, C15, C16 and TECH-VAL are blocked/conditional}
+    - {id: V-INT-10, criterion: standard product identity and composition, result: pass_candidate_pending_worker, evidence: lifecycle V2 declares §7.2+§10.15; proof V2 §7.6+§10.27; this report §7.6+§10.93 with paired ISO/GOST trace}
+    - {id: V-INT-11, criterion: exact current-version chain, result: pass_candidate, evidence: V2 references supersede stale V1 references for lifecycle/proof/measurement while unchanged products retain exact V1/V2 identities}
+    - {id: V-INT-12, criterion: no generalized value claim, result: pass, evidence: ROI, avoided losses, general risk reduction, Network prevalence and causal client outcome remain excluded without evidence}
   detailed_results:
-    subject_lifecycle_coherence: pass_candidate
-    current_product_identity: pass_candidate
-    metrics_definition_quality: pass_candidate
+    participant_model: pass_candidate
     authority_boundary: pass
-    future_state_truthfulness: pass
-    empirical_validation: not_performed
-    exact_head_structural_verification: pending
+    current_version_alignment: pass_candidate
+    measurement_C16_alignment: pass
+    GOST_composition_declarations: pass_candidate_pending_external_client_worker
+    benefit_falsifiability: pass
+    accepted_stakeholder_needs_requirements: absent_by_design_blocked
+    empirical_RIC_usefulness: not_verified
+    empirical_client_outcome: not_verified
+    empirical_Network_decision_use: not_verified
+    TECH_VAL: not_performed
+    exact_head_structural_verification: pending_local_core_external_client_worker
     owner_acceptance: separate
   problems_encountered:
-    - {id: P-LC-01, problem: a request to «go through the full lifecycle» can be misread as authority to invent future lifecycle events, disposition: complete planning/decomposition now and stop factual execution at external/client evidence gates}
-    - {id: P-LC-02, problem: existing Wave1 measurement and one-pilot SEMP have narrower purposes, disposition: create product-lifecycle plans as separate canonical ArtifactInstances and reuse narrow products by exact reference}
-    - {id: P-LC-03, problem: positive-value thresholds cannot be justified before real pilot evidence, disposition: hard engineering targets only where requirements/service terms exist; empirical client measures initially descriptive}
-    - {id: P-LC-04, problem: stakeholder requirements for a concrete RIC are unavailable, disposition: do not create TECH-STK requirement products until an actual RIC/authorized stakeholder evidence exists}
+    - {id: P-INT-01, problem: former lifecycle concept modeled only supplier-SE and client-RIC tracks, disposition: V2 replaces the presentation with integrated participant/evidence tracks and authority edges}
+    - {id: P-INT-02, problem: proof model V1 stated that Network decision-use metric was missing although TM-MEAS V2 had added C16, disposition: proof V2 references TM-MEAS V2 and treats only empirical C16 evidence as missing}
+    - {id: P-INT-03, problem: wording could treat SE environment as another stakeholder and accidentally transfer requirements authority, disposition: classify SE as enabling/supplier system; organizational stakeholder evidence stays with clients/RIC/Network}
+    - {id: P-INT-04, problem: full lifecycle wording could imply future client/Network execution already happened, disposition: current gates explicitly mark external states blocked/conditional/not_due}
+    - {id: P-INT-05, problem: structural PASS could be mistaken for real usefulness, disposition: keep subject TECH-VER, external structural worker and TECH-VAL separate}
   verification_decisions:
-    - {decision: current lifecycle package is subject-suitable for exact-head structural verification, rationale: products cover the requested lifecycle planning without claiming blocked empirical/client states}
-    - {decision: do not create client AGR-ACQ or TECH-STK products yet, rationale: no named acquirer/RIC stakeholder evidence exists}
-    - {decision: next factual lifecycle work is resolve a concrete RIC/acquirer/recipient then execute one real E0/S01 pilot, rationale: engineering decomposition is no longer the first blocker}
-    - {decision: no merge implied, rationale: current owner request authorizes work and purpose change but does not explicitly authorize merging the new PR set}
+    - decision: PASS_INTEGRATED_LIFECYCLE_SUBJECT_DESIGN
+      rationale: participant, authority, evidence and current-version relations are coherent and falsifiable in the declared design scope
+    - decision: CLOSE_OBSOLETE_BP05_METRIC_DESIGN_GAP
+      rationale: C16 exists in TM-MEAS V2; only actual Network decision-use evidence remains absent
+    - decision: BLOCK_ACCEPTED_TECH_STK_REQUIREMENTS_UNTIL_DIRECT_EVIDENCE
+      rationale: stakeholder identification and internal analysis cannot establish accepted needs/requirements for a concrete RIC
+    - decision: BLOCK_EMPIRICAL_VALUE_CLAIMS_UNTIL_REAL_EXECUTION_AND_TECH_VAL
+      rationale: real RIC/client/Network observations are absent
+    - decision: REQUIRE_LOCAL_EXACT_HEAD_EXTERNAL_CLIENT_STRUCTURAL_VERIFICATION
+      rationale: this subject pass does not verify current repository structure/complete normative traces mechanically
+  current_completion_state:
+    subject_goal: achieved_for_internal_integration_design
+    structural_goal: active_pending_local_verification
+    empirical_goal: blocked_external_evidence
+    material_gaps_after_subject_pass:
+      - local exact-head external-client structural verification evidence
+      - concrete RIC/acquirer and direct stakeholder evidence
+      - real client episode and TM-MEAS measurement register
+      - RIC C13/C14 decision-use evidence
+      - comparable C15 observation when applicable
+      - actual authorized Network C16 decision-use evidence
+      - real TECH-VAL report
 conclusions_and_recommendations:
   conclusion: >-
-    Full lifecycle is now decomposed into standard product-bearing processes with a lifecycle-wide measurement system.
-    Subject correctness is adequate for worker verification. The first real lifecycle blocker is a concrete RIC/acquirer/
-    recipient and real episode, not a missing engineering document. Empirical value remains intentionally unclaimed.
-  recommendation: >-
-    Obtain exact-head structural PASS. Then, after owner merge authority if desired, resolve one concrete RIC and move
-    through AGR-ACQ/AGR-SUP → transition → real E0/S01 operation → TECH-VAL report. Only measured evidence from that
-    sequence should drive stakeholder requirements, changes, scaling or pricing.
+    The current internal lifecycle set is now integrated through the participants that matter: client of RIC → RIC →
+    ConsultantPlus Network/Coordination Center, with SE environment as the enabling/supplier engineering system across the chain.
+    The internal version drift around C16 is corrected. Subject verification passes, but engineering completion/readiness still
+    requires local exact-head structural verification and empirical usefulness remains blocked by real external evidence.
+  recommendations:
+    - run SE local core verification against the exact client branch head through the request TECH-OP external-client declaration
+    - do not create accepted stakeholder needs/requirements until a real authorized RIC provides direct evidence
+    - next empirical transition is one real E0/S01 RIC/client episode followed by C13/C14 and TECH-VAL
+    - after repeated comparable evidence, use C16 only in an identified authorized Network decision context
 references:
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+  - ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
   - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-MAINTENANCE-PLAN-20260907-001-V1
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-DISPOSAL-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
 bibliography:
-  - ISO/IEC/IEEE 15288:2023
-  - ГОСТ Р 57193-2025
-  - ISO/IEC/IEEE 15289:2017
-  - ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017
+  - 'ISO/IEC/IEEE 15288:2023 — Systems and software engineering — System life cycle processes'
+  - 'ГОСТ Р 57193-2025 — Системная и программная инженерия. Процессы жизненного цикла систем'
+  - 'ISO/IEC/IEEE 15289:2017 — Content of life-cycle information items (documentation)'
+  - 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017 — Состав и содержание информационных элементов жизненного цикла'
 glossary:
   subject_verification: semantic/conceptual conformance review in declared scope; not empirical validation
-  full_lifecycle_package: six current planning/decomposition products plus this verification report
-  blocked_future_state: standard lifecycle product/process is identified but cannot be truthfully instantiated from current evidence
-  hard_metric: requirement/service-term conformance measure
-  empirical_metric: real-use observation initially descriptive until an evidence-based threshold is separately established
+  integrated_participant_lifecycle: linked evidence and authority graph across client, RIC, Network and SE enabling system
+  external_client_structural_worker: SE-owned mechanical verification of client process-owned product identity/composition/trace at exact SHA
+  C16: measurement of actual bounded Network decision-use; receipt or transmission alone does not satisfy it
+  blocked_future_state: lifecycle state whose canonical process/product is identified but whose factual execution lacks required evidence or authority
 change_history:
-  - {version: V1, date: '2026-09-07', change: verify full dual-lifecycle package, metric discipline and future-state truth boundary}
+  - {version: V1, date: '2026-09-07', change: verify dual full lifecycle planning package and future-state truth boundary}
+  - {version: V2, date: '2026-09-08', change: verify integrated client-RIC-Network-SE lifecycle, current exact-version alignment and C16 reconciliation}
+unresolved:
+  - local exact-head structural worker result for this branch
+  - concrete RIC/acquirer and authorized direct stakeholder evidence
+  - accepted TECH-STK stakeholder needs and requirements
+  - real TM-MEAS measurement register and RIC C13/C14 evidence
+  - comparable post-decision C15 observation
+  - actual authorized Network C16 decision-use evidence
+  - real TECH-VAL report and any later scaling/adoption decision
 owner_product_request:
-  exact_visible_text: |-
-    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
-    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
-  request_specific_requirements: [verify full lifecycle and metrics, standard product mapping, GOST composition, client/SE authority separation, no fabricated future state]
+  exact_visible_text: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
+  current_dialogue_branch_purpose: 'в интерфейсе кплюс@Доказательная модель клиентской ценности Сети «КонсультантПлюс» по открытым источникам(1).docx сделай краткую версию для директора РИЦ, которая побудит воспользоваться услугой/предложением этой среды. стандартизируй продукт и состав по ГОСТ'
+  request_specific_requirements:
+    - implement and subject-verify the integrated lifecycle correction rather than only describe the gap
+    - verify current exact product versions through clients of RIC, RIC, ConsultantPlus Network and SE environment
+    - reconcile proof model with measurement V2/C16
+    - retain blockers for missing accepted stakeholder requirements, real operation and TECH-VAL
+    - prepare the result for local exact-head verification without claiming worker PASS before it is run
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_VER_report
+  applicability: applies_materially_changed_client_TECH_VER_verification_report
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.criteria_results]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
-    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, verification]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, unresolved, verification]}
     - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.verification_method_and_evidence]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_subject_candidate_pending_exact_head_external_client_worker}
 verification:
-  structural_status: pending_fresh_exact_head
-  semantic_status: pass_candidate_full_lifecycle_metric_and_truth_boundary
-  owner_acceptance: purpose_change_and_execution_authorized_merge_adoption_external_and_empirical_validation_separate
+  structural_status: pending_exact_head_external_client_worker
+  semantic_status: PASS_INTEGRATED_LIFECYCLE_SUBJECT_DESIGN_WITH_EXPLICIT_EXTERNAL_EVIDENCE_BLOCKERS
+  verification_result: PASS_WITH_EXPLICIT_EXTERNAL_EVIDENCE_BLOCKERS
+  owner_acceptance: execution_authorized; merge_RIC_Network_client_acceptance_TECH_VAL_and_adoption_separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260908-integrated-lifecycle-stakeholders
 information_product_applicability: applies
 standards_trace:
   process:
@@ -202,7 +266,7 @@ standards_trace:
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: verification report, resolution_basis: TECH-VER exact binding to GOST 10.93, state: resolved}
+  information_item_identity: {resolved_name_or_semantic_identity: integrated lifecycle verification report, resolution_basis: TECH-VER verification report exact binding to §10.93, state: resolved}
   universal_type: report
   universal_content:
     source_section: '7.6'
@@ -221,7 +285,15 @@ content_compliance:
       - {requirement_id: U7.6-K, state: satisfied, artifact_field_refs: [bibliography]}
       - {requirement_id: U7.6-L, state: satisfied, artifact_field_refs: [glossary]}
       - {requirement_id: U7.6-M, state: satisfied, artifact_field_refs: [change_history]}
-  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: exact, generic_type: report, specific_profiles: ['10.93'], specific_records: [], local_additive_profile: null}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: exact
+    generic_type: report
+    specific_profiles: ['10.93']
+    specific_records: []
+    local_additive_profile: null
   normative_specific_content:
     state: pass
     profile_coverage:
@@ -237,5 +309,5 @@ content_compliance:
           - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
           - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decisions]}
   local_additive_content: {state: not_applicable, basis: no local additive profile selected}
-  tailoring: verifies planning/decomposition package only; empirical TECH-VAL remains future real-use process
-  information_item_management: {version_control: V1, review_approval: subject pass does not imply owner acceptance/merge/client use, quality_evaluation: exact-head worker required, retention: canonical current lifecycle TECH-VER report, reuse_and_duplication: future real validation uses TECH-VAL not successor verification as substitute}
+  tailoring: verifies integrated participant/evidence lifecycle and current-version alignment; empirical TECH-VAL remains future real-use process
+  information_item_management: {version_control: V2, review_approval: subject pass does not imply owner acceptance merge or client/Network use, quality_evaluation: exact-head external-client worker required, retention: canonical current integrated lifecycle TECH-VER report, reuse_and_duplication: future empirical validation uses TECH-VAL not successor verification as substitute}

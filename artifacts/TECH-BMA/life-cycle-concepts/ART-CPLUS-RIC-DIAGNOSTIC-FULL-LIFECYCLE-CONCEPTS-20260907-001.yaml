@@ -1,187 +1,231 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001
-artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
-supersedes_artifact_version_id: null
+artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
 artifact_label: life cycle concepts
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_full_lifecycle_defined_actual_future_gates_open
-acceptance_status: lifecycle_concept_candidate_owner_acceptance_and_client_adoption_separate
+lifecycle_status: owner_directed_candidate_integrated_participant_lifecycle_defined_real_use_gates_open
+acceptance_status: lifecycle_concept_candidate_owner_RIC_Network_and_client_acceptance_separate
 artifact_instance_purpose: >-
-  Описать полный связанный жизненный цикл продукта «Диагностика клиентского случая РИЦ» одновременно
-  в двух контурах: как продукта, производимого SE-средой для клиентской системы, и как приобретаемого,
-  принимаемого, используемого, изменяемого и выводимого из применения продукта конкретного РИЦ.
-  Разделить уже достигнутые состояния, планируемые переходы и переходы, заблокированные отсутствием
-  конкретного РИЦ, получателя, реального эпизода или решения клиента.
+  Описать интегрированный жизненный цикл продукта «Диагностика клиентского случая РИЦ» так, чтобы в одном
+  управляемом контуре были связаны клиенты РИЦ, сам РИЦ, Сеть КонсультантПлюс/Координационный центр и
+  SE-среда, при этом организационные заинтересованные стороны не смешивались с обеспечивающей инженерной
+  системой, а их полномочия, решения, свидетельства и переходы жизненного цикла оставались раздельными.
 producer:
   process_type_id: TECH-BMA
-  process_instance_id: PI-CPLUS-TECH-BMA-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
-  activity_instance_id: AI-CPLUS-TECH-BMA-DEFINE-RIC-DIAGNOSTIC-DUAL-LIFECYCLE-20260907-001
+  process_instance_id: PI-CPLUS-TECH-BMA-RIC-DIAGNOSTIC-INTEGRATED-LIFECYCLE-20260908-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-INTEGRATE-RIC-NETWORK-CLIENT-SE-LIFECYCLE-20260908-001
   methodic_instance:
-    methodic_id: METH-CPLUS-TECH-BMA-DUAL-LIFECYCLE-CONCEPT
-    methodic_version_id: METHVER-CPLUS-TECH-BMA-DUAL-LIFECYCLE-CONCEPT-V1
-    methodic_version: dual_supplier_client_lifecycle_v1
+    methodic_id: METH-CPLUS-TECH-BMA-INTEGRATED-PARTICIPANT-LIFECYCLE
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-INTEGRATED-PARTICIPANT-LIFECYCLE-V2
+    methodic_version: integrated_participant_lifecycle_v2
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-20260907-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-INTEGRATED-LIFECYCLE-20260908-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-07', status: candidate_dual_lifecycle_defined}
+issued_at_and_status: {issued_at: '2026-09-08', status: candidate_integrated_lifecycle_defined}
 scope: >-
-  Product-specific lifecycle from opportunity and definition through supply/acquisition, transition, operation,
-  validation, maintenance/improvement and disposal. The lifecycle concept does not assert that future client-side
-  processes have occurred; it identifies their standard products, transition criteria and blockers.
+  Product-specific integrated lifecycle from opportunity and engineering definition through supply/acquisition,
+  real client-episode evidence, RIC use and decision, bounded Network decision-use, change/retest, validation,
+  maintenance and disposal. Future external transitions remain blocked until their required real evidence exists.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 references:
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
   - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-SEMP-20260906-001-V3
   - ARTVER-CPLUS-OFFER-EXECUTION-SYSTEM-REQUIREMENTS-20260905-001-V2
   - ARTVER-CPLUS-OFFER-EXECUTION-ARCHITECTURE-20260905-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-DESIGN-20260905-001-V1
   - ARTVER-CPLUS-OFFER-EXECUTION-IMPLEMENTATION-PROCEDURE-20260905-001-V1
-  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V1
+  - ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
   - ARTVER-SE-PROCESS-PURPOSE-OUTCOME-ORGANIZATION-PROCESSES-20260906-001-V1
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
 context:
-  current_product: «Диагностика клиентского случая РИЦ» / E0-S01 one-episode pilot
+  current_product: «Диагностика клиентского случая РИЦ» / E0-S01 one-episode pilot and repeatable successor executions
   semantic_owner: MOZ1961/consultantplus
   producing_environment: SE-GENERIC-ENVIRONMENT through BIND-CPLUS-SE-001
-  client_environment: concrete RIC operational environment, currently not_resolved
-  invariant: >-
-    The SE environment may produce and verify client-owned ArtifactVersions through the interface, but client-system
-    authority, acquisition, acceptance, operational adoption and empirical validation are not transferred to MOZ1961/se.
-designation: CPLUS-RIC-DIAGNOSTIC-DUAL-LIFECYCLE-V1
+  client_system: SYS-CPLUS-NETWORK-001
+  authority_invariant: >-
+    Клиенты РИЦ, РИЦ и Сеть/Координационный центр являются организационными участниками с собственными
+    решениями и свидетельствами. SE-среда является обеспечивающей/поставляющей инженерной системой и не
+    получает полномочий принимать за них потребности, требования, решения, внедрение, аттестацию или baseline.
+  evidence_invariant: >-
+    Создание документа, успешный worker, TECH-VER, commit, PR или merge не доказывают полезность для РИЦ,
+    клиентский эффект или использование результата Сетью; такие состояния требуют реальных наблюдений.
+designation: CPLUS-RIC-DIAGNOSTIC-INTEGRATED-LIFECYCLE-V2
 body:
   user_and_stakeholder_perspective:
-    supplier_side_users: [owner, engineering actor, verifier]
-    client_side_users: [RIC director, authorized RIC participant, RIC service or training owner]
-    ultimate_subject: professional client decision episode in which ConsultantPlus and/or RIC support may contribute
+    stakeholder_groups:
+      clients_of_RIC:
+        source_groups: [SG-01, SG-02, SG-03, SG-04]
+        role: источник реальных профессиональных эпизодов, фактических ограничений и наблюдаемого результата решения
+        authority: собственные профессиональные и организационные решения; не полномочия РИЦ или Сети
+      RIC:
+        source_groups: [SG-06]
+        role: приобретатель/получатель диагностики, владелец решений о сопровождении, обучении, процессе и локальном позиционировании
+        authority: решения своего РИЦ и использование результата диагностики
+      ConsultantPlus_Network_and_Coordination_Center:
+        source_groups: [SG-07]
+        role: потенциальный получатель повторяющегося проверенного сигнала для продуктового, сервисного или методического решения
+        authority: решения Сети только при фактически идентифицированном уполномоченном получателе и конкретном контексте решения
+    participating_engineering_system:
+      system: SE-GENERIC-ENVIRONMENT
+      actors: [owner, engineering actor, verifier]
+      role: структурировать, трассировать, измерять, производить и верифицировать process-owned продукты через BIND-CPLUS-SE-001
+      authority_limit: не является источником принятых потребностей/требований клиента, РИЦ или Сети и не заменяет TECH-VAL
     intended_use: >-
-      Give a RIC a traceable reconstruction of one real client decision path, distinguish contributions and gaps,
-      and provide evidence suitable for a concrete RIC decision about service, training, process or further research.
-    non_intended_claims: [ROI, prevented fines or losses, general risk reduction, Network prevalence, Coordination Center adoption, legal correctness, measurable client outcome before retest]
+      Связать один реальный клиентский путь решения с вкладом КонсультантПлюс и РИЦ, дать РИЦ проверяемое
+      основание для решения и при повторениях сформировать ограниченный сигнал, который может быть отдельно
+      использован или отвергнут уполномоченным участником Сети.
+    non_intended_claims: [ROI, prevented fines or losses, general risk reduction, Network prevalence, Coordination Center adoption, legal correctness, causal client outcome without comparable observation]
   interfaces_and_organizational_impacts:
-    supplier_client_intersection:
-      supply_side: AGR-SUP
-      acquisition_side: AGR-ACQ
-      interface: BIND-CPLUS-SE-001 plus actual RIC communication/agreement interface when resolved
-      authority_rule: Proposal or delivery by supplier does not constitute acquisition, acceptance or adoption by RIC
+    authority_edges:
+      - {from: client_of_RIC, to: RIC, exchange: deidentified episode evidence and factual review, authority_transfer: false}
+      - {from: RIC, to: SE_environment, exchange: authorized pilot input, decision context and review, authority_transfer: false}
+      - {from: SE_environment, to: RIC, exchange: exact diagnostic and verification package, authority_transfer: false}
+      - {from: RIC_and_repeated_evidence, to: Network_authorized_decision_maker, exchange: bounded aggregate signal, authority_transfer: false}
+      - {from: Network_authorized_decision_maker, to: TM_MEAS, exchange: actual C16 use/reject/insufficient/duplicate disposition, authority_transfer: false}
     information_flow: >-
-      owner/РИЦ authority → minimized episode evidence → TM-MEAS record → TECH-BMA diagnostic report → TECH-VER report
-      → exact package delivery → RIC decision/feedback → optional change request and later retest.
-    product_state_location: client lifecycle products persist in MOZ1961/consultantplus; generic request functioning persists in MOZ1961/se
+      real client episode → minimized evidence → TM-MEAS register → TECH-BMA diagnostic → TECH-VER → RIC factual review
+      and C14 decision-use → optional RIC change → comparable later observation/C15 → repeated bounded evidence → identified
+      Network decision context → C16 disposition → optional Network change/retest. SE-среда обеспечивает трассу и проверку,
+      но не подменяет решения участников.
+    product_state_location: client lifecycle products persist in MOZ1961/consultantplus; request functioning persists in MOZ1961/se
   cost_criticality_feasibility:
     first_pilot_price_rub: 0
     supplier_internal_effort_existing_estimate: 4-6 actor-hours excluding waiting time
     delivery_commitment_existing: up to 3 working days from adequate input and agreed session
     RIC_session_target_existing: 45-60 minutes plus optional review up to 30 minutes
-    criticality: evidence integrity, privacy minimization and avoidance of unsupported attribution are critical to trustworthy use
-    feasibility: minimum E0/S01 requirements, architecture, design and actor-executable implementation already exist as candidates; real usefulness remains unvalidated
+    criticality: evidence integrity, privacy minimization, authority separation and avoidance of unsupported attribution
+    feasibility: engineering definition and execution capability exist as candidates; real usefulness remains empirically unvalidated
   operational_scenarios:
-    - id: SC-SUP-01
-      scenario: SE environment receives owner-authorized RIC pilot input, executes E0/S01, produces exact client-owned evidence/analysis/verification products and records request functioning.
     - id: SC-CLIENT-01
-      scenario: RIC acquires or accepts the pilot, provides one authorized participant and episode, receives the verified package and decides whether a concrete service/training/process action is warranted.
-    - id: SC-CLIENT-02
-      scenario: if RIC implements a change, a later comparable episode is reconstructed and measured; only this later cycle can support before/after evidence.
-    - id: SC-SCALE-01
-      scenario: repeated independently verified episodes may justify multi-episode or Network-facing research, but scaling requires separate evidence and authority.
+      scenario: клиент РИЦ сталкивается с реальной профессиональной ситуацией, принимает решение и предоставляет только минимально необходимое обезличенное свидетельство для реконструкции.
+    - id: SC-RIC-01
+      scenario: РИЦ авторизует один эпизод, получает проверенный пакет, подтверждает/исправляет факты и фиксирует C14 — использовал, не использовал или счел результат недостаточным для конкретного решения.
+    - id: SC-SE-01
+      scenario: SE-среда исполняет E0/S01, ведет exact trace, измерения и TECH-VER, не повышая аналитические выводы до принятых требований или аттестации.
+    - id: SC-RIC-RETEST-01
+      scenario: если РИЦ принимает изменение, заранее определяется сопоставимое последующее наблюдение; C15 фиксируется только после фактического наблюдения.
+    - id: SC-NETWORK-01
+      scenario: после повторных сопоставимых эпизодов ограниченный сигнал передается конкретному уполномоченному участнику Сети; C16 фиксирует реальное использование, отклонение, дублирование или недостаточность сигнала.
   current_future_comparison:
     current_state: >-
-      Proposal V4 is merged and evidence-backed. Minimum E0/S01 requirements/architecture/design/implementation exist.
-      A prior pilot SEMP covers production of one package. No concrete RIC recipient, acquisition decision, actual delivery,
-      real episode, real validation report, operational series, maintenance result or disposal result has yet been established.
+      Proposal V4, stakeholder identification V2, engineering requirements/architecture/design/implementation, lifecycle plans,
+      measurement plan V2 with C16 and candidate proof model V2 exist or are produced in this change. No accepted TECH-STK
+      stakeholder needs/requirements for a concrete RIC, no real measurement register, no real RIC decision-use, no post-change
+      comparable observation and no actual Network C16 evidence are established.
     future_state: >-
-      A controlled lifecycle in which each transition is evidenced by canonical process products; empirical value is measured
-      in real RIC episodes; material changes are reverified; retirement/disposal preserves audit history while disposing of protected data appropriately.
+      A controlled integrated lifecycle in which client evidence, RIC decision-use, post-decision observation and Network decision-use
+      are separately evidenced by standard products, with every material accepted change reverified and selectively revalidated.
     assumptions_constraints:
-      - a real RIC/acquirer must be identified before AGR-ACQ or actual transition can be claimed
-      - one episode validates only pilot-level usefulness, not Network-wide effect
-      - a diagnostic finding is evidence/candidate input and not automatically a stakeholder requirement or change request
-      - client-side adoption and change implementation are separate lifecycle decisions owned by the RIC
+      - real stakeholder needs and requirements are created only after direct authorized evidence; stakeholder identification is not a substitute
+      - one client episode can support only bounded episode/RIC claims and cannot establish Network-wide effect
+      - SE-sреда is a participating enabling/supplier system, not an organizational stakeholder whose preferences become client requirements
+      - actual Network decision-use requires C16 with identified authority, context and decision/disposition evidence
+      - TECH-VER proves conformance/subject coherence in declared scope; TECH-VAL requires real intended-use evidence
+  integrated_participant_model:
+    chain:
+      - {step: P0, participant: client_of_RIC, state_transformation: professional situation becomes an evidenced decision episode, evidence: real deidentified episode}
+      - {step: P1, participant: RIC, state_transformation: episode becomes an authorized diagnostic use context, evidence: actual participant and RIC authority}
+      - {step: P2, participant: SE_environment, state_transformation: evidence becomes traceable diagnostic and verification products, evidence: exact ArtifactVersions and S/G measures}
+      - {step: P3, participant: RIC, state_transformation: diagnostic becomes explicit decision-use disposition, evidence: C13 and C14}
+      - {step: P4, participant: client_of_RIC_and_RIC, state_transformation: accepted change or reasoned no-action becomes observed later state, evidence: C15 when comparable}
+      - {step: P5, participant: Network_authorized_decision_maker, state_transformation: repeated bounded signal becomes actual Network decision-use disposition, evidence: C16}
+      - {step: P6, participant: relevant_authority, state_transformation: accepted change is implemented/reverified/revalidated or work stops, evidence: canonical change/configuration/verification/validation products}
+    cross_cutting_rule: each step may end supported, not_supported, insufficient_evidence or not_applicable; absent evidence is not synthesized
   lifecycle_tracks:
     supplier_SE_environment:
-      - {stage: S0_opportunity_and_value_basis, processes: [TECH-BMA], canonical_products: [business or mission analysis report, life cycle concepts], state: candidate_evidence_exists}
+      - {stage: S0_opportunity_and_integrated_value_basis, processes: [TECH-BMA, TECH-STK], canonical_products: [business or mission analysis report, life cycle concepts, stakeholder identification], state: candidate_evidence_exists}
       - {stage: S1_definition, processes: [TECH-SYSREQ, TECH-ARCH, TECH-DES], canonical_products: [system requirements, system architecture description, system design description], state: E0_S01_candidate_products_exist}
       - {stage: S2_implementation, processes: [TECH-IMP], canonical_products: [implementation procedure], state: actor_executable_candidate_exists}
-      - {stage: S3_verification, processes: [TECH-VER], canonical_products: [verification report], state: canary_and_proposal_subject_verification_exist_exact_head_each_change_required}
+      - {stage: S3_verification, processes: [TECH-VER], canonical_products: [verification report], state: current_subject_verification_authored_exact_head_structural_verification_pending}
       - {stage: S4_supply, processes: [AGR-SUP], canonical_products: [supply response, supply records/artifacts], state: Proposal_V4_merged_external_delivery_not_completed}
-      - {stage: S5_transition_and_delivery, processes: [TECH-TRN, AGR-SUP], canonical_products: [transition report, supply records/artifacts], state: blocked, blocker: concrete_recipient_channel_and_acquisition_or_issue_authority}
-      - {stage: S6_operation, processes: [TECH-OP, TM-MEAS, TECH-BMA, TECH-VER], canonical_products: [operation report, measurement register, business or mission analysis report, verification report], state: blocked, blocker: real_authorized_RIC_episode}
-      - {stage: S7_validation, processes: [TECH-VAL], canonical_products: [validation strategy/approach, validation report], state: plan_now_execution_blocked, blocker: real_operational_use_and_validation_evidence}
-      - {stage: S8_maintenance_and_improvement, processes: [TECH-MNT, TM-CM, TM-PAC], canonical_products: [maintenance and logistics strategy/approach, change request, configuration baseline, project status report/dashboard], state: plan_now_execution_conditional, blocker: observed_problem_change_or_improvement_decision}
-      - {stage: S9_disposal, processes: [TECH-DSP], canonical_products: [disposal strategy/approach, disposed system], state: plan_now_execution_not_due}
-    client_RIC:
-      - {stage: C0_problem_or_opportunity, processes: [TECH-BMA], canonical_products: [problem or opportunity statement], state: specific_RIC_not_established}
-      - {stage: C1_acquisition, processes: [AGR-ACQ], canonical_products: [acquisition need, acquisition strategy/approach, request for supply, acquisition agreement], state: blocked, blocker: named_RIC_and_acquirer_decision}
-      - {stage: C2_stakeholder_definition, processes: [TECH-STK], canonical_products: [stakeholder needs and requirements, validation criteria], state: blocked, blocker: authorized_RIC_stakeholders_and_direct_evidence}
-      - {stage: C3_acceptance_and_transition, processes: [AGR-ACQ, TECH-TRN], canonical_products: [accepted system or system element, transition report], state: blocked, blocker: acquisition_and_verified_delivery}
-      - {stage: C4_use_and_decision, processes: [TECH-OP, TM-MEAS, TM-DEC], canonical_products: [operation report, measurement register, decision register], state: blocked, blocker: real_package_use_by_RIC}
-      - {stage: C5_change_implementation, processes: [TM-PAC, TECH-SYSREQ, TECH-ARCH, TECH-DES, TECH-IMP, TECH-VER], canonical_products: [change request, system requirements, system architecture description, system design description, implementation procedure, verification report], state: conditional, condition: RIC_accepts_specific_improvement}
-      - {stage: C6_retest_and_validation, processes: [TM-MEAS, TECH-VAL], canonical_products: [measurement register, measurement report, validation report], state: conditional, condition: comparable_post_change_episode}
-      - {stage: C7_sustained_operation_or_scaling, processes: [TECH-OP, TM-PAC], canonical_products: [operation report, project status report/dashboard], state: conditional, condition: repeated_use_and_owner_RIC_authority}
-      - {stage: C8_maintenance, processes: [TECH-MNT], canonical_products: [maintenance and logistics report], state: conditional}
-      - {stage: C9_retirement, processes: [TECH-DSP], canonical_products: [disposed system], state: not_due}
+      - {stage: S5_operation_support, processes: [TECH-OP, TM-MEAS, TECH-BMA, TECH-VER], canonical_products: [operation report, measurement register, business or mission analysis report, verification report], state: blocked, blocker: real_authorized_RIC_episode}
+      - {stage: S6_validation_support, processes: [TECH-VAL], canonical_products: [validation strategy/approach, validation report], state: plan_exists_execution_blocked, blocker: real_operational_use_and_validation_evidence}
+      - {stage: S7_maintenance_and_disposal, processes: [TECH-MNT, TM-CM, TM-PAC, TECH-DSP], canonical_products: [maintenance and logistics strategy/approach, change request, configuration baseline, disposal strategy/approach], state: conditional_or_not_due}
+    RIC:
+      - {stage: R0_problem_or_opportunity, processes: [TECH-BMA], canonical_products: [problem or opportunity statement], state: candidate_only_specific_RIC_not_established}
+      - {stage: R1_acquisition_and_stakeholder_definition, processes: [AGR-ACQ, TECH-STK], canonical_products: [acquisition need, request for supply, stakeholder needs and requirements, validation criteria], state: blocked, blocker: named_RIC_authority_and_direct_stakeholder_evidence}
+      - {stage: R2_acceptance_and_use, processes: [AGR-ACQ, TECH-TRN, TECH-OP, TM-MEAS, TM-DEC], canonical_products: [accepted system or system element, transition report, operation report, measurement register, decision register], state: blocked, blocker: actual_acquisition_delivery_and_use}
+      - {stage: R3_change_and_retest, processes: [TM-PAC, TECH-SYSREQ, TECH-ARCH, TECH-DES, TECH-IMP, TECH-VER, TECH-VAL], canonical_products: [change request, system requirements, system architecture description, system design description, implementation procedure, verification report, validation report], state: conditional, condition: RIC_accepts_specific_change_and_comparable_retest}
+    clients_of_RIC:
+      - {stage: C0_real_decision_episode, processes: [TM-MEAS, TECH-BMA], canonical_products: [measurement register, business or mission analysis report], state: blocked, blocker: real_authorized_deidentified_episode}
+      - {stage: C1_factual_review, processes: [TM-MEAS], canonical_products: [measurement register], state: blocked, blocker: participant_review_C13}
+      - {stage: C2_post_decision_observation, processes: [TM-MEAS], canonical_products: [measurement register, measurement report], state: conditional, condition: explicit_RIC_change_or_reasoned_no_action_and_comparable_later_observation_C15}
+    ConsultantPlus_Network:
+      - {stage: N0_bounded_signal, processes: [TM-MEAS, TECH-BMA], canonical_products: [measurement report, business or mission analysis report], state: conditional, condition: repeated_comparable_evidence}
+      - {stage: N1_decision_use, processes: [TM-MEAS, TM-DEC], canonical_products: [measurement register, decision register], state: blocked, blocker: identified_authorized_Network_decision_context_and_C16_evidence}
+      - {stage: N2_change_and_retest, processes: [TM-PAC, TECH-SYSREQ, TECH-ARCH, TECH-DES, TECH-IMP, TECH-VER, TECH-VAL], canonical_products: [change request, system requirements, system architecture description, system design description, implementation procedure, verification report, validation report], state: conditional, condition: authorized_Network_change}
   lifecycle_gates:
-    - {gate: G0_definition, criterion: every planned durable result maps to canonical ProcessType/O and applicable GOST composition, current_state: target_of_current_verification}
-    - {gate: G1_engineering_readiness, criterion: exact-head structural PASS plus subject TECH-VER for changed products, current_state: pending_current_PR}
-    - {gate: G2_external_transition, criterion: concrete recipient plus channel plus applicable authority/acquisition state resolved, current_state: blocked}
-    - {gate: G3_real_pilot_operation, criterion: authorized real episode plus adequate input and session, current_state: blocked}
-    - {gate: G4_pilot_validation, criterion: real use evaluated against validation plan without generalizing beyond scope, current_state: blocked}
-    - {gate: G5_change_and_reverify, criterion: every material accepted change gets controlled change/configuration and re-verification, current_state: conditional}
-    - {gate: G6_sustained_use, criterion: repeated real executions and operational measures available, current_state: conditional}
-    - {gate: G7_disposal, criterion: obligations/records/data disposition complete and audit history retained, current_state: not_due}
+    - {gate: G0_integrated_definition, criterion: clients_RIC_Network_and_SE_roles_authorities_evidence_flows_and_standard_products_are_explicit, current_state: candidate_satisfied_by_V2_subject_to_TECH_VER}
+    - {gate: G1_engineering_readiness, criterion: current exact products have subject TECH-VER and external-client structural PASS against active SE contracts, current_state: pending_local_exact_head_verification}
+    - {gate: G2_real_RIC_entry, criterion: named RIC/acquirer, authorized participant, acquisition/use context and adequate input exist, current_state: blocked}
+    - {gate: G3_real_client_episode, criterion: one authorized deidentified real decision episode and factual-review path exist, current_state: blocked}
+    - {gate: G4_RIC_decision_use, criterion: C13 factual state and C14 explicit decision-use disposition are recorded, current_state: blocked}
+    - {gate: G5_post_decision_observation, criterion: comparable C15 observation exists after an explicit RIC decision/change where applicable, current_state: conditional}
+    - {gate: G6_Network_decision_use, criterion: identified authorized Network decision-maker and actual C16 disposition with exact evidence reference exist, current_state: blocked}
+    - {gate: G7_change_reverify_revalidate, criterion: every accepted material change has controlled change/configuration, verification and applicable validation evidence, current_state: conditional}
+    - {gate: G8_disposal, criterion: obligations, protected data disposition and retained audit history are complete, current_state: not_due}
 summary: >-
-  The product has two coupled but authority-separated lifecycles. The SE environment can complete engineering definition,
-  planning, measurement design, verification and supplier-side readiness now. The client lifecycle cannot legitimately pass
-  acquisition/transition/operation/validation gates until a concrete RIC and real episode exist. The next factual lifecycle
-  blocker is therefore not missing engineering decomposition but missing actual client/acquirer/recipient state.
+  V2 replaces the former two-track interpretation with one integrated participant/evidence graph. Three organizational
+  stakeholder domains — clients of RIC, RIC and ConsultantPlus Network/Coordination Center — are linked to the SE environment
+  as an enabling/supplier system. Engineering readiness can be verified now; factual progress beyond G1 remains blocked by
+  real RIC/client/Network evidence and authority, not by another internal document.
 glossary:
-  supplier_lifecycle: lifecycle of producing and supplying the diagnostic capability/package through the SE environment
-  client_lifecycle: lifecycle of acquiring, accepting, using, changing, sustaining and retiring the product within a concrete RIC
+  organizational_stakeholder: person or organization with needs, interests, authority or decisions relevant to the client system
+  SE_environment: enabling/supplier engineering system that produces and verifies artifacts but does not acquire stakeholder authority
+  RIC_decision_use: actual use, rejection or insufficient-for-decision disposition of the diagnostic by an authorized RIC participant, recorded by C14
+  Network_decision_use: actual use, rejection, duplicate or insufficient disposition by an identified authorized Network decision-maker, recorded by C16
+  integrated_lifecycle: linked evidence/authority graph across participant domains rather than independent document tracks
   gate: evidence-backed transition condition; a planned gate is not evidence that the transition occurred
-  E0_S01: one-participant, one-real-episode pilot configuration
-  diagnostic_finding: evidence-backed observation/candidate input that is not automatically a requirement or authorized change
+  diagnostic_finding: evidence-backed observation/candidate input that is not automatically a stakeholder requirement or authorized change
 change_history:
   - {version: V1, date: '2026-09-07', change: establish product-specific dual supplier/client lifecycle and truthful current/future gate states}
+  - {version: V2, date: '2026-09-08', change: integrate clients of RIC, RIC, ConsultantPlus Network/Coordination Center and SE environment into one authority/evidence lifecycle; align gates to TM-MEAS V2 including C16}
 owner_product_request:
-  exact_visible_text: |-
-    какие метрики? пройди полный ЖЦ для этого продукта. ЖЦ как этой среды, так и клиентской
-    поменяй назначение под это. декомпозируй. все своди к стандартным продуктам с составом по ГОСТ
+  exact_visible_text: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
+  current_dialogue_branch_purpose: 'в интерфейсе кплюс@Доказательная модель клиентской ценности Сети «КонсультантПлюс» по открытым источникам(1).docx сделай краткую версию для директора РИЦ, которая побудит воспользоваться услугой/предложением этой среды. стандартизируй продукт и состав по ГОСТ'
   request_specific_requirements:
-    - cover full product lifecycle in both SE-environment supplier and client/RIC tracks
-    - decompose stages, transitions and blockers
-    - map every durable lifecycle result to standard ProcessType/O and GOST composition
-    - do not fabricate future acquisition, delivery, operation, validation, maintenance or disposal evidence
+    - close the identified integrated-lifecycle gap across clients of RIC, RIC, ConsultantPlus Network/Coordination Center and SE environment
+    - preserve stakeholder authority separation and do not classify SE environment as an organizational stakeholder
+    - align the current lifecycle model to measurement plan V2 and dedicated Network decision-use C16
+    - do not fabricate stakeholder needs/requirements, real operation, validation or Network use before direct evidence
+    - keep every durable result as a standard process-owned product with full applicable GOST composition
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_BMA_life_cycle_concepts
+  applicability: applies_materially_changed_client_TECH_BMA_life_cycle_concepts
   requirement_coverage:
     - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.lifecycle_tracks, body.lifecycle_gates]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
     - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.lifecycle_gates, verification]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, context, body.lifecycle_tracks]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, context, body.integrated_participant_model]}
     - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
     - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_external_client_worker}
 verification:
-  structural_status: pending_fresh_exact_head
-  semantic_status: dual_lifecycle_decomposition_candidate_pending_independent_TECH_VER
-  owner_acceptance: purpose_change_and_execution_authorized_product_acceptance_separate
+  structural_status: pending_exact_head_external_client_worker
+  semantic_status: subject_TECH_VER_V2_authored_for_integrated_lifecycle
+  subject_verification_ref: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001-V2
+  owner_acceptance: execution_authorized; RIC_Network_client_acceptance_and_real_TECH_VAL_separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TECH-BMA/life-cycle-concepts/ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-full-lifecycle
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/life-cycle-concepts/ART-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001.yaml@change/consultantplus-20260908-integrated-lifecycle-stakeholders
 information_product_applicability: applies
 standards_trace:
   process:
@@ -213,7 +257,7 @@ standards_trace:
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: product-specific concept of operations/life-cycle concepts, resolution_basis: TECH-BMA life cycle concepts controlled match to GOST 10.15, state: resolved}
+  information_item_identity: {resolved_name_or_semantic_identity: product-specific integrated lifecycle concepts, resolution_basis: TECH-BMA life cycle concepts controlled match to GOST 10.15, state: resolved}
   universal_type: description
   universal_content:
     source_section: '7.2'
@@ -228,7 +272,15 @@ content_compliance:
       - {requirement_id: U7.2-G, state: satisfied, artifact_field_refs: [summary]}
       - {requirement_id: U7.2-H, state: satisfied, artifact_field_refs: [glossary]}
       - {requirement_id: U7.2-I, state: satisfied, artifact_field_refs: [change_history]}
-  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: description, specific_profiles: ['10.15'], specific_records: [], local_additive_profile: null}
+  normative_resolution:
+    catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    route: exact_binding
+    relation: controlled_semantic_match
+    generic_type: description
+    specific_profiles: ['10.15']
+    specific_records: []
+    local_additive_profile: null
   normative_specific_content:
     state: pass
     profile_coverage:
@@ -241,5 +293,5 @@ content_compliance:
           - {requirement_id: S10.15-N04, state: satisfied, artifact_field_refs: [body.operational_scenarios]}
           - {requirement_id: S10.15-N05, state: satisfied, artifact_field_refs: [body.current_future_comparison]}
   local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile}
-  tailoring: dual supplier/client lifecycle is represented inside the product-specific concept; future states remain explicitly blocked or conditional
-  information_item_management: {version_control: V1, review_approval: owner purpose change authorized but product acceptance separate, quality_evaluation: exact-head worker plus TECH-VER, retention: canonical client product, reuse_and_duplication: whole-network life-cycle concept remains separate because this is product-specific}
+  tailoring: integrated participant/evidence lifecycle supersedes the narrower dual-track presentation while preserving authority boundaries and blocked future states
+  information_item_management: {version_control: V2, review_approval: subject TECH-VER V2 plus exact-head external client worker; owner/RIC/Network acceptance separate, quality_evaluation: integrated role/authority/evidence/gate coherence, retention: canonical client lifecycle concept, reuse_and_duplication: successor version required for material role/gate changes}
