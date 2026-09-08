@@ -1,276 +1,272 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001
-artifact_version_id: ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
-supersedes_artifact_version_id: null
+artifact_version_id: ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V1
 artifact_label: business or mission analysis report
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_proof_model_defined_real_RIC_evidence_pending
-acceptance_status: proof_model_candidate_subject_verification_and_real_RIC_validation_separate
+lifecycle_status: owner_directed_candidate_proof_model_aligned_to_integrated_lifecycle_and_C16_real_evidence_pending
+acceptance_status: proof_model_candidate_subject_verification_and_real_RIC_Network_validation_separate
 artifact_instance_purpose: >-
-  Превратить цель «доказать полезность через метрики» в фальсифицируемую доказательную модель продукта
-  «Диагностика клиентского случая РИЦ»: связать каждое существенное утверждение о пользе с уже установленными
-  S/C/G-метриками, требуемым уровнем реального доказательства, допустимыми отрицательными исходами и
-  переходом к TECH-VAL, не считая создание отчета или прохождение структурного worker доказательством пользы.
+  Обновить доказательную модель продукта «Диагностика клиентского случая РИЦ» до текущего интегрированного
+  жизненного цикла: связать утверждения о пользе для РИЦ, клиента РИЦ и Сети КонсультантПлюс с актуальными
+  S/C/G-метриками, включая C16 фактического использования сигнала Сетью, сохранить фальсифицируемость и
+  не считать внутреннюю инженерную готовность доказательством реальной полезности.
 producer:
   process_type_id: TECH-BMA
-  process_instance_id: PI-CPLUS-TECH-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001
-  activity_instance_id: AI-CPLUS-TECH-BMA-DEFINE-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001
+  process_instance_id: PI-CPLUS-TECH-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260908-001
+  activity_instance_id: AI-CPLUS-TECH-BMA-ALIGN-RIC-BENEFIT-PROOF-TO-INTEGRATED-LIFECYCLE-C16-20260908-001
   methodic_instance:
     methodic_id: METH-CPLUS-TECH-BMA-RIC-BENEFIT-PROOF
-    methodic_version_id: METHVER-CPLUS-TECH-BMA-RIC-BENEFIT-PROOF-V1
-    methodic_version: metric_claim_evidence_model_v1
+    methodic_version_id: METHVER-CPLUS-TECH-BMA-RIC-BENEFIT-PROOF-V2
+    methodic_version: metric_claim_evidence_model_integrated_v2
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-MERGE-AND-EVIDENCE-LIFECYCLE-20260907-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-INTEGRATED-LIFECYCLE-20260908-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status:
-  issued_at: '2026-09-07'
-  status: proof_model_defined_real_measurement_and_validation_pending
+issued_at_and_status: {issued_at: '2026-09-08', status: proof_model_v2_defined_real_measurement_and_validation_pending}
 scope: >-
-  Доказательная модель для одного реального РИЦ и последующих повторных сопоставимых исполнений продукта.
-  Модель оценивает доказанность инженерной воспроизводимости, полезности для решения РИЦ и наблюдаемой
-  клиентской ценности. Сетевые обобщения, ROI, предотвращенные потери и причинный экономический эффект
-  остаются вне доказуемого охвата до появления отдельного дизайна и данных.
+  Proof model for one real RIC and its client episodes, repeated comparable executions, and later bounded use of
+  accumulated evidence by an identified authorized ConsultantPlus Network decision-maker. Population inference,
+  ROI, prevented losses and causal economic effect remain outside scope without separate designs and data.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [owner, ChatGPT engineering actor]
 summary: >-
-  Полезность продукта не считается доказанной фактом создания диагностического Отчета, положительной оценкой
-  участника или structural PASS. Вводится лестница доказательств E0–E5 и пять проверяемых утверждений BP-01–BP-05.
-  На текущем состоянии только инженерная готовность имеет структурные/синтетические основания; BP-02–BP-05
-  остаются insufficient_evidence до реального использования РИЦ, решения, последующего наблюдения и повторов.
-  Любой claim может получить supported, not_supported, insufficient_evidence или not_applicable; отрицательный результат
-  является допустимым результатом ЖЦ и должен приводить к revise/stop, а не к подбору подтверждающих случаев.
+  V2 removes the stale design gap from V1: TM-MEAS V2 already defines C16 for actual Network decision-use.
+  BP-01–BP-05 now form one falsifiable chain from engineering execution through RIC decision-use, client observation,
+  repeated evidence and bounded Network decision-use. Engineering readiness remains the strongest statement supported
+  without external evidence; BP-02–BP-05 remain insufficient_evidence until real RIC/client/Network observations exist.
 introduction:
-  purpose: определить, что именно будет считаться доказательством или неподтверждением пользы продукта на полном ЖЦ
-  audience: owner, RIC director, engineering actor, TM-MEAS, TECH-VAL, TECH-VER, TM-PAC
-  evaluated_object: product «Диагностика клиентского случая РИЦ» including exact diagnostic and verification package
+  purpose: align benefit claims to the integrated participant lifecycle and current measurement plan V2
+  audience: owner, RIC director, engineering actor, TM-MEAS, TECH-VAL, TECH-VER, future authorized Network participant
+  evaluated_object: product «Диагностика клиентского случая РИЦ» including exact diagnostic and verification package and its bounded evidence flow
   evaluation_context: >-
-    После слияния исходного предложения, полного ЖЦ, метрик и P01 требуется не новый маркетинговый тезис,
-    а явная схема перехода от измерений к ограниченному утверждению о пользе.
-  evaluation_scope: one-RIC pilot first, then repeated comparable executions; no population inference
+    The previous proof model V1 correctly exposed a missing dedicated Network-decision-use metric. Measurement plan V2
+    subsequently closed that design gap by adding C16. The proof model must therefore be re-aligned to the current exact
+    product set instead of preserving an obsolete blocker.
+  evaluation_scope: one-RIC pilot first, repeated comparable episodes next, then explicit Network decision-use when actually observed
 context_and_assumptions:
-  current_dialogue_branch_purpose: 'для продукта «Диагностика клиентского случая РИЦ» пройти полный жизненный цикл как продукта SE-среды и как продукта клиентской системы «Сеть КонсультантПлюс»: декомпозировать ЖЦ, определить метрики и критерии переходов и на их основе получить проверяемые доказательства того, в какой мере продукт полезен РИЦ, создает клиентскую ценность и приводит к наблюдаемым результатам, включая границы и случаи неподтверждения этих утверждений; свести каждый результат к каноническому ProcessType/O и стандартному информационному продукту с полным применимым составом по ГОСТ Р 58609, персистировать результаты и проверки до фактических блокеров.'
-  exact_owner_input: 'смерджи все пр в кплюс и продолжай'
-  current_client_main_before_this_product: 858b3c5afff5edd91e5592b917c939045e239c3a
+  current_dialogue_branch_purpose: 'в интерфейсе кплюс@Доказательная модель клиентской ценности Сети «КонсультантПлюс» по открытым источникам(1).docx сделай краткую версию для директора РИЦ, которая побудит воспользоваться услугой/предложением этой среды. стандартизируй продукт и состав по ГОСТ'
+  exact_owner_input: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
   upstream_products:
-    lifecycle_concepts: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
-    lifecycle_measurement_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+    lifecycle_concepts: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+    stakeholder_identification: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+    lifecycle_measurement_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
     lifecycle_validation_plan: ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
     lifecycle_SEMP: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
     P01_problem_opportunity: ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
-    P01_verification: ARTVER-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001-V1
     terminal_benefit_definition: ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
-    method_source_register: ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
   factual_boundary:
     real_RIC_identified: false
+    real_client_episode_executed_for_this_product: false
     real_RIC_decision_use_observed: false
     post_decision_observation_present: false
+    actual_Network_C16_present: false
     real_measurement_register_present: false
     validation_report_present: false
+  authority_boundary: >-
+    Client, RIC and Network decisions remain owned by their authorized participants. SE environment may produce and verify
+    evidence products but cannot promote identification or analysis into accepted stakeholder needs/requirements or validation.
 body:
   evaluation_criteria:
-    - criterion_id: EC-01
-      criterion: claim is operationalized by observable metric/evidence rather than self-reference to product creation
-    - criterion_id: EC-02
-      criterion: claim can be contradicted by a valid neutral or adverse observation
-    - criterion_id: EC-03
-      criterion: evidence strength is bounded to exact RIC/episode/version and does not silently generalize
-    - criterion_id: EC-04
-      criterion: engineering conformance, RIC decision-use and client outcome are distinct evidence layers
-    - criterion_id: EC-05
-      criterion: causal/economic claims remain excluded unless a later design can identify and test them
+    - {criterion_id: EC-01, criterion: every material benefit claim is operationalized by observable metric/evidence rather than product creation}
+    - {criterion_id: EC-02, criterion: every benefit claim can be contradicted by a valid neutral or adverse observation}
+    - {criterion_id: EC-03, criterion: evidence strength is bounded to exact RIC/episode/version/decision context and does not silently generalize}
+    - {criterion_id: EC-04, criterion: engineering conformance, RIC decision-use, client outcome and Network decision-use remain distinct evidence layers}
+    - {criterion_id: EC-05, criterion: causal/economic claims remain excluded unless a later design can identify and test them}
+    - {criterion_id: EC-06, criterion: Network decision-use is measured by actual C16 disposition and not inferred from transmission or acknowledgment}
   method_and_evidence:
     method: >-
-      Map declared benefit claims to existing S01–S12, C01–C15 and G01–G07; define minimum evidence level,
-      admissible counter-evidence, claim disposition and next lifecycle decision. Preserve not_available,
-      not_established, not_comparable and insufficient_evidence rather than impute values.
+      Map BP-01–BP-05 to current S01–S12, C01–C16 and G01–G07/compatible lifecycle gates; define minimum evidence level,
+      admissible counter-evidence, claim disposition and next lifecycle decision. Preserve not_available, not_established,
+      not_comparable and insufficient_evidence instead of imputing values.
     evidence_inputs:
-      - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+      - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+      - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
       - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
+      - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
       - ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
       - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
-      - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
   evidence_ladder:
     - {level: E0, name: design_only, evidence: plans requirements methods and structural/subject verification but no real RIC use, permits: engineering readiness claims only}
-    - {level: E1, name: real_episode_reconstruction, evidence: real de-identified episode plus factual review and exact trace, permits: bounded factual diagnostic adequacy}
-    - {level: E2, name: real_RIC_decision_use, evidence: RIC explicitly uses or declines to use result for a concrete decision and rationale is recorded, permits: bounded decision-support usefulness}
-    - {level: E3, name: authorized_change_or_reasoned_no_action, evidence: resulting RIC action/no-action/retest decision is recorded, permits: practical management-use claim without outcome attribution}
-    - {level: E4, name: post_decision_comparable_observation, evidence: predeclared comparable later observation and C15 plus applicable C-series deltas, permits: bounded observed client/service outcome claim}
-    - {level: E5, name: repeated_cross_context_evidence, evidence: repeated comparable episodes and where relevant multiple RIC contexts with preserved heterogeneity, permits: qualified generalization only within sampled contexts}
+    - {level: E1, name: real_episode_reconstruction, evidence: real deidentified client episode plus factual review and exact trace, permits: bounded factual diagnostic adequacy}
+    - {level: E2, name: real_RIC_decision_use, evidence: RIC explicitly uses rejects or finds result insufficient for a concrete decision and rationale is recorded, permits: bounded decision-support usefulness}
+    - {level: E3, name: authorized_RIC_change_or_reasoned_no_action, evidence: resulting RIC action/no-action/retest decision is recorded, permits: practical management-use claim without outcome attribution}
+    - {level: E4, name: post_decision_comparable_observation, evidence: predeclared comparable later observation and C15 plus applicable client measures, permits: bounded observed client/service outcome claim}
+    - {level: E5, name: repeated_and_Network_decision_use, evidence: repeated comparable bounded evidence plus actual C16 by identified authorized Network decision-maker, permits: bounded claim that the signal was usable/rejected/insufficient in that exact Network decision context}
   claim_disposition_contract:
     allowed_states: [supported, not_supported, insufficient_evidence, not_applicable]
     rules:
       supported: all mandatory evidence for the claim exists and meets its criterion without a material contradicting observation
-      not_supported: required observation exists and fails/contradicts the claim in the declared scope
-      insufficient_evidence: required evidence is absent, incomplete or not comparable
-      not_applicable: claim legitimately does not apply to the episode/context
-    forbidden_state: presumed_supported_from_report_creation_or_structural_PASS
+      not_supported: required observation exists and fails or contradicts the claim in the declared scope
+      insufficient_evidence: required evidence is absent incomplete or not comparable
+      not_applicable: claim legitimately does not apply to the episode or context
+    forbidden_state: presumed_supported_from_report_creation_structural_PASS_TECH_VER_or_delivery_only
   benefit_claims:
     - claim_id: BP-01
       claim: SE-среда способна воспроизводимо произвести доказательно дисциплинированный диагностический пакет в заявленных условиях
       beneficiary: supplier_and_RIC_quality_control
       minimum_evidence_level: E0_for_readiness_E1_for_real_execution
       metrics: [S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, G02, G03]
-      support_rule: hard engineering targets pass on exact real execution; descriptive metrics are reported without invented threshold
-      counter_evidence: missed delivery term, incomplete trace/evidence class, unresolved mandatory verification, wrong package configuration or unnecessary sensitive data
+      support_rule: hard engineering targets pass on exact real execution and descriptive metrics are reported without invented threshold
+      counter_evidence: missed delivery term incomplete trace unresolved mandatory verification wrong package configuration or unnecessary sensitive data
       current_disposition: insufficient_evidence_for_real_RIC_execution
-      current_evidence_note: structural and synthetic readiness exists upstream but no real RIC E0/S01 execution is recorded
     - claim_id: BP-02
       claim: результат диагностики полезен РИЦ как основание для конкретного решения о сервисе обучении позиционировании проверке или обоснованном отсутствии изменения
       beneficiary: RIC
       minimum_evidence_level: E2
       metrics: [C13, C14, S02, G04]
-      support_rule: real RIC reaches an explicit decision disposition and identifies how the diagnostic evidence affected or failed to affect that decision
-      counter_evidence: insufficient_for_decision, factual reconstruction rejected materially, or RIC states result adds no decision-relevant information
+      support_rule: real RIC reaches an explicit decision disposition and identifies how the evidence affected or failed to affect that decision
+      counter_evidence: insufficient_for_decision materially rejected factual reconstruction or explicit statement that result adds no decision-relevant information
       current_disposition: insufficient_evidence
-      current_evidence_note: no real RIC decision-use yet
     - claim_id: BP-03
       claim: использование продукта может создавать наблюдаемую клиентскую ценность через конкретное изменение или сохранение практики РИЦ
       beneficiary: client_of_RIC
       minimum_evidence_level: E4
       metrics: [C01, C02, C03, C06, C07, C08, C09, C10, C15]
-      support_rule: a specific authorized RIC decision/change is linked prospectively to a comparable later episode and at least one predeclared client-relevant measure improves without material contrary evidence
-      counter_evidence: no change in relevant measure, deterioration, not_comparable episode, or inability to connect intervention and observation at the declared contribution level
+      support_rule: a specific authorized RIC decision/change is linked prospectively to a comparable later episode and at least one predeclared client-relevant measure changes as hypothesized without material contrary evidence
+      counter_evidence: no relevant change deterioration not_comparable episode or inability to connect intervention and observation at the declared contribution level
       current_disposition: insufficient_evidence
-      current_evidence_note: no implemented RIC change plus comparable post-decision observation exists
     - claim_id: BP-04
       claim: повторные исполнения позволяют выявлять устойчивые сценарии и отличать единичный случай от повторяющегося разрыва
       beneficiary: RIC_service_development
-      minimum_evidence_level: E5_or_bounded_repeated_E1
+      minimum_evidence_level: repeated_E1_or_E5
       metrics: [C09, C11, C12, G05]
-      support_rule: repeated real executions show the same coded gap/scenario under declared comparability with explicit denominator and missingness
-      counter_evidence: heterogeneous/nonrepeating patterns or too much missing/noncomparable evidence
+      support_rule: repeated real executions show the same coded gap or scenario under declared comparability with explicit denominator and missingness
+      counter_evidence: heterogeneous nonrepeating patterns or too much missing/noncomparable evidence
       current_disposition: insufficient_evidence
-      current_evidence_note: multi-episode capability exists but required real repeated evidence for this product is absent
     - claim_id: BP-05
-      claim: накопленные данные могут стать пригодным сигналом для решения о развитии продукта или сервиса Сети только если фактический получатель использует этот сигнал в реальном решении
-      beneficiary: ConsultantPlus_network
-      minimum_evidence_level: E2_at_network_decision_plus_later_observation_for_effect
-      metrics: [C09, C11, C12]
-      support_rule: repeated bounded evidence is transferred to an authorized Network decision-maker and actual decision-use is separately recorded
-      counter_evidence: signal is not used, judged non-actionable, duplicates existing evidence, or cannot be generalized beyond sampled contexts
+      claim: повторяющийся ограниченный сигнал может быть полезен Сети КонсультантПлюс только когда уполномоченный участник Сети фактически использует, отклоняет, признает дублирующим или недостаточным этот сигнал в конкретном решении
+      beneficiary: ConsultantPlus_Network
+      minimum_evidence_level: E5_for_decision_use_later_observation_required_for_effect
+      metrics: [C09, C11, C12, C16]
+      support_rule: bounded repeated evidence is intentionally supplied to an identified authorized Network decision-maker and C16 records actual decision/disposition plus exact evidence/context reference
+      counter_evidence: signal not used judged non-actionable duplicate insufficient cannot be generalized or no authorized decision context exists
       current_disposition: insufficient_evidence
-      metric_gap: current lifecycle measurement plan has no dedicated Network-decision-use measure; future measurement-plan revision is required before claiming BP-05 support
+      design_gap_status: closed_by_ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2_C16
   results_against_criteria:
-    EC-01: pass — BP-01–BP-04 map to existing metrics; BP-05 explicitly exposes a remaining measurement gap instead of fabricating a measure
-    EC-02: pass — each claim has counter-evidence and not_supported state
-    EC-03: pass — E1–E4 remain bounded to exact RIC/episode/version; E5 requires repeated contexts
-    EC-04: pass — BP-01 engineering, BP-02 RIC decision-use and BP-03 client outcome are separate
+    EC-01: pass — all BP claims map to current measurable evidence; no claim is supported by document existence alone
+    EC-02: pass — every claim defines counter-evidence and allows not_supported
+    EC-03: pass — evidence remains bounded to exact RIC/episode/version and Network decision context
+    EC-04: pass — BP-01 engineering, BP-02 RIC decision-use, BP-03 client observation and BP-05 Network decision-use are distinct
     EC-05: pass — ROI, avoided losses, generalized risk reduction and causal economic effect remain excluded
-  current_evidence_state:
-    overall: proof_design_complete_empirical_proof_blocked
-    strongest_supported_statement_now: >-
-      Engineering environment and process-owned product structure are sufficiently defined and verified to conduct a real pilot;
-      this is not evidence that the product is useful to a RIC or improves a client outcome.
-    unsupported_now:
-      - product is useful to a real RIC
-      - product improves client decisions or outcomes
-      - product produces ROI or prevents losses
-      - findings generalize across RIC network
-      - Coordination Center uses the signal for product development
+    EC-06: pass — BP-05 requires C16 actual disposition and explicitly rejects transmission-only inference
   deficiencies_risks_trends_material_findings:
     deficiencies:
-      - no real RIC stakeholder validation of P01
-      - no real measurement register or decision-use evidence
-      - no post-decision comparable observation
-      - BP-05 lacks a dedicated Network-decision-use metric
+      - no real RIC has validated or corrected the current problem/opportunity and intended use
+      - no accepted TECH-STK stakeholder needs and requirements exist for a concrete RIC
+      - no real measurement register or RIC decision-use evidence exists
+      - no comparable post-decision observation exists
+      - no actual authorized Network C16 disposition exists
+    resolved_design_gap:
+      prior: BP-05 lacked a dedicated Network-decision-use metric in measurement plan V1
+      current: measurement plan V2 defines C16 with authority/context/evidence constraints
+      consequence: proof model V2 no longer treats Network metric absence as blocker; empirical C16 evidence remains the blocker
     risks:
       - confirmation bias if only successful episodes are retained
-      - self-validating metric if report production is counted as usefulness
+      - self-validating metric if report production or delivery is counted as usefulness
       - attribution inflation from contribution to causality
       - sample/generalization error from one or few RICs
+      - false Network-use claim if receipt is treated as C16 decision-use
     material_finding: >-
-      The next proof-producing event is not another internal analytical document; it is real RIC evidence at P01/P02 and then
-      an actual E1→E2 progression. Internal work can define the test, but cannot substitute for the observation.
+      Internal design is now aligned through Network decision-use. The next proof-producing event is external evidence:
+      a real RIC/client episode and later, if repeated evidence exists, an actual authorized Network decision context.
+  integrated_value_chain:
+    - {participant: client_of_RIC, claim_layer: factual_episode_and_observed_result, evidence_levels: [E1, E4]}
+    - {participant: RIC, claim_layer: decision_support_and_local_change, evidence_levels: [E2, E3]}
+    - {participant: ConsultantPlus_Network, claim_layer: bounded_signal_decision_use, evidence_levels: [E5], required_measure: C16}
+    - {participant: SE_environment, claim_layer: reproducible_engineering_and_evidence_integrity, evidence_levels: [E0, E1]}
   decision_support:
     continue_now:
       - preserve BP-01–BP-05 and evidence ladder as falsifiable evaluation frame
-      - use existing S/C/G measures for BP-01–BP-04
-      - carry BP-05 metric gap into a future measurement-plan revision before Network-use claims
-    blocked_until_real_RIC:
-      - TECH-STK stakeholder needs and requirements P02
+      - use measurement plan V2 including C16 as current metric authority for this product
+      - structurally verify current exact products and subject-verify integrated lifecycle coherence
+    blocked_until_real_evidence:
+      - accepted TECH-STK stakeholder needs and requirements for a concrete RIC
       - real TM-MEAS measurement register
       - real TECH-VAL validation report
-      - decision-use and post-decision benefit claims
+      - RIC decision-use and post-decision benefit claims
+      - actual Network decision-use claim without C16 evidence
 conclusions_and_recommendations:
   conclusion: >-
-    Доказательная модель готова как схема проверки, но не как доказательство полезности. Текущий strongest claim —
-    инженерная готовность к реальному пилоту. Полезность для РИЦ требует E2, а наблюдаемая клиентская ценность — E4.
-    Неподтверждение, отсутствие эффекта или недостаточность данных являются полноценными исходами и должны менять
-    последующее решение ЖЦ, а не исключаться из выборки.
+    The proof design is internally complete through the Network decision-use layer: the former BP-05 measurement gap is closed
+    by C16. This still does not prove usefulness. Real RIC usefulness requires E2, observed client value requires E4 and bounded
+    Network signal usefulness requires actual E5/C16. Negative and insufficient-evidence outcomes remain first-class results.
   recommendations:
-    - следующий substantive процесс начать с реального РИЦ: подтвердить/скорректировать P01 и только затем P02 TECH-STK
-    - после реального эпизода создать TM-MEAS measurement register с exact evidence states
-    - TECH-VAL report создавать только после фактического intended-use review
-    - до претензии BP-05 добавить dedicated Network-decision-use measure through controlled TM-MEAS successor version
+    - obtain exact-head external-client structural PASS for V2 products
+    - use one real RIC to validate/correct P01 before creating accepted stakeholder needs/requirements
+    - after a real episode create TM-MEAS measurement register with exact evidence states and C13/C14
+    - issue TECH-VAL report only after actual intended-use review
+    - collect C16 only if repeated bounded evidence is actually presented in an identified authorized Network decision context
 references:
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V1
-  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V1
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-CONCEPTS-20260907-001-V2
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-RIC-DIAGNOSTIC-LIFECYCLE-MEASUREMENT-PLAN-20260907-001-V2
   - ARTVER-CPLUS-RIC-DIAGNOSTIC-VALIDATION-PLAN-20260907-001-V1
   - ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-SEMP-20260907-001-V1
   - ARTVER-CPLUS-BMA-RIC-INTERACTION-PROBLEM-OPPORTUNITY-20260907-001-V1
-  - ARTVER-CPLUS-RIC-P01-PROBLEM-OPPORTUNITY-VERIFICATION-REPORT-20260907-001-V1
   - ARTVER-CPLUS-BMA-RIC-INTERACTION-BENEFIT-DEFINITION-20260907-001-V1
-  - ARTVER-CPLUS-RIC-PILOT-METHOD-SOURCE-REGISTER-20260907-001-V1
 bibliography:
   - 'ГОСТ Р 57193-2025 — Системная и программная инженерия. Процессы жизненного цикла систем'
   - 'ГОСТ Р ИСО/МЭК 33001-2017 — Информационные технологии. Оценка процесса. Понятия и терминология'
-  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 — Content of life-cycle information items'
-  - 'Li Z et al. SOPBench: Evaluating Language Agents at Following Standard Operating Procedures and Constraints. arXiv:2503.08669'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 — состав и содержание информационных элементов жизненного цикла'
 glossary:
   benefit_claim: ограниченное проверяемое утверждение о пользе продукта
-  evidence_ladder: уровни силы доказательств от design-only до повторных наблюдений
-  decision_use: фактическое использование результата для конкретного решения, включая обоснованное no-action
-  post_decision_observation: наблюдение после решения, пригодное для сопоставления с заранее определенной базой/критерием
-  self_validating_metric: показатель, который объявляет продукт полезным только потому, что продукт/отчет был создан
-  insufficient_evidence: требуемые данные отсутствуют/неполны/несопоставимы; это не равно supported или not_supported
+  evidence_ladder: уровни силы доказательств от design-only до реального decision-use и повторных наблюдений
+  RIC_decision_use: фактическое использование/отклонение/недостаточность результата для конкретного решения РИЦ
+  Network_decision_use: фактическое C16 использование/отклонение/дублирование/недостаточность сигнала уполномоченным участником Сети в конкретном решении
+  post_decision_observation: наблюдение после решения, пригодное для сопоставления с заранее определенной базой или критерием
+  self_validating_metric: показатель, который объявляет продукт полезным только потому, что продукт или отчет был создан
+  insufficient_evidence: требуемые данные отсутствуют, неполны или несопоставимы; это не равно supported или not_supported
 change_history:
   - {version: V1, date: '2026-09-07', change: establish falsifiable metric-to-claim proof model after merge of lifecycle products}
+  - {version: V2, date: '2026-09-08', change: align proof model to integrated lifecycle and TM-MEAS V2; close the obsolete BP-05 metric-design gap with C16 while preserving empirical blockers}
 subject_unresolved:
-  - real RIC identity and direct P01 validation
-  - P02 accepted stakeholder needs/requirements
-  - real measurement register and RIC decision-use
-  - post-decision comparable observation
-  - dedicated Network-decision-use metric for BP-05
-  - economic value/ROI/willingness to pay and Network prevalence
+  - real RIC identity and direct P01 validation/correction
+  - accepted P02 stakeholder needs and requirements
+  - real measurement register and RIC C13/C14 decision-use evidence
+  - post-decision comparable C15 observation
+  - actual authorized Network C16 decision-use evidence
+  - economic value, ROI, willingness to pay and Network prevalence
 owner_product_request:
-  exact_visible_text: 'смерджи все пр в кплюс и продолжай'
-  current_dialogue_branch_purpose: 'для продукта «Диагностика клиентского случая РИЦ» пройти полный жизненный цикл как продукта SE-среды и как продукта клиентской системы «Сеть КонсультантПлюс»: декомпозировать ЖЦ, определить метрики и критерии переходов и на их основе получить проверяемые доказательства того, в какой мере продукт полезен РИЦ, создает клиентскую ценность и приводит к наблюдаемым результатам, включая границы и случаи неподтверждения этих утверждений; свести каждый результат к каноническому ProcessType/O и стандартному информационному продукту с полным применимым составом по ГОСТ Р 58609, персистировать результаты и проверки до фактических блокеров.'
+  exact_visible_text: 'делай и давай команды на локальную верификацю в повершелл конда вин10 с гитбаш'
+  current_dialogue_branch_purpose: 'в интерфейсе кплюс@Доказательная модель клиентской ценности Сети «КонсультантПлюс» по открытым источникам(1).docx сделай краткую версию для директора РИЦ, которая побудит воспользоваться услугой/предложением этой среды. стандартизируй продукт и состав по ГОСТ'
   request_specific_requirements:
-    - continue after merging all pre-existing ConsultantPlus PRs
-    - make proof by metrics explicit and falsifiable
-    - include boundaries and non-confirmation outcomes
+    - reconcile the benefit proof model with current integrated lifecycle products
+    - use measurement plan V2 and C16 instead of retaining the obsolete missing-Network-metric claim
+    - integrate benefit evidence across clients of RIC, RIC, ConsultantPlus Network and SE environment without authority transfer
+    - preserve negative outcomes, empirical blockers and TECH-VER/TECH-VAL separation
     - persist only standard process-owned GOST-composed products
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_BMA_business_or_mission_analysis_report
+  applicability: applies_materially_changed_client_TECH_BMA_business_or_mission_analysis_report
   requirement_coverage:
-    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label]}
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
     - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
-    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [standards_trace]}
-    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
     - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [subject_unresolved, verification]}
     - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, body.method_and_evidence]}
-    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification]}
-    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
     - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
     - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_worker_and_subject_TECH_VER}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_external_client_worker}
 verification:
-  structural_status: authored_pending_exact_head_external_client_worker
-  semantic_status: proof model authored; independent subject TECH-VER pending
-  owner_acceptance: creation authorized by continuation; empirical benefit acceptance separate
+  structural_status: pending_exact_head_external_client_worker
+  semantic_status: subject_TECH_VER_V2_authored_for_current_integrated_proof_model
+  subject_verification_ref: ARTVER-CPLUS-RIC-DIAGNOSTIC-FULL-LIFECYCLE-VERIFICATION-REPORT-20260907-001-V2
+  owner_acceptance: execution_authorized; empirical benefit and participant acceptance separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001.yaml@change/consultantplus-20260907-ric-diagnostic-benefit-proof-model
+  self: MOZ1961/consultantplus:artifacts/TECH-BMA/business-or-mission-analysis-report/ART-CPLUS-BMA-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001.yaml@change/consultantplus-20260908-integrated-lifecycle-stakeholders
 information_product_applicability: applies
 standards_trace:
   process:
@@ -306,7 +302,7 @@ standards_trace:
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: evaluation report specialization for RIC diagnostic benefit proof model, resolution_basis: TECH-BMA business or mission analysis report controlled semantic match to §10.27, state: resolved}
+  information_item_identity: {resolved_name_or_semantic_identity: evaluation report specialization for integrated RIC diagnostic benefit proof model, resolution_basis: TECH-BMA business or mission analysis report controlled semantic match to §10.27, state: resolved}
   universal_type: report
   universal_content:
     source_section: '7.6'
@@ -346,11 +342,5 @@ content_compliance:
           - {requirement_id: S10.27-R04, state: satisfied, artifact_field_refs: [body.deficiencies_risks_trends_material_findings, subject_unresolved]}
           - {requirement_id: S10.27-R05, state: satisfied, artifact_field_refs: [conclusions_and_recommendations, body.decision_support]}
   local_additive_content: {state: not_applicable, basis: active binding selects no local additive profile}
-  tailoring: §10.27 evaluation report specialized to benefit-claim evidence evaluation for RIC diagnostic lifecycle
-  information_item_management:
-    version_control: exact V1
-    review_approval: subject TECH-VER plus exact-head external structural worker; real-RIC TECH-VAL separate
-    quality_evaluation: claim-to-metric mapping, falsifiability, evidence-level and overclaim checks
-    retention: canonical client TECH-BMA product
-    reuse_and_duplication: successor version required when metrics/claims/evidence thresholds change materially
-  composition_state: authored_pending_subject_and_structural_verification
+  tailoring: §10.27 evaluation report specialized to integrated benefit-claim evidence evaluation for RIC diagnostic lifecycle
+  information_item_management: {version_control: V2, review_approval: subject TECH-VER V2 plus exact-head external structural worker; real RIC/Network TECH-VAL separate, quality_evaluation: claim-to-metric mapping falsifiability authority and overclaim checks, retention: canonical client TECH-BMA product, reuse_and_duplication: successor version required when metrics claims evidence thresholds or participant model changes materially}
