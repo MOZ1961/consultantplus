@@ -1,8 +1,8 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-DIRECTOR-POSITIONING-SYSTEM-REQUIREMENTS-20260908-001
-artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-POSITIONING-SYSTEM-REQUIREMENTS-20260908-001-V1
-supersedes_artifact_version_id: null
+artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-POSITIONING-SYSTEM-REQUIREMENTS-20260908-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-POSITIONING-SYSTEM-REQUIREMENTS-20260908-001-V1
 artifact_label: system requirements
 project_contour: client_system_consultantplus
 lifecycle_status: owner_directed_candidate_gap_closure_pending_verification
@@ -10,16 +10,16 @@ acceptance_status: candidate_not_baselined_not_official_network_positioning
 artifact_instance_purpose: >-
   Установить проверяемые системные требования к директорскому продукту РИЦ по позиционированию
   КонсультантПлюс, преобразовав уже определенные по контуру ГОСТ потребности заинтересованных сторон
-  в требования к продукту и наложив полный профиль качества INCOSE Guide to Writing Requirements:
+  в требования к продукту и применив полный профиль качества INCOSE Guide to Writing Requirements:
   характеристики C1-C15, атрибуты A1-A49 и правила R1-R42 с явной применимостью и трассируемостью.
 producer:
   process_type_id: TECH-SYSREQ
   process_instance_id: PI-CPLUS-TECH-SYSREQ-RIC-DIRECTOR-POSITIONING-CAR-20260908-001
-  activity_instance_id: AI-CPLUS-TECH-SYSREQ-DEFINE-RIC-DIRECTOR-POSITIONING-CAR-20260908-001
+  activity_instance_id: AI-CPLUS-TECH-SYSREQ-REFINE-RIC-DIRECTOR-POSITIONING-CAR-ROI-20260908-001
   methodic_instance:
     methodic_id: METH-CPLUS-TECH-SYSREQ-GOST-INCOSE-CAR
-    methodic_version_id: METHVER-CPLUS-TECH-SYSREQ-GOST-INCOSE-CAR-V1
-    methodic_version: gost-derived-incose-car-v1
+    methodic_version_id: METHVER-CPLUS-TECH-SYSREQ-GOST-INCOSE-CAR-V2
+    methodic_version: gost-derived-incose-car-roi-v2
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
@@ -34,10 +34,10 @@ issued_at_and_status:
   issued_at: '2026-09-08'
   status: candidate_gap_closure_pending_structural_and_subject_verification
 scope: >-
-  Требования относятся к информационному продукту для директора РИЦ, который помогает решить,
-  как проверять и применять позиционирование КонсультантПлюс через реальные клиентские решения,
-  вклад СПС и вклад РИЦ. Требования не устанавливают официальную позицию Сети, коммерческие обещания,
-  причинный эффект или принятие продукта директором РИЦ.
+  Требования относятся к информационному продукту для директора РИЦ, поддерживающему решение о том,
+  как проверять и применять позиционирование КонсультантПлюс через реальные профессиональные ситуации,
+  решения клиента, вклад СПС, вклад РИЦ, наблюдаемые результаты и экономический эффект. Требования не
+  устанавливают официальную позицию Сети, коммерческие обещания, причинный эффект или принятие продукта.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 authorizing_organization: owner
 references:
@@ -48,6 +48,7 @@ references:
   - ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
   - ARTVER-CPLUS-RIC-DIAGNOSTIC-BENEFIT-PROOF-MODEL-20260907-001-V2
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
   - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
   - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
   - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
@@ -56,12 +57,12 @@ external_inputs:
     role: I
     use: >-
       Нормативная логика TECH-STK -> TECH-SYSREQ: ориентированное на пользователя представление
-      заинтересованных сторон преобразуется в количественно оцениваемые системные требования,
-      по возможности не диктующие конкретную реализацию.
+      потребностей заинтересованных сторон преобразуется в технические и по возможности количественно
+      оцениваемые требования, не предписывающие реализацию без необходимости.
   - source: INCOSE-TP-2010-006-04 Rev 4, Guide to Writing Requirements, 1 Jul 2023
     role: I
     use: >-
-      Локальный дополнительный профиль качества формулировок и наборов требований: C1-C15,
+      Локальный дополнительный профиль качества формулировок и набора требований: C1-C15,
       A1-A49 и R1-R42. INCOSE не заменяет нормативный ГОСТ-контур и не является runtime authority.
 
 body:
@@ -71,132 +72,226 @@ body:
     source_artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
     target_entity: director-facing RIC positioning information product
     transformation_rule: >-
-      Каждая системная формулировка ниже должна быть трассируема к одной или нескольким уже
-      зафиксированным потребностям/ограничениям, иметь проверяемый критерий и не усиливать
-      уровень доказательности исходного материала.
+      Каждое требование должно быть трассируемо к одной или нескольким зафиксированным потребностям
+      или ограничениям, иметь проверяемый критерий и не усиливать уровень доказательности источника.
 
   requirements:
     - id: SR-CPLUS-RIC-DIR-POS-001
       statement: >-
-        Продукт должен позволять директору РИЦ определить, стоит ли переходить к проверке
-        кандидатного позиционирования на реальных клиентских эпизодах.
+        Продукт должен обеспечивать директору РИЦ возможность принять решение о целесообразности
+        проверки предлагаемого позиционирования на реальных клиентских и сервисных эпизодах.
       rationale: Директорский продукт должен поддерживать конкретное управленческое решение.
       source_trace: [N-CPLUS-PM-01, N-CPLUS-PM-02]
-      verification: inspection; decision_supported field and explicit stop/continue gate are present
+      verification: inspection; explicit director decision and proceed/stop gate are present
+
     - id: SR-CPLUS-RIC-DIR-POS-002
       statement: >-
-        Продукт должен представлять ценность через цепочку «клиентская ситуация — решение —
-        информационный путь — вклад КонсультантПлюс — вклад РИЦ — наблюдаемый результат».
-      rationale: Перечень функций сам по себе не устанавливает клиентскую ценность.
+        Продукт должен представлять ценность КонсультантПлюс через профессиональные ситуации клиента,
+        принимаемые клиентом решения и результаты, необходимые клиенту для выполнения работы.
+      rationale: Перечень возможностей СПС сам по себе не устанавливает клиентскую ценность.
       source_trace: [N-CPLUS-PM-02, N-CPLUS-PM-07]
-      verification: inspection; every example/claim is traceable to the chain
+      verification: inspection; value statements are anchored to situation, decision and required result
+
     - id: SR-CPLUS-RIC-DIR-POS-003
       statement: >-
-        Продукт должен раздельно представлять вклад КонсультантПлюс и вклад РИЦ в каждом
-        существенном клиентском эпизоде или тезисе.
+        Для каждого рассматриваемого клиентского эпизода продукт должен устанавливать связь между
+        профессиональной ситуацией клиента, требуемым решением, информационным путем, вкладом
+        КонсультантПлюс, вкладом РИЦ и наблюдаемым результатом.
+      rationale: Цепочка позволяет проверять происхождение заявленной ценности.
+      source_trace: [N-CPLUS-PM-02, N-CPLUS-PM-07, N-CPLUS-PM-08]
+      verification: trace audit of every material client episode
+
+    - id: SR-CPLUS-RIC-DIR-POS-004
+      statement: Продукт должен представлять вклад КонсультантПлюс и вклад РИЦ раздельно.
       rationale: Нельзя приписывать одной стороне эффект другой стороны.
       source_trace: [N-CPLUS-PM-08]
-      verification: inspection; separate fields or explicit not_established value are used
-    - id: SR-CPLUS-RIC-DIR-POS-004
-      statement: >-
-        Каждый существенный тезис продукта должен иметь источник, класс доказательства,
-        границу доказательности, статус установленности и указание требуемой следующей проверки.
-      rationale: Это делает позиционирование проверяемым и управляемым.
-      source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-04]
-      verification: trace audit of all material claims
+      verification: inspection; separate contribution fields or explicit not_established value are present
+
     - id: SR-CPLUS-RIC-DIR-POS-005
       statement: >-
-        Продукт должен исключать представление ROI, предотвращенных штрафов, общего повышения
-        эффективности, снижения риска или причинного эффекта как установленного результата без
-        соответствующих эмпирических данных.
-      rationale: Сила формулировки не должна превышать силу свидетельства.
-      source_trace: [N-CPLUS-PM-09]
-      verification: adversarial text review for prohibited unsupported claims
+        Продукт должен различать результаты, обеспечиваемые возможностями КонсультантПлюс, результаты
+        сервисного воздействия РИЦ и результаты, зависящие от действий клиента или иных участников.
+      rationale: Разделение причинных вкладов ограничивает необоснованное присвоение эффекта продукту или сервису.
+      source_trace: [N-CPLUS-PM-04, N-CPLUS-PM-08]
+      verification: attribution-boundary inspection across all material claims
+
     - id: SR-CPLUS-RIC-DIR-POS-006
       statement: >-
-        Кандидатная формулировка позиционирования должна быть явно маркирована как аналитический
-        кандидат и не должна представляться официальной позицией Сети КонсультантПлюс.
-      rationale: Полномочия РИЦ и инженерной среды не равны полномочиям Сети.
-      source_trace: [N-CPLUS-PM-01, N-CPLUS-PM-06]
-      verification: inspection of status and evidence-boundary statements
+        Для каждого существенного утверждения о клиентской ценности продукт должен указывать основание
+        утверждения, класс свидетельства, границу доказательности, статус подтверждения и следующую
+        требуемую проверку.
+      rationale: Позиционирование должно оставаться проверяемым и управляемым.
+      source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-04]
+      verification: trace audit of all material claims
+
     - id: SR-CPLUS-RIC-DIR-POS-007
       statement: >-
-        Продукт должен предлагать первый проверочный шаг на одном обезличенном недавнем
-        клиентском эпизоде до масштабирования метода.
-      rationale: Первый шаг должен давать дешевое свидетельство полезности подхода.
-      source_trace: [N-CPLUS-PM-02]
-      verification: inspection; one-episode gate and requested next action are explicit
+        Продукт должен обозначать как непроверенную гипотезу утверждение о конечном клиентском или
+        организационном эффекте, если для него отсутствуют достаточные эмпирические свидетельства.
+      rationale: Статус утверждения должен соответствовать силе имеющегося свидетельства.
+      source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-09]
+      verification: adversarial review of effect claims and evidence statuses
+
     - id: SR-CPLUS-RIC-DIR-POS-008
       statement: >-
-        После обработки трех-пяти эпизодов продукт должен позволять отдельно оценить повторяемость
-        сценария, повторяемость вклада РИЦ и устойчивость кандидатной формулировки.
-      rationale: Повторяемость нельзя выводить из единичного случая.
-      source_trace: [N-CPLUS-PM-05]
-      verification: inspection against multi-episode measurement plan
+        Продукт не должен представлять экономию, предотвращенные потери или штрафы, снижение риска,
+        повышение эффективности либо иной причинный эффект как установленный результат исключительно
+        на основании наличия или использования возможностей КонсультантПлюс либо действий РИЦ.
+      rationale: Экономический и причинный эффект требует отдельного эмпирического основания.
+      source_trace: [N-CPLUS-PM-09]
+      verification: adversarial text review for unsupported causal or economic claims
+
     - id: SR-CPLUS-RIC-DIR-POS-009
       statement: >-
-        Продукт должен различать показатели эффективности результата, показатели выполнения,
-        технические показатели исполнения и промежуточные показатели продвижения к результату,
-        если соответствующий показатель используется для решения директора.
-      rationale: Метрики разных уровней не должны подменять друг друга.
-      source_trace: [N-CPLUS-PM-02, N-CPLUS-PM-03]
-      verification: metric classification audit; MOE/MOP/TPM and project/result measures are not conflated
+        Продукт должен явно обозначать предлагаемое позиционирование как кандидатную формулировку до
+        получения полномочий на ее принятие в качестве официального позиционирования Сети КонсультантПлюс.
+      rationale: Инженерный кандидат не равен принятой позиции Сети.
+      source_trace: [N-CPLUS-PM-01, N-CPLUS-PM-06]
+      verification: inspection of status and authority statements
+
     - id: SR-CPLUS-RIC-DIR-POS-010
       statement: >-
-        Директорское представление должно быть читаемо без знания системно-инженерной нотации,
-        сохраняя ссылки на инженерные основания вне основного управленческого текста.
-      rationale: Адресат продукта — руководитель РИЦ, а не инженер по требованиям.
-      source_trace: [N-CPLUS-PM-01]
-      verification: director-facing readability review plus trace-link inspection
+        Продукт должен позволять начать эмпирическую проверку позиционирования с одного обезличенного
+        фактического клиентского или сервисного эпизода.
+      rationale: Первый шаг должен дешево проверять полезность модели до масштабирования.
+      source_trace: [N-CPLUS-PM-02]
+      verification: inspection; one-episode test gate and requested evidence are explicit
+
     - id: SR-CPLUS-RIC-DIR-POS-011
       statement: >-
-        Продукт должен преобразовывать повторяющийся клиентский разрыв в структурированный сигнал
-        для Сети с контекстом, частотой, критичностью, обходным путем, вкладом сервиса и наблюдаемым результатом.
-      rationale: Обратная связь должна быть пригодна для продуктового решения, а не только как пожелание.
-      source_trace: [N-CPLUS-PM-05, N-CPLUS-PM-06]
-      verification: inspection of feedback output schema
+        Продукт должен предусматривать проверку повторяемости выявленных связей и результатов на
+        нескольких независимых эпизодах до решения об их использовании как устойчивой модели позиционирования.
+      rationale: Повторяемость нельзя выводить из единичного случая.
+      source_trace: [N-CPLUS-PM-05]
+      verification: inspection against multi-episode measurement plan; target sample is three to five episodes
+
     - id: SR-CPLUS-RIC-DIR-POS-012
       statement: >-
-        Продукт должен сохранять различия и противоречия между свидетельствами инициирующего РИЦ,
-        других РИЦ, клиентов и инженерной среды до появления основания для их разрешения.
+        Продукт должен различать меры эффективности достижения требуемого клиентского эффекта, меры
+        результативности продукта или сервиса, технические показатели функционирования и показатели
+        продвижения к требуемому результату соответственно MoE, MoP, TPM и MoS, когда соответствующий
+        класс измерения применим.
+      rationale: Показатели разных уровней не должны подменять друг друга.
+      source_trace: [N-CPLUS-PM-02, N-CPLUS-PM-03]
+      verification: metric taxonomy audit; MoE, MoP, TPM and MoS are classified by decision use and not conflated
+
+    - id: SR-CPLUS-RIC-DIR-POS-013
+      statement: >-
+        Для каждой применяемой меры продукт должен определять измеряемый объект, показатель, способ
+        получения данных, критерий оценки и решение, для поддержки которого используется результат измерения.
+      rationale: Метрика полезна только при определенных объекте, данных, критерии и управленческом применении.
+      source_trace: [N-CPLUS-PM-02, N-CPLUS-PM-03]
+      verification: measurement-definition inspection for every used measure
+
+    - id: SR-CPLUS-RIC-DIR-POS-014
+      statement: >-
+        Если директорское решение требует экономической оценки, продукт должен обеспечивать расчет ROI
+        как отдельной экономической меры с явным указанием периода расчета, полного состава учитываемых
+        затрат, состава монетизируемых выгод и формулы расчета.
+      rationale: ROI является отношением экономического эффекта к инвестициям и не должен смешиваться с MoE, MoP, TPM или MoS.
+      source_trace: [N-CPLUS-PM-02, N-CPLUS-PM-09]
+      verification: inspection; ROI record contains period, cost basis, benefit basis and explicit formula
+
+    - id: SR-CPLUS-RIC-DIR-POS-015
+      statement: >-
+        Для каждого значения ROI продукт должен указывать источники исходных данных, границу атрибуции
+        выгод КонсультантПлюс и РИЦ, допущения, неопределенность и статус установленности результата.
+      rationale: Числовой ROI без границы атрибуции и качества исходных данных создает ложную точность.
+      source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-04, N-CPLUS-PM-09]
+      verification: ROI evidence audit; unsupported inputs or attribution produce hypothesis/not_established status
+
+    - id: SR-CPLUS-RIC-DIR-POS-016
+      statement: >-
+        Продукт должен позволять отличать свидетельство существования возможности КонсультантПлюс от
+        свидетельства использования этой возможности клиентом и от свидетельства достижения клиентом
+        требуемого результата.
+      rationale: Возможность, использование и эффект являются различными уровнями доказательства.
+      source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-04, N-CPLUS-PM-07]
+      verification: evidence-level separation audit
+
+    - id: SR-CPLUS-RIC-DIR-POS-017
+      statement: >-
+        Продукт должен сохранять различия и противоречия между свидетельствами директора РИЦ,
+        сотрудников РИЦ, клиентов, других РИЦ, Сети и инженерного анализа до получения достаточного
+        основания для их разрешения.
       rationale: Усреднение разнородных свидетельств создает ложную определенность.
       source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-04]
       verification: contradiction-preservation audit
-    - id: SR-CPLUS-RIC-DIR-POS-013
+
+    - id: SR-CPLUS-RIC-DIR-POS-018
       statement: >-
-        Для каждого требования продукта должен существовать уникальный идентификатор,
-        источник, владелец, критерий проверки, статус проверки и версия.
-      rationale: Требования должны оставаться управляемыми и трассируемыми на протяжении ЖЦ.
+        Продукт должен позволять преобразовать повторяющийся подтвержденный клиентский или сервисный
+        разрыв в структурированную обратную связь для Сети с указанием контекста, наблюдаемого проявления,
+        частоты, критичности, существующего обходного пути и имеющихся свидетельств.
+      rationale: Обратная связь должна быть пригодна для продуктового решения Сети.
+      source_trace: [N-CPLUS-PM-05, N-CPLUS-PM-06]
+      verification: inspection of feedback output schema and evidence trace
+
+    - id: SR-CPLUS-RIC-DIR-POS-019
+      statement: >-
+        Основное представление продукта должно быть понятно директору РИЦ без знания системно-инженерной
+        терминологии и внутренней структуры инженерной среды.
+      rationale: Адресат продукта — руководитель РИЦ.
+      source_trace: [N-CPLUS-PM-01]
+      verification: director-facing readability review
+
+    - id: SR-CPLUS-RIC-DIR-POS-020
+      statement: >-
+        Основное представление продукта должно отделять информацию, необходимую директору для принятия
+        решения, от инженерных данных, предназначенных для трассируемости и последующей проверки.
+      rationale: Управленческое представление и инженерная доказательная база имеют разные задачи.
+      source_trace: [N-CPLUS-PM-01, N-CPLUS-PM-03]
+      verification: presentation-layer inspection plus trace-link audit
+
+    - id: SR-CPLUS-RIC-DIR-POS-021
+      statement: >-
+        Каждое системное требование к продукту должно иметь уникальный идентификатор, источник или
+        основание, критерий проверки и состояние проверки.
+      rationale: Требования должны оставаться управляемыми и трассируемыми на протяжении жизненного цикла.
       source_trace: [N-CPLUS-PM-03]
       verification: schema inspection against required INCOSE attribute subset
-    - id: SR-CPLUS-RIC-DIR-POS-014
+
+    - id: SR-CPLUS-RIC-DIR-POS-022
       statement: >-
-        Набор требований должен быть проверен как целое на полноту, непротиворечивость,
-        реализуемость, понятность, валидируемость и корректность до его базирования.
-      rationale: Качество отдельных формулировок не гарантирует качества набора.
-      source_trace: [N-CPLUS-PM-03]
-      verification: C10-C15 set review
+        Набор требований к продукту должен обеспечивать трассируемость от потребностей заинтересованных
+        сторон к требованиям, элементам директорского представления, свидетельствам и результатам проверки.
+      rationale: Качество отдельных требований не обеспечивает полноту инженерного контура без сквозной трассируемости.
+      source_trace: [N-CPLUS-PM-03, N-CPLUS-PM-04]
+      verification: end-to-end trace audit and C10-C15 set review
+
+  roi_definition:
+    role: economic_decision_measure
+    relation_to_engineering_measures: >-
+      ROI не является заменой MoE, MoP, TPM или MoS. Он используется как отдельная экономическая мера,
+      если директорское решение требует сопоставить монетизируемый эффект с инвестициями.
+    default_formula: '(monetized_benefits - attributable_costs) / attributable_costs'
+    reporting_rule: >-
+      Значение ROI представляется только вместе с периодом, валютой, составом затрат и выгод, источниками
+      данных, границей атрибуции, допущениями, неопределенностью и статусом установленности.
+    unsupported_data_rule: >-
+      При отсутствии достаточных данных продукт может показать структуру будущего расчета или диапазон
+      сценариев, но не должен маркировать числовой ROI как установленный факт.
 
   incose_car_profile:
     source_status: local_additive_quality_profile_not_normative_GOST_replacement
     characteristics:
       individual:
         C1: необходимое
-        C2: соответствующее уровню и сущности
+        C2: соответствующее_уровню_и_сущности
         C3: однозначное
         C4: полное
-        C5: единичное по мысли
+        C5: единичное_по_мысли
         C6: реализуемое
         C7: проверяемое_или_валидируемое
-        C8: корректное относительно источника
-        C9: соответствующее установленным правилам формы
+        C8: корректное_относительно_источника
+        C9: соответствующее_установленным_правилам_формы
       set:
-        C10: полный набор
-        C11: непротиворечивый набор
-        C12: реализуемый набор
-        C13: понятный набор
-        C14: набор допускает валидацию относительно потребностей
-        C15: набор корректно представляет источники
+        C10: полный_набор
+        C11: непротиворечивый_набор
+        C12: реализуемый_набор
+        C13: понятный_набор
+        C14: набор_допускает_валидацию_относительно_потребностей
+        C15: набор_корректно_представляет_источники
       applicability: all_mandatory_for_this_requirements_set
 
     attributes:
@@ -309,7 +404,7 @@ body:
 
   requirement_expression_defaults:
     owner: owner
-    stakeholders: [initiating_RIC_director, peer_RICs, clients, generic_SE_environment]
+    stakeholders: [initiating_RIC_director, RIC_staff, peer_RICs, clients, Network, generic_SE_environment]
     type_category: information_product_system_requirement
     applicability: director_RIC_positioning_product
     country: RU
@@ -329,16 +424,18 @@ body:
     - C10-C15 reviewed for the set
     - all A1-A49 have explicit semantic slots and applicability policy
     - all R1-R42 have explicit project interpretation and applicability policy
-    - no requirement asserts official Network adoption or unmeasured causal/economic effect
+    - MoE, MoP, TPM and MoS are separated by measurement purpose when applicable
+    - ROI is separated from engineering effectiveness/performance/progress measures and has explicit evidence boundary
+    - no requirement asserts official Network adoption or unsupported causal/economic effect
     - dependent director product is revised or verified against this requirements version before baseline
 
 ppr_compliance:
   owner_request_preserved: true
-  requested_result: full_INCOSE_C_A_R_requirements_profile_for_discussed_RIC_director_positioning_product
+  requested_result: refined_director_positioning_requirements_with_full_INCOSE_C_A_R_and_ROI
   normative_first: true
   source_authority_separation: true
   artifact_instance_and_version_identity: true
   process_ownership_explicit: true
   exact_source_and_parent_traces_present: true
   acceptance_not_inferred_from_creation_or_PR: true
-  unresolved_gap: dependent_supply_response_V3_not_yet_verified_or_revised_against_this_new_requirements_version
+  unresolved_gap: dependent_supply_response_V3_not_yet_verified_or_revised_against_this_requirements_version
