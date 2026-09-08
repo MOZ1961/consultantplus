@@ -1,189 +1,250 @@
 schema_version: se.process_artifact.v1
 record_kind: process_artifact_instance
 artifact_instance_id: ART-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001
-artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V1
-supersedes_artifact_version_id: null
+artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V2
+supersedes_artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001-V1
 artifact_label: verification report
 project_contour: client_system_consultantplus
-lifecycle_status: owner_directed_candidate_subject_verification_complete
-acceptance_status: verification_complete_external_RIC_use_acceptance_positioning_adoption_and_merge_separate
+lifecycle_status: owner_directed_candidate_standard_composition_verification_complete
+acceptance_status: composition_TECH_VER_complete_structural_worker_and_owner_acceptance_separate
 artifact_instance_purpose: >-
-  Предметно проверить два новых продукта для руководителя РИЦ: TM-MEAS План с встроенным опросником и
-  AGR-SUP краткое объяснение взаимодействия/пользы. Убедиться, что опросник не наводит на заранее выбранное
-  позиционирование, факты и реакции разделены, объяснение пользы не усиливает утверждения сверх текущей
-  доказательной базы, а оба результата пригодны для обсуждения с руководителем без объявления официального
-  позиционирования, доказанного эффекта или рыночного принятия.
+  Верифицировать стандартный состав двух продуктов для руководителя РИЦ после их нормализации:
+  TM-MEAS План интервью с опросником и AGR-SUP ответ поставщика с объяснением взаимодействия/пользы.
+  Проверка должна подтвердить точную идентичность ProcessType/O, полный типовой состав ГОСТ Р 58609
+  (§7.3 или §7.2), полный применимый специальный состав (§10.46 или §10.56), все PPR-001..012,
+  парную ISO/ГОСТ-трассировку, отсутствие неразрешенного local-additive профиля и наличие реальных
+  непустых полей для каждого требования. Предметная полезность для реального РИЦ остается отдельной эмпирической проверкой.
 producer:
   process_type_id: TECH-VER
-  process_instance_id: PI-CPLUS-TECH-VER-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-20260907-001
-  activity_instance_id: AI-CPLUS-TECH-VER-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-20260907-001
+  process_instance_id: PI-CPLUS-TECH-VER-RIC-DIRECTOR-STANDARD-COMPOSITION-20260907-001
+  activity_instance_id: AI-CPLUS-TECH-VER-VERIFY-RIC-DIRECTOR-STANDARD-COMPOSITION-20260907-001
   methodic_instance:
-    methodic_id: METH-CPLUS-TECH-VER-RIC-DIRECTOR-EVIDENCE-BOUNDARY
-    methodic_version_id: METHVER-CPLUS-TECH-VER-RIC-DIRECTOR-EVIDENCE-BOUNDARY-V1
-    methodic_version: runtime-provisional-v1
+    methodic_id: METH-CPLUS-TECH-VER-STANDARD-PRODUCT-COMPOSITION
+    methodic_version_id: METHVER-CPLUS-TECH-VER-STANDARD-PRODUCT-COMPOSITION-V1
+    methodic_version: ppr-gost-exact-set-inspection-v1
     status: provisional_runtime_not_adopted
 request_operation_ref:
   repository: MOZ1961/se
   process_type_id: TECH-OP
-  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-20260907-001
+  process_instance_id: PI-SE-TECH-OP-CPLUS-RIC-DIRECTOR-PRODUCT-COMPOSITION-20260907-001
   required_output_label: operation report
 interface_binding_ref:
   repository: MOZ1961/consultantplus
   artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
   binding_instance_id: BIND-CPLUS-SE-001
-issued_at_and_status: {issued_at: '2026-09-07', status: subject_verification_complete_candidate}
+issued_at_and_status:
+  issued_at: '2026-09-07'
+  status: composition_TECH_VER_pass_pending_exact_head_structural_worker
 scope: >-
-  Semantic verification of ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V1 and
-  ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1 against current positioning,
-  measurement and evidence-boundary products. Structural ГОСТ/PPR completeness is checked separately by workers.
+  Composition verification of ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2 and
+  ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2. This report also materializes
+  its own standard verification-report composition under ГОСТ §7.6 + §10.93 for subsequent structural-worker checking.
 issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
 participants: [ChatGPT engineering actor as TECH-VER executor]
 summary: >-
-  Result PASS_WITH_EVIDENCE_GAPS_FOR_DIRECTOR_DISCUSSION. The questionnaire is semantically suitable for a RIC
-  director discussion because Q01-Q17 collect real management decisions, one concrete episode, evidence gaps and
-  actual alternatives before the interaction/value explanation is shown. Q18-Q26 are explicitly aided and test management
-  usefulness, trust, credibility boundaries and pilot conditions rather than being reclassified as spontaneous evidence.
-  The director-facing supply response explains a bounded interaction: episode reconstruction, contribution separation,
-  evidence trace and verification. Its benefit claims are framed as management-support hypotheses and it explicitly excludes
-  ROI, prevented fines, Network-wide inference and official positioning. The remaining material gap is factual: no real
-  external RIC director has answered the questionnaire, so usefulness and value remain unvalidated.
+  Result COMPOSITION_PASS_PENDING_EXACT_HEAD_STRUCTURAL_WORKER. The TM-MEAS Plan resolves to generic plan §7.3
+  plus measurement plan §10.46 and materializes all 22 generic requirements, all 6 specific requirements and all 12 PPR rows.
+  The AGR-SUP supply response resolves to generic description §7.2 plus proposal §10.56 and materializes all 9 generic
+  requirements, all 6 required specific requirements, explicit disposition of optional tailoring S10.56-O01 and all 12 PPR rows.
+  Both products include paired ISO/ГОСТ traces and explicit no-local-additive disposition. No composition gap remains in
+  subject inspection; exact-head deterministic worker evidence is still required before a structural readiness claim.
 introduction:
   verified_object:
-    - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V1
-    - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1
-  verification_context: owner requested a director questionnaire and a director-facing view explaining interaction and benefit after merging prior positioning work
-  verification_purpose: determine whether the two products are semantically fit for controlled discussion without fabricating RIC evidence or adoption
-  acceptance_boundary: TECH-VER does not authorize external contact, send, RIC acceptance, official positioning, commercial commitment, baseline or merge
+    - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+    - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2
+  verification_context: owner explicitly requested standard composition and verification against requirements and ГОСТ
+  verification_purpose: prove that the two normalized products contain the complete applicable normative and owner-requested product composition
+  audience: [owner, product maintainers, structural worker, future reviewer]
+  acceptance_boundary: composition verification does not establish RIC usefulness external acceptance official positioning deployment baseline or commercial effect
 context_and_assumptions:
-  upstream:
-    - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
-    - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
-    - ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
-    - ARTVER-CPLUS-RIC-POSITIONING-PILOT-PLAN-VERIFICATION-REPORT-20260907-001-V1
-    - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
-  evidence_state: no new actual RIC director response was supplied in this request
-  structural_boundary: this report verifies meaning and evidence fit; deterministic workers verify product shape, normative coverage and traceability
+  controlling_products:
+    owner_product_requirements: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+    universal_content: ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
+    normative_catalog: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+    normative_crosswalk: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+    dual_standard_policy: ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
+  source_standard:
+    international: ISO/IEC/IEEE 15289:2017
+    national: ГОСТ Р 58609-2019 / ISO/IEC/IEEE 15289:2017
+    relation: IDT
+  evidence_state: verified product contents are repository ArtifactVersions; no external RIC evidence is used for composition verification
+  structural_boundary: subject TECH-VER inspects semantic applicability and exact expected sets; deterministic worker independently checks field resolution and structural contracts
 body:
   verified_items_and_dates:
-    - {item: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V1, date: '2026-09-07', verification_scope: neutrality ordering evidence classes privacy and measurement usefulness}
-    - {item: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1, date: '2026-09-07', verification_scope: interaction explanation benefit claims role boundaries and evidence limitations}
+    - {item: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2, date: '2026-09-07', verification_scope: ProcessType/O identity §7.3 §10.46 PPR-001..012 dual trace local-additive disposition}
+    - {item: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2, date: '2026-09-07', verification_scope: ProcessType/O identity §7.2 §10.56 PPR-001..012 dual trace local-additive disposition}
   verification_requirements_and_criteria:
-    - {id: VER-DIR-01, criterion: standard_product_resolution, required: true, expected: questionnaire is embedded in TM-MEAS plan and director view is a standard AGR-SUP supply response rather than orphan semantic carriers}
-    - {id: VER-DIR-02, criterion: unaided_before_aided, required: true, expected: real decisions episode evidence gaps and alternatives are collected before the interaction view is shown}
-    - {id: VER-DIR-03, criterion: episode_concreteness, required: true, expected: instrument requests a recent concrete case and permits insufficiency rather than analyst invention}
-    - {id: VER-DIR-04, criterion: evidence_class_separation, required: true, expected: fact judgment criterion alternative aided reaction pilot intent and analyst inference remain distinguishable}
-    - {id: VER-DIR-05, criterion: contribution_separation, required: true, expected: ConsultantPlus RIC client and other contributions are not collapsed into one causal claim}
-    - {id: VER-DIR-06, criterion: management_usefulness_not_adoption, required: true, expected: use for concrete director decisions is measured separately from liking or willingness to pilot}
-    - {id: VER-DIR-07, criterion: benefit_claim_boundary, required: true, expected: director view makes no unsupported ROI prevented-fine general-risk or Network-wide claim}
-    - {id: VER-DIR-08, criterion: responsibility_boundary, required: true, expected: environment and RIC do not replace client or director decision authority}
-    - {id: VER-DIR-09, criterion: privacy_minimization, required: true, expected: no PII CRM dump confidential correspondence margin or credentials are required by default}
-    - {id: VER-DIR-10, criterion: positioning_status_boundary, required: true, expected: candidate explanation is not called official ConsultantPlus positioning}
-    - {id: VER-DIR-11, criterion: negative_response_preservation, required: true, expected: useless implausible or stop responses can be captured without being treated as failure of respondent}
-    - {id: VER-DIR-12, criterion: next_evidence_path, required: true, expected: actual responses lead to TM-MEAS measurement register/report and only material evidence changes feed TECH-BMA/TM-DEC}
-  analysis_of_results:
-    overall_result: PASS_WITH_EVIDENCE_GAPS_FOR_DIRECTOR_DISCUSSION
-    questionnaire_readiness: semantically_fit_for_controlled_RIC_director_interview_after_structural_PASS_and_owner_external_use_authority
-    view_readiness: semantically_fit_for_showing_only_after_questionnaire_PART_A
-    adoption_readiness: NOT_READY
-    rationale: >-
-      The products correctly structure evidence acquisition and explanation but cannot validate their own usefulness.
-      A real director must supply actual management and episode evidence; positive or negative response is future TM-MEAS input.
+    - {id: COMP-01, criterion: canonical_identity, required: true, expected: exact ProcessType/O and resolved information-item identity}
+    - {id: COMP-02, criterion: one_generic_profile, required: true, expected: exactly one applicable generic §7 profile with exact requirement set}
+    - {id: COMP-03, criterion: all_specific_profiles, required: true, expected: every applicable §10 requirement present with optional items explicitly dispositioned}
+    - {id: COMP-04, criterion: real_field_materialization, required: true, expected: every satisfied normative requirement references one or more real nonempty artifact fields}
+    - {id: COMP-05, criterion: ppr_exact_set, required: true, expected: PPR-001 through PPR-012 each present exactly once with resolvable evidence fields}
+    - {id: COMP-06, criterion: dual_standard_trace, required: true, expected: paired ISO/IEC/IEEE 15289 and ГОСТ Р 58609 trace for every normative content row}
+    - {id: COMP-07, criterion: local_additive_disposition, required: true, expected: explicit none/not-applicable where crosswalk selects no additive profile}
+    - {id: COMP-08, criterion: structural_semantic_boundary, required: true, expected: structural composition does not imply empirical usefulness acceptance adoption or baseline}
+  composition_verification_matrix:
+    measurement_plan:
+      artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+      canonical_identity: {process_type_id: TM-MEAS, canonical_O: measurement strategy/approach, result: PASS}
+      generic_profile:
+        expected: {section: '7.3', count: 22, requirement_ids: [U7.3-A,U7.3-B,U7.3-C,U7.3-D,U7.3-E,U7.3-F,U7.3-G,U7.3-H,U7.3-I,U7.3-J,U7.3-K,U7.3-L,U7.3-M,U7.3-N,U7.3-O,U7.3-P,U7.3-Q,U7.3-R,U7.3-S,U7.3-T,U7.3-U,U7.3-V]}
+        observed: {count: 22, missing: [], extra: [], result: PASS}
+      specific_profile:
+        expected: {section: '10.46', count: 6, requirement_ids: [S10.46-R01,S10.46-R02,S10.46-R03,S10.46-R04,S10.46-R05,S10.46-R06]}
+        observed: {count: 6, missing: [], extra: [], result: PASS}
+      ppr:
+        expected_ids: [PPR-001,PPR-002,PPR-003,PPR-004,PPR-005,PPR-006,PPR-007,PPR-008,PPR-009,PPR-010,PPR-011,PPR-012]
+        observed_missing: []
+        observed_failed_or_unresolved: []
+        result: PASS
+      field_materialization:
+        checked_groups:
+          - {requirement: S10.46-R01, fields: [measurement_needs_and_information_requirements], result: PASS}
+          - {requirement: S10.46-R02, fields: [measures], result: PASS}
+          - {requirement: S10.46-R03, fields: [data_collection_and_storage], result: PASS}
+          - {requirement: S10.46-R04, fields: [analysis_interpretation_reporting], result: PASS}
+          - {requirement: S10.46-R05, fields: [responsibilities_and_authorities,resources_and_allocation,tools_methods_techniques,schedule], result: PASS}
+          - {requirement: S10.46-R06, fields: [measurement_process_evaluation], result: PASS}
+        generic_field_refs_present: PASS_subject_inspection
+      dual_standard_trace: paired_exact_set_present_subject_inspection
+      local_additive: {selected: none, disposition: not_applicable, result: PASS}
+      overall: PASS
+    supply_response:
+      artifact_version_id: ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2
+      canonical_identity: {process_type_id: AGR-SUP, canonical_O: supply response, result: PASS}
+      generic_profile:
+        expected: {section: '7.2', count: 9, requirement_ids: [U7.2-A,U7.2-B,U7.2-C,U7.2-D,U7.2-E,U7.2-F,U7.2-G,U7.2-H,U7.2-I]}
+        observed: {count: 9, missing: [], extra: [], result: PASS}
+      specific_profile:
+        expected_required: {section: '10.56', count: 6, requirement_ids: [S10.56-R01,S10.56-R02,S10.56-R03,S10.56-R04,S10.56-R05,S10.56-R06]}
+        expected_optional: [S10.56-O01]
+        observed_required: {count: 6, missing: [], extra: [], result: PASS}
+        optional_disposition: {requirement_id: S10.56-O01, state: not_applicable, basis: no lifecycle-process tailoring proposed, result: PASS}
+      ppr:
+        expected_ids: [PPR-001,PPR-002,PPR-003,PPR-004,PPR-005,PPR-006,PPR-007,PPR-008,PPR-009,PPR-010,PPR-011,PPR-012]
+        observed_missing: []
+        observed_failed_or_unresolved: []
+        result: PASS
+      field_materialization:
+        checked_groups:
+          - {requirement: S10.56-R01, fields: [body.commercial_and_cost.proposed_cost], result: PASS}
+          - {requirement: S10.56-R02, fields: [body.schedule], result: PASS}
+          - {requirement: S10.56-R03, fields: [body.proposal_risks], result: PASS}
+          - {requirement: S10.56-R04, fields: [body.delivery_methodology], result: PASS}
+          - {requirement: S10.56-R05, fields: [body.supplier_experience_and_capabilities], result: PASS}
+          - {requirement: S10.56-R06, fields: [body.authorization], result: PASS}
+          - {requirement: S10.56-O01, fields: [body.tailoring_proposal], result: PASS_explicit_disposition}
+        generic_field_refs_present: PASS_subject_inspection
+      dual_standard_trace: paired_exact_set_present_subject_inspection
+      local_additive: {selected: none, disposition: not_applicable, result: PASS}
+      overall: PASS
   detailed_results:
-    - {criterion: VER-DIR-01, result: PASS, evidence: questionnaire related_plans.standard_product_rule and supply-response canonical identity}
-    - {criterion: VER-DIR-02, result: PASS, evidence: questionnaire PART_A Q01-Q17 precedes PART_B Q18-Q26 and explicit view_ref}
-    - {criterion: VER-DIR-03, result: PASS, evidence: Q02-Q04 request one recent concrete case and method permits not_established}
-    - {criterion: VER-DIR-04, result: PASS, evidence: measurement evidence_classes and measures M01-M14}
-    - {criterion: VER-DIR-05, result: PASS, evidence: Q09-Q11 plus supply response boundaries_of_roles}
-    - {criterion: VER-DIR-06, result: PASS, evidence: M10 management_usefulness separated from M13 pilot_intent_and_condition}
-    - {criterion: VER-DIR-07, result: PASS, evidence: supply response what_we_do_not_promise and exclusions}
-    - {criterion: VER-DIR-08, result: PASS, evidence: supply response boundaries_of_roles and questionnaire responsibilities_and_authorities}
-    - {criterion: VER-DIR-09, result: PASS, evidence: questionnaire privacy_security and risk mitigation}
-    - {criterion: VER-DIR-10, result: PASS, evidence: supply response acceptance_status and authorization.positioning_adoption}
-    - {criterion: VER-DIR-11, result: PASS, evidence: Q17 Q19 Q24 Q25 Q26 and interviewer rule preserve disagreement}
-    - {criterion: VER-DIR-12, result: PASS, evidence: questionnaire completion_process and future_reporting}
+    - {criterion: COMP-01, result: PASS, evidence: both products use canonical producer ProcessType/O and resolved information-item identities}
+    - {criterion: COMP-02, result: PASS, evidence: TM-MEAS uses exact §7.3 set 22/22; AGR-SUP uses exact §7.2 set 9/9}
+    - {criterion: COMP-03, result: PASS, evidence: TM-MEAS covers §10.46 6/6; AGR-SUP covers §10.56 6/6 required plus explicit S10.56-O01 disposition}
+    - {criterion: COMP-04, result: PASS_SUBJECT_INSPECTION, evidence: every normative row maps to real named product fields; deterministic worker pending}
+    - {criterion: COMP-05, result: PASS, evidence: both products carry exact PPR-001..012 set with satisfied dispositions}
+    - {criterion: COMP-06, result: PASS_SUBJECT_INSPECTION, evidence: both products carry paired content traces for each generic and specific row; deterministic worker pending}
+    - {criterion: COMP-07, result: PASS, evidence: both crosswalks select no local additive profile and both products state not_applicable explicitly}
+    - {criterion: COMP-08, result: PASS, evidence: acceptance_status verification blocks and empirical gaps remain distinct from structural composition}
   problems_encountered:
-    - {id: GAP-DIR-01, problem: no real RIC director responses yet, consequence: usefulness trust gaps and pilot conditions remain unvalidated, disposition: execute questionnaire only after participant and authority are resolved}
-    - {id: GAP-DIR-02, problem: no direct client-side evidence added by this request, consequence: RIC director account cannot substitute for client perception, disposition: preserve separate client-side TM-MEAS wave}
-    - {id: GAP-DIR-03, problem: exact-head structural worker has not yet executed on these new products, consequence: no structural readiness claim yet, disposition: run generic-SE external-client gate}
+    - {id: PENDING-STRUCT-01, problem: successor V2 product head has not yet been checked by exact-head deterministic worker, consequence: subject composition PASS is not yet structural readiness, disposition: run generic-SE Verify information products against exact client head}
+    - {id: EMPIRICAL-GAP-01, problem: no real RIC director response is part of this request, consequence: composition conformity cannot establish usefulness or positioning acceptance, disposition: retain as future TM-MEAS evidence gap}
   verification_decision_rationale:
-    decision: PASS_WITH_EVIDENCE_GAPS_FOR_DIRECTOR_DISCUSSION
+    decision: COMPOSITION_PASS_PENDING_EXACT_HEAD_STRUCTURAL_WORKER
     basis:
-      - all 12 semantic criteria pass in the candidate content
-      - remaining gaps are expected empirical inputs rather than semantic defects in the instruments
-      - the questionnaire can capture negative evidence and stop conditions
-      - the view is bounded to management-support hypotheses and exact upstream evidence
-    allowed_next_after_structural_pass:
-      - owner review
-      - controlled use with a resolved RIC director after external-use authority
-      - persistence of actual responses as TM-MEAS measurement records
+      - exact applicable generic and specific profiles were resolved from active catalog/crosswalk
+      - expected and observed requirement sets match with no subject-inspection omissions
+      - PPR exact sets are complete
+      - paired ISO/GOST content traces and explicit local-additive dispositions are present
+      - empirical usefulness and owner/RIC acceptance are intentionally outside composition verification
+    allowed_next:
+      - exact-head structural worker
+      - owner review after worker PASS
+      - later controlled RIC interview without treating composition conformance as empirical validation
     blocked_next:
-      - claim that RIC directors find the interaction useful before real evidence
-      - official positioning adoption
-      - Network-wide or financial causal claims
-      - automatic product requirements from interview comments
+      - claim structural readiness before exact-head worker PASS
+      - claim RIC usefulness or adoption from composition PASS
+      - official positioning adoption without authorized decision
 conclusions_and_recommendations:
   conclusion: >-
-    The pair is fit as a controlled conversation instrument: first learn how the director actually makes decisions,
-    then show a concise explanation and test whether it adds usable management value. The design is stronger than
-    presenting the offer first because it preserves independent evidence about the director's real problems, alternatives
-    and language. Current evidence supports discussion readiness, not adoption or demonstrated business effect.
+    Both director-facing products are now normalized to their exact standard information-product compositions and pass
+    subject TECH-VER for composition. No missing generic, special or PPR content is found in the V2 structures. The remaining
+    verification step is mechanical exact-head structural validation of field references, exact-set coverage and paired traces.
   recommendation: >-
-    After structural PASS, use Q01-Q17 before showing the director view. If a real director interview occurs, create no
-    new ad-hoc document: persist actual answers through TM-MEAS measurement register, then synthesize through the
-    standard measurement report and revise TECH-BMA only if evidence materially changes the hypotheses.
+    Run the generic-SE exact-head information-product workflow against the client branch. If it passes, treat composition as
+    structurally verified while keeping empirical RIC usefulness, official positioning and external acceptance separate.
 references:
-  - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V1
-  - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V1
-  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
-  - ARTVER-CPLUS-RIC-POSITIONING-PILOT-MEASUREMENT-PLAN-20260907-001-V1
-  - ARTVER-CPLUS-RIC-EXPRESS-SERVICE-EPISODE-PROPOSAL-20260906-001-V4
+  - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+  - ARTVER-CPLUS-RIC-DIRECTOR-INTERACTION-BENEFIT-SUPPLY-RESPONSE-20260907-001-V2
   - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-UNIVERSAL-CONTENT-POLICY-20260904-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
 bibliography:
   - 'ISO/IEC/IEEE 15288:2023 §6.4.9 — Verification process'
   - 'ГОСТ Р 57193-2025 §6.4.9 — Процесс верификации'
-  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.6, 10.93'
+  - 'ISO/IEC/IEEE 15289:2017 / ГОСТ Р 58609-2019 §§7.2, 7.3, 7.6, 10.46, 10.56, 10.93'
+standard_product_composition:
+  generic_profile:
+    section: '7.6'
+    type: report
+    expected_requirement_ids: [U7.6-A,U7.6-B,U7.6-C,U7.6-D,U7.6-E,U7.6-F,U7.6-G,U7.6-H,U7.6-I,U7.6-J,U7.6-K,U7.6-L,U7.6-M]
+  specific_profile:
+    section: '10.93'
+    information_item: verification report
+    expected_requirement_ids: [S10.93-R01,S10.93-R02,S10.93-R03,S10.93-R04,S10.93-R05,S10.93-R06,S10.93-R07,S10.93-R08]
+  owner_product_requirement_set: [PPR-001,PPR-002,PPR-003,PPR-004,PPR-005,PPR-006,PPR-007,PPR-008,PPR-009,PPR-010,PPR-011,PPR-012]
+  local_additive_profile: none
 glossary:
-  subject_verification: semantic verification against stated criteria independent of structural field checks
-  unaided_evidence: evidence collected before candidate provider framing is shown
-  aided_reaction: participant reaction after exact candidate explanation is presented
-  discussion_readiness: fitness to use the instrument in a controlled conversation; not acceptance adoption or proven effect
-  evidence_gap: empirically missing information that the future measurement process is expected to obtain
-author_product_request_note: current owner requested creation and merge of prior work; new product merge remains a separate gate
+  composition_verification: verification that all applicable required information-content elements and traceability are present and correctly allocated
+  exact_set: expected and observed requirement identifiers are identical with no missing or extra mandatory rows
+  subject_inspection: semantic TECH-VER review distinct from deterministic structural worker execution
+  structural_readiness: state reached only after exact-head deterministic worker PASS
+  empirical_validation: evidence from real RIC use or stakeholder response and not implied by composition conformance
 change_history:
-  - {version: V1, date: '2026-09-07', change: verify director questionnaire and interaction/benefit supply response for controlled discussion readiness}
+  - {version: V1, date: '2026-09-07', change: verify semantic discussion readiness of director questionnaire and interaction-benefit view}
+  - {version: V2, date: '2026-09-07', change: verify exact standard composition of the normalized V2 products against PPR and ГОСТ and materialize own §7.6 + §10.93 composition}
 owner_product_request:
-  exact_visible_text: 'сливай все что сделал. сделай опросник для руководителя РИЦ. сделай взгляд для него, объясняющий наше взаимодействие и пользу. краткую сводку работ в этом диалоге'
-  resolved_referent: independently verify the newly created director questionnaire and interaction/benefit explanation
+  exact_visible_text: 'приведи к стандартному составу эти продукты и верифицируй их состав по требованиям и ГОСТу'
+  resolved_referent: verify the normalized director-facing products by active owner-product requirements and exact applicable ГОСТ composition
   current_dialogue_branch_purpose: Предложить и разработать для РИЦ информационные продукты о позиционировании КонсультантПлюс.
   purpose_provenance: current_conversation_first_substantive_owner_request
   request_specific_requirements:
-    - verify both new director-facing products together
-    - preserve structural versus semantic verification boundary
-    - do not infer actual RIC evidence or official positioning
-    - identify the next standard evidence path
+    - verify canonical ProcessType/O identity
+    - verify exact generic ГОСТ content sets
+    - verify all applicable specific §10 content sets
+    - verify all PPR-001..012 dispositions and field references
+    - verify paired ISO/GOST trace and explicit local-additive disposition
+    - separate composition verification from empirical RIC usefulness and official positioning
 product_requirement_compliance:
   contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
-  applicability: applies_new_client_TECH_VER_verification_report
+  applicability: applies_materially_revised_client_TECH_VER_verification_report
   requirement_coverage:
-    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id, artifact_label, content_compliance.information_item_identity]}
-    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request, body.verification_requirements_and_criteria]}
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id,artifact_label,content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request,body.verification_requirements_and_criteria,body.composition_verification_matrix]}
     - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
     - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_specific_content]}
     - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
     - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage]}
-    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered, body.blocked_next, verification]}
-    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references, context_and_assumptions, body.detailed_results]}
-    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status, verification.semantic_status, verification.owner_acceptance]}
-    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self, verification]}
-    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id, artifact_addresses.self]}
-    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements, change_history]}
-  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_candidate_pending_exact_head_structural_worker}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [body.problems_encountered,verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,context_and_assumptions,body.composition_verification_matrix,standards_trace]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification.structural_status,verification.semantic_status,verification.owner_acceptance]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self,verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id,artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements,change_history]}
+  completion_gate:
+    mandatory_missing: []
+    mandatory_failed: []
+    mandatory_unresolved: []
+    state: pass_subject_composition_candidate_pending_exact_head_structural_worker
 verification:
-  structural_status: pending_exact_external_client_information_product_worker
-  semantic_status: PASS_WITH_EVIDENCE_GAPS_FOR_DIRECTOR_DISCUSSION
-  owner_acceptance: verification execution requested implicitly as required support; external use acceptance positioning adoption and merge separate
+  structural_status: pending_exact_external_client_information_product_worker_for_V2
+  semantic_status: COMPOSITION_PASS_PENDING_EXACT_HEAD_STRUCTURAL_WORKER
+  owner_acceptance: standardization and verification requested; empirical usefulness external acceptance official positioning and baseline separate
 artifact_addresses:
-  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-ric-director-questionnaire-and-view
+  self: MOZ1961/consultantplus:artifacts/TECH-VER/verification-report/ART-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-VIEW-VERIFICATION-REPORT-20260907-001.yaml@change/consultantplus-20260907-standardize-ric-director-products
 information_product_applicability: applies
 standards_trace:
   process:
@@ -211,18 +272,21 @@ standards_trace:
         - {requirement_id: U7.6-K, disposition: satisfied, artifact_field_refs: [bibliography], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
         - {requirement_id: U7.6-L, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
         - {requirement_id: U7.6-M, disposition: satisfied, artifact_field_refs: [change_history], iso: {section_or_item: '7.6'}, gost: {section_or_item: '7.6'}, correspondence: IDT}
-        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [body.analysis_of_results, conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
-        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R01, disposition: satisfied, artifact_field_refs: [summary,body.verification_decision_rationale,conclusions_and_recommendations], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R02, disposition: satisfied, artifact_field_refs: [introduction.verified_object,body.composition_verification_matrix], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
         - {requirement_id: S10.93-R03, disposition: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
-        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.analysis_of_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R04, disposition: satisfied, artifact_field_refs: [body.composition_verification_matrix,body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
         - {requirement_id: S10.93-R05, disposition: satisfied, artifact_field_refs: [body.verified_items_and_dates], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
-        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
+        - {requirement_id: S10.93-R06, disposition: satisfied, artifact_field_refs: [body.detailed_results,body.composition_verification_matrix], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
         - {requirement_id: S10.93-R07, disposition: satisfied, artifact_field_refs: [body.problems_encountered], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
         - {requirement_id: S10.93-R08, disposition: satisfied, artifact_field_refs: [body.verification_decision_rationale], iso: {section_or_item: '10.93'}, gost: {section_or_item: '10.93'}, correspondence: IDT}
       local_additive_requirements: []
 content_compliance:
   control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
-  information_item_identity: {resolved_name_or_semantic_identity: verification report for RIC director questionnaire and interaction benefit explanation, resolution_basis: TECH-VER verification report exact binding to §10.93, state: resolved}
+  information_item_identity:
+    resolved_name_or_semantic_identity: verification report for standard composition of RIC director questionnaire plan and interaction benefit supply response
+    resolution_basis: TECH-VER verification report controlled semantic match to ГОСТ §10.93
+    state: resolved
   universal_type: report
   universal_content:
     source_section: '7.6'
@@ -256,20 +320,22 @@ content_compliance:
       - profile_id: '10.93'
         kind: section10
         requirement_coverage:
-          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [body.analysis_of_results, conclusions_and_recommendations]}
-          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object, body.verified_items_and_dates]}
+          - {requirement_id: S10.93-R01, state: satisfied, artifact_field_refs: [summary,body.verification_decision_rationale,conclusions_and_recommendations]}
+          - {requirement_id: S10.93-R02, state: satisfied, artifact_field_refs: [introduction.verified_object,body.composition_verification_matrix]}
           - {requirement_id: S10.93-R03, state: satisfied, artifact_field_refs: [body.verification_requirements_and_criteria]}
-          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.analysis_of_results]}
+          - {requirement_id: S10.93-R04, state: satisfied, artifact_field_refs: [body.composition_verification_matrix,body.detailed_results]}
           - {requirement_id: S10.93-R05, state: satisfied, artifact_field_refs: [body.verified_items_and_dates]}
-          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results]}
+          - {requirement_id: S10.93-R06, state: satisfied, artifact_field_refs: [body.detailed_results,body.composition_verification_matrix]}
           - {requirement_id: S10.93-R07, state: satisfied, artifact_field_refs: [body.problems_encountered]}
           - {requirement_id: S10.93-R08, state: satisfied, artifact_field_refs: [body.verification_decision_rationale]}
-  local_additive_content: {state: not_applicable, basis: active exact binding selects no local additive profile}
-  tailoring: verification specializes §10.93 to the director questionnaire and interaction-benefit explanation; no lifecycle process tailoring introduced
+  local_additive_content:
+    state: not_applicable
+    basis: active exact binding selects no local additive profile
+  tailoring: verification is specialized to standard-composition conformity of two exact client ArtifactVersions; no lifecycle process tailoring introduced
   information_item_management:
-    version_control: V1 first exact verification report for this pair
-    review_approval: structural worker and owner external-use/acceptance remain separate
-    quality_evaluation: semantic criteria here plus generic-SE structural gate
-    retention: canonical client TECH-VER product
-    reuse_and_duplication: any material successor to either verified product requires impact review and renewed verification as applicable
-  composition_state: candidate_complete_pending_exact_head_external_worker
+    version_control: V2 supersedes V1 and changes verification subject from discussion readiness to exact standard composition
+    review_approval: exact-head structural worker and owner acceptance remain separate
+    quality_evaluation: exact-set PPR and ГОСТ review plus paired ISO/GOST trace; structural worker independently resolves fields
+    retention: canonical client TECH-VER product in MOZ1961/consultantplus
+    reuse_and_duplication: material changes to either verified product require impact review and renewed verification as applicable
+  composition_state: composition_TECH_VER_pass_pending_exact_head_structural_worker
