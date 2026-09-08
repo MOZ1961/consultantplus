@@ -1,0 +1,374 @@
+schema_version: se.process_artifact.v1
+record_kind: process_artifact_instance
+artifact_instance_id: ART-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001
+artifact_version_id: ARTVER-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001-V1
+supersedes_artifact_version_id: null
+artifact_label: measurement strategy/approach
+project_contour: client_system_consultantplus
+lifecycle_status: owner_directed_candidate_premeasurement_design_complete
+acceptance_status: design_candidate_not_measurement_executed_not_positioning_adopted_or_baselined
+artifact_instance_purpose: >-
+  Закрыть методические и информационные разрывы между существующими планами интервью РИЦ и клиентской
+  волны, установив один координирующий План измерений для четырех заинтересованных сторон: инициирующего
+  РИЦ, generic SE-среды, других РИЦ и клиентов. План задает общий объект доказательства, раздельные модули,
+  последовательность, выборку, правила триангуляции/конфликтов, приватность, критерии входа в измерения и
+  последующие стандартные продукты, не создавая измерительные данные до фактического сбора.
+producer:
+  process_type_id: TM-MEAS
+  process_instance_id: PI-CPLUS-TM-MEAS-POSITIONING-MULTI-STAKEHOLDER-20260908-001
+  activity_instance_id: AI-CPLUS-TM-MEAS-PREPARE-MULTI-STAKEHOLDER-POSITIONING-MEASUREMENT-20260908-001
+  methodic_instance:
+    methodic_id: METH-CPLUS-TM-MEAS-MULTI-STAKEHOLDER-POSITIONING
+    methodic_version_id: METHVER-CPLUS-TM-MEAS-MULTI-STAKEHOLDER-POSITIONING-V1
+    methodic_version: premeasurement-readiness-v1
+    status: provisional_runtime_not_adopted
+request_operation_ref:
+  repository: MOZ1961/se
+  process_type_id: TECH-OP
+  process_instance_id: PI-SE-TECH-OP-CPLUS-POSITIONING-PREMEASUREMENT-READINESS-20260908-001
+  required_output_label: operation report
+interface_binding_ref:
+  repository: MOZ1961/consultantplus
+  artifact_version_id: ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  binding_instance_id: BIND-CPLUS-SE-001
+issued_at_and_status: {issued_at: '2026-09-08', status: candidate_premeasurement_design_complete_pending_subject_and_structural_verification}
+scope: >-
+  Coordinating qualitative measurement plan for evidence-backed ConsultantPlus/RIC positioning. External respondent
+  populations are initiating RIC participants, peer RIC participants and client participants; SE is an engineering
+  stakeholder/analysis-verification participant, not a source of external market testimony. The plan coordinates existing
+  director and client-wave plans and does not itself authorize contact, create measurements or choose official positioning.
+issuing_organization: owner-authorized MOZ1961/consultantplus client engineering environment
+approving_authority: owner
+references:
+  - ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+  - ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  - ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  - ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  - ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+  - ARTVER-CPLUS-SE-INTERFACE-BINDING-20260904-001-V3
+  - ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  - ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+  - ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3
+  - ARTVER-SE-DUAL-STANDARD-TRACEABILITY-POLICY-20260905-001-V2
+introduction:
+  purpose: >-
+    Obtain comparable but non-substitutable evidence about positioning usefulness, transferability and client relevance
+    through real decision/service episodes, while giving SE a traceable evidence structure for later engineering decisions.
+  audience: [owner, initiating RIC leadership, peer RIC participants, client participants, interviewers, SE analysts, subsequent TECH-BMA, subsequent TM-MEAS, future TM-DEC if authorized]
+  coverage: [stakeholder decision use, recent episodes, actual alternatives, value language, ConsultantPlus contribution, RIC contribution, transferability, trust, constraints, aided positioning reaction, evidence provenance, contradictions, privacy, readiness gates]
+  nonpurpose: [not market-share research, not statistical population estimation, not ROI proof, not prevented-fine proof, not legal-correctness validation, not official positioning adoption, not empty measurement-data persistence]
+planned_activities_and_tasks:
+  - freeze the common evidence contract and stakeholder-specific modules before external measurement
+  - prepare recruitment matrix with separate initiating-RIC, peer-RIC and client strata; SE is not counted as respondent evidence
+  - use the existing director questionnaire as the initiating-RIC leadership module where applicable
+  - use the existing client-wave episode protocol for client modules and preserve C1-C6 role stratification
+  - add a peer-RIC transferability module using the same unaided-before-aided sequence
+  - reconstruct a concrete recent episode before any positioning proposition is shown
+  - elicit actual category/frame, alternatives and choice/trust criteria before aided prompts
+  - preserve ConsultantPlus contribution, RIC contribution and other-source contribution separately
+  - classify every statement by stakeholder class and evidence class; allow explicit not_established
+  - preserve conflicts instead of averaging them and route unresolved cross-domain claims to later analysis
+  - run pre-use instrument review for leading language, contamination, missing fields, privacy and unsupported-claim risks
+  - after actual collection create TM-MEAS measurement register; after cross-case synthesis create TM-MEAS measurement report
+  - create successor TECH-BMA only if evidence materially changes positioning hypotheses; create TM-DEC only after an authorized positioning decision
+tools_methods_techniques:
+  method: semi-structured critical-episode research with common core plus stakeholder-specific modules and unaided-before-aided positioning comparison
+  techniques:
+    - recent identifiable episode before generalization
+    - neutral chronological reconstruction
+    - actual alternatives before candidate categories or competitor prompts
+    - spontaneous value language before aided positioning view
+    - source-domain and evidence-class tagging at capture
+    - separate coding for product, RIC, client and other-source contribution
+    - contradiction and minority-case preservation
+    - peer-RIC transferability probes separated from initiating-RIC usefulness probes
+    - SE inference recorded only after source evidence and never recoded as participant fact
+    - explicit not_established instead of analyst completion
+  tools: [approved interview channel, stakeholder-specific guide views derived from this plan, structured episode record schema, controlled analysis representation, future TM-MEAS measurement register]
+schedule:
+  sequencing:
+    - {stage: premeasurement_subject_TECH_VER, scope: verify stakeholder completeness, evidence authority, instrument logic, privacy and readiness gates}
+    - {stage: exact_head_structural_verification, scope: verify full PPR and ГОСТ/ISO content composition}
+    - {stage: external_execution_authority, scope: owner authorizes participant contact and measurement start separately}
+    - {stage: instrument_pretest, scope: one initiating-RIC participant, one peer-RIC participant and at least two client roles where feasible; purpose is wording/process defect detection rather than positioning conclusion}
+    - {stage: controlled_revision, scope: version the plan only for material method/instrument changes found by pretest}
+    - {stage: main_wave, scope: reuse broad-wave target of approximately 8-12 organizations or comparable contexts, 12-20 interviews and at least 25 valid episodes, with explicit stakeholder/role coverage rather than pooled counts}
+    - {stage: synthesis, scope: cross-stakeholder measurement report with source-domain dispositions}
+  dates: not_established; participant availability and separate external-execution authority are required inputs
+budget_and_cost_estimate:
+  state: not_established_no_external_commitment
+  estimate: engineering preparation is internal; incentives, travel, paid recruitment and other external costs require separate owner authorization before commitment
+resources_and_allocation:
+  owner: scope, external-contact authority, cost authority, acceptance and any eventual positioning decision
+  initiating_RIC: management/service evidence and pilot feasibility context
+  peer_RICs: transferability, local constraints and independent provider-side episodes
+  clients: direct decision episodes, alternatives, criteria and perceived contribution
+  SE: evidence architecture, provenance checking, contradiction handling and lifecycle routing; no market testimony
+  interviewer: neutral collection and sequence control
+  analyst: coding and bounded synthesis
+  repository: canonical process-owned products and later measurement register/report
+responsibilities_and_authorities:
+  owner: {authority: approve external measurement start, scope/cost changes and any eventual positioning decision}
+  initiating_RIC: {authority: describe own management/service practice and conditions; no authority to speak for all clients or peer RICs}
+  peer_RIC: {authority: describe own RIC context and observations; no authority to establish network-wide prevalence or direct client truth}
+  client_participant: {authority: describe own episode, alternatives, criteria and perception; claims remain bounded by own knowledge}
+  SE: {authority: classify, trace, verify method and synthesize bounded inference; no authority to invent participant facts or adopt positioning}
+  interviewer: {authority: ask/clarify and preserve sequence; no authority to sell the hypothesis or promise product/service changes}
+  analyst: {authority: provisional coding and cross-case synthesis; no automatic promotion to requirement or official positioning}
+participant_interfaces:
+  initiating_RIC_to_measurement: own management decisions, service episodes, resource/trust criteria and local pilot conditions
+  peer_RIC_to_measurement: own operations, transferability conditions, client-facing observations and local constraints
+  client_to_measurement: direct recent decisions, actual alternatives, criteria, spontaneous language and aided reactions
+  SE_to_measurement: evidence schema, quality/trace checks and explicit analytical inference after capture; not respondent testimony
+  measurement_to_TECH_BMA: supported/contradicted/mixed/role-specific/untested hypotheses with source-domain trace
+  measurement_to_TM_DEC: evidence only; no decision unless an authorized decision process is invoked
+risk_assessment_and_mitigation:
+  - {risk: initiating RIC confirms its own hypothesis, mitigation: separate RIC-side evidence from client evidence and obtain peer-RIC/client strata}
+  - {risk: peer RIC statements are treated as client truth, mitigation: preserve RIC_account_of_client_episode evidence class and require client triangulation for client-side claims}
+  - {risk: SE analytical model contaminates respondent language, mitigation: complete unaided episode/frame/alternative/value-language capture before aided positioning view}
+  - {risk: client evidence is generalized to all clients, mitigation: purposive qualitative scope and no population-prevalence claims}
+  - {risk: stakeholder contradictions disappear in synthesis, mitigation: preserve source domain and conflicting cases; no averaging into single truth}
+  - {risk: product receives causal business credit, mitigation: separate contributions and treat counterfactuals as perception only}
+  - {risk: interest in pilot becomes proof of value, mitigation: separate pilot_intent, management_usefulness, client_relevance and adoption decisions}
+  - {risk: sensitive information enters records, mitigation: coded participant/context IDs, minimum necessary episode detail, no credentials/raw CRM/confidential correspondence/margins by default}
+  - {risk: unsupported ROI, prevented fines, general efficiency or risk reduction enters reporting, mitigation: block these claim classes unless a future method specifically designed for them provides adequate evidence}
+quality_and_effectiveness_measures:
+  quality_criteria:
+    - every valid episode identifies stakeholder class, role, context, trigger, decision/action, evidence path and status/result
+    - actual alternatives are participant-stated or explicit not_established
+    - ConsultantPlus and RIC contributions are separate
+    - unaided evidence precedes aided message testing for external participants
+    - RIC-side, client-side and SE-inference evidence classes remain distinguishable
+    - initiating-RIC and peer-RIC evidence remains distinguishable
+    - contradictory cases remain visible
+    - privacy/consent requirements are satisfied for captured material
+  effectiveness_signals:
+    - all four stakeholder classes have an explicit decision/use and evidence boundary before measurement; SE is represented as engineering stakeholder rather than respondent sample
+    - each external evidence domain has at least one planned source path and explicit non-substitution rule
+    - stakeholder/role coverage is reported separately from total interview count
+    - no material premeasurement design gap remains after TECH-VER other than actual participant availability/authority/execution inputs
+  noncriteria: [one positive interview, slogan preference count, willingness to participate, pooled RIC-plus-client agreement percentage]
+environment_infrastructure_security:
+  environment: authorized interviews with initiating RIC, peer RICs and clients plus MOZ1961/consultantplus engineering persistence and generic SE analysis interface
+  infrastructure: approved communication channel, stakeholder-specific guide view, structured episode schema, process-owned repository persistence
+  privacy_security:
+    - coded role/context identifiers by default
+    - direct names and organization identifiers only when necessary and authorized
+    - no raw CRM export, credentials, privileged materials, confidential correspondence or commercial margin by default
+    - audio and direct quotations only with explicit consent and retention decision
+    - access to collected evidence limited to authorized research/engineering participants
+  safety: measurement does not make legal, tax, professional, client or provider management decisions for participants
+training:
+  interviewer_orientation:
+    - use common core before stakeholder-specific aided module
+    - do not show positioning view before unaided evidence is complete
+    - request one concrete recent example where general assertions appear
+    - record not_established rather than complete answers for participant
+    - classify RIC accounts of clients separately from direct client evidence
+    - distinguish spontaneous statement from aided reaction and analyst inference
+  analyst_orientation:
+    - preserve source domain and contradictions
+    - do not treat SE inference as respondent evidence
+    - do not infer prevalence or causality from purposive qualitative sample
+technical_management_review_reporting:
+  pre_use_review:
+    - verify stakeholder coverage 4_of_4 and client subrole coverage strategy
+    - verify common evidence unit and evidence-class vocabulary
+    - verify initiating-RIC versus peer-RIC separation
+    - verify RIC-versus-client non-substitution and SE-inference boundary
+    - verify unaided-before-aided sequence across all external modules
+    - verify consent/privacy/minimization and data-retention rules
+    - verify stop/continue and insufficiency rules
+  post_pretest_review: leading wording, role ambiguity, category confusion, sequence contamination, missing evidence fields, privacy burden and transferability-module clarity
+  reporting: source-domain matrices plus narrative exceptions; no pooled synthetic truth where evidence domains conflict
+related_plans_and_task_descriptions:
+  stakeholder_needs: ARTVER-CPLUS-RIC-POSITIONING-PREMEASUREMENT-STAKEHOLDER-NEEDS-20260908-001-V1
+  initiating_RIC_director_plan: ARTVER-CPLUS-RIC-DIRECTOR-QUESTIONNAIRE-MEASUREMENT-PLAN-20260907-001-V2
+  client_and_RIC_wave_plan: ARTVER-CPLUS-CLIENT-DECISION-RESEARCH-WAVE1-MEASUREMENT-PLAN-20260905-001-V2
+  positioning_model: ARTVER-CPLUS-BMA-RIC-POSITIONING-20260906-001-V3
+  stakeholder_identification: ARTVER-CPLUS-STK-CLIENT-DECISION-STAKEHOLDER-IDENTIFICATION-20260905-001-V2
+  rule: this plan coordinates and constrains the existing views; it does not copy their questionnaires into independent persistent products
+measurement_needs_and_information_requirements:
+  primary_questions:
+    - what decision/use does each stakeholder class need from the positioning evidence
+    - which real episodes and actual alternatives support or contradict the candidate positioning territories
+    - which claims are direct client evidence, initiating-RIC evidence, peer-RIC evidence, provider account, official claim or SE inference
+    - what part of observed value is attributed by participants to ConsultantPlus versus RIC versus other sources
+    - which findings transfer across RIC contexts and which remain local
+    - what trust, feasibility, privacy and stop/continue conditions matter by stakeholder class
+    - which positioning hypotheses are supported, contradicted, mixed, role-specific or untested after actual evidence
+  evidence_unit: >-
+    one source-attributed evidence row tied to stakeholder class, role/context and preferably a concrete episode, with
+    decision scope, trigger, action/decision, evidence path, alternatives, contribution fields, observed status/result,
+    uncertainty and evidence class; not_established is allowed and preferred to analyst invention.
+  stakeholder_modules:
+    initiating_RIC: [management decision/use, concrete service episode, data used/missing, client-facing intervention, management usefulness, resource burden, trust, local pilot conditions]
+    peer_RIC: [own service episode, similarity/difference to initiating context, local constraints, transferability, burden, trust, pilot conditions]
+    clients: [recent decision episode, actual alternatives, choice criteria, spontaneous value language, ConsultantPlus contribution, RIC contribution, aided territory reaction]
+    SE: [evidence provenance, composition/trace quality, contradiction handling, claim-boundary check, downstream lifecycle gap]; SE module is analysis/verification and not external respondent evidence
+measures:
+  - {id: M-PM-01, name: stakeholder_coverage, definition: explicit decision/use and evidence boundary represented, scale: per_stakeholder_class, target: 4_of_4_before_measurement}
+  - {id: M-PM-02, name: evidence_provenance_completeness, definition: required evidence-unit source/class fields present or explicit not_established, scale: percentage_valid_rows, target: 100_percent}
+  - {id: M-PM-03, name: source_domain_substitution_errors, definition: RIC/client/SE evidence silently retyped as another domain, scale: count, target: 0}
+  - {id: M-PM-04, name: unaided_sequence_conformance, definition: external interviews with unaided episode/frame/alternative/value section completed before aided positioning, scale: percentage_valid_interviews, target: 100_percent}
+  - {id: M-PM-05, name: contribution_separation, definition: ConsultantPlus and RIC contribution separate or explicit not_established, scale: percentage_valid_episodes, target: 100_percent}
+  - {id: M-PM-06, name: conflict_visibility, definition: conflicting source-domain evidence retained in synthesis, scale: percentage_known_conflicts, target: 100_percent}
+  - {id: M-PM-07, name: unsupported_strong_claims, definition: ROI/prevented-fine/general-efficiency/general-risk-reduction/prevalence claims presented as established without adequate future evidence, scale: count, target: 0}
+  - {id: M-PM-08, name: stakeholder_stratum_coverage, definition: evidence coverage reported separately for initiating RIC, peer RICs and client role strata, scale: structured_coverage_matrix, target: report_all_planned_strata_or_explicit_insufficiency}
+data_collection_and_storage:
+  collection_sequence: [consent_and_scope,stakeholder_and_role_context,unaided_episode_reconstruction,actual_frame_and_alternatives,choice_or_trust_criteria,contribution_separation,spontaneous_value_language,aided_positioning_module,feasibility_or_transferability_module,close_and_retention_notice]
+  capture_fields: [evidence_row_id,stakeholder_class,role,organization_context_code,decision_scope,episode_trigger,decision_or_action,evidence_path,actual_alternatives,ConsultantPlus_contribution,RIC_contribution,other_contribution,status_or_result,uncertainty,evidence_class,aided_or_unaided,source_quote_if_consented]
+  persistence_rule: no measurement register is created before actual data; actual evidence is persisted through TM-MEAS measurement register with de-identification and consent status
+  retention_rule: retain minimum evidence required for traceability; audio/direct quotes only under explicit consent and retention decision
+analysis_interpretation_reporting:
+  unit_of_analysis: evidence row and valid recent episode, nested by stakeholder class/role/context
+  disposition_values: [supported,contradicted,mixed,role_specific,local_RIC_specific,transferable_candidate,untested,insufficient_evidence]
+  triangulation_rule: compare source domains without substituting them; client-side claims require client evidence, provider-process claims require appropriate provider evidence, SE inferences remain inferences
+  conflict_rule: preserve contradictory rows and report domain/role/context conditions rather than forced averaging
+  reporting_rule: produce TM-MEAS measurement report after real data; positioning successor TECH-BMA only when evidence materially changes hypotheses; TM-DEC only for an authorized decision
+  forbidden_inference: [market_prevalence_from_qualitative_sample,causal_ROI,prevented_fines,general_efficiency,general_risk_reduction,official_adoption_from_positive_reaction]
+measurement_process_evaluation:
+  entry_criteria:
+    - stakeholder needs product exists and identifies all four stakeholder classes
+    - this plan has passed subject TECH-VER for premeasurement readiness
+    - structural product checks pass or remaining structural limitation is explicitly accepted by owner before external execution
+    - external contact/execution authority is explicitly available
+    - interviewer and analyst orientation complete
+    - recruitment matrix identifies initiating RIC, peer RIC and client strata without counting SE as respondent evidence
+    - consent/privacy and retention script is ready
+  stop_or_revise_criteria:
+    - leading or aided-before-unaided contamination appears systematic
+    - stakeholder class or evidence class cannot be assigned consistently
+    - privacy burden exceeds the information need
+    - peer-RIC transferability module confounds provider observation with client testimony
+    - pretest shows repeated category/frame ambiguity affecting interpretation
+  successful_process_signals: [zero source-domain substitution, traceable evidence rows, preserved contradictions, explicit insufficiency where evidence is absent]
+change_procedure_and_history:
+  rule: material changes to sampling, sequence, evidence classes, measures, privacy or decision boundaries create a successor ArtifactVersion; wording-only clarifications may be recorded without changing evidence semantics
+  approval: owner approves external execution and material scope/cost changes
+change_history:
+  - {version: V1, date: '2026-09-08', change: establish coordinated four-stakeholder premeasurement plan and close source-domain, transferability, privacy and readiness gaps}
+completion_process:
+  premeasurement_completion: subject TECH-VER finds no material design gap other than future execution inputs; exact product identities and normative composition are structurally checkable
+  execution_handoff: actual measurement begins only under explicit external-execution authority; first durable data product is TM-MEAS measurement register
+  purpose_boundary: completion of this plan does not complete empirical positioning validation
+owner_product_request:
+  exact_visible_text: 'закрой разрывы до этих измерений. имей в виду все заинтересованные стороны - риц, СЕ, РИЦы, клиенты'
+  request_specific_requirements: [close gaps before measurements, account for initiating RIC, SE, peer RICs and clients, coordinate existing plans, preserve evidence-source boundaries]
+product_requirement_compliance:
+  contract_artifact_version_id: ARTVER-SE-OWNER-REQUESTED-INFORMATION-PRODUCT-REQUIREMENTS-20260903-001-V1
+  applicability: applies_new_client_TM_MEAS_measurement_strategy_approach
+  requirement_coverage:
+    - {requirement_id: PPR-001, state: satisfied, artifact_field_refs: [producer.process_type_id,artifact_label,content_compliance.information_item_identity]}
+    - {requirement_id: PPR-002, state: satisfied, artifact_field_refs: [owner_product_request,measurement_needs_and_information_requirements]}
+    - {requirement_id: PPR-003, state: satisfied, artifact_field_refs: [content_compliance.universal_content]}
+    - {requirement_id: PPR-004, state: satisfied, artifact_field_refs: [content_compliance.normative_resolution,content_compliance.normative_specific_content]}
+    - {requirement_id: PPR-005, state: satisfied, artifact_field_refs: [product_requirement_compliance.contract_artifact_version_id]}
+    - {requirement_id: PPR-006, state: satisfied, artifact_field_refs: [product_requirement_compliance.requirement_coverage,standards_trace.information_product.content_trace]}
+    - {requirement_id: PPR-007, state: satisfied, artifact_field_refs: [measurement_process_evaluation,verification]}
+    - {requirement_id: PPR-008, state: satisfied, artifact_field_refs: [references,related_plans_and_task_descriptions]}
+    - {requirement_id: PPR-009, state: satisfied, artifact_field_refs: [verification]}
+    - {requirement_id: PPR-010, state: satisfied, artifact_field_refs: [artifact_addresses.self,verification]}
+    - {requirement_id: PPR-011, state: satisfied, artifact_field_refs: [artifact_version_id,artifact_addresses.self]}
+    - {requirement_id: PPR-012, state: satisfied, artifact_field_refs: [owner_product_request.request_specific_requirements,change_history]}
+  completion_gate: {mandatory_missing: [], mandatory_failed: [], mandatory_unresolved: [], state: pass_product_structure_candidate_pending_subject_and_external_worker}
+verification:
+  structural_status: pending_exact_external_client_information_product_worker
+  semantic_status: pending_dedicated_premeasurement_readiness_TECH_VER
+  owner_acceptance: engineering preparation requested; external measurement execution and positioning adoption separate
+artifact_addresses:
+  self: MOZ1961/consultantplus:artifacts/TM-MEAS/measurement-strategy-approach/ART-CPLUS-RIC-POSITIONING-MULTI-STAKEHOLDER-MEASUREMENT-PLAN-20260908-001.yaml@change/consultantplus-20260908-positioning-premeasurement-readiness
+information_product_applicability: applies
+content_compliance:
+  control_artifact_version_id: ARTVER-SE-INFORMATION-PRODUCT-CONTENT-CONTROL-20260901-001-V6
+  information_item_identity: {resolved_name_or_semantic_identity: measurement plan for cross-stakeholder RIC positioning evidence, state: resolved}
+  universal_type: plan
+  universal_content:
+    source_section: '7.3'
+    state: pass
+    requirement_coverage:
+      - {requirement_id: U7.3-A, state: satisfied, artifact_field_refs: [issued_at_and_status]}
+      - {requirement_id: U7.3-B, state: satisfied, artifact_field_refs: [scope]}
+      - {requirement_id: U7.3-C, state: satisfied, artifact_field_refs: [issuing_organization]}
+      - {requirement_id: U7.3-D, state: satisfied, artifact_field_refs: [references]}
+      - {requirement_id: U7.3-E, state: satisfied, artifact_field_refs: [approving_authority]}
+      - {requirement_id: U7.3-F, state: satisfied, artifact_field_refs: [introduction]}
+      - {requirement_id: U7.3-G, state: satisfied, artifact_field_refs: [planned_activities_and_tasks]}
+      - {requirement_id: U7.3-H, state: satisfied, artifact_field_refs: [tools_methods_techniques]}
+      - {requirement_id: U7.3-I, state: satisfied, artifact_field_refs: [schedule]}
+      - {requirement_id: U7.3-J, state: satisfied, artifact_field_refs: [budget_and_cost_estimate]}
+      - {requirement_id: U7.3-K, state: satisfied, artifact_field_refs: [resources_and_allocation]}
+      - {requirement_id: U7.3-L, state: satisfied, artifact_field_refs: [responsibilities_and_authorities]}
+      - {requirement_id: U7.3-M, state: satisfied, artifact_field_refs: [participant_interfaces]}
+      - {requirement_id: U7.3-N, state: satisfied, artifact_field_refs: [risk_assessment_and_mitigation]}
+      - {requirement_id: U7.3-O, state: satisfied, artifact_field_refs: [quality_and_effectiveness_measures]}
+      - {requirement_id: U7.3-P, state: satisfied, artifact_field_refs: [environment_infrastructure_security]}
+      - {requirement_id: U7.3-Q, state: satisfied, artifact_field_refs: [training]}
+      - {requirement_id: U7.3-R, state: satisfied, artifact_field_refs: [technical_management_review_reporting]}
+      - {requirement_id: U7.3-S, state: satisfied, artifact_field_refs: [related_plans_and_task_descriptions]}
+      - {requirement_id: U7.3-T, state: satisfied, artifact_field_refs: [glossary]}
+      - {requirement_id: U7.3-U, state: satisfied, artifact_field_refs: [change_procedure_and_history,change_history]}
+      - {requirement_id: U7.3-V, state: satisfied, artifact_field_refs: [completion_process]}
+  normative_resolution: {catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3, crosswalk_artifact_version_id: ARTVER-SE-GOST58609-NORMATIVE-FIRST-OUTPUT-CROSSWALK-20260904-001-V3, route: exact_binding, relation: controlled_semantic_match, generic_type: plan, specific_profiles: ['10.46'], specific_records: [], local_additive_profile: null}
+  normative_specific_content:
+    state: pass
+    profile_coverage:
+      - profile_id: '10.46'
+        kind: section10
+        requirement_coverage:
+          - {requirement_id: S10.46-R01, state: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements]}
+          - {requirement_id: S10.46-R02, state: satisfied, artifact_field_refs: [measures]}
+          - {requirement_id: S10.46-R03, state: satisfied, artifact_field_refs: [data_collection_and_storage]}
+          - {requirement_id: S10.46-R04, state: satisfied, artifact_field_refs: [analysis_interpretation_reporting]}
+          - {requirement_id: S10.46-R05, state: satisfied, artifact_field_refs: [responsibilities_and_authorities,resources_and_allocation,tools_methods_techniques,schedule]}
+          - {requirement_id: S10.46-R06, state: satisfied, artifact_field_refs: [measurement_process_evaluation]}
+  local_additive_content: {state: not_applicable, basis: exact crosswalk selects no local additive profile for TM-MEAS|measurement strategy/approach}
+  tailoring: coordinate existing initiating-RIC and client-wave measurement plans under a four-stakeholder evidence contract without changing their historical identity
+  information_item_management: {version_control: exact V1 candidate, review_approval: subject TECH-VER and owner external-execution authority separate, quality_evaluation: pre-use TECH-VER plus exact external-client structural worker, retention: retain as coordinating premeasurement plan, reuse_and_duplication: questionnaire views remain inside existing plans; no duplicate persistent questionnaire products}
+standards_trace:
+  process:
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15288:2023', full_title: 'Systems and software engineering — System life cycle processes', clause: '6.3.7', process_name: 'Measurement process'}
+    gost: {state: present, designation: 'ГОСТ Р 57193-2025', full_title: 'Системная и программная инженерия. Процессы жизненного цикла систем', clause: '6.3.7', process_name: 'Процесс измерений'}
+    correspondence: NEQ_standard_level_clause_identity_mapped
+  information_product:
+    canonical_O: measurement strategy/approach
+    iso: {state: present, designation: 'ISO/IEC/IEEE 15289:2017', full_title: 'Systems and software engineering — Content of life-cycle information items (documentation)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    gost: {state: present, designation: 'ГОСТ Р 58609-2019/ISO/IEC/IEEE 15289:2017', full_title: 'Системная и программная инженерия. Состав и содержание информационных элементов жизненного цикла (документации)', generic_section: '7.3', specific_status: present, specific_items: ['10.46']}
+    correspondence: IDT
+    content_trace:
+      normative_catalog_artifact_version_id: ARTVER-SE-GOST58609-FULL-NORMATIVE-CONTENT-CATALOG-20260904-001-V3
+      normalized_requirements:
+        - {requirement_id: U7.3-A, disposition: satisfied, artifact_field_refs: [issued_at_and_status], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-B, disposition: satisfied, artifact_field_refs: [scope], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-C, disposition: satisfied, artifact_field_refs: [issuing_organization], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-D, disposition: satisfied, artifact_field_refs: [references], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-E, disposition: satisfied, artifact_field_refs: [approving_authority], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-F, disposition: satisfied, artifact_field_refs: [introduction], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-G, disposition: satisfied, artifact_field_refs: [planned_activities_and_tasks], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-H, disposition: satisfied, artifact_field_refs: [tools_methods_techniques], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-I, disposition: satisfied, artifact_field_refs: [schedule], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-J, disposition: satisfied, artifact_field_refs: [budget_and_cost_estimate], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-K, disposition: satisfied, artifact_field_refs: [resources_and_allocation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-L, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-M, disposition: satisfied, artifact_field_refs: [participant_interfaces], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-N, disposition: satisfied, artifact_field_refs: [risk_assessment_and_mitigation], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-O, disposition: satisfied, artifact_field_refs: [quality_and_effectiveness_measures], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-P, disposition: satisfied, artifact_field_refs: [environment_infrastructure_security], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-Q, disposition: satisfied, artifact_field_refs: [training], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-R, disposition: satisfied, artifact_field_refs: [technical_management_review_reporting], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-S, disposition: satisfied, artifact_field_refs: [related_plans_and_task_descriptions], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-T, disposition: satisfied, artifact_field_refs: [glossary], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-U, disposition: satisfied, artifact_field_refs: [change_procedure_and_history,change_history], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: U7.3-V, disposition: satisfied, artifact_field_refs: [completion_process], iso: {section_or_item: '7.3'}, gost: {section_or_item: '7.3'}, correspondence: IDT}
+        - {requirement_id: S10.46-R01, disposition: satisfied, artifact_field_refs: [measurement_needs_and_information_requirements], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R02, disposition: satisfied, artifact_field_refs: [measures], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R03, disposition: satisfied, artifact_field_refs: [data_collection_and_storage], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R04, disposition: satisfied, artifact_field_refs: [analysis_interpretation_reporting], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R05, disposition: satisfied, artifact_field_refs: [responsibilities_and_authorities,resources_and_allocation,tools_methods_techniques,schedule], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+        - {requirement_id: S10.46-R06, disposition: satisfied, artifact_field_refs: [measurement_process_evaluation], iso: {section_or_item: '10.46'}, gost: {section_or_item: '10.46'}, correspondence: IDT}
+      local_additive_requirements: []
+glossary:
+  evidence_domain: source stakeholder class and claim boundary that determine what a row may legitimately support
+  source_domain_substitution: treating one stakeholder's evidence as if directly provided by another stakeholder class
+  premeasurement_readiness: design state in which stakeholder, method, evidence, privacy and decision-boundary gaps are closed while empirical data remain future work
+  transferability: evidence-supported applicability across RIC contexts rather than assumed network-wide sameness
